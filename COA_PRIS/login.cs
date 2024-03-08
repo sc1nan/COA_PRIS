@@ -19,14 +19,10 @@ namespace COA_PRIS
 
         private void login_Load(object sender, EventArgs e)
         {
-            
+            this.AcceptButton = Loginbtn;
         }
 
-        private void gunaLineTextBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+  
         private void Loginbtn_Click(object sender, EventArgs e)
         {
             if(gunaTextBox1.Text.ToString() == "asd" && gunaTextBox2.Text.ToString() == "qwert")

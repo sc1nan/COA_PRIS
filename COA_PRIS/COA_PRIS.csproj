@@ -108,6 +108,36 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="DashboardUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DashboardUserControl.Designer.cs">
+      <DependentUpon>DashboardUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocuDownloadUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DocuDownloadUserControl.Designer.cs">
+      <DependentUpon>DocuDownloadUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DocuHistoryUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DocuHistoryUserControl.Designer.cs">
+      <DependentUpon>DocuHistoryUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inbox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inbox.Designer.cs">
+      <DependentUpon>Inbox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InboxUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InboxUserControl.Designer.cs">
+      <DependentUpon>InboxUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +146,18 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatReportUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StatReportUserControl.Designer.cs">
+      <DependentUpon>StatReportUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SysSetupUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SysSetupUserControl.Designer.cs">
+      <DependentUpon>SysSetupUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="uuu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +166,21 @@
     </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DashboardUserControl.resx">
+      <DependentUpon>DashboardUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocuDownloadUserControl.resx">
+      <DependentUpon>DocuDownloadUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DocuHistoryUserControl.resx">
+      <DependentUpon>DocuHistoryUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inbox.resx">
+      <DependentUpon>Inbox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InboxUserControl.resx">
+      <DependentUpon>InboxUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
@@ -138,6 +195,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="StatReportUserControl.resx">
+      <DependentUpon>StatReportUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SysSetupUserControl.resx">
+      <DependentUpon>SysSetupUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="uuu.resx">
       <DependentUpon>uuu.cs</DependentUpon>
     </EmbeddedResource>
