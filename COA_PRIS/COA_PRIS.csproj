@@ -102,49 +102,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database_Credential.cs" />
-    <Compile Include="Dashboard.cs">
+    <Compile Include="Utilities\Database_Credential.cs" />
+    <Compile Include="Screens\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dashboard.Designer.cs">
+    <Compile Include="Screens\Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="DashboardUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DashboardUserControl.Designer.cs">
-      <DependentUpon>DashboardUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Database_Connection.cs" />
-    <Compile Include="Database_Query.cs" />
-    <Compile Include="DocuDownloadUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DocuDownloadUserControl.Designer.cs">
-      <DependentUpon>DocuDownloadUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DocuHistoryUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="DocuHistoryUserControl.Designer.cs">
-      <DependentUpon>DocuHistoryUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Inbox.cs">
+    <Compile Include="Utilities\Database_Connection.cs" />
+    <Compile Include="Utilities\Database_Query.cs" />
+    <Compile Include="Screens\login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inbox.Designer.cs">
-      <DependentUpon>Inbox.cs</DependentUpon>
-    </Compile>
-    <Compile Include="InboxUserControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="InboxUserControl.Designer.cs">
-      <DependentUpon>InboxUserControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="login.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="login.Designer.cs">
+    <Compile Include="Screens\login.Designer.cs">
       <DependentUpon>login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -161,25 +131,10 @@
     <Compile Include="SysSetupUserControl.Designer.cs">
       <DependentUpon>SysSetupUserControl.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Dashboard.resx">
+    <EmbeddedResource Include="Screens\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DashboardUserControl.resx">
-      <DependentUpon>DashboardUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DocuDownloadUserControl.resx">
-      <DependentUpon>DocuDownloadUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DocuHistoryUserControl.resx">
-      <DependentUpon>DocuHistoryUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Inbox.resx">
-      <DependentUpon>Inbox.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InboxUserControl.resx">
-      <DependentUpon>InboxUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="login.resx">
+    <EmbeddedResource Include="Screens\login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

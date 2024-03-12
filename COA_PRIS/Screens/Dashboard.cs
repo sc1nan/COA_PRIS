@@ -19,10 +19,7 @@ namespace COA_PRIS
         {
             InitializeComponent();
 
-            inboxUserControl1.Hide();
-            docuHistoryUserControl1.Hide();
             statReportUserControl1.Hide();
-            docuDownloadUserControl1.Hide();
             sysSetupUserControl1.Hide();
         }
 
@@ -39,7 +36,6 @@ namespace COA_PRIS
         {
             gunaButtonReset(gunaButton2);
             gunaLabel1.Text = "Inbox";
-            userControlReset(inboxUserControl1);
         }
 
         private void gunaElipsePanel1_Paint(object sender, PaintEventArgs e)
@@ -60,12 +56,8 @@ namespace COA_PRIS
         }
 
         private void userControlReset(UserControl uc)
-        {
-            dashboardUserControl1.Hide();
-            inboxUserControl1.Hide();
-            docuHistoryUserControl1.Hide();
+        {;
             statReportUserControl1.Hide();
-            docuDownloadUserControl1.Hide();
             sysSetupUserControl1.Hide();
 
             uc.Show();
@@ -75,14 +67,12 @@ namespace COA_PRIS
         {
             gunaButtonReset(gunaButton1);
             gunaLabel1.Text = "Dashboard";
-            userControlReset(dashboardUserControl1);
         }
 
         private void gunaButton3_Click(object sender, EventArgs e)
         {
             gunaButtonReset(gunaButton3);
             gunaLabel1.Text = "Document History";
-            userControlReset(docuHistoryUserControl1);
         }
 
         private void gunaButton4_Click(object sender, EventArgs e)
@@ -96,7 +86,6 @@ namespace COA_PRIS
         {
             gunaButtonReset(gunaButton5);
             gunaLabel1.Text = "Document Download";
-            userControlReset(docuDownloadUserControl1);
         }
 
         private void gunaButton6_Click(object sender, EventArgs e)
