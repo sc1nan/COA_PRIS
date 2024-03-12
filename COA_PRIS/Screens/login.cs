@@ -38,6 +38,7 @@ namespace COA_PRIS
             int status_result = 0;
 
             _user_name = gunaTextBox1.Text.ToString();
+
             if (dbCon.IsConnect())
             {
                 var check_status_cmd = new MySqlCommand(String.Format(Database_Query.check_acc_status, gunaTextBox1.Text.ToString()), dbCon.Connection);
@@ -56,21 +57,25 @@ namespace COA_PRIS
             }
 
 
-            if ((_user_name == gunaTextBox1.Text.ToString() && ret == 0) && attempts != 0)
+            /*MessageBox.Show(_user_name);
+
+            if ((_user_name == gunaTextBox1.Text.ToString()) && attempts > 0)
             {
+                //&& ret == 0 && attempts > 0
                 attempts--;
                 MessageBox.Show("Same USN");
             }
-            else if (attempts == 0) 
-            {
-                MessageBox.Show("Jesser is displeased");
-            }
-            else
+            else if (_user_name != gunaTextBox1.Text.ToString() && attempts > 0)
             {
                 _user_name = gunaTextBox1.Text.ToString();
                 MessageBox.Show("Diff USN");
                 attempts = 3;
             }
+            else
+            {
+                MessageBox.Show("Jesser is displeased");
+            }*/
+
         }
 
         private void gunaTextBox1_Enter(object sender, EventArgs e)
@@ -101,7 +106,6 @@ namespace COA_PRIS
             {
                 MessageBox.Show("Enter your username", "Missing Credentials");
             }
-            Console.WriteLine(_user_name);  
         }
     }
 }
