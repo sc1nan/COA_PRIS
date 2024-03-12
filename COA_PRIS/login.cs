@@ -1,8 +1,10 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +14,8 @@ namespace COA_PRIS
 {
     public partial class login : Form
     {
+        
+        private int attempts = 3;
         public login()
         {
             InitializeComponent();
@@ -25,17 +29,34 @@ namespace COA_PRIS
   
         private void Loginbtn_Click(object sender, EventArgs e)
         {
-            if(gunaTextBox1.Text.ToString() == "asd" && gunaTextBox2.Text.ToString() == "qwert")
+            var dbCon = DBConnection.Instance();
+            int ret = 0;
+            if (dbCon.IsConnect())
             {
-                Console.WriteLine("asd");
+                var cmd = new MySqlCommand(String.Format(Database_Query.login_query, gunaTextBox1.Text.ToString(), 
+                    gunaTextBox2.Text.ToString()), dbCon.Connection);
+                var scalar = cmd.ExecuteScalar();
+                ret = Convert.ToInt32(scalar);
+                dbCon.Close();
+            }
+            if (ret == 0)
+            {
+                attempts--;
+                MessageBox.Show("Incorrect credentials");
+
+            }
+            else
+            {
                 Dashboard formu = new Dashboard();
                 formu.Show();
                 this.Hide();
             }
-            else
+
+            /*if (attempts == 0)
             {
-                Console.WriteLine("das");
+                MessageBox.Show("Exceed Attempts");
             }
+            */
 
         }
 

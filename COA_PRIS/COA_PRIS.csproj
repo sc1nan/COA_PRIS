@@ -102,6 +102,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database_Credential.cs" />
     <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +115,8 @@
     <Compile Include="DashboardUserControl.Designer.cs">
       <DependentUpon>DashboardUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database_Connection.cs" />
+    <Compile Include="Database_Query.cs" />
     <Compile Include="DocuDownloadUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -158,12 +161,6 @@
     <Compile Include="SysSetupUserControl.Designer.cs">
       <DependentUpon>SysSetupUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="uuu.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="uuu.Designer.cs">
-      <DependentUpon>uuu.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,9 +197,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SysSetupUserControl.resx">
       <DependentUpon>SysSetupUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="uuu.resx">
-      <DependentUpon>uuu.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
