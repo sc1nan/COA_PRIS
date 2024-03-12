@@ -81,11 +81,6 @@ C:\Users\Rin\source\repos\COA_PRIS\COA_PRIS\bin\Debug\System.Threading.Tasks.Ext
 C:\Users\Rin\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.csproj.AssemblyReference.cache
 C:\Users\Rin\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.csproj.SuggestedBindingRedirects.cache
 C:\Users\Rin\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Dashboard.resources
-C:\Users\Rin\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.DashboardUserControl.resources
-C:\Users\Rin\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.DocuDownloadUserControl.resources
-C:\Users\Rin\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.DocuHistoryUserControl.resources
-C:\Users\Rin\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Inbox.resources
-C:\Users\Rin\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.InboxUserControl.resources
 C:\Users\Rin\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.login.resources
 C:\Users\Rin\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Properties.Resources.resources
 C:\Users\Rin\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.StatReportUserControl.resources
