@@ -25,7 +25,7 @@ namespace COA_PRIS
   
         private void Loginbtn_Click(object sender, EventArgs e)
         {
-            if(gunaTextBox1.Text.ToString() == "asd" && gunaTextBox2.Text.ToString() == "qwert")
+            if(Username.Text.ToString() == "asd" && Password.Text.ToString() == "qwert")
             {
                 Console.WriteLine("asd");
                 Dashboard formu = new Dashboard();
@@ -39,16 +39,27 @@ namespace COA_PRIS
 
         }
 
-        private void gunaTextBox1_Enter(object sender, EventArgs e)
+
+        private void gunaTextBox1_TextChanged(object sender, EventArgs e)
         {
-            if(gunaTextBox1.Text == "Username")
-                gunaTextBox1.Text = "";
+
         }
 
-        private void gunaTextBox2_Enter(object sender, EventArgs e)
+        private void Username_TextChanged(object sender, EventArgs e)
         {
-            if (gunaTextBox2.Text == "Password")
-                gunaTextBox2.Text = "";
+            if (Username.Text == "Username")
+                Username.Text = "";
+        }
+
+        private void gunaTextBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Password_TextChanged(object sender, EventArgs e)
+        {
+            if (Password.Text == "Password")
+                Password.Text = "";
         }
     }
 }
