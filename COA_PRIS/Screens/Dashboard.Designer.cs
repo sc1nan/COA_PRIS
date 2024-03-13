@@ -61,7 +61,7 @@
             this.gunaPanel1.Controls.Add(this.gunaCirclePictureBox1);
             this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.gunaPanel1.Location = new System.Drawing.Point(0, 0);
-            this.gunaPanel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gunaPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(266, 549);
             this.gunaPanel1.TabIndex = 0;
@@ -80,7 +80,7 @@
             this.gunaButton6.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton6.Image")));
             this.gunaButton6.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaButton6.Location = new System.Drawing.Point(0, 402);
-            this.gunaButton6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gunaButton6.Margin = new System.Windows.Forms.Padding(2);
             this.gunaButton6.Name = "gunaButton6";
             this.gunaButton6.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(106)))), ((int)(((byte)(44)))));
             this.gunaButton6.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -107,7 +107,7 @@
             this.gunaButton5.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton5.Image")));
             this.gunaButton5.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaButton5.Location = new System.Drawing.Point(0, 365);
-            this.gunaButton5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gunaButton5.Margin = new System.Windows.Forms.Padding(2);
             this.gunaButton5.Name = "gunaButton5";
             this.gunaButton5.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(106)))), ((int)(((byte)(44)))));
             this.gunaButton5.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -134,7 +134,7 @@
             this.gunaButton4.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton4.Image")));
             this.gunaButton4.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaButton4.Location = new System.Drawing.Point(0, 328);
-            this.gunaButton4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gunaButton4.Margin = new System.Windows.Forms.Padding(2);
             this.gunaButton4.Name = "gunaButton4";
             this.gunaButton4.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(106)))), ((int)(((byte)(44)))));
             this.gunaButton4.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -161,7 +161,7 @@
             this.gunaButton3.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton3.Image")));
             this.gunaButton3.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaButton3.Location = new System.Drawing.Point(0, 292);
-            this.gunaButton3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gunaButton3.Margin = new System.Windows.Forms.Padding(2);
             this.gunaButton3.Name = "gunaButton3";
             this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(106)))), ((int)(((byte)(44)))));
             this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -188,7 +188,7 @@
             this.gunaButton2.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton2.Image")));
             this.gunaButton2.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaButton2.Location = new System.Drawing.Point(0, 255);
-            this.gunaButton2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gunaButton2.Margin = new System.Windows.Forms.Padding(2);
             this.gunaButton2.Name = "gunaButton2";
             this.gunaButton2.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(106)))), ((int)(((byte)(44)))));
             this.gunaButton2.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -215,7 +215,7 @@
             this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
             this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
             this.gunaButton1.Location = new System.Drawing.Point(0, 218);
-            this.gunaButton1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gunaButton1.Margin = new System.Windows.Forms.Padding(2);
             this.gunaButton1.Name = "gunaButton1";
             this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(106)))), ((int)(((byte)(44)))));
             this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -235,7 +235,7 @@
             this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.White;
             this.gunaCirclePictureBox1.Image = global::COA_PRIS.Properties.Resources.COA_img;
             this.gunaCirclePictureBox1.Location = new System.Drawing.Point(81, 45);
-            this.gunaCirclePictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gunaCirclePictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
             this.gunaCirclePictureBox1.Size = new System.Drawing.Size(100, 98);
             this.gunaCirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -250,7 +250,7 @@
             this.panel1.Controls.Add(this.gunaButton7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(266, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(761, 51);
             this.panel1.TabIndex = 1;
@@ -285,7 +285,7 @@
             this.gunaButton7.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.gunaButton7.ImageSize = new System.Drawing.Size(40, 40);
             this.gunaButton7.Location = new System.Drawing.Point(819, 4);
-            this.gunaButton7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gunaButton7.Margin = new System.Windows.Forms.Padding(2);
             this.gunaButton7.Name = "gunaButton7";
             this.gunaButton7.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(106)))), ((int)(((byte)(44)))));
             this.gunaButton7.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -306,7 +306,7 @@
             this.gunaElipsePanel2.Controls.Add(this.sysSetupUserControl1);
             this.gunaElipsePanel2.Controls.Add(this.statReportUserControl1);
             this.gunaElipsePanel2.Location = new System.Drawing.Point(295, 77);
-            this.gunaElipsePanel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gunaElipsePanel2.Margin = new System.Windows.Forms.Padding(2);
             this.gunaElipsePanel2.Name = "gunaElipsePanel2";
             this.gunaElipsePanel2.Radius = 25;
             this.gunaElipsePanel2.Size = new System.Drawing.Size(925, 542);
@@ -343,7 +343,7 @@
             this.Controls.Add(this.gunaElipsePanel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.gunaPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Dashboard";
             this.Text = "Dashboard";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

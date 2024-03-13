@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
@@ -39,11 +40,18 @@
             this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.Loginbtn = new Guna.UI.WinForms.GunaButton();
+            this.gunaElipsePanel4 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.gunaElipsePanel5 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
+            this.gunaLineTextBox2 = new Guna.UI.WinForms.GunaLineTextBox();
+            this.gunaLineTextBox1 = new Guna.UI.WinForms.GunaLineTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.gunaElipsePanel1.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
             this.gunaElipsePanel3.SuspendLayout();
             this.gunaElipsePanel2.SuspendLayout();
+            this.gunaElipsePanel4.SuspendLayout();
+            this.gunaElipsePanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaCirclePictureBox1
@@ -72,11 +80,11 @@
             this.gunaElipsePanel1.Controls.Add(this.gunaLabel3);
             this.gunaElipsePanel1.Controls.Add(this.Loginbtn);
             this.gunaElipsePanel1.Controls.Add(this.gunaCirclePictureBox1);
-            this.gunaElipsePanel1.Location = new System.Drawing.Point(687, 27);
+            this.gunaElipsePanel1.Location = new System.Drawing.Point(1021, 12);
             this.gunaElipsePanel1.MinimumSize = new System.Drawing.Size(415, 600);
             this.gunaElipsePanel1.Name = "gunaElipsePanel1";
             this.gunaElipsePanel1.Radius = 15;
-            this.gunaElipsePanel1.Size = new System.Drawing.Size(496, 977);
+            this.gunaElipsePanel1.Size = new System.Drawing.Size(496, 935);
             this.gunaElipsePanel1.TabIndex = 1;
             // 
             // gunaPanel1
@@ -229,13 +237,96 @@
             this.Loginbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Loginbtn.Click += new System.EventHandler(this.Loginbtn_Click);
             // 
+            // gunaElipsePanel4
+            // 
+            this.gunaElipsePanel4.BackColor = System.Drawing.Color.Transparent;
+            this.gunaElipsePanel4.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(109)))), ((int)(((byte)(128)))));
+            this.gunaElipsePanel4.Controls.Add(this.gunaElipsePanel5);
+            this.gunaElipsePanel4.Location = new System.Drawing.Point(335, 57);
+            this.gunaElipsePanel4.Name = "gunaElipsePanel4";
+            this.gunaElipsePanel4.Radius = 15;
+            this.gunaElipsePanel4.Size = new System.Drawing.Size(496, 719);
+            this.gunaElipsePanel4.TabIndex = 2;
+            // 
+            // gunaElipsePanel5
+            // 
+            this.gunaElipsePanel5.BackColor = System.Drawing.Color.Transparent;
+            this.gunaElipsePanel5.BaseColor = System.Drawing.Color.White;
+            this.gunaElipsePanel5.Controls.Add(this.gunaButton1);
+            this.gunaElipsePanel5.Controls.Add(this.gunaLineTextBox2);
+            this.gunaElipsePanel5.Controls.Add(this.gunaLineTextBox1);
+            this.gunaElipsePanel5.Location = new System.Drawing.Point(10, 10);
+            this.gunaElipsePanel5.Margin = new System.Windows.Forms.Padding(10);
+            this.gunaElipsePanel5.Name = "gunaElipsePanel5";
+            this.gunaElipsePanel5.Radius = 15;
+            this.gunaElipsePanel5.Size = new System.Drawing.Size(476, 699);
+            this.gunaElipsePanel5.TabIndex = 3;
+            // 
+            // gunaButton1
+            // 
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton1.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(109)))), ((int)(((byte)(128)))));
+            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaButton1.Image = null;
+            this.gunaButton1.ImageSize = new System.Drawing.Size(20, 20);
+            this.gunaButton1.Location = new System.Drawing.Point(157, 543);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton1.OnHoverImage = null;
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Radius = 10;
+            this.gunaButton1.Size = new System.Drawing.Size(169, 42);
+            this.gunaButton1.TabIndex = 2;
+            this.gunaButton1.Text = "LOGIN";
+            this.gunaButton1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // gunaLineTextBox2
+            // 
+            this.gunaLineTextBox2.BackColor = System.Drawing.Color.White;
+            this.gunaLineTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.gunaLineTextBox2.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaLineTextBox2.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaLineTextBox2.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(109)))), ((int)(((byte)(128)))));
+            this.gunaLineTextBox2.Location = new System.Drawing.Point(45, 443);
+            this.gunaLineTextBox2.Name = "gunaLineTextBox2";
+            this.gunaLineTextBox2.PasswordChar = '\0';
+            this.gunaLineTextBox2.SelectedText = "";
+            this.gunaLineTextBox2.Size = new System.Drawing.Size(388, 26);
+            this.gunaLineTextBox2.TabIndex = 1;
+            // 
+            // gunaLineTextBox1
+            // 
+            this.gunaLineTextBox1.BackColor = System.Drawing.Color.White;
+            this.gunaLineTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.gunaLineTextBox1.FocusedLineColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaLineTextBox1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaLineTextBox1.LineColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(109)))), ((int)(((byte)(128)))));
+            this.gunaLineTextBox1.Location = new System.Drawing.Point(45, 364);
+            this.gunaLineTextBox1.Name = "gunaLineTextBox1";
+            this.gunaLineTextBox1.PasswordChar = '\0';
+            this.gunaLineTextBox1.SelectedText = "";
+            this.gunaLineTextBox1.Size = new System.Drawing.Size(388, 26);
+            this.gunaLineTextBox1.TabIndex = 0;
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1920, 1061);
+            this.Controls.Add(this.gunaElipsePanel4);
             this.Controls.Add(this.gunaElipsePanel1);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Bahnschrift", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimumSize = new System.Drawing.Size(450, 650);
@@ -249,6 +340,8 @@
             this.gunaPanel1.ResumeLayout(false);
             this.gunaElipsePanel3.ResumeLayout(false);
             this.gunaElipsePanel2.ResumeLayout(false);
+            this.gunaElipsePanel4.ResumeLayout(false);
+            this.gunaElipsePanel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -266,5 +359,10 @@
         private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel3;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
+        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel4;
+        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel5;
+        private Guna.UI.WinForms.GunaButton gunaButton1;
+        private Guna.UI.WinForms.GunaLineTextBox gunaLineTextBox2;
+        private Guna.UI.WinForms.GunaLineTextBox gunaLineTextBox1;
     }
 }
