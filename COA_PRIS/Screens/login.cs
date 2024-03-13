@@ -103,5 +103,31 @@ namespace COA_PRIS
             }
             Console.WriteLine(_user_name);  
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaLabel1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaElipsePanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void login_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gunaImageButton1_Click(object sender, EventArgs e)
+        {
+            DevInfo info = new DevInfo();
+            info.Show();
+        }
     }
 }
