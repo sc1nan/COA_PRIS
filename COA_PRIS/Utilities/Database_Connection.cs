@@ -12,10 +12,9 @@ namespace COA_PRIS
 {
     public class DBConnection 
     {
-        private DBConnection() 
-        { }
+        private DBConnection() { }
 
-        public MySqlConnection Connection { get; set; }
+        public MySqlConnection Connection { get; private set; }
 
         private static DBConnection _instance = null;
 
@@ -29,7 +28,7 @@ namespace COA_PRIS
         public bool IsConnect() 
         {
             if (Connection == null)
-            { 
+            {
                 if (String.IsNullOrEmpty(Database_Credential.database))
                     return false;
                 string connection = string.Format("Server={0}; database={1}; UID={2}; password={3}", 
@@ -40,12 +39,5 @@ namespace COA_PRIS
             }
             return true;    
         }
-        
-        public void Close()
-        { 
-            Connection.Close(); 
-            Connection = null;
-        }
-    
     }
 }

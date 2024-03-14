@@ -1,4 +1,5 @@
 ﻿using COA_PRIS.Screens;
+﻿using COA_PRIS.Utilities;
 using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Common;
 using System;
@@ -17,8 +18,8 @@ namespace COA_PRIS
 {
     public partial class login : Form
     {
-        private int attempts = 3;
-        private string _user_name;
+        private int attempts = 3; 
+        private MySqlConnection connection;
         public login()
         {
             InitializeComponent();
@@ -32,50 +33,35 @@ namespace COA_PRIS
   
         private void Loginbtn_Click(object sender, EventArgs e)
         {
-            
-            
-            var dbCon = DBConnection.Instance();
-            int ret = 0;
-            int status_result = 0;
-
-            _user_name = gunaTextBox1.Text.ToString();
-
-            if (dbCon.IsConnect())
+            DataTable ret, stat = new DataTable();
+            using (var db_Manager = new Database_Manager()) 
             {
-                var check_status_cmd = new MySqlCommand(String.Format(Database_Query.check_acc_status, gunaTextBox1.Text.ToString()), dbCon.Connection);
-                status_result = Convert.ToInt32(check_status_cmd.ExecuteScalar());
-
-                var log_cmd = new MySqlCommand(String.Format(Database_Query.login_query, gunaTextBox1.Text.ToString(), gunaTextBox2.Text.ToString()), dbCon.Connection);
-                ret = Convert.ToInt32(log_cmd.ExecuteScalar());
-
-                dbCon.Close();
+                ret = db_Manager.ExecuteQuery(string.Format(Database_Query.login_query, gunaTextBox1.Text.ToString(), gunaTextBox2.Text.ToString()));
+                stat = db_Manager.ExecuteQuery(string.Format(Database_Query.check_acc_status, gunaTextBox1.Text.ToString()));
             }
-
-            if (ret == 1 && status_result == 1) {
-                Dashboard formu = new Dashboard();
-                formu.Show();
+            
+            if (ret.Rows.Count == 1)
+            {
+                Dashboard dashboard = new Dashboard();
+                dashboard.ShowDialog();
                 this.Hide();
-            }
-
-
-            /*MessageBox.Show(_user_name);
-
-            if ((_user_name == gunaTextBox1.Text.ToString()) && attempts > 0)
-            {
-                //&& ret == 0 && attempts > 0
-                attempts--;
-                MessageBox.Show("Same USN");
-            }
-            else if (_user_name != gunaTextBox1.Text.ToString() && attempts > 0)
-            {
-                _user_name = gunaTextBox1.Text.ToString();
-                MessageBox.Show("Diff USN");
-                attempts = 3;
             }
             else
             {
-                MessageBox.Show("Jesser is displeased");
-            }*/
+                attempts--;
+                gunaLabel3.Text = $"You have {attempts} more attempt/s remaining,";
+                gunaLabel3.Visible = true ;
+                MessageBox.Show("Incorrect Credentials", "Login Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+            if (attempts == 0) 
+            {
+                MessageBox.Show("Exceed number of login attempts.\nThe application will now close.",
+                    "Login Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                Application.Exit();
+                this.ActiveControl = null;
+                attempts = 3;
+            }
 
         }
 
@@ -88,24 +74,29 @@ namespace COA_PRIS
         private void gunaTextBox2_Enter(object sender, EventArgs e)
         {
             if (gunaTextBox2.Text == "Password")
+            {   
                 gunaTextBox2.Text = "";
+                gunaTextBox2.PasswordChar = '*';
+            }
         }
 
-        private void gunaElipsePanel3_Paint(object sender, PaintEventArgs e)
+        private void gunaImageButton1_Click(object sender, EventArgs e)
         {
-
+            DevInfo info = new DevInfo();
+            info.Show();
         }
-
-        private void gunaElipsePanel2_Paint(object sender, PaintEventArgs e)
+        private void login_FormClosing(object sender, FormClosingEventArgs e)
         {
-
-        }
-
-        private void gunaTextBox1_Leave(object sender, EventArgs e)
-        {
-            if (gunaTextBox1.Text.ToString() == "")
+            if (e.CloseReason == CloseReason.UserClosing)
             {
-                MessageBox.Show("Enter your username", "Missing Credentials");
+                if (MessageBox.Show("Are you sure you want to close the application?", "Close Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+            else if (e.CloseReason == CloseReason.WindowsShutDown)
+            {
+                Application.Exit();
             }
         }
     }

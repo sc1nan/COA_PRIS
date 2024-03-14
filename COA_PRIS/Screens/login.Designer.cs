@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.Loginbtn = new Guna.UI.WinForms.GunaButton();
@@ -44,6 +45,7 @@
             this.gunaElipsePanel5 = new Guna.UI.WinForms.GunaElipsePanel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
             this.gunaImageButton1 = new Guna.UI.WinForms.GunaImageButton();
+            this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.gunaPanel1.SuspendLayout();
             this.gunaElipsePanel3.SuspendLayout();
@@ -52,6 +54,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.gunaElipsePanel4.SuspendLayout();
             this.gunaElipsePanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaCirclePictureBox1
@@ -73,35 +76,47 @@
             this.gunaPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaPanel1.AutoSize = true;
+            this.gunaPanel1.Controls.Add(this.gunaLabel4);
             this.gunaPanel1.Controls.Add(this.gunaLabel1);
             this.gunaPanel1.Controls.Add(this.gunaLabel2);
             this.gunaPanel1.Location = new System.Drawing.Point(0, 248);
             this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(500, 93);
+            this.gunaPanel1.Size = new System.Drawing.Size(480, 150);
             this.gunaPanel1.TabIndex = 7;
+            // 
+            // gunaLabel4
+            // 
+            this.gunaLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaLabel4.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.gunaLabel4.Location = new System.Drawing.Point(17, 50);
+            this.gunaLabel4.Name = "gunaLabel4";
+            this.gunaLabel4.Size = new System.Drawing.Size(446, 32);
+            this.gunaLabel4.TabIndex = 6;
+            this.gunaLabel4.Text = "Systems and Technical Services Sector";
+            this.gunaLabel4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gunaLabel1
             // 
             this.gunaLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaLabel1.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Bold);
-            this.gunaLabel1.Location = new System.Drawing.Point(56, 0);
+            this.gunaLabel1.Font = new System.Drawing.Font("Bahnschrift", 20F, System.Drawing.FontStyle.Bold);
+            this.gunaLabel1.Location = new System.Drawing.Point(17, 7);
             this.gunaLabel1.Name = "gunaLabel1";
-            this.gunaLabel1.Size = new System.Drawing.Size(406, 43);
+            this.gunaLabel1.Size = new System.Drawing.Size(446, 43);
             this.gunaLabel1.TabIndex = 4;
             this.gunaLabel1.Text = "Project Record Information System";
             this.gunaLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.gunaLabel1.Click += new System.EventHandler(this.gunaLabel1_Click);
             // 
             // gunaLabel2
             // 
             this.gunaLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaLabel2.Font = new System.Drawing.Font("Bahnschrift", 14F);
-            this.gunaLabel2.Location = new System.Drawing.Point(16, 43);
+            this.gunaLabel2.Location = new System.Drawing.Point(17, 82);
             this.gunaLabel2.Name = "gunaLabel2";
-            this.gunaLabel2.Size = new System.Drawing.Size(464, 50);
+            this.gunaLabel2.Size = new System.Drawing.Size(446, 31);
             this.gunaLabel2.TabIndex = 5;
             this.gunaLabel2.Text = "Technical Services Office";
             this.gunaLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -122,9 +137,9 @@
             this.Loginbtn.ForeColor = System.Drawing.Color.White;
             this.Loginbtn.Image = null;
             this.Loginbtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.Loginbtn.Location = new System.Drawing.Point(170, 681);
+            this.Loginbtn.Location = new System.Drawing.Point(159, 688);
             this.Loginbtn.Name = "Loginbtn";
-            this.Loginbtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.Loginbtn.OnHoverBaseColor = System.Drawing.Color.SlateGray;
             this.Loginbtn.OnHoverBorderColor = System.Drawing.Color.Black;
             this.Loginbtn.OnHoverForeColor = System.Drawing.Color.White;
             this.Loginbtn.OnHoverImage = null;
@@ -144,19 +159,18 @@
             this.gunaElipsePanel3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(109)))), ((int)(((byte)(128)))));
             this.gunaElipsePanel3.Controls.Add(this.gunaPictureBox2);
             this.gunaElipsePanel3.Controls.Add(this.gunaTextBox2);
-            this.gunaElipsePanel3.Location = new System.Drawing.Point(48, 564);
+            this.gunaElipsePanel3.Location = new System.Drawing.Point(42, 570);
             this.gunaElipsePanel3.Name = "gunaElipsePanel3";
-            this.gunaElipsePanel3.Size = new System.Drawing.Size(392, 51);
+            this.gunaElipsePanel3.Size = new System.Drawing.Size(400, 55);
             this.gunaElipsePanel3.TabIndex = 4;
-            this.gunaElipsePanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaElipsePanel3_Paint);
             // 
             // gunaPictureBox2
             // 
             this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox2.Image = global::COA_PRIS.Properties.Resources._800px_Lock_Icon_svg_removebg_preview;
-            this.gunaPictureBox2.Location = new System.Drawing.Point(13, 12);
+            this.gunaPictureBox2.Location = new System.Drawing.Point(12, 8);
             this.gunaPictureBox2.Name = "gunaPictureBox2";
-            this.gunaPictureBox2.Size = new System.Drawing.Size(30, 30);
+            this.gunaPictureBox2.Size = new System.Drawing.Size(40, 40);
             this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gunaPictureBox2.TabIndex = 4;
             this.gunaPictureBox2.TabStop = false;
@@ -177,10 +191,10 @@
             this.gunaTextBox2.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaTextBox2.Location = new System.Drawing.Point(59, 3);
             this.gunaTextBox2.Name = "gunaTextBox2";
-            this.gunaTextBox2.PasswordChar = '*';
+            this.gunaTextBox2.PasswordChar = '\0';
             this.gunaTextBox2.Radius = 5;
             this.gunaTextBox2.SelectedText = "";
-            this.gunaTextBox2.Size = new System.Drawing.Size(329, 45);
+            this.gunaTextBox2.Size = new System.Drawing.Size(337, 49);
             this.gunaTextBox2.TabIndex = 3;
             this.gunaTextBox2.Text = "Password";
             this.gunaTextBox2.Enter += new System.EventHandler(this.gunaTextBox2_Enter);
@@ -193,11 +207,10 @@
             this.gunaElipsePanel2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(109)))), ((int)(((byte)(128)))));
             this.gunaElipsePanel2.Controls.Add(this.gunaTextBox1);
             this.gunaElipsePanel2.Controls.Add(this.gunaPictureBox1);
-            this.gunaElipsePanel2.Location = new System.Drawing.Point(48, 482);
+            this.gunaElipsePanel2.Location = new System.Drawing.Point(42, 488);
             this.gunaElipsePanel2.Name = "gunaElipsePanel2";
-            this.gunaElipsePanel2.Size = new System.Drawing.Size(392, 52);
+            this.gunaElipsePanel2.Size = new System.Drawing.Size(400, 55);
             this.gunaElipsePanel2.TabIndex = 3;
-            this.gunaElipsePanel2.Paint += new System.Windows.Forms.PaintEventHandler(this.gunaElipsePanel2_Paint);
             // 
             // gunaTextBox1
             // 
@@ -219,19 +232,19 @@
             this.gunaTextBox1.PasswordChar = '\0';
             this.gunaTextBox1.Radius = 5;
             this.gunaTextBox1.SelectedText = "";
-            this.gunaTextBox1.Size = new System.Drawing.Size(329, 45);
+            this.gunaTextBox1.Size = new System.Drawing.Size(337, 48);
             this.gunaTextBox1.TabIndex = 2;
             this.gunaTextBox1.Text = "Username";
             this.gunaTextBox1.Enter += new System.EventHandler(this.gunaTextBox1_Enter);
-            this.gunaTextBox1.Leave += new System.EventHandler(this.gunaTextBox1_Leave);
             // 
             // gunaPictureBox1
             // 
+            this.gunaPictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.gunaPictureBox1.BaseColor = System.Drawing.Color.Transparent;
             this.gunaPictureBox1.Image = global::COA_PRIS.Properties.Resources.UserIcon_removebg_preview;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(13, 12);
+            this.gunaPictureBox1.Location = new System.Drawing.Point(11, 8);
             this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(30, 30);
+            this.gunaPictureBox1.Size = new System.Drawing.Size(40, 40);
             this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.gunaPictureBox1.TabIndex = 3;
             this.gunaPictureBox1.TabStop = false;
@@ -245,7 +258,7 @@
             this.gunaElipsePanel4.Controls.Add(this.gunaElipsePanel5);
             this.gunaElipsePanel4.Location = new System.Drawing.Point(580, 67);
             this.gunaElipsePanel4.Name = "gunaElipsePanel4";
-            this.gunaElipsePanel4.Radius = 15;
+            this.gunaElipsePanel4.Radius = 10;
             this.gunaElipsePanel4.Size = new System.Drawing.Size(500, 813);
             this.gunaElipsePanel4.TabIndex = 2;
             // 
@@ -264,17 +277,19 @@
             this.gunaElipsePanel5.Location = new System.Drawing.Point(10, 10);
             this.gunaElipsePanel5.Margin = new System.Windows.Forms.Padding(10);
             this.gunaElipsePanel5.Name = "gunaElipsePanel5";
-            this.gunaElipsePanel5.Radius = 15;
+            this.gunaElipsePanel5.Radius = 10;
             this.gunaElipsePanel5.Size = new System.Drawing.Size(480, 792);
             this.gunaElipsePanel5.TabIndex = 3;
             // 
             // gunaLabel3
             // 
+            this.gunaLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaLabel3.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gunaLabel3.ForeColor = System.Drawing.Color.Red;
-            this.gunaLabel3.Location = new System.Drawing.Point(48, 629);
+            this.gunaLabel3.Location = new System.Drawing.Point(42, 639);
             this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(388, 23);
+            this.gunaLabel3.Size = new System.Drawing.Size(396, 23);
             this.gunaLabel3.TabIndex = 8;
             this.gunaLabel3.Text = "gunaLabel3";
             this.gunaLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -296,6 +311,21 @@
             this.gunaImageButton1.TabIndex = 3;
             this.gunaImageButton1.Click += new System.EventHandler(this.gunaImageButton1_Click);
             // 
+            // gunaCirclePictureBox2
+            // 
+            this.gunaCirclePictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaCirclePictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaCirclePictureBox2.BaseColor = System.Drawing.Color.White;
+            this.gunaCirclePictureBox2.Image = global::COA_PRIS.Properties.Resources.COA_img;
+            this.gunaCirclePictureBox2.Location = new System.Drawing.Point(1582, 12);
+            this.gunaCirclePictureBox2.Name = "gunaCirclePictureBox2";
+            this.gunaCirclePictureBox2.Padding = new System.Windows.Forms.Padding(3);
+            this.gunaCirclePictureBox2.Size = new System.Drawing.Size(90, 90);
+            this.gunaCirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaCirclePictureBox2.TabIndex = 4;
+            this.gunaCirclePictureBox2.TabStop = false;
+            this.gunaCirclePictureBox2.UseTransfarantBackground = false;
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
@@ -304,6 +334,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1684, 991);
+            this.Controls.Add(this.gunaCirclePictureBox2);
             this.Controls.Add(this.gunaImageButton1);
             this.Controls.Add(this.gunaElipsePanel4);
             this.DoubleBuffered = true;
@@ -313,9 +344,9 @@
             this.MinimumSize = new System.Drawing.Size(800, 900);
             this.Name = "login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = "PRIS Login";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.login_Load_1);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.login_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.gunaPanel1.ResumeLayout(false);
             this.gunaElipsePanel3.ResumeLayout(false);
@@ -325,6 +356,7 @@
             this.gunaElipsePanel4.ResumeLayout(false);
             this.gunaElipsePanel5.ResumeLayout(false);
             this.gunaElipsePanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -346,5 +378,7 @@
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox2;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
         private Guna.UI.WinForms.GunaImageButton gunaImageButton1;
+        private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox2;
+        private Guna.UI.WinForms.GunaLabel gunaLabel4;
     }
 }
