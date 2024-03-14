@@ -25,25 +25,6 @@ namespace COA_PRIS
             Application.Run(new login());
         }
 
-        static void Test()
-        {
-            var dbCon = DBConnection.Instance();
-
-            if (dbCon.IsConnect()) 
-            {
-                var cmd = new MySqlCommand("SELECT * FROM user_credential", dbCon.Connection);
-                var reader = cmd.ExecuteReader();
-
-                while (reader.Read())
-                { 
-                    Console.WriteLine(String.Format("{0}", reader[1]));
-                }
-                reader.Close();
-                dbCon.Close();
-            }
-            
-
-
-        }
+        
     }
 }
