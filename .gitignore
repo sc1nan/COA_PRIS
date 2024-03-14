@@ -23,13 +23,6 @@
 /.vs/COA_PRIS/FileContentIndex/6832d5a1-fdda-4e7e-a3ed-81ae06b21812.vsidx
 /.vs/COA_PRIS/FileContentIndex/d6159c1f-f4cc-44e8-a2f3-d89093e11be6.vsidx
 /.vs/COA_PRIS/FileContentIndex/dbb0225d-114c-4e1d-bdc3-774a8fd008f4.vsidx
-<<<<<<< HEAD
-/.vs/COA_PRIS/FileContentIndex/2d0ee3f2-5c95-4adc-9c3d-54ce95e9c41a.vsidx
-/.vs/COA_PRIS/FileContentIndex/7137e023-326c-4217-9ce8-dd313ddd14ab.vsidx
-/.vs/COA_PRIS/FileContentIndex/b163003b-89e4-43a3-a626-0663cbcccfce.vsidx
-/.vs/COA_PRIS/FileContentIndex/23f8d4e5-2d4f-4989-a47a-991982682595.vsidx
-/.gitignore
-=======
 /.vs/COA_PRIS/FileContentIndex/0b5eea98-6339-4b2f-96df-36ab89371273.vsidx
 /.vs/COA_PRIS/FileContentIndex/0ea0b289-ce0f-45bc-a910-e95e2ff9c638.vsidx
 /.vs/COA_PRIS/FileContentIndex/22f9a072-0698-44e3-af1a-4e82d95eb91a.vsidx
@@ -40,10 +33,18 @@
 /.vs/COA_PRIS/FileContentIndex/c5f7f105-2111-4997-bba1-7c32b9502d4f.vsidx
 /.vs/COA_PRIS/FileContentIndex/ca2dcaac-67b6-4baa-aed5-88d164cebfe0.vsidx
 /.vs/COA_PRIS/FileContentIndex/read.lock
->>>>>>> c876b45394fb263d29dbbf5389553ecbc665ff85
-/.vs/COA_PRIS/FileContentIndex/4b33dd17-e192-4787-bb99-c97b59f594ca.vsidx
-/.vs/COA_PRIS/FileContentIndex/6d5ed9cb-a79e-4848-b02f-e1272d10ca71.vsidx
-/.vs/COA_PRIS/FileContentIndex/7b126837-d1d3-4e14-88b1-3e9bc2d8b580.vsidx
-/.vs/COA_PRIS/FileContentIndex/924652a4-9864-4da1-8aa8-ccc1185d926b.vsidx
-/.vs/COA_PRIS/FileContentIndex/a915f77f-9f81-449a-a926-bc6cdacaeb2f.vsidx
-/.vs/COA_PRIS/FileContentIndex/4fbc19e8-07ed-4688-b240-beb81d330dd3.vsidx
+/COA_PRIS/obj/Debug/COA_PRIS.csproj.CoreCompileInputs.cache
+/COA_PRIS/obj/Debug/COA_PRIS.csproj.FileListAbsolute.txt
+/COA_PRIS/obj/Debug/COA_PRIS.csproj.GenerateResource.cache
+/COA_PRIS/obj/Debug/COA_PRIS.Dashboard.resources
+/COA_PRIS/obj/Debug/COA_PRIS.exe
+/COA_PRIS/obj/Debug/COA_PRIS.pdb
+/COA_PRIS/obj/Debug/COA_PRIS.Properties.Resources.resources
+/COA_PRIS/obj/Debug/COA_PRIS.Screens.Dashboard.resources
+/COA_PRIS/obj/Debug/DesignTimeResolveAssemblyReferences.cache
+/COA_PRIS/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+/COA_PRIS/obj/Debug/TempPE/Properties.Resources.Designer.cs.dll
+/.vs/COA_PRIS/FileContentIndex/005c054b-0075-452e-ab7d-243e9e2ff220.vsidx
+/.vs/COA_PRIS/FileContentIndex/2586ebea-2123-4a3c-906b-98a19ed2d4ba.vsidx
+/.vs/COA_PRIS/FileContentIndex/c40e2fee-732a-4cc4-a553-7ea05474153a.vsidx
+/.vs/COA_PRIS/FileContentIndex/c5813856-8422-446f-a6dc-f331c3c5d20b.vsidx
