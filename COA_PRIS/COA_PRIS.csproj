@@ -102,12 +102,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Screens\DevInfo.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\DevInfo.Designer.cs">
-      <DependentUpon>DevInfo.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utilities\Database_Credential.cs" />
     <Compile Include="Screens\Dashboard.cs">
       <SubType>Form</SubType>
@@ -139,9 +133,6 @@
     </Compile>
     <EmbeddedResource Include="Screens\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\DevInfo.resx">
-      <DependentUpon>DevInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\login.resx">
       <DependentUpon>login.cs</DependentUpon>
@@ -181,24 +172,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Cherie Mae Rejoy.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\TSO_Logo-1-removebg-preview.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\UserIcon-removebg-preview.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\800px-Lock_Icon.svg-removebg-preview.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\InformationLOgo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\InformationLOgo-removebg-preview.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\IMS_UI__1_-removebg-preview1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

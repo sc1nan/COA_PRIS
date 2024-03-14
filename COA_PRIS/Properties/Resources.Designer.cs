@@ -63,16 +63,6 @@ namespace COA_PRIS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap _800px_Lock_Icon_svg_removebg_preview {
-            get {
-                object obj = ResourceManager.GetObject("800px-Lock_Icon.svg-removebg-preview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap Cherie_Mae_Rejoy {
             get {
                 object obj = ResourceManager.GetObject("Cherie Mae Rejoy", resourceCulture);
@@ -86,56 +76,6 @@ namespace COA_PRIS.Properties {
         internal static System.Drawing.Bitmap COA_img {
             get {
                 object obj = ResourceManager.GetObject("COA img", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap IMS_UI__1__removebg_preview1 {
-            get {
-                object obj = ResourceManager.GetObject("IMS_UI__1_-removebg-preview1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap InformationLOgo {
-            get {
-                object obj = ResourceManager.GetObject("InformationLOgo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap InformationLOgo_removebg_preview {
-            get {
-                object obj = ResourceManager.GetObject("InformationLOgo-removebg-preview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap TSO_Logo_1_removebg_preview {
-            get {
-                object obj = ResourceManager.GetObject("TSO_Logo-1-removebg-preview", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap UserIcon_removebg_preview {
-            get {
-                object obj = ResourceManager.GetObject("UserIcon-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
