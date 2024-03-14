@@ -1,5 +1,4 @@
-﻿using Guna.UI.WinForms;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,95 +8,54 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace COA_PRIS
+namespace COA_PRIS.Screens
 {
     public partial class Dashboard : Form
     {
-
-
+        bool sidebarExpand;
         public Dashboard()
         {
             InitializeComponent();
-
-            statReportUserControl1.Hide();
-            sysSetupUserControl1.Hide();
         }
 
-        private void gunaTextBox1_TextChanged(object sender, EventArgs e)
+        private void gunaPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
 
-        private void gunaLabel1_Click(object sender, EventArgs e)
+        private void SidebarTimer_tick(object sender, EventArgs e)
         {
+            if (sidebarExpand)
+            {
+                SidebarContainer.Width -= 10;
+                if(SidebarContainer.Width == SidebarContainer.MinimumSize.Width)
+                {
+                    sidebarExpand = false;
+                    SidebarTimer.Stop();
+                }
+            }
+            else
+            {
+                SidebarContainer.Width += 10;
+                if(SidebarContainer.Width == SidebarContainer.MaximumSize.Width)
+                {
+                    sidebarExpand = true;
+                    SidebarTimer.Stop();
+                }
+            }
         }
-
-        private void gunaButton2_Click(object sender, EventArgs e)
+        private void gunaPictureBox1_Click(object sender, EventArgs e)
         {
-            gunaButtonReset(gunaButton2);
-            gunaLabel1.Text = "Inbox";
-        }
-
-        private void gunaElipsePanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void gunaButtonReset(GunaButton btn)
-        {
-            gunaButton1.Enabled = true;
-            gunaButton2.Enabled = true;
-            gunaButton3.Enabled = true;
-            gunaButton4.Enabled = true;
-            gunaButton5.Enabled = true;
-            gunaButton6.Enabled = true;
-
-            btn.Enabled = false;
-        }
-
-        private void userControlReset(UserControl uc)
-        {;
-            statReportUserControl1.Hide();
-            sysSetupUserControl1.Hide();
-
-            uc.Show();
+            SidebarTimer.Start(); 
         }
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-            gunaButtonReset(gunaButton1);
-            gunaLabel1.Text = "Dashboard";
-        }
-
-        private void gunaButton3_Click(object sender, EventArgs e)
-        {
-            gunaButtonReset(gunaButton3);
-            gunaLabel1.Text = "Document History";
-        }
-
-        private void gunaButton4_Click(object sender, EventArgs e)
-        {
-            gunaButtonReset(gunaButton4);
-            gunaLabel1.Text = "Status Report";
-            userControlReset(statReportUserControl1);
-        }
-
-        private void gunaButton5_Click(object sender, EventArgs e)
-        {
-            gunaButtonReset(gunaButton5);
-            gunaLabel1.Text = "Document Download";
-        }
-
-        private void gunaButton6_Click(object sender, EventArgs e)
-        {
-            gunaButtonReset(gunaButton6);
-            gunaLabel1.Text = "System Setup";
-            userControlReset(sysSetupUserControl1);
-        }
-
-        private void gunaButton7_Click(object sender, EventArgs e)
-        {
-
+            Dashboardform dash = new Dashboardform();
+            dash.TopLevel = false;
+            Baseform.Controls.Add(dash);
+            dash.BringToFront();
+            dash.Show();
         }
     }
 }

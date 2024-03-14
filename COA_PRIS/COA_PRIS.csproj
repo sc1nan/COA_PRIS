@@ -102,6 +102,18 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dashboardform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dashboardform.Designer.cs">
+      <DependentUpon>Dashboardform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\DevInfo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,12 +121,6 @@
       <DependentUpon>DevInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\Database_Credential.cs" />
-    <Compile Include="Screens\Dashboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\Dashboard.Designer.cs">
-      <DependentUpon>Dashboard.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utilities\Database_Connection.cs" />
     <Compile Include="Utilities\Database_Query.cs" />
     <Compile Include="Screens\login.cs">
@@ -137,6 +143,9 @@
     <Compile Include="SysSetupUserControl.Designer.cs">
       <DependentUpon>SysSetupUserControl.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Dashboardform.resx">
+      <DependentUpon>Dashboardform.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,6 +208,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\IMS_UI__1_-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu Bar Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu Bar Icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\house-solid.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
