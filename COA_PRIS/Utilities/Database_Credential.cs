@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace COA_PRIS
 {
-    public class Database_Credential
+    internal class Database_Credential
     {
         public static string server = "localhost";
         public static string database = "db_pris";

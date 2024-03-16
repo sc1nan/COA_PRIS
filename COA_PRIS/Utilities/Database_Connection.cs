@@ -10,7 +10,7 @@ using MySql.Data.MySqlClient;
 
 namespace COA_PRIS
 {
-    public class DBConnection 
+    internal class DBConnection 
     {
         private DBConnection() { }
 

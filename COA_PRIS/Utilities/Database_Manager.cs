@@ -9,19 +9,18 @@ using MySql.Data.MySqlClient;
 
 namespace COA_PRIS.Utilities
 {
-    public class Database_Manager : IDisposable
+    internal class Database_Manager : IDisposable
     {
-        private MySqlConnection connection;
-        private bool conn;
+        private MySqlConnection Connection;
         public Database_Manager() 
         { 
             Connect();
         }
         private void Connect() 
         {
-            if (connection == null)
+            if (Connection == null)
             {
-                var conn = DBConnection.Instance().IsConnect();
+                DBConnection.Instance().IsConnect();
             }
         }
 
@@ -61,19 +60,40 @@ namespace COA_PRIS.Utilities
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Error executing nonquery command: {ex.Message}");
+                    MessageBox.Show($"Error executing nonquery command: {ex.Message}", "Error");
+                    Console.WriteLine();
                 }
             }
 
             return rowsAffected;
         }
+
+        public object ExecuteScalar(string query) 
+        {
+            var dbCon = DBConnection.Instance();
+            object ret = null;
+
+            using (MySqlCommand command = new MySqlCommand(query, dbCon.Connection))
+            {
+                try
+                {
+                    ret = command.ExecuteScalar();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error executing scalar command: {ex.Message}");
+                }
+            }
+
+            return ret;
+        }
         public void Dispose() 
         { 
-            if (connection != null)
+            if (Connection != null)
             {
-                connection.Close();
-                connection.Dispose();
-                connection = null;
+                Connection.Close();
+                Connection.Dispose();
+                Connection = null;
             }
         }
     }

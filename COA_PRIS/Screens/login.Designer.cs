@@ -34,16 +34,16 @@
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
-            this.Loginbtn = new Guna.UI.WinForms.GunaButton();
+            this.Login_btn = new Guna.UI.WinForms.GunaButton();
             this.gunaElipsePanel3 = new Guna.UI.WinForms.GunaElipsePanel();
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaTextBox2 = new Guna.UI.WinForms.GunaTextBox();
+            this.password_entry = new Guna.UI.WinForms.GunaTextBox();
             this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
+            this.login_entry = new Guna.UI.WinForms.GunaTextBox();
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaElipsePanel4 = new Guna.UI.WinForms.GunaElipsePanel();
             this.gunaElipsePanel5 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
+            this.error_label = new Guna.UI.WinForms.GunaLabel();
             this.gunaImageButton1 = new Guna.UI.WinForms.GunaImageButton();
             this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
@@ -121,35 +121,35 @@
             this.gunaLabel2.Text = "Technical Services Office";
             this.gunaLabel2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Loginbtn
+            // Login_btn
             // 
-            this.Loginbtn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.Login_btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Loginbtn.AnimationHoverSpeed = 0.07F;
-            this.Loginbtn.AnimationSpeed = 0.03F;
-            this.Loginbtn.BackColor = System.Drawing.Color.Transparent;
-            this.Loginbtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(109)))), ((int)(((byte)(128)))));
-            this.Loginbtn.BorderColor = System.Drawing.Color.Black;
-            this.Loginbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Loginbtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.Loginbtn.FocusedColor = System.Drawing.Color.Empty;
-            this.Loginbtn.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Loginbtn.ForeColor = System.Drawing.Color.White;
-            this.Loginbtn.Image = null;
-            this.Loginbtn.ImageSize = new System.Drawing.Size(20, 20);
-            this.Loginbtn.Location = new System.Drawing.Point(159, 688);
-            this.Loginbtn.Name = "Loginbtn";
-            this.Loginbtn.OnHoverBaseColor = System.Drawing.Color.SlateGray;
-            this.Loginbtn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.Loginbtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.Loginbtn.OnHoverImage = null;
-            this.Loginbtn.OnPressedColor = System.Drawing.Color.Black;
-            this.Loginbtn.Radius = 10;
-            this.Loginbtn.Size = new System.Drawing.Size(173, 42);
-            this.Loginbtn.TabIndex = 2;
-            this.Loginbtn.Text = "LOGIN";
-            this.Loginbtn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Loginbtn.Click += new System.EventHandler(this.Loginbtn_Click);
+            this.Login_btn.AnimationHoverSpeed = 0.07F;
+            this.Login_btn.AnimationSpeed = 0.03F;
+            this.Login_btn.BackColor = System.Drawing.Color.Transparent;
+            this.Login_btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(109)))), ((int)(((byte)(128)))));
+            this.Login_btn.BorderColor = System.Drawing.Color.Black;
+            this.Login_btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Login_btn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.Login_btn.FocusedColor = System.Drawing.Color.Empty;
+            this.Login_btn.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Login_btn.ForeColor = System.Drawing.Color.White;
+            this.Login_btn.Image = null;
+            this.Login_btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.Login_btn.Location = new System.Drawing.Point(159, 688);
+            this.Login_btn.Name = "Login_btn";
+            this.Login_btn.OnHoverBaseColor = System.Drawing.Color.SlateGray;
+            this.Login_btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.Login_btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.Login_btn.OnHoverImage = null;
+            this.Login_btn.OnPressedColor = System.Drawing.Color.Black;
+            this.Login_btn.Radius = 10;
+            this.Login_btn.Size = new System.Drawing.Size(173, 42);
+            this.Login_btn.TabIndex = 2;
+            this.Login_btn.Text = "LOGIN";
+            this.Login_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.Login_btn.Click += new System.EventHandler(this.Loginbtn_Click);
             // 
             // gunaElipsePanel3
             // 
@@ -158,7 +158,7 @@
             this.gunaElipsePanel3.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(109)))), ((int)(((byte)(128)))));
             this.gunaElipsePanel3.Controls.Add(this.gunaPictureBox2);
-            this.gunaElipsePanel3.Controls.Add(this.gunaTextBox2);
+            this.gunaElipsePanel3.Controls.Add(this.password_entry);
             this.gunaElipsePanel3.Location = new System.Drawing.Point(42, 570);
             this.gunaElipsePanel3.Name = "gunaElipsePanel3";
             this.gunaElipsePanel3.Size = new System.Drawing.Size(400, 55);
@@ -175,29 +175,30 @@
             this.gunaPictureBox2.TabIndex = 4;
             this.gunaPictureBox2.TabStop = false;
             // 
-            // gunaTextBox2
+            // password_entry
             // 
-            this.gunaTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.password_entry.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaTextBox2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox2.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox2.BorderSize = 0;
-            this.gunaTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox2.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox2.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTextBox2.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox2.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaTextBox2.Location = new System.Drawing.Point(59, 3);
-            this.gunaTextBox2.Name = "gunaTextBox2";
-            this.gunaTextBox2.PasswordChar = '\0';
-            this.gunaTextBox2.Radius = 5;
-            this.gunaTextBox2.SelectedText = "";
-            this.gunaTextBox2.Size = new System.Drawing.Size(337, 49);
-            this.gunaTextBox2.TabIndex = 3;
-            this.gunaTextBox2.Text = "Password";
-            this.gunaTextBox2.Enter += new System.EventHandler(this.gunaTextBox2_Enter);
+            this.password_entry.BackColor = System.Drawing.Color.Transparent;
+            this.password_entry.BaseColor = System.Drawing.Color.White;
+            this.password_entry.BorderColor = System.Drawing.Color.Transparent;
+            this.password_entry.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.password_entry.FocusedBaseColor = System.Drawing.Color.White;
+            this.password_entry.FocusedBorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.password_entry.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.password_entry.Font = new System.Drawing.Font("Bahnschrift", 14F);
+            this.password_entry.Location = new System.Drawing.Point(59, 3);
+            this.password_entry.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
+            this.password_entry.Name = "password_entry";
+            this.password_entry.PasswordChar = '\0';
+            this.password_entry.Radius = 5;
+            this.password_entry.SelectedText = "";
+            this.password_entry.Size = new System.Drawing.Size(337, 49);
+            this.password_entry.TabIndex = 3;
+            this.password_entry.Text = "Password";
+            this.password_entry.Enter += new System.EventHandler(this.password_entry_Enter);
+            this.password_entry.Leave += new System.EventHandler(this.password_entry_Leave);
             // 
             // gunaElipsePanel2
             // 
@@ -205,37 +206,38 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaElipsePanel2.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(109)))), ((int)(((byte)(128)))));
-            this.gunaElipsePanel2.Controls.Add(this.gunaTextBox1);
+            this.gunaElipsePanel2.Controls.Add(this.login_entry);
             this.gunaElipsePanel2.Controls.Add(this.gunaPictureBox1);
             this.gunaElipsePanel2.Location = new System.Drawing.Point(42, 488);
             this.gunaElipsePanel2.Name = "gunaElipsePanel2";
             this.gunaElipsePanel2.Size = new System.Drawing.Size(400, 55);
             this.gunaElipsePanel2.TabIndex = 3;
             // 
-            // gunaTextBox1
+            // login_entry
             // 
-            this.gunaTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.login_entry.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.gunaTextBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.BorderColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox1.BorderSize = 0;
-            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox1.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaTextBox1.Location = new System.Drawing.Point(59, 3);
-            this.gunaTextBox1.Name = "gunaTextBox1";
-            this.gunaTextBox1.PasswordChar = '\0';
-            this.gunaTextBox1.Radius = 5;
-            this.gunaTextBox1.SelectedText = "";
-            this.gunaTextBox1.Size = new System.Drawing.Size(337, 48);
-            this.gunaTextBox1.TabIndex = 2;
-            this.gunaTextBox1.Text = "Username";
-            this.gunaTextBox1.Enter += new System.EventHandler(this.gunaTextBox1_Enter);
+            this.login_entry.BackColor = System.Drawing.Color.Transparent;
+            this.login_entry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.login_entry.BaseColor = System.Drawing.Color.White;
+            this.login_entry.BorderColor = System.Drawing.Color.Transparent;
+            this.login_entry.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.login_entry.FocusedBaseColor = System.Drawing.Color.White;
+            this.login_entry.FocusedBorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.login_entry.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.login_entry.Font = new System.Drawing.Font("Bahnschrift", 14F);
+            this.login_entry.Location = new System.Drawing.Point(59, 3);
+            this.login_entry.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
+            this.login_entry.Name = "login_entry";
+            this.login_entry.PasswordChar = '\0';
+            this.login_entry.Radius = 5;
+            this.login_entry.SelectedText = "";
+            this.login_entry.Size = new System.Drawing.Size(337, 48);
+            this.login_entry.TabIndex = 2;
+            this.login_entry.Text = "Username";
+            this.login_entry.Enter += new System.EventHandler(this.login_entry_Enter);
+            this.login_entry.Leave += new System.EventHandler(this.login_entry_Leave);
             // 
             // gunaPictureBox1
             // 
@@ -268,10 +270,10 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.gunaElipsePanel5.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel5.BaseColor = System.Drawing.Color.White;
-            this.gunaElipsePanel5.Controls.Add(this.gunaLabel3);
+            this.gunaElipsePanel5.Controls.Add(this.error_label);
             this.gunaElipsePanel5.Controls.Add(this.gunaPanel1);
             this.gunaElipsePanel5.Controls.Add(this.gunaElipsePanel3);
-            this.gunaElipsePanel5.Controls.Add(this.Loginbtn);
+            this.gunaElipsePanel5.Controls.Add(this.Login_btn);
             this.gunaElipsePanel5.Controls.Add(this.gunaCirclePictureBox1);
             this.gunaElipsePanel5.Controls.Add(this.gunaElipsePanel2);
             this.gunaElipsePanel5.Location = new System.Drawing.Point(10, 10);
@@ -281,19 +283,19 @@
             this.gunaElipsePanel5.Size = new System.Drawing.Size(480, 792);
             this.gunaElipsePanel5.TabIndex = 3;
             // 
-            // gunaLabel3
+            // error_label
             // 
-            this.gunaLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.error_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaLabel3.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel3.ForeColor = System.Drawing.Color.Red;
-            this.gunaLabel3.Location = new System.Drawing.Point(42, 639);
-            this.gunaLabel3.Name = "gunaLabel3";
-            this.gunaLabel3.Size = new System.Drawing.Size(396, 23);
-            this.gunaLabel3.TabIndex = 8;
-            this.gunaLabel3.Text = "gunaLabel3";
-            this.gunaLabel3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.gunaLabel3.Visible = false;
+            this.error_label.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error_label.ForeColor = System.Drawing.Color.Red;
+            this.error_label.Location = new System.Drawing.Point(42, 639);
+            this.error_label.Name = "error_label";
+            this.error_label.Size = new System.Drawing.Size(396, 23);
+            this.error_label.TabIndex = 8;
+            this.error_label.Text = "120120223";
+            this.error_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.error_label.Visible = false;
             // 
             // gunaImageButton1
             // 
@@ -364,21 +366,21 @@
         #endregion
 
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox1;
-        private Guna.UI.WinForms.GunaButton Loginbtn;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox2;
+        private Guna.UI.WinForms.GunaButton Login_btn;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel2;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
+        private Guna.UI.WinForms.GunaTextBox login_entry;
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel3;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel4;
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel5;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox2;
-        private Guna.UI.WinForms.GunaLabel gunaLabel3;
+        private Guna.UI.WinForms.GunaLabel error_label;
         private Guna.UI.WinForms.GunaImageButton gunaImageButton1;
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox2;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
+        private Guna.UI.WinForms.GunaTextBox password_entry;
     }
 }

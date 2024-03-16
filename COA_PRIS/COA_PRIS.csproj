@@ -138,6 +138,8 @@
     <Compile Include="SysSetupUserControl.Designer.cs">
       <DependentUpon>SysSetupUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\Encryption_Manger.cs" />
+    <Compile Include="Utilities\Login_Manager.cs" />
     <Compile Include="Utilities\Validator.cs" />
     <EmbeddedResource Include="Screens\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
