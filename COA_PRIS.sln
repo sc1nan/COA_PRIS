@@ -5,6 +5,11 @@ VisualStudioVersion = 17.9.34616.47
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COA_PRIS", "COA_PRIS\COA_PRIS.csproj", "{178C71EC-441D-4839-A72F-7F95DAEE7490}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4B6104B1-E10C-41E1-BFC7-6D8F46FEB56E}"
+	ProjectSection(SolutionItems) = preProject
+		homeboard.txt = homeboard.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

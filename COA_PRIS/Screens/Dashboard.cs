@@ -12,12 +12,18 @@ namespace COA_PRIS.Screens
 {
     public partial class Dashboard : Form
     {
-        bool sidebarExpand;
+        bool sidebarExpand = true;
+        Home home;
         public Dashboard()
         {
             InitializeComponent();
+            SidebarContainer.BringToFront();
         }
 
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            gunaButton1.PerformClick();
+        }
         private void gunaPanel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -51,11 +57,52 @@ namespace COA_PRIS.Screens
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-            Dashboardform dash = new Dashboardform();
-            dash.TopLevel = false;
-            Baseform.Controls.Add(dash);
-            dash.BringToFront();
-            dash.Show();
+            home = new Home();
+            home.TopLevel = false;
+            Baseform.Controls.Add(home);
+            //home.BringToFront();
+            home.Show();
+        }
+
+        private void Baseform_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void SidebarContainer_MouseHover(object sender, EventArgs e)
+        {
+            //SidebarTimer.Start();
+        }
+
+        private void SidebarContainer_MouseLeave(object sender, EventArgs e)
+        {
+            //SidebarTimer.Start();
+        }
+
+        private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                if (MessageBox.Show("Are you sure you want to logout", "Logout Conformation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+        }
+
+        private void gunaButton2_Click(object sender, EventArgs e)
+        {
+            /*ProjectCreation pr = new ProjectCreation();
+            pr.TopLevel = false;
+            Baseform.Controls.Add(pr);
+            //home.BringToFront();
+            pr.Show();*/
+
+        }
+
+        private void gunaPanel1_Paint_1(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

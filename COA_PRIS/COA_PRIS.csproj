@@ -102,11 +102,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Screens\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\DevInfo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Screens\DevInfo.Designer.cs">
       <DependentUpon>DevInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ProjectCreation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\ProjectCreation.Designer.cs">
+      <DependentUpon>ProjectCreation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\ProjectCreation2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\ProjectCreation2.Designer.cs">
+      <DependentUpon>ProjectCreation2.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\Database_Manager.cs" />
     <Compile Include="Utilities\Database_Credential.cs" />
@@ -141,6 +159,9 @@
     <Compile Include="Utilities\Encryption_Manger.cs" />
     <Compile Include="Utilities\Login_Manager.cs" />
     <Compile Include="Utilities\Validator.cs" />
+    <EmbeddedResource Include="Screens\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +181,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Screens\ProjectCreation.resx">
+      <DependentUpon>ProjectCreation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\ProjectCreation2.resx">
+      <DependentUpon>ProjectCreation2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StatReportUserControl.resx">
       <DependentUpon>StatReportUserControl.cs</DependentUpon>
     </EmbeddedResource>
