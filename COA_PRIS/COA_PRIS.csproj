@@ -126,6 +126,7 @@
     <Compile Include="Screens\ProjectCreation2.Designer.cs">
       <DependentUpon>ProjectCreation2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\Activity_Manager.cs" />
     <Compile Include="Utilities\Database_Manager.cs" />
     <Compile Include="Utilities\Database_Credential.cs" />
     <Compile Include="Screens\Dashboard.cs">
@@ -158,6 +159,7 @@
     </Compile>
     <Compile Include="Utilities\Encryption_Manger.cs" />
     <Compile Include="Utilities\Login_Manager.cs" />
+    <Compile Include="Utilities\Log_Message.cs" />
     <Compile Include="Utilities\Validator.cs" />
     <EmbeddedResource Include="Screens\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>

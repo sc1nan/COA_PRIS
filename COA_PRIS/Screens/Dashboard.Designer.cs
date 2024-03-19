@@ -126,6 +126,7 @@
             this.gunaButton7.AnimationSpeed = 0.03F;
             this.gunaButton7.BaseColor = System.Drawing.Color.Transparent;
             this.gunaButton7.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaButton7.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaButton7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaButton7.FocusedColor = System.Drawing.Color.Empty;
@@ -146,6 +147,7 @@
             this.gunaButton7.TabIndex = 5;
             this.gunaButton7.Text = "Logs";
             this.gunaButton7.TextOffsetX = 40;
+            this.gunaButton7.Click += new System.EventHandler(this.gunaButton7_Click);
             // 
             // gunaPanel5
             // 
@@ -164,6 +166,7 @@
             this.gunaButton4.AnimationSpeed = 0.03F;
             this.gunaButton4.BaseColor = System.Drawing.Color.Transparent;
             this.gunaButton4.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaButton4.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaButton4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaButton4.FocusedColor = System.Drawing.Color.Empty;
@@ -184,6 +187,7 @@
             this.gunaButton4.TabIndex = 5;
             this.gunaButton4.Text = "Employees";
             this.gunaButton4.TextOffsetX = 40;
+            this.gunaButton4.Click += new System.EventHandler(this.gunaButton4_Click);
             // 
             // gunaPanel4
             // 
@@ -200,6 +204,7 @@
             this.gunaButton3.AnimationSpeed = 0.03F;
             this.gunaButton3.BaseColor = System.Drawing.Color.Transparent;
             this.gunaButton3.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaButton3.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaButton3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaButton3.FocusedColor = System.Drawing.Color.Empty;
@@ -220,6 +225,7 @@
             this.gunaButton3.TabIndex = 4;
             this.gunaButton3.Text = "Reports";
             this.gunaButton3.TextOffsetX = 40;
+            this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
             // 
             // gunaPanel1
             // 
@@ -239,6 +245,7 @@
             this.Createbtn.AnimationSpeed = 0.03F;
             this.Createbtn.BaseColor = System.Drawing.Color.Transparent;
             this.Createbtn.BorderColor = System.Drawing.Color.Black;
+            this.Createbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Createbtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.Createbtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Createbtn.FocusedColor = System.Drawing.Color.Empty;
@@ -279,6 +286,7 @@
             this.gunaButton1.AnimationSpeed = 0.03F;
             this.gunaButton1.BaseColor = System.Drawing.Color.Transparent;
             this.gunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.gunaButton1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using COA_PRIS.Utilities;
+using Guna.UI.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -62,6 +64,7 @@ namespace COA_PRIS.Screens
             Baseform.Controls.Add(home);
             //home.BringToFront();
             home.Show();
+            button_Reset(gunaButton1);
         }
 
         private void Baseform_Paint(object sender, PaintEventArgs e)
@@ -83,9 +86,19 @@ namespace COA_PRIS.Screens
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
+                Activity_Manager activity_manager = new Activity_Manager();
                 if (MessageBox.Show("Are you sure you want to logout", "Logout Conformation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No)
                 {
                     e.Cancel = true;
+                }
+                else
+                {
+                    //for testing
+                    activity_manager.Log_Activity("james", Log_Message.logout_message);
+                    //Application.Exit();
+                    this.Hide();
+                    login login = new login();
+                    login.ShowDialog();
                 }
             }
         }
@@ -97,12 +110,47 @@ namespace COA_PRIS.Screens
             Baseform.Controls.Add(pr);
             //home.BringToFront();
             pr.Show();*/
-
+            //Createbtn.Enabled = false;
+            //Createbtn.BackColor = Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            button_Reset(Createbtn);
         }
 
         private void gunaPanel1_Paint_1(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button_Reset(GunaButton active_GunaButton)
+        {
+            gunaButton1.Enabled = true;
+            Createbtn.Enabled = true;
+            gunaButton3.Enabled = true;
+            gunaButton4.Enabled = true;
+            gunaButton7.Enabled = true;
+
+            gunaButton1.BaseColor = System.Drawing.Color.Transparent;
+            Createbtn.BaseColor = System.Drawing.Color.Transparent;
+            gunaButton3.BaseColor = System.Drawing.Color.Transparent;
+            gunaButton4.BaseColor = System.Drawing.Color.Transparent;
+            gunaButton7.BaseColor = System.Drawing.Color.Transparent;
+
+            active_GunaButton.Enabled = false;
+            active_GunaButton.BaseColor = Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+        }
+
+        private void gunaButton3_Click(object sender, EventArgs e)
+        {
+            button_Reset(gunaButton3);
+        }
+
+        private void gunaButton4_Click(object sender, EventArgs e)
+        {
+            button_Reset(gunaButton4);
+        }
+
+        private void gunaButton7_Click(object sender, EventArgs e)
+        {
+            button_Reset(gunaButton7);
         }
     }
 }
