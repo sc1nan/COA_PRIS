@@ -156,5 +156,14 @@ namespace COA_PRIS.Screens
         {
 
         }
+
+        private void gunaAdvenceButton1_Click(object sender, EventArgs e)
+        {
+            ProjectCreation2 Nx = new ProjectCreation2();
+            Nx.TopLevel = false;
+            base.Controls.Add(Nx);
+            //home.BringToFront();
+            Nx.Show();
+        }
     }
 }

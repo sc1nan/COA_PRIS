@@ -102,6 +102,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Screens\Createboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Createboard.Designer.cs">
+      <DependentUpon>Createboard.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,12 @@
     </Compile>
     <Compile Include="Screens\ProjectCreation2.Designer.cs">
       <DependentUpon>ProjectCreation2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\StatusReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\StatusReport.Designer.cs">
+      <DependentUpon>StatusReport.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\Database_Manager.cs" />
     <Compile Include="Utilities\Database_Credential.cs" />
@@ -159,6 +171,9 @@
     <Compile Include="Utilities\Encryption_Manger.cs" />
     <Compile Include="Utilities\Login_Manager.cs" />
     <Compile Include="Utilities\Validator.cs" />
+    <EmbeddedResource Include="Screens\Createboard.resx">
+      <DependentUpon>Createboard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +201,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\ProjectCreation2.resx">
       <DependentUpon>ProjectCreation2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\StatusReport.resx">
+      <DependentUpon>StatusReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StatReportUserControl.resx">
       <DependentUpon>StatReportUserControl.cs</DependentUpon>
