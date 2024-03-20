@@ -21,5 +21,10 @@ namespace COA_PRIS.Screens
         {
             this.Close();
         }
+
+        private void gunaAdvenceButton2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

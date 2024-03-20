@@ -104,5 +104,10 @@ namespace COA_PRIS.Screens
         {
 
         }
+
+        private void gunaButton3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

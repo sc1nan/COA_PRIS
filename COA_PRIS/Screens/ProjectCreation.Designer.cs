@@ -567,6 +567,7 @@
             this.gunaAdvenceButton2.Size = new System.Drawing.Size(92, 42);
             this.gunaAdvenceButton2.TabIndex = 137;
             this.gunaAdvenceButton2.Text = "Save";
+            this.gunaAdvenceButton2.Click += new System.EventHandler(this.gunaAdvenceButton2_Click);
             // 
             // ProjectCreation
             // 

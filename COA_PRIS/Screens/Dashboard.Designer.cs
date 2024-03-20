@@ -220,6 +220,7 @@
             this.gunaButton3.TabIndex = 4;
             this.gunaButton3.Text = "Reports";
             this.gunaButton3.TextOffsetX = 40;
+            this.gunaButton3.Click += new System.EventHandler(this.gunaButton3_Click);
             // 
             // gunaPanel1
             // 
