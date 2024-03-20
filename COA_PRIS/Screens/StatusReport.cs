@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace COA_PRIS.Screens
 {
-    public partial class ProjectCreation2 : Form
+    public partial class StatusReport : Form
     {
-        public ProjectCreation2()
+        public StatusReport()
         {
             InitializeComponent();
         }

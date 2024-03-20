@@ -1,6 +1,6 @@
 ﻿namespace COA_PRIS.Screens
 {
-    partial class ProjectCreation2
+    partial class StatusReport
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.SuspendLayout();
             // 
-            // ProjectCreation2
+            // StatusReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1603, 914);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "ProjectCreation2";
-            this.Text = "ProjectCreation2";
+            this.Name = "StatusReport";
+            this.Text = "StatusReport";
             this.ResumeLayout(false);
 
         }
 
         #endregion
+
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
     }
 }

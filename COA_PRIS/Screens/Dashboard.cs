@@ -98,11 +98,13 @@ namespace COA_PRIS.Screens
 
         private void create_BtnClick(object sender, EventArgs e)
         {
-            /*ProjectCreation pr = new ProjectCreation();
-            pr.TopLevel = false;
-            Baseform.Controls.Add(pr);
+            Createboard cr = new Createboard();
+            cr.TopLevel = false;
+            Baseform.Controls.Add(cr);
             //home.BringToFront();
-            pr.Show();*/
+            cr.Show();
+
+            //pr.Show();
             //Createbtn.Enabled = false;
             //Createbtn.BackColor = Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
             button_Manager.active_Button(Createbtn);
