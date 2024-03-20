@@ -126,11 +126,11 @@
     <Compile Include="Screens\ProjectCreation.Designer.cs">
       <DependentUpon>ProjectCreation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\ProjectCreation2.cs">
+    <Compile Include="Screens\Recieving.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\ProjectCreation2.Designer.cs">
-      <DependentUpon>ProjectCreation2.cs</DependentUpon>
+    <Compile Include="Screens\Recieving.Designer.cs">
+      <DependentUpon>Recieving.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\StatusReport.cs">
       <SubType>Form</SubType>
@@ -199,8 +199,8 @@
     <EmbeddedResource Include="Screens\ProjectCreation.resx">
       <DependentUpon>ProjectCreation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\ProjectCreation2.resx">
-      <DependentUpon>ProjectCreation2.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Recieving.resx">
+      <DependentUpon>Recieving.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\StatusReport.resx">
       <DependentUpon>StatusReport.cs</DependentUpon>
