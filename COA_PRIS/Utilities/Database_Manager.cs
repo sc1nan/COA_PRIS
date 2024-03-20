@@ -47,6 +47,29 @@ namespace COA_PRIS.Utilities
             return dataTable;
         }
 
+        public DataTable ExecuteQueryXD(string query)
+        {
+            var dbCon = DBConnection.Instance();
+            DataTable dataTable = new DataTable();
+
+            using (MySqlCommand command = new MySqlCommand(query, dbCon.Connection))
+            {
+                try
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        dataTable.Load(reader);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error executing query: {ex.Message}");
+                }
+            }
+
+            return dataTable;
+        }
+
         public int ExecuteNonQuery(string query)
         {
             var dbCon = DBConnection.Instance();

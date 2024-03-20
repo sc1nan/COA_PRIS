@@ -16,19 +16,32 @@ namespace COA_PRIS.Screens
     {
         bool sidebarExpand = true;
         Home home;
+        LogsTab logTab;
+        Button_Manager button_Manager;
         public Dashboard()
         {
             InitializeComponent();
             SidebarContainer.BringToFront();
+
+            
+
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            gunaButton1.PerformClick();
-        }
-        private void gunaPanel1_Paint(object sender, PaintEventArgs e)
-        {
+            button_Manager = new Button_Manager();
+            HomeBtn.PerformClick();
 
+            //Get all the button on the Side Nav
+            foreach (Control contron in SidebarContainer.Controls)
+            {
+                if (contron.Tag != null && string.Equals("Tabs", contron.Tag.ToString())) 
+                {
+                    button_Manager.SideBar.Add(contron.Controls[0]);
+                }
+            }
+            button_Manager.Header_Title = headerTitle;
+            button_Manager.active_Button(HomeBtn);
         }
 
         private void SidebarTimer_tick(object sender, EventArgs e)
@@ -57,14 +70,14 @@ namespace COA_PRIS.Screens
             SidebarTimer.Start(); 
         }
 
-        private void gunaButton1_Click(object sender, EventArgs e)
+        private void home_BtnClick(object sender, EventArgs e)
         {
             home = new Home();
             home.TopLevel = false;
             Baseform.Controls.Add(home);
             //home.BringToFront();
             home.Show();
-            button_Reset(gunaButton1);
+            button_Manager.active_Button(HomeBtn);
         }
 
         private void Baseform_Paint(object sender, PaintEventArgs e)
@@ -82,6 +95,43 @@ namespace COA_PRIS.Screens
             //SidebarTimer.Start();
         }
 
+
+        private void create_BtnClick(object sender, EventArgs e)
+        {
+            /*ProjectCreation pr = new ProjectCreation();
+            pr.TopLevel = false;
+            Baseform.Controls.Add(pr);
+            //home.BringToFront();
+            pr.Show();*/
+            //Createbtn.Enabled = false;
+            //Createbtn.BackColor = Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            button_Manager.active_Button(Createbtn);
+        }
+
+        
+
+        private void report_BtnClick(object sender, EventArgs e)
+        {
+            //button_Reset(ReportsBtn, "Document History");
+            button_Manager.active_Button(ReportBtn);
+        }
+
+        private void employee_BtnClick(object sender, EventArgs e)
+        {
+            //button_Reset(EmployeeBtn, "Employees");
+            button_Manager.active_Button(EmployeeBtn);
+        }
+
+        private void log_BtnClick(object sender, EventArgs e)
+        {
+            home.Hide();
+            logTab = new LogsTab();
+            logTab.TopLevel = false;
+            Baseform.Controls.Add(logTab);
+            logTab.Show();
+            button_Manager.active_Button(LogBtn);
+            //button_Reset(ActivityBtn, "Log History");
+        }
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (e.CloseReason == CloseReason.UserClosing)
@@ -95,62 +145,17 @@ namespace COA_PRIS.Screens
                 {
                     //for testing
                     activity_manager.Log_Activity("james", Log_Message.logout_message);
-                    //Application.Exit();
-                    this.Hide();
+                    Application.Exit();
+                    
+                                        
+
+
+                    //Disable for development
+                    /*this.Hide();
                     login login = new login();
-                    login.ShowDialog();
+                    login.ShowDialog();*/
                 }
             }
-        }
-
-        private void gunaButton2_Click(object sender, EventArgs e)
-        {
-            /*ProjectCreation pr = new ProjectCreation();
-            pr.TopLevel = false;
-            Baseform.Controls.Add(pr);
-            //home.BringToFront();
-            pr.Show();*/
-            //Createbtn.Enabled = false;
-            //Createbtn.BackColor = Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            button_Reset(Createbtn);
-        }
-
-        private void gunaPanel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button_Reset(GunaButton active_GunaButton)
-        {
-            gunaButton1.Enabled = true;
-            Createbtn.Enabled = true;
-            gunaButton3.Enabled = true;
-            gunaButton4.Enabled = true;
-            gunaButton7.Enabled = true;
-
-            gunaButton1.BaseColor = System.Drawing.Color.Transparent;
-            Createbtn.BaseColor = System.Drawing.Color.Transparent;
-            gunaButton3.BaseColor = System.Drawing.Color.Transparent;
-            gunaButton4.BaseColor = System.Drawing.Color.Transparent;
-            gunaButton7.BaseColor = System.Drawing.Color.Transparent;
-
-            active_GunaButton.Enabled = false;
-            active_GunaButton.BaseColor = Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-        }
-
-        private void gunaButton3_Click(object sender, EventArgs e)
-        {
-            button_Reset(gunaButton3);
-        }
-
-        private void gunaButton4_Click(object sender, EventArgs e)
-        {
-            button_Reset(gunaButton4);
-        }
-
-        private void gunaButton7_Click(object sender, EventArgs e)
-        {
-            button_Reset(gunaButton7);
         }
     }
 }

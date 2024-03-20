@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,6 +44,32 @@ namespace COA_PRIS.Utilities
                 ret = Convert.ToInt32(db_Manager.ExecuteNonQuery(string.Format(Database_Query.logged_in, username, message)));
             }
             
+        }
+
+        public DataTable Display_Logs_Table()
+        {
+            db_Manager = new Database_Manager();
+            DataTable dt = new DataTable();
+            using (db_Manager)
+            {
+                dt = db_Manager.ExecuteQuery(Database_Query.display_logs);
+            }
+            Console.WriteLine(dt);
+            return dt;
+        }
+
+        public DataTable Display_Specific_Logs_Table(string searchwords, string sortby)
+        {
+            db_Manager = new Database_Manager();
+            DataTable dt = new DataTable();
+            Console.WriteLine("asdasd");
+            Console.WriteLine(string.Format(Database_Query.display_specific_logs, sortby, searchwords));
+            using (db_Manager)
+            {
+                dt = db_Manager.ExecuteQuery(string.Format(Database_Query.display_specific_logs, sortby, searchwords));
+            }
+            Console.WriteLine(dt);
+            return dt;
         }
     }
 }

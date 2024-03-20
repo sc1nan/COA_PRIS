@@ -22,7 +22,6 @@ namespace COA_PRIS
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Test();
             //Application.Run(new login());
             Application.Run(new Dashboard());
         }

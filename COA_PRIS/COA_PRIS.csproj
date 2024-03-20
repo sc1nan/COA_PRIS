@@ -114,6 +114,12 @@
     <Compile Include="Screens\DevInfo.Designer.cs">
       <DependentUpon>DevInfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\LogsTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\LogsTab.Designer.cs">
+      <DependentUpon>LogsTab.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\ProjectCreation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +133,8 @@
       <DependentUpon>ProjectCreation2.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\Activity_Manager.cs" />
+    <Compile Include="Utilities\Button_Manager.cs" />
+    <Compile Include="Utilities\Colors.cs" />
     <Compile Include="Utilities\Database_Manager.cs" />
     <Compile Include="Utilities\Database_Credential.cs" />
     <Compile Include="Screens\Dashboard.cs">
@@ -183,6 +191,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Screens\LogsTab.resx">
+      <DependentUpon>LogsTab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\ProjectCreation.resx">
       <DependentUpon>ProjectCreation.cs</DependentUpon>
     </EmbeddedResource>
@@ -232,6 +243,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\IMS_UI__1_-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business-report %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teamwork.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log-file.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
