@@ -46,10 +46,10 @@
             this.Createbtn.Image = ((System.Drawing.Image)(resources.GetObject("Createbtn.Image")));
             this.Createbtn.ImageOffsetX = 5;
             this.Createbtn.ImageSize = new System.Drawing.Size(25, 25);
-            this.Createbtn.Location = new System.Drawing.Point(1440, 37);
+            this.Createbtn.Location = new System.Drawing.Point(1461, 31);
             this.Createbtn.Name = "Createbtn";
-            this.Createbtn.OnHoverBaseColor = System.Drawing.Color.White;
-            this.Createbtn.OnHoverBorderColor = System.Drawing.Color.White;
+            this.Createbtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(199)))), ((int)(((byte)(217)))));
+            this.Createbtn.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(199)))), ((int)(((byte)(217)))));
             this.Createbtn.OnHoverForeColor = System.Drawing.Color.Black;
             this.Createbtn.OnHoverImage = null;
             this.Createbtn.OnPressedColor = System.Drawing.Color.Black;

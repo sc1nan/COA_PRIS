@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace COA_PRIS.Screens
 {
-    public partial class ProjectCreation : Form
+    public partial class Recieving : Form
     {
-        public ProjectCreation()
+        public Recieving()
         {
             InitializeComponent();
         }
 
-        private void gunaButton1_Click(object sender, EventArgs e)
+        private void Closebtn_Click(object sender, EventArgs e)
         {
-            this.Close();
+
         }
     }
 }

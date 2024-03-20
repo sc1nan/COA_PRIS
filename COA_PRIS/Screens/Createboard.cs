@@ -25,10 +25,8 @@ namespace COA_PRIS.Screens
         private void Createbtn_Click(object sender, EventArgs e)
         {
             ProjectCreation pc = new ProjectCreation();
-            pc.TopLevel = false;
-            base.Controls.Add(pc);
-            //home.BringToFront();
-            pc.Show();
+            pc.StartPosition = FormStartPosition.CenterScreen;
+            pc.ShowDialog();
         }
     }
 }
