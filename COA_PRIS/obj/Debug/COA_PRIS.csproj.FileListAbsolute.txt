@@ -125,6 +125,7 @@ C:\Users\Cherie Mae Rejoy\Source\Repos\COA_PRIS\COA_PRIS\bin\Debug\System.Numeri
 C:\Users\Cherie Mae Rejoy\Source\Repos\COA_PRIS\COA_PRIS\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Cherie Mae Rejoy\Source\Repos\COA_PRIS\COA_PRIS\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\Cherie Mae Rejoy\Source\Repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.csproj.AssemblyReference.cache
+C:\Users\Cherie Mae Rejoy\Source\Repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Dashboard.resources
 C:\Users\Cherie Mae Rejoy\Source\Repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.login.resources
 C:\Users\Cherie Mae Rejoy\Source\Repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Properties.Resources.resources
 C:\Users\Cherie Mae Rejoy\Source\Repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.StatReportUserControl.resources
@@ -140,9 +141,4 @@ C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Dashboa
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Home.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.ProjectCreation.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.ProjectCreation2.resources
-C:\Users\Cherie Mae Rejoy\Source\Repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Home.resources
-C:\Users\Cherie Mae Rejoy\Source\Repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Dashboard.resources
-C:\Users\Cherie Mae Rejoy\Source\Repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.ProjectCreation.resources
-C:\Users\Cherie Mae Rejoy\Source\Repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.ProjectCreation2.resources
-C:\Users\Cherie Mae Rejoy\Source\Repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.StatusReport.resources
-C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Createboard.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.LogsTab.resources

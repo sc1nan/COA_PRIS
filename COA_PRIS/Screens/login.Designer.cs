@@ -198,6 +198,7 @@
             this.password_entry.TabIndex = 3;
             this.password_entry.Text = "Password";
             this.password_entry.Enter += new System.EventHandler(this.password_entry_Enter);
+            this.password_entry.KeyDown += new System.Windows.Forms.KeyEventHandler(this.password_entry_KeyDown);
             this.password_entry.Leave += new System.EventHandler(this.password_entry_Leave);
             // 
             // gunaElipsePanel2
@@ -237,6 +238,7 @@
             this.login_entry.TabIndex = 2;
             this.login_entry.Text = "Username";
             this.login_entry.Enter += new System.EventHandler(this.login_entry_Enter);
+            this.login_entry.KeyDown += new System.Windows.Forms.KeyEventHandler(this.login_entry_KeyDown);
             this.login_entry.Leave += new System.EventHandler(this.login_entry_Leave);
             // 
             // gunaPictureBox1

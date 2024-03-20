@@ -102,12 +102,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Screens\Createboard.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\Createboard.Designer.cs">
-      <DependentUpon>Createboard.cs</DependentUpon>
-    </Compile>
     <Compile Include="Screens\Home.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +113,12 @@
     </Compile>
     <Compile Include="Screens\DevInfo.Designer.cs">
       <DependentUpon>DevInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\LogsTab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\LogsTab.Designer.cs">
+      <DependentUpon>LogsTab.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\ProjectCreation.cs">
       <SubType>Form</SubType>
@@ -132,12 +132,9 @@
     <Compile Include="Screens\ProjectCreation2.Designer.cs">
       <DependentUpon>ProjectCreation2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\StatusReport.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\StatusReport.Designer.cs">
-      <DependentUpon>StatusReport.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Utilities\Activity_Manager.cs" />
+    <Compile Include="Utilities\Button_Manager.cs" />
+    <Compile Include="Utilities\Colors.cs" />
     <Compile Include="Utilities\Database_Manager.cs" />
     <Compile Include="Utilities\Database_Credential.cs" />
     <Compile Include="Screens\Dashboard.cs">
@@ -170,10 +167,8 @@
     </Compile>
     <Compile Include="Utilities\Encryption_Manger.cs" />
     <Compile Include="Utilities\Login_Manager.cs" />
+    <Compile Include="Utilities\Log_Message.cs" />
     <Compile Include="Utilities\Validator.cs" />
-    <EmbeddedResource Include="Screens\Createboard.resx">
-      <DependentUpon>Createboard.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,14 +191,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Screens\LogsTab.resx">
+      <DependentUpon>LogsTab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\ProjectCreation.resx">
       <DependentUpon>ProjectCreation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\ProjectCreation2.resx">
       <DependentUpon>ProjectCreation2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\StatusReport.resx">
-      <DependentUpon>StatusReport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StatReportUserControl.resx">
       <DependentUpon>StatReportUserControl.cs</DependentUpon>
@@ -248,6 +243,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\IMS_UI__1_-removebg-preview1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\business-report %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\teamwork.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\log-file.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
