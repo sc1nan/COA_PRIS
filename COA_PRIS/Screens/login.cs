@@ -22,6 +22,7 @@ namespace COA_PRIS
         private int attempts = 3;
         private Validator validator;
         private Login_Manager login_manager;
+        private Activity_Manager activity_manager;
         private Database_Manager database_manager;
 
         public login()
@@ -29,6 +30,7 @@ namespace COA_PRIS
             InitializeComponent();
             validator = new Validator();  
             login_manager = new Login_Manager();
+            activity_manager = new Activity_Manager();
             database_manager = new Database_Manager();
         }
 
@@ -36,6 +38,7 @@ namespace COA_PRIS
         {
             this.AcceptButton = Login_btn;
         }
+
         private void Loginbtn_Click(object sender, EventArgs e)
         {
             string username = login_entry.Text.ToString();
@@ -75,6 +78,8 @@ namespace COA_PRIS
             }
             if (login_ret && state_ret == 1)
             {
+                activity_manager.Log_Activity(username, Log_Message.login_message);
+                //usercl.username = username;
                 this.Hide();
                 Dashboard dashboard = new Dashboard();
                 dashboard.ShowDialog();
@@ -82,6 +87,7 @@ namespace COA_PRIS
             else if (!login_ret && state_ret == 1)
             {
                 attempts--;
+                activity_manager.Log_Activity(username, Log_Message.login_attempt);
                 error_label.Text = $"You have {attempts} more attempt/s remaining.";
                 error_label.Visible = true;
                 MessageBox.Show("Incorrect Credentials\nExceeding the number of attempts will deactivate the account.", "Login Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -93,6 +99,7 @@ namespace COA_PRIS
             else
             {
                 MessageBox.Show("Incorrect Credentials", "Login Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //activity_logger.AnonymousLoginAttempt(username);
             }
 
             if (attempts == 0)
@@ -156,6 +163,22 @@ namespace COA_PRIS
         {
             if (string.IsNullOrWhiteSpace(login_entry.Text.ToString()))
                 login_entry.Text = "Username";
+        }
+
+        private void login_entry_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Loginbtn_Click(this, new EventArgs());
+            }
+        }
+
+        private void password_entry_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Loginbtn_Click(this, new EventArgs());
+            }
         }
     }
 }

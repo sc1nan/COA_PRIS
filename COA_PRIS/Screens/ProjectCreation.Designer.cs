@@ -609,6 +609,7 @@
             this.Controls.Add(this.Sequencenum_Entry);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProjectCreation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProjectCreation1";
             this.ResumeLayout(false);
             this.PerformLayout();
