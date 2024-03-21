@@ -102,11 +102,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Screens\CreationProject.cs">
+    <Compile Include="Screens\Employee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\CreationProject.Designer.cs">
-      <DependentUpon>CreationProject.cs</DependentUpon>
+    <Compile Include="Screens\Employee.Designer.cs">
+      <DependentUpon>Employee.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Home.cs">
       <SubType>Form</SubType>
@@ -120,32 +120,38 @@
     <Compile Include="Screens\DevInfo.Designer.cs">
       <DependentUpon>DevInfo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\LogsTab.cs">
+    <Compile Include="Screens\ActivityLogs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\LogsTab.Designer.cs">
-      <DependentUpon>LogsTab.cs</DependentUpon>
+    <Compile Include="Screens\ActivityLogs.Designer.cs">
+      <DependentUpon>ActivityLogs.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\ProjectCreation.cs">
+    <Compile Include="Screens\Subscreens\Employees\Employee_Submodule.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\ProjectCreation.Designer.cs">
+    <Compile Include="Screens\Subscreens\Employees\Employee_Submodule.Designer.cs">
+      <DependentUpon>Employee_Submodule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Employees\Inactive_Submodule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Employees\Inactive_Submodule.Designer.cs">
+      <DependentUpon>Inactive_Submodule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Subscreens\ProjectCreation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\ProjectCreation.Designer.cs">
       <DependentUpon>ProjectCreation.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Recieving.cs">
+    <Compile Include="Screens\Subscreens\Recieving.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Recieving.Designer.cs">
+    <Compile Include="Screens\Subscreens\Recieving.Designer.cs">
       <DependentUpon>Recieving.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlUtil\DataTableMultiplePages.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlUtil\DataTableMultiplePages.Designer.cs">
-      <DependentUpon>DataTableMultiplePages.cs</DependentUpon>
-    </Compile>
     <Compile Include="Utilities\Activity_Manager.cs" />
-    <Compile Include="Utilities\Button_Manager.cs" />
+    <Compile Include="Utilities\Tab_Manager.cs" />
     <Compile Include="Utilities\Colors.cs" />
     <Compile Include="Utilities\Database_Manager.cs" />
     <Compile Include="Utilities\Database_Credential.cs" />
@@ -181,15 +187,14 @@
     <Compile Include="Utilities\Login_Manager.cs" />
     <Compile Include="Utilities\Log_Message.cs" />
     <Compile Include="Utilities\Validator.cs" />
-    <EmbeddedResource Include="Screens\CreationProject.resx">
-      <DependentUpon>CreationProject.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Employee.resx">
+      <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Home.resx">
       <DependentUpon>Home.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
-      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\DevInfo.resx">
       <DependentUpon>DevInfo.cs</DependentUpon>
@@ -207,13 +212,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Screens\LogsTab.resx">
-      <DependentUpon>LogsTab.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\ActivityLogs.resx">
+      <DependentUpon>ActivityLogs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\ProjectCreation.resx">
+    <EmbeddedResource Include="Screens\Subscreens\Employees\Employee_Submodule.resx">
+      <DependentUpon>Employee_Submodule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Employees\Inactive_Submodule.resx">
+      <DependentUpon>Inactive_Submodule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\ProjectCreation.resx">
       <DependentUpon>ProjectCreation.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Recieving.resx">
+    <EmbeddedResource Include="Screens\Subscreens\Recieving.resx">
       <DependentUpon>Recieving.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StatReportUserControl.resx">
@@ -221,9 +232,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SysSetupUserControl.resx">
       <DependentUpon>SysSetupUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlUtil\DataTableMultiplePages.resx">
-      <DependentUpon>DataTableMultiplePages.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -275,5 +283,23 @@
   <ItemGroup>
     <None Include="Resources\log-file.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home-icon-silhouette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-avatar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-avatar %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\swipe-right.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\employee.png" />
+    <Content Include="Resources\swipe-left.png" />
+    <None Include="Resources\swipe-left1.png" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
