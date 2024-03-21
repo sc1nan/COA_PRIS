@@ -10,21 +10,17 @@ using System.Windows.Forms;
 
 namespace COA_PRIS.Screens
 {
-    public partial class ProjectCreation : Form
+    public partial class Createboard : Form
     {
-        public ProjectCreation()
+        public Createboard()
         {
             InitializeComponent();
         }
 
-        private void gunaButton1_Click(object sender, EventArgs e)
+        private void gunaAdvenceButton1_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
-
-        private void gunaAdvenceButton2_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            ProjectCreation pc = new ProjectCreation();
+            pc.ShowDialog();
         }
     }
 }

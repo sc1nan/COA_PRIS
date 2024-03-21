@@ -111,6 +111,47 @@
             this.sideExpand_Btn.TabIndex = 0;
             this.sideExpand_Btn.Click += new System.EventHandler(this.sidebar_Click);
             // 
+            // gunaPanel6
+            // 
+            this.gunaPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaPanel6.Controls.Add(this.UserBtn);
+            this.gunaPanel6.Location = new System.Drawing.Point(0, 472);
+            this.gunaPanel6.Margin = new System.Windows.Forms.Padding(0);
+            this.gunaPanel6.Name = "gunaPanel6";
+            this.gunaPanel6.Size = new System.Drawing.Size(95, 70);
+            this.gunaPanel6.TabIndex = 6;
+            this.gunaPanel6.Tag = "Tabs";
+            // 
+            // UserBtn
+            // 
+            this.UserBtn.AnimationHoverSpeed = 0.07F;
+            this.UserBtn.AnimationSpeed = 0.03F;
+            this.UserBtn.BaseColor = System.Drawing.Color.Transparent;
+            this.UserBtn.BorderColor = System.Drawing.Color.Black;
+            this.UserBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UserBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.UserBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.UserBtn.Font = new System.Drawing.Font("Bahnschrift", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserBtn.ForeColor = System.Drawing.Color.White;
+            this.UserBtn.Image = global::COA_PRIS.Properties.Resources.log_file;
+            this.UserBtn.ImageOffsetX = 15;
+            this.UserBtn.ImageSize = new System.Drawing.Size(40, 40);
+            this.UserBtn.Location = new System.Drawing.Point(0, 0);
+            this.UserBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.UserBtn.Name = "UserBtn";
+            this.UserBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
+            this.UserBtn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.UserBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.UserBtn.OnHoverImage = null;
+            this.UserBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.UserBtn.Size = new System.Drawing.Size(95, 70);
+            this.UserBtn.TabIndex = 5;
+            this.UserBtn.Tag = "ControlTabs";
+            this.UserBtn.Text = "User Settings";
+            this.UserBtn.TextOffsetX = 40;
+            // 
             // gunaLabel2
             // 
             this.gunaLabel2.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

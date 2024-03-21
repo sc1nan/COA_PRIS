@@ -54,7 +54,6 @@ namespace COA_PRIS.Utilities
             {
                 dt = db_Manager.ExecuteQuery(Database_Query.display_logs);
             }
-            Console.WriteLine(dt);
             return dt;
         }
 
@@ -62,14 +61,33 @@ namespace COA_PRIS.Utilities
         {
             db_Manager = new Database_Manager();
             DataTable dt = new DataTable();
-            Console.WriteLine("asdasd");
-            Console.WriteLine(string.Format(Database_Query.display_specific_logs, sortby, searchwords));
             using (db_Manager)
             {
                 dt = db_Manager.ExecuteQuery(string.Format(Database_Query.display_specific_logs, sortby, searchwords));
             }
-            Console.WriteLine(dt);
             return dt;
+        }
+
+        public DataTable Display_Three_Logs_Table(int minimium)
+        {
+            db_Manager = new Database_Manager();
+            DataTable dt = new DataTable();
+            using (db_Manager)
+            {
+                dt = db_Manager.ExecuteQuery(string.Format(Database_Query.display_three_logs, minimium));
+            }
+            return dt;
+        }
+
+        public int Count_Logs()
+        {
+            db_Manager = new Database_Manager();
+            int count;
+            using (db_Manager)
+            {
+                count = Convert.ToInt32(db_Manager.ExecuteScalar(Database_Query.count_logs));
+            }
+            return count;
         }
     }
 }

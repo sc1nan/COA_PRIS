@@ -26,6 +26,6 @@ namespace COA_PRIS
             Application.Run(new Dashboard());
         }
 
-        
+
     }
 }

@@ -567,6 +567,7 @@
             this.gunaAdvenceButton2.Size = new System.Drawing.Size(92, 42);
             this.gunaAdvenceButton2.TabIndex = 137;
             this.gunaAdvenceButton2.Text = "Save";
+            this.gunaAdvenceButton2.Click += new System.EventHandler(this.gunaAdvenceButton2_Click);
             // 
             // ProjectCreation
             // 
@@ -608,6 +609,7 @@
             this.Controls.Add(this.Sequencenum_Entry);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ProjectCreation";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProjectCreation1";
             this.ResumeLayout(false);
             this.PerformLayout();
