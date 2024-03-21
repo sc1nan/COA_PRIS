@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataTableMultiplePages));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.previous_button = new Guna.UI.WinForms.GunaButton();
             this.next_button = new Guna.UI.WinForms.GunaButton();
             this.page_count_textbox = new Guna.UI.WinForms.GunaTextBox();
@@ -42,11 +45,13 @@
             this.top_panel = new System.Windows.Forms.TableLayoutPanel();
             this.sort_combobox = new Guna.UI.WinForms.GunaComboBox();
             this.guning_button = new Guna.UI.WinForms.GunaButton();
+            this.LogsTable = new Guna.UI.WinForms.GunaDataGridView();
             this.page_control_panel.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             this.search_box_panel.SuspendLayout();
             this.serch_table_panel.SuspendLayout();
             this.top_panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.LogsTable)).BeginInit();
             this.SuspendLayout();
             // 
             // previous_button
@@ -59,6 +64,7 @@
             this.previous_button.BorderColor = System.Drawing.Color.Black;
             this.previous_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.previous_button.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.previous_button.Enabled = false;
             this.previous_button.FocusedColor = System.Drawing.Color.Empty;
             this.previous_button.Font = new System.Drawing.Font("Bahnschrift", 27.75F, System.Drawing.FontStyle.Bold);
             this.previous_button.ForeColor = System.Drawing.Color.White;
@@ -75,6 +81,7 @@
             this.previous_button.Size = new System.Drawing.Size(50, 50);
             this.previous_button.TabIndex = 1;
             this.previous_button.Text = "<";
+            this.previous_button.Click += new System.EventHandler(this.previous_button_Click);
             // 
             // next_button
             // 
@@ -102,6 +109,7 @@
             this.next_button.Size = new System.Drawing.Size(50, 50);
             this.next_button.TabIndex = 2;
             this.next_button.Text = ">";
+            this.next_button.Click += new System.EventHandler(this.next_button_Click);
             // 
             // page_count_textbox
             // 
@@ -121,6 +129,7 @@
             this.page_count_textbox.TabIndex = 3;
             this.page_count_textbox.Text = "1";
             this.page_count_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.page_count_textbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.page_count_textbox_KeyDown);
             // 
             // page_control_panel
             // 
@@ -283,10 +292,76 @@
             this.guning_button.TabIndex = 10;
             this.guning_button.Text = "gunaButton1";
             // 
+            // LogsTable
+            // 
+            this.LogsTable.AllowUserToDeleteRows = false;
+            this.LogsTable.AllowUserToResizeColumns = false;
+            this.LogsTable.AllowUserToResizeRows = false;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.LogsTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            this.LogsTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.LogsTable.BackgroundColor = System.Drawing.Color.White;
+            this.LogsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LogsTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.LogsTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.LogsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.LogsTable.ColumnHeadersHeight = 20;
+            this.LogsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.LogsTable.DefaultCellStyle = dataGridViewCellStyle12;
+            this.LogsTable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.LogsTable.EnableHeadersVisualStyles = false;
+            this.LogsTable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.LogsTable.Location = new System.Drawing.Point(0, 77);
+            this.LogsTable.Margin = new System.Windows.Forms.Padding(15);
+            this.LogsTable.Name = "LogsTable";
+            this.LogsTable.ReadOnly = true;
+            this.LogsTable.RowHeadersVisible = false;
+            this.LogsTable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.LogsTable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.LogsTable.Size = new System.Drawing.Size(960, 386);
+            this.LogsTable.TabIndex = 9;
+            this.LogsTable.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
+            this.LogsTable.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.LogsTable.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.LogsTable.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.LogsTable.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.LogsTable.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.LogsTable.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.LogsTable.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.LogsTable.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.LogsTable.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.LogsTable.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.LogsTable.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.LogsTable.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.LogsTable.ThemeStyle.HeaderStyle.Height = 20;
+            this.LogsTable.ThemeStyle.ReadOnly = true;
+            this.LogsTable.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.LogsTable.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.LogsTable.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.LogsTable.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.LogsTable.ThemeStyle.RowsStyle.Height = 22;
+            this.LogsTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.LogsTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
             // DataTableMultiplePages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.LogsTable);
             this.Controls.Add(this.top_panel);
             this.Controls.Add(this.bottom_panel);
             this.Margin = new System.Windows.Forms.Padding(0);
@@ -299,6 +374,7 @@
             this.serch_table_panel.ResumeLayout(false);
             this.serch_table_panel.PerformLayout();
             this.top_panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.LogsTable)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -318,5 +394,6 @@
         private System.Windows.Forms.TableLayoutPanel top_panel;
         private Guna.UI.WinForms.GunaComboBox sort_combobox;
         private Guna.UI.WinForms.GunaButton guning_button;
+        private Guna.UI.WinForms.GunaDataGridView LogsTable;
     }
 }
