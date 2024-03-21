@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\COA_PRIS",
+    "\\COA_PRIS\\Screens\\Subscreens"
   ],
+  "SelectedNode": "\\COA_PRIS\\Screens",
   "PreviewInSolutionExplorer": false
 }

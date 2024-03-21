@@ -113,7 +113,7 @@
             // 
             // gunaPanel6
             // 
-            this.gunaPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            /*this.gunaPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaPanel6.Controls.Add(this.UserBtn);
             this.gunaPanel6.Location = new System.Drawing.Point(0, 472);
@@ -121,7 +121,7 @@
             this.gunaPanel6.Name = "gunaPanel6";
             this.gunaPanel6.Size = new System.Drawing.Size(95, 70);
             this.gunaPanel6.TabIndex = 6;
-            this.gunaPanel6.Tag = "Tabs";
+            this.gunaPanel6.Tag = "Tabs";*/
             // 
             // UserBtn
             // 

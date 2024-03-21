@@ -143,11 +143,13 @@ C:\Users\Cherie Mae Rejoy\Source\Repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Home
 C:\Users\Cherie Mae Rejoy\Source\Repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Dashboard.resources
 C:\Users\Cherie Mae Rejoy\Source\Repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.ProjectCreation.resources
 C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Recieving.resources
-C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.LogsTab.resources
-C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Createboard.resources
-C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.DataTableMultiplePages.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Recieving.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Employee.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.ActivityLogs.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Employees.Employee_Submodule.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Employees.Inactive_Submodule.resources
+C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Employee.resources
+C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.ActivityLogs.resources
+C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Employees.Employee_Submodule.resources
+C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Employees.Inactive_Submodule.resources
+C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.DataTableMultiplePages.resources

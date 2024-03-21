@@ -150,6 +150,12 @@
     <Compile Include="Screens\Subscreens\Recieving.Designer.cs">
       <DependentUpon>Recieving.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlUtil\DataTableMultiplePages.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlUtil\DataTableMultiplePages.Designer.cs">
+      <DependentUpon>DataTableMultiplePages.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilities\Activity_Manager.cs" />
     <Compile Include="Utilities\Tab_Manager.cs" />
     <Compile Include="Utilities\Colors.cs" />
@@ -232,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SysSetupUserControl.resx">
       <DependentUpon>SysSetupUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUtil\DataTableMultiplePages.resx">
+      <DependentUpon>DataTableMultiplePages.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
