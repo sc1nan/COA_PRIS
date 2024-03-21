@@ -304,7 +304,7 @@
             this.gunaButton1.Text = "<";
             this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
             // 
-            // LogsTab
+            // ActivityLogs
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -316,7 +316,7 @@
             this.Controls.Add(this.gunaPanel1);
             this.Controls.Add(this.gunaPanel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "LogsTab";
+            this.Name = "ActivityLogs";
             this.Text = "LogsTab";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.LogsTable)).EndInit();
