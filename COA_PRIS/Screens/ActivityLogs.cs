@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace COA_PRIS.Screens
 {
-    public partial class LogsTab : Form
+    public partial class ActivityLogs : Form
     {
         Activity_Manager activity_manager;
         string[] column_names = { "User Name", "Activity", "Time"};

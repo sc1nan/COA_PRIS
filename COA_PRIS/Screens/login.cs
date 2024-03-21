@@ -180,5 +180,9 @@ namespace COA_PRIS
                 Loginbtn_Click(this, new EventArgs());
             }
         }
+
+        private void password_entry_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }
