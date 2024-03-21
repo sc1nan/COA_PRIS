@@ -197,6 +197,7 @@
             this.password_entry.Size = new System.Drawing.Size(337, 49);
             this.password_entry.TabIndex = 3;
             this.password_entry.Text = "Password";
+            this.password_entry.TextChanged += new System.EventHandler(this.password_entry_TextChanged);
             this.password_entry.Enter += new System.EventHandler(this.password_entry_Enter);
             this.password_entry.KeyDown += new System.Windows.Forms.KeyEventHandler(this.password_entry_KeyDown);
             this.password_entry.Leave += new System.EventHandler(this.password_entry_Leave);

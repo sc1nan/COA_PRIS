@@ -1,6 +1,6 @@
 ﻿namespace COA_PRIS.Screens
 {
-    partial class LogsTab
+    partial class ActivityLogs
     {
         /// <summary>
         /// Required designer variable.

@@ -3,36 +3,68 @@
   "WorkspaceRootPath": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\cherie mae rejoy\\source\\repos\\coa_pris\\coa_pris\\screens\\createboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\createboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\vinas\\source\\repos\\coa_pris\\coa_pris\\screens\\subscreens\\employees\\employee_submodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\subscreens\\employees\\employee_submodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\cherie mae rejoy\\source\\repos\\coa_pris\\coa_pris\\screens\\projectcreation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\projectcreation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\vinas\\source\\repos\\coa_pris\\coa_pris\\screens\\subscreens\\employees\\employee_submodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\subscreens\\employees\\employee_submodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\cherie mae rejoy\\source\\repos\\coa_pris\\coa_pris\\screens\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\coa_pris\\screens\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\vinas\\source\\repos\\coa_pris\\coa_pris\\screens\\subscreens\\employees\\inactive_submodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\subscreens\\employees\\inactive_submodule.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\vinas\\source\\repos\\coa_pris\\coa_pris\\screens\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\coa_pris\\screens\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\coa_pris\\screens\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\cherie mae rejoy\\source\\repos\\coa_pris\\coa_pris\\screens\\projectcreation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\projectcreation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\coa_pris\\utilities\\tab_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\utilities\\tab_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\cherie mae rejoy\\source\\repos\\coa_pris\\coa_pris\\screens\\createboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\createboard.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\coa_pris\\utilities\\validator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\utilities\\validator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\cherie mae rejoy\\source\\repos\\coa_pris\\coa_pris\\screens\\projectcreation.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\projectcreation.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\coa_pris\\utilities\\colors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\utilities\\colors.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\cherie mae rejoy\\source\\repos\\coa_pris\\coa_pris\\screens\\recieving.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\recieving.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\coa_pris\\screens\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\cherie mae rejoy\\source\\repos\\coa_pris\\coa_pris\\screens\\recieving.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\recieving.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\coa_pris\\screens\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\home.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\coa_pris\\utilities\\database_credential.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\utilities\\database_credential.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\coa_pris\\screens\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\coa_pris\\screens\\login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\coa_pris\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,107 +74,205 @@
       "DocumentGroups": [
         {
           "DockedWidth": 293,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ProjectCreation.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Cherie Mae Rejoy\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\ProjectCreation.Designer.cs",
-              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\ProjectCreation.Designer.cs",
-              "ToolTip": "C:\\Users\\Cherie Mae Rejoy\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\ProjectCreation.Designer.cs*",
-              "RelativeToolTip": "COA_PRIS\\Screens\\ProjectCreation.Designer.cs*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "DocumentIndex": 12,
+              "Title": "Database_Credential.cs",
+              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Utilities\\Database_Credential.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Utilities\\Database_Credential.cs",
+              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Utilities\\Database_Credential.cs",
+              "RelativeToolTip": "COA_PRIS\\Utilities\\Database_Credential.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T02:17:25.952Z",
+              "WhenOpened": "2024-03-19T05:30:42.056Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Dashboard.cs",
+              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Dashboard.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Dashboard.cs",
+              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Dashboard.cs",
+              "RelativeToolTip": "COA_PRIS\\Screens\\Dashboard.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-18T06:06:24.03Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "Recieving.cs",
-              "DocumentMoniker": "C:\\Users\\Cherie Mae Rejoy\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Recieving.cs",
-              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Recieving.cs",
-              "ToolTip": "C:\\Users\\Cherie Mae Rejoy\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Recieving.cs",
-              "RelativeToolTip": "COA_PRIS\\Screens\\Recieving.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T02:22:10.155Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProjectCreation.cs",
-              "DocumentMoniker": "C:\\Users\\Cherie Mae Rejoy\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\ProjectCreation.cs",
-              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\ProjectCreation.cs",
-              "ToolTip": "C:\\Users\\Cherie Mae Rejoy\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\ProjectCreation.cs*",
-              "RelativeToolTip": "COA_PRIS\\Screens\\ProjectCreation.cs*",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAowBUAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T02:19:13.964Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "Dashboard.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Dashboard.cs",
               "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Dashboard.cs",
               "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Dashboard.cs [Design]",
               "RelativeToolTip": "COA_PRIS\\Screens\\Dashboard.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T02:15:27.358Z",
+              "WhenOpened": "2024-03-20T06:22:45.199Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Inactive_Submodule.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Subscreens\\Employees\\Inactive_Submodule.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Subscreens\\Employees\\Inactive_Submodule.cs",
+              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Subscreens\\Employees\\Inactive_Submodule.cs [Design]",
+              "RelativeToolTip": "COA_PRIS\\Screens\\Subscreens\\Employees\\Inactive_Submodule.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-21T06:38:15.159Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProjectCreation.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Cherie Mae Rejoy\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\ProjectCreation.cs",
-              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\ProjectCreation.cs",
-              "ToolTip": "C:\\Users\\Cherie Mae Rejoy\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\ProjectCreation.cs [Design]*",
-              "RelativeToolTip": "COA_PRIS\\Screens\\ProjectCreation.cs [Design]*",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T02:10:44.724Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Createboard.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\Cherie Mae Rejoy\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Createboard.Designer.cs",
-              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Createboard.Designer.cs",
-              "ToolTip": "C:\\Users\\Cherie Mae Rejoy\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Createboard.Designer.cs*",
-              "RelativeToolTip": "COA_PRIS\\Screens\\Createboard.Designer.cs*",
+              "Title": "Employee_Submodule.cs",
+              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Subscreens\\Employees\\Employee_Submodule.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Subscreens\\Employees\\Employee_Submodule.cs",
+              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Subscreens\\Employees\\Employee_Submodule.cs",
+              "RelativeToolTip": "COA_PRIS\\Screens\\Subscreens\\Employees\\Employee_Submodule.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T02:08:49.164Z",
+              "WhenOpened": "2024-03-21T06:28:52.214Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Recieving.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Cherie Mae Rejoy\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Recieving.cs",
-              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Recieving.cs",
-              "ToolTip": "C:\\Users\\Cherie Mae Rejoy\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Recieving.cs [Design]",
-              "RelativeToolTip": "COA_PRIS\\Screens\\Recieving.cs [Design]",
+              "DocumentIndex": 0,
+              "Title": "Employee_Submodule.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Subscreens\\Employees\\Employee_Submodule.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Subscreens\\Employees\\Employee_Submodule.cs",
+              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Subscreens\\Employees\\Employee_Submodule.cs [Design]",
+              "RelativeToolTip": "COA_PRIS\\Screens\\Subscreens\\Employees\\Employee_Submodule.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T01:59:23.673Z",
+              "WhenOpened": "2024-03-21T06:27:21.655Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Createboard.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Cherie Mae Rejoy\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Createboard.cs",
-              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Createboard.cs",
-              "ToolTip": "C:\\Users\\Cherie Mae Rejoy\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Createboard.cs [Design]*",
-              "RelativeToolTip": "COA_PRIS\\Screens\\Createboard.cs [Design]*",
+              "DocumentIndex": 15,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Program.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Program.cs",
+              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Program.cs",
+              "RelativeToolTip": "COA_PRIS\\Program.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAkwBgAAAAOAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-20T00:47:31.557Z",
+              "WhenOpened": "2024-03-19T02:38:55.527Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Employee.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Employee.cs",
+              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Employee.cs",
+              "RelativeToolTip": "COA_PRIS\\Screens\\Employee.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAowDkAAABTAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-21T03:26:39.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Validator.cs",
+              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Utilities\\Validator.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Utilities\\Validator.cs",
+              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Utilities\\Validator.cs",
+              "RelativeToolTip": "COA_PRIS\\Utilities\\Validator.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAAACUAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T06:11:18.408Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Employee.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Employee.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Employee.cs",
+              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Employee.cs [Design]",
+              "RelativeToolTip": "COA_PRIS\\Screens\\Employee.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T06:43:12.463Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Tab_Manager.cs",
+              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Utilities\\Tab_Manager.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Utilities\\Tab_Manager.cs",
+              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Utilities\\Tab_Manager.cs",
+              "RelativeToolTip": "COA_PRIS\\Utilities\\Tab_Manager.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAiwB4AAABtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T05:41:37.771Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Home.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Home.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Home.cs",
+              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Home.cs [Design]",
+              "RelativeToolTip": "COA_PRIS\\Screens\\Home.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-18T01:43:44.145Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "login.cs",
+              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\login.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\login.cs",
+              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\login.cs",
+              "RelativeToolTip": "COA_PRIS\\Screens\\login.cs",
+              "ViewState": "AQIAABkAAAAAAAAAAIAwwCYAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T08:07:17.429Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Colors.cs",
+              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Utilities\\Colors.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Utilities\\Colors.cs",
+              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Utilities\\Colors.cs",
+              "RelativeToolTip": "COA_PRIS\\Utilities\\Colors.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T01:56:31.202Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "login.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\login.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\login.cs",
+              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\login.cs [Design]",
+              "RelativeToolTip": "COA_PRIS\\Screens\\login.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T08:06:57.86Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "login.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\login.Designer.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\login.Designer.cs",
+              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\login.Designer.cs",
+              "RelativeToolTip": "COA_PRIS\\Screens\\login.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T08:11:48.269Z"
             }
           ]
         }
