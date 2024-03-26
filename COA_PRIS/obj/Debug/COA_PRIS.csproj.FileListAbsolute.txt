@@ -141,7 +141,6 @@ C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Home.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.ProjectCreation.resources
 C:\Users\Cherie Mae Rejoy\Source\Repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Home.resources
 C:\Users\Cherie Mae Rejoy\Source\Repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Dashboard.resources
-C:\Users\Cherie Mae Rejoy\Source\Repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.ProjectCreation.resources
 C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Recieving.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Recieving.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Employee.resources
@@ -153,3 +152,10 @@ C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Scre
 C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Employees.Employee_Submodule.resources
 C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Employees.Inactive_Submodule.resources
 C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.DataTableMultiplePages.resources
+C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Projects.resources
+C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.SearchBar.resources
+C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Projects.ProjectArchive.resources
+C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Projects.ProjectCreate.resources
+C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Projects.ProjectLists.resources
+C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.Cherie_UI.Datagrid.resources
+C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Splash_Screen.resources

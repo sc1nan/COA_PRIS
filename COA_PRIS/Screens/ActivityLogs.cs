@@ -1,4 +1,5 @@
-﻿using COA_PRIS.Utilities;
+﻿using COA_PRIS.UserControlUtil;
+using COA_PRIS.Utilities;
 using Guna.UI.WinForms;
 using System;
 using System.Collections.Generic;
@@ -15,8 +16,8 @@ namespace COA_PRIS.Screens
     public partial class ActivityLogs : Form
     {
         Activity_Manager activity_manager;
-        string[] column_names = { "User Name", "Activity", "Time"};
-        string[] log_table_names = { "user_name", "activity", "activity_datetime"};
+        readonly string[] column_names = { "User Name", "Activity", "Time"};
+        readonly string[] log_table_names = { "user_name", "activity", "activity_datetime"};
         private int min_lim = 0;
         private int page_cnt = 1;
         public ActivityLogs()
@@ -26,11 +27,12 @@ namespace COA_PRIS.Screens
             sortComboBox.SelectedText = "user_name";
             sortComboBox.SelectedIndex = 0;
             DisplayLogsTable();
+            searchBar1.Ambatu(logsSearchBox_TextChanged);
         }
 
         private void logsSearchBox_TextChanged(object sender, EventArgs e)
         {
-            changeTableContent(logsSearchBox, LogsTable, sortComboBox);
+            changeTableContent(searchBar1.Text, LogsTable, sortComboBox);
         }
 
         private void DisplayLogsTable()
@@ -48,14 +50,17 @@ namespace COA_PRIS.Screens
 
         private void sortComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            changeTableContent(logsSearchBox, LogsTable, sortComboBox);
+            changeTableContent(searchBar1.Text, LogsTable, sortComboBox);
         }
 
-        private void changeTableContent(GunaTextBox searchBox, GunaDataGridView sourceTable, GunaComboBox filterComboBox)
+        private void changeTableContent(string searchBox, GunaDataGridView sourceTable, GunaComboBox filterComboBox)
         {
-            if (searchBox.Text.ToString() == "") DisplayLogsTable();
+            //if (searchBox.Text.ToString() == "") DisplayLogsTable();
+            //activity_manager = new Activity_Manager();
+            //sourceTable.DataSource = activity_manager.Display_Specific_Logs_Table(searchBox.Text.ToString(), log_table_names[filterComboBox.SelectedIndex]);
+            if (searchBox == "") DisplayLogsTable();
             activity_manager = new Activity_Manager();
-            sourceTable.DataSource = activity_manager.Display_Specific_Logs_Table(searchBox.Text.ToString(), log_table_names[filterComboBox.SelectedIndex]);
+            sourceTable.DataSource = activity_manager.Display_Ten_Specific_Logs_Table(searchBox, log_table_names[filterComboBox.SelectedIndex], 0);
 
         }
 
@@ -128,8 +133,8 @@ namespace COA_PRIS.Screens
                 min_lim = 7 * (page_cnt - 1);
                 activity_manager = new Activity_Manager();
                 LogsTable.DataSource = activity_manager.Display_Three_Logs_Table(min_lim);
-
             }
         }
+
     }
 }

@@ -31,8 +31,6 @@
         private void InitializeComponent()
         {
             this.Main_Panel = new Guna.UI.WinForms.GunaElipsePanel();
-            this.dataTableMultiplePages1 = new COA_PRIS.UserControlUtil.DataTableMultiplePages(column_names, 0);
-            this.Main_Panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // Main_Panel
@@ -42,21 +40,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Main_Panel.BackColor = System.Drawing.Color.Transparent;
             this.Main_Panel.BaseColor = System.Drawing.Color.White;
-            this.Main_Panel.Controls.Add(this.dataTableMultiplePages1);
             this.Main_Panel.Location = new System.Drawing.Point(14, 14);
             this.Main_Panel.Margin = new System.Windows.Forms.Padding(5);
             this.Main_Panel.Name = "Main_Panel";
             this.Main_Panel.Radius = 10;
             this.Main_Panel.Size = new System.Drawing.Size(1563, 873);
             this.Main_Panel.TabIndex = 0;
-            // 
-            // dataTableMultiplePages1
-            // 
-            this.dataTableMultiplePages1.Location = new System.Drawing.Point(195, 46);
-            this.dataTableMultiplePages1.Margin = new System.Windows.Forms.Padding(0);
-            this.dataTableMultiplePages1.Name = "dataTableMultiplePages1";
-            this.dataTableMultiplePages1.Size = new System.Drawing.Size(960, 540);
-            this.dataTableMultiplePages1.TabIndex = 0;
             // 
             // Home
             // 
@@ -71,7 +60,6 @@
             this.Text = "Home";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Home_Load);
-            this.Main_Panel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

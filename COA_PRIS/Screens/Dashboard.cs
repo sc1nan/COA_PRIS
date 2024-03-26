@@ -12,7 +12,7 @@ namespace COA_PRIS.Screens
         private Form current_Form = null;
 
         private Tab_Manager tab_Manager;
-        
+        private readonly Projects projects_Tab = new Projects();
         private readonly Home landing_Home = new Home();
         private readonly Employee employee_Tab = new Employee();
         private readonly ActivityLogs log_Tab = new ActivityLogs();
@@ -96,6 +96,7 @@ namespace COA_PRIS.Screens
                     break;
                 case "Createbtn":
                     // Handle Create button click
+                    current_Form = tab_Manager.switch_Form(projects_Tab, current_Form, Main_Form);
                     break;
                 case "ReportBtn":
                     // Handle Report button click

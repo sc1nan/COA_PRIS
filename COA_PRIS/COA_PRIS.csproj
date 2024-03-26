@@ -70,6 +70,7 @@
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
     </Reference>
@@ -126,6 +127,18 @@
     <Compile Include="Screens\ActivityLogs.Designer.cs">
       <DependentUpon>ActivityLogs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Projects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Projects.Designer.cs">
+      <DependentUpon>Projects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Splash Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Splash Screen.Designer.cs">
+      <DependentUpon>Splash Screen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Subscreens\Employees\Employee_Submodule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,11 +151,23 @@
     <Compile Include="Screens\Subscreens\Employees\Inactive_Submodule.Designer.cs">
       <DependentUpon>Inactive_Submodule.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Subscreens\ProjectCreation.cs">
+    <Compile Include="Screens\Subscreens\Projects\ProjectArchive.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Subscreens\ProjectCreation.Designer.cs">
-      <DependentUpon>ProjectCreation.cs</DependentUpon>
+    <Compile Include="Screens\Subscreens\Projects\ProjectArchive.Designer.cs">
+      <DependentUpon>ProjectArchive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Projects\ProjectCreate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Projects\ProjectCreate.Designer.cs">
+      <DependentUpon>ProjectCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Projects\ProjectLists.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Projects\ProjectLists.Designer.cs">
+      <DependentUpon>ProjectLists.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Subscreens\Recieving.cs">
       <SubType>Form</SubType>
@@ -150,11 +175,23 @@
     <Compile Include="Screens\Subscreens\Recieving.Designer.cs">
       <DependentUpon>Recieving.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlUtil\Cherie UI\Datagrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControlUtil\Cherie UI\Datagrid.Designer.cs">
+      <DependentUpon>Datagrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlUtil\DataTableMultiplePages.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControlUtil\DataTableMultiplePages.Designer.cs">
       <DependentUpon>DataTableMultiplePages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlUtil\SearchBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlUtil\SearchBar.Designer.cs">
+      <DependentUpon>SearchBar.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\Activity_Manager.cs" />
     <Compile Include="Utilities\Tab_Manager.cs" />
@@ -221,14 +258,26 @@
     <EmbeddedResource Include="Screens\ActivityLogs.resx">
       <DependentUpon>ActivityLogs.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Projects.resx">
+      <DependentUpon>Projects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Splash Screen.resx">
+      <DependentUpon>Splash Screen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Employees\Employee_Submodule.resx">
       <DependentUpon>Employee_Submodule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Employees\Inactive_Submodule.resx">
       <DependentUpon>Inactive_Submodule.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Subscreens\ProjectCreation.resx">
-      <DependentUpon>ProjectCreation.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Subscreens\Projects\ProjectArchive.resx">
+      <DependentUpon>ProjectArchive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Projects\ProjectCreate.resx">
+      <DependentUpon>ProjectCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Projects\ProjectLists.resx">
+      <DependentUpon>ProjectLists.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Recieving.resx">
       <DependentUpon>Recieving.cs</DependentUpon>
@@ -239,8 +288,14 @@
     <EmbeddedResource Include="SysSetupUserControl.resx">
       <DependentUpon>SysSetupUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUtil\Cherie UI\Datagrid.resx">
+      <DependentUpon>Datagrid.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\DataTableMultiplePages.resx">
       <DependentUpon>DataTableMultiplePages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUtil\SearchBar.resx">
+      <DependentUpon>SearchBar.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -305,7 +360,21 @@
     <None Include="Resources\swipe-right.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\to-do %282%29.png" />
+    <None Include="Resources\to-do %281%29.png" />
     <None Include="Resources\employee.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\caret-right.png" />
+    <None Include="Resources\caret-left.png" />
+    <None Include="Resources\caret-right %281%29.png" />
+    <None Include="Resources\caret-left %281%29.png" />
+    <None Include="Resources\apps-sort.png" />
+    <None Include="Resources\select.png" />
+    <None Include="Resources\folder-download.png" />
+    <None Include="Resources\select %281%29.png" />
+    <None Include="Resources\folder-download %281%29.png" />
+    <None Include="Resources\search1.png" />
+    <None Include="Resources\Splash screen.png" />
     <Content Include="Resources\swipe-left.png" />
     <None Include="Resources\swipe-left1.png" />
   </ItemGroup>

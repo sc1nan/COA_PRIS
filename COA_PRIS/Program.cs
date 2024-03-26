@@ -3,11 +3,13 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace COA_PRIS
 {
+
     internal static class Program
     {
         /// <summary>
@@ -15,17 +17,16 @@ namespace COA_PRIS
         /// </summary>
         [STAThread]
 
-        
+
         static void Main()
         {
-            
+
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new login());
-            Application.Run(new Dashboard());
+            Application.Run(new Splash_Screen());
         }
-
 
     }
 }

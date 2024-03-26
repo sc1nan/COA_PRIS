@@ -152,7 +152,7 @@ namespace COA_PRIS.UserControlUtil
 
         
 
-        private void changeTableContent(GunaTextBox searchBox, GunaDataGridView sourceTable, GunaComboBox filterComboBox)
+        public void changeTableContent(GunaTextBox searchBox, GunaDataGridView sourceTable, GunaComboBox filterComboBox)
         {
             if (searchBox.Text.ToString() == "") DisplayLogsTable();
             activity_manager = new Activity_Manager();
@@ -163,6 +163,31 @@ namespace COA_PRIS.UserControlUtil
         private void sort_combobox_SelectedValueChanged(object sender, EventArgs e)
         {
             changeTableContent(search_box, data_table, sort_combobox);
+        }
+
+        private void guning_button_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void sort_combobox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void searchBar1_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void searchBar1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void page_count_textbox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
