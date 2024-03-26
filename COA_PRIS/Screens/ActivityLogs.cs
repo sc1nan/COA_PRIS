@@ -19,7 +19,7 @@ namespace COA_PRIS.Screens
         string[] log_table_names = { "user_name", "activity", "activity_datetime"};
         private int min_lim = 0;
         private int page_cnt = 1;
-        public LogsTab()
+        public ActivityLogs()
         {
             InitializeComponent();
             gunaButton1.Enabled = false;
@@ -79,8 +79,8 @@ namespace COA_PRIS.Screens
             {
                 if (column.Index == 0)
                 {
-                    column.DefaultCellStyle.Padding = newPadding;
-                    column.HeaderCell.Style.Padding = newPadding;
+                    //column.DefaultCellStyle.Padding = newPadding;
+                    //column.HeaderCell.Style.Padding = newPadding;
                 }
             }
             //alternating colors in rows

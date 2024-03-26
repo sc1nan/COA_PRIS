@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace COA_PRIS.Screens
+namespace COA_PRIS.PRISUserControl
 {
-    public partial class StatusReport : Form
+    public partial class SearchBar : UserControl
     {
-        public StatusReport()
+        public SearchBar()
         {
             InitializeComponent();
         }

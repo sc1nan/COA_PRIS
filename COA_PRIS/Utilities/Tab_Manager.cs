@@ -11,12 +11,21 @@ namespace COA_PRIS.Utilities
 {
     internal class Tab_Manager
     {
-        private Colors Colors;
 
         private List<Control> Navigation_Buttons = new List<Control>();
 
         private List<object> Sub_Frames = new List<object>();
+        
+        private string selected_color { get; set; }
+        private string unselected_color { get; set; }
         public Control Header_Title { get; set; }
+
+
+        public Tab_Manager() 
+        {
+            this.selected_color = (!string.IsNullOrEmpty(selected_color)) ? selected_color : "#365486";
+            this.unselected_color = (!string.IsNullOrEmpty(unselected_color)) ? unselected_color : "#1B303B";
+        }
 
         public List<object> Sub_frames 
         { 
@@ -28,13 +37,12 @@ namespace COA_PRIS.Utilities
             get { return Navigation_Buttons; }
             set { Navigation_Buttons = value; }
         }
-        public void active_Button(GunaButton button, bool has_Title = false, string selected_color = "#365486", string unselected_color = "#1B303B")
+        public void active_Button(GunaButton button, bool has_Title = false)
         {
             foreach (var buttons in Navigation_Buttons)
             {
                 if (buttons.Name.Equals(button.Name))
                 {
-                    Console.WriteLine(buttons.Name);
                     button.BackColor = Colors.Hex_To_RGB(selected_color);
                     if (has_Title)
                         change_Title(button.Text.ToUpper());
@@ -45,12 +53,23 @@ namespace COA_PRIS.Utilities
                 }
             }
         }
+        public void set_Colors(string selected_color = null, string unselected_color = null)
+        { 
+            this.selected_color = selected_color;
+            this.unselected_color = unselected_color;
+        }
 
         private void change_Title(string title) 
         { 
             Header_Title.Text = title;
         }
 
+        public void set_Buttons(Control panel)
+        {
+            foreach (Control control in panel.Controls)
+                if (control is GunaButton)
+                    Nav_buttons.Add(control);
+        }
 
         public Form switch_Form(Form form, Form current_Form, GunaPanel main_Panel)
         {

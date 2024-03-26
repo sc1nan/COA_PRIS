@@ -44,6 +44,8 @@
             this.EmployeeBtn = new Guna.UI.WinForms.GunaButton();
             this.user_Panel = new Guna.UI.WinForms.GunaPanel();
             this.UserBtn = new Guna.UI.WinForms.GunaButton();
+            this.maintenance_Panel = new Guna.UI.WinForms.GunaPanel();
+            this.MaintenanceBtn = new Guna.UI.WinForms.GunaButton();
             this.log_Panel = new Guna.UI.WinForms.GunaPanel();
             this.LogBtn = new Guna.UI.WinForms.GunaButton();
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
@@ -51,8 +53,8 @@
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.headerTitle = new Guna.UI.WinForms.GunaLabel();
-            this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.Main_Form = new Guna.UI.WinForms.GunaPanel();
             this.SidebarContainer.SuspendLayout();
             this.tab_panel.SuspendLayout();
@@ -61,10 +63,11 @@
             this.report_Panel.SuspendLayout();
             this.employee_Panel.SuspendLayout();
             this.user_Panel.SuspendLayout();
+            this.maintenance_Panel.SuspendLayout();
             this.log_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
             this.gunaPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // SidebarContainer
@@ -111,47 +114,6 @@
             this.sideExpand_Btn.TabIndex = 0;
             this.sideExpand_Btn.Click += new System.EventHandler(this.sidebar_Click);
             // 
-            // gunaPanel6
-            // 
-            this.gunaPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaPanel6.Controls.Add(this.UserBtn);
-            this.gunaPanel6.Location = new System.Drawing.Point(0, 472);
-            this.gunaPanel6.Margin = new System.Windows.Forms.Padding(0);
-            this.gunaPanel6.Name = "gunaPanel6";
-            this.gunaPanel6.Size = new System.Drawing.Size(95, 70);
-            this.gunaPanel6.TabIndex = 6;
-            this.gunaPanel6.Tag = "Tabs";
-            // 
-            // UserBtn
-            // 
-            this.UserBtn.AnimationHoverSpeed = 0.07F;
-            this.UserBtn.AnimationSpeed = 0.03F;
-            this.UserBtn.BaseColor = System.Drawing.Color.Transparent;
-            this.UserBtn.BorderColor = System.Drawing.Color.Black;
-            this.UserBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.UserBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.UserBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UserBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.UserBtn.Font = new System.Drawing.Font("Bahnschrift", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserBtn.ForeColor = System.Drawing.Color.White;
-            this.UserBtn.Image = global::COA_PRIS.Properties.Resources.log_file;
-            this.UserBtn.ImageOffsetX = 15;
-            this.UserBtn.ImageSize = new System.Drawing.Size(40, 40);
-            this.UserBtn.Location = new System.Drawing.Point(0, 0);
-            this.UserBtn.Margin = new System.Windows.Forms.Padding(2);
-            this.UserBtn.Name = "UserBtn";
-            this.UserBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
-            this.UserBtn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.UserBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.UserBtn.OnHoverImage = null;
-            this.UserBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.UserBtn.Size = new System.Drawing.Size(95, 70);
-            this.UserBtn.TabIndex = 5;
-            this.UserBtn.Tag = "ControlTabs";
-            this.UserBtn.Text = "User Settings";
-            this.UserBtn.TextOffsetX = 40;
-            // 
             // gunaLabel2
             // 
             this.gunaLabel2.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -175,6 +137,7 @@
             this.tab_panel.Controls.Add(this.report_Panel);
             this.tab_panel.Controls.Add(this.employee_Panel);
             this.tab_panel.Controls.Add(this.user_Panel);
+            this.tab_panel.Controls.Add(this.maintenance_Panel);
             this.tab_panel.Controls.Add(this.log_Panel);
             this.tab_panel.Location = new System.Drawing.Point(0, 175);
             this.tab_panel.Margin = new System.Windows.Forms.Padding(0);
@@ -197,15 +160,13 @@
             // 
             // HomeBtn
             // 
-            this.HomeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.HomeBtn.AnimationHoverSpeed = 0.07F;
             this.HomeBtn.AnimationSpeed = 0.03F;
             this.HomeBtn.BaseColor = System.Drawing.Color.Transparent;
             this.HomeBtn.BorderColor = System.Drawing.Color.Black;
             this.HomeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.HomeBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.HomeBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.HomeBtn.FocusedColor = System.Drawing.Color.Empty;
             this.HomeBtn.Font = new System.Drawing.Font("Bahnschrift", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HomeBtn.ForeColor = System.Drawing.Color.White;
@@ -241,19 +202,17 @@
             // 
             // Createbtn
             // 
-            this.Createbtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.Createbtn.AnimationHoverSpeed = 0.07F;
             this.Createbtn.AnimationSpeed = 0.03F;
             this.Createbtn.BaseColor = System.Drawing.Color.Transparent;
             this.Createbtn.BorderColor = System.Drawing.Color.Black;
             this.Createbtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Createbtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.Createbtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Createbtn.FocusedColor = System.Drawing.Color.Empty;
             this.Createbtn.Font = new System.Drawing.Font("Bahnschrift", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Createbtn.ForeColor = System.Drawing.Color.White;
-            this.Createbtn.Image = global::COA_PRIS.Properties.Resources.edit;
+            this.Createbtn.Image = global::COA_PRIS.Properties.Resources.project;
             this.Createbtn.ImageOffsetX = 15;
             this.Createbtn.ImageSize = new System.Drawing.Size(40, 40);
             this.Createbtn.Location = new System.Drawing.Point(0, 0);
@@ -285,15 +244,13 @@
             // 
             // ReportBtn
             // 
-            this.ReportBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.ReportBtn.AnimationHoverSpeed = 0.07F;
             this.ReportBtn.AnimationSpeed = 0.03F;
             this.ReportBtn.BaseColor = System.Drawing.Color.Transparent;
             this.ReportBtn.BorderColor = System.Drawing.Color.Black;
             this.ReportBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ReportBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.ReportBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ReportBtn.FocusedColor = System.Drawing.Color.Empty;
             this.ReportBtn.Font = new System.Drawing.Font("Bahnschrift", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ReportBtn.ForeColor = System.Drawing.Color.White;
@@ -329,15 +286,13 @@
             // 
             // EmployeeBtn
             // 
-            this.EmployeeBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.EmployeeBtn.AnimationHoverSpeed = 0.07F;
             this.EmployeeBtn.AnimationSpeed = 0.03F;
             this.EmployeeBtn.BaseColor = System.Drawing.Color.Transparent;
             this.EmployeeBtn.BorderColor = System.Drawing.Color.Black;
             this.EmployeeBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.EmployeeBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.EmployeeBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.EmployeeBtn.FocusedColor = System.Drawing.Color.Empty;
             this.EmployeeBtn.Font = new System.Drawing.Font("Bahnschrift", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.EmployeeBtn.ForeColor = System.Drawing.Color.White;
@@ -373,15 +328,13 @@
             // 
             // UserBtn
             // 
-            this.UserBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.UserBtn.AnimationHoverSpeed = 0.07F;
             this.UserBtn.AnimationSpeed = 0.03F;
             this.UserBtn.BaseColor = System.Drawing.Color.Transparent;
             this.UserBtn.BorderColor = System.Drawing.Color.Black;
             this.UserBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.UserBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.UserBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.UserBtn.FocusedColor = System.Drawing.Color.Empty;
             this.UserBtn.Font = new System.Drawing.Font("Bahnschrift", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserBtn.ForeColor = System.Drawing.Color.White;
@@ -403,13 +356,55 @@
             this.UserBtn.TextOffsetX = 18;
             this.UserBtn.Click += new System.EventHandler(this.button_Click);
             // 
+            // maintenance_Panel
+            // 
+            this.maintenance_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.maintenance_Panel.Controls.Add(this.MaintenanceBtn);
+            this.maintenance_Panel.Location = new System.Drawing.Point(0, 372);
+            this.maintenance_Panel.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.maintenance_Panel.Name = "maintenance_Panel";
+            this.maintenance_Panel.Size = new System.Drawing.Size(250, 70);
+            this.maintenance_Panel.TabIndex = 7;
+            this.maintenance_Panel.Tag = "Tabs";
+            // 
+            // MaintenanceBtn
+            // 
+            this.MaintenanceBtn.AnimationHoverSpeed = 0.07F;
+            this.MaintenanceBtn.AnimationSpeed = 0.03F;
+            this.MaintenanceBtn.BaseColor = System.Drawing.Color.Transparent;
+            this.MaintenanceBtn.BorderColor = System.Drawing.Color.Black;
+            this.MaintenanceBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.MaintenanceBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.MaintenanceBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.MaintenanceBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.MaintenanceBtn.Font = new System.Drawing.Font("Bahnschrift", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MaintenanceBtn.ForeColor = System.Drawing.Color.White;
+            this.MaintenanceBtn.Image = global::COA_PRIS.Properties.Resources.services;
+            this.MaintenanceBtn.ImageOffsetX = 15;
+            this.MaintenanceBtn.ImageSize = new System.Drawing.Size(40, 40);
+            this.MaintenanceBtn.Location = new System.Drawing.Point(0, 0);
+            this.MaintenanceBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.MaintenanceBtn.Name = "MaintenanceBtn";
+            this.MaintenanceBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
+            this.MaintenanceBtn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.MaintenanceBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.MaintenanceBtn.OnHoverImage = null;
+            this.MaintenanceBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.MaintenanceBtn.Size = new System.Drawing.Size(250, 70);
+            this.MaintenanceBtn.TabIndex = 6;
+            this.MaintenanceBtn.Tag = "ControlTabs";
+            this.MaintenanceBtn.Text = "Maintenance";
+            this.MaintenanceBtn.TextOffsetX = 18;
+            this.MaintenanceBtn.Click += new System.EventHandler(this.button_Click);
+            // 
             // log_Panel
             // 
             this.log_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.log_Panel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.log_Panel.Controls.Add(this.LogBtn);
-            this.log_Panel.Location = new System.Drawing.Point(0, 372);
+            this.log_Panel.Location = new System.Drawing.Point(0, 446);
             this.log_Panel.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
             this.log_Panel.Name = "log_Panel";
             this.log_Panel.Size = new System.Drawing.Size(250, 70);
@@ -418,15 +413,13 @@
             // 
             // LogBtn
             // 
-            this.LogBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.LogBtn.AnimationHoverSpeed = 0.07F;
             this.LogBtn.AnimationSpeed = 0.03F;
             this.LogBtn.BaseColor = System.Drawing.Color.Transparent;
             this.LogBtn.BorderColor = System.Drawing.Color.Black;
             this.LogBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.LogBtn.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LogBtn.FocusedColor = System.Drawing.Color.Empty;
             this.LogBtn.Font = new System.Drawing.Font("Bahnschrift", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LogBtn.ForeColor = System.Drawing.Color.White;
@@ -496,25 +489,13 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.headerTitle.AutoSize = true;
-            this.headerTitle.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.headerTitle.Font = new System.Drawing.Font("Bahnschrift SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headerTitle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             this.headerTitle.Location = new System.Drawing.Point(29, 31);
             this.headerTitle.Name = "headerTitle";
-            this.headerTitle.Size = new System.Drawing.Size(76, 29);
-            this.headerTitle.TabIndex = 13;
-            this.headerTitle.Text = "Home";
-            // 
-            // gunaPictureBox2
-            // 
-            this.gunaPictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox2.Image")));
-            this.gunaPictureBox2.Location = new System.Drawing.Point(1503, 12);
-            this.gunaPictureBox2.Name = "gunaPictureBox2";
-            this.gunaPictureBox2.Size = new System.Drawing.Size(50, 50);
-            this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaPictureBox2.TabIndex = 11;
-            this.gunaPictureBox2.TabStop = false;
+            this.headerTitle.Size = new System.Drawing.Size(79, 29);
+            this.headerTitle.TabIndex = 10;
+            this.headerTitle.Text = "120123";
             // 
             // gunaPanel1
             // 
@@ -528,6 +509,18 @@
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(1589, 90);
             this.gunaPanel1.TabIndex = 11;
+            // 
+            // gunaPictureBox2
+            // 
+            this.gunaPictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox2.Image")));
+            this.gunaPictureBox2.Location = new System.Drawing.Point(1503, 12);
+            this.gunaPictureBox2.Name = "gunaPictureBox2";
+            this.gunaPictureBox2.Size = new System.Drawing.Size(50, 50);
+            this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaPictureBox2.TabIndex = 11;
+            this.gunaPictureBox2.TabStop = false;
             // 
             // Main_Form
             // 
@@ -566,11 +559,12 @@
             this.report_Panel.ResumeLayout(false);
             this.employee_Panel.ResumeLayout(false);
             this.user_Panel.ResumeLayout(false);
+            this.maintenance_Panel.ResumeLayout(false);
             this.log_Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
             this.gunaPanel1.ResumeLayout(false);
             this.gunaPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -602,5 +596,7 @@
         private System.Windows.Forms.FlowLayoutPanel tab_panel;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
         private Guna.UI.WinForms.GunaPanel Main_Form;
+        private Guna.UI.WinForms.GunaButton MaintenanceBtn;
+        private Guna.UI.WinForms.GunaPanel maintenance_Panel;
     }
 }

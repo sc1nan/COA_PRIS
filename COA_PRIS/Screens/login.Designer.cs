@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
@@ -35,26 +36,28 @@
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.Login_btn = new Guna.UI.WinForms.GunaButton();
-            this.gunaElipsePanel3 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.pass_Panel = new Guna.UI.WinForms.GunaElipsePanel();
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.password_entry = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.login_entry = new Guna.UI.WinForms.GunaTextBox();
+            this.user_Panel = new Guna.UI.WinForms.GunaElipsePanel();
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaElipsePanel4 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.gunaElipsePanel5 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.parent_Panel = new Guna.UI.WinForms.GunaElipsePanel();
             this.error_label = new Guna.UI.WinForms.GunaLabel();
             this.gunaImageButton1 = new Guna.UI.WinForms.GunaImageButton();
             this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.login_Error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.username_entry = new Guna.UI.WinForms.GunaTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.gunaPanel1.SuspendLayout();
-            this.gunaElipsePanel3.SuspendLayout();
+            this.pass_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
-            this.gunaElipsePanel2.SuspendLayout();
+            this.user_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.gunaElipsePanel4.SuspendLayout();
-            this.gunaElipsePanel5.SuspendLayout();
+            this.parent_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.login_Error)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaCirclePictureBox1
@@ -151,18 +154,18 @@
             this.Login_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.Login_btn.Click += new System.EventHandler(this.Loginbtn_Click);
             // 
-            // gunaElipsePanel3
+            // pass_Panel
             // 
-            this.gunaElipsePanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.pass_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaElipsePanel3.BackColor = System.Drawing.Color.Transparent;
-            this.gunaElipsePanel3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(109)))), ((int)(((byte)(128)))));
-            this.gunaElipsePanel3.Controls.Add(this.gunaPictureBox2);
-            this.gunaElipsePanel3.Controls.Add(this.password_entry);
-            this.gunaElipsePanel3.Location = new System.Drawing.Point(42, 570);
-            this.gunaElipsePanel3.Name = "gunaElipsePanel3";
-            this.gunaElipsePanel3.Size = new System.Drawing.Size(400, 55);
-            this.gunaElipsePanel3.TabIndex = 4;
+            this.pass_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.pass_Panel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(109)))), ((int)(((byte)(128)))));
+            this.pass_Panel.Controls.Add(this.gunaPictureBox2);
+            this.pass_Panel.Controls.Add(this.password_entry);
+            this.pass_Panel.Location = new System.Drawing.Point(42, 570);
+            this.pass_Panel.Name = "pass_Panel";
+            this.pass_Panel.Size = new System.Drawing.Size(400, 55);
+            this.pass_Panel.TabIndex = 4;
             // 
             // gunaPictureBox2
             // 
@@ -194,53 +197,24 @@
             this.password_entry.PasswordChar = '\0';
             this.password_entry.Radius = 5;
             this.password_entry.SelectedText = "";
-            this.password_entry.Size = new System.Drawing.Size(337, 49);
+            this.password_entry.Size = new System.Drawing.Size(321, 49);
             this.password_entry.TabIndex = 3;
+            this.password_entry.Tag = "Password";
             this.password_entry.Text = "Password";
-            this.password_entry.TextChanged += new System.EventHandler(this.password_entry_TextChanged);
             this.password_entry.Enter += new System.EventHandler(this.password_entry_Enter);
-            this.password_entry.KeyDown += new System.Windows.Forms.KeyEventHandler(this.password_entry_KeyDown);
-            this.password_entry.Leave += new System.EventHandler(this.password_entry_Leave);
             // 
-            // gunaElipsePanel2
+            // user_Panel
             // 
-            this.gunaElipsePanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.user_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaElipsePanel2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaElipsePanel2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(109)))), ((int)(((byte)(128)))));
-            this.gunaElipsePanel2.Controls.Add(this.login_entry);
-            this.gunaElipsePanel2.Controls.Add(this.gunaPictureBox1);
-            this.gunaElipsePanel2.Location = new System.Drawing.Point(42, 488);
-            this.gunaElipsePanel2.Name = "gunaElipsePanel2";
-            this.gunaElipsePanel2.Size = new System.Drawing.Size(400, 55);
-            this.gunaElipsePanel2.TabIndex = 3;
-            // 
-            // login_entry
-            // 
-            this.login_entry.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.login_entry.BackColor = System.Drawing.Color.Transparent;
-            this.login_entry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.login_entry.BaseColor = System.Drawing.Color.White;
-            this.login_entry.BorderColor = System.Drawing.Color.Transparent;
-            this.login_entry.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.login_entry.FocusedBaseColor = System.Drawing.Color.White;
-            this.login_entry.FocusedBorderColor = System.Drawing.SystemColors.MenuHighlight;
-            this.login_entry.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.login_entry.Font = new System.Drawing.Font("Bahnschrift", 14F);
-            this.login_entry.Location = new System.Drawing.Point(59, 3);
-            this.login_entry.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
-            this.login_entry.Name = "login_entry";
-            this.login_entry.PasswordChar = '\0';
-            this.login_entry.Radius = 5;
-            this.login_entry.SelectedText = "";
-            this.login_entry.Size = new System.Drawing.Size(337, 48);
-            this.login_entry.TabIndex = 2;
-            this.login_entry.Text = "Username";
-            this.login_entry.Enter += new System.EventHandler(this.login_entry_Enter);
-            this.login_entry.KeyDown += new System.Windows.Forms.KeyEventHandler(this.login_entry_KeyDown);
-            this.login_entry.Leave += new System.EventHandler(this.login_entry_Leave);
+            this.user_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.user_Panel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(109)))), ((int)(((byte)(128)))));
+            this.user_Panel.Controls.Add(this.username_entry);
+            this.user_Panel.Controls.Add(this.gunaPictureBox1);
+            this.user_Panel.Location = new System.Drawing.Point(42, 488);
+            this.user_Panel.Name = "user_Panel";
+            this.user_Panel.Size = new System.Drawing.Size(400, 55);
+            this.user_Panel.TabIndex = 3;
             // 
             // gunaPictureBox1
             // 
@@ -260,31 +234,31 @@
             this.gunaElipsePanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.gunaElipsePanel4.BackColor = System.Drawing.Color.Transparent;
             this.gunaElipsePanel4.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(109)))), ((int)(((byte)(128)))));
-            this.gunaElipsePanel4.Controls.Add(this.gunaElipsePanel5);
+            this.gunaElipsePanel4.Controls.Add(this.parent_Panel);
             this.gunaElipsePanel4.Location = new System.Drawing.Point(580, 67);
             this.gunaElipsePanel4.Name = "gunaElipsePanel4";
             this.gunaElipsePanel4.Radius = 10;
             this.gunaElipsePanel4.Size = new System.Drawing.Size(500, 813);
             this.gunaElipsePanel4.TabIndex = 2;
             // 
-            // gunaElipsePanel5
+            // parent_Panel
             // 
-            this.gunaElipsePanel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.parent_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.gunaElipsePanel5.BackColor = System.Drawing.Color.Transparent;
-            this.gunaElipsePanel5.BaseColor = System.Drawing.Color.White;
-            this.gunaElipsePanel5.Controls.Add(this.error_label);
-            this.gunaElipsePanel5.Controls.Add(this.gunaPanel1);
-            this.gunaElipsePanel5.Controls.Add(this.gunaElipsePanel3);
-            this.gunaElipsePanel5.Controls.Add(this.Login_btn);
-            this.gunaElipsePanel5.Controls.Add(this.gunaCirclePictureBox1);
-            this.gunaElipsePanel5.Controls.Add(this.gunaElipsePanel2);
-            this.gunaElipsePanel5.Location = new System.Drawing.Point(10, 10);
-            this.gunaElipsePanel5.Margin = new System.Windows.Forms.Padding(10);
-            this.gunaElipsePanel5.Name = "gunaElipsePanel5";
-            this.gunaElipsePanel5.Radius = 10;
-            this.gunaElipsePanel5.Size = new System.Drawing.Size(480, 792);
-            this.gunaElipsePanel5.TabIndex = 3;
+            this.parent_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.parent_Panel.BaseColor = System.Drawing.Color.White;
+            this.parent_Panel.Controls.Add(this.error_label);
+            this.parent_Panel.Controls.Add(this.gunaPanel1);
+            this.parent_Panel.Controls.Add(this.pass_Panel);
+            this.parent_Panel.Controls.Add(this.Login_btn);
+            this.parent_Panel.Controls.Add(this.gunaCirclePictureBox1);
+            this.parent_Panel.Controls.Add(this.user_Panel);
+            this.parent_Panel.Location = new System.Drawing.Point(10, 10);
+            this.parent_Panel.Margin = new System.Windows.Forms.Padding(10);
+            this.parent_Panel.Name = "parent_Panel";
+            this.parent_Panel.Radius = 10;
+            this.parent_Panel.Size = new System.Drawing.Size(480, 792);
+            this.parent_Panel.TabIndex = 3;
             // 
             // error_label
             // 
@@ -331,6 +305,38 @@
             this.gunaCirclePictureBox2.TabStop = false;
             this.gunaCirclePictureBox2.UseTransfarantBackground = false;
             // 
+            // login_Error
+            // 
+            this.login_Error.BlinkRate = 0;
+            this.login_Error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.login_Error.ContainerControl = this;
+            // 
+            // username_entry
+            // 
+            this.username_entry.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.username_entry.BackColor = System.Drawing.Color.Transparent;
+            this.username_entry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.username_entry.BaseColor = System.Drawing.Color.White;
+            this.username_entry.BorderColor = System.Drawing.Color.Transparent;
+            this.username_entry.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.username_entry.FocusedBaseColor = System.Drawing.Color.White;
+            this.username_entry.FocusedBorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.username_entry.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.username_entry.Font = new System.Drawing.Font("Bahnschrift", 14F);
+            this.username_entry.Location = new System.Drawing.Point(59, 3);
+            this.username_entry.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
+            this.username_entry.Name = "username_entry";
+            this.username_entry.PasswordChar = '\0';
+            this.username_entry.Radius = 5;
+            this.username_entry.SelectedText = "";
+            this.username_entry.Size = new System.Drawing.Size(321, 48);
+            this.username_entry.TabIndex = 2;
+            this.username_entry.Tag = "Username";
+            this.username_entry.Text = "Username";
+            this.username_entry.Enter += new System.EventHandler(this.login_entry_Enter);
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
@@ -346,22 +352,24 @@
             this.Font = new System.Drawing.Font("Bahnschrift", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(800, 900);
+            this.MinimumSize = new System.Drawing.Size(1500, 800);
             this.Name = "login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PRIS Login";
+            this.Text = "Project Record Information System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.login_FormClosing);
+            this.Load += new System.EventHandler(this.login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.gunaPanel1.ResumeLayout(false);
-            this.gunaElipsePanel3.ResumeLayout(false);
+            this.pass_Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
-            this.gunaElipsePanel2.ResumeLayout(false);
+            this.user_Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).EndInit();
             this.gunaElipsePanel4.ResumeLayout(false);
-            this.gunaElipsePanel5.ResumeLayout(false);
-            this.gunaElipsePanel5.PerformLayout();
+            this.parent_Panel.ResumeLayout(false);
+            this.parent_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.login_Error)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -372,12 +380,11 @@
         private Guna.UI.WinForms.GunaButton Login_btn;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
-        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel2;
-        private Guna.UI.WinForms.GunaTextBox login_entry;
-        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel3;
+        private Guna.UI.WinForms.GunaElipsePanel user_Panel;
+        private Guna.UI.WinForms.GunaElipsePanel pass_Panel;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel4;
-        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel5;
+        private Guna.UI.WinForms.GunaElipsePanel parent_Panel;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox2;
         private Guna.UI.WinForms.GunaLabel error_label;
@@ -385,5 +392,7 @@
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox2;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;
         private Guna.UI.WinForms.GunaTextBox password_entry;
+        private System.Windows.Forms.ErrorProvider login_Error;
+        private Guna.UI.WinForms.GunaTextBox username_entry;
     }
 }
