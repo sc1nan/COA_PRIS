@@ -29,26 +29,46 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblText = new System.Windows.Forms.Label();
+            this.gunaProgressBar1 = new Guna.UI.WinForms.GunaProgressBar();
+            this.label1 = new Guna.UI.WinForms.GunaLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
-            // lblText
+            // gunaProgressBar1
             // 
-            this.lblText.AutoSize = true;
-            this.lblText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(242)))), ((int)(((byte)(241)))));
-            this.lblText.Font = new System.Drawing.Font("Bahnschrift", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblText.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.lblText.Location = new System.Drawing.Point(206, 259);
-            this.lblText.Name = "lblText";
-            this.lblText.Size = new System.Drawing.Size(745, 77);
-            this.lblText.TabIndex = 0;
-            this.lblText.Text = "Technical Services Office";
+            this.gunaProgressBar1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaProgressBar1.BorderColor = System.Drawing.Color.Black;
+            this.gunaProgressBar1.ColorStyle = Guna.UI.WinForms.ColorStyle.Default;
+            this.gunaProgressBar1.IdleColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.gunaProgressBar1.Location = new System.Drawing.Point(448, 331);
+            this.gunaProgressBar1.Name = "gunaProgressBar1";
+            this.gunaProgressBar1.ProgressMaxColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaProgressBar1.ProgressMinColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.gunaProgressBar1.Radius = 5;
+            this.gunaProgressBar1.Size = new System.Drawing.Size(278, 10);
+            this.gunaProgressBar1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.label1.Location = new System.Drawing.Point(223, 214);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(745, 77);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Technical Services Office";
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // timer2
+            // 
+            this.timer2.Enabled = true;
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // Splash_Screen
             // 
@@ -57,7 +77,8 @@
             this.BackgroundImage = global::COA_PRIS.Properties.Resources.Splash_screen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1123, 691);
-            this.Controls.Add(this.lblText);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.gunaProgressBar1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Splash_Screen";
@@ -69,8 +90,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblText;
+        private Guna.UI.WinForms.GunaProgressBar gunaProgressBar1;
+        private Guna.UI.WinForms.GunaLabel label1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
     }
 }
