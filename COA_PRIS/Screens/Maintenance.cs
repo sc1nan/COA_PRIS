@@ -17,10 +17,11 @@ namespace COA_PRIS.Screens
     public partial class Maintenance : Form
     {
         private Tab_Manager tab_Manager;
-        private Maintenance_Form maintenance_Form = new Maintenance_Form();
+        private Maintenance_Form maintenance_Form;
         public Maintenance()
         {
             InitializeComponent();
+            maintenance_Form = new Maintenance_Form();
         }
 
         private void Maintenance_Load(object sender, EventArgs e)
@@ -32,8 +33,8 @@ namespace COA_PRIS.Screens
             tab_Manager.active_Button(agency_Btn, false);
             tab_Manager.Header_Title = title_label;
 
-            agency_Btn.PerformClick();
             show_Form();
+            agency_Btn.PerformClick();
 
         }
 
@@ -41,19 +42,51 @@ namespace COA_PRIS.Screens
         { 
             var button = (GunaButton)sender;
             string query = null;
+            bool[] bools = null;
 
             switch (button.Tag) 
             {
-                case "AGENCY":
+                case "Agency":
                     query = Database_Query.get_all_agency_records;
+                    bools = new bool[] { true, true, true, true };
                     break;
-                case "CLUSTER":
+                case "Cluster":
                     query = Database_Query.get_all_cluster_records;
+                    bools = new bool[] { true, true, true, true };
                     break;
+                case "Contractor":
+                    query = Database_Query.get_all_cluster_records;
+                    bools = new bool[] { true, true, true, true };
+                    break;
+                case "Division":
+                    query = Database_Query.get_all_cluster_records;
+                    bools = new bool[] { true, true, true, true };
+                    break;
+                case "Office":
+                    query = Database_Query.get_all_cluster_records;
+                    bools = new bool[] { true, true, true, true };
+                    break;
+                case "Nature":
+                    query = Database_Query.get_all_cluster_records;
+                    bools = new bool[] { true, true, true, true };
+                    break;
+                case "Section":
+                    query = Database_Query.get_all_cluster_records;
+                    bools = new bool[] { true, true, true, true };
+                    break;
+                case "Sector":
+                    query = Database_Query.get_all_cluster_records;
+                    bools = new bool[] { true, true, true, true };
+                    break;
+                case "Status":
+                    query = Database_Query.get_all_cluster_records;
+                    bools = new bool[] { true, true, true, true };
+                    break;
+
             }
 
             
-            maintenance_Form.set_Form(query, (string)button.Tag);
+            maintenance_Form.set_Form(query, bools);
             tab_Manager.active_Button(button, true);
         }
 

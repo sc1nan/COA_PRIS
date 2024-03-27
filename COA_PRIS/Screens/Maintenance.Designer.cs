@@ -32,6 +32,10 @@
             this.container_panel_1 = new Guna.UI.WinForms.GunaPanel();
             this.line_Panel = new Guna.UI.WinForms.GunaPanel();
             this.nav_panel = new System.Windows.Forms.FlowLayoutPanel();
+            this.container_Panel = new Guna.UI.WinForms.GunaPanel();
+            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.title_label = new Guna.UI.WinForms.GunaLabel();
+            this.subCon_Panel = new Guna.UI.WinForms.GunaPanel();
             this.agency_Btn = new Guna.UI.WinForms.GunaButton();
             this.cluster_Btn = new Guna.UI.WinForms.GunaButton();
             this.contractor_Btn = new Guna.UI.WinForms.GunaButton();
@@ -41,10 +45,6 @@
             this.status_Btn = new Guna.UI.WinForms.GunaButton();
             this.sector_Btn = new Guna.UI.WinForms.GunaButton();
             this.section_Btn = new Guna.UI.WinForms.GunaButton();
-            this.container_Panel = new Guna.UI.WinForms.GunaPanel();
-            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
-            this.title_label = new Guna.UI.WinForms.GunaLabel();
-            this.subCon_Panel = new Guna.UI.WinForms.GunaPanel();
             this.parent_panel.SuspendLayout();
             this.container_panel_1.SuspendLayout();
             this.nav_panel.SuspendLayout();
@@ -89,21 +89,69 @@
             // nav_panel
             // 
             this.nav_panel.AutoScroll = true;
-            this.nav_panel.BackColor = System.Drawing.Color.Silver;
+            this.nav_panel.BackColor = System.Drawing.Color.LightGray;
             this.nav_panel.Controls.Add(this.agency_Btn);
             this.nav_panel.Controls.Add(this.cluster_Btn);
             this.nav_panel.Controls.Add(this.contractor_Btn);
             this.nav_panel.Controls.Add(this.division_Btn);
             this.nav_panel.Controls.Add(this.office_Btn);
             this.nav_panel.Controls.Add(this.nature_Btn);
-            this.nav_panel.Controls.Add(this.status_Btn);
-            this.nav_panel.Controls.Add(this.sector_Btn);
             this.nav_panel.Controls.Add(this.section_Btn);
+            this.nav_panel.Controls.Add(this.sector_Btn);
+            this.nav_panel.Controls.Add(this.status_Btn);
             this.nav_panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.nav_panel.Location = new System.Drawing.Point(0, 0);
             this.nav_panel.Name = "nav_panel";
             this.nav_panel.Size = new System.Drawing.Size(255, 877);
             this.nav_panel.TabIndex = 0;
+            // 
+            // container_Panel
+            // 
+            this.container_Panel.BackColor = System.Drawing.Color.White;
+            this.container_Panel.Controls.Add(this.gunaPanel1);
+            this.container_Panel.Controls.Add(this.subCon_Panel);
+            this.container_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container_Panel.Location = new System.Drawing.Point(0, 0);
+            this.container_Panel.Name = "container_Panel";
+            this.container_Panel.Padding = new System.Windows.Forms.Padding(5);
+            this.container_Panel.Size = new System.Drawing.Size(1569, 877);
+            this.container_Panel.TabIndex = 3;
+            // 
+            // gunaPanel1
+            // 
+            this.gunaPanel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.gunaPanel1.Controls.Add(this.title_label);
+            this.gunaPanel1.Location = new System.Drawing.Point(269, 10);
+            this.gunaPanel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 0);
+            this.gunaPanel1.Name = "gunaPanel1";
+            this.gunaPanel1.Size = new System.Drawing.Size(214, 46);
+            this.gunaPanel1.TabIndex = 3;
+            // 
+            // title_label
+            // 
+            this.title_label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.title_label.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.title_label.Location = new System.Drawing.Point(0, 0);
+            this.title_label.Margin = new System.Windows.Forms.Padding(5, 5, 5, 0);
+            this.title_label.Name = "title_label";
+            this.title_label.Size = new System.Drawing.Size(214, 46);
+            this.title_label.TabIndex = 0;
+            this.title_label.Text = "120123";
+            this.title_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // subCon_Panel
+            // 
+            this.subCon_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.subCon_Panel.BackColor = System.Drawing.Color.Gainsboro;
+            this.subCon_Panel.Location = new System.Drawing.Point(269, 55);
+            this.subCon_Panel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 5);
+            this.subCon_Panel.Name = "subCon_Panel";
+            this.subCon_Panel.Padding = new System.Windows.Forms.Padding(10);
+            this.subCon_Panel.Size = new System.Drawing.Size(1290, 812);
+            this.subCon_Panel.TabIndex = 2;
             // 
             // agency_Btn
             // 
@@ -119,7 +167,7 @@
             this.agency_Btn.FocusedColor = System.Drawing.Color.Empty;
             this.agency_Btn.Font = new System.Drawing.Font("Bahnschrift", 14F);
             this.agency_Btn.ForeColor = System.Drawing.Color.White;
-            this.agency_Btn.Image = global::COA_PRIS.Properties.Resources.document;
+            this.agency_Btn.Image = global::COA_PRIS.Properties.Resources.company;
             this.agency_Btn.ImageOffsetX = 5;
             this.agency_Btn.ImageSize = new System.Drawing.Size(30, 30);
             this.agency_Btn.Location = new System.Drawing.Point(0, 0);
@@ -151,7 +199,7 @@
             this.cluster_Btn.FocusedColor = System.Drawing.Color.Empty;
             this.cluster_Btn.Font = new System.Drawing.Font("Bahnschrift", 14F);
             this.cluster_Btn.ForeColor = System.Drawing.Color.White;
-            this.cluster_Btn.Image = global::COA_PRIS.Properties.Resources.document;
+            this.cluster_Btn.Image = global::COA_PRIS.Properties.Resources.connection;
             this.cluster_Btn.ImageOffsetX = 5;
             this.cluster_Btn.ImageSize = new System.Drawing.Size(30, 30);
             this.cluster_Btn.Location = new System.Drawing.Point(0, 66);
@@ -314,7 +362,7 @@
             this.status_Btn.Image = global::COA_PRIS.Properties.Resources.document;
             this.status_Btn.ImageOffsetX = 5;
             this.status_Btn.ImageSize = new System.Drawing.Size(30, 30);
-            this.status_Btn.Location = new System.Drawing.Point(0, 396);
+            this.status_Btn.Location = new System.Drawing.Point(0, 528);
             this.status_Btn.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.status_Btn.Name = "status_Btn";
             this.status_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
@@ -378,7 +426,7 @@
             this.section_Btn.Image = global::COA_PRIS.Properties.Resources.document;
             this.section_Btn.ImageOffsetX = 5;
             this.section_Btn.ImageSize = new System.Drawing.Size(30, 30);
-            this.section_Btn.Location = new System.Drawing.Point(0, 528);
+            this.section_Btn.Location = new System.Drawing.Point(0, 396);
             this.section_Btn.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.section_Btn.Name = "section_Btn";
             this.section_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
@@ -392,54 +440,6 @@
             this.section_Btn.Text = "SECTION";
             this.section_Btn.TextOffsetX = 5;
             this.section_Btn.Click += new System.EventHandler(this.button_Click);
-            // 
-            // container_Panel
-            // 
-            this.container_Panel.BackColor = System.Drawing.Color.White;
-            this.container_Panel.Controls.Add(this.gunaPanel1);
-            this.container_Panel.Controls.Add(this.subCon_Panel);
-            this.container_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container_Panel.Location = new System.Drawing.Point(0, 0);
-            this.container_Panel.Name = "container_Panel";
-            this.container_Panel.Padding = new System.Windows.Forms.Padding(5);
-            this.container_Panel.Size = new System.Drawing.Size(1569, 877);
-            this.container_Panel.TabIndex = 3;
-            // 
-            // gunaPanel1
-            // 
-            this.gunaPanel1.BackColor = System.Drawing.Color.Gainsboro;
-            this.gunaPanel1.Controls.Add(this.title_label);
-            this.gunaPanel1.Location = new System.Drawing.Point(269, 10);
-            this.gunaPanel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 0);
-            this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(214, 46);
-            this.gunaPanel1.TabIndex = 3;
-            // 
-            // title_label
-            // 
-            this.title_label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.title_label.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.title_label.Location = new System.Drawing.Point(0, 0);
-            this.title_label.Margin = new System.Windows.Forms.Padding(5, 5, 5, 0);
-            this.title_label.Name = "title_label";
-            this.title_label.Size = new System.Drawing.Size(214, 46);
-            this.title_label.TabIndex = 0;
-            this.title_label.Text = "120123";
-            this.title_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // subCon_Panel
-            // 
-            this.subCon_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.subCon_Panel.BackColor = System.Drawing.Color.Gainsboro;
-            this.subCon_Panel.Location = new System.Drawing.Point(269, 55);
-            this.subCon_Panel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.subCon_Panel.Name = "subCon_Panel";
-            this.subCon_Panel.Padding = new System.Windows.Forms.Padding(10);
-            this.subCon_Panel.Size = new System.Drawing.Size(1290, 812);
-            this.subCon_Panel.TabIndex = 2;
             // 
             // Maintenance
             // 

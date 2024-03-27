@@ -49,13 +49,14 @@
             this.log_Panel = new Guna.UI.WinForms.GunaPanel();
             this.LogBtn = new Guna.UI.WinForms.GunaButton();
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
-            this.SidebarTimer = new System.Windows.Forms.Timer(this.components);
+            this.sidebar_Timer = new System.Windows.Forms.Timer(this.components);
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.headerTitle = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.Main_Form = new Guna.UI.WinForms.GunaPanel();
+            this.tab_ToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SidebarContainer.SuspendLayout();
             this.tab_panel.SuspendLayout();
             this.home_Panel.SuspendLayout();
@@ -454,11 +455,11 @@
             this.gunaCirclePictureBox1.TabStop = false;
             this.gunaCirclePictureBox1.UseTransfarantBackground = false;
             // 
-            // SidebarTimer
+            // sidebar_Timer
             // 
-            this.SidebarTimer.Enabled = true;
-            this.SidebarTimer.Interval = 10;
-            this.SidebarTimer.Tick += new System.EventHandler(this.SidebarTimer_tick);
+            this.sidebar_Timer.Enabled = true;
+            this.sidebar_Timer.Interval = 10;
+            this.sidebar_Timer.Tick += new System.EventHandler(this.SidebarTimer_tick);
             // 
             // gunaElipsePanel1
             // 
@@ -573,7 +574,7 @@
         #endregion
 
         private Guna.UI.WinForms.GunaPanel SidebarContainer;
-        private System.Windows.Forms.Timer SidebarTimer;
+        private System.Windows.Forms.Timer sidebar_Timer;
         private Guna.UI.WinForms.GunaButton HomeBtn;
         private Guna.UI.WinForms.GunaPanel home_Panel;
         private Guna.UI.WinForms.GunaButton EmployeeBtn;
@@ -598,5 +599,6 @@
         private Guna.UI.WinForms.GunaPanel Main_Form;
         private Guna.UI.WinForms.GunaButton MaintenanceBtn;
         private Guna.UI.WinForms.GunaPanel maintenance_Panel;
+        private System.Windows.Forms.ToolTip tab_ToolTip;
     }
 }

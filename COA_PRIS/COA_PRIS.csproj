@@ -326,6 +326,9 @@
     <None Include="Resources\refresh1.png" />
     <None Include="Resources\project.png" />
     <None Include="Resources\refresh %281%291.png" />
+    <None Include="Resources\company.png" />
+    <None Include="Resources\networking.png" />
+    <None Include="Resources\connection.png" />
     <Content Include="Resources\swipe-left.png" />
     <None Include="Resources\swipe-left1.png" />
   </ItemGroup>
