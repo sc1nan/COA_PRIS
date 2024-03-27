@@ -30,11 +30,8 @@
         {
             this.parent_panel = new Guna.UI.WinForms.GunaPanel();
             this.container_panel_1 = new Guna.UI.WinForms.GunaPanel();
-            this.container_Panel = new Guna.UI.WinForms.GunaPanel();
             this.line_Panel = new Guna.UI.WinForms.GunaPanel();
             this.nav_panel = new System.Windows.Forms.FlowLayoutPanel();
-            this.title_label = new Guna.UI.WinForms.GunaLabel();
-            this.subCon_Panel = new Guna.UI.WinForms.GunaPanel();
             this.agency_Btn = new Guna.UI.WinForms.GunaButton();
             this.cluster_Btn = new Guna.UI.WinForms.GunaButton();
             this.contractor_Btn = new Guna.UI.WinForms.GunaButton();
@@ -44,11 +41,14 @@
             this.status_Btn = new Guna.UI.WinForms.GunaButton();
             this.sector_Btn = new Guna.UI.WinForms.GunaButton();
             this.section_Btn = new Guna.UI.WinForms.GunaButton();
+            this.container_Panel = new Guna.UI.WinForms.GunaPanel();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.title_label = new Guna.UI.WinForms.GunaLabel();
+            this.subCon_Panel = new Guna.UI.WinForms.GunaPanel();
             this.parent_panel.SuspendLayout();
             this.container_panel_1.SuspendLayout();
-            this.container_Panel.SuspendLayout();
             this.nav_panel.SuspendLayout();
+            this.container_Panel.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -76,18 +76,6 @@
             this.container_panel_1.Name = "container_panel_1";
             this.container_panel_1.Size = new System.Drawing.Size(1569, 877);
             this.container_panel_1.TabIndex = 3;
-            // 
-            // container_Panel
-            // 
-            this.container_Panel.BackColor = System.Drawing.Color.White;
-            this.container_Panel.Controls.Add(this.gunaPanel1);
-            this.container_Panel.Controls.Add(this.subCon_Panel);
-            this.container_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container_Panel.Location = new System.Drawing.Point(0, 0);
-            this.container_Panel.Name = "container_Panel";
-            this.container_Panel.Padding = new System.Windows.Forms.Padding(8);
-            this.container_Panel.Size = new System.Drawing.Size(1569, 877);
-            this.container_Panel.TabIndex = 3;
             // 
             // line_Panel
             // 
@@ -117,32 +105,6 @@
             this.nav_panel.Size = new System.Drawing.Size(255, 877);
             this.nav_panel.TabIndex = 0;
             // 
-            // title_label
-            // 
-            this.title_label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.title_label.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.title_label.Location = new System.Drawing.Point(0, 0);
-            this.title_label.Margin = new System.Windows.Forms.Padding(5, 5, 5, 0);
-            this.title_label.Name = "title_label";
-            this.title_label.Size = new System.Drawing.Size(214, 46);
-            this.title_label.TabIndex = 0;
-            this.title_label.Text = "120123";
-            this.title_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // subCon_Panel
-            // 
-            this.subCon_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.subCon_Panel.BackColor = System.Drawing.Color.Gainsboro;
-            this.subCon_Panel.Location = new System.Drawing.Point(272, 58);
-            this.subCon_Panel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 5);
-            this.subCon_Panel.Name = "subCon_Panel";
-            this.subCon_Panel.Padding = new System.Windows.Forms.Padding(10);
-            this.subCon_Panel.Size = new System.Drawing.Size(1284, 806);
-            this.subCon_Panel.TabIndex = 2;
-            // 
             // agency_Btn
             // 
             this.agency_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -170,7 +132,7 @@
             this.agency_Btn.OnPressedColor = System.Drawing.Color.Black;
             this.agency_Btn.Size = new System.Drawing.Size(255, 65);
             this.agency_Btn.TabIndex = 0;
-            this.agency_Btn.Tag = "AGENCY";
+            this.agency_Btn.Tag = "Agency";
             this.agency_Btn.Text = "AGENCY";
             this.agency_Btn.TextOffsetX = 5;
             this.agency_Btn.Click += new System.EventHandler(this.button_Click);
@@ -202,7 +164,7 @@
             this.cluster_Btn.OnPressedColor = System.Drawing.Color.Black;
             this.cluster_Btn.Size = new System.Drawing.Size(255, 65);
             this.cluster_Btn.TabIndex = 1;
-            this.cluster_Btn.Tag = "CLUSTER";
+            this.cluster_Btn.Tag = "Cluster";
             this.cluster_Btn.Text = "CLUSTER";
             this.cluster_Btn.TextOffsetX = 5;
             this.cluster_Btn.Click += new System.EventHandler(this.button_Click);
@@ -234,7 +196,7 @@
             this.contractor_Btn.OnPressedColor = System.Drawing.Color.Black;
             this.contractor_Btn.Size = new System.Drawing.Size(255, 65);
             this.contractor_Btn.TabIndex = 2;
-            this.contractor_Btn.Tag = "CONTRACTOR";
+            this.contractor_Btn.Tag = "Contractor";
             this.contractor_Btn.Text = "CONTRACTOR";
             this.contractor_Btn.TextOffsetX = 5;
             this.contractor_Btn.Click += new System.EventHandler(this.button_Click);
@@ -266,7 +228,7 @@
             this.division_Btn.OnPressedColor = System.Drawing.Color.Black;
             this.division_Btn.Size = new System.Drawing.Size(255, 65);
             this.division_Btn.TabIndex = 3;
-            this.division_Btn.Tag = "DIVISION";
+            this.division_Btn.Tag = "Division";
             this.division_Btn.Text = "DIVISION";
             this.division_Btn.TextOffsetX = 5;
             this.division_Btn.Click += new System.EventHandler(this.button_Click);
@@ -298,7 +260,7 @@
             this.office_Btn.OnPressedColor = System.Drawing.Color.Black;
             this.office_Btn.Size = new System.Drawing.Size(255, 65);
             this.office_Btn.TabIndex = 5;
-            this.office_Btn.Tag = "OFFICE";
+            this.office_Btn.Tag = "Office";
             this.office_Btn.Text = "OFFICE";
             this.office_Btn.TextOffsetX = 5;
             this.office_Btn.Click += new System.EventHandler(this.button_Click);
@@ -330,7 +292,7 @@
             this.nature_Btn.OnPressedColor = System.Drawing.Color.Black;
             this.nature_Btn.Size = new System.Drawing.Size(255, 65);
             this.nature_Btn.TabIndex = 8;
-            this.nature_Btn.Tag = "NATURE";
+            this.nature_Btn.Tag = "Nature";
             this.nature_Btn.Text = "NATURE";
             this.nature_Btn.TextOffsetX = 5;
             this.nature_Btn.Click += new System.EventHandler(this.button_Click);
@@ -362,7 +324,7 @@
             this.status_Btn.OnPressedColor = System.Drawing.Color.Black;
             this.status_Btn.Size = new System.Drawing.Size(255, 65);
             this.status_Btn.TabIndex = 7;
-            this.status_Btn.Tag = "STATUS";
+            this.status_Btn.Tag = "Status";
             this.status_Btn.Text = "STATUS";
             this.status_Btn.TextOffsetX = 5;
             this.status_Btn.Click += new System.EventHandler(this.button_Click);
@@ -394,7 +356,7 @@
             this.sector_Btn.OnPressedColor = System.Drawing.Color.Black;
             this.sector_Btn.Size = new System.Drawing.Size(255, 65);
             this.sector_Btn.TabIndex = 4;
-            this.sector_Btn.Tag = "SECTOR";
+            this.sector_Btn.Tag = "Sector";
             this.sector_Btn.Text = "SECTOR";
             this.sector_Btn.TextOffsetX = 5;
             this.sector_Btn.Click += new System.EventHandler(this.button_Click);
@@ -426,20 +388,58 @@
             this.section_Btn.OnPressedColor = System.Drawing.Color.Black;
             this.section_Btn.Size = new System.Drawing.Size(255, 65);
             this.section_Btn.TabIndex = 6;
-            this.section_Btn.Tag = "SECTION";
+            this.section_Btn.Tag = "Section";
             this.section_Btn.Text = "SECTION";
             this.section_Btn.TextOffsetX = 5;
             this.section_Btn.Click += new System.EventHandler(this.button_Click);
+            // 
+            // container_Panel
+            // 
+            this.container_Panel.BackColor = System.Drawing.Color.White;
+            this.container_Panel.Controls.Add(this.gunaPanel1);
+            this.container_Panel.Controls.Add(this.subCon_Panel);
+            this.container_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container_Panel.Location = new System.Drawing.Point(0, 0);
+            this.container_Panel.Name = "container_Panel";
+            this.container_Panel.Padding = new System.Windows.Forms.Padding(5);
+            this.container_Panel.Size = new System.Drawing.Size(1569, 877);
+            this.container_Panel.TabIndex = 3;
             // 
             // gunaPanel1
             // 
             this.gunaPanel1.BackColor = System.Drawing.Color.Gainsboro;
             this.gunaPanel1.Controls.Add(this.title_label);
-            this.gunaPanel1.Location = new System.Drawing.Point(272, 12);
+            this.gunaPanel1.Location = new System.Drawing.Point(269, 10);
             this.gunaPanel1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 0);
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(214, 46);
             this.gunaPanel1.TabIndex = 3;
+            // 
+            // title_label
+            // 
+            this.title_label.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.title_label.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title_label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.title_label.Location = new System.Drawing.Point(0, 0);
+            this.title_label.Margin = new System.Windows.Forms.Padding(5, 5, 5, 0);
+            this.title_label.Name = "title_label";
+            this.title_label.Size = new System.Drawing.Size(214, 46);
+            this.title_label.TabIndex = 0;
+            this.title_label.Text = "120123";
+            this.title_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // subCon_Panel
+            // 
+            this.subCon_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.subCon_Panel.BackColor = System.Drawing.Color.Gainsboro;
+            this.subCon_Panel.Location = new System.Drawing.Point(269, 55);
+            this.subCon_Panel.Margin = new System.Windows.Forms.Padding(5, 0, 5, 5);
+            this.subCon_Panel.Name = "subCon_Panel";
+            this.subCon_Panel.Padding = new System.Windows.Forms.Padding(10);
+            this.subCon_Panel.Size = new System.Drawing.Size(1290, 812);
+            this.subCon_Panel.TabIndex = 2;
             // 
             // Maintenance
             // 
@@ -454,8 +454,8 @@
             this.Load += new System.EventHandler(this.Maintenance_Load);
             this.parent_panel.ResumeLayout(false);
             this.container_panel_1.ResumeLayout(false);
-            this.container_Panel.ResumeLayout(false);
             this.nav_panel.ResumeLayout(false);
+            this.container_Panel.ResumeLayout(false);
             this.gunaPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

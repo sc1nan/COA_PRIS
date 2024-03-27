@@ -24,11 +24,15 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
             
         }
 
-        public void set_Table(string table_Query, bool has_Add_Record = true, bool has_View_Record = true,
+        public void set_Form(string table_Query, string form_Title = "Record",
+            
+            bool has_Add_Record = true, bool has_View_Record = true,
             bool has_Refresh = true) 
         {
 
-                
+            
+            
+            show_Table(table_Query);
 
         }
 

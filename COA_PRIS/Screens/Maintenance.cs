@@ -53,7 +53,7 @@ namespace COA_PRIS.Screens
             }
 
             
-            maintenance_Form.set_Table(query);
+            maintenance_Form.set_Form(query, (string)button.Tag);
             tab_Manager.active_Button(button, true);
         }
 

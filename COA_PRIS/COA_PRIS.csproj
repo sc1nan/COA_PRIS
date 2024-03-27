@@ -102,12 +102,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PRISUserControl\SearchBar.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="PRISUserControl\SearchBar.Designer.cs">
-      <DependentUpon>SearchBar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Screens\Employee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -206,9 +200,6 @@
     <Compile Include="Utilities\Log_Message.cs" />
     <Compile Include="Utilities\Util.cs" />
     <Compile Include="Utilities\Validator.cs" />
-    <EmbeddedResource Include="PRISUserControl\SearchBar.resx">
-      <DependentUpon>SearchBar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
@@ -324,6 +315,7 @@
     <None Include="Resources\swipe-right.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\trash-bin2.png" />
     <None Include="Resources\view_file.png" />
     <None Include="Resources\employee.png" />
     <None Include="Resources\moon.png" />
@@ -333,6 +325,7 @@
     <None Include="Resources\refresh.png" />
     <None Include="Resources\refresh1.png" />
     <None Include="Resources\project.png" />
+    <None Include="Resources\refresh %281%291.png" />
     <Content Include="Resources\swipe-left.png" />
     <None Include="Resources\swipe-left1.png" />
   </ItemGroup>
