@@ -9,7 +9,7 @@ namespace COA_PRIS.Screens
 {
     partial class Dashboard : Form
     {
-        private bool sidebar_Expanded = true;
+        private bool sidebar_Expanded = false;
         private Form current_Form = null;
 
         private Tab_Manager tab_Manager;
