@@ -34,7 +34,7 @@ namespace COA_PRIS.Screens
             foreach (Control control in nav_panel.Controls)
                 if (control is GunaButton)
                     tab_Manager.Nav_buttons.Add(control);
-            tab_Manager.active_Button(lists_Btn, false, "#1B303B", "#C7C8CC");
+            tab_Manager.active_Button(lists_Btn, false);
             lists_Btn.PerformClick();
         }
         private void button_Clicked(object sender, EventArgs e)
@@ -54,7 +54,7 @@ namespace COA_PRIS.Screens
                     break;
 
             }
-            tab_Manager.active_Button(button, false, "#1B303B", "#C7C8CC");
+            tab_Manager.active_Button(button, false);
         }
     }
 }

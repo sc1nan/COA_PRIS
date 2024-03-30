@@ -84,8 +84,8 @@ namespace COA_PRIS.Screens
             {
                 if (column.Index == 0)
                 {
-                    //column.DefaultCellStyle.Padding = newPadding;
-                    //column.HeaderCell.Style.Padding = newPadding;
+                    column.DefaultCellStyle.Padding = newPadding;
+                    column.HeaderCell.Style.Padding = newPadding;
                 }
             }
             //alternating colors in rows

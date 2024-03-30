@@ -73,14 +73,19 @@ namespace COA_PRIS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap apps_sort {
-            get {
-                object obj = ResourceManager.GetObject("apps-sort", resourceCulture);
-            }
-        }
         internal static System.Drawing.Bitmap add_file {
             get {
                 object obj = ResourceManager.GetObject("add_file", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap apps_sort {
+            get {
+                object obj = ResourceManager.GetObject("apps-sort", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -151,16 +156,6 @@ namespace COA_PRIS.Properties {
         internal static System.Drawing.Bitmap COA_img {
             get {
                 object obj = ResourceManager.GetObject("COA img", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap company {
-            get {
-                object obj = ResourceManager.GetObject("company", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -278,11 +273,6 @@ namespace COA_PRIS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap search {
-            get {
-                object obj = ResourceManager.GetObject("search", resourceCulture);
-            }
-        }
         internal static System.Drawing.Bitmap moon {
             get {
                 object obj = ResourceManager.GetObject("moon", resourceCulture);
@@ -293,11 +283,16 @@ namespace COA_PRIS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap search1 {
+        internal static System.Drawing.Bitmap networking {
             get {
-                object obj = ResourceManager.GetObject("search1", resourceCulture);
+                object obj = ResourceManager.GetObject("networking", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap project {
             get {
                 object obj = ResourceManager.GetObject("project", resourceCulture);
@@ -308,11 +303,6 @@ namespace COA_PRIS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap select {
-            get {
-                object obj = ResourceManager.GetObject("select", resourceCulture);
-            }
-        }
         internal static System.Drawing.Bitmap refresh {
             get {
                 object obj = ResourceManager.GetObject("refresh", resourceCulture);
@@ -323,11 +313,6 @@ namespace COA_PRIS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap select__1_ {
-            get {
-                object obj = ResourceManager.GetObject("select (1)", resourceCulture);
-            }
-        }
         internal static System.Drawing.Bitmap refresh__1_ {
             get {
                 object obj = ResourceManager.GetObject("refresh (1)", resourceCulture);
@@ -338,11 +323,6 @@ namespace COA_PRIS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Splash_screen {
-            get {
-                object obj = ResourceManager.GetObject("Splash screen", resourceCulture);
-            }
-        }
         internal static System.Drawing.Bitmap refresh1 {
             get {
                 object obj = ResourceManager.GetObject("refresh1", resourceCulture);
@@ -353,9 +333,59 @@ namespace COA_PRIS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap search {
+            get {
+                object obj = ResourceManager.GetObject("search", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search1 {
+            get {
+                object obj = ResourceManager.GetObject("search1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap select {
+            get {
+                object obj = ResourceManager.GetObject("select", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap select__1_ {
+            get {
+                object obj = ResourceManager.GetObject("select (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap services {
             get {
                 object obj = ResourceManager.GetObject("services", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Splash_screen {
+            get {
+                object obj = ResourceManager.GetObject("Splash screen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -406,8 +436,13 @@ namespace COA_PRIS.Properties {
         internal static System.Drawing.Bitmap to_do__2_ {
             get {
                 object obj = ResourceManager.GetObject("to-do (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap trash_bin {
             get {
                 object obj = ResourceManager.GetObject("trash-bin", resourceCulture);

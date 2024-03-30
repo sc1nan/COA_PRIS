@@ -153,3 +153,10 @@ C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Employees.Add_Record.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Maintenance.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Maintenance.Maintenance_Form.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Projects.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.SearchBar.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Projects.ProjectArchive.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Projects.ProjectCreate.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Projects.ProjectLists.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Splash_Screen.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.Cherie_UI.Datagrid.resources

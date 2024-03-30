@@ -167,7 +167,7 @@
             this.agency_Btn.FocusedColor = System.Drawing.Color.Empty;
             this.agency_Btn.Font = new System.Drawing.Font("Bahnschrift", 14F);
             this.agency_Btn.ForeColor = System.Drawing.Color.White;
-            this.agency_Btn.Image = global::COA_PRIS.Properties.Resources.company;
+            //this.agency_Btn.Image = global::COA_PRIS.Properties.Resources.company;
             this.agency_Btn.ImageOffsetX = 5;
             this.agency_Btn.ImageSize = new System.Drawing.Size(30, 30);
             this.agency_Btn.Location = new System.Drawing.Point(0, 0);

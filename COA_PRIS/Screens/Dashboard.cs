@@ -47,13 +47,13 @@ namespace COA_PRIS.Screens
             if (SidebarContainer.Width == SidebarContainer.MinimumSize.Width || SidebarContainer.Width == SidebarContainer.MaximumSize.Width)
             {
                 sidebar_Expanded = !sidebar_Expanded;
-                sidebar_Timer.Stop();
+                sidebarTimer.Stop();
             }
         }
 
         private void sidebar_Click(object sender, EventArgs e)
         {
-            sidebar_Timer.Start();
+            sidebarTimer.Start();
         }
 
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)

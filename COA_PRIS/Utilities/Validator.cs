@@ -18,30 +18,30 @@ namespace COA_PRIS.Utilities
         {
         }
 
-        public List<GunaTextBox> search_Textbox(Control panel) 
+        public List<control> search_Control<control>(Control parent) where control : Control
         { 
-            List<GunaTextBox> guna_TextBoxes = new List<GunaTextBox>();
+            List<control> ret_Controls = new List<control>();
             Queue<Control> q_control = new Queue<Control>();
 
-            q_control.Enqueue(panel);
+            q_control.Enqueue(parent);
 
             while (q_control.Count > 0)
             { 
-                Control control = q_control.Dequeue();
+                Control con = q_control.Dequeue();
 
-                if (control is GunaTextBox textBox) 
-                   guna_TextBoxes.Add(textBox);
+                if (con is control _con) 
+                   ret_Controls.Add(_con);
 
-                if (control.HasChildren)
-                    foreach (Control child_Control in control.Controls)
+                if (con.HasChildren)
+                    foreach (Control child_Control in con.Controls)
                         q_control.Enqueue(child_Control);
             }
 
-            return guna_TextBoxes;
+            return ret_Controls;
         }
-        public bool Required_TextBox(Control panel, ErrorProvider error)
+        public bool Required_TextBox(Control parent, ErrorProvider error)
         {
-            List<GunaTextBox> guna_TextBox = search_Textbox(panel);
+            List<GunaTextBox> guna_TextBox = search_Control<GunaTextBox>(parent);
 
             bool is_Required = true; 
 
@@ -58,11 +58,7 @@ namespace COA_PRIS.Utilities
                     text_Box.BorderColor = Color.Empty; 
                 }
             }
-
             return is_Required;
         }
-
-
-        
     }
 }
