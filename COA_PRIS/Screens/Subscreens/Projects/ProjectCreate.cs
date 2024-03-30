@@ -8,20 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace COA_PRIS
+namespace COA_PRIS.Screens.Subscreens.Projects
 {
-    public partial class Home : Form
+    public partial class ProjectCreate : Form
     {
-        public Home()
+        public ProjectCreate()
         {
             InitializeComponent();
         }
 
-        private void Home_Load(object sender, EventArgs e)
+        private void ProjectCreate_Load(object sender, EventArgs e)
         {
 
         }
-        }
     }
-
-
+}

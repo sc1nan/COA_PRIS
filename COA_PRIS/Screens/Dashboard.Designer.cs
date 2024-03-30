@@ -31,24 +31,17 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.SidebarContainer = new Guna.UI.WinForms.GunaPanel();
-            this.sideExpand_Btn = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.tab_panel = new System.Windows.Forms.FlowLayoutPanel();
             this.home_Panel = new Guna.UI.WinForms.GunaPanel();
-            this.HomeBtn = new Guna.UI.WinForms.GunaButton();
             this.creation_Panel = new Guna.UI.WinForms.GunaPanel();
-            this.Createbtn = new Guna.UI.WinForms.GunaButton();
             this.report_Panel = new Guna.UI.WinForms.GunaPanel();
-            this.ReportBtn = new Guna.UI.WinForms.GunaButton();
             this.employee_Panel = new Guna.UI.WinForms.GunaPanel();
-            this.EmployeeBtn = new Guna.UI.WinForms.GunaButton();
             this.user_Panel = new Guna.UI.WinForms.GunaPanel();
             this.UserBtn = new Guna.UI.WinForms.GunaButton();
             this.maintenance_Panel = new Guna.UI.WinForms.GunaPanel();
             this.MaintenanceBtn = new Guna.UI.WinForms.GunaButton();
             this.log_Panel = new Guna.UI.WinForms.GunaPanel();
-            this.LogBtn = new Guna.UI.WinForms.GunaButton();
-            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.SidebarTimer = new System.Windows.Forms.Timer(this.components);
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
@@ -56,6 +49,15 @@
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.Main_Form = new Guna.UI.WinForms.GunaPanel();
+            this.sideExpand_Btn = new Guna.UI.WinForms.GunaButton();
+            this.HomeBtn = new Guna.UI.WinForms.GunaButton();
+            this.Createbtn = new Guna.UI.WinForms.GunaButton();
+            this.ReportBtn = new Guna.UI.WinForms.GunaButton();
+            this.EmployeeBtn = new Guna.UI.WinForms.GunaButton();
+            this.UserBtn = new Guna.UI.WinForms.GunaButton();
+            this.LogBtn = new Guna.UI.WinForms.GunaButton();
+            this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
+            this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.SidebarContainer.SuspendLayout();
             this.tab_panel.SuspendLayout();
             this.home_Panel.SuspendLayout();
@@ -65,6 +67,8 @@
             this.user_Panel.SuspendLayout();
             this.maintenance_Panel.SuspendLayout();
             this.log_Panel.SuspendLayout();
+            this.gunaPanel1.SuspendLayout();
+            this.gunaElipsePanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.gunaPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
@@ -158,6 +162,173 @@
             this.home_Panel.TabIndex = 2;
             this.home_Panel.Tag = "Tabs";
             // 
+            // creation_Panel
+            // 
+            this.creation_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.creation_Panel.Controls.Add(this.Createbtn);
+            this.creation_Panel.Location = new System.Drawing.Point(0, 76);
+            this.creation_Panel.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.creation_Panel.Name = "creation_Panel";
+            this.creation_Panel.Size = new System.Drawing.Size(250, 70);
+            this.creation_Panel.TabIndex = 1;
+            this.creation_Panel.Tag = "Tabs";
+            // 
+            // report_Panel
+            // 
+            this.report_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.report_Panel.Controls.Add(this.ReportBtn);
+            this.report_Panel.Location = new System.Drawing.Point(0, 150);
+            this.report_Panel.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.report_Panel.Name = "report_Panel";
+            this.report_Panel.Size = new System.Drawing.Size(250, 70);
+            this.report_Panel.TabIndex = 1;
+            this.report_Panel.Tag = "Tabs";
+            // 
+            // employee_Panel
+            // 
+            this.employee_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.employee_Panel.Controls.Add(this.EmployeeBtn);
+            this.employee_Panel.Location = new System.Drawing.Point(0, 224);
+            this.employee_Panel.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.employee_Panel.Name = "employee_Panel";
+            this.employee_Panel.Size = new System.Drawing.Size(250, 70);
+            this.employee_Panel.TabIndex = 1;
+            this.employee_Panel.Tag = "Tabs";
+            // 
+            // user_Panel
+            // 
+            this.user_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.user_Panel.Controls.Add(this.UserBtn);
+            this.user_Panel.Location = new System.Drawing.Point(0, 298);
+            this.user_Panel.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.user_Panel.Name = "user_Panel";
+            this.user_Panel.Size = new System.Drawing.Size(250, 70);
+            this.user_Panel.TabIndex = 6;
+            this.user_Panel.Tag = "Tabs";
+            // 
+            // log_Panel
+            // 
+            this.log_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.log_Panel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.log_Panel.Controls.Add(this.LogBtn);
+            this.log_Panel.Location = new System.Drawing.Point(0, 372);
+            this.log_Panel.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
+            this.log_Panel.Name = "log_Panel";
+            this.log_Panel.Size = new System.Drawing.Size(250, 70);
+            this.log_Panel.TabIndex = 5;
+            this.log_Panel.Tag = "Tabs";
+            // 
+            // SidebarTimer
+            // 
+            this.SidebarTimer.Enabled = true;
+            this.SidebarTimer.Interval = 10;
+            this.SidebarTimer.Tick += new System.EventHandler(this.SidebarTimer_tick);
+            // 
+            // gunaElipsePanel1
+            // 
+            this.gunaElipsePanel1.AutoSize = true;
+            this.gunaElipsePanel1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaElipsePanel1.BaseColor = System.Drawing.Color.WhiteSmoke;
+            this.gunaElipsePanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gunaElipsePanel1.Location = new System.Drawing.Point(0, 0);
+            this.gunaElipsePanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.gunaElipsePanel1.Name = "gunaElipsePanel1";
+            this.gunaElipsePanel1.Size = new System.Drawing.Size(1684, 0);
+            this.gunaElipsePanel1.TabIndex = 2;
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.Location = new System.Drawing.Point(1362, 26);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(111, 25);
+            this.gunaLabel1.TabIndex = 12;
+            this.gunaLabel1.Text = "MAMA MO";
+            // 
+            // headerTitle
+            // 
+            this.headerTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.headerTitle.AutoSize = true;
+            this.headerTitle.Font = new System.Drawing.Font("Bahnschrift", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.headerTitle.ForeColor = System.Drawing.Color.White;
+            this.headerTitle.Location = new System.Drawing.Point(214, 9);
+            this.headerTitle.Name = "headerTitle";
+            this.headerTitle.Size = new System.Drawing.Size(85, 33);
+            this.headerTitle.TabIndex = 13;
+            this.headerTitle.Text = "Home";
+            // 
+            // gunaPanel1
+            // 
+            this.gunaPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaPanel1.Controls.Add(this.gunaLabel1);
+            this.gunaPanel1.Controls.Add(this.gunaPictureBox2);
+            this.gunaPanel1.Controls.Add(this.gunaElipsePanel2);
+            this.gunaPanel1.Location = new System.Drawing.Point(95, 0);
+            this.gunaPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.gunaPanel1.Name = "gunaPanel1";
+            this.gunaPanel1.Size = new System.Drawing.Size(1589, 90);
+            this.gunaPanel1.TabIndex = 11;
+            // 
+            // gunaElipsePanel2
+            // 
+            this.gunaElipsePanel2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaElipsePanel2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.gunaElipsePanel2.Controls.Add(this.headerTitle);
+            this.gunaElipsePanel2.Location = new System.Drawing.Point(-17, 17);
+            this.gunaElipsePanel2.Name = "gunaElipsePanel2";
+            this.gunaElipsePanel2.Radius = 20;
+            this.gunaElipsePanel2.Size = new System.Drawing.Size(353, 53);
+            this.gunaElipsePanel2.TabIndex = 14;
+            // 
+            // Main_Form
+            // 
+            this.Main_Form.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.Main_Form.BackColor = System.Drawing.Color.Gainsboro;
+            this.Main_Form.Location = new System.Drawing.Point(95, 90);
+            this.Main_Form.Margin = new System.Windows.Forms.Padding(0);
+            this.Main_Form.Name = "Main_Form";
+            this.Main_Form.Size = new System.Drawing.Size(1591, 901);
+            this.Main_Form.TabIndex = 10;
+            // 
+            // sideExpand_Btn
+            // 
+            this.sideExpand_Btn.AnimationHoverSpeed = 0.07F;
+            this.sideExpand_Btn.AnimationSpeed = 0.03F;
+            this.sideExpand_Btn.BackColor = System.Drawing.Color.Transparent;
+            this.sideExpand_Btn.BaseColor = System.Drawing.Color.Transparent;
+            this.sideExpand_Btn.BorderColor = System.Drawing.Color.Black;
+            this.sideExpand_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.sideExpand_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.sideExpand_Btn.FocusedColor = System.Drawing.Color.Empty;
+            this.sideExpand_Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.sideExpand_Btn.ForeColor = System.Drawing.Color.White;
+            this.sideExpand_Btn.Image = global::COA_PRIS.Properties.Resources.swipe_right;
+            this.sideExpand_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.sideExpand_Btn.ImageSize = new System.Drawing.Size(35, 35);
+            this.sideExpand_Btn.Location = new System.Drawing.Point(22, 107);
+            this.sideExpand_Btn.Name = "sideExpand_Btn";
+            this.sideExpand_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
+            this.sideExpand_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.sideExpand_Btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.sideExpand_Btn.OnHoverImage = null;
+            this.sideExpand_Btn.OnPressedColor = System.Drawing.Color.Black;
+            this.sideExpand_Btn.Radius = 10;
+            this.sideExpand_Btn.Size = new System.Drawing.Size(50, 50);
+            this.sideExpand_Btn.TabIndex = 0;
+            this.sideExpand_Btn.Click += new System.EventHandler(this.sidebar_Click);
+            // 
             // HomeBtn
             // 
             this.HomeBtn.AnimationHoverSpeed = 0.07F;
@@ -187,18 +358,6 @@
             this.HomeBtn.Text = "Home";
             this.HomeBtn.TextOffsetX = 18;
             this.HomeBtn.Click += new System.EventHandler(this.button_Click);
-            // 
-            // creation_Panel
-            // 
-            this.creation_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.creation_Panel.Controls.Add(this.Createbtn);
-            this.creation_Panel.Location = new System.Drawing.Point(0, 76);
-            this.creation_Panel.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.creation_Panel.Name = "creation_Panel";
-            this.creation_Panel.Size = new System.Drawing.Size(250, 70);
-            this.creation_Panel.TabIndex = 1;
-            this.creation_Panel.Tag = "Tabs";
             // 
             // Createbtn
             // 
@@ -230,18 +389,6 @@
             this.Createbtn.TextOffsetX = 18;
             this.Createbtn.Click += new System.EventHandler(this.button_Click);
             // 
-            // report_Panel
-            // 
-            this.report_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.report_Panel.Controls.Add(this.ReportBtn);
-            this.report_Panel.Location = new System.Drawing.Point(0, 150);
-            this.report_Panel.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.report_Panel.Name = "report_Panel";
-            this.report_Panel.Size = new System.Drawing.Size(250, 70);
-            this.report_Panel.TabIndex = 1;
-            this.report_Panel.Tag = "Tabs";
-            // 
             // ReportBtn
             // 
             this.ReportBtn.AnimationHoverSpeed = 0.07F;
@@ -272,18 +419,6 @@
             this.ReportBtn.TextOffsetX = 18;
             this.ReportBtn.Click += new System.EventHandler(this.button_Click);
             // 
-            // employee_Panel
-            // 
-            this.employee_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.employee_Panel.Controls.Add(this.EmployeeBtn);
-            this.employee_Panel.Location = new System.Drawing.Point(0, 224);
-            this.employee_Panel.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.employee_Panel.Name = "employee_Panel";
-            this.employee_Panel.Size = new System.Drawing.Size(250, 70);
-            this.employee_Panel.TabIndex = 1;
-            this.employee_Panel.Tag = "Tabs";
-            // 
             // EmployeeBtn
             // 
             this.EmployeeBtn.AnimationHoverSpeed = 0.07F;
@@ -313,18 +448,6 @@
             this.EmployeeBtn.Text = "Employees";
             this.EmployeeBtn.TextOffsetX = 18;
             this.EmployeeBtn.Click += new System.EventHandler(this.button_Click);
-            // 
-            // user_Panel
-            // 
-            this.user_Panel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.user_Panel.Controls.Add(this.UserBtn);
-            this.user_Panel.Location = new System.Drawing.Point(0, 298);
-            this.user_Panel.Margin = new System.Windows.Forms.Padding(0, 2, 0, 2);
-            this.user_Panel.Name = "user_Panel";
-            this.user_Panel.Size = new System.Drawing.Size(250, 70);
-            this.user_Panel.TabIndex = 6;
-            this.user_Panel.Tag = "Tabs";
             // 
             // UserBtn
             // 
@@ -561,9 +684,11 @@
             this.user_Panel.ResumeLayout(false);
             this.maintenance_Panel.ResumeLayout(false);
             this.log_Panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.gunaPanel1.ResumeLayout(false);
             this.gunaPanel1.PerformLayout();
+            this.gunaElipsePanel2.ResumeLayout(false);
+            this.gunaElipsePanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -596,6 +721,7 @@
         private System.Windows.Forms.FlowLayoutPanel tab_panel;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
         private Guna.UI.WinForms.GunaPanel Main_Form;
+        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel2;
         private Guna.UI.WinForms.GunaButton MaintenanceBtn;
         private Guna.UI.WinForms.GunaPanel maintenance_Panel;
     }

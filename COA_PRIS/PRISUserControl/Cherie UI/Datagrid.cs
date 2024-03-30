@@ -8,20 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace COA_PRIS
+namespace COA_PRIS.UserControlUtil.Cherie_UI
 {
-    public partial class Home : Form
+    public partial class Datagrid : Form
     {
-        public Home()
+        public Datagrid()
         {
             InitializeComponent();
         }
-
-        private void Home_Load(object sender, EventArgs e)
-        {
-
-        }
-        }
     }
-
-
+}

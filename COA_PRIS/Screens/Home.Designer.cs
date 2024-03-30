@@ -20,6 +20,8 @@
             base.Dispose(disposing);
         }
 
+        protected string[] column_names = {"User Name", "Activity", "Time"};
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -65,5 +67,6 @@
         #endregion
 
         private Guna.UI.WinForms.GunaElipsePanel Main_Panel;
+        private UserControlUtil.DataTableMultiplePages dataTableMultiplePages1;
     }
 }
