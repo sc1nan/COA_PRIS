@@ -67,6 +67,16 @@ namespace COA_PRIS.Utilities
             }
             return dt;
         }
+        public DataTable Display_Ten_Specific_Logs_Table(string searchwords, string sortby, int minimium)
+        {
+            db_Manager = new Database_Manager();
+            DataTable dt = new DataTable();
+            using (db_Manager)
+            {
+                dt = db_Manager.ExecuteQuery(string.Format(Database_Query.display_ten_specific_logs, sortby, searchwords, minimium));
+            }
+            return dt;
+        }
 
         public DataTable Display_Three_Logs_Table(int minimium)
         {
