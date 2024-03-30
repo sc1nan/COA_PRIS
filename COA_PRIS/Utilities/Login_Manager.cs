@@ -22,7 +22,7 @@ namespace COA_PRIS.Utilities
 
             using (db_Manager)
             {
-                 user_exist = Convert.ToInt32(db_Manager.ExecuteScalar(string.Format(Database_Query.login_query, username)));
+                 user_exist = Convert.ToInt32(db_Manager.ExecuteScalar(string.Format(Database_Query.get_acc, username)));
             }
 
             if (user_exist == 1) 
@@ -31,8 +31,10 @@ namespace COA_PRIS.Utilities
                 {
                     hash_pass = db_Manager.ExecuteScalar(string.Format(Database_Query.get_pass, username)).ToString();
                 }
-                if (encryption_Manger.VerifyPassword(hash_pass, password)) return true;
-                else return false;
+                if (encryption_Manger.VerifyPassword(hash_pass, password)) 
+                    return true;
+                else 
+                    return false;
             }
             else
             {

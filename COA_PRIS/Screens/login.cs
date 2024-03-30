@@ -1,25 +1,17 @@
 ﻿using COA_PRIS.Screens;
-﻿using COA_PRIS.Utilities;
+using COA_PRIS.Utilities;
 using Guna.UI.WinForms;
-using MySql.Data.MySqlClient;
-using MySqlX.XDevAPI.Common;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Text;
-using System.Linq;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace COA_PRIS
 {
     public partial class login : Form
     {
-        private int attempts = 3;
+        private const int attempts = 3;
+
+        private int left_Attempts = attempts;
+
         private Validator validator;
         private Login_Manager login_manager;
         private Activity_Manager activity_manager;
@@ -28,7 +20,7 @@ namespace COA_PRIS
         public login()
         {
             InitializeComponent();
-            validator = new Validator();  
+            validator = new Validator();
             login_manager = new Login_Manager();
             activity_manager = new Activity_Manager();
             database_manager = new Database_Manager();
@@ -41,104 +33,98 @@ namespace COA_PRIS
 
         private void Loginbtn_Click(object sender, EventArgs e)
         {
-            string username = login_entry.Text.ToString();
-            string password = login_entry.Text.ToString();
+            string username = username_entry.Text.Trim();
+            string password = password_entry.Text.Trim();
 
-            if ((!validator.Required(login_entry) || string.Equals(username, "Username")) 
-                && (!validator.Required(password_entry) || string.Equals(password, "Password")))
-            {
-                MessageBox.Show("Username and Password are required.", "Login Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else if ((!validator.Required(login_entry) || string.Equals(username, "Username")) && (validator.Required(password_entry)))
-            {
-                MessageBox.Show("Username is required.", "Login Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else if ((validator.Required(login_entry)) && (!validator.Required(password_entry) || string.Equals(password, "Password")))
-            {
-                MessageBox.Show("Password is required.", "Login Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
+            bool entry_Complete = false;
+
+            if (!string.Equals(username_entry.Text, "Username") && !string.Equals(password_entry.Text, "Password"))
+                entry_Complete = validator.Required_TextBox(parent_Panel, login_Error);
             else
-            {
-                login_Function();
-            }
+                MessageBox.Show("Check your inputs.", "Login Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
+            if (entry_Complete)
+                process_Login(username, password);
         }
-        private void login_Function()
-        {   
-            int state_ret, user_exist;
-            string username = login_entry.Text.ToString();
-            string password = password_entry.Text.ToString();
 
-            bool login_ret = login_manager.authenticate(username, password);
+        private void process_Login(string username, string password)
+        {
+            bool login_Result = login_manager.authenticate(username, password);
+            int account_Status;
 
             using (database_manager)
             {
-                user_exist = Convert.ToInt32(database_manager.ExecuteScalar(string.Format(Database_Query.login_query, username)));
-                state_ret = Convert.ToInt32(database_manager.ExecuteScalar(string.Format(Database_Query.check_acc_status, username)));
+                account_Status = Convert.ToInt32(database_manager.ExecuteScalar(String.Format(Database_Query.check_acc_status, username)));
             }
-            if (login_ret && state_ret == 1)
+
+            if (login_Result && account_Status == 1)
             {
                 activity_manager.Log_Activity(username, Log_Message.login_message);
-                //usercl.username = username;
                 this.Hide();
                 Dashboard dashboard = new Dashboard();
                 dashboard.ShowDialog();
             }
-            else if (!login_ret && state_ret == 1)
+            else
             {
-                attempts--;
-                activity_manager.Log_Activity(username, Log_Message.login_attempt);
-                error_label.Text = $"You have {attempts} more attempt/s remaining.";
-                error_label.Visible = true;
-                MessageBox.Show("Incorrect Credentials\nExceeding the number of attempts will deactivate the account.", "Login Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                failed_Login(username, account_Status);
             }
-            else if (login_ret && state_ret == 0)
+
+        }
+
+        private void failed_Login(string username, int account_Status)
+        {
+            int account;
+
+            using (database_manager)
             {
-                MessageBox.Show("The account you are trying to access is currenty deactivated.", "Login Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                account = Convert.ToInt32(database_manager.ExecuteScalar(string.Format(Database_Query.get_acc, username)));
+            }
+
+
+
+            if (account_Status == 0 && account == 1)
+            {
+                MessageBox.Show("The account you are trying to access is currently deactivated.\n" +
+                    "Contact the administator about your account.",
+                    "Login Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else if (account_Status == 0 && account == 0) 
+            {
+                MessageBox.Show("Credentials does not exist.\n",
+                    "Login Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
-                MessageBox.Show("Incorrect Credentials", "Login Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                //activity_logger.AnonymousLoginAttempt(username);
-            }
-
-            if (attempts == 0)
-            {
-                using (var db_Manager = new Database_Manager())
+                left_Attempts--;
+                if (left_Attempts == 0)
                 {
-                    var disable_user = db_Manager.ExecuteNonQuery(string.Format(Database_Query.deact_acc, username));
+                    using (database_manager)
+                    {
+                        database_manager.ExecuteNonQuery(string.Format(Database_Query.deact_acc, username));
+                    }
+                    MessageBox.Show("Exceeded number of login attempts.\nThe application will now close.", "Login Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    Application.Exit();
                 }
-
-                MessageBox.Show("Exceed number of login attempts.\nThe application will now close.", "Login Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                Application.Exit();
-                this.ActiveControl = null;
-                attempts = 3;
+                else
+                {
+                    error_label.Text = $"You have {left_Attempts} more attempt/s remaining.";
+                    error_label.Visible = true;
+                }
+                MessageBox.Show("Incorrect Credentials", "Login Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+
         }
+
         private void gunaImageButton1_Click(object sender, EventArgs e)
         {
             DevInfo info = new DevInfo();
             info.Show();
-        }
-        private void login_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            if (e.CloseReason == CloseReason.UserClosing)
-            {
-                if (MessageBox.Show("Are you sure you want to close the application?", "Close Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == DialogResult.No)
-                {
-                    e.Cancel = true;
-                }
-            }
-            else if (e.CloseReason == CloseReason.WindowsShutDown)
-            {
-                Application.Exit();
-            }
-        }
 
+        }
         private void login_entry_Enter(object sender, EventArgs e)
         {
-            if (string.Equals(login_entry.Text.ToString(), "Username"))
-                login_entry.Text = "";
+            if (string.Equals(username_entry.Text.ToString(), "Username"))
+                username_entry.Text = "";
         }
 
         private void password_entry_Enter(object sender, EventArgs e)
@@ -147,42 +133,18 @@ namespace COA_PRIS
             {
                 password_entry.Text = "";
                 password_entry.PasswordChar = '*';
-            }       
+            }
         }
 
-        private void password_entry_Leave(object sender, EventArgs e)
+        private void login_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(password_entry.Text.ToString()))
-            { 
-                password_entry.Text = "Password";
-            }
+            if (e.CloseReason == CloseReason.UserClosing)
+                if (MessageBox.Show("Are you sure you want to close the application?", "Close Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == DialogResult.No)
+                     e.Cancel = true;
+                
+            else if (e.CloseReason == CloseReason.WindowsShutDown)
+                Application.Exit();
             
-        }
-
-        private void login_entry_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(login_entry.Text.ToString()))
-                login_entry.Text = "Username";
-        }
-
-        private void login_entry_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                Loginbtn_Click(this, new EventArgs());
-            }
-        }
-
-        private void password_entry_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                Loginbtn_Click(this, new EventArgs());
-            }
-        }
-
-        private void password_entry_TextChanged(object sender, EventArgs e)
-        {
         }
     }
 }

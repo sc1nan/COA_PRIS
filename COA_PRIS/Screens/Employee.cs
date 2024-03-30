@@ -35,7 +35,10 @@ namespace COA_PRIS.Screens
                 if (control is GunaButton)
                     tab_Manager.Nav_buttons.Add(control);
 
-            tab_Manager.active_Button(employee_Btn, false, "#1B303B", "#C7C8CC");
+            tab_Manager.set_Colors("#1B303B", "#C7C8CC");
+            tab_Manager.active_Button(employee_Btn, false);
+        
+            employee_Btn.PerformClick();
         }
 
 
@@ -55,7 +58,7 @@ namespace COA_PRIS.Screens
                     break;
                 
             }
-            tab_Manager.active_Button(button, false, "#1B303B", "#C7C8CC");        
+            tab_Manager.active_Button(button, false);        
         }
     }
 }
