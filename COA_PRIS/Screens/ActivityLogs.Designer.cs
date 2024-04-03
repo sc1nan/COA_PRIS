@@ -36,6 +36,7 @@
             this.nextLogsBtn = new Guna.UI.WinForms.GunaButton();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.reportsButton = new Guna.UI.WinForms.GunaButton();
             this.searchBar1 = new COA_PRIS.UserControlUtil.SearchBar();
             this.sortComboBox = new Guna.UI.WinForms.GunaComboBox();
             this.LogsTable = new Guna.UI.WinForms.GunaDataGridView();
@@ -132,6 +133,7 @@
             // gunaPanel1
             // 
             this.gunaPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaPanel1.Controls.Add(this.reportsButton);
             this.gunaPanel1.Controls.Add(this.searchBar1);
             this.gunaPanel1.Controls.Add(this.sortComboBox);
             this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -139,6 +141,30 @@
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(1603, 112);
             this.gunaPanel1.TabIndex = 3;
+            // 
+            // reportsButton
+            // 
+            this.reportsButton.AnimationHoverSpeed = 0.07F;
+            this.reportsButton.AnimationSpeed = 0.03F;
+            this.reportsButton.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.reportsButton.BorderColor = System.Drawing.Color.Black;
+            this.reportsButton.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.reportsButton.FocusedColor = System.Drawing.Color.Empty;
+            this.reportsButton.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.reportsButton.ForeColor = System.Drawing.Color.White;
+            this.reportsButton.Image = global::COA_PRIS.Properties.Resources.to_do__2_;
+            this.reportsButton.ImageSize = new System.Drawing.Size(20, 20);
+            this.reportsButton.Location = new System.Drawing.Point(1199, 66);
+            this.reportsButton.Name = "reportsButton";
+            this.reportsButton.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.reportsButton.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.reportsButton.OnHoverForeColor = System.Drawing.Color.White;
+            this.reportsButton.OnHoverImage = null;
+            this.reportsButton.OnPressedColor = System.Drawing.Color.Black;
+            this.reportsButton.Size = new System.Drawing.Size(191, 35);
+            this.reportsButton.TabIndex = 4;
+            this.reportsButton.Text = "Generate Report";
+            this.reportsButton.Click += new System.EventHandler(this.reportsButton_Click);
             // 
             // searchBar1
             // 
@@ -253,6 +279,7 @@
             this.Name = "ActivityLogs";
             this.Text = "LogsTab";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ActivityLogs_Load);
             this.gunaPanel4.ResumeLayout(false);
             this.gunaPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogsTable)).EndInit();
@@ -269,5 +296,6 @@
         private Guna.UI.WinForms.GunaComboBox sortComboBox;
         private Guna.UI.WinForms.GunaDataGridView LogsTable;
         private UserControlUtil.SearchBar searchBar1;
+        private Guna.UI.WinForms.GunaButton reportsButton;
     }
 }

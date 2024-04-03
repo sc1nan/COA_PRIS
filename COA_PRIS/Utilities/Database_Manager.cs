@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using COA_PRIS.CrystalReports;
+using Microsoft.Reporting.WinForms;
 using MySql.Data.MySqlClient;
 
 namespace COA_PRIS.Utilities
@@ -25,6 +28,29 @@ namespace COA_PRIS.Utilities
         }
 
         public DataTable ExecuteQuery(string query)
+        {
+            var dbCon = DBConnection.Instance();
+            DataTable dataTable = new DataTable();
+
+            using (MySqlCommand command = new MySqlCommand(query, dbCon.Connection))
+            {
+                try
+                {
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        dataTable.Load(reader);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error executing query: {ex.Message}");
+                }
+            }
+
+            return dataTable;
+        }
+
+        public DataTable ExecuteQueryXD(string query)
         {
             var dbCon = DBConnection.Instance();
             DataTable dataTable = new DataTable();

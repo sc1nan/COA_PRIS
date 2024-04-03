@@ -19,8 +19,9 @@ namespace COA_PRIS.UserControlUtil
         string[] log_table_names = { "user_name", "activity", "activity_datetime" };
         private int min_lim = 0;
         int page_count = 1;
-        public DataTableMultiplePages(string[] column_names, int minimum_limit)
+        public DataTableMultiplePages(string[] column_names = null, int minimum_limit = 0)
         {
+            if (column_names == null) column_names = new string[] { "column 1", "column 2", "column 3" };
             InitializeComponent();
             //fix sort combobox
             changeGunaTableStyle(data_table);
