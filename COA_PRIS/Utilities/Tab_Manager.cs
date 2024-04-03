@@ -15,10 +15,10 @@ namespace COA_PRIS.Utilities
         private List<Control> Navigation_Buttons = new List<Control>();
 
         private List<object> Sub_Frames = new List<object>();
+        public Control Header_Title { get; set; }
         
         private string selected_color { get; set; }
         private string unselected_color { get; set; }
-        public Control Header_Title { get; set; }
 
 
         public Tab_Manager() 
@@ -43,13 +43,13 @@ namespace COA_PRIS.Utilities
             {
                 if (buttons.Name.Equals(button.Name))
                 {
-                    button.BackColor = Colors.Hex_To_RGB(selected_color);
+                    button.BackColor = Theme.Hex_To_RGB(selected_color);
                     if (has_Title)
                         change_Title(button.Text.ToUpper());
                 }
                 else
                 {
-                    buttons.BackColor = Colors.Hex_To_RGB(unselected_color);
+                    buttons.BackColor = Theme.Hex_To_RGB(unselected_color);
                 }
             }
         }
