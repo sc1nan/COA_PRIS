@@ -9,7 +9,7 @@ namespace COA_PRIS
 {
     internal class Database_Query
     {
-        public static string login_query = "SELECT COUNT(*) FROM user_cred_table WHERE user_name = '{0}'";
+        public static string get_acc = "SELECT COUNT(*) FROM user_cred_table WHERE user_name = '{0}'";
         public static string check_acc_status = "SELECT state FROM user_info_table WHERE user_name = '{0}'";
 
         public static string deact_acc = "UPDATE user_info_table SET state = 0 WHERE user_name = '{0}'";
@@ -27,8 +27,9 @@ namespace COA_PRIS
         #endregion
 
 
-        public static string last_query;
-
+        public static string get_top_employee_rec = "SELECT employee_no FROM emp_info_table ORDER BY employee_no DESC LIMIT 1";
+        public static string get_all_agency_records = "SELECT agency_id, agency_title, cluster_title FROM agency_table NATURAL JOIN cluster_table";
+        public static string get_all_cluster_records = "SELECT cluster_id, cluster_title, sector_title FROM cluster_table NATURAL JOIN sector_table";
 
 
     }

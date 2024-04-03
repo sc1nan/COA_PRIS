@@ -6,45 +6,59 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Diagnostics;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace COA_PRIS.Utilities
 {
     internal class Validator
     {
-        private readonly Dictionary<Control, string> validationErrors;
 
         public Validator()
         {
-            validationErrors = new Dictionary<Control, string>();
         }
 
-        public bool Required(Control control, string errorMessage = null)
-        {
-            if (control is GunaTextBox gunaTextBox)
-            {
-                if (string.IsNullOrWhiteSpace(gunaTextBox.Text))
-                {
-                    if (!string.IsNullOrEmpty(errorMessage))
-                        validationErrors[control] = errorMessage;
+        public List<control> search_Control<control>(Control parent) where control : Control
+        { 
+            List<control> ret_Controls = new List<control>();
+            Queue<Control> q_control = new Queue<Control>();
 
-                    gunaTextBox.BorderColor = Color.Red;
-                    return false;
+            q_control.Enqueue(parent);
+
+            while (q_control.Count > 0)
+            { 
+                Control con = q_control.Dequeue();
+
+                if (con is control _con) 
+                   ret_Controls.Add(_con);
+
+                if (con.HasChildren)
+                    foreach (Control child_Control in con.Controls)
+                        q_control.Enqueue(child_Control);
+            }
+
+            return ret_Controls;
+        }
+        public bool Required_TextBox(Control parent, ErrorProvider error)
+        {
+            List<GunaTextBox> guna_TextBox = search_Control<GunaTextBox>(parent);
+
+            bool is_Required = true; 
+
+            foreach (GunaTextBox text_Box in guna_TextBox) 
+            {
+                if (string.IsNullOrWhiteSpace(text_Box.Text))
+                {
+                    error.SetError(text_Box, $"{text_Box.Tag} is required.");
+                    text_Box.BorderColor = Color.Red;
+                    is_Required = false;
+                }
+                else
+                {
+                    text_Box.BorderColor = Color.Empty; 
                 }
             }
-            if (validationErrors.ContainsKey(control))
-                validationErrors.Remove(control);
-
-            return true;
-        }
-
-        public bool IsValid()
-        {
-            return validationErrors.Count == 0;
-        }
-
-        public string GetError(Control control)
-        {
-            return validationErrors.ContainsKey(control) ? validationErrors[control] : null;
+            return is_Required;
         }
     }
 }

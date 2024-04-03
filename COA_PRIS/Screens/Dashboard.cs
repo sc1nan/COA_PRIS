@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Windows.Forms;
 using COA_PRIS.Properties;
 using COA_PRIS.Utilities;
@@ -8,7 +9,7 @@ namespace COA_PRIS.Screens
 {
     partial class Dashboard : Form
     {
-        private bool sidebar_Expanded = true;
+        private bool sidebar_Expanded = false;
         private Form current_Form = null;
 
         private Tab_Manager tab_Manager;
@@ -16,6 +17,7 @@ namespace COA_PRIS.Screens
         private readonly Home landing_Home = new Home();
         private readonly Employee employee_Tab = new Employee();
         private readonly ActivityLogs log_Tab = new ActivityLogs();
+        private readonly Maintenance maintenance_Tab = new Maintenance();
 
         public Dashboard()
         {
@@ -32,40 +34,26 @@ namespace COA_PRIS.Screens
 
 
             tab_Manager.Header_Title = headerTitle;
-            tab_Manager.active_Button(HomeBtn);
-            HomeBtn.PerformClick();
+            tab_Manager.active_Button(EmployeeBtn);
+            MaintenanceBtn.PerformClick();
         }
 
         private void SidebarTimer_tick(object sender, EventArgs e)
         {
-            //Expands the sidebar.
-            if (sidebar_Expanded)
-            {
-                SidebarContainer.Width -= 10;
-                sideExpand_Btn.Image = Resources.swipe_right;
-                if (SidebarContainer.Width == SidebarContainer.MinimumSize.Width)
-                {
-                    sidebar_Expanded = false;
-                    SidebarTimer.Stop();
-                }
-            }
+            int deltaWidth = sidebar_Expanded ? -10 : 10;
+            SidebarContainer.Width += deltaWidth;
+            sideExpand_Btn.Image = sidebar_Expanded ? Resources.swipe_right : Resources.swipe_left;
 
-            //Retracts the sidebar
-            else
+            if (SidebarContainer.Width == SidebarContainer.MinimumSize.Width || SidebarContainer.Width == SidebarContainer.MaximumSize.Width)
             {
-                SidebarContainer.Width += 10;
-                sideExpand_Btn.Image = Resources.swipe_left;
-                if (SidebarContainer.Width == SidebarContainer.MaximumSize.Width)
-                {
-                    sidebar_Expanded = true;
-                    SidebarTimer.Stop();
-                }
+                sidebar_Expanded = !sidebar_Expanded;
+                sidebarTimer.Stop();
             }
         }
 
         private void sidebar_Click(object sender, EventArgs e)
         {
-            SidebarTimer.Start();
+            sidebarTimer.Start();
         }
 
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
@@ -88,11 +76,12 @@ namespace COA_PRIS.Screens
         private void button_Click(object sender, EventArgs e)
         {
             var button = (GunaButton)sender;
+            Form form = null;
+
             switch (button.Name)
             {
                 case "HomeBtn":
-                    current_Form = tab_Manager.switch_Form(landing_Home, current_Form, Main_Form);
-                    //buswitch_Form(landingHome);
+                    form = landing_Home;
                     break;
                 case "Createbtn":
                     // Handle Create button click
@@ -102,15 +91,21 @@ namespace COA_PRIS.Screens
                     // Handle Report button click
                     break;
                 case "EmployeeBtn":
-                    current_Form = tab_Manager.switch_Form(employee_Tab, current_Form, Main_Form);
+                    form = employee_Tab;
                     break;
                 case "LogBtn":
-                    current_Form = tab_Manager.switch_Form(log_Tab, current_Form, Main_Form);
+                    form = log_Tab;
                     break;
                 case "UserBtn":
                     // Handle User button click
                     break;
+                case "MaintenanceBtn":
+                    form = maintenance_Tab;
+                    break;
             }
+            if (form != null)
+                current_Form = tab_Manager.switch_Form(form, current_Form, Main_Form);
+
             tab_Manager.active_Button(button, true);
         }
     }

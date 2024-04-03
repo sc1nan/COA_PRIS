@@ -50,31 +50,27 @@ namespace COA_PRIS.Utilities
             return dataTable;
         }
 
-        public void ExecuteQueryXD(string query, ReportViewer reportViewer = null)
+        public DataTable ExecuteQueryXD(string query)
         {
             var dbCon = DBConnection.Instance();
-            MySqlDataAdapter das = new MySqlDataAdapter();
-            DataSet1 ds = new DataSet1();
+            DataTable dataTable = new DataTable();
 
             using (MySqlCommand command = new MySqlCommand(query, dbCon.Connection))
             {
                 try
                 {
-                    das.SelectCommand = command;
-                    das.Fill(ds, "log_table");
-                    if (ds.Tables["log_table"].Rows.Count == 0) MessageBox.Show("Nothing found", "Message");
-                    
-                    ReportDataSource dataSource = new ReportDataSource("DataSet1", ds.Tables[0]);
-                    reportViewer.LocalReport.DataSources.Clear();
-                    reportViewer.LocalReport.DataSources.Add(dataSource);
-                    reportViewer.RefreshReport();
+                    using (MySqlDataReader reader = command.ExecuteReader())
+                    {
+                        dataTable.Load(reader);
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error executing nonquery command: {ex.Message}", "Error");
-                    Console.WriteLine();
+                    Console.WriteLine($"Error executing query: {ex.Message}");
                 }
             }
+
+            return dataTable;
         }
 
         public int ExecuteNonQuery(string query)

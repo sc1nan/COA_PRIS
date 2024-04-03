@@ -88,7 +88,6 @@
     <Reference Include="System.Diagnostics.DiagnosticSource, Version=7.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Diagnostics.DiagnosticSource.7.0.2\lib\net462\System.Diagnostics.DiagnosticSource.dll</HintPath>
     </Reference>
-    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.IO.Pipelines, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Pipelines.5.0.2\lib\net461\System.IO.Pipelines.dll</HintPath>
     </Reference>
@@ -159,6 +158,12 @@
     <Compile Include="Screens\ActivityLogs.Designer.cs">
       <DependentUpon>ActivityLogs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Maintenance.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Maintenance.Designer.cs">
+      <DependentUpon>Maintenance.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Projects.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -170,6 +175,12 @@
     </Compile>
     <Compile Include="Screens\Splash Screen.Designer.cs">
       <DependentUpon>Splash Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Employees\Add_Record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Employees\Add_Record.Designer.cs">
+      <DependentUpon>Add_Record.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Subscreens\Employees\Employee_Submodule.cs">
       <SubType>Form</SubType>
@@ -201,13 +212,6 @@
     <Compile Include="Screens\Subscreens\Projects\ProjectLists.Designer.cs">
       <DependentUpon>ProjectLists.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Subscreens\Recieving.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\Subscreens\Recieving.Designer.cs">
-      <DependentUpon>Recieving.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserControlUtil\Cherie UI\Datagrid.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -219,6 +223,12 @@
     </Compile>
     <Compile Include="UserControlUtil\DataTableMultiplePages.Designer.cs">
       <DependentUpon>DataTableMultiplePages.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Maintenance\Maintenance_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Maintenance\Maintenance_Form.Designer.cs">
+      <DependentUpon>Maintenance_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlUtil\SearchBar.cs">
       <SubType>UserControl</SubType>
@@ -262,6 +272,7 @@
     <Compile Include="Utilities\Encryption_Manger.cs" />
     <Compile Include="Utilities\Login_Manager.cs" />
     <Compile Include="Utilities\Log_Message.cs" />
+    <Compile Include="Utilities\Util.cs" />
     <Compile Include="Utilities\Validator.cs" />
     <EmbeddedResource Include="CrystalReports\Report1.rdlc" />
     <EmbeddedResource Include="CrystalReports\TempReport.rdlc" />
@@ -285,16 +296,14 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <EmbeddedResource Include="Screens\ActivityLogs.resx">
       <DependentUpon>ActivityLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Maintenance.resx">
+      <DependentUpon>Maintenance.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Projects.resx">
       <DependentUpon>Projects.cs</DependentUpon>
@@ -302,11 +311,17 @@
     <EmbeddedResource Include="Screens\Splash Screen.resx">
       <DependentUpon>Splash Screen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Employees\Add_Record.resx">
+      <DependentUpon>Add_Record.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Employees\Employee_Submodule.resx">
       <DependentUpon>Employee_Submodule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Employees\Inactive_Submodule.resx">
       <DependentUpon>Inactive_Submodule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Maintenance\Maintenance_Form.resx">
+      <DependentUpon>Maintenance_Form.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Projects\ProjectArchive.resx">
       <DependentUpon>ProjectArchive.cs</DependentUpon>
@@ -316,9 +331,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Projects\ProjectLists.resx">
       <DependentUpon>ProjectLists.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Subscreens\Recieving.resx">
-      <DependentUpon>Recieving.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StatReportUserControl.resx">
       <DependentUpon>StatReportUserControl.cs</DependentUpon>
@@ -409,34 +421,20 @@
     <None Include="Resources\swipe-right.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <None Include="Resources\to-do %282%29.png" />
-    <None Include="Resources\to-do %281%29.png" />
+    <None Include="Resources\trash-bin2.png" />
+    <None Include="Resources\view_file.png" />
     <None Include="Resources\employee.png" />
-    <None Include="Resources\search.png" />
-    <None Include="Resources\caret-right.png" />
-    <None Include="Resources\caret-left.png" />
-    <None Include="Resources\caret-right %281%29.png" />
-    <None Include="Resources\caret-left %281%29.png" />
-    <None Include="Resources\apps-sort.png" />
-    <None Include="Resources\select.png" />
-    <None Include="Resources\folder-download.png" />
-    <None Include="Resources\select %281%29.png" />
-    <None Include="Resources\folder-download %281%29.png" />
-    <None Include="Resources\search1.png" />
-    <None Include="Resources\Splash screen.png" />
+    <None Include="Resources\moon.png" />
+    <None Include="Resources\document.png" />
+    <None Include="Resources\add_file.png" />
+    <None Include="Resources\services.png" />
+    <None Include="Resources\refresh.png" />
+    <None Include="Resources\refresh1.png" />
+    <None Include="Resources\project.png" />
+    <None Include="Resources\refresh %281%291.png" />
+    <None Include="Resources\company.png" />
+    <None Include="Resources\networking.png" />
+    <None Include="Resources\connection.png" />
     <Content Include="Resources\swipe-left.png" />
     <None Include="Resources\swipe-left1.png" />
   </ItemGroup>
