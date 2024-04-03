@@ -4,6 +4,7 @@ using System.Windows.Forms;
 using COA_PRIS.Properties;
 using COA_PRIS.Utilities;
 using Guna.UI.WinForms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace COA_PRIS.Screens
 {
@@ -11,6 +12,7 @@ namespace COA_PRIS.Screens
     {
         private bool sidebar_Expanded = false;
         private Form current_Form = null;
+        private Login_Manager login_manager;
 
         private Tab_Manager tab_Manager;
         private readonly Projects projects_Tab = new Projects();
@@ -23,16 +25,18 @@ namespace COA_PRIS.Screens
         {
             InitializeComponent();
             SidebarContainer.BringToFront();
+            title_Panel.BringToFront();
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
             tab_Manager = new Tab_Manager();
+            login_manager = new Login_Manager();
 
             foreach (Control control in tab_panel.Controls)
                 tab_Manager.Nav_buttons.Add(control.Controls[0]);
 
-
+            login_manager.active_Account = "james";
             tab_Manager.Header_Title = headerTitle;
             tab_Manager.active_Button(EmployeeBtn);
             MaintenanceBtn.PerformClick();
@@ -67,7 +71,7 @@ namespace COA_PRIS.Screens
                 }
                 else
                 {
-                    activityManager.Log_Activity("james", Log_Message.logout_message);
+                    //activityManager.Log_Activity("james", Log_Message.logout_message);
                     Application.Exit();
                 }
             }

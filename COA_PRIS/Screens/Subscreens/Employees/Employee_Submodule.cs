@@ -16,7 +16,7 @@ namespace COA_PRIS.Screens.Subscreens.Employees
     {
         Database_Manager database_manager;
 
-        private readonly Add_Record add_Record = new Add_Record();
+        private readonly Add_Employee add_Record = new Add_Employee();
         public Employee_Submodule()
         {
             InitializeComponent();

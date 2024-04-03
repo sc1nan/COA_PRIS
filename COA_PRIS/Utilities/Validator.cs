@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using System.Drawing;
 using System.Diagnostics;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using Mysqlx;
 
 namespace COA_PRIS.Utilities
 {
@@ -55,10 +56,32 @@ namespace COA_PRIS.Utilities
                 }
                 else
                 {
-                    text_Box.BorderColor = Color.Empty; 
+                    text_Box.BorderColor = Color.Silver; 
                 }
             }
             return is_Required;
+        }
+
+        public bool Required_TextBox(List<GunaTextBox> textBox, ErrorProvider error) 
+        {
+            bool is_Required = true;
+
+            foreach (GunaTextBox text_Box in textBox)
+            {
+                if (string.IsNullOrWhiteSpace(text_Box.Text))
+                {
+                    error.SetError(text_Box, $"{text_Box.Tag} is required.");
+                    text_Box.BorderColor = Color.Red;
+                    is_Required = false;
+                }
+                else
+                {
+                    text_Box.BorderColor = Color.Silver;
+                }
+            }
+            return is_Required;
+
+
         }
     }
 }

@@ -176,11 +176,11 @@
     <Compile Include="Screens\Splash Screen.Designer.cs">
       <DependentUpon>Splash Screen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Subscreens\Employees\Add_Record.cs">
+    <Compile Include="Screens\Subscreens\Employees\Add_Employee.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Subscreens\Employees\Add_Record.Designer.cs">
-      <DependentUpon>Add_Record.cs</DependentUpon>
+    <Compile Include="Screens\Subscreens\Employees\Add_Employee.Designer.cs">
+      <DependentUpon>Add_Employee.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Subscreens\Employees\Employee_Submodule.cs">
       <SubType>Form</SubType>
@@ -193,6 +193,12 @@
     </Compile>
     <Compile Include="Screens\Subscreens\Employees\Inactive_Submodule.Designer.cs">
       <DependentUpon>Inactive_Submodule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Maintenance\Add_Record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Maintenance\Add_Record.Designer.cs">
+      <DependentUpon>Add_Record.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Subscreens\Projects\ProjectArchive.cs">
       <SubType>Form</SubType>
@@ -230,6 +236,24 @@
     <Compile Include="Screens\Subscreens\Maintenance\Maintenance_Form.Designer.cs">
       <DependentUpon>Maintenance_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlUtil\Label_Drop.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlUtil\Label_Drop.Designer.cs">
+      <DependentUpon>Label_Drop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlUtil\Label_Rich.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlUtil\Label_Rich.Designer.cs">
+      <DependentUpon>Label_Rich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlUtil\Label_Text.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlUtil\Label_Text.Designer.cs">
+      <DependentUpon>Label_Text.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlUtil\SearchBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -238,7 +262,7 @@
     </Compile>
     <Compile Include="Utilities\Activity_Manager.cs" />
     <Compile Include="Utilities\Tab_Manager.cs" />
-    <Compile Include="Utilities\Colors.cs" />
+    <Compile Include="Utilities\Theme.cs" />
     <Compile Include="Utilities\Database_Manager.cs" />
     <Compile Include="Utilities\Database_Credential.cs" />
     <Compile Include="Screens\Dashboard.cs">
@@ -311,14 +335,17 @@
     <EmbeddedResource Include="Screens\Splash Screen.resx">
       <DependentUpon>Splash Screen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Subscreens\Employees\Add_Record.resx">
-      <DependentUpon>Add_Record.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Subscreens\Employees\Add_Employee.resx">
+      <DependentUpon>Add_Employee.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Employees\Employee_Submodule.resx">
       <DependentUpon>Employee_Submodule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Employees\Inactive_Submodule.resx">
       <DependentUpon>Inactive_Submodule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Maintenance\Add_Record.resx">
+      <DependentUpon>Add_Record.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Maintenance\Maintenance_Form.resx">
       <DependentUpon>Maintenance_Form.cs</DependentUpon>
@@ -343,6 +370,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\DataTableMultiplePages.resx">
       <DependentUpon>DataTableMultiplePages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUtil\Label_Drop.resx">
+      <DependentUpon>Label_Drop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUtil\Label_Rich.resx">
+      <DependentUpon>Label_Rich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUtil\Label_Text.resx">
+      <DependentUpon>Label_Text.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\SearchBar.resx">
       <DependentUpon>SearchBar.cs</DependentUpon>

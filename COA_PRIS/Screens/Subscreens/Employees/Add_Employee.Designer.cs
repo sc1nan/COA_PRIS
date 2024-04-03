@@ -1,6 +1,6 @@
 ﻿namespace COA_PRIS.Screens.Subscreens.Employees
 {
-    partial class Add_Record
+    partial class Add_Employee
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_Record));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Add_Employee));
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
             this.error_Message = new Guna.UI.WinForms.GunaLabel();
@@ -560,7 +560,7 @@
             this.add_emp_error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.add_emp_error.ContainerControl = this;
             // 
-            // Add_Record
+            // Add_Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -573,7 +573,7 @@
             this.MaximumSize = new System.Drawing.Size(800, 900);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(800, 900);
-            this.Name = "Add_Record";
+            this.Name = "Add_Employee";
             this.Padding = new System.Windows.Forms.Padding(8);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "New Employee Record";
