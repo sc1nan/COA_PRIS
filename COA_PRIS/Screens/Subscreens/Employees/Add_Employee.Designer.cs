@@ -38,11 +38,11 @@
             this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
             this.field_Panel = new System.Windows.Forms.TableLayoutPanel();
             this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaTextBox1 = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaTextBox4 = new Guna.UI.WinForms.GunaTextBox();
+            this.txtName = new Guna.UI.WinForms.GunaTextBox();
+            this.txtEmail = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaTextBox5 = new Guna.UI.WinForms.GunaTextBox();
+            this.txtContact = new Guna.UI.WinForms.GunaTextBox();
             this.gunaLabel8 = new Guna.UI.WinForms.GunaLabel();
             this.sector_DropBox = new Guna.UI.WinForms.GunaComboBox();
             this.gunaLabel9 = new Guna.UI.WinForms.GunaLabel();
@@ -58,14 +58,14 @@
             this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.add_emp_error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.error_Employee = new System.Windows.Forms.ErrorProvider(this.components);
             this.gunaPanel1.SuspendLayout();
             this.gunaPanel4.SuspendLayout();
             this.gunaElipsePanel2.SuspendLayout();
             this.field_Panel.SuspendLayout();
             this.gunaElipsePanel1.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.add_emp_error)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error_Employee)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaPanel1
@@ -186,11 +186,11 @@
             this.field_Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.field_Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.field_Panel.Controls.Add(this.gunaLabel3, 0, 0);
-            this.field_Panel.Controls.Add(this.gunaTextBox1, 0, 1);
-            this.field_Panel.Controls.Add(this.gunaTextBox4, 0, 4);
+            this.field_Panel.Controls.Add(this.txtName, 0, 1);
+            this.field_Panel.Controls.Add(this.txtEmail, 0, 4);
             this.field_Panel.Controls.Add(this.gunaLabel6, 0, 3);
             this.field_Panel.Controls.Add(this.gunaLabel7, 1, 3);
-            this.field_Panel.Controls.Add(this.gunaTextBox5, 1, 4);
+            this.field_Panel.Controls.Add(this.txtContact, 1, 4);
             this.field_Panel.Controls.Add(this.gunaLabel8, 0, 5);
             this.field_Panel.Controls.Add(this.sector_DropBox, 0, 6);
             this.field_Panel.Controls.Add(this.gunaLabel9, 1, 5);
@@ -231,48 +231,48 @@
             this.gunaLabel3.Text = "First Name:";
             this.gunaLabel3.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // gunaTextBox1
+            // txtName
             // 
-            this.gunaTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.BorderColor = System.Drawing.Color.Silver;
-            this.field_Panel.SetColumnSpan(this.gunaTextBox1, 2);
-            this.gunaTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaTextBox1.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox1.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.gunaTextBox1.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox1.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaTextBox1.Location = new System.Drawing.Point(3, 47);
-            this.gunaTextBox1.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
-            this.gunaTextBox1.Name = "gunaTextBox1";
-            this.gunaTextBox1.PasswordChar = '\0';
-            this.gunaTextBox1.Radius = 8;
-            this.gunaTextBox1.SelectedText = "";
-            this.gunaTextBox1.Size = new System.Drawing.Size(718, 61);
-            this.gunaTextBox1.TabIndex = 1;
-            this.gunaTextBox1.Tag = "First Name";
+            this.txtName.BackColor = System.Drawing.Color.Transparent;
+            this.txtName.BaseColor = System.Drawing.Color.White;
+            this.txtName.BorderColor = System.Drawing.Color.Silver;
+            this.field_Panel.SetColumnSpan(this.txtName, 2);
+            this.txtName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtName.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtName.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.txtName.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtName.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtName.Location = new System.Drawing.Point(3, 47);
+            this.txtName.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
+            this.txtName.Name = "txtName";
+            this.txtName.PasswordChar = '\0';
+            this.txtName.Radius = 8;
+            this.txtName.SelectedText = "";
+            this.txtName.Size = new System.Drawing.Size(718, 61);
+            this.txtName.TabIndex = 1;
+            this.txtName.Tag = "First Name";
             // 
-            // gunaTextBox4
+            // txtEmail
             // 
-            this.gunaTextBox4.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox4.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox4.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox4.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaTextBox4.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox4.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.gunaTextBox4.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox4.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaTextBox4.Location = new System.Drawing.Point(3, 225);
-            this.gunaTextBox4.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
-            this.gunaTextBox4.Name = "gunaTextBox4";
-            this.gunaTextBox4.PasswordChar = '\0';
-            this.gunaTextBox4.Radius = 8;
-            this.gunaTextBox4.SelectedText = "";
-            this.gunaTextBox4.Size = new System.Drawing.Size(350, 61);
-            this.gunaTextBox4.TabIndex = 7;
-            this.gunaTextBox4.Tag = "Email Address";
+            this.txtEmail.BackColor = System.Drawing.Color.Transparent;
+            this.txtEmail.BaseColor = System.Drawing.Color.White;
+            this.txtEmail.BorderColor = System.Drawing.Color.Silver;
+            this.txtEmail.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtEmail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtEmail.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtEmail.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.txtEmail.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtEmail.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(3, 225);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.Radius = 8;
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.Size = new System.Drawing.Size(350, 61);
+            this.txtEmail.TabIndex = 7;
+            this.txtEmail.Tag = "Email Address";
             // 
             // gunaLabel6
             // 
@@ -298,26 +298,26 @@
             this.gunaLabel7.Text = "Contact Number:";
             this.gunaLabel7.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             // 
-            // gunaTextBox5
+            // txtContact
             // 
-            this.gunaTextBox5.BackColor = System.Drawing.Color.Transparent;
-            this.gunaTextBox5.BaseColor = System.Drawing.Color.White;
-            this.gunaTextBox5.BorderColor = System.Drawing.Color.Silver;
-            this.gunaTextBox5.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.gunaTextBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaTextBox5.FocusedBaseColor = System.Drawing.Color.White;
-            this.gunaTextBox5.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.gunaTextBox5.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.gunaTextBox5.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaTextBox5.Location = new System.Drawing.Point(371, 225);
-            this.gunaTextBox5.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
-            this.gunaTextBox5.Name = "gunaTextBox5";
-            this.gunaTextBox5.PasswordChar = '\0';
-            this.gunaTextBox5.Radius = 8;
-            this.gunaTextBox5.SelectedText = "";
-            this.gunaTextBox5.Size = new System.Drawing.Size(350, 61);
-            this.gunaTextBox5.TabIndex = 10;
-            this.gunaTextBox5.Tag = "Contact Number";
+            this.txtContact.BackColor = System.Drawing.Color.Transparent;
+            this.txtContact.BaseColor = System.Drawing.Color.White;
+            this.txtContact.BorderColor = System.Drawing.Color.Silver;
+            this.txtContact.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtContact.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtContact.FocusedBaseColor = System.Drawing.Color.White;
+            this.txtContact.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.txtContact.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.txtContact.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContact.Location = new System.Drawing.Point(371, 225);
+            this.txtContact.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
+            this.txtContact.Name = "txtContact";
+            this.txtContact.PasswordChar = '\0';
+            this.txtContact.Radius = 8;
+            this.txtContact.SelectedText = "";
+            this.txtContact.Size = new System.Drawing.Size(350, 61);
+            this.txtContact.TabIndex = 10;
+            this.txtContact.Tag = "Contact Number";
             // 
             // gunaLabel8
             // 
@@ -354,6 +354,7 @@
             this.sector_DropBox.Radius = 8;
             this.sector_DropBox.Size = new System.Drawing.Size(350, 28);
             this.sector_DropBox.TabIndex = 13;
+            this.sector_DropBox.SelectedIndexChanged += new System.EventHandler(this.sector_DropBox_SelectedIndexChanged);
             // 
             // gunaLabel9
             // 
@@ -390,6 +391,7 @@
             this.Office_DropBox.Radius = 8;
             this.Office_DropBox.Size = new System.Drawing.Size(350, 28);
             this.Office_DropBox.TabIndex = 14;
+            this.Office_DropBox.SelectedIndexChanged += new System.EventHandler(this.Office_DropBox_SelectedIndexChanged);
             // 
             // gunaLabel10
             // 
@@ -431,9 +433,6 @@
             this.section_DropBox.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.section_DropBox.ForeColor = System.Drawing.Color.Black;
             this.section_DropBox.FormattingEnabled = true;
-            this.section_DropBox.Items.AddRange(new object[] {
-            "asd",
-            "asd"});
             this.section_DropBox.Location = new System.Drawing.Point(371, 447);
             this.section_DropBox.Margin = new System.Windows.Forms.Padding(3, 3, 15, 3);
             this.section_DropBox.Name = "section_DropBox";
@@ -442,6 +441,7 @@
             this.section_DropBox.Radius = 8;
             this.section_DropBox.Size = new System.Drawing.Size(350, 28);
             this.section_DropBox.TabIndex = 18;
+            this.section_DropBox.SelectedIndexChanged += new System.EventHandler(this.section_DropBox_SelectedIndexChanged);
             // 
             // division_DropBox
             // 
@@ -465,6 +465,7 @@
             this.division_DropBox.Radius = 8;
             this.division_DropBox.Size = new System.Drawing.Size(350, 28);
             this.division_DropBox.TabIndex = 15;
+            this.division_DropBox.SelectedIndexChanged += new System.EventHandler(this.division_DropBox_SelectedIndexChanged);
             // 
             // gunaLabel12
             // 
@@ -502,6 +503,7 @@
             this.position_DropBox.Radius = 8;
             this.position_DropBox.Size = new System.Drawing.Size(718, 28);
             this.position_DropBox.TabIndex = 20;
+            this.position_DropBox.SelectedIndexChanged += new System.EventHandler(this.position_DropBox_SelectedIndexChanged);
             // 
             // gunaElipsePanel1
             // 
@@ -555,10 +557,11 @@
             this.gunaLabel1.Text = "New Employee Record";
             this.gunaLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // add_emp_error
+            // error_Employee
             // 
-            this.add_emp_error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.add_emp_error.ContainerControl = this;
+            this.error_Employee.BlinkRate = 0;
+            this.error_Employee.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.error_Employee.ContainerControl = this;
             // 
             // Add_Employee
             // 
@@ -586,7 +589,7 @@
             this.field_Panel.PerformLayout();
             this.gunaElipsePanel1.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.add_emp_error)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.error_Employee)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -603,11 +606,11 @@
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel2;
         private System.Windows.Forms.TableLayoutPanel field_Panel;
         private Guna.UI.WinForms.GunaLabel gunaLabel3;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox1;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox4;
+        private Guna.UI.WinForms.GunaTextBox txtName;
+        private Guna.UI.WinForms.GunaTextBox txtEmail;
         private Guna.UI.WinForms.GunaLabel gunaLabel6;
         private Guna.UI.WinForms.GunaLabel gunaLabel7;
-        private Guna.UI.WinForms.GunaTextBox gunaTextBox5;
+        private Guna.UI.WinForms.GunaTextBox txtContact;
         private Guna.UI.WinForms.GunaLabel gunaLabel8;
         private Guna.UI.WinForms.GunaLabel gunaLabel9;
         private Guna.UI.WinForms.GunaComboBox sector_DropBox;
@@ -620,7 +623,7 @@
         private Guna.UI.WinForms.GunaButton save_Btn;
         private Guna.UI.WinForms.GunaLabel gunaLabel12;
         private Guna.UI.WinForms.GunaComboBox position_DropBox;
-        private System.Windows.Forms.ErrorProvider add_emp_error;
         private Guna.UI.WinForms.GunaLabel error_Message;
+        private System.Windows.Forms.ErrorProvider error_Employee;
     }
 }

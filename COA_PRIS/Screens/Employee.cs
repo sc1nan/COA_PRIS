@@ -60,5 +60,10 @@ namespace COA_PRIS.Screens
             }
             tab_Manager.active_Button(button, false);        
         }
+
+        private void gunaButton3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

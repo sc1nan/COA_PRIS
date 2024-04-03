@@ -50,10 +50,12 @@ namespace COA_PRIS.Utilities
             return dataTable;
         }
 
-        public DataTable ExecuteQueryXD(string query)
+        public void ExecuteQueryXD(string query, ReportViewer reportViewer = null)
         {
             var dbCon = DBConnection.Instance();
             DataTable dataTable = new DataTable();
+            MySqlDataAdapter das = new MySqlDataAdapter();
+            DataSet1 ds = new DataSet1();
 
             using (MySqlCommand command = new MySqlCommand(query, dbCon.Connection))
             {
@@ -63,14 +65,22 @@ namespace COA_PRIS.Utilities
                     {
                         dataTable.Load(reader);
                     }
+                    das.SelectCommand = command;
+                    das.Fill(ds, "log_table");
+                    if (ds.Tables["log_table"].Rows.Count == 0) MessageBox.Show("Nothing found", "Message");
+
+                    ReportDataSource dataSource = new ReportDataSource("DataSet1", ds.Tables[0]);
+                    reportViewer.LocalReport.DataSources.Clear();
+                    reportViewer.LocalReport.DataSources.Add(dataSource);
+                    reportViewer.RefreshReport();
                 }
                 catch (Exception ex)
                 {
                     Console.WriteLine($"Error executing query: {ex.Message}");
+                    MessageBox.Show($"Error executing nonquery command: {ex.Message}", "Error");
+                    Console.WriteLine();
                 }
             }
-
-            return dataTable;
         }
 
         public int ExecuteNonQuery(string query)

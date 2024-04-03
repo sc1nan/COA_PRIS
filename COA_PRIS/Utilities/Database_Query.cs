@@ -15,6 +15,8 @@ namespace COA_PRIS
         public static readonly string deact_acc = "UPDATE user_info_table SET state = 0 WHERE user_name = '{0}'";
         public static readonly string get_pass = "SELECT password FROM user_cred_table WHERE user_name = '{0}'";
 
+        public static string last_query;
+
         #region Activity Logging
         public static readonly string logged_in = "INSERT INTO log_table (user_name, activity, activity_datetime) VALUES ('{0}', '{1}', CURRENT_TIMESTAMP)";
         public static readonly string display_logs = "SELECT user_name, activity, activity_datetime FROM log_table";
@@ -115,5 +117,11 @@ namespace COA_PRIS
         public static readonly string set_new_division = "INSERT INTO division_table (code, title, description, office_code, status, created_by, created_date)\r" +
                                                         "VALUES ('{0}','{1}','{2}','{3}', 1,'{4}', CURRENT_TIMESTAMP())";
 
+
+        #region EMPLOYEE
+        #endregion
+        
+        public static readonly string set_new_employee = "INSERT INTO emp_info_table(code,full_name,email,contact_no,section_code,position_code,status,created_by,created_date)\r" +
+                                                         "VALUES ('{0}','{1}','{2}','{3}','{4}','{5}', 1,'{6}', CURRENT_TIMESTAMP())";
     }
 }
