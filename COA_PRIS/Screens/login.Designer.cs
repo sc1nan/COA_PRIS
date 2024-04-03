@@ -40,6 +40,7 @@
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.password_entry = new Guna.UI.WinForms.GunaTextBox();
             this.user_Panel = new Guna.UI.WinForms.GunaElipsePanel();
+            this.username_entry = new Guna.UI.WinForms.GunaTextBox();
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaElipsePanel4 = new Guna.UI.WinForms.GunaElipsePanel();
             this.parent_Panel = new Guna.UI.WinForms.GunaElipsePanel();
@@ -47,7 +48,6 @@
             this.gunaImageButton1 = new Guna.UI.WinForms.GunaImageButton();
             this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.login_Error = new System.Windows.Forms.ErrorProvider(this.components);
-            this.username_entry = new Guna.UI.WinForms.GunaTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.gunaPanel1.SuspendLayout();
             this.pass_Panel.SuspendLayout();
@@ -185,7 +185,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.password_entry.BackColor = System.Drawing.Color.Transparent;
             this.password_entry.BaseColor = System.Drawing.Color.White;
-            this.password_entry.BorderColor = System.Drawing.Color.Transparent;
+            this.password_entry.BorderColor = System.Drawing.Color.Silver;
             this.password_entry.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.password_entry.FocusedBaseColor = System.Drawing.Color.White;
             this.password_entry.FocusedBorderColor = System.Drawing.SystemColors.MenuHighlight;
@@ -215,6 +215,32 @@
             this.user_Panel.Name = "user_Panel";
             this.user_Panel.Size = new System.Drawing.Size(400, 55);
             this.user_Panel.TabIndex = 3;
+            // 
+            // username_entry
+            // 
+            this.username_entry.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.username_entry.BackColor = System.Drawing.Color.Transparent;
+            this.username_entry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.username_entry.BaseColor = System.Drawing.Color.White;
+            this.username_entry.BorderColor = System.Drawing.Color.Silver;
+            this.username_entry.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.username_entry.FocusedBaseColor = System.Drawing.Color.White;
+            this.username_entry.FocusedBorderColor = System.Drawing.SystemColors.MenuHighlight;
+            this.username_entry.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.username_entry.Font = new System.Drawing.Font("Bahnschrift", 14F);
+            this.username_entry.Location = new System.Drawing.Point(59, 3);
+            this.username_entry.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
+            this.username_entry.Name = "username_entry";
+            this.username_entry.PasswordChar = '\0';
+            this.username_entry.Radius = 5;
+            this.username_entry.SelectedText = "";
+            this.username_entry.Size = new System.Drawing.Size(321, 48);
+            this.username_entry.TabIndex = 2;
+            this.username_entry.Tag = "Username";
+            this.username_entry.Text = "Username";
+            this.username_entry.Enter += new System.EventHandler(this.login_entry_Enter);
             // 
             // gunaPictureBox1
             // 
@@ -310,32 +336,6 @@
             this.login_Error.BlinkRate = 0;
             this.login_Error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.login_Error.ContainerControl = this;
-            // 
-            // username_entry
-            // 
-            this.username_entry.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.username_entry.BackColor = System.Drawing.Color.Transparent;
-            this.username_entry.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.username_entry.BaseColor = System.Drawing.Color.White;
-            this.username_entry.BorderColor = System.Drawing.Color.Transparent;
-            this.username_entry.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.username_entry.FocusedBaseColor = System.Drawing.Color.White;
-            this.username_entry.FocusedBorderColor = System.Drawing.SystemColors.MenuHighlight;
-            this.username_entry.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.username_entry.Font = new System.Drawing.Font("Bahnschrift", 14F);
-            this.username_entry.Location = new System.Drawing.Point(59, 3);
-            this.username_entry.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
-            this.username_entry.Name = "username_entry";
-            this.username_entry.PasswordChar = '\0';
-            this.username_entry.Radius = 5;
-            this.username_entry.SelectedText = "";
-            this.username_entry.Size = new System.Drawing.Size(321, 48);
-            this.username_entry.TabIndex = 2;
-            this.username_entry.Tag = "Username";
-            this.username_entry.Text = "Username";
-            this.username_entry.Enter += new System.EventHandler(this.login_entry_Enter);
             // 
             // login
             // 

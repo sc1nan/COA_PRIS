@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace COA_PRIS.Screens.Subscreens.Employees
 {
-    public partial class Add_Record : Form
+    public partial class Add_Employee : Form
     {
         private Validator validator;
         private Database_Manager database_manager;
         private Util util = new Util();
-        public Add_Record()
+        public Add_Employee()
         {
             InitializeComponent();
             database_manager = new Database_Manager();
@@ -50,7 +50,7 @@ namespace COA_PRIS.Screens.Subscreens.Employees
 
             
 
-            emp_id.Text = util.generate_ID(name);
+            //emp_id.Text = util.generate_ID(name);
 
         }
 

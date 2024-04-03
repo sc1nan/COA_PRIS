@@ -63,6 +63,7 @@ namespace COA_PRIS
                 this.Hide();
                 Dashboard dashboard = new Dashboard();
                 dashboard.ShowDialog();
+                login_manager.active_Account = username;
             }
             else
             {

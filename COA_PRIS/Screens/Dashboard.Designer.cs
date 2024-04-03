@@ -53,7 +53,7 @@
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.headerTitle = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.title_Panel = new Guna.UI.WinForms.GunaElipsePanel();
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.Main_Form = new Guna.UI.WinForms.GunaPanel();
             this.sidebarTimer = new System.Windows.Forms.Timer(this.components);
@@ -68,7 +68,7 @@
             this.log_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.gunaPanel1.SuspendLayout();
-            this.gunaElipsePanel2.SuspendLayout();
+            this.title_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -484,18 +484,20 @@
             this.headerTitle.AutoSize = true;
             this.headerTitle.Font = new System.Drawing.Font("Bahnschrift SemiBold", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.headerTitle.ForeColor = System.Drawing.Color.White;
-            this.headerTitle.Location = new System.Drawing.Point(185, 19);
+            this.headerTitle.Location = new System.Drawing.Point(171, 13);
             this.headerTitle.Margin = new System.Windows.Forms.Padding(10);
             this.headerTitle.Name = "headerTitle";
+            this.headerTitle.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.headerTitle.Size = new System.Drawing.Size(79, 29);
             this.headerTitle.TabIndex = 10;
             this.headerTitle.Text = "120123";
+            this.headerTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // gunaPanel1
             // 
             this.gunaPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaPanel1.Controls.Add(this.gunaElipsePanel2);
+            this.gunaPanel1.Controls.Add(this.title_Panel);
             this.gunaPanel1.Controls.Add(this.gunaLabel1);
             this.gunaPanel1.Controls.Add(this.gunaPictureBox2);
             this.gunaPanel1.Location = new System.Drawing.Point(95, 0);
@@ -504,17 +506,17 @@
             this.gunaPanel1.Size = new System.Drawing.Size(1589, 90);
             this.gunaPanel1.TabIndex = 11;
             // 
-            // gunaElipsePanel2
+            // title_Panel
             // 
-            this.gunaElipsePanel2.AutoSize = true;
-            this.gunaElipsePanel2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaElipsePanel2.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.gunaElipsePanel2.Controls.Add(this.headerTitle);
-            this.gunaElipsePanel2.Location = new System.Drawing.Point(-9, 9);
-            this.gunaElipsePanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.gunaElipsePanel2.Name = "gunaElipsePanel2";
-            this.gunaElipsePanel2.Size = new System.Drawing.Size(280, 70);
-            this.gunaElipsePanel2.TabIndex = 13;
+            this.title_Panel.AutoSize = true;
+            this.title_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.title_Panel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.title_Panel.Controls.Add(this.headerTitle);
+            this.title_Panel.Location = new System.Drawing.Point(-6, 15);
+            this.title_Panel.Margin = new System.Windows.Forms.Padding(0);
+            this.title_Panel.Name = "title_Panel";
+            this.title_Panel.Size = new System.Drawing.Size(260, 58);
+            this.title_Panel.TabIndex = 10;
             // 
             // gunaPictureBox2
             // 
@@ -575,8 +577,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
             this.gunaPanel1.ResumeLayout(false);
             this.gunaPanel1.PerformLayout();
-            this.gunaElipsePanel2.ResumeLayout(false);
-            this.gunaElipsePanel2.PerformLayout();
+            this.title_Panel.ResumeLayout(false);
+            this.title_Panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -610,8 +612,7 @@
         private Guna.UI.WinForms.GunaPanel Main_Form;
         private Guna.UI.WinForms.GunaButton MaintenanceBtn;
         private Guna.UI.WinForms.GunaPanel maintenance_Panel;
-        private System.Windows.Forms.ToolTip tab_ToolTip;
         private System.Windows.Forms.Timer sidebarTimer;
-        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel2;
+        private Guna.UI.WinForms.GunaElipsePanel title_Panel;
     }
 }
