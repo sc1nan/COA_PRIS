@@ -1,4 +1,5 @@
-﻿using COA_PRIS.UserControlUtil;
+﻿using COA_PRIS.CrystalReports;
+using COA_PRIS.UserControlUtil;
 using COA_PRIS.Utilities;
 using Guna.UI.WinForms;
 using System;
@@ -136,5 +137,29 @@ namespace COA_PRIS.Screens
             }
         }
 
+        private void ActivityLogs_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reportsButton_Click(object sender, EventArgs e)
+        {
+            //DataSet1 dataSet1 = new DataSet1();
+            //dataSet1.log_table.Columns.Clear();
+            //foreach(DataGridViewColumn column in LogsTable.Columns)
+            //{
+            //    DataColumn dtCol = new DataColumn(column.Name, column.ValueType);
+            //    dtCol.Caption = column.HeaderText;
+
+            //    dataSet1.log_table.Columns.Add(dtCol);
+            //}
+            //foreach(DataGridViewRow row in LogsTable.Rows)
+            //{
+            //    dataSet1.log_table.Rows.Add(row);
+            //}
+
+            var temprepp = new TempReportsForms();
+            temprepp.Show();
+        }
     }
 }

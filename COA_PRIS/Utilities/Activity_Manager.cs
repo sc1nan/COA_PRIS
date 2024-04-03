@@ -1,4 +1,5 @@
-﻿using System;
+﻿using COA_PRIS.Screens;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -74,6 +75,7 @@ namespace COA_PRIS.Utilities
             using (db_Manager)
             {
                 dt = db_Manager.ExecuteQuery(string.Format(Database_Query.display_ten_specific_logs, sortby, searchwords, minimium));
+                Database_Query.last_query = string.Format(Database_Query.display_ten_specific_logs, sortby, searchwords, minimium);
             }
             return dt;
         }
@@ -85,6 +87,7 @@ namespace COA_PRIS.Utilities
             using (db_Manager)
             {
                 dt = db_Manager.ExecuteQuery(string.Format(Database_Query.display_three_logs, minimium));
+                Database_Query.last_query = Database_Query.display_logs;
             }
             return dt;
         }

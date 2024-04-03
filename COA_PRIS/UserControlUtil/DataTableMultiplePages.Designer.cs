@@ -42,12 +42,14 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.search_box = new Guna.UI.WinForms.GunaTextBox();
+            this.date_table_panel = new Guna.UI.WinForms.GunaPanel();
             this.page_control_panel.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_table)).BeginInit();
             this.top_panel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.date_table_panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // page_count_textbox
@@ -186,7 +188,7 @@
             this.data_table.Dock = System.Windows.Forms.DockStyle.Fill;
             this.data_table.EnableHeadersVisualStyles = false;
             this.data_table.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.data_table.Location = new System.Drawing.Point(0, 40);
+            this.data_table.Location = new System.Drawing.Point(0, 0);
             this.data_table.Margin = new System.Windows.Forms.Padding(15);
             this.data_table.Name = "data_table";
             this.data_table.ReadOnly = true;
@@ -300,11 +302,20 @@
             this.search_box.TabIndex = 4;
             this.search_box.TextChanged += new System.EventHandler(this.search_box_TextChanged);
             // 
+            // date_table_panel
+            // 
+            this.date_table_panel.Controls.Add(this.data_table);
+            this.date_table_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.date_table_panel.Location = new System.Drawing.Point(0, 40);
+            this.date_table_panel.Name = "date_table_panel";
+            this.date_table_panel.Size = new System.Drawing.Size(960, 443);
+            this.date_table_panel.TabIndex = 10;
+            // 
             // DataTableMultiplePages
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.data_table);
+            this.Controls.Add(this.date_table_panel);
             this.Controls.Add(this.top_panel);
             this.Controls.Add(this.bottom_panel);
             this.Margin = new System.Windows.Forms.Padding(0);
@@ -317,6 +328,7 @@
             this.top_panel.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.date_table_panel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -334,5 +346,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Guna.UI.WinForms.GunaTextBox search_box;
+        private Guna.UI.WinForms.GunaPanel date_table_panel;
     }
 }
