@@ -27,6 +27,9 @@ namespace COA_PRIS
         #endregion
 
 
+        public static string last_query;
+
+
 
     }
 }

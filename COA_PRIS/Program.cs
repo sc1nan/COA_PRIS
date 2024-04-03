@@ -25,7 +25,8 @@ namespace COA_PRIS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new login());
-            Application.Run(new Splash_Screen());
+            //Application.Run(new Splash_Screen());
+            Application.Run(new Dashboard());
         }
 
     }
