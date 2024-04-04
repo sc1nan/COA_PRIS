@@ -60,7 +60,7 @@ namespace COA_PRIS.Utilities
 
                 if (i < guna_Table.Columns.Count - 1)
                 {
-                    guna_Table.Columns[i].DividerWidth = 2;
+                    guna_Table.Columns[i].DividerWidth = 1;
                 }
             }
 
@@ -81,7 +81,7 @@ namespace COA_PRIS.Utilities
             {
                 if (i % 2 == 0)
                 {
-                    rowStyle.BackColor = Hex_To_RGB("#C7C8CC");
+                    rowStyle.BackColor = Hex_To_RGB("#FFFFFF");
                     //guna_Table.Rows[i].DefaultCellStyle.BackColor = Hex_To_RGB("#C7C8CC");
                 }
             }

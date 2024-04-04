@@ -46,6 +46,17 @@ namespace COA_PRIS.Utilities
             }
             
         }
+        public void Log_ActivityOut(string username, string message)
+        {
+            db_Manager = new Database_Manager();
+            int ret = 0;
+            using (db_Manager)
+            {
+                ret = Convert.ToInt32(db_Manager.ExecuteNonQuery(string.Format(Database_Query.logged_in, username, message)));
+            }
+
+        }
+
 
         public DataTable Display_Logs_Table()
         {

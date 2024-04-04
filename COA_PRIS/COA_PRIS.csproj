@@ -134,7 +134,11 @@
     <Compile Include="CrystalReports\TempReportsForms.Designer.cs">
       <DependentUpon>TempReportsForms.cs</DependentUpon>
     </Compile>
-    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Employee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -462,6 +466,7 @@
     <Content Include="Resources\apps-sort - Copy.png" />
     <Content Include="Resources\apps-sort.png" />
     <None Include="Resources\business-report %281%29 - Copy.png" />
+    <None Include="Resources\book-section.png" />
     <Content Include="Resources\caret-left %281%29 - Copy.png" />
     <Content Include="Resources\caret-left %281%29.png" />
     <Content Include="Resources\caret-left - Copy.png" />
@@ -472,6 +477,8 @@
     <Content Include="Resources\caret-right.png" />
     <None Include="Resources\Cherie Mae Rejoy - Copy.png" />
     <None Include="Resources\COA img - Copy.png" />
+    <None Include="Resources\chair-office.png" />
+    <None Include="Resources\condo.png" />
     <Content Include="Resources\expand - Copy.png" />
     <Content Include="Resources\expand.png" />
     <Content Include="Resources\folder-download %281%29 - Copy.png" />
@@ -480,22 +487,28 @@
     <Content Include="Resources\folder-download.png" />
     <Content Include="Resources\house-solid - Copy.png" />
     <Content Include="Resources\house-solid.png" />
+    <None Include="Resources\logout %282%29.png" />
+    <None Include="Resources\logout %283%29.png" />
     <Content Include="Resources\Menu Bar Icon - Copy.png" />
     <Content Include="Resources\Menu Bar Icon.png" />
     <Content Include="Resources\Menu Bar Icon1 - Copy.png" />
     <Content Include="Resources\Menu Bar Icon1.png" />
     <Content Include="Resources\refresh %281%29 - Copy.png" />
     <Content Include="Resources\refresh %281%29.png" />
+    <None Include="Resources\route.png" />
     <Content Include="Resources\search - Copy.png" />
     <Content Include="Resources\search.png" />
     <Content Include="Resources\search1.png" />
+    <None Include="Resources\seedling.png" />
     <Content Include="Resources\select %281%29.png" />
     <Content Include="Resources\select.png" />
     <Content Include="Resources\Splash screen.png" />
+    <None Include="Resources\square-divide.png" />
     <Content Include="Resources\to-do %281%29.png" />
     <Content Include="Resources\to-do %282%29.png" />
     <Content Include="Resources\trash-bin.png" />
     <Content Include="Resources\trash-bin1.png" />
+    <None Include="Resources\user-helmet-safety.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll" />
     <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />
