@@ -458,5 +458,15 @@ namespace COA_PRIS.Screens
             View_Record.ShowDialog();
 
         }
+
+        private void title_label_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void search_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

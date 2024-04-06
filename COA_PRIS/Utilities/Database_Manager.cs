@@ -53,6 +53,7 @@ namespace COA_PRIS.Utilities
         public void ExecuteQueryXD(string query, ReportViewer reportViewer = null)
         {
             var dbCon = DBConnection.Instance();
+            DataTable dataTable = new DataTable();
             MySqlDataAdapter das = new MySqlDataAdapter();
             DataSet1 ds = new DataSet1();
 

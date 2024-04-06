@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using COA_PRIS.Properties;
 using COA_PRIS.Utilities;
 using Guna.UI.WinForms;
@@ -14,8 +15,10 @@ namespace COA_PRIS.Screens
         private bool sidebar_Expanded = false;
         private Form current_Form = null;
         private Login_Manager login_manager;
-
+        private Database_Manager database_manager;
         private Tab_Manager tab_Manager;
+        private Activity_Manager manager;
+        private Log_Message message;
         private readonly Projects projects_Tab = new Projects();
         private readonly Home landing_Home = new Home();
         private readonly Employee employee_Tab = new Employee();
@@ -74,7 +77,7 @@ namespace COA_PRIS.Screens
                 }
                 else
                 {
-                    //activityManager.Log_Activity("james", Log_Message.logout_message);
+                    activityManager.Log_Activity("admin", Log_Message.logout_message);
                     Application.Exit();
                 }
             }
@@ -115,5 +118,22 @@ namespace COA_PRIS.Screens
 
             tab_Manager.active_Button(button, true);
         }
+
+        private void Logoutbtn_Click(object sender, EventArgs e)
+        {
+            Activity_Manager activityManager = new Activity_Manager();
+            database_manager = new Database_Manager();
+            if (MessageBox.Show("Are you sure you want to logout", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                activityManager.Log_ActivityOut("admin", Log_Message.logout_message);
+
+                    login log = new login();
+                    log.ShowDialog();
+                    this.Close();
+               
+               
+            }
+        }
+       
     }
 }

@@ -17,8 +17,11 @@ namespace COA_PRIS
         public static readonly string deact_acc = "UPDATE user_info_table SET status = 0 WHERE user_name = '{0}'";
         public static readonly string get_pass = "SELECT password FROM user_cred_table WHERE user_name = '{0}'";
 
+        public static string last_query;
+
         #region Activity Logging
         public static readonly string logged_in = "INSERT INTO log_table (user_name, activity, activity_datetime) VALUES ('{0}', '{1}', CURRENT_TIMESTAMP)";
+        public static readonly string logged_out = "INSERT INTO log_table (user_name, activity, activity_datetime) VALUES ('{0}', '{1}', CURRENT_TIMESTAMP)";
         public static readonly string display_logs = "SELECT user_name, activity, activity_datetime FROM log_table";
         public static readonly string display_three_logs = "SELECT user_name, activity, activity_datetime FROM log_table LIMIT {0}, 10";
         public static readonly string display_specific_logs = "SELECT user_name, activity, activity_datetime FROM log_table WHERE {0} LIKE '%{1}%'";
@@ -113,6 +116,11 @@ namespace COA_PRIS
                                                      "VALUES ('{0}','{1}','{2}','{3}', 1,'{4}', CURRENT_TIMESTAMP())";
 
 
+        #region EMPLOYEE
+        
+        
+        public static readonly string set_new_employee = "INSERT INTO emp_info_table(code,full_name,email,contact_no,section_code,position_code,status,created_by,created_date)\r" +
+                                                         "VALUES ('{0}','{1}','{2}','{3}','{4}','{5}', 1,'{6}', CURRENT_TIMESTAMP())";
         #endregion
 
         public static readonly string get_audit_trail_by_id = "SELECT created_by, created_date, updated_by, updated_date FROM {0} WHERE code = '{1}';";

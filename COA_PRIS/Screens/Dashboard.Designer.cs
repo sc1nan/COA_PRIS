@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.SidebarContainer = new Guna.UI.WinForms.GunaPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Logoutbtn = new Guna.UI.WinForms.GunaButton();
             this.sideExpand_Btn = new Guna.UI.WinForms.GunaButton();
             this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
             this.tab_panel = new System.Windows.Forms.FlowLayoutPanel();
@@ -58,6 +60,7 @@
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.Main_Form = new Guna.UI.WinForms.GunaPanel();
             this.SidebarContainer.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.tab_panel.SuspendLayout();
             this.home_Panel.SuspendLayout();
             this.creation_Panel.SuspendLayout();
@@ -76,6 +79,7 @@
             // 
             this.SidebarContainer.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.SidebarContainer.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.SidebarContainer.Controls.Add(this.panel1);
             this.SidebarContainer.Controls.Add(this.sideExpand_Btn);
             this.SidebarContainer.Controls.Add(this.gunaLabel2);
             this.SidebarContainer.Controls.Add(this.tab_panel);
@@ -88,6 +92,37 @@
             this.SidebarContainer.Name = "SidebarContainer";
             this.SidebarContainer.Size = new System.Drawing.Size(95, 990);
             this.SidebarContainer.TabIndex = 10;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.Logoutbtn);
+            this.panel1.Location = new System.Drawing.Point(3, 931);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(89, 66);
+            this.panel1.TabIndex = 1;
+            // 
+            // Logoutbtn
+            // 
+            this.Logoutbtn.AnimationHoverSpeed = 0.07F;
+            this.Logoutbtn.AnimationSpeed = 0.03F;
+            this.Logoutbtn.BaseColor = System.Drawing.Color.Transparent;
+            this.Logoutbtn.BorderColor = System.Drawing.Color.Black;
+            this.Logoutbtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.Logoutbtn.FocusedColor = System.Drawing.Color.Empty;
+            this.Logoutbtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.Logoutbtn.ForeColor = System.Drawing.Color.White;
+            this.Logoutbtn.Image = global::COA_PRIS.Properties.Resources.logout__3_;
+            this.Logoutbtn.ImageSize = new System.Drawing.Size(40, 40);
+            this.Logoutbtn.Location = new System.Drawing.Point(15, 0);
+            this.Logoutbtn.Name = "Logoutbtn";
+            this.Logoutbtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.Logoutbtn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.Logoutbtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.Logoutbtn.OnHoverImage = null;
+            this.Logoutbtn.OnPressedColor = System.Drawing.Color.Black;
+            this.Logoutbtn.Size = new System.Drawing.Size(63, 61);
+            this.Logoutbtn.TabIndex = 1;
+            this.Logoutbtn.Click += new System.EventHandler(this.Logoutbtn_Click);
             // 
             // sideExpand_Btn
             // 
@@ -470,6 +505,14 @@
             // 
             // sidebarTimer
             // 
+            this.gunaLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaLabel1.AutoSize = true;
+            this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel1.Location = new System.Drawing.Point(1364, 26);
+            this.gunaLabel1.Name = "gunaLabel1";
+            this.gunaLabel1.Size = new System.Drawing.Size(111, 25);
+            this.gunaLabel1.TabIndex = 12;
+            this.gunaLabel1.Text = "MAMA MO";
             this.sidebarTimer.Interval = 10;
             this.sidebarTimer.Tick += new System.EventHandler(this.SidebarTimer_tick);
             // 
@@ -515,6 +558,28 @@
             // 
             // gunaLabel1
             // 
+            this.gunaPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaPanel1.Controls.Add(this.title_Panel);
+            this.gunaPanel1.Controls.Add(this.gunaLabel1);
+            this.gunaPanel1.Controls.Add(this.gunaPictureBox2);
+            this.gunaPanel1.Location = new System.Drawing.Point(95, 0);
+            this.gunaPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.gunaPanel1.Name = "gunaPanel1";
+            this.gunaPanel1.Size = new System.Drawing.Size(1591, 90);
+            this.gunaPanel1.TabIndex = 11;
+            // 
+            // title_Panel
+            // 
+            this.title_Panel.AutoSize = true;
+            this.title_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.title_Panel.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.title_Panel.Controls.Add(this.headerTitle);
+            this.title_Panel.Location = new System.Drawing.Point(-6, 15);
+            this.title_Panel.Margin = new System.Windows.Forms.Padding(0);
+            this.title_Panel.Name = "title_Panel";
+            this.title_Panel.Size = new System.Drawing.Size(260, 58);
+            this.title_Panel.TabIndex = 10;
             this.gunaLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaLabel1.AutoSize = true;
             this.gunaLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -529,7 +594,7 @@
             this.gunaPictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaPictureBox2.BaseColor = System.Drawing.Color.White;
             this.gunaPictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("gunaPictureBox2.Image")));
-            this.gunaPictureBox2.Location = new System.Drawing.Point(1383, 23);
+            this.gunaPictureBox2.Location = new System.Drawing.Point(1505, 12);
             this.gunaPictureBox2.Name = "gunaPictureBox2";
             this.gunaPictureBox2.Size = new System.Drawing.Size(50, 50);
             this.gunaPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -545,7 +610,7 @@
             this.Main_Form.Location = new System.Drawing.Point(95, 90);
             this.Main_Form.Margin = new System.Windows.Forms.Padding(0);
             this.Main_Form.Name = "Main_Form";
-            this.Main_Form.Size = new System.Drawing.Size(1445, 756);
+            this.Main_Form.Size = new System.Drawing.Size(1591, 910);
             this.Main_Form.TabIndex = 10;
             // 
             // Dashboard
@@ -562,11 +627,13 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1280, 822);
             this.Name = "Dashboard";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Project Request Information System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Dashboard_FormClosing);
             this.Load += new System.EventHandler(this.Dashboard_Load);
             this.SidebarContainer.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.tab_panel.ResumeLayout(false);
             this.home_Panel.ResumeLayout(false);
             this.creation_Panel.ResumeLayout(false);
@@ -611,6 +678,8 @@
         private System.Windows.Forms.Timer sidebarTimer;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
         private Guna.UI.WinForms.GunaElipsePanel title_Panel;
+        private System.Windows.Forms.Panel panel1;
+        private Guna.UI.WinForms.GunaButton Logoutbtn;
         private Guna.UI.WinForms.GunaLabel headerTitle;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox2;

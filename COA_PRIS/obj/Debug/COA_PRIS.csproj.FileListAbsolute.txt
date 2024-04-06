@@ -138,9 +138,10 @@ C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.DevI
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.DevInfo.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Dashboard.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Home.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.ProjectCreation.resources
 C:\Users\Cherie Mae Rejoy\Source\Repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Home.resources
 C:\Users\Cherie Mae Rejoy\Source\Repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Dashboard.resources
-C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Recieving.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Recieving.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Employee.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.ActivityLogs.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Employees.Employee_Submodule.resources
@@ -157,10 +158,6 @@ C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Scre
 C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Projects.ProjectLists.resources
 C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.Cherie_UI.Datagrid.resources
 C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Splash_Screen.resources
-C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\bin\Debug\SqlServerTypes\x64\msvcr120.dll
-C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
-C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\bin\Debug\SqlServerTypes\x86\msvcr120.dll
-C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
 C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\bin\Debug\Microsoft.ReportViewer.Common.dll
 C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\bin\Debug\Microsoft.ReportViewer.Design.dll
@@ -298,23 +295,10 @@ C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\bin\Debug\zh-CHT\Micros
 C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.csproj.SuggestedBindingRedirects.cache
 C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.exe.config
 C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.CrystalReports.TempReportsForms.resources
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.CrystalReports.TempReportsForms.resources
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Maintenance.resources
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Projects.resources
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Splash_Screen.resources
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Employees.Add_Employee.resources
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Maintenance.Add_Record.resources
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Projects.ProjectArchive.resources
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Projects.ProjectCreate.resources
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Projects.ProjectLists.resources
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.Cherie_UI.Datagrid.resources
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.DataTableMultiplePages.resources
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.Label_Drop.resources
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.Label_Rich.resources
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.Label_Text.resources
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.SearchBar.resources
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\bin\Debug\EnvDTE.dll
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\bin\Debug\stdole.dll
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Maintenance.View_Record.resources
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Audit_Trail.resources
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.Label_TextLabel.resources
+C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Maintenance.resources
+C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Employees.Add_Employee.resources
+C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Maintenance.Add_Record.resources
+C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Maintenance.Maintenance_Form.resources
+C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.Label_Drop.resources
+C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.Label_Rich.resources
+C:\Users\Cherie Mae Rejoy\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.Label_Text.resources
