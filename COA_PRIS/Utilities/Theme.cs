@@ -80,10 +80,8 @@ namespace COA_PRIS.Utilities
             for (int i = 0; i < guna_Table.Rows.Count; i++)
             {
                 if (i % 2 == 0)
-                {
-                    rowStyle.BackColor = Hex_To_RGB("#FFFFFF");
-                    //guna_Table.Rows[i].DefaultCellStyle.BackColor = Hex_To_RGB("#C7C8CC");
-                }
+                    rowStyle.BackColor = Hex_To_RGB("#F0F0F0");
+
             }
         }
     }

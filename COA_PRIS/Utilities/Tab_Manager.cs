@@ -45,7 +45,7 @@ namespace COA_PRIS.Utilities
                 {
                     button.BackColor = Theme.Hex_To_RGB(selected_color);
                     if (has_Title)
-                        change_Title(button.Text.ToUpper());
+                        change_Title(button.Tag.ToString().ToUpper());
                 }
                 else
                 {

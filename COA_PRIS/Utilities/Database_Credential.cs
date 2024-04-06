@@ -11,8 +11,8 @@ namespace COA_PRIS
         public static string server = "localhost";
         public static string database = "db_pris";
         public static string uid = "root";
-        public static string pwd = "12141214cherie";
-
+        public static string pwd = "@Dec012023";
+        //@Dec012023
         //12141214cherie
     }
 }

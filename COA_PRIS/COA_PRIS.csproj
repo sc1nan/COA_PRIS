@@ -139,6 +139,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Audit_Trail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Audit_Trail.Designer.cs">
+      <DependentUpon>Audit_Trail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Employee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -205,6 +211,12 @@
     <Compile Include="Screens\Subscreens\Maintenance\Add_Record.Designer.cs">
       <DependentUpon>Add_Record.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Subscreens\Maintenance\View_Record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Maintenance\View_Record.Designer.cs">
+      <DependentUpon>View_Record.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Subscreens\Projects\ProjectArchive.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -236,12 +248,6 @@
     <Compile Include="UserControlUtil\DataTableMultiplePages.Designer.cs">
       <DependentUpon>DataTableMultiplePages.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Subscreens\Maintenance\Maintenance_Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\Subscreens\Maintenance\Maintenance_Form.Designer.cs">
-      <DependentUpon>Maintenance_Form.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControlUtil\Label_Drop.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -259,6 +265,12 @@
     </Compile>
     <Compile Include="UserControlUtil\Label_Text.Designer.cs">
       <DependentUpon>Label_Text.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlUtil\Label_TextLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlUtil\Label_TextLabel.Designer.cs">
+      <DependentUpon>Label_TextLabel.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlUtil\SearchBar.cs">
       <SubType>UserControl</SubType>
@@ -309,6 +321,9 @@
     <EmbeddedResource Include="CrystalReports\TempReportsForms.resx">
       <DependentUpon>TempReportsForms.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Audit_Trail.resx">
+      <DependentUpon>Audit_Trail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
@@ -353,8 +368,8 @@
     <EmbeddedResource Include="Screens\Subscreens\Maintenance\Add_Record.resx">
       <DependentUpon>Add_Record.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Subscreens\Maintenance\Maintenance_Form.resx">
-      <DependentUpon>Maintenance_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Subscreens\Maintenance\View_Record.resx">
+      <DependentUpon>View_Record.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Projects\ProjectArchive.resx">
       <DependentUpon>ProjectArchive.cs</DependentUpon>
@@ -385,6 +400,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\Label_Text.resx">
       <DependentUpon>Label_Text.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUtil\Label_TextLabel.resx">
+      <DependentUpon>Label_TextLabel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\SearchBar.resx">
       <DependentUpon>SearchBar.cs</DependentUpon>

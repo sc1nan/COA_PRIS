@@ -28,7 +28,7 @@ namespace COA_PRIS
         public static readonly string display_ten_specific_logs = "SELECT user_name, activity, activity_datetime FROM log_table WHERE {0} LIKE '%{1}%' LIMIT {2}, 10";
         public static readonly string count_logs = "SELECT COUNT(*) FROM log_table";
         //public static readonly string login_attempt = "INSERT INTO log_table (user_name, activity, activity_datetime) VALUES ('{0}', 'Attempted to login', CURRENT_TIMESTAMP)";
-        public static string last_query;
+        
         #endregion
 
 
@@ -115,10 +115,11 @@ namespace COA_PRIS
         public static readonly string set_new_division = "INSERT INTO division_table (code, title, description, office_code, status, created_by, created_date)\r" +
                                                      "VALUES ('{0}','{1}','{2}','{3}', 1,'{4}', CURRENT_TIMESTAMP())";
 
+        #endregion
 
         #region EMPLOYEE
-        
-        
+
+
         public static readonly string set_new_employee = "INSERT INTO emp_info_table(code,full_name,email,contact_no,section_code,position_code,status,created_by,created_date)\r" +
                                                          "VALUES ('{0}','{1}','{2}','{3}','{4}','{5}', 1,'{6}', CURRENT_TIMESTAMP())";
         #endregion

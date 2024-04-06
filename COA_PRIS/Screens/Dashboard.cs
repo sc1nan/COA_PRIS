@@ -44,26 +44,8 @@ namespace COA_PRIS.Screens
 
             login_manager.active_Account = "james";
             tab_Manager.Header_Title = headerTitle;
-            tab_Manager.active_Button(EmployeeBtn);
+            tab_Manager.active_Button(EmployeeBtn, true);
             MaintenanceBtn.PerformClick();
-        }
-
-        private void SidebarTimer_tick(object sender, EventArgs e)
-        {
-            int deltaWidth = sidebar_Expanded ? -10 : 10;
-            SidebarContainer.Width += deltaWidth;
-            sideExpand_Btn.Image = sidebar_Expanded ? Resources.swipe_right : Resources.swipe_left;
-
-            if (SidebarContainer.Width == SidebarContainer.MinimumSize.Width || SidebarContainer.Width == SidebarContainer.MaximumSize.Width)
-            {
-                sidebar_Expanded = !sidebar_Expanded;
-                sidebarTimer.Stop();
-            }
-        }
-
-        private void sidebar_Click(object sender, EventArgs e)
-        {
-            sidebarTimer.Start();
         }
 
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
@@ -134,6 +116,12 @@ namespace COA_PRIS.Screens
                
             }
         }
-       
+
+        private void button_MouseHover(object sender, EventArgs e)
+        {
+            var button = (GunaButton)sender;
+
+            headerTitle.Text = button.Tag.ToString().ToUpper();
+        }
     }
 }
