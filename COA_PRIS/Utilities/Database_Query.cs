@@ -1,4 +1,6 @@
-﻿using Org.BouncyCastle.Asn1.X9;
+﻿using COA_PRIS.Utilities;
+using Mysqlx.Crud;
+using Org.BouncyCastle.Asn1.X9;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +12,9 @@ namespace COA_PRIS
     internal class Database_Query
     {
         public static readonly string get_acc = "SELECT COUNT(*) FROM user_cred_table WHERE user_name = '{0}'";
-        public static readonly string check_acc_status = "SELECT state FROM user_info_table WHERE user_name = '{0}'";
+        public static readonly string check_acc_status = "SELECT status FROM user_info_table WHERE user_name = '{0}'";
 
-        public static readonly string deact_acc = "UPDATE user_info_table SET state = 0 WHERE user_name = '{0}'";
+        public static readonly string deact_acc = "UPDATE user_info_table SET status = 0 WHERE user_name = '{0}'";
         public static readonly string get_pass = "SELECT password FROM user_cred_table WHERE user_name = '{0}'";
 
         #region Activity Logging
@@ -23,14 +25,20 @@ namespace COA_PRIS
         public static readonly string display_ten_specific_logs = "SELECT user_name, activity, activity_datetime FROM log_table WHERE {0} LIKE '%{1}%' LIMIT {2}, 10";
         public static readonly string count_logs = "SELECT COUNT(*) FROM log_table";
         //public static readonly string login_attempt = "INSERT INTO log_table (user_name, activity, activity_datetime) VALUES ('{0}', 'Attempted to login', CURRENT_TIMESTAMP)";
-
+        public static string last_query;
         #endregion
 
 
         public static readonly string get_top_employee_rec = "SELECT employee_no FROM emp_info_table ORDER BY employee_no DESC LIMIT 1";
 
+        public static readonly string get_recent_code = "SELECT code FROM {0} ORDER BY code DESC LIMIT 1";
 
-        #region Maintenance GET Queries
+        public static readonly string get_code_info = "SELECT code, num_length, initial_num FROM code_table WHERE code_table.table = '{0}'";
+
+        public static readonly string delete_record_by_id = "UPDATE {0} SET status = 0 WHERE code = '{1}';";
+
+
+        #region Maintenance GET Table Queries
 
         public static readonly string get_all_agency_records = "SELECT  agency_table.code, agency_table.title, agency_table.description, cluster_table.title\r" +
                                                                 "FROM agency_table LEFT JOIN cluster_table ON agency_table.cluster_code = cluster_table.code\r" +
@@ -64,23 +72,7 @@ namespace COA_PRIS
 
         public static readonly string get_all_sector_records = "SELECT sector_table.code, sector_table.title, sector_table.description FROM sector_table\r" +
                                                                 "WHERE sector_table.status= 1;";
-
-
-        #endregion
-
-
-
-
-
-
-
-
-
-        public static readonly string get_recent_code = "SELECT code FROM {0} ORDER BY code DESC LIMIT 1";
-
-        public static readonly string get_code_info = "SELECT code, num_length, initial_num FROM code_table WHERE code_table.table = '{0}'";
-
-
+       
         public static readonly string get_cluster_options = "SELECT cluster_table.code, cluster_table.title FROM cluster_table";
 
         public static readonly string get_office_options = "SELECT office_table.code, office_table.title FROM office_table WHERE office_table.status = 1 ;";
@@ -88,7 +80,12 @@ namespace COA_PRIS
         public static readonly string get_sector_options = "SELECT sector_table.code,sector_table.title FROM sector_table WHERE sector_table.status = 1";
 
         public static readonly string get_division_options = "SELECT division_table.code,division_table.title FROM division_table WHERE division_table.status = 1";
-            
+
+
+        #endregion
+
+        #region Maintenance SET Record Queries
+
         public static readonly string set_new_agency = "INSERT INTO agency_table (code, title, description, cluster_code, status, created_by, created_date)\r" +
                                                         "VALUES ('{0}','{1}','{2}','{3}', 1,'{4}', CURRENT_TIMESTAMP())";
 
@@ -113,7 +110,33 @@ namespace COA_PRIS
         public static readonly string set_new_office = "INSERT INTO office_table (code, title, description, sector_code, status, created_by, created_date)\r" +
                                                         "VALUES ('{0}','{1}','{2}','{3}', 1,'{4}', CURRENT_TIMESTAMP())";
         public static readonly string set_new_division = "INSERT INTO division_table (code, title, description, office_code, status, created_by, created_date)\r" +
-                                                        "VALUES ('{0}','{1}','{2}','{3}', 1,'{4}', CURRENT_TIMESTAMP())";
+                                                     "VALUES ('{0}','{1}','{2}','{3}', 1,'{4}', CURRENT_TIMESTAMP())";
 
+
+        #endregion
+
+        public static readonly string get_audit_trail_by_id = "SELECT created_by, created_date, updated_by, updated_date FROM {0} WHERE code = '{1}';";
+
+
+        #region GET Record Queries
+        public static readonly string get_agency_record_by_id = "SELECT agency_table.title, agency_table.description, agency_table.cluster_code FROM agency_table\r" +
+                                                                "WHERE agency_table.code = '{0}' and agency_table.status = 1;";
+
+        public static readonly string get_cluster_record_by_id = "SELECT agency_table.title, agency_table.description, agency_table.cluster_code FROM agency_table\r" +
+                                                                "WHERE agency_table.code = '{0}' and agency_table.status = 1;";
+
+
+        #endregion
+
+        #region UPDATE Record Queries
+        public static readonly string update_agency_record_id = "UPDATE agency_table SET \r" +
+                                                                "agency_table.title = '{0}', agency_table.description = '{1}', \r" +
+                                                                "agency_table.cluster_code = '{2}', agency_table.updated_by = '{3}',\r" +
+                                                                "agency_table.updated_date = CURRENT_TIMESTAMP()\r" +
+                                                                "WHERE agency_table.code = '{4}' and agency_table.status = 1";
+        
+        
+        
+        #endregion
     }
 }

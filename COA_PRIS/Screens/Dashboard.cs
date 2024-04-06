@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.Windows.Forms;
 using COA_PRIS.Properties;
 using COA_PRIS.Utilities;
@@ -24,8 +25,10 @@ namespace COA_PRIS.Screens
         public Dashboard()
         {
             InitializeComponent();
-            SidebarContainer.BringToFront();
+            //SidebarContainer.BringToFront();
             title_Panel.BringToFront();
+
+            //this.AutoScaleMode = AutoScaleMode.Dpi;
         }
 
         private void Dashboard_Load(object sender, EventArgs e)

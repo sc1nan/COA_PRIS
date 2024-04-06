@@ -102,14 +102,14 @@
             this.previous_button.FocusedColor = System.Drawing.Color.Empty;
             this.previous_button.Font = new System.Drawing.Font("Bahnschrift", 27.75F, System.Drawing.FontStyle.Bold);
             this.previous_button.ForeColor = System.Drawing.Color.White;
-            this.previous_button.Image = global::COA_PRIS.Properties.Resources.caret_left;
+            //this.previous_button.Image = global::COA_PRIS.Properties.Resources.caret_left;
             this.previous_button.ImageSize = new System.Drawing.Size(30, 30);
             this.previous_button.Location = new System.Drawing.Point(3, 3);
             this.previous_button.Name = "previous_button";
             this.previous_button.OnHoverBaseColor = System.Drawing.Color.White;
             this.previous_button.OnHoverBorderColor = System.Drawing.Color.Black;
             this.previous_button.OnHoverForeColor = System.Drawing.Color.White;
-            this.previous_button.OnHoverImage = global::COA_PRIS.Properties.Resources.caret_left__1_;
+            //this.previous_button.OnHoverImage = global::COA_PRIS.Properties.Resources.caret_left__1_;
             this.previous_button.OnPressedColor = System.Drawing.Color.Black;
             this.previous_button.Size = new System.Drawing.Size(50, 50);
             this.previous_button.TabIndex = 1;
@@ -128,14 +128,14 @@
             this.next_button.FocusedColor = System.Drawing.Color.Empty;
             this.next_button.Font = new System.Drawing.Font("Bahnschrift", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.next_button.ForeColor = System.Drawing.Color.White;
-            this.next_button.Image = global::COA_PRIS.Properties.Resources.caret_right;
+            //this.next_button.Image = global::COA_PRIS.Properties.Resources.caret_right;
             this.next_button.ImageSize = new System.Drawing.Size(30, 30);
             this.next_button.Location = new System.Drawing.Point(129, 3);
             this.next_button.Name = "next_button";
             this.next_button.OnHoverBaseColor = System.Drawing.Color.White;
             this.next_button.OnHoverBorderColor = System.Drawing.Color.Black;
             this.next_button.OnHoverForeColor = System.Drawing.Color.White;
-            this.next_button.OnHoverImage = global::COA_PRIS.Properties.Resources.caret_right__1_;
+            //this.next_button.OnHoverImage = global::COA_PRIS.Properties.Resources.caret_right__1_;
             this.next_button.OnPressedColor = System.Drawing.Color.Black;
             this.next_button.Size = new System.Drawing.Size(50, 50);
             this.next_button.TabIndex = 2;
@@ -273,7 +273,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::COA_PRIS.Properties.Resources.search;
+            //this.pictureBox1.Image = global::COA_PRIS.Properties.Resources.search;
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 30);

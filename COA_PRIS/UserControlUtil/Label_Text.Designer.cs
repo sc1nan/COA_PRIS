@@ -86,7 +86,7 @@
             this.entry.SelectedText = "";
             this.entry.Size = new System.Drawing.Size(377, 54);
             this.entry.TabIndex = 1;
-            this.entry.Tag = "Entry";
+            this.entry.Tag = "";
             this.entry.TextChanged += new System.EventHandler(this.entry_TextChanged);
             // 
             // label_Text_Error
@@ -102,7 +102,6 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Label_Text";
             this.Size = new System.Drawing.Size(400, 100);
-            this.Load += new System.EventHandler(this.Label_Text_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.label_Text_Error)).EndInit();

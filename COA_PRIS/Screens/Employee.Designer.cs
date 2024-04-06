@@ -51,7 +51,7 @@
             this.parent_panel.Location = new System.Drawing.Point(11, 13);
             this.parent_panel.Margin = new System.Windows.Forms.Padding(2);
             this.parent_panel.Name = "parent_panel";
-            this.parent_panel.Size = new System.Drawing.Size(1569, 877);
+            this.parent_panel.Size = new System.Drawing.Size(1534, 860);
             this.parent_panel.TabIndex = 0;
             // 
             // container_Panel
@@ -61,7 +61,7 @@
             this.container_Panel.Location = new System.Drawing.Point(0, 60);
             this.container_Panel.Name = "container_Panel";
             this.container_Panel.Padding = new System.Windows.Forms.Padding(8);
-            this.container_Panel.Size = new System.Drawing.Size(1569, 817);
+            this.container_Panel.Size = new System.Drawing.Size(1534, 800);
             this.container_Panel.TabIndex = 2;
             // 
             // line_Panel
@@ -70,7 +70,7 @@
             this.line_Panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.line_Panel.Location = new System.Drawing.Point(0, 55);
             this.line_Panel.Name = "line_Panel";
-            this.line_Panel.Size = new System.Drawing.Size(1569, 5);
+            this.line_Panel.Size = new System.Drawing.Size(1534, 5);
             this.line_Panel.TabIndex = 1;
             // 
             // nav_panel
@@ -82,7 +82,7 @@
             this.nav_panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.nav_panel.Location = new System.Drawing.Point(0, 0);
             this.nav_panel.Name = "nav_panel";
-            this.nav_panel.Size = new System.Drawing.Size(1569, 55);
+            this.nav_panel.Size = new System.Drawing.Size(1534, 55);
             this.nav_panel.TabIndex = 0;
             // 
             // employee_Btn
@@ -159,7 +159,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1591, 901);
+            this.ClientSize = new System.Drawing.Size(1556, 884);
             this.Controls.Add(this.parent_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Employee";

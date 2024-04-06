@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Maintenance));
             this.parent_panel = new Guna.UI.WinForms.GunaPanel();
             this.container_panel_1 = new Guna.UI.WinForms.GunaPanel();
@@ -39,12 +39,12 @@
             this.table_Panel = new Guna.UI.WinForms.GunaPanel();
             this.data_View = new Guna.UI.WinForms.GunaDataGridView();
             this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
+            this.delete_Btn = new Guna.UI.WinForms.GunaButton();
             this.top_Panel = new Guna.UI.WinForms.GunaPanel();
             this.control_Panel_Left = new System.Windows.Forms.FlowLayoutPanel();
             this.search_Panel = new Guna.UI.WinForms.GunaElipsePanel();
             this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
             this.right_Panel = new System.Windows.Forms.FlowLayoutPanel();
-            this.delete_Btn = new Guna.UI.WinForms.GunaButton();
             this.view_Btn = new Guna.UI.WinForms.GunaButton();
             this.add_Btn = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
@@ -66,6 +66,7 @@
             this.subCon_Panel.SuspendLayout();
             this.table_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_View)).BeginInit();
+            this.gunaPanel3.SuspendLayout();
             this.top_Panel.SuspendLayout();
             this.control_Panel_Left.SuspendLayout();
             this.right_Panel.SuspendLayout();
@@ -83,7 +84,7 @@
             this.parent_panel.Location = new System.Drawing.Point(11, 12);
             this.parent_panel.Margin = new System.Windows.Forms.Padding(2);
             this.parent_panel.Name = "parent_panel";
-            this.parent_panel.Size = new System.Drawing.Size(1569, 877);
+            this.parent_panel.Size = new System.Drawing.Size(1534, 860);
             this.parent_panel.TabIndex = 1;
             // 
             // container_panel_1
@@ -95,7 +96,7 @@
             this.container_panel_1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container_panel_1.Location = new System.Drawing.Point(0, 0);
             this.container_panel_1.Name = "container_panel_1";
-            this.container_panel_1.Size = new System.Drawing.Size(1569, 877);
+            this.container_panel_1.Size = new System.Drawing.Size(1534, 860);
             this.container_panel_1.TabIndex = 3;
             // 
             // container_Panel
@@ -107,7 +108,7 @@
             this.container_Panel.Location = new System.Drawing.Point(260, 0);
             this.container_Panel.Name = "container_Panel";
             this.container_Panel.Padding = new System.Windows.Forms.Padding(8);
-            this.container_Panel.Size = new System.Drawing.Size(1309, 877);
+            this.container_Panel.Size = new System.Drawing.Size(1274, 860);
             this.container_Panel.TabIndex = 2;
             // 
             // subCon_Panel
@@ -123,7 +124,7 @@
             this.subCon_Panel.Margin = new System.Windows.Forms.Padding(0);
             this.subCon_Panel.Name = "subCon_Panel";
             this.subCon_Panel.Padding = new System.Windows.Forms.Padding(8);
-            this.subCon_Panel.Size = new System.Drawing.Size(1290, 805);
+            this.subCon_Panel.Size = new System.Drawing.Size(1255, 788);
             this.subCon_Panel.TabIndex = 6;
             // 
             // table_Panel
@@ -133,7 +134,7 @@
             this.table_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.table_Panel.Location = new System.Drawing.Point(8, 66);
             this.table_Panel.Name = "table_Panel";
-            this.table_Panel.Size = new System.Drawing.Size(1274, 684);
+            this.table_Panel.Size = new System.Drawing.Size(1239, 658);
             this.table_Panel.TabIndex = 6;
             // 
             // data_View
@@ -142,30 +143,30 @@
             this.data_View.AllowUserToDeleteRows = false;
             this.data_View.AllowUserToResizeColumns = false;
             this.data_View.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.data_View.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.data_View.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.data_View.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.data_View.BackgroundColor = System.Drawing.Color.White;
             this.data_View.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.data_View.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.data_View.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data_View.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data_View.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.data_View.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.data_View.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.data_View.DefaultCellStyle = dataGridViewCellStyle3;
             this.data_View.Dock = System.Windows.Forms.DockStyle.Fill;
             this.data_View.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.data_View.EnableHeadersVisualStyles = false;
@@ -184,7 +185,7 @@
             this.data_View.ShowCellToolTips = false;
             this.data_View.ShowEditingIcon = false;
             this.data_View.ShowRowErrors = false;
-            this.data_View.Size = new System.Drawing.Size(1274, 684);
+            this.data_View.Size = new System.Drawing.Size(1239, 658);
             this.data_View.TabIndex = 0;
             this.data_View.Tag = "Table";
             this.data_View.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -213,11 +214,41 @@
             // gunaPanel3
             // 
             this.gunaPanel3.BackColor = System.Drawing.Color.Gainsboro;
+            this.gunaPanel3.Controls.Add(this.delete_Btn);
             this.gunaPanel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gunaPanel3.Location = new System.Drawing.Point(8, 750);
+            this.gunaPanel3.Location = new System.Drawing.Point(8, 724);
             this.gunaPanel3.Name = "gunaPanel3";
-            this.gunaPanel3.Size = new System.Drawing.Size(1274, 47);
+            this.gunaPanel3.Size = new System.Drawing.Size(1239, 56);
             this.gunaPanel3.TabIndex = 5;
+            // 
+            // delete_Btn
+            // 
+            this.delete_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.delete_Btn.AnimationHoverSpeed = 0.07F;
+            this.delete_Btn.AnimationSpeed = 0.03F;
+            this.delete_Btn.BackColor = System.Drawing.Color.Transparent;
+            this.delete_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(66)))), ((int)(((byte)(102)))));
+            this.delete_Btn.BorderColor = System.Drawing.Color.Black;
+            this.delete_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.delete_Btn.FocusedColor = System.Drawing.Color.Empty;
+            this.delete_Btn.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete_Btn.ForeColor = System.Drawing.Color.White;
+            this.delete_Btn.Image = global::COA_PRIS.Properties.Resources.trash_bin;
+            this.delete_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.delete_Btn.ImageOffsetX = 5;
+            this.delete_Btn.ImageSize = new System.Drawing.Size(30, 30);
+            this.delete_Btn.Location = new System.Drawing.Point(1082, 3);
+            this.delete_Btn.Margin = new System.Windows.Forms.Padding(0, 0, 8, 8);
+            this.delete_Btn.Name = "delete_Btn";
+            this.delete_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.delete_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.delete_Btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.delete_Btn.OnHoverImage = null;
+            this.delete_Btn.OnPressedColor = System.Drawing.Color.Black;
+            this.delete_Btn.Radius = 8;
+            this.delete_Btn.Size = new System.Drawing.Size(149, 50);
+            this.delete_Btn.TabIndex = 3;
+            this.delete_Btn.TextOffsetX = -5;
             // 
             // top_Panel
             // 
@@ -226,7 +257,7 @@
             this.top_Panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.top_Panel.Location = new System.Drawing.Point(8, 8);
             this.top_Panel.Name = "top_Panel";
-            this.top_Panel.Size = new System.Drawing.Size(1274, 58);
+            this.top_Panel.Size = new System.Drawing.Size(1239, 58);
             this.top_Panel.TabIndex = 4;
             // 
             // control_Panel_Left
@@ -240,7 +271,7 @@
             this.control_Panel_Left.Location = new System.Drawing.Point(0, 0);
             this.control_Panel_Left.Margin = new System.Windows.Forms.Padding(0);
             this.control_Panel_Left.Name = "control_Panel_Left";
-            this.control_Panel_Left.Size = new System.Drawing.Size(879, 58);
+            this.control_Panel_Left.Size = new System.Drawing.Size(902, 58);
             this.control_Panel_Left.TabIndex = 4;
             // 
             // search_Panel
@@ -286,46 +317,16 @@
             // 
             this.right_Panel.AutoSize = true;
             this.right_Panel.BackColor = System.Drawing.Color.Transparent;
-            this.right_Panel.Controls.Add(this.delete_Btn);
             this.right_Panel.Controls.Add(this.view_Btn);
             this.right_Panel.Controls.Add(this.add_Btn);
             this.right_Panel.Dock = System.Windows.Forms.DockStyle.Right;
             this.right_Panel.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.right_Panel.Location = new System.Drawing.Point(879, 0);
+            this.right_Panel.Location = new System.Drawing.Point(902, 0);
             this.right_Panel.Margin = new System.Windows.Forms.Padding(0);
             this.right_Panel.Name = "right_Panel";
             this.right_Panel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.right_Panel.Size = new System.Drawing.Size(395, 58);
+            this.right_Panel.Size = new System.Drawing.Size(337, 58);
             this.right_Panel.TabIndex = 4;
-            // 
-            // delete_Btn
-            // 
-            this.delete_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.delete_Btn.AnimationHoverSpeed = 0.07F;
-            this.delete_Btn.AnimationSpeed = 0.03F;
-            this.delete_Btn.BackColor = System.Drawing.Color.Transparent;
-            this.delete_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(66)))), ((int)(((byte)(102)))));
-            this.delete_Btn.BorderColor = System.Drawing.Color.Black;
-            this.delete_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.delete_Btn.FocusedColor = System.Drawing.Color.Empty;
-            this.delete_Btn.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delete_Btn.ForeColor = System.Drawing.Color.White;
-            this.delete_Btn.Image = global::COA_PRIS.Properties.Resources.trash_bin;
-            this.delete_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.delete_Btn.ImageOffsetX = 5;
-            this.delete_Btn.ImageSize = new System.Drawing.Size(30, 30);
-            this.delete_Btn.Location = new System.Drawing.Point(345, 0);
-            this.delete_Btn.Margin = new System.Windows.Forms.Padding(0, 0, 8, 8);
-            this.delete_Btn.Name = "delete_Btn";
-            this.delete_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.delete_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.delete_Btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.delete_Btn.OnHoverImage = null;
-            this.delete_Btn.OnPressedColor = System.Drawing.Color.Black;
-            this.delete_Btn.Radius = 8;
-            this.delete_Btn.Size = new System.Drawing.Size(50, 50);
-            this.delete_Btn.TabIndex = 3;
-            this.delete_Btn.TextOffsetX = -5;
             // 
             // view_Btn
             // 
@@ -336,7 +337,7 @@
             this.view_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             this.view_Btn.BorderColor = System.Drawing.Color.Black;
             this.view_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.view_Btn.FocusedColor = System.Drawing.Color.Empty;
+            this.view_Btn.FocusedColor = System.Drawing.Color.Transparent;
             this.view_Btn.Font = new System.Drawing.Font("Bahnschrift", 14F);
             this.view_Btn.ForeColor = System.Drawing.Color.White;
             this.view_Btn.Image = global::COA_PRIS.Properties.Resources.view_file;
@@ -354,6 +355,7 @@
             this.view_Btn.TabIndex = 2;
             this.view_Btn.Text = "View Record";
             this.view_Btn.TextOffsetX = -5;
+            this.view_Btn.Click += new System.EventHandler(this.view_Btn_Click);
             // 
             // add_Btn
             // 
@@ -413,7 +415,7 @@
             this.line_Panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.line_Panel.Location = new System.Drawing.Point(255, 0);
             this.line_Panel.Name = "line_Panel";
-            this.line_Panel.Size = new System.Drawing.Size(5, 877);
+            this.line_Panel.Size = new System.Drawing.Size(5, 860);
             this.line_Panel.TabIndex = 1;
             // 
             // nav_panel
@@ -432,9 +434,8 @@
             this.nav_panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.nav_panel.Location = new System.Drawing.Point(0, 0);
             this.nav_panel.Name = "nav_panel";
-            this.nav_panel.Size = new System.Drawing.Size(255, 877);
+            this.nav_panel.Size = new System.Drawing.Size(255, 860);
             this.nav_panel.TabIndex = 0;
-            this.nav_panel.Paint += new System.Windows.Forms.PaintEventHandler(this.nav_panel_Paint);
             // 
             // agency_Btn
             // 
@@ -729,7 +730,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.ClientSize = new System.Drawing.Size(1591, 901);
+            this.ClientSize = new System.Drawing.Size(1556, 884);
             this.Controls.Add(this.parent_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Maintenance";
@@ -741,6 +742,7 @@
             this.subCon_Panel.ResumeLayout(false);
             this.table_Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.data_View)).EndInit();
+            this.gunaPanel3.ResumeLayout(false);
             this.top_Panel.ResumeLayout(false);
             this.top_Panel.PerformLayout();
             this.control_Panel_Left.ResumeLayout(false);

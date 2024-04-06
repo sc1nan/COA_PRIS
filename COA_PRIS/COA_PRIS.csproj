@@ -134,6 +134,17 @@
     <Compile Include="CrystalReports\TempReportsForms.Designer.cs">
       <DependentUpon>TempReportsForms.cs</DependentUpon>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Audit_Trail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Audit_Trail.Designer.cs">
+      <DependentUpon>Audit_Trail.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Employee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,6 +211,12 @@
     <Compile Include="Screens\Subscreens\Maintenance\Add_Record.Designer.cs">
       <DependentUpon>Add_Record.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Subscreens\Maintenance\View_Record.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Maintenance\View_Record.Designer.cs">
+      <DependentUpon>View_Record.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Subscreens\Projects\ProjectArchive.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +235,7 @@
     <Compile Include="Screens\Subscreens\Projects\ProjectLists.Designer.cs">
       <DependentUpon>ProjectLists.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserControlUtil\Cherie UI\Datagrid.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -229,12 +247,6 @@
     </Compile>
     <Compile Include="UserControlUtil\DataTableMultiplePages.Designer.cs">
       <DependentUpon>DataTableMultiplePages.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\Subscreens\Maintenance\Maintenance_Form.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\Subscreens\Maintenance\Maintenance_Form.Designer.cs">
-      <DependentUpon>Maintenance_Form.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlUtil\Label_Drop.cs">
       <SubType>UserControl</SubType>
@@ -253,6 +265,12 @@
     </Compile>
     <Compile Include="UserControlUtil\Label_Text.Designer.cs">
       <DependentUpon>Label_Text.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlUtil\Label_TextLabel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlUtil\Label_TextLabel.Designer.cs">
+      <DependentUpon>Label_TextLabel.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlUtil\SearchBar.cs">
       <SubType>UserControl</SubType>
@@ -303,6 +321,9 @@
     <EmbeddedResource Include="CrystalReports\TempReportsForms.resx">
       <DependentUpon>TempReportsForms.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Audit_Trail.resx">
+      <DependentUpon>Audit_Trail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Employee.resx">
       <DependentUpon>Employee.cs</DependentUpon>
     </EmbeddedResource>
@@ -347,8 +368,8 @@
     <EmbeddedResource Include="Screens\Subscreens\Maintenance\Add_Record.resx">
       <DependentUpon>Add_Record.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Subscreens\Maintenance\Maintenance_Form.resx">
-      <DependentUpon>Maintenance_Form.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Subscreens\Maintenance\View_Record.resx">
+      <DependentUpon>View_Record.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Projects\ProjectArchive.resx">
       <DependentUpon>ProjectArchive.cs</DependentUpon>
@@ -379,6 +400,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\Label_Text.resx">
       <DependentUpon>Label_Text.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUtil\Label_TextLabel.resx">
+      <DependentUpon>Label_TextLabel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\SearchBar.resx">
       <DependentUpon>SearchBar.cs</DependentUpon>
@@ -457,6 +481,170 @@
     <None Include="Resources\swipe-right.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\EnvDTE.dll" />
+    <Content Include="bin\Debug\EnvDTE.xml" />
+    <Content Include="bin\Debug\EnvDTE80.dll" />
+    <Content Include="bin\Debug\EnvDTE80.xml" />
+    <Content Include="bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\Microsoft.Build.Framework.dll" />
+    <Content Include="bin\Debug\Microsoft.Build.Tasks.Core.dll" />
+    <Content Include="bin\Debug\Microsoft.Build.Utilities.Core.dll" />
+    <Content Include="bin\Debug\Microsoft.MSXML.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.Common.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.DataVisualization.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.Design.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll" />
+    <Content Include="bin\Debug\Microsoft.ReportViewer.WinForms.dll" />
+    <Content Include="bin\Debug\Microsoft.SqlServer.Types.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.ComponentModelHost.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.CoreUtility.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.CoreUtility.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Data.Core.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Data.Framework.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Data.Framework.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Data.Services.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Debugger.Interop.11.0.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Debugger.InteropA.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Designer.Interfaces.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Designer.Interfaces.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Editor.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Editor.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.GraphModel.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.ImageCatalog.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.ImageCatalog.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Imaging.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Imaging.Interop.14.0.DesignTime.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Imaging.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Interop.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Language.Intellisense.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Language.Intellisense.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.ManagedInterfaces.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.OLE.Interop.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Package.LanguageService.14.0.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Package.LanguageService.14.0.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.ProjectAggregator.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.14.0.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.14.0.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Design.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Design.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Immutable.10.0.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Immutable.10.0.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Immutable.11.0.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Immutable.11.0.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Immutable.12.0.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Immutable.12.0.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Immutable.14.0.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Immutable.14.0.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Interop.10.0.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Interop.10.0.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Interop.11.0.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Interop.11.0.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Interop.9.0.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Interop.9.0.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Shell.Interop.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Text.Data.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Text.Data.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Text.Logic.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Text.Logic.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Text.UI.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Text.UI.Wpf.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Text.UI.Wpf.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Text.UI.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.TextManager.Interop.10.0.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.TextManager.Interop.10.0.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.TextManager.Interop.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Threading.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Threading.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Utilities.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.Utilities.xml" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.VSHelp.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.WCFReference.Interop.dll" />
+    <Content Include="bin\Debug\Microsoft.VisualStudio.WCFReference.Interop.xml" />
+    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\SqlServerTypes\x64\msvcr120.dll" />
+    <Content Include="bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll" />
+    <Content Include="bin\Debug\SqlServerTypes\x86\msvcr120.dll" />
+    <Content Include="bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll" />
+    <Content Include="bin\Debug\stdole.dll" />
+    <Content Include="bin\Debug\VSLangProj.dll" />
+    <Content Include="bin\Debug\VSLangProj.xml" />
+    <Content Include="bin\Debug\VSLangProj2.dll" />
+    <Content Include="bin\Debug\VSLangProj2.xml" />
+    <Content Include="bin\Debug\VSLangProj80.dll" />
+    <Content Include="bin\Debug\VSLangProj80.xml" />
+    <Content Include="bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll" />
+    <Content Include="bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll" />
+    <Content Include="bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll" />
+    <Content Include="bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll" />
+    <Content Include="Resources\apps-sort.png" />
+    <Content Include="Resources\caret-left %281%29.png" />
+    <Content Include="Resources\caret-left.png" />
+    <Content Include="Resources\caret-right %281%29.png" />
+    <Content Include="Resources\caret-right.png" />
+    <Content Include="Resources\expand.png" />
+    <Content Include="Resources\folder-download %281%29.png" />
+    <Content Include="Resources\folder-download.png" />
+    <Content Include="Resources\house-solid.png" />
+    <Content Include="Resources\Menu Bar Icon.png" />
+    <Content Include="Resources\Menu Bar Icon1.png" />
+    <Content Include="Resources\refresh %281%29.png" />
+    <Content Include="Resources\search.png" />
+    <Content Include="Resources\search1.png" />
+    <Content Include="Resources\select %281%29.png" />
+    <Content Include="Resources\select.png" />
+    <Content Include="Resources\Splash screen.png" />
+    <Content Include="Resources\to-do %281%29.png" />
+    <Content Include="Resources\to-do %282%29.png" />
+    <Content Include="Resources\trash-bin.png" />
+    <Content Include="Resources\trash-bin1.png" />
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />
+    <Content Include="SqlServerTypes\x86\msvcr120.dll" />
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll" />
     <None Include="Resources\trash-bin2.png" />
     <None Include="Resources\view_file.png" />
     <None Include="Resources\employee.png" />
@@ -474,6 +662,8 @@
     <Content Include="Resources\swipe-left.png" />
     <None Include="Resources\swipe-left1.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
