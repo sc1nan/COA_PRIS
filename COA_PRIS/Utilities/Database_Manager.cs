@@ -61,10 +61,6 @@ namespace COA_PRIS.Utilities
             {
                 try
                 {
-                    using (MySqlDataReader reader = command.ExecuteReader())
-                    {
-                        dataTable.Load(reader);
-                    }
                     das.SelectCommand = command;
                     das.Fill(ds, "log_table");
                     if (ds.Tables["log_table"].Rows.Count == 0) MessageBox.Show("Nothing found", "Message");
@@ -76,7 +72,6 @@ namespace COA_PRIS.Utilities
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine($"Error executing query: {ex.Message}");
                     MessageBox.Show($"Error executing nonquery command: {ex.Message}", "Error");
                     Console.WriteLine();
                 }
@@ -124,7 +119,7 @@ namespace COA_PRIS.Utilities
             return ret;
         }
         public void Dispose() 
-        { 
+        {
             if (Connection != null)
             {
                 Connection.Close();

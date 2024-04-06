@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Diagnostics;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Mysqlx;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace COA_PRIS.Utilities
 {
@@ -19,30 +20,38 @@ namespace COA_PRIS.Utilities
         {
         }
 
-        public List<control> search_Control<control>(Control parent) where control : Control
-        { 
-            List<control> ret_Controls = new List<control>();
+        public List<T> search_Controls<T>(Control parent, List<Type> types) where T : Control
+        {
+            List<T> ret_Controls = new List<T>();
             Queue<Control> q_control = new Queue<Control>();
 
             q_control.Enqueue(parent);
 
             while (q_control.Count > 0)
-            { 
+            {
                 Control con = q_control.Dequeue();
 
-                if (con is control _con) 
-                   ret_Controls.Add(_con);
+                foreach (Type type in types)
+                {
+                    if (type.IsAssignableFrom(con.GetType()))
+                    {
+                        ret_Controls.Add((T)con);
+                        break;
+                    }
+                }
 
                 if (con.HasChildren)
+                {
                     foreach (Control child_Control in con.Controls)
                         q_control.Enqueue(child_Control);
+                }
             }
 
             return ret_Controls;
         }
-        public bool Required_TextBox(Control parent, ErrorProvider error)
+        public bool Required_TextBox(Control parent, ErrorProvider error, GunaLabel error_Label = null)
         {
-            List<GunaTextBox> guna_TextBox = search_Control<GunaTextBox>(parent);
+            List<Control> guna_TextBox = search_Controls<Control>(parent, new List<Type> {typeof(GunaTextBox)});
 
             bool is_Required = true; 
 
@@ -53,12 +62,18 @@ namespace COA_PRIS.Utilities
                     error.SetError(text_Box, $"{text_Box.Tag} is required.");
                     text_Box.BorderColor = Color.Red;
                     is_Required = false;
+                    if (error_Label != null)
+                    {
+                        error_Label.Text = "Fill the required fields.";
+                        error_Label.Visible = true;
+                    }
                 }
                 else
                 {
                     text_Box.BorderColor = Color.Silver; 
                 }
             }
+
             return is_Required;
         }
 
@@ -82,6 +97,26 @@ namespace COA_PRIS.Utilities
             return is_Required;
 
 
+        }
+
+        public void readOnly_Controls( Control parent, bool is_Enabled = false) 
+        {
+            List<Control> controls = search_Controls<Control>(parent, new List<Type> { typeof(GunaTextBox), typeof(GunaComboBox)});
+
+            foreach (Control control in controls) 
+            {
+                if (control is GunaTextBox)
+                {  
+                    GunaTextBox textBox = (GunaTextBox)control;
+                    textBox.ReadOnly = !is_Enabled;
+                }
+                else if (control is GunaComboBox) 
+                { 
+                    GunaComboBox comboBox = (GunaComboBox)control;
+                    comboBox.Enabled = is_Enabled;
+                }
+            }
+            
         }
     }
 }

@@ -101,7 +101,6 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Label_Rich";
             this.Size = new System.Drawing.Size(400, 170);
-            this.Load += new System.EventHandler(this.Label_Rich_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.label_rich_error)).EndInit();

@@ -28,10 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.title = new Guna.UI.WinForms.GunaLabel();
             this.dropbox = new Guna.UI.WinForms.GunaComboBox();
+            this.error_drop = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.error_drop)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -67,6 +70,7 @@
             this.dropbox.BackColor = System.Drawing.Color.Transparent;
             this.dropbox.BaseColor = System.Drawing.Color.White;
             this.dropbox.BorderColor = System.Drawing.Color.Silver;
+            this.dropbox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dropbox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dropbox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.dropbox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -85,6 +89,12 @@
             this.dropbox.TabIndex = 1;
             this.dropbox.TextChanged += new System.EventHandler(this.dropbox_TextChanged);
             // 
+            // error_drop
+            // 
+            this.error_drop.BlinkRate = 0;
+            this.error_drop.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.error_drop.ContainerControl = this;
+            // 
             // Label_Drop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -92,9 +102,9 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Label_Drop";
             this.Size = new System.Drawing.Size(400, 100);
-            this.Load += new System.EventHandler(this.Label_Drop_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.error_drop)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -104,5 +114,6 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Guna.UI.WinForms.GunaLabel title;
         private Guna.UI.WinForms.GunaComboBox dropbox;
+        private System.Windows.Forms.ErrorProvider error_drop;
     }
 }
