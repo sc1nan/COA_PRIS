@@ -50,7 +50,7 @@ namespace COA_PRIS.Utilities
             return dataTable;
         }
 
-        public void ExecuteQueryXD(string query, ReportViewer reportViewer = null)
+        public void ExecuteQueryReportViewerDataSource(string query, ReportViewer reportViewer = null)
         {
             var dbCon = DBConnection.Instance();
             DataTable dataTable = new DataTable();
