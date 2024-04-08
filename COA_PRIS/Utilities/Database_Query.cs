@@ -41,6 +41,22 @@ namespace COA_PRIS
         public static readonly string delete_record_by_id = "UPDATE {0} SET status = 0 WHERE code = '{1}';";
 
 
+        public static readonly string get_office_options_by_id = "SELECT office_table.code, office_table.title FROM office_table \r" +
+                                                                    "WHERE office_table.sector_code = '{0}' AND office_table.status = 1;";
+
+        public static readonly string get_division_options_by_id = "SELECT division_table.code, division_table.title FROM division_table \r" +
+                                                                    "WHERE division_table.office_code = '{0}' AND division_table.status = 1;";
+
+        public static readonly string get_section_options_by_id = "SELECT section_table.code, section_table.title FROM section_table \r" +
+                                                                    "WHERE section_table.division_code = '{0}' AND section_table.status = 1;";
+
+        public static readonly string get_position_options = "SELECT position_table.code, position_table.title FROM position_table \r" +
+                                                             "WHERE position_table.status = 1;";
+
+        public static readonly string get_section_option = "SELECT section_table.code, section_table.title FROM section_table \r" +
+                                                            "WHERE section_table.status = 1;";
+
+
         #region Maintenance GET Table Queries
 
         public static readonly string get_all_agency_records = "SELECT  agency_table.code, agency_table.title, agency_table.description, cluster_table.title\r" +
@@ -118,6 +134,19 @@ namespace COA_PRIS
         #endregion
 
         #region EMPLOYEE
+
+
+        public static readonly string get_employee_records = "SELECT emp_info_table.code, emp_info_table.full_name, office_table.title, position_table.title,\r" +
+                                                                "CASE \r" +
+                                                                "WHEN emp_info_table.status = 1 THEN 'ACTIVE'\r" +
+                                                                "WHEN emp_info_table.status = 2 THEN 'INACTIVE'\r" +
+                                                                "ELSE 'TERMINATED'\r\nEND\r\nAS status\r" +
+                                                            "FROM emp_info_table \r" +
+                                                            "LEFT JOIN position_table ON emp_info_table.position_code = position_table.code\r" +
+                                                            "LEFT JOIN section_table ON emp_info_table.section_code = section_table.code\r" +
+                                                            "LEFT JOIN division_table ON section_table.division_code = division_table.code\r" +
+                                                            "LEFT JOIN office_table ON division_table.office_code = office_table.code\r\nWHERE emp_info_table.status = 1";
+
 
 
         public static readonly string set_new_employee = "INSERT INTO emp_info_table(code,full_name,email,contact_no,section_code,position_code,status,created_by,created_date)\r" +

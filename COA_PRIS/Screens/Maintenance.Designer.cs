@@ -104,7 +104,7 @@
             // 
             // container_Panel
             // 
-            this.container_Panel.BackColor = System.Drawing.Color.White;
+            this.container_Panel.BackColor = System.Drawing.Color.Gainsboro;
             this.container_Panel.Controls.Add(this.gunaElipsePanel1);
             this.container_Panel.Controls.Add(this.subCon_Panel);
             this.container_Panel.Controls.Add(this.gunaPanel1);
@@ -127,7 +127,7 @@
             // 
             // subCon_Panel
             // 
-            this.subCon_Panel.BackColor = System.Drawing.Color.Gainsboro;
+            this.subCon_Panel.BackColor = System.Drawing.Color.White;
             this.subCon_Panel.Controls.Add(this.table_Panel);
             this.subCon_Panel.Controls.Add(this.gunaPanel3);
             this.subCon_Panel.Controls.Add(this.top_Panel);
@@ -158,7 +158,7 @@
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             this.data_View.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.data_View.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.data_View.BackgroundColor = System.Drawing.Color.White;
+            this.data_View.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.data_View.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.data_View.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.data_View.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -206,7 +206,7 @@
             this.data_View.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
             this.data_View.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
             this.data_View.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.data_View.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.data_View.ThemeStyle.BackColor = System.Drawing.Color.Gainsboro;
             this.data_View.ThemeStyle.GridColor = System.Drawing.Color.Gainsboro;
             this.data_View.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
             this.data_View.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -411,7 +411,7 @@
             // 
             // gunaPanel1
             // 
-            this.gunaPanel1.BackColor = System.Drawing.Color.White;
+            this.gunaPanel1.BackColor = System.Drawing.Color.Transparent;
             this.gunaPanel1.Controls.Add(this.title_label);
             this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaPanel1.Location = new System.Drawing.Point(8, 8);
@@ -446,7 +446,7 @@
             // nav_panel
             // 
             this.nav_panel.AutoScroll = true;
-            this.nav_panel.BackColor = System.Drawing.Color.LightGray;
+            this.nav_panel.BackColor = System.Drawing.Color.Gainsboro;
             this.nav_panel.Controls.Add(this.agency_Btn);
             this.nav_panel.Controls.Add(this.cluster_Btn);
             this.nav_panel.Controls.Add(this.contractor_Btn);
@@ -500,7 +500,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.cluster_Btn.AnimationHoverSpeed = 0.07F;
             this.cluster_Btn.AnimationSpeed = 0.03F;
-            this.cluster_Btn.BackColor = System.Drawing.Color.Silver;
+            this.cluster_Btn.BackColor = System.Drawing.Color.LightGray;
             this.cluster_Btn.BaseColor = System.Drawing.Color.Transparent;
             this.cluster_Btn.BorderColor = System.Drawing.Color.Black;
             this.cluster_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -532,7 +532,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.contractor_Btn.AnimationHoverSpeed = 0.07F;
             this.contractor_Btn.AnimationSpeed = 0.03F;
-            this.contractor_Btn.BackColor = System.Drawing.Color.Silver;
+            this.contractor_Btn.BackColor = System.Drawing.Color.LightGray;
             this.contractor_Btn.BaseColor = System.Drawing.Color.Transparent;
             this.contractor_Btn.BorderColor = System.Drawing.Color.Black;
             this.contractor_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -564,7 +564,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.division_Btn.AnimationHoverSpeed = 0.07F;
             this.division_Btn.AnimationSpeed = 0.03F;
-            this.division_Btn.BackColor = System.Drawing.Color.Silver;
+            this.division_Btn.BackColor = System.Drawing.Color.LightGray;
             this.division_Btn.BaseColor = System.Drawing.Color.Transparent;
             this.division_Btn.BorderColor = System.Drawing.Color.Black;
             this.division_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -596,7 +596,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nature_Btn.AnimationHoverSpeed = 0.07F;
             this.nature_Btn.AnimationSpeed = 0.03F;
-            this.nature_Btn.BackColor = System.Drawing.Color.Silver;
+            this.nature_Btn.BackColor = System.Drawing.Color.LightGray;
             this.nature_Btn.BaseColor = System.Drawing.Color.Transparent;
             this.nature_Btn.BorderColor = System.Drawing.Color.Black;
             this.nature_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -628,7 +628,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.office_Btn.AnimationHoverSpeed = 0.07F;
             this.office_Btn.AnimationSpeed = 0.03F;
-            this.office_Btn.BackColor = System.Drawing.Color.Silver;
+            this.office_Btn.BackColor = System.Drawing.Color.LightGray;
             this.office_Btn.BaseColor = System.Drawing.Color.Transparent;
             this.office_Btn.BorderColor = System.Drawing.Color.Black;
             this.office_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -660,7 +660,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.position_Btn.AnimationHoverSpeed = 0.07F;
             this.position_Btn.AnimationSpeed = 0.03F;
-            this.position_Btn.BackColor = System.Drawing.Color.Silver;
+            this.position_Btn.BackColor = System.Drawing.Color.LightGray;
             this.position_Btn.BaseColor = System.Drawing.Color.Transparent;
             this.position_Btn.BorderColor = System.Drawing.Color.Black;
             this.position_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -692,7 +692,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.section_Btn.AnimationHoverSpeed = 0.07F;
             this.section_Btn.AnimationSpeed = 0.03F;
-            this.section_Btn.BackColor = System.Drawing.Color.Silver;
+            this.section_Btn.BackColor = System.Drawing.Color.LightGray;
             this.section_Btn.BaseColor = System.Drawing.Color.Transparent;
             this.section_Btn.BorderColor = System.Drawing.Color.Black;
             this.section_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -724,7 +724,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.sector_Btn.AnimationHoverSpeed = 0.07F;
             this.sector_Btn.AnimationSpeed = 0.03F;
-            this.sector_Btn.BackColor = System.Drawing.Color.Silver;
+            this.sector_Btn.BackColor = System.Drawing.Color.LightGray;
             this.sector_Btn.BaseColor = System.Drawing.Color.Transparent;
             this.sector_Btn.BorderColor = System.Drawing.Color.Black;
             this.sector_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -754,7 +754,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1556, 884);
             this.Controls.Add(this.parent_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

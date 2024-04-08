@@ -36,7 +36,7 @@ namespace COA_PRIS.Utilities
              (bool is_Percentage, int value)[] column_Width,
              (string title, DataGridViewContentAlignment alignment)[] column_Properties,
 
-             int row_Height = 45, int col_height = 50)
+             int row_Height = 50, int col_height = 55)
         {
             // Create column header style
             GunaDataGridViewHeaderStyle columnHeaderStyle = new GunaDataGridViewHeaderStyle(guna_Table.ColumnHeadersDefaultCellStyle, guna_Table);
