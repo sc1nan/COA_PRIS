@@ -23,9 +23,11 @@ namespace COA_PRIS
         public static readonly string logged_in = "INSERT INTO log_table (user_name, activity, activity_datetime) VALUES ('{0}', '{1}', CURRENT_TIMESTAMP)";
         public static readonly string logged_out = "INSERT INTO log_table (user_name, activity, activity_datetime) VALUES ('{0}', '{1}', CURRENT_TIMESTAMP)";
         public static readonly string display_logs = "SELECT user_name, activity, activity_datetime FROM log_table";
-        public static readonly string display_three_logs = "SELECT user_name, activity, activity_datetime FROM log_table LIMIT {0}, 10";
+        public static readonly string display_three_logs = "SELECT user_name, activity, activity_datetime FROM log_table LIMIT {0}, 15";
         public static readonly string display_specific_logs = "SELECT user_name, activity, activity_datetime FROM log_table WHERE {0} LIKE '%{1}%'";
-        public static readonly string display_ten_specific_logs = "SELECT user_name, activity, activity_datetime FROM log_table WHERE {0} LIKE '%{1}%' LIMIT {2}, 10";
+        public static readonly string display_ten_specific_logs = "SELECT user_name, activity, activity_datetime FROM log_table WHERE {0} LIKE '%{1}%' LIMIT {2}, 15";
+        public static readonly string display_specific_logs_by_date = "SELECT user_name, activity, activity_datetime FROM log_table WHERE activity_datetime BETWEEN '{0}' AND '{1}' LIMIT {2}, 15";
+        public static readonly string display_specified_logs = "SELECT user_name, activity, activity_datetime FROM log_table WHERE activity_datetime BETWEEN '{0}' AND '{1}' AND {4} LIKE '%{3}%' LIMIT {2}, 15";
         public static readonly string count_logs = "SELECT COUNT(*) FROM log_table";
         //public static readonly string login_attempt = "INSERT INTO log_table (user_name, activity, activity_datetime) VALUES ('{0}', 'Attempted to login', CURRENT_TIMESTAMP)";
         
@@ -40,6 +42,21 @@ namespace COA_PRIS
 
         public static readonly string delete_record_by_id = "UPDATE {0} SET status = 0 WHERE code = '{1}';";
 
+        #region Project Requests
+
+        public static readonly string get_all_project_records = "SELECT * FROM docu_info_table";
+
+        public static readonly string get_general_project_records_by_date = "SELECT * FROM docu_info_table WHERE {0} BETWEEN '{1}' AND '{2}'";
+
+        //public static readonly string get_specific_project_records_by_date = "SELECT * FROM docu_info_table WHERE {0} BETWEEN '{1}' AND '{2}' AND {3} LIKE '%{4}%'";
+
+        public static readonly string get_specific_project_records_by_date = "SELECT * FROM docu_info_table WHERE {0} BETWEEN '{1}' AND '{2}' AND '{3}' IN \r" +
+                                                                                "(document_id, document_code, document_no, amount, title, subject)";
+
+        public static readonly string get_specific_project_records_by_date2 = "SELECT * FROM docu_info_table WHERE {0} BETWEEN '{1}' AND '{2}' AND '{3}' IN \r" +
+                                                                                "(document_id, document_code, document_no, amount, title, subject)";
+
+        #endregion
 
         #region Maintenance GET Table Queries
 

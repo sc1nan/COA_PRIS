@@ -1,12 +1,7 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\COA_PRIS",
-    "\\COA_PRIS\\CrystalReports",
-    "\\COA_PRIS\\Screens",
-    "\\COA_PRIS\\Screens\\Subscreens",
-    "\\COA_PRIS\\Utilities"
+    ""
   ],
-  "SelectedNode": "\\COA_PRIS\\Screens\\ActivityLogs.cs",
+  "SelectedNode": "\\COA_PRIS.sln",
   "PreviewInSolutionExplorer": false
 }

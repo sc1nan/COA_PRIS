@@ -1,46 +1,50 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\",
+  "WorkspaceRootPath": "C:\\Users\\COA\\source\\repos\\pristest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\vinas\\source\\repos\\coa_pris\\coa_pris\\utilities\\theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\utilities\\theme.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\coa_pris\\screens\\subscreens\\maintenance\\view_record.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:coa_pris\\screens\\subscreens\\maintenance\\view_record.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\vinas\\source\\repos\\coa_pris\\coa_pris\\screens\\maintenance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\maintenance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\vinas\\source\\repos\\coa_pris\\coa_pris\\screens\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\vinas\\source\\repos\\coa_pris\\coa_pris\\screens\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\dashboard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\vinas\\source\\repos\\coa_pris\\coa_pris\\utilities\\tab_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\utilities\\tab_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\vinas\\source\\repos\\coa_pris\\coa_pris\\utilities\\database_credential.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\utilities\\database_credential.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\vinas\\source\\repos\\coa_pris\\coa_pris\\utilities\\database_query.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\utilities\\database_query.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\utilities\\database_query.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\coa_pris\\screens\\audit_trail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:coa_pris\\screens\\audit_trail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\screens\\subscreens\\projects\\projectlists.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\subscreens\\projects\\projectlists.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\coa_pris\\screens\\subscreens\\maintenance\\view_record.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:coa_pris\\screens\\subscreens\\maintenance\\view_record.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\screens\\activitylogs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\activitylogs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\screens\\subscreens\\projects\\projectlists.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\subscreens\\projects\\projectlists.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\screens\\maintenance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\maintenance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\screens\\activitylogs.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\activitylogs.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\screens\\activitylogs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\activitylogs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\screens\\maintenance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\maintenance.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\usercontrolutil\\datefilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\usercontrolutil\\datefilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\utilities\\activity_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\utilities\\activity_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\usercontrolutil\\datefilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\usercontrolutil\\datefilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,133 +54,147 @@
       "DocumentGroups": [
         {
           "DockedWidth": 293,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Theme.cs",
-              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Utilities\\Theme.cs",
-              "RelativeDocumentMoniker": "COA_PRIS\\Utilities\\Theme.cs",
-              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Utilities\\Theme.cs",
-              "RelativeToolTip": "COA_PRIS\\Utilities\\Theme.cs",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAowFMAAAAAAAAA",
+              "DocumentIndex": 1,
+              "Title": "ProjectLists.cs",
+              "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Screens\\Subscreens\\Projects\\ProjectLists.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Subscreens\\Projects\\ProjectLists.cs",
+              "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Screens\\Subscreens\\Projects\\ProjectLists.cs",
+              "RelativeToolTip": "COA_PRIS\\Screens\\Subscreens\\Projects\\ProjectLists.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAADwvzIAAABiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T07:51:35.654Z",
+              "WhenOpened": "2024-04-08T05:45:31.947Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Maintenance.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Maintenance.cs",
-              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Maintenance.cs",
-              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Maintenance.cs [Design]",
-              "RelativeToolTip": "COA_PRIS\\Screens\\Maintenance.cs [Design]",
+              "Title": "ActivityLogs.cs",
+              "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Screens\\ActivityLogs.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\ActivityLogs.cs",
+              "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Screens\\ActivityLogs.cs",
+              "RelativeToolTip": "COA_PRIS\\Screens\\ActivityLogs.cs",
+              "ViewState": "AQIAAC8AAAAAAAAAAAAwwCEAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T07:35:05.593Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Tab_Manager.cs",
-              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Utilities\\Tab_Manager.cs",
-              "RelativeDocumentMoniker": "COA_PRIS\\Utilities\\Tab_Manager.cs",
-              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Utilities\\Tab_Manager.cs",
-              "RelativeToolTip": "COA_PRIS\\Utilities\\Tab_Manager.cs",
-              "ViewState": "AQIAABoAAAAAAAAAAAAIwC8AAABGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T07:28:59.334Z",
+              "WhenOpened": "2024-04-08T01:14:28.145Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Dashboard.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Dashboard.cs",
-              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Dashboard.cs",
-              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Dashboard.cs [Design]",
-              "RelativeToolTip": "COA_PRIS\\Screens\\Dashboard.cs [Design]",
+              "Title": "Maintenance.cs",
+              "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Screens\\Maintenance.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Maintenance.cs",
+              "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Screens\\Maintenance.cs",
+              "RelativeToolTip": "COA_PRIS\\Screens\\Maintenance.cs",
+              "ViewState": "AQIAACYBAAAAAAAAAAAUwDABAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T06:29:16.832Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Database_Credential.cs",
-              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Utilities\\Database_Credential.cs",
-              "RelativeDocumentMoniker": "COA_PRIS\\Utilities\\Database_Credential.cs",
-              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Utilities\\Database_Credential.cs",
-              "RelativeToolTip": "COA_PRIS\\Utilities\\Database_Credential.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T06:38:33.102Z",
+              "WhenOpened": "2024-04-08T05:39:54.55Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Dashboard.cs",
-              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Dashboard.cs",
-              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Dashboard.cs",
-              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Dashboard.cs",
-              "RelativeToolTip": "COA_PRIS\\Screens\\Dashboard.cs",
-              "ViewState": "AQIAAGYAAAAAAAAAAAAAAHsAAAA+AAAA",
+              "Title": "ProjectLists.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Screens\\Subscreens\\Projects\\ProjectLists.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Subscreens\\Projects\\ProjectLists.cs",
+              "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Screens\\Subscreens\\Projects\\ProjectLists.cs [Design]",
+              "RelativeToolTip": "COA_PRIS\\Screens\\Subscreens\\Projects\\ProjectLists.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T06:37:52.545Z",
+              "WhenOpened": "2024-04-08T05:13:02.966Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Database_Query.cs",
+              "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Utilities\\Database_Query.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Utilities\\Database_Query.cs",
+              "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Utilities\\Database_Query.cs",
+              "RelativeToolTip": "COA_PRIS\\Utilities\\Database_Query.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAADgvzoAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T02:44:21.681Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Database_Query.cs",
-              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Utilities\\Database_Query.cs",
-              "RelativeDocumentMoniker": "COA_PRIS\\Utilities\\Database_Query.cs",
-              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Utilities\\Database_Query.cs",
-              "RelativeToolTip": "COA_PRIS\\Utilities\\Database_Query.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAUwB8AAAASAAAA",
+              "DocumentIndex": 6,
+              "Title": "ActivityLogs.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Screens\\ActivityLogs.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\ActivityLogs.cs",
+              "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Screens\\ActivityLogs.cs [Design]",
+              "RelativeToolTip": "COA_PRIS\\Screens\\ActivityLogs.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T06:36:24.568Z",
+              "WhenOpened": "2024-04-08T02:34:39.943Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DateFilter.cs",
+              "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\UserControlUtil\\DateFilter.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\UserControlUtil\\DateFilter.cs",
+              "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\UserControlUtil\\DateFilter.cs",
+              "RelativeToolTip": "COA_PRIS\\UserControlUtil\\DateFilter.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAAowDwAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T02:19:45.033Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "Audit_Trail.cs",
-              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Audit_Trail.cs",
-              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Audit_Trail.cs",
-              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Audit_Trail.cs",
-              "RelativeToolTip": "COA_PRIS\\Screens\\Audit_Trail.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAowCgAAAAAAAAA",
+              "Title": "DateFilter.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\UserControlUtil\\DateFilter.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\UserControlUtil\\DateFilter.cs",
+              "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\UserControlUtil\\DateFilter.cs [Design]",
+              "RelativeToolTip": "COA_PRIS\\UserControlUtil\\DateFilter.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T05:57:30.39Z",
+              "WhenOpened": "2024-04-08T02:13:41.464Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ActivityLogs.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\COA\\Source\\Repos\\pristest\\COA_PRIS\\Screens\\ActivityLogs.Designer.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\ActivityLogs.Designer.cs",
+              "ToolTip": "C:\\Users\\COA\\Source\\Repos\\pristest\\COA_PRIS\\Screens\\ActivityLogs.Designer.cs",
+              "RelativeToolTip": "COA_PRIS\\Screens\\ActivityLogs.Designer.cs",
+              "ViewState": "AQIAABEBAAAAAAAAAAAtwB0BAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-08T01:33:16.813Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "View_Record.cs",
-              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Subscreens\\Maintenance\\View_Record.cs",
-              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Subscreens\\Maintenance\\View_Record.cs",
-              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Subscreens\\Maintenance\\View_Record.cs",
-              "RelativeToolTip": "COA_PRIS\\Screens\\Subscreens\\Maintenance\\View_Record.cs",
-              "ViewState": "AQIAAIAAAAAAAAAAAAD4v48AAAAAAAAA",
+              "DocumentIndex": 7,
+              "Title": "Maintenance.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Screens\\Maintenance.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Maintenance.cs",
+              "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Screens\\Maintenance.cs [Design]",
+              "RelativeToolTip": "COA_PRIS\\Screens\\Maintenance.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T05:56:21.756Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-04-08T05:36:13.651Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "View_Record.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Subscreens\\Maintenance\\View_Record.cs",
-              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Subscreens\\Maintenance\\View_Record.cs",
-              "ToolTip": "C:\\Users\\Vinas\\source\\repos\\COA_PRIS\\COA_PRIS\\Screens\\Subscreens\\Maintenance\\View_Record.cs [Design]",
-              "RelativeToolTip": "COA_PRIS\\Screens\\Subscreens\\Maintenance\\View_Record.cs [Design]",
+              "Title": "Activity_Manager.cs",
+              "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Utilities\\Activity_Manager.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Utilities\\Activity_Manager.cs",
+              "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Utilities\\Activity_Manager.cs",
+              "RelativeToolTip": "COA_PRIS\\Utilities\\Activity_Manager.cs",
+              "ViewState": "AQIAAFgAAAAAAAAAAADwv3EAAAA7AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-06T05:56:18.509Z"
+              "WhenOpened": "2024-04-08T01:52:53.29Z",
+              "EditorCaption": ""
             }
           ]
         }
