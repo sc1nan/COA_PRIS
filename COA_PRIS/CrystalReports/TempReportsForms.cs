@@ -26,7 +26,7 @@ namespace COA_PRIS.CrystalReports
             {
                 try
                 {
-                    db_manager.ExecuteQueryXD(Database_Query.last_query, reportViewer1);
+                    db_manager.ExecuteQueryReportViewerDataSource(Database_Query.last_query, reportViewer1);
                 }
                 catch (Exception ex)
                 {
@@ -41,6 +41,12 @@ namespace COA_PRIS.CrystalReports
         {
             
             //this.reportViewer1.RefreshReport();
+        }
+
+        private void FilterReports()
+        {
+            //ReportParameter 
+            //reportViewer1.LocalReport.setpa
         }
 
     }

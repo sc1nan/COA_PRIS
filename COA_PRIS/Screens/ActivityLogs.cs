@@ -47,6 +47,7 @@ namespace COA_PRIS.Screens
             //adds items to table
             activity_manager = new Activity_Manager();
             LogsTable.DataSource = activity_manager.Display_Three_Logs_Table(min_lim);
+            Database_Query.last_query = "SELECT user_name, activity, activity_datetime FROM log_table";
         }
 
         private void sortComboBox_SelectedValueChanged(object sender, EventArgs e)
@@ -62,6 +63,7 @@ namespace COA_PRIS.Screens
             if (searchBox == "") DisplayLogsTable();
             activity_manager = new Activity_Manager();
             sourceTable.DataSource = activity_manager.Display_Ten_Specific_Logs_Table(searchBox, log_table_names[filterComboBox.SelectedIndex], 0);
+            Database_Query.last_query = string.Format("SELECT user_name, activity, activity_datetime FROM log_table WHERE {0} LIKE '%{1}%'", log_table_names[filterComboBox.SelectedIndex], searchBox);
 
         }
 
@@ -157,8 +159,11 @@ namespace COA_PRIS.Screens
             //{
             //    dataSet1.log_table.Rows.Add(row);
             //}
-
-            var temprepp = new TempReportsForms();
+            var temprepp = Application.OpenForms["TempReportsForms"];
+            if (temprepp == null)
+            {
+                temprepp = new TempReportsForms();
+            }
             temprepp.Show();
         }
     }

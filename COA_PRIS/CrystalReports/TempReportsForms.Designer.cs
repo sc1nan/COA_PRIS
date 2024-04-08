@@ -33,12 +33,15 @@
             this.log_tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new COA_PRIS.CrystalReports.DataSet1();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.logtableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.log_tableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.gunaPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logtableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
             this.SuspendLayout();
@@ -55,12 +58,22 @@
             // 
             // gunaPanel1
             // 
-            this.gunaPanel1.Controls.Add(this.reportViewer1);
+            this.gunaPanel1.Controls.Add(this.panel2);
+            this.gunaPanel1.Controls.Add(this.panel1);
             this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaPanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(1195, 503);
+            this.gunaPanel1.Size = new System.Drawing.Size(677, 610);
             this.gunaPanel1.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.reportViewer1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(677, 610);
+            this.panel2.TabIndex = 1;
             // 
             // reportViewer1
             // 
@@ -72,8 +85,15 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(1195, 503);
+            this.reportViewer1.Size = new System.Drawing.Size(677, 610);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(677, 100);
+            this.panel1.TabIndex = 0;
             // 
             // logtableBindingSource
             // 
@@ -89,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1195, 503);
+            this.ClientSize = new System.Drawing.Size(677, 610);
             this.Controls.Add(this.gunaPanel1);
             this.Name = "TempReportsForms";
             this.Text = "TempReportsForms";
@@ -97,6 +117,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.log_tableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.gunaPanel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.logtableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -110,5 +131,7 @@
         private DataSet1 dataSet1;
         private System.Windows.Forms.BindingSource logtableBindingSource;
         private System.Windows.Forms.BindingSource log_tableBindingSource;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
     }
 }
