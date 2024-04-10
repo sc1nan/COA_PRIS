@@ -122,6 +122,7 @@ namespace COA_PRIS.Screens
             var button = (GunaButton)sender;
 
             headerTitle.Text = button.Tag.ToString().ToUpper();
+            button_ToolTip.SetToolTip(button, button.Tag.ToString().ToUpper());
         }
     }
 }

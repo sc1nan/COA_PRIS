@@ -94,6 +94,7 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
 
         private void cancel_Btn_Click(object sender, EventArgs e)
         {
+            is_ClosingProgrammatically = false;
             Close();
         }
     }

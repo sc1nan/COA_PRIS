@@ -298,7 +298,6 @@
             this.search_Panel.Name = "search_Panel";
             this.search_Panel.Size = new System.Drawing.Size(559, 50);
             this.search_Panel.TabIndex = 1;
-            this.search_Panel.Paint += new System.Windows.Forms.PaintEventHandler(this.search_Panel_Paint);
             // 
             // searchBar1
             // 
@@ -432,7 +431,6 @@
             this.title_label.TabIndex = 0;
             this.title_label.Text = "120123";
             this.title_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.title_label.Click += new System.EventHandler(this.title_label_Click);
             // 
             // line_Panel
             // 

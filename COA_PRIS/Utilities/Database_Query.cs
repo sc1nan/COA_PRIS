@@ -56,6 +56,21 @@ namespace COA_PRIS
         public static readonly string get_section_option = "SELECT section_table.code, section_table.title FROM section_table \r" +
                                                             "WHERE section_table.status = 1;";
 
+        public static readonly string get_employee_record_by_id = "SELECT emp_info_table.full_name, emp_info_table.email, emp_info_table.contact_no, sector_table.code, office_table.code, division_table.code, section_table.code, position_table.code\r" +
+                                                                    "FROM emp_info_table \r" +
+                                                                    "LEFT JOIN position_table ON emp_info_table.position_code = position_table.code\r" +
+                                                                    "LEFT JOIN section_table ON emp_info_table.section_code = section_table.code\r" +
+                                                                    "LEFT JOIN division_table ON section_table.division_code = division_table.code\r" +
+                                                                    "LEFT JOIN office_table ON division_table.office_code = office_table.code\r" +
+                                                                    "LEFT JOIN sector_table ON office_table.sector_code = sector_table.code\r" +
+                                                                    "WHERE emp_info_table.code = '{0}' AND emp_info_table.status = 1;";
+
+
+        public static readonly string update_employee_record_by_id = "UPDATE emp_info_table SET \r\nemp_info_table.full_name = '{0}',\r\nemp_info_table.email = '{1}',\r\nemp_info_table.contact_no = '{2}',\r\nemp_info_table.section_code = '{3}',\r\nemp_info_table.position_code = '{4}',\r\nemp_info_table.updated_by = '{5}',\r\nemp_info_table.updated_date = CURRENT_TIMESTAMP()\r\nWHERE emp_info_table.code = '{6}' AND emp_info_table.status = 1;";
+
+
+
+        public static readonly string get_audit_trail_by_id = "SELECT created_by, created_date, updated_by, updated_date FROM {0} WHERE code = '{1}';";
 
         #region Maintenance GET Table Queries
 
@@ -153,7 +168,6 @@ namespace COA_PRIS
                                                          "VALUES ('{0}','{1}','{2}','{3}','{4}','{5}', 1,'{6}', CURRENT_TIMESTAMP())";
         #endregion
 
-        public static readonly string get_audit_trail_by_id = "SELECT created_by, created_date, updated_by, updated_date FROM {0} WHERE code = '{1}';";
 
 
         #region GET Record Queries
@@ -167,7 +181,7 @@ namespace COA_PRIS
         #endregion
 
         #region UPDATE Record Queries
-        public static readonly string update_agency_record_id = "UPDATE agency_table SET \r" +
+        public static readonly string update_agency_record_by_id = "UPDATE agency_table SET \r" +
                                                                 "agency_table.title = '{0}', agency_table.description = '{1}', \r" +
                                                                 "agency_table.cluster_code = '{2}', agency_table.updated_by = '{3}',\r" +
                                                                 "agency_table.updated_date = CURRENT_TIMESTAMP()\r" +

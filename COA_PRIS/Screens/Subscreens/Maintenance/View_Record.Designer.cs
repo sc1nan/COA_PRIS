@@ -29,37 +29,36 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Record));
             this.top_Panel = new Guna.UI.WinForms.GunaPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.audit_Trail_Btn = new Guna.UI.WinForms.GunaButton();
+            this.config_Panel = new System.Windows.Forms.FlowLayoutPanel();
             this.update_Btn = new Guna.UI.WinForms.GunaButton();
-            this.delete_Btn = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.code_Title = new Guna.UI.WinForms.GunaLabel();
             this.line_Panel = new Guna.UI.WinForms.GunaPanel();
             this.parent_Panel = new Guna.UI.WinForms.GunaPanel();
             this.controlMain_Panel = new Guna.UI.WinForms.GunaPanel();
-            this.error_provider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.button_Panel = new System.Windows.Forms.TableLayoutPanel();
-            this.cancel_Btn = new Guna.UI.WinForms.GunaButton();
-            this.save_Btn = new Guna.UI.WinForms.GunaButton();
             this.contro_Control_Panel = new Guna.UI.WinForms.GunaElipsePanel();
             this.control_Panel = new System.Windows.Forms.FlowLayoutPanel();
             this.error_Message = new Guna.UI.WinForms.GunaLabel();
+            this.button_Panel = new System.Windows.Forms.TableLayoutPanel();
+            this.cancel_Btn = new Guna.UI.WinForms.GunaButton();
+            this.save_Btn = new Guna.UI.WinForms.GunaButton();
+            this.error_provider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.audit_Trail_Btn = new Guna.UI.WinForms.GunaButton();
+            this.delete_Btn = new Guna.UI.WinForms.GunaButton();
             this.top_Panel.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
+            this.config_Panel.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
             this.parent_Panel.SuspendLayout();
             this.controlMain_Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.error_provider)).BeginInit();
-            this.button_Panel.SuspendLayout();
             this.contro_Control_Panel.SuspendLayout();
+            this.button_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.error_provider)).BeginInit();
             this.SuspendLayout();
             // 
             // top_Panel
             // 
-            this.top_Panel.Controls.Add(this.flowLayoutPanel1);
+            this.top_Panel.Controls.Add(this.config_Panel);
             this.top_Panel.Controls.Add(this.gunaPanel1);
             this.top_Panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.top_Panel.Location = new System.Drawing.Point(10, 10);
@@ -67,48 +66,21 @@
             this.top_Panel.Size = new System.Drawing.Size(614, 55);
             this.top_Panel.TabIndex = 2;
             // 
-            // flowLayoutPanel1
+            // config_Panel
             // 
-            this.flowLayoutPanel1.AutoSize = true;
-            this.flowLayoutPanel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel1.Controls.Add(this.audit_Trail_Btn);
-            this.flowLayoutPanel1.Controls.Add(this.update_Btn);
-            this.flowLayoutPanel1.Controls.Add(this.delete_Btn);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(409, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(205, 55);
-            this.flowLayoutPanel1.TabIndex = 1;
-            // 
-            // audit_Trail_Btn
-            // 
-            this.audit_Trail_Btn.AnimationHoverSpeed = 0.07F;
-            this.audit_Trail_Btn.AnimationSpeed = 0.03F;
-            this.audit_Trail_Btn.BackColor = System.Drawing.Color.Transparent;
-            this.audit_Trail_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.audit_Trail_Btn.BorderColor = System.Drawing.Color.Black;
-            this.audit_Trail_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.audit_Trail_Btn.FocusedColor = System.Drawing.Color.Empty;
-            this.audit_Trail_Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.audit_Trail_Btn.ForeColor = System.Drawing.Color.White;
-            this.audit_Trail_Btn.Image = ((System.Drawing.Image)(resources.GetObject("audit_Trail_Btn.Image")));
-            this.audit_Trail_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.audit_Trail_Btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.audit_Trail_Btn.Location = new System.Drawing.Point(155, 5);
-            this.audit_Trail_Btn.Margin = new System.Windows.Forms.Padding(5, 5, 0, 5);
-            this.audit_Trail_Btn.Name = "audit_Trail_Btn";
-            this.audit_Trail_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.audit_Trail_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.audit_Trail_Btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.audit_Trail_Btn.OnHoverImage = null;
-            this.audit_Trail_Btn.OnPressedColor = System.Drawing.Color.Black;
-            this.audit_Trail_Btn.Radius = 5;
-            this.audit_Trail_Btn.Size = new System.Drawing.Size(45, 45);
-            this.audit_Trail_Btn.TabIndex = 3;
-            this.audit_Trail_Btn.Click += new System.EventHandler(this.audit_Trail_Btn_Click);
+            this.config_Panel.AutoSize = true;
+            this.config_Panel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.config_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.config_Panel.Controls.Add(this.audit_Trail_Btn);
+            this.config_Panel.Controls.Add(this.update_Btn);
+            this.config_Panel.Controls.Add(this.delete_Btn);
+            this.config_Panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.config_Panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.config_Panel.Location = new System.Drawing.Point(409, 0);
+            this.config_Panel.Name = "config_Panel";
+            this.config_Panel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.config_Panel.Size = new System.Drawing.Size(205, 55);
+            this.config_Panel.TabIndex = 1;
             // 
             // update_Btn
             // 
@@ -138,34 +110,6 @@
             this.update_Btn.Text = "Update";
             this.update_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.update_Btn.Click += new System.EventHandler(this.update_Btn_Click);
-            // 
-            // delete_Btn
-            // 
-            this.delete_Btn.AnimationHoverSpeed = 0.07F;
-            this.delete_Btn.AnimationSpeed = 0.03F;
-            this.delete_Btn.BackColor = System.Drawing.Color.Transparent;
-            this.delete_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(66)))), ((int)(((byte)(102)))));
-            this.delete_Btn.BorderColor = System.Drawing.Color.Black;
-            this.delete_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.delete_Btn.FocusedColor = System.Drawing.Color.Empty;
-            this.delete_Btn.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.delete_Btn.ForeColor = System.Drawing.Color.White;
-            this.delete_Btn.Image = global::COA_PRIS.Properties.Resources.trash_bin;
-            this.delete_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.delete_Btn.ImageSize = new System.Drawing.Size(30, 30);
-            this.delete_Btn.Location = new System.Drawing.Point(0, 5);
-            this.delete_Btn.Margin = new System.Windows.Forms.Padding(5, 5, 0, 5);
-            this.delete_Btn.Name = "delete_Btn";
-            this.delete_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.delete_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.delete_Btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.delete_Btn.OnHoverImage = null;
-            this.delete_Btn.OnPressedColor = System.Drawing.Color.Black;
-            this.delete_Btn.Radius = 5;
-            this.delete_Btn.Size = new System.Drawing.Size(45, 45);
-            this.delete_Btn.TabIndex = 4;
-            this.delete_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.delete_Btn.Click += new System.EventHandler(this.delete_Btn_Click);
             // 
             // gunaPanel1
             // 
@@ -219,11 +163,47 @@
             this.controlMain_Panel.Size = new System.Drawing.Size(598, 489);
             this.controlMain_Panel.TabIndex = 3;
             // 
-            // error_provider
+            // contro_Control_Panel
             // 
-            this.error_provider.BlinkRate = 0;
-            this.error_provider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.error_provider.ContainerControl = this;
+            this.contro_Control_Panel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.contro_Control_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.contro_Control_Panel.BaseColor = System.Drawing.Color.White;
+            this.contro_Control_Panel.Controls.Add(this.control_Panel);
+            this.contro_Control_Panel.Controls.Add(this.error_Message);
+            this.contro_Control_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.contro_Control_Panel.Location = new System.Drawing.Point(0, 0);
+            this.contro_Control_Panel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 8);
+            this.contro_Control_Panel.Name = "contro_Control_Panel";
+            this.contro_Control_Panel.Padding = new System.Windows.Forms.Padding(5);
+            this.contro_Control_Panel.Radius = 8;
+            this.contro_Control_Panel.Size = new System.Drawing.Size(598, 429);
+            this.contro_Control_Panel.TabIndex = 8;
+            // 
+            // control_Panel
+            // 
+            this.control_Panel.AutoSize = true;
+            this.control_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.control_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.control_Panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.control_Panel.Location = new System.Drawing.Point(5, 5);
+            this.control_Panel.Name = "control_Panel";
+            this.control_Panel.Size = new System.Drawing.Size(588, 384);
+            this.control_Panel.TabIndex = 5;
+            this.control_Panel.WrapContents = false;
+            // 
+            // error_Message
+            // 
+            this.error_Message.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.error_Message.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error_Message.ForeColor = System.Drawing.Color.Red;
+            this.error_Message.Location = new System.Drawing.Point(5, 389);
+            this.error_Message.Margin = new System.Windows.Forms.Padding(3);
+            this.error_Message.Name = "error_Message";
+            this.error_Message.Size = new System.Drawing.Size(588, 35);
+            this.error_Message.TabIndex = 4;
+            this.error_Message.Text = "Error Message";
+            this.error_Message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.error_Message.Visible = false;
             // 
             // button_Panel
             // 
@@ -270,6 +250,7 @@
             this.cancel_Btn.TabIndex = 1;
             this.cancel_Btn.Text = "Cancel";
             this.cancel_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cancel_Btn.Click += new System.EventHandler(this.cancel_Btn_Click);
             // 
             // save_Btn
             // 
@@ -297,50 +278,69 @@
             this.save_Btn.Radius = 8;
             this.save_Btn.Size = new System.Drawing.Size(160, 52);
             this.save_Btn.TabIndex = 0;
-            this.save_Btn.Text = "Save Changes";
+            this.save_Btn.Text = "Update Record";
             this.save_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // contro_Control_Panel
+            // error_provider
             // 
-            this.contro_Control_Panel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.contro_Control_Panel.BackColor = System.Drawing.Color.Transparent;
-            this.contro_Control_Panel.BaseColor = System.Drawing.Color.White;
-            this.contro_Control_Panel.Controls.Add(this.control_Panel);
-            this.contro_Control_Panel.Controls.Add(this.error_Message);
-            this.contro_Control_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.contro_Control_Panel.Location = new System.Drawing.Point(0, 0);
-            this.contro_Control_Panel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 8);
-            this.contro_Control_Panel.Name = "contro_Control_Panel";
-            this.contro_Control_Panel.Padding = new System.Windows.Forms.Padding(5);
-            this.contro_Control_Panel.Radius = 8;
-            this.contro_Control_Panel.Size = new System.Drawing.Size(598, 429);
-            this.contro_Control_Panel.TabIndex = 8;
+            this.error_provider.BlinkRate = 0;
+            this.error_provider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.error_provider.ContainerControl = this;
             // 
-            // control_Panel
+            // audit_Trail_Btn
             // 
-            this.control_Panel.AutoSize = true;
-            this.control_Panel.BackColor = System.Drawing.Color.Transparent;
-            this.control_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.control_Panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.control_Panel.Location = new System.Drawing.Point(5, 5);
-            this.control_Panel.Name = "control_Panel";
-            this.control_Panel.Size = new System.Drawing.Size(588, 384);
-            this.control_Panel.TabIndex = 5;
-            this.control_Panel.WrapContents = false;
+            this.audit_Trail_Btn.AnimationHoverSpeed = 0.07F;
+            this.audit_Trail_Btn.AnimationSpeed = 0.03F;
+            this.audit_Trail_Btn.BackColor = System.Drawing.Color.Transparent;
+            this.audit_Trail_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.audit_Trail_Btn.BorderColor = System.Drawing.Color.Black;
+            this.audit_Trail_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.audit_Trail_Btn.FocusedColor = System.Drawing.Color.Empty;
+            this.audit_Trail_Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.audit_Trail_Btn.ForeColor = System.Drawing.Color.White;
+            this.audit_Trail_Btn.Image = global::COA_PRIS.Properties.Resources.audit_icon;
+            this.audit_Trail_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.audit_Trail_Btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.audit_Trail_Btn.Location = new System.Drawing.Point(155, 5);
+            this.audit_Trail_Btn.Margin = new System.Windows.Forms.Padding(5, 5, 0, 5);
+            this.audit_Trail_Btn.Name = "audit_Trail_Btn";
+            this.audit_Trail_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.audit_Trail_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.audit_Trail_Btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.audit_Trail_Btn.OnHoverImage = null;
+            this.audit_Trail_Btn.OnPressedColor = System.Drawing.Color.Black;
+            this.audit_Trail_Btn.Radius = 5;
+            this.audit_Trail_Btn.Size = new System.Drawing.Size(45, 45);
+            this.audit_Trail_Btn.TabIndex = 3;
+            this.audit_Trail_Btn.Click += new System.EventHandler(this.audit_Trail_Btn_Click);
             // 
-            // error_Message
+            // delete_Btn
             // 
-            this.error_Message.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.error_Message.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.error_Message.ForeColor = System.Drawing.Color.Red;
-            this.error_Message.Location = new System.Drawing.Point(5, 389);
-            this.error_Message.Margin = new System.Windows.Forms.Padding(3);
-            this.error_Message.Name = "error_Message";
-            this.error_Message.Size = new System.Drawing.Size(588, 35);
-            this.error_Message.TabIndex = 4;
-            this.error_Message.Text = "Error Message";
-            this.error_Message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.error_Message.Visible = false;
+            this.delete_Btn.AnimationHoverSpeed = 0.07F;
+            this.delete_Btn.AnimationSpeed = 0.03F;
+            this.delete_Btn.BackColor = System.Drawing.Color.Transparent;
+            this.delete_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(66)))), ((int)(((byte)(102)))));
+            this.delete_Btn.BorderColor = System.Drawing.Color.Black;
+            this.delete_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.delete_Btn.FocusedColor = System.Drawing.Color.Empty;
+            this.delete_Btn.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.delete_Btn.ForeColor = System.Drawing.Color.White;
+            this.delete_Btn.Image = global::COA_PRIS.Properties.Resources.trash_bin;
+            this.delete_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.delete_Btn.ImageSize = new System.Drawing.Size(30, 30);
+            this.delete_Btn.Location = new System.Drawing.Point(0, 5);
+            this.delete_Btn.Margin = new System.Windows.Forms.Padding(5, 5, 0, 5);
+            this.delete_Btn.Name = "delete_Btn";
+            this.delete_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.delete_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.delete_Btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.delete_Btn.OnHoverImage = null;
+            this.delete_Btn.OnPressedColor = System.Drawing.Color.Black;
+            this.delete_Btn.Radius = 5;
+            this.delete_Btn.Size = new System.Drawing.Size(45, 45);
+            this.delete_Btn.TabIndex = 4;
+            this.delete_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.delete_Btn.Click += new System.EventHandler(this.delete_Btn_Click);
             // 
             // View_Record
             // 
@@ -357,17 +357,18 @@
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.View_Record_FormClosing);
             this.Load += new System.EventHandler(this.View_Record_Load);
             this.top_Panel.ResumeLayout(false);
             this.top_Panel.PerformLayout();
-            this.flowLayoutPanel1.ResumeLayout(false);
+            this.config_Panel.ResumeLayout(false);
             this.gunaPanel1.ResumeLayout(false);
             this.parent_Panel.ResumeLayout(false);
             this.controlMain_Panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.error_provider)).EndInit();
-            this.button_Panel.ResumeLayout(false);
             this.contro_Control_Panel.ResumeLayout(false);
             this.contro_Control_Panel.PerformLayout();
+            this.button_Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.error_provider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -380,10 +381,6 @@
         private Guna.UI.WinForms.GunaPanel controlMain_Panel;
         private Guna.UI.WinForms.GunaLabel code_Title;
         private Guna.UI.WinForms.GunaPanel gunaPanel1;
-        private Guna.UI.WinForms.GunaButton delete_Btn;
-        private Guna.UI.WinForms.GunaButton audit_Trail_Btn;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private Guna.UI.WinForms.GunaButton update_Btn;
         private System.Windows.Forms.ErrorProvider error_provider;
         private System.Windows.Forms.TableLayoutPanel button_Panel;
         private Guna.UI.WinForms.GunaButton cancel_Btn;
@@ -391,5 +388,9 @@
         private Guna.UI.WinForms.GunaElipsePanel contro_Control_Panel;
         private System.Windows.Forms.FlowLayoutPanel control_Panel;
         private Guna.UI.WinForms.GunaLabel error_Message;
+        private System.Windows.Forms.FlowLayoutPanel config_Panel;
+        private Guna.UI.WinForms.GunaButton audit_Trail_Btn;
+        private Guna.UI.WinForms.GunaButton update_Btn;
+        private Guna.UI.WinForms.GunaButton delete_Btn;
     }
 }

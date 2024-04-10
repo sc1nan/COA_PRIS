@@ -1,6 +1,7 @@
 ﻿using COA_PRIS.Utilities;
 using Guna.UI.WinForms;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,23 +15,24 @@ namespace COA_PRIS.Screens.Subscreens.Employees
 {
     public partial class Employee_Submodule : Form
     {
-        private Database_Manager database_manager;
-        private Theme theme;
-        private Util util;
+        private Database_Manager database_manager = new Database_Manager();
+        private Theme theme = new Theme();
+        private Util util = new Util();
 
-        private readonly Add_Employee add_Employee = new Add_Employee();
+        private Add_Employee add_Employee;
+        private View_Employee view_Employee;
         public Employee_Submodule()
         {
             InitializeComponent();
-            database_manager = new Database_Manager();
-            theme = new Theme();
-            util = new Util();
+            
         }
 
         private void add_RecordBtn_Click(object sender, EventArgs e)
         {
-            
+            add_Employee = new Add_Employee();
+            add_Employee.callback += refresh_Callback;
             add_Employee.ShowDialog();
+            
         }
 
         private void Employee_Submodule_Load(object sender, EventArgs e)
@@ -54,6 +56,33 @@ namespace COA_PRIS.Screens.Subscreens.Employees
 
             data_View.DataSource = util.format_DataTable(dt);
             Theme.gridView_Style(data_View, column_Widths, column_Text_Align);
+        }
+
+        private void refresh_Btn_Click(object sender, EventArgs e)
+        {
+            refresh_Table();
+        }
+        private void refresh_Callback() 
+        {
+            refresh_Table();
+        }
+        private void refresh_Table() 
+        {
+            DataTable dt = new DataTable();
+
+            using (database_manager)
+                dt = database_manager.ExecuteQuery(Database_Query.get_employee_records);
+
+            data_View.DataSource = util.format_DataTable(dt);
+        }
+
+        private void view_RecordBtn_Click(object sender, EventArgs e)
+        {
+            string record_code = (string)data_View.Rows[data_View.CurrentRow.Index].Cells[1].Value;
+
+            view_Employee = new View_Employee(record_code);
+            view_Employee.callback += refresh_Callback;
+            view_Employee.ShowDialog();
         }
     }
 }

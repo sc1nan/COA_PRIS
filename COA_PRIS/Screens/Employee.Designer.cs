@@ -144,6 +144,7 @@
             this.inactive_Btn.TabIndex = 1;
             this.inactive_Btn.Text = "INACTIVE";
             this.inactive_Btn.TextOffsetX = 5;
+            this.inactive_Btn.Visible = false;
             this.inactive_Btn.Click += new System.EventHandler(this.button_Click);
             // 
             // Employee

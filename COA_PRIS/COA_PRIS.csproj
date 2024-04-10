@@ -205,6 +205,12 @@
     <Compile Include="Screens\Subscreens\Employees\Inactive_Submodule.Designer.cs">
       <DependentUpon>Inactive_Submodule.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Subscreens\Employees\View_Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Employees\View_Employee.Designer.cs">
+      <DependentUpon>View_Employee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Subscreens\Maintenance\Add_Record.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -365,6 +371,9 @@
     <EmbeddedResource Include="Screens\Subscreens\Employees\Inactive_Submodule.resx">
       <DependentUpon>Inactive_Submodule.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Employees\View_Employee.resx">
+      <DependentUpon>View_Employee.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Maintenance\Add_Record.resx">
       <DependentUpon>Add_Record.cs</DependentUpon>
     </EmbeddedResource>
@@ -485,6 +494,7 @@
     <Content Include="Resources\apps-sort.png" />
     <None Include="Resources\business-report %281%29 - Copy.png" />
     <None Include="Resources\book-section.png" />
+    <None Include="Resources\audit_icon.png" />
     <Content Include="Resources\caret-left %281%29 - Copy.png" />
     <Content Include="Resources\caret-left %281%29.png" />
     <Content Include="Resources\caret-left - Copy.png" />
@@ -497,6 +507,8 @@
     <None Include="Resources\COA img - Copy.png" />
     <None Include="Resources\chair-office.png" />
     <None Include="Resources\condo.png" />
+    <None Include="Resources\error.png" />
+    <None Include="Resources\error1.png" />
     <Content Include="Resources\expand - Copy.png" />
     <Content Include="Resources\expand.png" />
     <Content Include="Resources\folder-download %281%29 - Copy.png" />
@@ -507,6 +519,7 @@
     <Content Include="Resources\house-solid.png" />
     <None Include="Resources\logout %282%29.png" />
     <None Include="Resources\logout %283%29.png" />
+    <None Include="Resources\info.png" />
     <Content Include="Resources\Menu Bar Icon - Copy.png" />
     <Content Include="Resources\Menu Bar Icon.png" />
     <Content Include="Resources\Menu Bar Icon1 - Copy.png" />

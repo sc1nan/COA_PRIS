@@ -16,6 +16,7 @@ namespace COA_PRIS.UserControlUtil
         {
             InitializeComponent();
             this.title.Text = _title;
+            this.richText.Tag = _title.Replace(":", "") ;
         }
 
         private void richText_TextChanged(object sender, EventArgs e)

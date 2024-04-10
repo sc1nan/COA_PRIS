@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.SidebarContainer = new Guna.UI.WinForms.GunaPanel();
             this.tab_panel = new System.Windows.Forms.FlowLayoutPanel();
@@ -56,6 +57,7 @@
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPictureBox2 = new Guna.UI.WinForms.GunaPictureBox();
             this.Main_Form = new Guna.UI.WinForms.GunaPanel();
+            this.button_ToolTip = new System.Windows.Forms.ToolTip(this.components);
             this.SidebarContainer.SuspendLayout();
             this.tab_panel.SuspendLayout();
             this.home_Panel.SuspendLayout();
@@ -532,6 +534,10 @@
             this.Main_Form.Size = new System.Drawing.Size(1445, 755);
             this.Main_Form.TabIndex = 13;
             // 
+            // button_ToolTip
+            // 
+            this.button_ToolTip.ForeColor = System.Drawing.Color.Black;
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -602,5 +608,6 @@
         private Guna.UI.WinForms.GunaPanel activity_Panel;
         private Guna.UI.WinForms.GunaPanel logout_Panel;
         private Guna.UI.WinForms.GunaPanel logo_Panel;
+        private System.Windows.Forms.ToolTip button_ToolTip;
     }
 }

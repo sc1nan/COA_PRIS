@@ -23,8 +23,6 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
         private string Update_Query { get; set; }
         private string Table { get; set; }
 
-        private bool is_Updating = false;
-
         private bool is_ClosingProgrammatically = false;
 
         public event Action callback;
@@ -33,7 +31,7 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
         public View_Record(string record_ID, UserControl[] controls, string read_Query, string update_Query, string table)
         {
             InitializeComponent();
-            initialize_Controls(controls);
+            InitializeControls(controls);
             this.Record_ID = record_ID;
             this.Read_Query = read_Query;
             this.Update_Query = update_Query;
@@ -50,7 +48,7 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
             set_Records();
         }
 
-        private void initialize_Controls(UserControl[] controls)
+        private void InitializeControls(UserControl[] controls)
         {
             for (int i = 0; i < controls.Length; i++)
             {
@@ -78,27 +76,25 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
 
         private void update_Btn_Click(object sender, EventArgs e)
         {
-            validator.readOnly_Controls(control_Panel, true);
-            this.button_Panel.Visible = true;
-            this.button_Panel.Enabled = true;
-            
-            is_Updating = true;
-
-            update_Btn.Enabled = false;
-            delete_Btn.Enabled = false;
+            change_ViewControls(true);
         }
 
         private void cancel_Btn_Click(object sender, EventArgs e)
         {
-            validator.readOnly_Controls(control_Panel, false);
+            if(MessageBox.Show("Are you sure you want to cancel?", "Cancel Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                change_ViewControls(false);
+        }
 
-            is_Updating = false;
+        private void change_ViewControls(bool is_Enabled = true) 
+        {
+            validator.readOnly_Controls(control_Panel, is_Enabled);
 
-            update_Btn.Enabled = true;
-            delete_Btn.Enabled = true;
+            update_Btn.Enabled = !is_Enabled;
+            delete_Btn.Enabled = !is_Enabled;
 
-            this.button_Panel.Visible = false;
-            this.button_Panel.Enabled = false;
+            this.button_Panel.Visible = is_Enabled;
+            this.button_Panel.Enabled = is_Enabled;
+
         }
 
         private void audit_Trail_Btn_Click(object sender, EventArgs e)
@@ -154,6 +150,19 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
                 callback?.Invoke();
             }
 
+        }
+
+
+        private void View_Record_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!is_ClosingProgrammatically)
+            {
+                if (e.CloseReason == CloseReason.UserClosing)
+                    e.Cancel = MessageBox.Show("Are you sure you want to cancel?", "Cancel Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == DialogResult.No;
+
+                else if (e.CloseReason == CloseReason.WindowsShutDown)
+                    Close();
+            }
         }
     }
 }

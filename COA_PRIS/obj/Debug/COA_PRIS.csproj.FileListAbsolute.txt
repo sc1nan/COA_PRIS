@@ -484,3 +484,4 @@ C:\Users\rutil\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.csproj.CoreComp
 C:\Users\rutil\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.csproj.CopyComplete
 C:\Users\rutil\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.exe
 C:\Users\rutil\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.pdb
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Employees.View_Employee.resources
