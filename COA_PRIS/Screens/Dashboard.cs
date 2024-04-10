@@ -45,7 +45,7 @@ namespace COA_PRIS.Screens
             login_manager.active_Account = "james";
             tab_Manager.Header_Title = headerTitle;
             tab_Manager.active_Button(EmployeeBtn, true);
-            MaintenanceBtn.PerformClick();
+            EmployeeBtn.PerformClick();
         }
 
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
@@ -122,6 +122,7 @@ namespace COA_PRIS.Screens
             var button = (GunaButton)sender;
 
             headerTitle.Text = button.Tag.ToString().ToUpper();
+            button_ToolTip.SetToolTip(button, button.Tag.ToString().ToUpper());
         }
     }
 }

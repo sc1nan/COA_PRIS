@@ -51,6 +51,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(400, 100);
             this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Tag = "Entry";
             // 
             // title
             // 
@@ -102,6 +103,8 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Label_Text";
             this.Size = new System.Drawing.Size(400, 100);
+            this.Tag = "asdasd";
+            this.Load += new System.EventHandler(this.Label_Text_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.label_Text_Error)).EndInit();

@@ -58,6 +58,37 @@ namespace COA_PRIS
 
         #endregion
 
+        public static readonly string get_office_options_by_id = "SELECT office_table.code, office_table.title FROM office_table \r" +
+                                                                    "WHERE office_table.sector_code = '{0}' AND office_table.status = 1;";
+
+        public static readonly string get_division_options_by_id = "SELECT division_table.code, division_table.title FROM division_table \r" +
+                                                                    "WHERE division_table.office_code = '{0}' AND division_table.status = 1;";
+
+        public static readonly string get_section_options_by_id = "SELECT section_table.code, section_table.title FROM section_table \r" +
+                                                                    "WHERE section_table.division_code = '{0}' AND section_table.status = 1;";
+
+        public static readonly string get_position_options = "SELECT position_table.code, position_table.title FROM position_table \r" +
+                                                             "WHERE position_table.status = 1;";
+
+        public static readonly string get_section_option = "SELECT section_table.code, section_table.title FROM section_table \r" +
+                                                            "WHERE section_table.status = 1;";
+
+        public static readonly string get_employee_record_by_id = "SELECT emp_info_table.full_name, emp_info_table.email, emp_info_table.contact_no, sector_table.code, office_table.code, division_table.code, section_table.code, position_table.code\r" +
+                                                                    "FROM emp_info_table \r" +
+                                                                    "LEFT JOIN position_table ON emp_info_table.position_code = position_table.code\r" +
+                                                                    "LEFT JOIN section_table ON emp_info_table.section_code = section_table.code\r" +
+                                                                    "LEFT JOIN division_table ON section_table.division_code = division_table.code\r" +
+                                                                    "LEFT JOIN office_table ON division_table.office_code = office_table.code\r" +
+                                                                    "LEFT JOIN sector_table ON office_table.sector_code = sector_table.code\r" +
+                                                                    "WHERE emp_info_table.code = '{0}' AND emp_info_table.status = 1;";
+
+
+        public static readonly string update_employee_record_by_id = "UPDATE emp_info_table SET \r\nemp_info_table.full_name = '{0}',\r\nemp_info_table.email = '{1}',\r\nemp_info_table.contact_no = '{2}',\r\nemp_info_table.section_code = '{3}',\r\nemp_info_table.position_code = '{4}',\r\nemp_info_table.updated_by = '{5}',\r\nemp_info_table.updated_date = CURRENT_TIMESTAMP()\r\nWHERE emp_info_table.code = '{6}' AND emp_info_table.status = 1;";
+
+
+
+        public static readonly string get_audit_trail_by_id = "SELECT created_by, created_date, updated_by, updated_date FROM {0} WHERE code = '{1}';";
+
         #region Maintenance GET Table Queries
 
         public static readonly string get_all_agency_records = "SELECT  agency_table.code, agency_table.title, agency_table.description, cluster_table.title\r" +
@@ -137,11 +168,23 @@ namespace COA_PRIS
         #region EMPLOYEE
 
 
+        public static readonly string get_employee_records = "SELECT emp_info_table.code, emp_info_table.full_name, office_table.title, position_table.title,\r" +
+                                                                "CASE \r" +
+                                                                "WHEN emp_info_table.status = 1 THEN 'ACTIVE'\r" +
+                                                                "WHEN emp_info_table.status = 2 THEN 'INACTIVE'\r" +
+                                                                "ELSE 'TERMINATED'\r\nEND\r\nAS status\r" +
+                                                            "FROM emp_info_table \r" +
+                                                            "LEFT JOIN position_table ON emp_info_table.position_code = position_table.code\r" +
+                                                            "LEFT JOIN section_table ON emp_info_table.section_code = section_table.code\r" +
+                                                            "LEFT JOIN division_table ON section_table.division_code = division_table.code\r" +
+                                                            "LEFT JOIN office_table ON division_table.office_code = office_table.code\r\nWHERE emp_info_table.status = 1";
+
+
+
         public static readonly string set_new_employee = "INSERT INTO emp_info_table(code,full_name,email,contact_no,section_code,position_code,status,created_by,created_date)\r" +
                                                          "VALUES ('{0}','{1}','{2}','{3}','{4}','{5}', 1,'{6}', CURRENT_TIMESTAMP())";
         #endregion
 
-        public static readonly string get_audit_trail_by_id = "SELECT created_by, created_date, updated_by, updated_date FROM {0} WHERE code = '{1}';";
 
 
         #region GET Record Queries
@@ -155,7 +198,7 @@ namespace COA_PRIS
         #endregion
 
         #region UPDATE Record Queries
-        public static readonly string update_agency_record_id = "UPDATE agency_table SET \r" +
+        public static readonly string update_agency_record_by_id = "UPDATE agency_table SET \r" +
                                                                 "agency_table.title = '{0}', agency_table.description = '{1}', \r" +
                                                                 "agency_table.cluster_code = '{2}', agency_table.updated_by = '{3}',\r" +
                                                                 "agency_table.updated_date = CURRENT_TIMESTAMP()\r" +
