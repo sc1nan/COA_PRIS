@@ -2,6 +2,7 @@
 using COA_PRIS.UserControlUtil;
 using COA_PRIS.Utilities;
 using Guna.UI.WinForms;
+using Org.BouncyCastle.Asn1.Crmf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,8 +18,9 @@ namespace COA_PRIS.Screens
     public partial class ActivityLogs : Form
     {
         Activity_Manager activity_manager;
-        readonly string[] column_names = { "User Name", "Activity", "Time"};
-        readonly string[] log_table_names = { "user_name", "activity", "activity_datetime"};
+        Util util = new Util();
+        //readonly string[] column_names = { "User Name", "Activity", "Time"};
+        readonly string[] log_table_names = { "user_name", "activity"};
         private int min_lim = 0;
         private int page_cnt = 1;
         public ActivityLogs()
@@ -28,7 +30,12 @@ namespace COA_PRIS.Screens
             sortComboBox.SelectedText = "user_name";
             sortComboBox.SelectedIndex = 0;
             DisplayLogsTable();
+            //setup user controls
             searchBar1.Ambatu(logsSearchBox_TextChanged);
+            ChangeDataDates();
+            dateFilter1.Ambatu(dateTimePicker_ValueChanged);
+            //set theme to data grid view
+            AddThemeToDGV();
         }
 
         private void logsSearchBox_TextChanged(object sender, EventArgs e)
@@ -36,18 +43,41 @@ namespace COA_PRIS.Screens
             changeTableContent(searchBar1.Text, LogsTable, sortComboBox);
         }
 
+        private void Populate_Table(int type_of_spec)
+        {
+            activity_manager = new Activity_Manager();
+            //adds items to table
+            DataTable dt = new DataTable();
+            string from_Date = dateFilter1.fromValue.ToString("yyyy/MM/dd 00:00:00");
+            string to_Date = dateFilter1.toValue.ToString("yyyy/MM/dd 23:59:59");
+            switch (type_of_spec)
+            {
+                //display all logs within date
+                case 1:
+                    dt = activity_manager.Display_Specific_Date_Logs_Table(from_Date, to_Date, min_lim);
+                    break;
+                //display logs within specified date
+                case 2:
+                    dt = activity_manager.Display_Specified_Logs_Table(from_Date, to_Date, min_lim, searchBar1.Text, log_table_names[sortComboBox.SelectedIndex]);
+                    break;
+                //conditional statement
+                case 3:
+                    if(searchBar1.Text != null) dt = activity_manager.Display_Specific_Date_Logs_Table(from_Date, to_Date, min_lim);
+                    else dt = activity_manager.Display_Specified_Logs_Table(from_Date, to_Date, min_lim, searchBar1.Text, log_table_names[sortComboBox.SelectedIndex]);
+
+                    break;
+                default: break;
+            }
+
+            //populate table with number
+            LogsTable.DataSource = util.format_DataTable(dt);
+            //set theme to data grid view
+            AddThemeToDGV();
+        }
+
         private void DisplayLogsTable()
         {
-            //Changes column name, change this later
-            foreach (DataGridViewColumn column in LogsTable.Columns)
-            {
-                column.HeaderText = column_names[column.Index];
-            }
-            changeGunaTableStyle(LogsTable);
-            //adds items to table
-            activity_manager = new Activity_Manager();
-            LogsTable.DataSource = activity_manager.Display_Three_Logs_Table(min_lim);
-            Database_Query.last_query = "SELECT user_name, activity, activity_datetime FROM log_table";
+            Populate_Table(1);
         }
 
         private void sortComboBox_SelectedValueChanged(object sender, EventArgs e)
@@ -57,59 +87,19 @@ namespace COA_PRIS.Screens
 
         private void changeTableContent(string searchBox, GunaDataGridView sourceTable, GunaComboBox filterComboBox)
         {
-            //if (searchBox.Text.ToString() == "") DisplayLogsTable();
-            //activity_manager = new Activity_Manager();
-            //sourceTable.DataSource = activity_manager.Display_Specific_Logs_Table(searchBox.Text.ToString(), log_table_names[filterComboBox.SelectedIndex]);
-            if (searchBox == "") DisplayLogsTable();
-            activity_manager = new Activity_Manager();
-            sourceTable.DataSource = activity_manager.Display_Ten_Specific_Logs_Table(searchBox, log_table_names[filterComboBox.SelectedIndex], 0);
-            Database_Query.last_query = string.Format("SELECT user_name, activity, activity_datetime FROM log_table WHERE {0} LIKE '%{1}%'", log_table_names[filterComboBox.SelectedIndex], searchBox);
-
+            Populate_Table(2);
         }
-
-        private void changeGunaTableStyle(GunaDataGridView gunaTable)
-        {
-            //Changes column header style
-            GunaDataGridViewHeaderStyle columnHeaderStyle = new GunaDataGridViewHeaderStyle(gunaTable.ColumnHeadersDefaultCellStyle, gunaTable);
-            columnHeaderStyle.Font = new Font("Bahnschrift", 14.25F);
-            columnHeaderStyle.Height = 40;
-            columnHeaderStyle.BackColor = Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            
-
-            //Chamges row styles
-            GunaDataGridViewRowsStyle rowStyle = new GunaDataGridViewRowsStyle(gunaTable.DefaultCellStyle, gunaTable);
-            rowStyle.SelectionBackColor = Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(109)))), ((int)(((byte)(128)))));
-            rowStyle.SelectionForeColor = Color.White;
-            rowStyle.Font = new Font("Bahnschrift", 14.25F);
-            rowStyle.Height = 40;
-            Padding newPadding = new Padding(24, 3, 3, 3);
-            foreach (DataGridViewColumn column in gunaTable.Columns)
-            {
-                if (column.Index == 0)
-                {
-                    column.DefaultCellStyle.Padding = newPadding;
-                    column.HeaderCell.Style.Padding = newPadding;
-                }
-            }
-            //alternating colors in rows
-            int i = 0;
-            foreach (DataGridViewRow row in gunaTable.Rows)
-            {
-                i++;
-                if (i % 2 == 0)
-                {
-                    rowStyle.BackColor = Color.FromArgb(((int)(((byte)(209)))), ((int)(((byte)(206)))), ((int)(((byte)(206)))));
-                }
-            }
-        }
-
         private void gunaButton1_Click(object sender, EventArgs e)
         {
             page_cnt--;
             nextLogsBtn.Enabled = true;
-            min_lim = 7 * (page_cnt - 1);
-            activity_manager = new Activity_Manager();
-            LogsTable.DataSource = activity_manager.Display_Three_Logs_Table(min_lim);
+            min_lim = 15 * (page_cnt - 1);
+            /*activity_manager = new Activity_Manager();
+            DataTable dt = new DataTable();
+            dt = activity_manager.Display_Three_Logs_Table(min_lim);
+            LogsTable.DataSource = util.format_DataTable(dt);
+            AddThemeToDGV();*/
+            Populate_Table(3);
             pageCountTextbox.Text = page_cnt.ToString();
             if (page_cnt <= 1) gunaButton1.Enabled = false;
         }
@@ -118,12 +108,16 @@ namespace COA_PRIS.Screens
         {
             page_cnt++;
             gunaButton1.Enabled = true;
-            min_lim = 7 * (page_cnt-1);
-            activity_manager = new Activity_Manager();
-            LogsTable.DataSource = activity_manager.Display_Three_Logs_Table(min_lim);
+            min_lim = 15 * (page_cnt-1);
+            /*activity_manager = new Activity_Manager();
+            DataTable dt = new DataTable();
+            dt = activity_manager.Display_Three_Logs_Table(min_lim);
+            LogsTable.DataSource = util.format_DataTable(dt);
+            AddThemeToDGV();*/
+            Populate_Table(3);
             pageCountTextbox.Text = page_cnt.ToString();
 
-            if ((min_lim+7) >= activity_manager.Count_Logs()) nextLogsBtn.Enabled = false;
+            if ((min_lim+15) >= activity_manager.Count_Logs()) nextLogsBtn.Enabled = false;
         }
 
         private void pageCountTextbox_KeyDown(object sender, KeyEventArgs e)
@@ -133,32 +127,18 @@ namespace COA_PRIS.Screens
                 page_cnt = Convert.ToInt32(pageCountTextbox.Text);
                 
                 if (page_cnt <= 1) gunaButton1.Enabled = false;
-                min_lim = 7 * (page_cnt - 1);
-                activity_manager = new Activity_Manager();
-                LogsTable.DataSource = activity_manager.Display_Three_Logs_Table(min_lim);
+                min_lim = 15 * (page_cnt - 1);
+                //activity_manager = new Activity_Manager();
+                //DataTable dt = new DataTable();
+                //dt = activity_manager.Display_Three_Logs_Table(min_lim);
+                //LogsTable.DataSource = util.format_DataTable(dt);
+                Populate_Table(3);
+                AddThemeToDGV();
             }
-        }
-
-        private void ActivityLogs_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void reportsButton_Click(object sender, EventArgs e)
         {
-            //DataSet1 dataSet1 = new DataSet1();
-            //dataSet1.log_table.Columns.Clear();
-            //foreach(DataGridViewColumn column in LogsTable.Columns)
-            //{
-            //    DataColumn dtCol = new DataColumn(column.Name, column.ValueType);
-            //    dtCol.Caption = column.HeaderText;
-
-            //    dataSet1.log_table.Columns.Add(dtCol);
-            //}
-            //foreach(DataGridViewRow row in LogsTable.Rows)
-            //{
-            //    dataSet1.log_table.Rows.Add(row);
-            //}
             var temprepp = Application.OpenForms["TempReportsForms"];
             if (temprepp == null)
             {
@@ -166,5 +146,37 @@ namespace COA_PRIS.Screens
             }
             temprepp.Show();
         }
+
+        private void AddThemeToDGV()
+        {
+            //Add Theme.cs DataGridView Style
+            (bool, int)[] column_Widths = new (bool, int)[] { (true, 3), (true, 20), (true, 47), (true, 30) }; ;
+            (string, DataGridViewContentAlignment)[] column_Text_Align = new (string, DataGridViewContentAlignment)[]
+            {
+                ("#", DataGridViewContentAlignment.MiddleRight),
+                ("Username", DataGridViewContentAlignment.MiddleLeft),
+                ("Activity", DataGridViewContentAlignment.MiddleLeft),
+                ("Date And Time", DataGridViewContentAlignment.MiddleCenter)
+            }; ;
+            
+            Theme.gridView_Style(LogsTable, column_Widths, column_Text_Align);
+        }
+
+        private void ChangeDataDates()
+        {
+            dateFilter1.ToValueChanged += dateTimePicker_ValueChanged;
+            dateFilter1.FromValueChanged += dateTimePicker_ValueChanged;
+        }
+        private void dateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            //activity_manager = new Activity_Manager();
+            //DataTable dt = new DataTable();
+            //dt = activity_manager.Display_Specific_Date_Logs_Table(dateFilter1.fromValue.ToString("yyyy/MM/dd 00:00:00"), dateFilter1.toValue.ToString("yyyy/MM/dd 23:59:59"), 0);
+            //LogsTable.DataSource = util.format_DataTable(dt);
+            //Database_Query.last_query = string.Format("SELECT user_name, activity, activity_datetime FROM log_table WHERE activity_datetime BETWEEN '{0}' AND '{1}'", dateFilter1.fromValue.ToString("yyyy/MM/dd 00:00:00"), dateFilter1.toValue.ToString("yyyy/MM/dd 23:59:59"));
+            //AddThemeToDGV();
+            Populate_Table(3);
+        }
+
     }
 }
