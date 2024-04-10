@@ -254,6 +254,12 @@
     <Compile Include="UserControlUtil\DataTableMultiplePages.Designer.cs">
       <DependentUpon>DataTableMultiplePages.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlUtil\DateFilter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlUtil\DateFilter.Designer.cs">
+      <DependentUpon>DateFilter.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlUtil\Label_Drop.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -412,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\DataTableMultiplePages.resx">
       <DependentUpon>DataTableMultiplePages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUtil\DateFilter.resx">
+      <DependentUpon>DateFilter.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\Label_Drop.resx">
       <DependentUpon>Label_Drop.cs</DependentUpon>
