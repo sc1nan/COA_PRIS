@@ -272,6 +272,12 @@
     <Compile Include="UserControlUtil\Label_Rich.Designer.cs">
       <DependentUpon>Label_Rich.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlUtil\Label_Selector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlUtil\Label_Selector.Designer.cs">
+      <DependentUpon>Label_Selector.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlUtil\Label_Text.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -289,6 +295,12 @@
     </Compile>
     <Compile Include="UserControlUtil\SearchBar.Designer.cs">
       <DependentUpon>SearchBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlUtil\Selector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControlUtil\Selector.Designer.cs">
+      <DependentUpon>Selector.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\Activity_Manager.cs" />
     <Compile Include="Utilities\Tab_Manager.cs" />
@@ -415,6 +427,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\Label_Rich.resx">
       <DependentUpon>Label_Rich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUtil\Label_Selector.resx">
+      <DependentUpon>Label_Selector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\Label_Text.resx">
       <DependentUpon>Label_Text.cs</DependentUpon>
