@@ -29,6 +29,8 @@ namespace COA_PRIS.Screens.Subscreens.Projects
             searchBar1.Ambatu(logsSearchBox_TextChanged);
             ChangeDataDates();
             dateFilter1.Ambatu(dateTimePicker_ValueChanged);
+            dateFilter1.toValue = DateTime.Today;
+            dateFilter1.fromValue = DateTime.Today;
 
             PopulateTable(1);
         }

@@ -15,6 +15,8 @@ namespace COA_PRIS.UserControlUtil
         public DateFilter()
         {
             InitializeComponent();
+            from_DateTimePicker.Value = DateTime.Today;
+            to_DateTimePicker.Value = DateTime.Today;
         }
 
         [Bindable(true)]
