@@ -112,6 +112,7 @@
             this.ClientSize = new System.Drawing.Size(677, 610);
             this.Controls.Add(this.gunaPanel1);
             this.Name = "TempReportsForms";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TempReportsForms";
             this.Load += new System.EventHandler(this.TempReportsForms_Load);
             ((System.ComponentModel.ISupportInitialize)(this.log_tableBindingSource)).EndInit();

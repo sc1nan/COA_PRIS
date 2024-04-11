@@ -32,7 +32,7 @@
             this.container_Panel = new Guna.UI.WinForms.GunaPanel();
             this.line_Panel = new Guna.UI.WinForms.GunaPanel();
             this.nav_panel = new System.Windows.Forms.FlowLayoutPanel();
-            this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
+            /*this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();*/
             this.employee_Btn = new Guna.UI.WinForms.GunaButton();
             this.inactive_Btn = new Guna.UI.WinForms.GunaButton();
             this.parent_panel.SuspendLayout();
@@ -85,10 +85,10 @@
             // 
             // mySqlCommand1
             // 
-            this.mySqlCommand1.CacheAge = 0;
+            /*this.mySqlCommand1.CacheAge = 0;
             this.mySqlCommand1.Connection = null;
             this.mySqlCommand1.EnableCaching = false;
-            this.mySqlCommand1.Transaction = null;
+            this.mySqlCommand1.Transaction = null;*/
             // 
             // employee_Btn
             // 

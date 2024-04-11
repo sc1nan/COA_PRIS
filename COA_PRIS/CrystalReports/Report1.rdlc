@@ -94,6 +94,7 @@
                                           </Border>
                                         </Style>
                                       </Image>
+                                      <rd:Selected>true</rd:Selected>
                                     </CellContents>
                                   </TablixCell>
                                   <TablixCell>
@@ -375,7 +376,7 @@
                             <LeftBorder>
                               <Color>Black</Color>
                               <Style>Solid</Style>
-                              <Width>2pt</Width>
+                              <Width>3pt</Width>
                             </LeftBorder>
                             <PaddingLeft>2pt</PaddingLeft>
                             <PaddingRight>2pt</PaddingRight>

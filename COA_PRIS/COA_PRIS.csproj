@@ -193,6 +193,18 @@
     <Compile Include="Screens\Splash Screen.Designer.cs">
       <DependentUpon>Splash Screen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Subscreens\ActivityLogs\ActivityLogging.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\ActivityLogs\ActivityLogging.Designer.cs">
+      <DependentUpon>ActivityLogging.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Subscreens\ActivityLogs\AccountLogging.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\ActivityLogs\AccountLogging.Designer.cs">
+      <DependentUpon>AccountLogging.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Subscreens\Employees\Add_Employee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,6 +258,12 @@
     </Compile>
     <Compile Include="Screens\Subscreens\Projects\ProjectLists.Designer.cs">
       <DependentUpon>ProjectLists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Reports\Reports_Submodule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Reports\Reports_Submodule.Designer.cs">
+      <DependentUpon>Reports_Submodule.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserControlUtil\Cherie UI\Datagrid.cs">
@@ -389,6 +407,12 @@
     <EmbeddedResource Include="Screens\Splash Screen.resx">
       <DependentUpon>Splash Screen.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\ActivityLogs\ActivityLogging.resx">
+      <DependentUpon>ActivityLogging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\ActivityLogs\AccountLogging.resx">
+      <DependentUpon>AccountLogging.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Employees\Add_Employee.resx">
       <DependentUpon>Add_Employee.cs</DependentUpon>
     </EmbeddedResource>
@@ -415,6 +439,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Projects\ProjectLists.resx">
       <DependentUpon>ProjectLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Reports\Reports_Submodule.resx">
+      <DependentUpon>Reports_Submodule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StatReportUserControl.resx">
       <DependentUpon>StatReportUserControl.cs</DependentUpon>

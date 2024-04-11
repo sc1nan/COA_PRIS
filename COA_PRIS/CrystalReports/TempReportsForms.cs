@@ -39,7 +39,9 @@ namespace COA_PRIS.CrystalReports
 
         private void TempReportsForms_Load(object sender, EventArgs e)
         {
-            
+            reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
+            reportViewer1.ZoomMode = ZoomMode.PageWidth;
+
             //this.reportViewer1.RefreshReport();
         }
 

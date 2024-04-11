@@ -57,7 +57,6 @@ namespace COA_PRIS.Utilities
 
         }
 
-
         public DataTable Display_Logs_Table()
         {
             db_Manager = new Database_Manager();
@@ -68,7 +67,7 @@ namespace COA_PRIS.Utilities
             }
             return dt;
         }
-
+        //deprecated
         public DataTable Display_Specific_Logs_Table(string searchwords, string sortby)
         {
             db_Manager = new Database_Manager();
@@ -90,7 +89,7 @@ namespace COA_PRIS.Utilities
             }
             return dt;
         }
-
+        //deprecated
         public DataTable Display_Three_Logs_Table(int minimium)
         {
             db_Manager = new Database_Manager();
@@ -109,8 +108,8 @@ namespace COA_PRIS.Utilities
             DataTable dt = new DataTable();
             using (db_Manager)
             {
-                dt = db_Manager.ExecuteQuery(string.Format(Database_Query.display_specified_logs, from, to, minimium, searchwords, sort_by));
-                Database_Query.last_query = string.Format(Database_Query.display_specified_logs, from, to, minimium, searchwords, sort_by);
+                dt = db_Manager.ExecuteQuery(string.Format(Database_Query.display_specified_account_logs, from, to, minimium, searchwords, sort_by));
+                Database_Query.last_query = string.Format(Database_Query.display_specified_account_logs, from, to, minimium, searchwords, sort_by);
                 Console.WriteLine(Database_Query.last_query);
             }
             return dt;
@@ -122,8 +121,8 @@ namespace COA_PRIS.Utilities
             DataTable dt = new DataTable();
             using (db_Manager)
             {
-                dt = db_Manager.ExecuteQuery(string.Format(Database_Query.display_specific_logs_by_date, from, to, minimium));
-                Database_Query.last_query = string.Format(Database_Query.display_specific_logs_by_date, from, to, minimium);
+                dt = db_Manager.ExecuteQuery(string.Format(Database_Query.display_account_logs_by_date, from, to, minimium));
+                Database_Query.last_query = string.Format(Database_Query.display_account_logs_by_date, from, to, minimium);
             }
             return dt;
         }
@@ -134,15 +133,38 @@ namespace COA_PRIS.Utilities
             DataTable dt = new DataTable();
             using (db_Manager)
             {
-                /*if (targetDt.Ticks > d1.Ticks && targetDt.Ticks < d2.Ticks)
-                {
-                    // targetDt is in between d1 and d2
-                }*/
-                dt = db_Manager.ExecuteQuery(string.Format(Database_Query.display_specific_logs_by_date, from, to, minimium));
-                Database_Query.last_query = string.Format(Database_Query.display_specific_logs_by_date, from, to, minimium);
+                dt = db_Manager.ExecuteQuery(string.Format(Database_Query.display_account_logs_by_date, from, to, minimium));
+                Database_Query.last_query = string.Format(Database_Query.display_account_logs_by_date, from, to, minimium);
             }
             return dt;
         }
+
+        #region Activity Logging
+        public DataTable Display_Activity_Logs_Table(string from, string to, int minimium)
+        {
+            db_Manager = new Database_Manager();
+            DataTable dt = new DataTable();
+            using (db_Manager)
+            {
+                dt = db_Manager.ExecuteQuery(string.Format(Database_Query.display_activity_logs_by_date, from, to, minimium));
+                Database_Query.last_query = string.Format(Database_Query.display_activity_logs_by_date, from, to, minimium);
+            }
+            return dt;
+        }
+
+        public DataTable Display_Specified_Activity_Logs_Table(string from, string to, int minimium, string searchwords, string sort_by)
+        {
+            db_Manager = new Database_Manager();
+            DataTable dt = new DataTable();
+            using (db_Manager)
+            {
+                dt = db_Manager.ExecuteQuery(string.Format(Database_Query.display_specified_activity_logs, from, to, minimium, searchwords, sort_by));
+                Database_Query.last_query = string.Format(Database_Query.display_specified_activity_logs, from, to, minimium, searchwords, sort_by);
+                Console.WriteLine(Database_Query.last_query);
+            }
+            return dt;
+        }
+        #endregion
 
         public int Count_Logs()
         {

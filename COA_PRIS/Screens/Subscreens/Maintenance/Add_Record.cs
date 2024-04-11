@@ -13,6 +13,8 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
         private readonly Database_Manager database_Manager = new Database_Manager();
         private readonly Validator validator = new Validator();
         private readonly Util util = new Util();
+        //temporary active account
+        private readonly string active_account = "admin";
 
         private string Insert_Query { get; }
         private string Table { get; }
@@ -70,6 +72,11 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
 
             if (ret == 1) 
             {
+                Console.WriteLine(Table);
+                Console.WriteLine(string.Format(Database_Query.return_module_name, Table));
+                string code_type = database_Manager.ExecuteScalar(string.Format(Database_Query.return_module_name, Table)).ToString();
+                //make activity log
+                database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity, active_account, code_type, code_Title.Text));
                 if (MessageBox.Show($"{code_Title.Text} is successfully added.", "New Record Added", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                 {
                     is_ClosingProgrammatically = true; 

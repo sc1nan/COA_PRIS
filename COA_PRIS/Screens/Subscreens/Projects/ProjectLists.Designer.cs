@@ -69,7 +69,7 @@
             this.tableLayoutPanel1.ColumnCount = 3;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.81321F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.18679F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 293F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 297F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.searchBar1, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dateFilter1, 1, 0);
@@ -87,7 +87,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel2.Controls.Add(this.sortComboBox, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.reportsButton, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(1243, 3);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(1239, 3);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -164,7 +164,7 @@
             this.dateFilter1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.dateFilter1.BackColor = System.Drawing.Color.Transparent;
             this.dateFilter1.fromValue = new System.DateTime(2024, 4, 8, 10, 35, 15, 477);
-            this.dateFilter1.Location = new System.Drawing.Point(571, 54);
+            this.dateFilter1.Location = new System.Drawing.Point(569, 54);
             this.dateFilter1.Name = "dateFilter1";
             this.dateFilter1.Size = new System.Drawing.Size(656, 43);
             this.dateFilter1.TabIndex = 5;

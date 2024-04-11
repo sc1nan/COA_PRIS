@@ -1,8 +1,7 @@
-﻿using COA_PRIS.Screens.Subscreens.Maintenance;
+﻿using COA_PRIS.CrystalReports;
 using COA_PRIS.Utilities;
 using Guna.UI.WinForms;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,15 +11,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace COA_PRIS.Screens.Subscreens.Projects
+namespace COA_PRIS.Screens.Subscreens.Reports
 {
-    public partial class ProjectLists : Form
+    public partial class Reports_Submodule : Form
     {
         private Database_Manager database_Manager;
         private Util util;
         readonly string[] date_types = { "period", "receiveing_date" };
         private string Query { get; set; }
-        public ProjectLists()
+        public Reports_Submodule()
         {
             InitializeComponent();
 
@@ -39,30 +38,32 @@ namespace COA_PRIS.Screens.Subscreens.Projects
         {
             string sort_by = date_types[sortComboBox.SelectedIndex];
             string from_Date = dateFilter1.fromValue.ToString("yyyy/MM/dd 00:00:00");
-            string to_Date = dateFilter1.toValue.ToString("yyyy/MM/dd 23:59:59");
+            string current_time = DateTime.Now.ToString("HH':'mm':'ss");
+            string to_Date = dateFilter1.toValue.ToString("yyyy/MM/dd " + current_time);
             switch (i)
             {
                 case 1:
                     Query = string.Format(Database_Query.get_general_project_records_by_date, sort_by, from_Date, to_Date);
                     break;
                 case 2:
-                    Query = string.Format(Database_Query.get_specific_project_records_by_date, sort_by, from_Date, to_Date, searchBar1.Text);
+                    Query = string.Format(Database_Query.get_specific_project_records_by_date2, sort_by, from_Date, to_Date, searchBar1.Text);
                     break;
                 case 3:
-                    if (searchBar1.Text != null) Query = string.Format(Database_Query.get_all_project_records, sort_by, from_Date, to_Date);
-                    else Query = string.Format(Database_Query.get_specific_project_records_by_date, sort_by, from_Date, to_Date, searchBar1.Text);
+                    if (searchBar1.Text != null) Query = string.Format(Database_Query.get_general_project_records_by_date, sort_by, from_Date, to_Date);
+                    else Query = string.Format(Database_Query.get_specific_project_records_by_date2, sort_by, from_Date, to_Date, searchBar1.Text);
                     break;
                 default: break;
             }
-            /*show_Table(Query);*/
+            Database_Query.last_query = Query;
+            show_Table(Query);
             SetTableTheme();
         }
-
+        //change data grid view content according to search box
         private void logsSearchBox_TextChanged(object sender, EventArgs e)
         {
             PopulateTable(2);
         }
-
+        //change data grid view design
         private void SetTableTheme()
         {
             (bool, int)[] column_Widths = null;
@@ -94,32 +95,45 @@ namespace COA_PRIS.Screens.Subscreens.Projects
             data_View.DataSource = dt;
         }
 
-        private void gunaButton1_Click(object sender, EventArgs e)
+        private void previous_Button_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void nextLogsBtn_Click(object sender, EventArgs e)
+        private void next_Button_Click(object sender, EventArgs e)
         {
 
         }
 
         private void reportsButton_Click(object sender, EventArgs e)
         {
-
+            var temprepp = Application.OpenForms["TempReportsForms"];
+            if (temprepp == null)
+            {
+                temprepp = new TempReportsForms();
+            }
+            temprepp.Show();
         }
-
+        //change logs page 
         private void sortComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
             PopulateTable(3);
         }
-
+        //add events to date time picker
         private void ChangeDataDates()
         {
             dateFilter1.ToValueChanged += dateTimePicker_ValueChanged;
             dateFilter1.FromValueChanged += dateTimePicker_ValueChanged;
         }
+        //if date time picker change values
         private void dateTimePicker_ValueChanged(object sender, EventArgs e)
+        {
+            if (dateFilter1.toValue < dateFilter1.fromValue)
+                dateFilter1.fromValue = dateFilter1.toValue;
+            PopulateTable(3);
+        }
+
+        private void refresh_Button_Click(object sender, EventArgs e)
         {
             PopulateTable(3);
         }
