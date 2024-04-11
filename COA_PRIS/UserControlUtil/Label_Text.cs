@@ -23,8 +23,13 @@ namespace COA_PRIS.UserControlUtil
         {
             InitializeComponent();
             this.title.Text = _title;
+            this.entry.Tag = _title.Replace(":", "");
         }
 
+        private void Label_Text_Load(object sender, EventArgs e)
+        {
+            
+        }
         private void entry_TextChanged(object sender, EventArgs e)
         {
             if (this.Text.Length == entry.MaxLength)
@@ -33,5 +38,6 @@ namespace COA_PRIS.UserControlUtil
                 entry.BorderColor = Color.Red;
             }
         }
+
     }
 }

@@ -354,7 +354,7 @@ namespace COA_PRIS.Screens
                         new Label_Drop("Cluster:", Database_Query.get_cluster_options)
                     };
                     read_Query = Database_Query.get_agency_record_by_id;
-                    update_Query = Database_Query.update_agency_record_id;
+                    update_Query = Database_Query.update_agency_record_by_id;
                     table = "agency_table";
 
                     break;
@@ -456,16 +456,6 @@ namespace COA_PRIS.Screens
             View_Record = new View_Record(record_code, controls, read_Query,update_Query, table);
             View_Record.callback += callback_Function; 
             View_Record.ShowDialog();
-
-        }
-
-        private void title_label_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void search_Panel_Paint(object sender, PaintEventArgs e)
-        {
 
         }
     }

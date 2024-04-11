@@ -1,6 +1,6 @@
 ﻿namespace COA_PRIS.UserControlUtil
 {
-    partial class Label_Text
+    partial class Label_Selector
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,13 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.title = new Guna.UI.WinForms.GunaLabel();
             this.entry = new Guna.UI.WinForms.GunaTextBox();
-            this.label_Text_Error = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.label_Text_Error)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -49,8 +46,8 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(400, 100);
-            this.tableLayoutPanel1.TabIndex = 0;
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(440, 94);
+            this.tableLayoutPanel1.TabIndex = 1;
             this.tableLayoutPanel1.Tag = "Entry";
             // 
             // title
@@ -85,29 +82,19 @@
             this.entry.PasswordChar = '\0';
             this.entry.Radius = 6;
             this.entry.SelectedText = "";
-            this.entry.Size = new System.Drawing.Size(377, 54);
+            this.entry.Size = new System.Drawing.Size(417, 48);
             this.entry.TabIndex = 1;
             this.entry.Tag = "";
-            this.entry.TextChanged += new System.EventHandler(this.entry_TextChanged);
             // 
-            // label_Text_Error
-            // 
-            this.label_Text_Error.BlinkRate = 0;
-            this.label_Text_Error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.label_Text_Error.ContainerControl = this;
-            // 
-            // Label_Text
+            // Label_Selector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Label_Text";
-            this.Size = new System.Drawing.Size(400, 100);
-            this.Tag = "asdasd";
-            this.Load += new System.EventHandler(this.Label_Text_Load);
+            this.Name = "Label_Selector";
+            this.Size = new System.Drawing.Size(440, 94);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.label_Text_Error)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -117,6 +104,5 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Guna.UI.WinForms.GunaLabel title;
         private Guna.UI.WinForms.GunaTextBox entry;
-        private System.Windows.Forms.ErrorProvider label_Text_Error;
     }
 }

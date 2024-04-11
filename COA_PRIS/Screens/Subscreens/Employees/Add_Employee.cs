@@ -1,283 +1,171 @@
-﻿using COA_PRIS.Utilities;
+﻿using COA_PRIS.UserControlUtil;
+using COA_PRIS.Utilities;
+using Org.BouncyCastle.Ocsp;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace COA_PRIS.Screens.Subscreens.Employees
 {
     public partial class Add_Employee : Form
     {
-        private Validator validator;
-        private Database_Manager database_manager;
+        private Database_Manager database_manager = new Database_Manager();
+        private Validator validator = new Validator();
         private Util util = new Util();
+        
+        private bool is_ClosingProgrammatically = false;
+        public event Action callback;
+
+        private Dictionary<string, int> dropboxMapping = new Dictionary<string, int>
+        {
+            { "Sector", 1 },
+            { "Office", 2 },
+            { "Division", 3 },
+            { "Section", 4 }
+        };
+
         public Add_Employee()
         {
             InitializeComponent();
+            InitializeControls();
         }
+
         private void Add_Record_Load(object sender, EventArgs e)
         {
-            database_manager = new Database_Manager();
-            show_NewID();
-
-            this.emp_id.Text = util.generate_ID("emp_info_table");
-
-            DataTable ret = new DataTable();
-            Dictionary<string, string> option_Values = new Dictionary<string, string>();
-            option_Values.Add("0", "Select Sector");
-
-            using (database_manager) 
-            {
-                ret = database_manager.ExecuteQuery("SELECT sector_table.code, sector_table.title FROM sector_table WHERE sector_table.`status` = 1;");
-            }
-
-            foreach (DataRow row in ret.Rows) 
-            {
-                var key = (string)row[0];
-                var value = (string)row[1];
-
-                option_Values[key] = value;
-
-                //Console.WriteLine($"{row[0]} | {row[1]}");
-            }
-
-            sector_DropBox.DisplayMember = "value";
-            sector_DropBox.ValueMember = "key";
-            sector_DropBox.DataSource = new BindingSource(option_Values, null);
-
-
-
+            emp_id.Text = util.generate_ID("emp_info_table");
         }
 
+        private void InitializeControls()
+        {
+            var controls = new List<UserControl[]>
+            {
+                new UserControl[]
+                {
+                    new Label_Text("Full Name :"),
+                    new Label_Text("Email :"),
+                    new Label_Text("Contact Number :")
+                },
+                new UserControl[]
+                {
+                    new Label_Drop("Sector :", Database_Query.get_sector_options, true),
+                    new Label_Drop("Office :", Database_Query.get_office_options, false),
+                    new Label_Drop("Division :", Database_Query.get_division_options, false),
+                    new Label_Drop("Section :", Database_Query.get_section_option, false),
+                    new Label_Drop("Position :", Database_Query.get_position_options, false)
+                }
+            };
 
+            for (int i = 0; i < controls.Count; i++)
+            {
+                var panel = new FlowLayoutPanel
+                {
+                    Size = new Size(control_Panel.Width / 2, control_Panel.Height),
+                    Margin = Padding.Empty
+                };
+
+                control_Panel.Controls.Add(panel);
+
+                foreach (var control in controls[i])
+                {
+                    panel.Controls.Add(control);
+                    control.Width = panel.Width;
+                    if (control is Label_Drop labelDrop)
+                        labelDrop.DropboxChanged += label_Drop_Callback;
+                        
+                }
+            }
+        }
+
+        private void label_Drop_Callback(object sender, EventArgs e)
+        {
+            var currentDropbox = (Label_Drop)sender;
+            if (!dropboxMapping.TryGetValue(currentDropbox.Title, out int num))
+                return;
+
+            var panel = control_Panel.Controls[1];
+            var nextDropbox = (Label_Drop)panel.Controls[num];
+
+            
+
+            switch (currentDropbox.Title)
+            {
+                case "Sector":
+                    nextDropbox.Option_Query = string.Format(Database_Query.get_office_options_by_id, currentDropbox.Text);
+                    break;
+                case "Office":
+                    nextDropbox.Option_Query = string.Format(Database_Query.get_division_options_by_id, currentDropbox.Text);
+                    break;
+                case "Division":
+                    nextDropbox.Option_Query = string.Format(Database_Query.get_section_options_by_id, currentDropbox.Text);
+                    break;
+            }
+
+            nextDropbox.Enabled_Dropbox = !string.Equals(currentDropbox.Text, "null");
+            if (!nextDropbox.Enabled_Dropbox)
+            {
+                for (int i = num; i < panel.Controls.Count; i++)
+                {
+                    if (panel.Controls[i] is Label_Drop dropbox)
+                        dropbox.Enabled_Dropbox = false;
+                }
+            }
+        }
 
         private void save_Btn_Click(object sender, EventArgs e)
         {
+            int ret;
+            if (!validator.Required_TextBox(control_Panel, error_Employee, error_Message))
+                return;
 
-           
-            //validator = new Validator();
-            MessageBox.Show((string)sector_DropBox.SelectedValue + (string)Office_DropBox.SelectedValue + (string)division_DropBox.SelectedValue + (string)sector_DropBox.SelectedValue);
+            //if (MessageBox.Show("Proceed to add employee record?", "Employee Record Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) != DialogResult.Yes)
+            //   return;
 
+            var holder = new List<List<string>>();
 
-            validator = new Validator();
-
-            if (validator.Required_TextBox(field_Panel, error_Employee)) 
+            foreach (Control control in control_Panel.Controls)
             {
+                var values = new List<string> { emp_id.Text };
 
-                using (database_manager) 
+                foreach (Control subControl in control.Controls)
+                    values.Add(subControl.Text);
+
+                holder.Add(values);
+            }
+
+            var entries = new List<List<string>> { holder[0].Concat(new List<string> { holder[1][4], holder[1][5], "admin" }).ToList() };
+
+            using (database_manager)
+                ret = database_manager.ExecuteNonQuery(util.generate_Query(entries, Database_Query.set_new_employee));
+                
+            
+            if (ret == 1)
+            {
+                if (MessageBox.Show($"{emp_id.Text} is successfully added.", "New Record Added", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                 {
-                    //database_manager.ExecuteNonQuery(string.Format(Database_Query.get_acc, emp_id, f))
-                    //string.Format("{0},{1},{2},{3}", emp_id.Text, txtName.Text, txtEmail.Text, txtContact.Text,   )
-                    database_manager.ExecuteNonQuery(string.Format(Database_Query.set_new_employee, emp_id.Text, txtName.Text, txtEmail.Text, txtContact.Text, section_DropBox.SelectedValue.ToString(), position_DropBox.SelectedValue.ToString(), "james"));
-                
+                    is_ClosingProgrammatically = true;
+                    callback?.Invoke();
+                    Close();
                 }
-            
-            
-            }
-            section_DropBox.DataSource = null;
-            Office_DropBox.DataSource = null;
-            division_DropBox.DataSource = null;
-            sector_DropBox.DataSource = null;
-            position_DropBox.DataSource = null;
-           
-        }
-
-        private void show_NewID() 
-        {
-            string name = "";
-
-            using (database_manager)
-            {
-                var recent_record = database_manager.ExecuteQuery(Database_Query.get_top_employee_rec);
-
-                if (recent_record != null)
-                    foreach (DataRow row in recent_record.Rows)
-                        name = (string)row["employee_no"];
-            }
-
-
-
-            
-
-            //emp_id.Text = util.generate_ID(name);
-
-        }
-
-        public void getoffice()
-        {
-            database_manager = new Database_Manager();
-            show_NewID();
-
-            DataTable ret = new DataTable();
-            Dictionary<string, string> option_Values = new Dictionary<string, string>();
-            option_Values.Add("0", "Select Office");
-
-            using (database_manager)
-            {
-                ret = database_manager.ExecuteQuery("SELECT office_table.code, office_table.title FROM office_table WHERE office_table.`status` = 1;");
-            }
-
-            foreach (DataRow row in ret.Rows)
-            {
-                var key = (string)row[0];
-                var value = (string)row[1];
-
-                option_Values[key] = value;
-                
-                //Console.WriteLine($"{row[0]} | {row[1]}");
-            }
-
-            Office_DropBox.DisplayMember = "value";
-            Office_DropBox.ValueMember = "key";
-            Office_DropBox.DataSource = new BindingSource(option_Values, null);
-        }
-
-        private void sector_DropBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if ((sector_DropBox.SelectedValue ?? "0").ToString() != "0")
-            {
-                getoffice();
-                Office_DropBox.Enabled = true;
-            }
-            else
-            {
-                Office_DropBox.Enabled = false;
-            }
-
-        }
-
-        public void getDivision ()
-        {
-            database_manager = new Database_Manager();
-            show_NewID();
-
-            DataTable ret = new DataTable();
-            Dictionary<string, string> option_Values = new Dictionary<string, string>();
-            option_Values.Add("0", "Select Division");
-
-            using (database_manager)
-            {
-                ret = database_manager.ExecuteQuery("SELECT division_table.code, division_table.title FROM division_table WHERE division_table.`status` = 1;");
-            }
-
-            foreach (DataRow row in ret.Rows)
-            {
-                var key = (string)row[0];
-                var value = (string)row[1];
-
-                option_Values[key] = value;
-
-                //Console.WriteLine($"{row[0]} | {row[1]}");
-            }
-
-           division_DropBox.DisplayMember = "value";
-            division_DropBox.ValueMember = "key";
-            division_DropBox.DataSource = new BindingSource(option_Values, null);
-        }
-        private void Office_DropBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if ((Office_DropBox.SelectedValue ?? "0").ToString() != "0")
-            {
-                getDivision();
-                division_DropBox.Enabled = true;
-            }
-            else
-            {
-                division_DropBox.Enabled = false;
             }
         }
 
-        public void getSection()
+        private void Add_Employee_FormClosing(object sender, FormClosingEventArgs e)
         {
-            database_manager = new Database_Manager();
-            show_NewID();
-
-            DataTable ret = new DataTable();
-            Dictionary<string, string> option_Values = new Dictionary<string, string>();
-            option_Values.Add("0", "Select Section");
-
-            using (database_manager)
+            if (!is_ClosingProgrammatically)
             {
-                ret = database_manager.ExecuteQuery("SELECT section_table.code, section_table.title FROM section_table WHERE section_table.`status` = 1;");
-            }
-
-            foreach (DataRow row in ret.Rows)
-            {
-                var key = (string)row[0];
-                var value = (string)row[1];
-
-                option_Values[key] = value;
-
-                //Console.WriteLine($"{row[0]} | {row[1]}");
-            }
-
-            section_DropBox.DisplayMember = "value";
-            section_DropBox.ValueMember = "key";
-            section_DropBox.DataSource = new BindingSource(option_Values, null);
-        }
-        public void getPosition()
-        {
-            database_manager = new Database_Manager();
-            show_NewID();
-
-            DataTable ret = new DataTable();
-            Dictionary<string, string> option_Values = new Dictionary<string, string>();
-            option_Values.Add("0", "Select Position");
-
-            using (database_manager)
-            {
-                ret = database_manager.ExecuteQuery("SELECT position_table.code, position_table.title FROM position_table WHERE position_table.`status` = 1;");
-            }
-
-            foreach (DataRow row in ret.Rows)
-            {
-                var key = (string)row[0];
-                var value = (string)row[1];
-
-                option_Values[key] = value;
-
-                //Console.WriteLine($"{row[0]} | {row[1]}");
-            }
-
-            position_DropBox.DisplayMember = "value";
-            position_DropBox.ValueMember = "key";
-            position_DropBox.DataSource = new BindingSource(option_Values, null);
-        }
-        private void section_DropBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if ((section_DropBox.SelectedValue ?? "0").ToString() != "0")
-            {
-               getPosition();
-                position_DropBox.Enabled = true;
-            }
-            else
-            {
-                 
-                position_DropBox.Enabled = false;
+                if (e.CloseReason == CloseReason.UserClosing)
+                    e.Cancel = MessageBox.Show("Are you sure you want to cancel?", "Cancel Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == DialogResult.No;
+                else if (e.CloseReason == CloseReason.WindowsShutDown)
+                    Close();
             }
         }
 
-        private void division_DropBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void cancel_Btn_Click(object sender, EventArgs e)
         {
-            if ((division_DropBox.SelectedValue ?? "0").ToString() != "0")
-            {
-                getSection();
-                section_DropBox.Enabled = true;
-            }
-            else
-            {
-                section_DropBox.Enabled = false;
-            }
-        }
-
-        private void position_DropBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            is_ClosingProgrammatically = false;
+            Close();
         }
     }
 }

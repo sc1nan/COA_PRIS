@@ -115,7 +115,7 @@
             this.employee_Btn.OnHoverForeColor = System.Drawing.Color.White;
             this.employee_Btn.OnHoverImage = null;
             this.employee_Btn.OnPressedColor = System.Drawing.Color.Black;
-            this.employee_Btn.Size = new System.Drawing.Size(180, 55);
+            this.employee_Btn.Size = new System.Drawing.Size(200, 55);
             this.employee_Btn.TabIndex = 0;
             this.employee_Btn.Text = "RECORDS";
             this.employee_Btn.TextOffsetX = 5;
@@ -138,7 +138,7 @@
             this.inactive_Btn.Image = global::COA_PRIS.Properties.Resources.moon;
             this.inactive_Btn.ImageOffsetX = 5;
             this.inactive_Btn.ImageSize = new System.Drawing.Size(30, 30);
-            this.inactive_Btn.Location = new System.Drawing.Point(181, 0);
+            this.inactive_Btn.Location = new System.Drawing.Point(201, 0);
             this.inactive_Btn.Margin = new System.Windows.Forms.Padding(0, 0, 1, 0);
             this.inactive_Btn.Name = "inactive_Btn";
             this.inactive_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
@@ -146,17 +146,18 @@
             this.inactive_Btn.OnHoverForeColor = System.Drawing.Color.White;
             this.inactive_Btn.OnHoverImage = null;
             this.inactive_Btn.OnPressedColor = System.Drawing.Color.Black;
-            this.inactive_Btn.Size = new System.Drawing.Size(180, 55);
+            this.inactive_Btn.Size = new System.Drawing.Size(200, 55);
             this.inactive_Btn.TabIndex = 1;
             this.inactive_Btn.Text = "INACTIVE";
             this.inactive_Btn.TextOffsetX = 5;
+            this.inactive_Btn.Visible = false;
             this.inactive_Btn.Click += new System.EventHandler(this.button_Click);
             // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Gainsboro;
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(1556, 884);
             this.Controls.Add(this.parent_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -178,6 +179,5 @@
         private Guna.UI.WinForms.GunaButton inactive_Btn;
         private Guna.UI.WinForms.GunaPanel line_Panel;
         private Guna.UI.WinForms.GunaPanel container_Panel;
-        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
     }
 }
