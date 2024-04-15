@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace COA_PRIS.UserControlUtil
+namespace COA_PRIS.Screens.Subscreens.Projects
 {
-    public partial class Label_Selector : UserControl
+    public partial class Add_Project : Form
     {
-        public Label_Selector()
+        public Add_Project()
         {
             InitializeComponent();
+        }
+
+        private void right_ContentPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

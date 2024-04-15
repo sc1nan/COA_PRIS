@@ -276,6 +276,7 @@
             this.audit_Trail_Btn.Radius = 5;
             this.audit_Trail_Btn.Size = new System.Drawing.Size(45, 45);
             this.audit_Trail_Btn.TabIndex = 3;
+            this.audit_Trail_Btn.Click += new System.EventHandler(this.audit_Trail_Btn_Click);
             // 
             // update_Btn
             // 

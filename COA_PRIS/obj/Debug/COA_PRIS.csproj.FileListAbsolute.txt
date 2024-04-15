@@ -310,7 +310,6 @@ C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscre
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Maintenance.View_Record.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Projects.ProjectArchive.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Projects.ProjectCreate.resources
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Projects.ProjectLists.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.Cherie_UI.Datagrid.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.DataTableMultiplePages.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.Label_Drop.resources
@@ -365,7 +364,6 @@ C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\bin\Debug\pt\Microsoft.ReportViewe
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.Label_TextLabel.resources
 C:\Users\rutil\source\repos\COA_PRIS\COA_PRIS\bin\Debug\COA_PRIS.exe.config
 C:\Users\rutil\source\repos\COA_PRIS\COA_PRIS\bin\Debug\COA_PRIS.exe
 C:\Users\rutil\source\repos\COA_PRIS\COA_PRIS\bin\Debug\COA_PRIS.pdb
@@ -485,3 +483,11 @@ C:\Users\rutil\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.csproj.CopyComp
 C:\Users\rutil\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.exe
 C:\Users\rutil\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.pdb
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Employees.View_Employee.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.DateFilter.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Projects.Create_Project.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Projects.Add_Project.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Label_Entry.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_DatePicker.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Label_Rich.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.Selector.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.PRIS_Label_Selector.resources

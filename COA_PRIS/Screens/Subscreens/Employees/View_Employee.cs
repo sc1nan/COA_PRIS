@@ -20,6 +20,8 @@ namespace COA_PRIS.Screens.Subscreens.Employees
         private Database_Manager database_manager = new Database_Manager();
         private Util util = new Util();
 
+        private Audit_Trail audit_Trail;
+
         private bool is_ClosingProgrammatically = false;
         public event Action callback;
         private string Record_ID
@@ -103,7 +105,10 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                     control.Width = panel.Width;
 
                     if (control is Label_Drop labelDrop)
-                        labelDrop.DropboxChanged += label_Drop_Callback;
+                    { 
+                        //labelDrop.DropboxChanged += label_Drop_Callback; 
+                        //labelDrop.Enabled_Dropbox = false;
+                    }
                 }
             }
         }
@@ -117,10 +122,10 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                 Label_Drop label_drop = panel.Controls[con_Index] as Label_Drop;
                 label_drop.Enable_Info = true;
                 label_drop.Info_Message = $"Curr: {label_drop.Value}";
+                label_drop.DropboxChanged += label_Drop_Callback;
 
                 if (con_Index >= 1)
                     label_drop.Enabled_Dropbox = false;
-                
                 
 
             }
@@ -141,6 +146,7 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                 for (int con_Index = 0; con_Index < panel.Controls.Count; con_Index++)
                 {
                     Label_Drop label_drop = panel.Controls[con_Index] as Label_Drop;
+                    label_drop.Enabled_Dropbox = false;
                     label_drop.Enable_Info = false;
 
 
@@ -248,6 +254,12 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                 Close();
                 callback?.Invoke();
             }
+        }
+
+        private void audit_Trail_Btn_Click(object sender, EventArgs e)
+        {
+            audit_Trail = new Audit_Trail(this.Record_ID, "emp_info_table");
+            audit_Trail.ShowDialog();
         }
     }
 }

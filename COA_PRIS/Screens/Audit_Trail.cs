@@ -1,4 +1,5 @@
 ﻿using COA_PRIS.UserControlUtil;
+using COA_PRIS.UserControlUtil.PRIS_UserControl;
 using COA_PRIS.Utilities;
 using Guna.UI.WinForms;
 using System;
@@ -29,7 +30,7 @@ namespace COA_PRIS.Screens
 
         private void Audit_Trail_Load(object sender, EventArgs e)
         {
-            GunaTextBox[] gunaTextBox = new GunaTextBox[] {createdBy_Text, createdDate_Text, updatedBy_Text, updatedDate_Text};
+            string[] title = new string[] { "Created By :", "Created Date :", "Updated By :", "Updated Date :" };
             database_Manager = new Database_Manager();
 
             DataTable ret = new DataTable();
@@ -39,22 +40,16 @@ namespace COA_PRIS.Screens
                 ret = database_Manager.ExecuteQuery(string.Format(Database_Query.get_audit_trail_by_id, this.Table, this.Record_ID));
             }
 
-            if (gunaTextBox.Length == ret.Columns.Count) 
+            if (content_Panel.Controls.Count == ret.Columns.Count)
             {
-                for (int control = 0; control < gunaTextBox.Length; control++)
+                for (int index = 0; index < content_Panel.Controls.Count; index++)
                 {
-                    gunaTextBox[control].Text = ret.Rows[0][control].ToString();
+                    PRIS_Label_Entry label_Entry = (PRIS_Label_Entry)content_Panel.Controls[index];
+                    label_Entry.Title = title[index];
+                    label_Entry.Value = ret.Rows[0][index].ToString();
+                    label_Entry.ReadonlyText = true;
                 }
-            
             }
-
-            
-
-
-
-            
-
-
         }
     }
 }

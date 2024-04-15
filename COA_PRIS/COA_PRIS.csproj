@@ -223,6 +223,18 @@
     <Compile Include="Screens\Subscreens\Maintenance\View_Record.Designer.cs">
       <DependentUpon>View_Record.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Subscreens\Projects\Add_Project.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Projects\Add_Project.Designer.cs">
+      <DependentUpon>Add_Project.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Projects\Create_Project.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Projects\Create_Project.Designer.cs">
+      <DependentUpon>Create_Project.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Subscreens\Projects\ProjectArchive.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,12 +246,6 @@
     </Compile>
     <Compile Include="Screens\Subscreens\Projects\ProjectCreate.Designer.cs">
       <DependentUpon>ProjectCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\Subscreens\Projects\ProjectLists.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\Subscreens\Projects\ProjectLists.Designer.cs">
-      <DependentUpon>ProjectLists.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserControlUtil\Cherie UI\Datagrid.cs">
@@ -272,11 +278,30 @@
     <Compile Include="UserControlUtil\Label_Rich.Designer.cs">
       <DependentUpon>Label_Rich.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlUtil\Label_Selector.cs">
+    <Compile Include="UserControlUtil\PRIS_UserControl\IPRIS_UserControl.cs" />
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_DatePicker.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlUtil\Label_Selector.Designer.cs">
-      <DependentUpon>Label_Selector.cs</DependentUpon>
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_DatePicker.Designer.cs">
+      <DependentUpon>PRIS_DatePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Entry.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Entry.Designer.cs">
+      <DependentUpon>PRIS_Label_Entry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Rich.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Rich.Designer.cs">
+      <DependentUpon>PRIS_Label_Rich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Selector.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Selector.Designer.cs">
+      <DependentUpon>PRIS_Label_Selector.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlUtil\Label_Text.cs">
       <SubType>UserControl</SubType>
@@ -284,22 +309,16 @@
     <Compile Include="UserControlUtil\Label_Text.Designer.cs">
       <DependentUpon>Label_Text.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlUtil\Label_TextLabel.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlUtil\Label_TextLabel.Designer.cs">
-      <DependentUpon>Label_TextLabel.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControlUtil\SearchBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControlUtil\SearchBar.Designer.cs">
       <DependentUpon>SearchBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlUtil\Selector.cs">
+    <Compile Include="UserControlUtil\PRIS_UserForms\Selector.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UserControlUtil\Selector.Designer.cs">
+    <Compile Include="UserControlUtil\PRIS_UserForms\Selector.Designer.cs">
       <DependentUpon>Selector.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\Activity_Manager.cs" />
@@ -398,14 +417,17 @@
     <EmbeddedResource Include="Screens\Subscreens\Maintenance\View_Record.resx">
       <DependentUpon>View_Record.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Projects\Add_Project.resx">
+      <DependentUpon>Add_Project.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Projects\Create_Project.resx">
+      <DependentUpon>Create_Project.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Projects\ProjectArchive.resx">
       <DependentUpon>ProjectArchive.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Projects\ProjectCreate.resx">
       <DependentUpon>ProjectCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Subscreens\Projects\ProjectLists.resx">
-      <DependentUpon>ProjectLists.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StatReportUserControl.resx">
       <DependentUpon>StatReportUserControl.cs</DependentUpon>
@@ -428,14 +450,23 @@
     <EmbeddedResource Include="UserControlUtil\Label_Rich.resx">
       <DependentUpon>Label_Rich.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlUtil\Label_Selector.resx">
-      <DependentUpon>Label_Selector.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlUtil\PRIS_UserControl\PRIS_DatePicker.resx">
+      <DependentUpon>PRIS_DatePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Entry.resx">
+      <DependentUpon>PRIS_Label_Entry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Rich.resx">
+      <DependentUpon>PRIS_Label_Rich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Selector.resx">
+      <DependentUpon>PRIS_Label_Selector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\Label_Text.resx">
       <DependentUpon>Label_Text.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlUtil\Label_TextLabel.resx">
-      <DependentUpon>Label_TextLabel.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlUtil\PRIS_UserForms\Selector.resx">
+      <DependentUpon>Selector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\SearchBar.resx">
       <DependentUpon>SearchBar.cs</DependentUpon>
@@ -519,6 +550,7 @@
     <None Include="Resources\business-report %281%29 - Copy.png" />
     <None Include="Resources\book-section.png" />
     <None Include="Resources\audit_icon.png" />
+    <None Include="Resources\archive.png" />
     <Content Include="Resources\caret-left %281%29 - Copy.png" />
     <Content Include="Resources\caret-left %281%29.png" />
     <Content Include="Resources\caret-left - Copy.png" />
@@ -544,6 +576,7 @@
     <None Include="Resources\logout %282%29.png" />
     <None Include="Resources\logout %283%29.png" />
     <None Include="Resources\info.png" />
+    <None Include="Resources\magnifying-glass.png" />
     <Content Include="Resources\Menu Bar Icon - Copy.png" />
     <Content Include="Resources\Menu Bar Icon.png" />
     <Content Include="Resources\Menu Bar Icon1 - Copy.png" />

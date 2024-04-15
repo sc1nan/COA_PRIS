@@ -31,136 +31,37 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.container_subPanel = new Guna.UI.WinForms.GunaPanel();
-            this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
-            this.data_View = new Guna.UI.WinForms.GunaDataGridView();
-            this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
+            this.bottom_Panel = new Guna.UI.WinForms.GunaPanel();
             this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
-            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.top_Panel = new Guna.UI.WinForms.GunaPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             this.refresh_Btn = new Guna.UI.WinForms.GunaButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.add_RecordBtn = new Guna.UI.WinForms.GunaButton();
             this.view_RecordBtn = new Guna.UI.WinForms.GunaButton();
+            this.container_subPanel = new Guna.UI.WinForms.GunaPanel();
+            this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
+            this.data_View = new Guna.UI.WinForms.GunaDataGridView();
+            this.bottom_Panel.SuspendLayout();
+            this.top_Panel.SuspendLayout();
+            this.flowLayoutPanel2.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.container_subPanel.SuspendLayout();
             this.gunaPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_View)).BeginInit();
-            this.gunaPanel2.SuspendLayout();
-            this.gunaPanel1.SuspendLayout();
-            this.flowLayoutPanel2.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // container_subPanel
+            // bottom_Panel
             // 
-            this.container_subPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.container_subPanel.BackColor = System.Drawing.Color.Transparent;
-            this.container_subPanel.Controls.Add(this.gunaPanel3);
-            this.container_subPanel.Location = new System.Drawing.Point(0, 50);
-            this.container_subPanel.Margin = new System.Windows.Forms.Padding(0);
-            this.container_subPanel.Name = "container_subPanel";
-            this.container_subPanel.Size = new System.Drawing.Size(1567, 717);
-            this.container_subPanel.TabIndex = 2;
-            // 
-            // gunaPanel3
-            // 
-            this.gunaPanel3.BackColor = System.Drawing.Color.White;
-            this.gunaPanel3.Controls.Add(this.data_View);
-            this.gunaPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaPanel3.Location = new System.Drawing.Point(0, 0);
-            this.gunaPanel3.Margin = new System.Windows.Forms.Padding(8);
-            this.gunaPanel3.Name = "gunaPanel3";
-            this.gunaPanel3.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
-            this.gunaPanel3.Size = new System.Drawing.Size(1567, 717);
-            this.gunaPanel3.TabIndex = 0;
-            // 
-            // data_View
-            // 
-            this.data_View.AllowUserToAddRows = false;
-            this.data_View.AllowUserToDeleteRows = false;
-            this.data_View.AllowUserToResizeColumns = false;
-            this.data_View.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.data_View.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.data_View.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.data_View.BackgroundColor = System.Drawing.Color.Gainsboro;
-            this.data_View.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.data_View.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.data_View.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data_View.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.data_View.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.data_View.DefaultCellStyle = dataGridViewCellStyle3;
-            this.data_View.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.data_View.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
-            this.data_View.EnableHeadersVisualStyles = false;
-            this.data_View.GridColor = System.Drawing.Color.Gainsboro;
-            this.data_View.Location = new System.Drawing.Point(0, 8);
-            this.data_View.Margin = new System.Windows.Forms.Padding(0);
-            this.data_View.MultiSelect = false;
-            this.data_View.Name = "data_View";
-            this.data_View.ReadOnly = true;
-            this.data_View.RowHeadersVisible = false;
-            this.data_View.RowTemplate.DividerHeight = 1;
-            this.data_View.RowTemplate.ReadOnly = true;
-            this.data_View.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.data_View.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.data_View.ShowCellErrors = false;
-            this.data_View.ShowCellToolTips = false;
-            this.data_View.ShowEditingIcon = false;
-            this.data_View.ShowRowErrors = false;
-            this.data_View.Size = new System.Drawing.Size(1567, 701);
-            this.data_View.TabIndex = 1;
-            this.data_View.Tag = "Table";
-            this.data_View.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
-            this.data_View.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.data_View.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.data_View.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.data_View.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.data_View.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.data_View.ThemeStyle.BackColor = System.Drawing.Color.Gainsboro;
-            this.data_View.ThemeStyle.GridColor = System.Drawing.Color.Gainsboro;
-            this.data_View.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.data_View.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.data_View.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.data_View.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.data_View.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.data_View.ThemeStyle.HeaderStyle.Height = 23;
-            this.data_View.ThemeStyle.ReadOnly = true;
-            this.data_View.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.data_View.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.data_View.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.data_View.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.data_View.ThemeStyle.RowsStyle.Height = 22;
-            this.data_View.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.data_View.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            // 
-            // gunaPanel2
-            // 
-            this.gunaPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaPanel2.Controls.Add(this.gunaButton3);
-            this.gunaPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gunaPanel2.Location = new System.Drawing.Point(0, 767);
-            this.gunaPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.gunaPanel2.Name = "gunaPanel2";
-            this.gunaPanel2.Size = new System.Drawing.Size(1567, 50);
-            this.gunaPanel2.TabIndex = 4;
+            this.bottom_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.bottom_Panel.Controls.Add(this.gunaButton3);
+            this.bottom_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bottom_Panel.Location = new System.Drawing.Point(0, 767);
+            this.bottom_Panel.Margin = new System.Windows.Forms.Padding(0);
+            this.bottom_Panel.Name = "bottom_Panel";
+            this.bottom_Panel.Size = new System.Drawing.Size(1567, 50);
+            this.bottom_Panel.TabIndex = 4;
             // 
             // gunaButton3
             // 
@@ -192,17 +93,17 @@
             this.gunaButton3.Text = "Deactivate Record";
             this.gunaButton3.Visible = false;
             // 
-            // gunaPanel1
+            // top_Panel
             // 
-            this.gunaPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaPanel1.Controls.Add(this.flowLayoutPanel2);
-            this.gunaPanel1.Controls.Add(this.flowLayoutPanel1);
-            this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gunaPanel1.Location = new System.Drawing.Point(0, 0);
-            this.gunaPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(1567, 50);
-            this.gunaPanel1.TabIndex = 3;
+            this.top_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.top_Panel.Controls.Add(this.flowLayoutPanel2);
+            this.top_Panel.Controls.Add(this.flowLayoutPanel1);
+            this.top_Panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.top_Panel.Location = new System.Drawing.Point(0, 0);
+            this.top_Panel.Margin = new System.Windows.Forms.Padding(0);
+            this.top_Panel.Name = "top_Panel";
+            this.top_Panel.Size = new System.Drawing.Size(1567, 50);
+            this.top_Panel.TabIndex = 3;
             // 
             // flowLayoutPanel2
             // 
@@ -329,43 +230,140 @@
             this.view_RecordBtn.Text = "View Record";
             this.view_RecordBtn.Click += new System.EventHandler(this.view_RecordBtn_Click);
             // 
+            // container_subPanel
+            // 
+            this.container_subPanel.BackColor = System.Drawing.Color.Transparent;
+            this.container_subPanel.Controls.Add(this.gunaPanel3);
+            this.container_subPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container_subPanel.Location = new System.Drawing.Point(0, 50);
+            this.container_subPanel.Margin = new System.Windows.Forms.Padding(0);
+            this.container_subPanel.Name = "container_subPanel";
+            this.container_subPanel.Size = new System.Drawing.Size(1567, 717);
+            this.container_subPanel.TabIndex = 5;
+            // 
+            // gunaPanel3
+            // 
+            this.gunaPanel3.BackColor = System.Drawing.Color.White;
+            this.gunaPanel3.Controls.Add(this.data_View);
+            this.gunaPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gunaPanel3.Location = new System.Drawing.Point(0, 0);
+            this.gunaPanel3.Margin = new System.Windows.Forms.Padding(8);
+            this.gunaPanel3.Name = "gunaPanel3";
+            this.gunaPanel3.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
+            this.gunaPanel3.Size = new System.Drawing.Size(1567, 717);
+            this.gunaPanel3.TabIndex = 0;
+            // 
+            // data_View
+            // 
+            this.data_View.AllowUserToAddRows = false;
+            this.data_View.AllowUserToDeleteRows = false;
+            this.data_View.AllowUserToResizeColumns = false;
+            this.data_View.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.data_View.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.data_View.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.data_View.BackgroundColor = System.Drawing.Color.Gainsboro;
+            this.data_View.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.data_View.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.data_View.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data_View.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.data_View.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.data_View.DefaultCellStyle = dataGridViewCellStyle3;
+            this.data_View.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.data_View.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.data_View.EnableHeadersVisualStyles = false;
+            this.data_View.GridColor = System.Drawing.Color.Gainsboro;
+            this.data_View.Location = new System.Drawing.Point(0, 8);
+            this.data_View.Margin = new System.Windows.Forms.Padding(0);
+            this.data_View.MultiSelect = false;
+            this.data_View.Name = "data_View";
+            this.data_View.ReadOnly = true;
+            this.data_View.RowHeadersVisible = false;
+            this.data_View.RowTemplate.DividerHeight = 1;
+            this.data_View.RowTemplate.ReadOnly = true;
+            this.data_View.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.data_View.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.data_View.ShowCellErrors = false;
+            this.data_View.ShowCellToolTips = false;
+            this.data_View.ShowEditingIcon = false;
+            this.data_View.ShowRowErrors = false;
+            this.data_View.Size = new System.Drawing.Size(1567, 701);
+            this.data_View.TabIndex = 1;
+            this.data_View.Tag = "Table";
+            this.data_View.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
+            this.data_View.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.data_View.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.data_View.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.data_View.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.data_View.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.data_View.ThemeStyle.BackColor = System.Drawing.Color.Gainsboro;
+            this.data_View.ThemeStyle.GridColor = System.Drawing.Color.Gainsboro;
+            this.data_View.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.data_View.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.data_View.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.data_View.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.data_View.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.data_View.ThemeStyle.HeaderStyle.Height = 23;
+            this.data_View.ThemeStyle.ReadOnly = true;
+            this.data_View.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.data_View.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.data_View.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            this.data_View.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.data_View.ThemeStyle.RowsStyle.Height = 22;
+            this.data_View.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.data_View.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            // 
             // Employee_Submodule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1567, 817);
-            this.Controls.Add(this.gunaPanel2);
-            this.Controls.Add(this.gunaPanel1);
             this.Controls.Add(this.container_subPanel);
+            this.Controls.Add(this.bottom_Panel);
+            this.Controls.Add(this.top_Panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Employee_Submodule";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Employee_Submodule_Load);
+            this.bottom_Panel.ResumeLayout(false);
+            this.top_Panel.ResumeLayout(false);
+            this.top_Panel.PerformLayout();
+            this.flowLayoutPanel2.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.container_subPanel.ResumeLayout(false);
             this.gunaPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.data_View)).EndInit();
-            this.gunaPanel2.ResumeLayout(false);
-            this.gunaPanel1.ResumeLayout(false);
-            this.gunaPanel1.PerformLayout();
-            this.flowLayoutPanel2.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private Guna.UI.WinForms.GunaPanel container_subPanel;
-        private Guna.UI.WinForms.GunaPanel gunaPanel1;
-        private Guna.UI.WinForms.GunaPanel gunaPanel2;
+        private Guna.UI.WinForms.GunaPanel top_Panel;
+        private Guna.UI.WinForms.GunaPanel bottom_Panel;
         private Guna.UI.WinForms.GunaButton gunaButton3;
-        private Guna.UI.WinForms.GunaPanel gunaPanel3;
-        private Guna.UI.WinForms.GunaDataGridView data_View;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI.WinForms.GunaButton refresh_Btn;
         private Guna.UI.WinForms.GunaButton add_RecordBtn;
         private Guna.UI.WinForms.GunaButton view_RecordBtn;
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel1;
+        private Guna.UI.WinForms.GunaPanel container_subPanel;
+        private Guna.UI.WinForms.GunaPanel gunaPanel3;
+        private Guna.UI.WinForms.GunaDataGridView data_View;
     }
 }

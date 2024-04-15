@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using COA_PRIS.UserControlUtil;
 using COA_PRIS.Utilities;
 using COA_PRIS.Screens;
+using COA_PRIS.UserControlUtil.PRIS_UserControl;
 
 namespace COA_PRIS.Screens.Subscreens.Maintenance
 {
@@ -37,11 +38,14 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
 
         private void InitializeControls(UserControl[] controls)
         {
+            control_Panel.SuspendLayout();
             foreach (var control in controls)
             {
                 control_Panel.Controls.Add(control);
-                control.Size = new Size(control_Panel.Width-8, control.Height);
+                control.Size = new Size(control_Panel.Width, control.Height);
             }
+            control_Panel.ResumeLayout(false);
+            control_Panel.PerformLayout();
         }
 
         private void save_Btn_Click(object sender, EventArgs e)
@@ -54,8 +58,14 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
                 var values = new List<string> { code_Title.Text };
 
                 // Loops through the controls and add its value to the  list.
-                foreach (Control control in control_Panel.Controls)
-                    values.Add(control.Text?.Trim() ?? "");
+                foreach (UserControl control in control_Panel.Controls) 
+                {
+                    if (control is IPRIS_UserControl)
+                    {
+                        var user_control = (IPRIS_UserControl)control;
+                        values.Add(user_control.Value?.Trim() ?? "");
+                    }
+                }
 
                 // Adds the active account
                 values.Add("james");
@@ -65,7 +75,6 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
 
                 using (database_Manager) 
                     ret = database_Manager.ExecuteNonQuery(util.generate_Query(entries, Insert_Query));
-
             }
 
             if (ret == 1) 
@@ -97,5 +106,6 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
             is_ClosingProgrammatically = false;
             Close();
         }
+
     }
 }

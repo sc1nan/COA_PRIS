@@ -31,8 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.title = new Guna.UI.WinForms.GunaLabel();
-            this.label_rich_error = new System.Windows.Forms.ErrorProvider(this.components);
             this.richText = new Guna.UI.WinForms.GunaTextBox();
+            this.label_rich_error = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.label_rich_error)).BeginInit();
             this.SuspendLayout();
@@ -65,11 +65,6 @@
             this.title.Text = "Label";
             this.title.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // label_rich_error
-            // 
-            this.label_rich_error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.label_rich_error.ContainerControl = this;
-            // 
             // richText
             // 
             this.richText.BackColor = System.Drawing.Color.Transparent;
@@ -92,7 +87,13 @@
             this.richText.SelectedText = "";
             this.richText.Size = new System.Drawing.Size(377, 124);
             this.richText.TabIndex = 1;
+            this.richText.Tag = "req!";
             this.richText.TextChanged += new System.EventHandler(this.richText_TextChanged);
+            // 
+            // label_rich_error
+            // 
+            this.label_rich_error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.label_rich_error.ContainerControl = this;
             // 
             // Label_Rich
             // 

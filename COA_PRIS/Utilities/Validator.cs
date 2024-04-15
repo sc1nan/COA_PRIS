@@ -57,7 +57,7 @@ namespace COA_PRIS.Utilities
 
             foreach (GunaTextBox text_Box in guna_TextBox) 
             {
-                if (string.IsNullOrWhiteSpace(text_Box.Text))
+                if (string.IsNullOrWhiteSpace(text_Box.Text) && !text_Box.Tag.ToString().Contains("!req"))
                 {
                     error.SetError(text_Box, $"{text_Box.Tag} is required.");
                     text_Box.BorderColor = Color.Red;

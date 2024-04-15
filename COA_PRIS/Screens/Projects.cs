@@ -20,9 +20,10 @@ namespace COA_PRIS.Screens
         private Tab_Manager tab_Manager;
         //private readonly Inactive_Submodule inactive_Submodule = new Inactive_Submodule();
 
-        private readonly ProjectLists Lists_Submodule = new ProjectLists();
-        private readonly ProjectCreate Create_Submodule = new ProjectCreate();
-        private readonly ProjectArchive Archive_Submodule = new ProjectArchive();
+        //private readonly ProjectLists Lists_Submodule = new ProjectLists();
+        //private readonly ProjectCreate Create_Submodule = new ProjectCreate();
+        //private readonly ProjectArchive Archive_Submodule = new ProjectArchive();
+        private readonly Create_Project create_Project = new Create_Project();
         public Projects()
         {
             InitializeComponent();
@@ -34,23 +35,17 @@ namespace COA_PRIS.Screens
             foreach (Control control in nav_panel.Controls)
                 if (control is GunaButton)
                     tab_Manager.Nav_buttons.Add(control);
-            tab_Manager.active_Button(lists_Btn, false);
-            lists_Btn.PerformClick();
+            tab_Manager.set_Colors("#1B303B", "#C7C8CC");
+            tab_Manager.active_Button(record_Btn, false);
+            record_Btn.PerformClick();
         }
         private void button_Clicked(object sender, EventArgs e)
         {
             var button = (GunaButton)sender;
             switch (button.Name)
             {
-                case "lists_Btn":
-                    current_Form = tab_Manager.switch_Form(Lists_Submodule, current_Form, container_Panel);
-                    break;
-
-                case "create_Btn":
-                    current_Form = tab_Manager.switch_Form(Create_Submodule, current_Form, container_Panel);
-                    break;
-                case "archive_Btn":
-                    current_Form = tab_Manager.switch_Form(Archive_Submodule, current_Form, container_Panel);
+                case "record_Btn":
+                    current_Form = tab_Manager.switch_Form(create_Project, current_Form, container_Panel);
                     break;
 
             }
