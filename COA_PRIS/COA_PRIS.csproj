@@ -181,6 +181,12 @@
     <Compile Include="Screens\Projects.Designer.cs">
       <DependentUpon>Projects.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Reports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Reports.Designer.cs">
+      <DependentUpon>Reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Splash Screen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -395,6 +401,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Projects.resx">
       <DependentUpon>Projects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Reports.resx">
+      <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Splash Screen.resx">
       <DependentUpon>Splash Screen.cs</DependentUpon>

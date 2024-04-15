@@ -34,6 +34,8 @@ namespace COA_PRIS.Screens
             searchBar1.Ambatu(logsSearchBox_TextChanged);
             ChangeDataDates();
             dateFilter1.Ambatu(dateTimePicker_ValueChanged);
+            dateFilter1.toValue = DateTime.Today;
+            dateFilter1.fromValue = DateTime.Today;
             //set theme to data grid view
             AddThemeToDGV();
         }
