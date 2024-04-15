@@ -1,5 +1,6 @@
 ﻿using COA_PRIS.CrystalReports;
 using COA_PRIS.Utilities;
+using COA_PRIS.UserControlUtil.Jesser_Util;
 using Guna.UI.WinForms;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
         Util util = new Util();
         readonly string[] log_table_names = { "user_name", "activity" };
         private int min_lim = 0;
+        private readonly int max_lim = 15;
         private int page_cnt = 1;
         public AccountLogging()
         {
@@ -34,6 +36,8 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
             dateFilter1.Ambatu(dateTimePicker_ValueChanged);
             dateFilter1.toValue = DateTime.Today;
             dateFilter1.fromValue = DateTime.Today;
+            //disables next logs button
+            Check_Count();
             //set theme to data grid view
             AddThemeToDGV();
         }
@@ -93,34 +97,47 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
         private void previous_Button_Click(object sender, EventArgs e)
         {
             page_cnt--;
-            next_Button.Enabled = true;
-            min_lim = 15 * (page_cnt - 1);
-            Populate_Table(3);
             pageCountTextbox.Text = page_cnt.ToString();
-            if (page_cnt <= 1) previous_Button.Enabled = false;
+            //next_Button.Enabled = true;
+            //min_lim = max_lim * (page_cnt - 1);
+            //if (page_cnt <= 1) previous_Button.Enabled = false;
+            Check_Count();
+            Populate_Table(3);
         }
 
         private void next_Button_Click(object sender, EventArgs e)
         {
             page_cnt++;
-            previous_Button.Enabled = true;
-            min_lim = 15 * (page_cnt - 1);
-            Populate_Table(3);
             pageCountTextbox.Text = page_cnt.ToString();
-
-            if ((min_lim + 15) >= activity_manager.Count_Logs()) next_Button.Enabled = false;
+            //previous_Button.Enabled = true;
+            //min_lim = max_lim * (page_cnt - 1);
+            //if ((min_lim + max_lim) >= activity_manager.Count_Activity_Logs()) next_Button.Enabled = false;
+            Check_Count();
+            Populate_Table(3);
         }
 
         private void pageCountTextbox_KeyDown(object sender, KeyEventArgs e)
         {
+            //checks to see if user presses enter
             if (e.KeyData == Keys.Enter)
             {
-                page_cnt = Convert.ToInt32(pageCountTextbox.Text);
-
-                if (page_cnt <= 1) previous_Button.Enabled = false;
-                min_lim = 15 * (page_cnt - 1);
-                Populate_Table(3);
-                AddThemeToDGV();
+                int result;
+                object b = pageCountTextbox.Text;
+                //checks to see if user input is a number
+                if (int.TryParse(b.ToString(), out result))
+                {
+                    //checks maximum amount of pages
+                    int xd = (Account_Logs_Count() / 15) + 1;
+                    //checks if user input is less than or equal to maximum amount of pages and not below 1
+                    if (result <= xd && result >= 1)
+                    {
+                        page_cnt = result; //puts user input as page count
+                        Check_Count();
+                        Populate_Table(3);
+                    }
+                }
+                //if wrong, puts last know page count to text box
+                pageCountTextbox.Text = page_cnt.ToString();
             }
         }
 
@@ -164,6 +181,31 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
         private void refresh_Button_Click(object sender, EventArgs e)
         {
             Populate_Table(3);
+        }
+
+        private void AccountLogging_VisibleChanged(object sender, EventArgs e)
+        {
+            refresh_Button.PerformClick();
+        }
+        private void Check_Count()
+        {
+            min_lim = max_lim * (page_cnt - 1);
+
+            if ((min_lim + max_lim) >= Account_Logs_Count()) next_Button.Enabled = false;
+            else next_Button.Enabled = true;
+
+            if (page_cnt <= 1) previous_Button.Enabled = false;
+            else previous_Button.Enabled = true;
+
+        }
+
+        private int Account_Logs_Count()
+        {
+            string from_Date = dateFilter1.fromValue.ToString("yyyy/MM/dd 00:00:00");
+            string current_time = DateTime.Now.ToString("HH':'mm':'ss");
+            string to_Date = dateFilter1.toValue.ToString("yyyy/MM/dd " + current_time);
+            int log_count = activity_manager.Count_Account_Logs(from_Date, to_Date);
+            return log_count;
         }
     }
 }

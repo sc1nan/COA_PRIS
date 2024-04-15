@@ -224,7 +224,7 @@ namespace COA_PRIS.Screens
                     break;
 
 
-                case "Constractor":
+                case "Contractor":
                     controls = new UserControl[]
                     {
                        new Label_Text("Contractor Name:"),
@@ -373,7 +373,7 @@ namespace COA_PRIS.Screens
                     break;
 
 
-                case "Constractor":
+                case "Contractor":
                     controls = new UserControl[]
                     {
                        new Label_Text("Contractor Name:"),

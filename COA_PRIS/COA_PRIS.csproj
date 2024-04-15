@@ -284,6 +284,7 @@
     <Compile Include="UserControlUtil\DateFilter.Designer.cs">
       <DependentUpon>DateFilter.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlUtil\Jesser Util\GenericTable.cs" />
     <Compile Include="UserControlUtil\Label_Drop.cs">
       <SubType>UserControl</SubType>
     </Compile>

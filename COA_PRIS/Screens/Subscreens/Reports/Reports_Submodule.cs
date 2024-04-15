@@ -137,5 +137,10 @@ namespace COA_PRIS.Screens.Subscreens.Reports
         {
             PopulateTable(3);
         }
+
+        private void Reports_Submodule_VisibleChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -97,7 +97,7 @@
             this.account_Logs_Btn.FocusedColor = System.Drawing.Color.Empty;
             this.account_Logs_Btn.Font = new System.Drawing.Font("Bahnschrift", 14F);
             this.account_Logs_Btn.ForeColor = System.Drawing.Color.White;
-            this.account_Logs_Btn.Image = global::COA_PRIS.Properties.Resources.document;
+            this.account_Logs_Btn.Image = global::COA_PRIS.Properties.Resources.employee;
             this.account_Logs_Btn.ImageOffsetX = 5;
             this.account_Logs_Btn.ImageSize = new System.Drawing.Size(30, 30);
             this.account_Logs_Btn.Location = new System.Drawing.Point(0, 0);
@@ -128,7 +128,7 @@
             this.inactive_Btn.FocusedColor = System.Drawing.Color.Empty;
             this.inactive_Btn.Font = new System.Drawing.Font("Bahnschrift", 14F);
             this.inactive_Btn.ForeColor = System.Drawing.Color.White;
-            this.inactive_Btn.Image = global::COA_PRIS.Properties.Resources.moon;
+            this.inactive_Btn.Image = global::COA_PRIS.Properties.Resources.document;
             this.inactive_Btn.ImageOffsetX = 5;
             this.inactive_Btn.ImageSize = new System.Drawing.Size(30, 30);
             this.inactive_Btn.Location = new System.Drawing.Point(223, 0);
@@ -139,9 +139,9 @@
             this.inactive_Btn.OnHoverForeColor = System.Drawing.Color.White;
             this.inactive_Btn.OnHoverImage = null;
             this.inactive_Btn.OnPressedColor = System.Drawing.Color.Black;
-            this.inactive_Btn.Size = new System.Drawing.Size(180, 55);
+            this.inactive_Btn.Size = new System.Drawing.Size(205, 55);
             this.inactive_Btn.TabIndex = 1;
-            this.inactive_Btn.Text = "INACTIVE";
+            this.inactive_Btn.Text = "ACTIVITY LOGS";
             this.inactive_Btn.TextOffsetX = 5;
             this.inactive_Btn.Click += new System.EventHandler(this.button_Click);
             // 

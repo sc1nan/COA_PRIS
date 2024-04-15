@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataTableMultiplePages));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -37,18 +38,11 @@
             this.next_button = new Guna.UI.WinForms.GunaButton();
             this.bottom_panel = new System.Windows.Forms.TableLayoutPanel();
             this.data_table = new Guna.UI.WinForms.GunaDataGridView();
-            this.sort_combobox = new Guna.UI.WinForms.GunaComboBox();
             this.top_panel = new System.Windows.Forms.TableLayoutPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.search_box = new Guna.UI.WinForms.GunaTextBox();
             this.date_table_panel = new Guna.UI.WinForms.GunaPanel();
             this.page_control_panel.SuspendLayout();
             this.bottom_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_table)).BeginInit();
-            this.top_panel.SuspendLayout();
-            this.flowLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.date_table_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +65,6 @@
             this.page_count_textbox.TabIndex = 3;
             this.page_count_textbox.Text = "1";
             this.page_count_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.page_count_textbox.TextChanged += new System.EventHandler(this.page_count_textbox_TextChanged);
             this.page_count_textbox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.page_count_textbox_KeyDown);
             // 
             // page_control_panel
@@ -102,14 +95,14 @@
             this.previous_button.FocusedColor = System.Drawing.Color.Empty;
             this.previous_button.Font = new System.Drawing.Font("Bahnschrift", 27.75F, System.Drawing.FontStyle.Bold);
             this.previous_button.ForeColor = System.Drawing.Color.White;
-            //this.previous_button.Image = global::COA_PRIS.Properties.Resources.caret_left;
+            this.previous_button.Image = ((System.Drawing.Image)(resources.GetObject("previous_button.Image")));
             this.previous_button.ImageSize = new System.Drawing.Size(30, 30);
             this.previous_button.Location = new System.Drawing.Point(3, 3);
             this.previous_button.Name = "previous_button";
             this.previous_button.OnHoverBaseColor = System.Drawing.Color.White;
             this.previous_button.OnHoverBorderColor = System.Drawing.Color.Black;
             this.previous_button.OnHoverForeColor = System.Drawing.Color.White;
-            //this.previous_button.OnHoverImage = global::COA_PRIS.Properties.Resources.caret_left__1_;
+            this.previous_button.OnHoverImage = null;
             this.previous_button.OnPressedColor = System.Drawing.Color.Black;
             this.previous_button.Size = new System.Drawing.Size(50, 50);
             this.previous_button.TabIndex = 1;
@@ -128,14 +121,14 @@
             this.next_button.FocusedColor = System.Drawing.Color.Empty;
             this.next_button.Font = new System.Drawing.Font("Bahnschrift", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.next_button.ForeColor = System.Drawing.Color.White;
-            //this.next_button.Image = global::COA_PRIS.Properties.Resources.caret_right;
+            this.next_button.Image = ((System.Drawing.Image)(resources.GetObject("next_button.Image")));
             this.next_button.ImageSize = new System.Drawing.Size(30, 30);
             this.next_button.Location = new System.Drawing.Point(129, 3);
             this.next_button.Name = "next_button";
             this.next_button.OnHoverBaseColor = System.Drawing.Color.White;
             this.next_button.OnHoverBorderColor = System.Drawing.Color.Black;
             this.next_button.OnHoverForeColor = System.Drawing.Color.White;
-            //this.next_button.OnHoverImage = global::COA_PRIS.Properties.Resources.caret_right__1_;
+            this.next_button.OnHoverImage = null;
             this.next_button.OnPressedColor = System.Drawing.Color.Black;
             this.next_button.Size = new System.Drawing.Size(50, 50);
             this.next_button.TabIndex = 2;
@@ -220,29 +213,6 @@
             this.data_table.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.data_table.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // sort_combobox
-            // 
-            this.sort_combobox.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.sort_combobox.BackColor = System.Drawing.Color.Transparent;
-            this.sort_combobox.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(109)))), ((int)(((byte)(128)))));
-            this.sort_combobox.BorderColor = System.Drawing.Color.Transparent;
-            this.sort_combobox.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.sort_combobox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.sort_combobox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.sort_combobox.FocusedColor = System.Drawing.Color.Empty;
-            this.sort_combobox.Font = new System.Drawing.Font("Bahnschrift", 16.25F);
-            this.sort_combobox.ForeColor = System.Drawing.Color.White;
-            this.sort_combobox.FormattingEnabled = true;
-            this.sort_combobox.Location = new System.Drawing.Point(801, 3);
-            this.sort_combobox.Name = "sort_combobox";
-            this.sort_combobox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.sort_combobox.OnHoverItemForeColor = System.Drawing.Color.White;
-            this.sort_combobox.Radius = 12;
-            this.sort_combobox.Size = new System.Drawing.Size(146, 35);
-            this.sort_combobox.TabIndex = 9;
-            this.sort_combobox.SelectedIndexChanged += new System.EventHandler(this.sort_combobox_SelectedIndexChanged);
-            this.sort_combobox.SelectedValueChanged += new System.EventHandler(this.sort_combobox_SelectedValueChanged);
-            // 
             // top_panel
             // 
             this.top_panel.BackColor = System.Drawing.Color.White;
@@ -250,8 +220,6 @@
             this.top_panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.top_panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 156F));
             this.top_panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 8F));
-            this.top_panel.Controls.Add(this.flowLayoutPanel1, 0, 0);
-            this.top_panel.Controls.Add(this.sort_combobox, 1, 0);
             this.top_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.top_panel.Location = new System.Drawing.Point(0, 0);
             this.top_panel.Name = "top_panel";
@@ -259,48 +227,6 @@
             this.top_panel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.top_panel.Size = new System.Drawing.Size(960, 40);
             this.top_panel.TabIndex = 8;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Controls.Add(this.pictureBox1);
-            this.flowLayoutPanel1.Controls.Add(this.search_box);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(790, 34);
-            this.flowLayoutPanel1.TabIndex = 10;
-            // 
-            // pictureBox1
-            // 
-            //this.pictureBox1.Image = global::COA_PRIS.Properties.Resources.search;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 30);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // search_box
-            // 
-            this.search_box.BackColor = System.Drawing.Color.Transparent;
-            this.search_box.BaseColor = System.Drawing.Color.Transparent;
-            this.search_box.BorderColor = System.Drawing.Color.White;
-            this.search_box.BorderSize = 0;
-            this.search_box.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.search_box.FocusedBaseColor = System.Drawing.Color.White;
-            this.search_box.FocusedBorderColor = System.Drawing.Color.Transparent;
-            this.search_box.FocusedForeColor = System.Drawing.SystemColors.ControlText;
-            this.search_box.Font = new System.Drawing.Font("Bahnschrift", 16.25F);
-            this.search_box.Location = new System.Drawing.Point(38, 0);
-            this.search_box.Margin = new System.Windows.Forms.Padding(0);
-            this.search_box.Name = "search_box";
-            this.search_box.PasswordChar = '\0';
-            this.search_box.Radius = 5;
-            this.search_box.SelectedText = "";
-            this.search_box.Size = new System.Drawing.Size(509, 37);
-            this.search_box.TabIndex = 4;
-            this.search_box.TextChanged += new System.EventHandler(this.search_box_TextChanged);
             // 
             // date_table_panel
             // 
@@ -325,9 +251,6 @@
             this.bottom_panel.ResumeLayout(false);
             this.bottom_panel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_table)).EndInit();
-            this.top_panel.ResumeLayout(false);
-            this.flowLayoutPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.date_table_panel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -341,11 +264,7 @@
         private System.Windows.Forms.FlowLayoutPanel page_control_panel;
         private System.Windows.Forms.TableLayoutPanel bottom_panel;
         private Guna.UI.WinForms.GunaDataGridView data_table;
-        private Guna.UI.WinForms.GunaComboBox sort_combobox;
         private System.Windows.Forms.TableLayoutPanel top_panel;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI.WinForms.GunaTextBox search_box;
         private Guna.UI.WinForms.GunaPanel date_table_panel;
     }
 }
