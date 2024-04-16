@@ -7,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace COA_PRIS.Utilities
@@ -45,7 +46,10 @@ namespace COA_PRIS.Utilities
             {
                 dt = db_Manager.ExecuteQuery(string.Format(Database_Query.display_specified_account_logs, from, to, minimium, searchwords, sort_by));
                 Database_Query.last_query = string.Format(Database_Query.display_specified_account_logs, from, to, minimium, searchwords, sort_by);
-                //Console.WriteLine(Database_Query.last_query);
+                int indexOfSteam = Database_Query.last_query.IndexOf("LIMIT");
+                if (indexOfSteam >= 0)
+                    Database_Query.last_query = Database_Query.last_query.Remove(indexOfSteam);
+                Console.WriteLine(Database_Query.last_query);
             }
             return dt;
         }
@@ -58,6 +62,10 @@ namespace COA_PRIS.Utilities
             {
                 dt = db_Manager.ExecuteQuery(string.Format(Database_Query.display_account_logs_by_date, from, to, minimium));
                 Database_Query.last_query = string.Format(Database_Query.display_account_logs_by_date, from, to, minimium);
+                int indexOfSteam = Database_Query.last_query.IndexOf("LIMIT");
+                if (indexOfSteam >= 0)
+                    Database_Query.last_query = Database_Query.last_query.Remove(indexOfSteam);
+                Console.WriteLine(Database_Query.last_query);
             }
             return dt;
         }
@@ -71,6 +79,10 @@ namespace COA_PRIS.Utilities
             {
                 dt = db_Manager.ExecuteQuery(string.Format(Database_Query.display_activity_logs_by_date, from, to, minimium));
                 Database_Query.last_query = string.Format(Database_Query.display_activity_logs_by_date, from, to, minimium);
+                int indexOfSteam = Database_Query.last_query.IndexOf("LIMIT");
+                if (indexOfSteam >= 0)
+                    Database_Query.last_query = Database_Query.last_query.Remove(indexOfSteam);
+                Console.WriteLine(Database_Query.last_query);
             }
             return dt;
         }
@@ -83,6 +95,10 @@ namespace COA_PRIS.Utilities
             {
                 dt = db_Manager.ExecuteQuery(string.Format(Database_Query.display_specified_activity_logs, from, to, minimium, searchwords, sort_by));
                 Database_Query.last_query = string.Format(Database_Query.display_specified_activity_logs, from, to, minimium, searchwords, sort_by);
+                int indexOfSteam = Database_Query.last_query.IndexOf("LIMIT");
+                if (indexOfSteam >= 0)
+                    Database_Query.last_query = Database_Query.last_query.Remove(indexOfSteam);
+                Console.WriteLine(Database_Query.last_query);
                 //Console.WriteLine(Database_Query.last_query);
             }
             return dt;

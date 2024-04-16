@@ -26,6 +26,7 @@ namespace COA_PRIS.CrystalReports
             {
                 try
                 {
+                    Console.WriteLine(Database_Query.last_query);
                     db_manager.ExecuteQueryReportViewerDataSource(Database_Query.last_query, reportViewer1);
                 }
                 catch (Exception ex)

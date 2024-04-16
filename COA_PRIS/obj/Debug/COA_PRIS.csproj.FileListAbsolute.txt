@@ -609,3 +609,4 @@ C:\Users\COA\source\repos\pristest\COA_PRIS\obj\Debug\COA_PRIS.csproj.Up2Date
 C:\Users\COA\source\repos\pristest\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Reports.Reports_Submodule.resources
 C:\Users\COA\source\repos\pristest\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.ActivityLogs.ActivityLogging.resources
 C:\Users\COA\source\repos\pristest\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.ActivityLogs.AccountLogging.resources
+C:\Users\COA\source\repos\pristest\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Reports.ProjectRequest_Reports_Sub.resources

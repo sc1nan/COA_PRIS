@@ -20,8 +20,8 @@ namespace COA_PRIS.Screens
 
         private Form current_Form = null;
 
-        private readonly Reports_Submodule reports_Submodule = new Reports_Submodule();
-        private readonly Inactive_Submodule inactive_Submodule = new Inactive_Submodule();
+        private readonly ProjectRequest_Reports_Sub reports_Submodule = new ProjectRequest_Reports_Sub();
+        private readonly Reports_Submodule inactive_Submodule = new Reports_Submodule();
 
         public Reports()
         {

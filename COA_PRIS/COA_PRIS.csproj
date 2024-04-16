@@ -259,6 +259,12 @@
     <Compile Include="Screens\Subscreens\Projects\ProjectLists.Designer.cs">
       <DependentUpon>ProjectLists.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Subscreens\Reports\ProjectRequest_Reports_Sub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Reports\ProjectRequest_Reports_Sub.Designer.cs">
+      <DependentUpon>ProjectRequest_Reports_Sub.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Subscreens\Reports\Reports_Submodule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -285,6 +291,7 @@
       <DependentUpon>DateFilter.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlUtil\Jesser Util\GenericTable.cs" />
+    <Compile Include="UserControlUtil\Jesser Util\IGenericTableVariables.cs" />
     <Compile Include="UserControlUtil\Label_Drop.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -440,6 +447,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Projects\ProjectLists.resx">
       <DependentUpon>ProjectLists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Reports\ProjectRequest_Reports_Sub.resx">
+      <DependentUpon>ProjectRequest_Reports_Sub.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Reports\Reports_Submodule.resx">
       <DependentUpon>Reports_Submodule.cs</DependentUpon>

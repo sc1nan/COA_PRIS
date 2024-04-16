@@ -25,11 +25,11 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
         public AccountLogging()
         {
             InitializeComponent();
-
+            //setup ordinary controls
             previous_Button.Enabled = false;
             sortComboBox.SelectedText = "user_name";
             sortComboBox.SelectedIndex = 0;
-            DisplayLogsTable();
+            Populate_Table(1);
             //setup user controls
             searchBar1.Ambatu(logsSearchBox_TextChanged);
             ChangeDataDates();
@@ -44,7 +44,7 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
 
         private void logsSearchBox_TextChanged(object sender, EventArgs e)
         {
-            changeTableContent(searchBar1.Text, LogsTable, sortComboBox);
+            Populate_Table(2);
         }
 
         private void Populate_Table(int type_of_spec)
@@ -76,31 +76,22 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
 
             //populate table with number
             LogsTable.DataSource = util.format_DataTableLimit(dt, min_lim);
+            //check count
+            Check_Count();
             //set theme to data grid view
             AddThemeToDGV();
         }
 
-        private void DisplayLogsTable()
-        {
-            Populate_Table(1);
-        }
 
         private void sortComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            changeTableContent(searchBar1.Text, LogsTable, sortComboBox);
-        }
-
-        private void changeTableContent(string searchBox, GunaDataGridView sourceTable, GunaComboBox filterComboBox)
-        {
             Populate_Table(2);
         }
+
         private void previous_Button_Click(object sender, EventArgs e)
         {
             page_cnt--;
             pageCountTextbox.Text = page_cnt.ToString();
-            //next_Button.Enabled = true;
-            //min_lim = max_lim * (page_cnt - 1);
-            //if (page_cnt <= 1) previous_Button.Enabled = false;
             Check_Count();
             Populate_Table(3);
         }
@@ -109,9 +100,6 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
         {
             page_cnt++;
             pageCountTextbox.Text = page_cnt.ToString();
-            //previous_Button.Enabled = true;
-            //min_lim = max_lim * (page_cnt - 1);
-            //if ((min_lim + max_lim) >= activity_manager.Count_Activity_Logs()) next_Button.Enabled = false;
             Check_Count();
             Populate_Table(3);
         }
@@ -127,7 +115,7 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
                 if (int.TryParse(b.ToString(), out result))
                 {
                     //checks maximum amount of pages
-                    int xd = (Account_Logs_Count() / 15) + 1;
+                    int xd = (Account_Logs_Count() / max_lim) + 1;
                     //checks if user input is less than or equal to maximum amount of pages and not below 1
                     if (result <= xd && result >= 1)
                     {
