@@ -179,12 +179,12 @@ namespace COA_PRIS.UserControlUtil.Jesser_Util
             Theme.gridView_Style(data_View, column_Widths, column_Text_Align);
         }
 
-        public void GenerateReportForm()
+        public void GenerateReportForm(string table = null)
         {
             var temprepp = Application.OpenForms["TempReportsForms"];
             if (temprepp == null)
             {
-                temprepp = new TempReportsForms();
+                temprepp = new TempReportsForms(table);
             }
             temprepp.Show();
         }

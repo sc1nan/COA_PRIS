@@ -94,7 +94,6 @@
                                           </Border>
                                         </Style>
                                       </Image>
-                                      <rd:Selected>true</rd:Selected>
                                     </CellContents>
                                   </TablixCell>
                                   <TablixCell>
@@ -346,7 +345,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.5816in</Height>
+                  <Height>0.3316in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -493,7 +492,7 @@
                   </TablixCells>
                 </TablixRow>
                 <TablixRow>
-                  <Height>0.5816in</Height>
+                  <Height>0.32118in</Height>
                   <TablixCells>
                     <TablixCell>
                       <CellContents>
@@ -723,30 +722,21 @@
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
               <TablixMembers>
-                <TablixMember>
-                  <KeepWithGroup>After</KeepWithGroup>
-                </TablixMember>
-                <TablixMember>
-                  <KeepWithGroup>After</KeepWithGroup>
-                </TablixMember>
-                <TablixMember>
-                  <KeepWithGroup>After</KeepWithGroup>
-                </TablixMember>
-                <TablixMember>
-                  <KeepWithGroup>After</KeepWithGroup>
-                </TablixMember>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
                 <TablixMember>
                   <Group Name="Details" />
                 </TablixMember>
-                <TablixMember>
-                  <KeepWithGroup>Before</KeepWithGroup>
-                </TablixMember>
+                <TablixMember />
               </TablixMembers>
             </TablixRowHierarchy>
+            <RepeatRowHeaders>true</RepeatRowHeaders>
             <FixedColumnHeaders>true</FixedColumnHeaders>
             <DataSetName>DataSet1</DataSetName>
             <Left>0.07977in</Left>
-            <Height>4.47409in</Height>
+            <Height>3.96367in</Height>
             <Width>6.42023in</Width>
             <Style>
               <Border>
@@ -763,6 +753,47 @@
       </Body>
       <Width>6.5in</Width>
       <Page>
+        <PageFooter>
+          <Height>1in</Height>
+          <PrintOnFirstPage>true</PrintOnFirstPage>
+          <PrintOnLastPage>true</PrintOnLastPage>
+          <ReportItems>
+            <Textbox Name="Textbox34">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>=Globals.PageNumber &amp; " of " &amp; Globals.TotalPages</Value>
+                      <Style />
+                    </TextRun>
+                  </TextRuns>
+                  <Style />
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox34</rd:DefaultName>
+              <Top>0.75in</Top>
+              <Left>5.5in</Left>
+              <Height>0.25in</Height>
+              <Width>1in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </PageFooter>
         <LeftMargin>1in</LeftMargin>
         <RightMargin>1in</RightMargin>
         <TopMargin>1in</TopMargin>

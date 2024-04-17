@@ -129,7 +129,7 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
             var temprepp = Application.OpenForms["TempReportsForms"];
             if (temprepp == null)
             {
-                temprepp = new TempReportsForms();
+                temprepp = new TempReportsForms("log");
             }
             temprepp.Show();
         }

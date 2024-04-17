@@ -14,12 +14,14 @@ using Guna.UI.WinForms;
 
 namespace COA_PRIS.Screens.Subscreens.Reports
 {
-    public partial class ProjectRequest_Reports_Sub : Form/*, IGenericTableVariables*/
+    public partial class ProjectRequest_Reports_Sub : Form, IGenericTableVariables
     {
-        private int min_lim = 0;
-        private int page_cnt = 1;
+        /*private int min_lim = 0;
+        private int page_cnt = 1;*/
+        public int min_lim { get; set; }
+        public int page_cnt { get; set; }
         GenericTable genericTable = new GenericTable();
-        private Util util;
+        //private Util util;
         readonly string[] date_types = { "period", "receiveing_date" };
         private readonly string[] table_names = { "period", "receiveing_date" };
         /*int IGenericTableVariables.min_lim { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
@@ -39,6 +41,7 @@ namespace COA_PRIS.Screens.Subscreens.Reports
             genericTable.Populate_Table(1, dateFilter1, searchBar1, contentTable, sortComboBox, date_types, min_lim, "project");
             //setup page button
             genericTable.Check_Count(next_Button, previous_Button, dateFilter1, min_lim, page_cnt, "project");
+
         }
 
         //change data grid view content according to search box
@@ -59,7 +62,7 @@ namespace COA_PRIS.Screens.Subscreens.Reports
 
         private void reportsButton_Click(object sender, EventArgs e)
         {
-            genericTable.GenerateReportForm();
+            genericTable.GenerateReportForm("project");
         }
         //add events to date time picker
         private void ChangeDataDates()

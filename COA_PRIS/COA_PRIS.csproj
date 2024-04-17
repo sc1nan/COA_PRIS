@@ -372,6 +372,7 @@
     <Compile Include="Utilities\Log_Message.cs" />
     <Compile Include="Utilities\Util.cs" />
     <Compile Include="Utilities\Validator.cs" />
+    <EmbeddedResource Include="CrystalReports\ProjectRequestReport.rdlc" />
     <EmbeddedResource Include="CrystalReports\Report1.rdlc" />
     <EmbeddedResource Include="CrystalReports\TempReport.rdlc" />
     <EmbeddedResource Include="CrystalReports\TempReportsForms.resx">

@@ -10,7 +10,7 @@ namespace COA_PRIS.UserControlUtil.Jesser_Util
     {
         int min_lim { get; set; }
         int page_cnt { get; set; }
-        string[] table_names { get; }
+        /*string[] table_names { get; set; }*/
 
     }
 }

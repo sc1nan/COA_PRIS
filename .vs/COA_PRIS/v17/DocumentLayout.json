@@ -3,16 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\COA\\source\\repos\\pristest\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\utilities\\activity_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\utilities\\activity_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\utilities\\database_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\utilities\\database_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\screens\\subscreens\\activitylogs\\accountlogging.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\crystalreports\\tempreportsforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\crystalreports\\tempreportsforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\crystalreports\\tempreportsforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\crystalreports\\tempreportsforms.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\usercontrolutil\\jesser util\\igenerictablevariables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\usercontrolutil\\jesser util\\igenerictablevariables.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\crystalreports\\report1.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\crystalreports\\report1.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\crystalreports\\projectrequestreport.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\crystalreports\\projectrequestreport.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\screens\\subscreens\\reports\\projectrequest_reports_sub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\subscreens\\reports\\projectrequest_reports_sub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|C:\\Users\\COA\\source\\repos\\pristest\\coa_pris\\screens\\subscreens\\activitylogs\\accountlogging.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\subscreens\\activitylogs\\accountlogging.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\screens\\subscreens\\reports\\projectrequest_reports_sub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\screens\\subscreens\\reports\\projectrequest_reports_sub.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\crystalreports\\tempreport.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\crystalreports\\tempreport.rdlc||{46F6D2A1-5E86-4080-A799-01F3D0E23796}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|c:\\users\\coa\\source\\repos\\pristest\\coa_pris\\utilities\\activity_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{178C71EC-441D-4839-A72F-7F95DAEE7490}|COA_PRIS\\COA_PRIS.csproj|solutionrelative:coa_pris\\utilities\\activity_manager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,45 +50,131 @@
       "DocumentGroups": [
         {
           "DockedWidth": 293,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Activity_Manager.cs",
-              "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Utilities\\Activity_Manager.cs",
-              "RelativeDocumentMoniker": "COA_PRIS\\Utilities\\Activity_Manager.cs",
-              "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Utilities\\Activity_Manager.cs",
-              "RelativeToolTip": "COA_PRIS\\Utilities\\Activity_Manager.cs",
-              "ViewState": "AQIAAFMAAAAAAAAAAAAcwGQAAAA9AAAA",
+              "DocumentIndex": 1,
+              "Title": "TempReportsForms.cs",
+              "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\CrystalReports\\TempReportsForms.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\CrystalReports\\TempReportsForms.cs",
+              "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\CrystalReports\\TempReportsForms.cs",
+              "RelativeToolTip": "COA_PRIS\\CrystalReports\\TempReportsForms.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAgwCcAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T03:19:09.437Z",
+              "WhenOpened": "2024-04-17T02:57:10.686Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IGenericTableVariables.cs",
+              "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\UserControlUtil\\Jesser Util\\IGenericTableVariables.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\UserControlUtil\\Jesser Util\\IGenericTableVariables.cs",
+              "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\UserControlUtil\\Jesser Util\\IGenericTableVariables.cs",
+              "RelativeToolTip": "COA_PRIS\\UserControlUtil\\Jesser Util\\IGenericTableVariables.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T00:24:27.431Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Report1.rdlc [Design]",
+              "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\CrystalReports\\Report1.rdlc",
+              "RelativeDocumentMoniker": "COA_PRIS\\CrystalReports\\Report1.rdlc",
+              "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\CrystalReports\\Report1.rdlc [Design]",
+              "RelativeToolTip": "COA_PRIS\\CrystalReports\\Report1.rdlc [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-04-17T01:52:57.555Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ProjectRequest_Reports_Sub.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Screens\\Subscreens\\Reports\\ProjectRequest_Reports_Sub.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Subscreens\\Reports\\ProjectRequest_Reports_Sub.cs",
+              "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Screens\\Subscreens\\Reports\\ProjectRequest_Reports_Sub.cs [Design]",
+              "RelativeToolTip": "COA_PRIS\\Screens\\Subscreens\\Reports\\ProjectRequest_Reports_Sub.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T00:15:59.089Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProjectRequestReport.rdlc [Design]",
+              "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\CrystalReports\\ProjectRequestReport.rdlc",
+              "RelativeDocumentMoniker": "COA_PRIS\\CrystalReports\\ProjectRequestReport.rdlc",
+              "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\CrystalReports\\ProjectRequestReport.rdlc [Design]",
+              "RelativeToolTip": "COA_PRIS\\CrystalReports\\ProjectRequestReport.rdlc [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-04-17T00:47:59.975Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ProjectRequest_Reports_Sub.cs",
-              "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Screens\\Subscreens\\Reports\\ProjectRequest_Reports_Sub.cs",
-              "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Subscreens\\Reports\\ProjectRequest_Reports_Sub.cs",
-              "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Screens\\Subscreens\\Reports\\ProjectRequest_Reports_Sub.cs",
-              "RelativeToolTip": "COA_PRIS\\Screens\\Subscreens\\Reports\\ProjectRequest_Reports_Sub.cs",
-              "ViewState": "AQIAAC8AAAAAAAAAAAAUwEoAAACAAAAA",
+              "Title": "TempReportsForms.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\CrystalReports\\TempReportsForms.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\CrystalReports\\TempReportsForms.cs",
+              "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\CrystalReports\\TempReportsForms.cs [Design]",
+              "RelativeToolTip": "COA_PRIS\\CrystalReports\\TempReportsForms.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-16T01:11:59.15Z",
+              "WhenOpened": "2024-04-17T01:30:09.108Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Database_Manager.cs",
+              "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Utilities\\Database_Manager.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Utilities\\Database_Manager.cs",
+              "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Utilities\\Database_Manager.cs",
+              "RelativeToolTip": "COA_PRIS\\Utilities\\Database_Manager.cs",
+              "ViewState": "AQIAAEUAAAAAAAAAAAAWwEwAAAAVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-17T01:30:35.342Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "AccountLogging.cs",
               "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Screens\\Subscreens\\ActivityLogs\\AccountLogging.cs",
               "RelativeDocumentMoniker": "COA_PRIS\\Screens\\Subscreens\\ActivityLogs\\AccountLogging.cs",
               "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Screens\\Subscreens\\ActivityLogs\\AccountLogging.cs",
               "RelativeToolTip": "COA_PRIS\\Screens\\Subscreens\\ActivityLogs\\AccountLogging.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAgwEUAAABOAAAA",
+              "ViewState": "AQIAAHsAAAAAAAAAAAAkwIgAAAAvAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-16T01:13:33.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TempReport.rdlc [Design]",
+              "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\CrystalReports\\TempReport.rdlc",
+              "RelativeDocumentMoniker": "COA_PRIS\\CrystalReports\\TempReport.rdlc",
+              "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\CrystalReports\\TempReport.rdlc [Design]",
+              "RelativeToolTip": "COA_PRIS\\CrystalReports\\TempReport.rdlc [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001755|",
+              "WhenOpened": "2024-04-17T02:06:05.859Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Activity_Manager.cs",
+              "DocumentMoniker": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Utilities\\Activity_Manager.cs",
+              "RelativeDocumentMoniker": "COA_PRIS\\Utilities\\Activity_Manager.cs",
+              "ToolTip": "C:\\Users\\COA\\source\\repos\\pristest\\COA_PRIS\\Utilities\\Activity_Manager.cs",
+              "RelativeToolTip": "COA_PRIS\\Utilities\\Activity_Manager.cs",
+              "ViewState": "AQIAADMAAAAAAAAAAAAwwD4AAABEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-16T03:19:09.437Z",
               "EditorCaption": ""
             }
           ]
