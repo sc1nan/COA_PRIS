@@ -28,26 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.container_Panel = new Guna.UI.WinForms.GunaPanel();
             this.parent_panel = new Guna.UI.WinForms.GunaPanel();
             this.line_Panel = new Guna.UI.WinForms.GunaPanel();
             this.nav_panel = new System.Windows.Forms.FlowLayoutPanel();
-            this.employee_Btn = new Guna.UI.WinForms.GunaButton();
-            this.inactive_Btn = new Guna.UI.WinForms.GunaButton();
             this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
+            this.reports_Btn = new Guna.UI.WinForms.GunaButton();
+            this.inactive_Btn = new Guna.UI.WinForms.GunaButton();
+            this.container_Panel = new Guna.UI.WinForms.GunaPanel();
             this.parent_panel.SuspendLayout();
             this.nav_panel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // container_Panel
-            // 
-            this.container_Panel.BackColor = System.Drawing.Color.White;
-            this.container_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container_Panel.Location = new System.Drawing.Point(0, 60);
-            this.container_Panel.Name = "container_Panel";
-            this.container_Panel.Padding = new System.Windows.Forms.Padding(8);
-            this.container_Panel.Size = new System.Drawing.Size(1520, 765);
-            this.container_Panel.TabIndex = 2;
             // 
             // parent_panel
             // 
@@ -74,7 +64,7 @@
             // nav_panel
             // 
             this.nav_panel.BackColor = System.Drawing.Color.Transparent;
-            this.nav_panel.Controls.Add(this.employee_Btn);
+            this.nav_panel.Controls.Add(this.reports_Btn);
             this.nav_panel.Controls.Add(this.inactive_Btn);
             this.nav_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.nav_panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
@@ -83,35 +73,43 @@
             this.nav_panel.Size = new System.Drawing.Size(1520, 55);
             this.nav_panel.TabIndex = 0;
             // 
-            // employee_Btn
+            // mySqlCommand1
             // 
-            this.employee_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.mySqlCommand1.CacheAge = 0;
+            this.mySqlCommand1.Connection = null;
+            this.mySqlCommand1.EnableCaching = false;
+            this.mySqlCommand1.Transaction = null;
+            // 
+            // reports_Btn
+            // 
+            this.reports_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.employee_Btn.AnimationHoverSpeed = 0.07F;
-            this.employee_Btn.AnimationSpeed = 0.03F;
-            this.employee_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(200)))), ((int)(((byte)(204)))));
-            this.employee_Btn.BaseColor = System.Drawing.Color.Transparent;
-            this.employee_Btn.BorderColor = System.Drawing.Color.Black;
-            this.employee_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.employee_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.employee_Btn.FocusedColor = System.Drawing.Color.Empty;
-            this.employee_Btn.Font = new System.Drawing.Font("Bahnschrift", 14F);
-            this.employee_Btn.ForeColor = System.Drawing.Color.White;
-            this.employee_Btn.Image = global::COA_PRIS.Properties.Resources.document;
-            this.employee_Btn.ImageOffsetX = 5;
-            this.employee_Btn.ImageSize = new System.Drawing.Size(30, 30);
-            this.employee_Btn.Location = new System.Drawing.Point(0, 0);
-            this.employee_Btn.Margin = new System.Windows.Forms.Padding(0, 0, 1, 0);
-            this.employee_Btn.Name = "employee_Btn";
-            this.employee_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
-            this.employee_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.employee_Btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.employee_Btn.OnHoverImage = null;
-            this.employee_Btn.OnPressedColor = System.Drawing.Color.Black;
-            this.employee_Btn.Size = new System.Drawing.Size(180, 55);
-            this.employee_Btn.TabIndex = 0;
-            this.employee_Btn.Text = "RECORDS";
-            this.employee_Btn.TextOffsetX = 5;
+            this.reports_Btn.AnimationHoverSpeed = 0.07F;
+            this.reports_Btn.AnimationSpeed = 0.03F;
+            this.reports_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(200)))), ((int)(((byte)(204)))));
+            this.reports_Btn.BaseColor = System.Drawing.Color.Transparent;
+            this.reports_Btn.BorderColor = System.Drawing.Color.Black;
+            this.reports_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.reports_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.reports_Btn.FocusedColor = System.Drawing.Color.Empty;
+            this.reports_Btn.Font = new System.Drawing.Font("Bahnschrift", 14F);
+            this.reports_Btn.ForeColor = System.Drawing.Color.White;
+            this.reports_Btn.Image = global::COA_PRIS.Properties.Resources.document;
+            this.reports_Btn.ImageOffsetX = 5;
+            this.reports_Btn.ImageSize = new System.Drawing.Size(30, 30);
+            this.reports_Btn.Location = new System.Drawing.Point(0, 0);
+            this.reports_Btn.Margin = new System.Windows.Forms.Padding(0, 0, 1, 0);
+            this.reports_Btn.Name = "reports_Btn";
+            this.reports_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
+            this.reports_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.reports_Btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.reports_Btn.OnHoverImage = null;
+            this.reports_Btn.OnPressedColor = System.Drawing.Color.Black;
+            this.reports_Btn.Size = new System.Drawing.Size(180, 55);
+            this.reports_Btn.TabIndex = 0;
+            this.reports_Btn.Text = "REPORTS";
+            this.reports_Btn.TextOffsetX = 5;
+            this.reports_Btn.Click += new System.EventHandler(this.button_Click);
             // 
             // inactive_Btn
             // 
@@ -142,13 +140,17 @@
             this.inactive_Btn.TabIndex = 1;
             this.inactive_Btn.Text = "INACTIVE";
             this.inactive_Btn.TextOffsetX = 5;
+            this.inactive_Btn.Click += new System.EventHandler(this.button_Click);
             // 
-            // mySqlCommand1
+            // container_Panel
             // 
-            this.mySqlCommand1.CacheAge = 0;
-            this.mySqlCommand1.Connection = null;
-            this.mySqlCommand1.EnableCaching = false;
-            this.mySqlCommand1.Transaction = null;
+            this.container_Panel.BackColor = System.Drawing.Color.White;
+            this.container_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container_Panel.Location = new System.Drawing.Point(0, 60);
+            this.container_Panel.Name = "container_Panel";
+            this.container_Panel.Padding = new System.Windows.Forms.Padding(8);
+            this.container_Panel.Size = new System.Drawing.Size(1520, 765);
+            this.container_Panel.TabIndex = 3;
             // 
             // Reports
             // 
@@ -161,6 +163,7 @@
             this.Name = "Reports";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "Reports";
+            this.Load += new System.EventHandler(this.Reports_Load);
             this.parent_panel.ResumeLayout(false);
             this.nav_panel.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -168,13 +171,12 @@
         }
 
         #endregion
-
-        private Guna.UI.WinForms.GunaPanel container_Panel;
         private Guna.UI.WinForms.GunaPanel parent_panel;
         private Guna.UI.WinForms.GunaPanel line_Panel;
         private System.Windows.Forms.FlowLayoutPanel nav_panel;
-        private Guna.UI.WinForms.GunaButton employee_Btn;
+        private Guna.UI.WinForms.GunaButton reports_Btn;
         private Guna.UI.WinForms.GunaButton inactive_Btn;
         private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
+        private Guna.UI.WinForms.GunaPanel container_Panel;
     }
 }

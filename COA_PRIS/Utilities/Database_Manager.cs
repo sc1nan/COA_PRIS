@@ -61,11 +61,23 @@ namespace COA_PRIS.Utilities
             {
                 try
                 {
+                    string table_name_on_dataset = null;
+                    ReportDataSource dataSource = null;
                     das.SelectCommand = command;
-                    das.Fill(ds, "log_table");
-                    if (ds.Tables["log_table"].Rows.Count == 0) MessageBox.Show("Nothing found", "Message");
+                    //last query gets what table to take
+                    if (query.Contains("log_table"))
+                    {
+                        table_name_on_dataset = "log_table";
+                        dataSource = new ReportDataSource("DataSet1", ds.Tables[0]);
+                    }
+                    else if (query.Contains("docu_info_table"))
+                    {
+                        table_name_on_dataset = "docu_info_table";
+                        dataSource = new ReportDataSource("DataSet1", ds.Tables[1]);
+                    }
+                    das.Fill(ds, table_name_on_dataset);
+                    if (ds.Tables[table_name_on_dataset].Rows.Count == 0) MessageBox.Show("Nothing found", "Message");
 
-                    ReportDataSource dataSource = new ReportDataSource("DataSet1", ds.Tables[0]);
                     reportViewer.LocalReport.DataSources.Clear();
                     reportViewer.LocalReport.DataSources.Add(dataSource);
                     reportViewer.RefreshReport();
@@ -91,7 +103,7 @@ namespace COA_PRIS.Utilities
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error executing nonquery command: {ex.Message}", "Error");
+                    MessageBox.Show($"Query: {query} \n Error executing nonquery command: {ex.Message}", "Error");
                     Console.WriteLine();
                 }
             }
@@ -100,6 +112,26 @@ namespace COA_PRIS.Utilities
         }
 
         public object ExecuteScalar(string query) 
+        {
+            var dbCon = DBConnection.Instance();
+            object ret = null;
+
+            using (MySqlCommand command = new MySqlCommand(query, dbCon.Connection))
+            {
+                try
+                {
+                    ret = command.ExecuteScalar();
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Error executing scalar command: {ex.Message}");
+                }
+            }
+
+            return ret;
+        }
+
+        public object ExecuteJoe(string query)
         {
             var dbCon = DBConnection.Instance();
             object ret = null;

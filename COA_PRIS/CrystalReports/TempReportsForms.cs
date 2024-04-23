@@ -16,7 +16,7 @@ namespace COA_PRIS.CrystalReports
 {
     public partial class TempReportsForms : Form
     {
-        public TempReportsForms()
+        public TempReportsForms(string table = null)
         {
             InitializeComponent();
 
@@ -26,6 +26,17 @@ namespace COA_PRIS.CrystalReports
             {
                 try
                 {
+                    //takes what type of report is generated
+                    switch (table)
+                    {
+                        case "log":
+                            reportViewer1.LocalReport.ReportEmbeddedResource = "COA_PRIS.CrystalReports.Report1.rdlc";
+                            break;
+                        case "project":
+                            reportViewer1.LocalReport.ReportEmbeddedResource = "COA_PRIS.CrystalReports.ProjectRequestReport.rdlc";
+                            break;;
+                        default: break;
+                    }
                     db_manager.ExecuteQueryReportViewerDataSource(Database_Query.last_query, reportViewer1);
                 }
                 catch (Exception ex)
@@ -39,7 +50,9 @@ namespace COA_PRIS.CrystalReports
 
         private void TempReportsForms_Load(object sender, EventArgs e)
         {
-            
+            reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
+            reportViewer1.ZoomMode = ZoomMode.PageWidth;
+
             //this.reportViewer1.RefreshReport();
         }
 

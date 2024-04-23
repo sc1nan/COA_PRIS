@@ -17,6 +17,8 @@ namespace COA_PRIS.UserControlUtil
             InitializeComponent();
             from_DateTimePicker.Value = DateTime.Today;
             to_DateTimePicker.Value = DateTime.Today;
+            from_DateTimePicker.MaxDate = DateTime.Today;
+            to_DateTimePicker.MaxDate = DateTime.Today;
         }
 
         [Bindable(true)]

@@ -16,13 +16,14 @@ namespace COA_PRIS.Screens
         private Login_Manager login_manager;
         private Database_Manager database_manager;
         private Tab_Manager tab_Manager;
-        private Activity_Manager manager;
+        private Activity_Manager activity_manager;
         private Log_Message message;
         private readonly Projects projects_Tab = new Projects();
         private readonly Home landing_Home = new Home();
         private readonly Employee employee_Tab = new Employee();
         private readonly ActivityLogs log_Tab = new ActivityLogs();
         private readonly Maintenance maintenance_Tab = new Maintenance();
+        private readonly Reports reports_Tab = new Reports();
 
         public Dashboard()
         {
@@ -37,11 +38,13 @@ namespace COA_PRIS.Screens
         {
             tab_Manager = new Tab_Manager();
             login_manager = new Login_Manager();
-
+            activity_manager = new Activity_Manager();
             foreach (Control control in tab_panel.Controls)
                 tab_Manager.Nav_buttons.Add(control.Controls[0]);
 
-            login_manager.active_Account = "james";
+            login_manager.active_Account = "admin";
+            activity_manager.Log_Activity("admin", "Logged In");
+
             tab_Manager.Header_Title = headerTitle;
             tab_Manager.active_Button(EmployeeBtn, true);
             ProjectBtn.PerformClick();
@@ -80,6 +83,7 @@ namespace COA_PRIS.Screens
                     break;
                 case "ReportBtn":
                     // Handle Report button click
+                    form = reports_Tab;
                     break;
                 case "EmployeeBtn":
                     form = employee_Tab;

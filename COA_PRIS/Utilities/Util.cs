@@ -106,6 +106,32 @@ namespace COA_PRIS.Utilities
             return modified_Table;
         }
 
+        public DataTable format_DataTableLimit(DataTable existing_Table, int minLim)
+        {
+            DataTable modified_Table = new DataTable();
+            modified_Table.Columns.Add("index", typeof(int));
+
+
+            foreach (DataColumn column in existing_Table.Columns)
+            {
+                modified_Table.Columns.Add(column.ColumnName, column.DataType);
+            }
+
+            for (int i = 0; i < existing_Table.Rows.Count; i++)
+            {
+                DataRow row = modified_Table.NewRow();
+                row["index"] = i + 1 + minLim;
+
+                foreach (DataColumn column in existing_Table.Columns)
+                {
+                    row[column.ColumnName] = existing_Table.Rows[i][column.ColumnName];
+                }
+
+                modified_Table.Rows.Add(row);
+            }
+            return modified_Table;
+        }
+
         public int get_ChildIndex(Control parent, Control child)
         {
             for (int i = 0; i < parent.Controls.Count; i++)
