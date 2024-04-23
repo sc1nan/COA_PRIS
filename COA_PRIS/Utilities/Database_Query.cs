@@ -3,6 +3,7 @@ using Mysqlx.Crud;
 using Org.BouncyCastle.Asn1.X9;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,6 +62,8 @@ namespace COA_PRIS
         public static readonly string get_code_info = "SELECT code, num_length, initial_num FROM code_table WHERE code_table.table = '{0}'";
 
         public static readonly string delete_record_by_id = "UPDATE {0} SET status = 0 WHERE code = '{1}';";
+
+        public static readonly string get_record_code = "SELECT code FROM {0} WHERE title = '{1}';";
 
         #region Project Requests
 
@@ -148,13 +151,13 @@ namespace COA_PRIS
         public static readonly string get_all_sector_records = "SELECT sector_table.code, sector_table.title, sector_table.description FROM sector_table\r" +
                                                                 "WHERE sector_table.status= 1;";
        
-        public static readonly string get_cluster_options = "SELECT cluster_table.code, cluster_table.title FROM cluster_table";
+        public static readonly string get_cluster_options = "SELECT cluster_table.code, cluster_table.title, cluster_table.description FROM cluster_table WHERE cluster_table.status = 1;";
 
-        public static readonly string get_office_options = "SELECT office_table.code, office_table.title FROM office_table WHERE office_table.status = 1 ;";
+        public static readonly string get_office_options = "SELECT office_table.code, office_table.title, office_table.description FROM office_table WHERE office_table.status = 1;";
 
-        public static readonly string get_sector_options = "SELECT sector_table.code,sector_table.title FROM sector_table WHERE sector_table.status = 1";
+        public static readonly string get_sector_options = "SELECT sector_table.code,sector_table.title, sector_table.description FROM sector_table WHERE sector_table.status = 1";
 
-        public static readonly string get_division_options = "SELECT division_table.code,division_table.title FROM division_table WHERE division_table.status = 1";
+        public static readonly string get_division_options = "SELECT division_table.code, division_table.title, division_table.description FROM division_table WHERE division_table.status = 1";
 
 
         #endregion
@@ -212,13 +215,28 @@ namespace COA_PRIS
 
 
         #region GET Record Queries
-        public static readonly string get_agency_record_by_id = "SELECT agency_table.title, agency_table.description, agency_table.cluster_code FROM agency_table\r" +
-                                                                "WHERE agency_table.code = '{0}' and agency_table.status = 1;";
+        public static readonly string get_agency_record_by_id = "SELECT agency_table.title, agency_table.description, cluster_table.title FROM agency_table \r" +
+                                                                "INNER JOIN cluster_table ON agency_table.cluster_code = cluster_table.code\r" +
+                                                                "WHERE agency_table.code = '{0}';";
 
-        public static readonly string get_cluster_record_by_id = "SELECT agency_table.title, agency_table.description, agency_table.cluster_code FROM agency_table\r" +
-                                                                "WHERE agency_table.code = '{0}' and agency_table.status = 1;";
+        public static readonly string get_cluster_record_by_id = "SELECT  cluster_table.title, cluster_table.description, sector_table.title  FROM cluster_table\r" +
+                                                                    "INNER JOIN sector_table ON cluster_table.sector_code = sector_table.code\r" +
+                                                                    "WHERE cluster_table.code = '{0}'";
 
+        public static readonly string get_contractor_record_by_id = "SELECT contractor_table.title, contractor_table.description FROM contractor_table\r" +
+                                                                    "WHERE contractor_table.code = '{0}';";
 
+        public static readonly string get_division_record_by_id = "SELECT division_table.title, division_table.description, office_table.title FROM division_table\r\nINNER JOIN office_table ON division_table.office_code = office_table.code\r\nWHERE division_table.code = '{0}';";
+
+        public static readonly string get_nature_record_by_id = "SELECT nature_table.title, nature_table.description FROM nature_table\r\nWHERE nature_table.code = '{0}';";
+
+        public static readonly string get_office_record_by_id = "SELECT office_table.title, office_table.description, sector_table.title FROM office_table\r\nINNER JOIN sector_table ON office_table.sector_code = sector_table.code\r\nWHERE office_table.code = '{0}'";
+
+        public static readonly string get_position_record_by_id = "SELECT position_table.title, position_table.description FROM position_table\r\nWHERE position_table.code = '{0}';";
+
+        public static readonly string get_section_record_by_id = "SELECT section_table.title, section_table.description, division_table.title FROM section_table\r\nINNER JOIN division_table ON section_table.division_code = division_table.code\r\nWHERE section_table.code = '{0}';";
+
+        public static readonly string get_sector_record_by_id = "SELECT sector_table.title, sector_table.description FROM sector_table\r\nWHERE sector_table.code = '{0}';";
         #endregion
 
         #region UPDATE Record Queries
@@ -227,9 +245,26 @@ namespace COA_PRIS
                                                                 "agency_table.cluster_code = '{2}', agency_table.updated_by = '{3}',\r" +
                                                                 "agency_table.updated_date = CURRENT_TIMESTAMP()\r" +
                                                                 "WHERE agency_table.code = '{4}' and agency_table.status = 1";
-        
-        
-        
+
+        public static readonly string update_cluster_record_by_id = "UPDATE cluster_table SET \r" +
+                                                                "cluster_table.title = '{0}', cluster_table.description = '{1}',\r" +
+                                                                "cluster_table.sector_code = '{2}', cluster_table.updated_by = '{3}',\r" +
+                                                                "cluster_table.updated_date = CURRENT_TIMESTAMP()\r" +
+                                                                "WHERE cluster_table.code = '{4}' and cluster_table.status = 1;";
+
+        public static readonly string update_contractor_record_by_id = "UPDATE contractor_table SET\r\ncontractor_table.title = '{0}', contractor_table.description = '{1}',\r\ncontractor_table.updated_by = '{2},', contractor_table.updated_date = CURRENT_TIMESTAMP()\r\nWHERE contractor_table.code = '{3}' AND contractor_table.status = 1\r\n";
+
+        public static readonly string update_division_record_by_id = "UPDATE division_table SET \r\ndivision_table.title = '{0}', division_table.description = '{1}',\r\ndivision_table.office_code = '{2}', division_table.updated_by = '{3}',\r\ndivision_table.updated_date = CURRENT_TIMESTAMP()\r\nWHERE division_table.code = '{4}' and division_table.status = 1;";
+
+        public static readonly string update_nature_record_by_id = "UPDATE nature_table SET\r\nnature_table.title = '{0}', nature_table.description = '{1}',\r\nnature_table.updated_by = '{2}', nature_table.updated_date = CURRENT_TIMESTAMP()\r\nWHERE nature_table.code = '{3}'and nature_table.status = 1;";
+
+        public static readonly string update_office_record_by_id = "UPDATE office_table SET \r\noffice_table.title = '{0}', office_table.description = '{1}',\r\noffice_table.sector_code = '{2}', office_table.updated_by = '{3}',\r\noffice_table.updated_date = CURRENT_TIMESTAMP()\r\nWHERE office_table.code = '{4}' and office_table.status = 1;";
+
+        public static readonly string update_position_record_by_id = "UPDATE position_table SET\r\nposition_table.title = '{0}', position_table.description = '{1}',\r\nposition_table.updated_by = '{2}', position_table.updated_date = CURRENT_TIMESTAMP()\r\nWHERE position_table.code = '{3}'and position_table.status = 1;\r\n";
+
+        public static readonly string update_section_record_by_id = "UPDATE section_table SET \r\nsection_table.title = '{0}', section_table.description = '{1}',\r\nsection_table.division_code = '{2}', section_table.updated_by = '{3}',\r\nsection_table.updated_date = CURRENT_TIMESTAMP()\r\nWHERE section_table.code = '{4}' and section_table.status = 1;";
+
+        public static readonly string update_sector_record_by_id = "UPDATE sector_table SET\r\nsector_table.title = '{0}', sector_table.description = '{1}',\r\nsector_table.updated_by = '{2}', sector_table.updated_date = CURRENT_TIMESTAMP()\r\nWHERE sector_table.code = '{3}'and sector_table.status = 1;";
         #endregion
     }
 }

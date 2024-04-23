@@ -1,6 +1,6 @@
-﻿namespace COA_PRIS.UserControlUtil
+﻿namespace COA_PRIS.UserControlUtil.PRIS_UserControl
 {
-    partial class Label_TextLabel
+    partial class PRIS_DatePicker
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.title = new Guna.UI.WinForms.GunaLabel();
-            this.entry = new Guna.UI.WinForms.GunaTextBox();
+            this.date = new Guna.UI.WinForms.GunaDateTimePicker();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -39,7 +39,7 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.title, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.entry, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.date, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -47,7 +47,9 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(400, 100);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.tableLayoutPanel1.TabIndex = 2;
+            this.tableLayoutPanel1.Tag = "Entry";
+            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // title
             // 
@@ -62,37 +64,39 @@
             this.title.Text = "Label";
             this.title.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
-            // entry
+            // date
             // 
-            this.entry.BackColor = System.Drawing.Color.Transparent;
-            this.entry.BaseColor = System.Drawing.Color.LightGray;
-            this.entry.BorderColor = System.Drawing.Color.Transparent;
-            this.entry.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.entry.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.entry.FocusedBaseColor = System.Drawing.Color.White;
-            this.entry.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.entry.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.entry.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.entry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.entry.Location = new System.Drawing.Point(3, 43);
-            this.entry.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
-            this.entry.MaxLength = 64;
-            this.entry.Name = "entry";
-            this.entry.PasswordChar = '\0';
-            this.entry.Radius = 6;
-            this.entry.ReadOnly = true;
-            this.entry.SelectedText = "";
-            this.entry.Size = new System.Drawing.Size(377, 54);
-            this.entry.TabIndex = 1;
-            this.entry.TabStop = false;
-            this.entry.Tag = "Entry";
+            this.date.BackColor = System.Drawing.Color.Transparent;
+            this.date.BaseColor = System.Drawing.Color.White;
+            this.date.BorderColor = System.Drawing.Color.Silver;
+            this.date.CustomFormat = null;
+            this.date.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.date.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.date.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.date.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.date.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.date.Location = new System.Drawing.Point(3, 43);
+            this.date.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
+            this.date.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.date.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.date.Name = "date";
+            this.date.OnHoverBaseColor = System.Drawing.Color.White;
+            this.date.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.date.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.date.OnPressedColor = System.Drawing.Color.Black;
+            this.date.Radius = 8;
+            this.date.Size = new System.Drawing.Size(377, 54);
+            this.date.TabIndex = 1;
+            this.date.Text = "Thursday, April 11, 2024";
+            this.date.Value = new System.DateTime(2024, 4, 11, 10, 57, 15, 556);
+            this.date.ValueChanged += new System.EventHandler(this.gunaDateTimePicker1_ValueChanged);
             // 
-            // Label_TextLabel
+            // PRIS_DatePicker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "Label_TextLabel";
+            this.Name = "PRIS_DatePicker";
             this.Size = new System.Drawing.Size(400, 100);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
@@ -104,6 +108,6 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Guna.UI.WinForms.GunaLabel title;
-        private Guna.UI.WinForms.GunaTextBox entry;
+        private Guna.UI.WinForms.GunaDateTimePicker date;
     }
 }

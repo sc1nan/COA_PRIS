@@ -46,10 +46,10 @@
             this.parent_panel.Controls.Add(this.line_Panel);
             this.parent_panel.Controls.Add(this.nav_panel);
             this.parent_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.parent_panel.Location = new System.Drawing.Point(8, 8);
-            this.parent_panel.Margin = new System.Windows.Forms.Padding(2);
+            this.parent_panel.Location = new System.Drawing.Point(10, 10);
+            this.parent_panel.Margin = new System.Windows.Forms.Padding(0);
             this.parent_panel.Name = "parent_panel";
-            this.parent_panel.Size = new System.Drawing.Size(1540, 868);
+            this.parent_panel.Size = new System.Drawing.Size(1536, 864);
             this.parent_panel.TabIndex = 0;
             // 
             // container_Panel
@@ -58,8 +58,8 @@
             this.container_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container_Panel.Location = new System.Drawing.Point(0, 60);
             this.container_Panel.Name = "container_Panel";
-            this.container_Panel.Padding = new System.Windows.Forms.Padding(8);
-            this.container_Panel.Size = new System.Drawing.Size(1540, 808);
+            this.container_Panel.Padding = new System.Windows.Forms.Padding(10);
+            this.container_Panel.Size = new System.Drawing.Size(1536, 804);
             this.container_Panel.TabIndex = 2;
             // 
             // line_Panel
@@ -68,7 +68,7 @@
             this.line_Panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.line_Panel.Location = new System.Drawing.Point(0, 55);
             this.line_Panel.Name = "line_Panel";
-            this.line_Panel.Size = new System.Drawing.Size(1540, 5);
+            this.line_Panel.Size = new System.Drawing.Size(1536, 5);
             this.line_Panel.TabIndex = 1;
             // 
             // nav_panel
@@ -80,7 +80,7 @@
             this.nav_panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.nav_panel.Location = new System.Drawing.Point(0, 0);
             this.nav_panel.Name = "nav_panel";
-            this.nav_panel.Size = new System.Drawing.Size(1540, 55);
+            this.nav_panel.Size = new System.Drawing.Size(1536, 55);
             this.nav_panel.TabIndex = 0;
             // 
             // mySqlCommand1
@@ -150,7 +150,6 @@
             this.inactive_Btn.TabIndex = 1;
             this.inactive_Btn.Text = "INACTIVE";
             this.inactive_Btn.TextOffsetX = 5;
-            this.inactive_Btn.Visible = false;
             this.inactive_Btn.Click += new System.EventHandler(this.button_Click);
             // 
             // Employee
@@ -162,7 +161,7 @@
             this.Controls.Add(this.parent_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Employee";
-            this.Padding = new System.Windows.Forms.Padding(8);
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Employee_Load);
             this.parent_panel.ResumeLayout(false);

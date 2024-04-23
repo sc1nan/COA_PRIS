@@ -1,5 +1,6 @@
 ﻿using COA_PRIS.Screens.Subscreens.Maintenance;
 using COA_PRIS.UserControlUtil;
+using COA_PRIS.UserControlUtil.PRIS_UserControl;
 using COA_PRIS.Utilities;
 using Guna.UI.WinForms;
 using System;
@@ -200,97 +201,142 @@ namespace COA_PRIS.Screens
             switch (Active_Form)
             {
                 case "Agency":
+                    table = "agency_table";
+                    insert_Query = Database_Query.set_new_agency;
                     controls = new UserControl[]
                     {
-                        new Label_Text("Agency Name:"),
-                        new Label_Rich("Description:"),
-                        new Label_Drop("Cluster:", Database_Query.get_cluster_options)
+                        new PRIS_Label_Entry(_title: "Agency Name :", _dock: DockStyle.Top),
+                        new PRIS_Label_Rich(_title: "Description :", _dock: DockStyle.Fill),
+                        new PRIS_Label_Selector(_title:"Cluster :",   _dock: DockStyle.Bottom, 
+                            _query: Database_Query.get_cluster_options,
+                            _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
+                                {
+                                    ("#", DataGridViewContentAlignment.MiddleRight),
+                                    ("Cluster Code",DataGridViewContentAlignment.MiddleCenter),
+                                    ("Cluster",DataGridViewContentAlignment.MiddleLeft),
+                                    ("Description",DataGridViewContentAlignment.MiddleLeft)
+                                },
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),})
                     };
-                    insert_Query = Database_Query.set_new_agency;
-                    table = "agency_table";
 
                     break;
 
                 case "Cluster":
-                    controls = new UserControl[]
-                    {
-                        new Label_Text("Cluster Name:"),
-                        new Label_Rich("Description:"),
-                        new Label_Drop("Sector:", Database_Query.get_sector_options)
-                    };
                     insert_Query = Database_Query.set_new_cluster;
                     table = "cluster_table";
+                    controls = new UserControl[]
+                    {
+                        new PRIS_Label_Entry(_title: "Cluster Name :", _dock: DockStyle.Top),
+                        new PRIS_Label_Rich(_title: "Description :", _dock: DockStyle.Fill),
+                        new PRIS_Label_Selector(_title:"Sector :",   _dock: DockStyle.Bottom, 
+                            _query: Database_Query.get_sector_options,
+                            _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
+                                {
+                                    ("#", DataGridViewContentAlignment.MiddleRight),
+                                    ("Sector Code",DataGridViewContentAlignment.MiddleCenter),
+                                    ("Sector",DataGridViewContentAlignment.MiddleLeft),
+                                    ("Description",DataGridViewContentAlignment.MiddleLeft)
+                                },
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),})
+                    };
 
                     break;
-
 
                 case "Contractor":
                     controls = new UserControl[]
                     {
-                       new Label_Text("Contractor Name:"),
-                       new Label_Rich("Description:")
+                        new PRIS_Label_Entry(_title: "Contractor Name :", _dock: DockStyle.Top),
+                        new PRIS_Label_Rich(_title: "Description :", _dock: DockStyle.Fill),
                     };
                     insert_Query = Database_Query.set_new_contractor;
                     table = "contractor_table";
                     break;
 
                 case "Division":
-                    controls = new UserControl[]
-                    {
-                        new Label_Text("Division Name:"),
-                        new Label_Rich("Description:"),
-                        new Label_Drop ("Office:",Database_Query.get_office_options)
-                    };
                     insert_Query = Database_Query.set_new_division;
                     table = "division_table";
+                    controls = new UserControl[]
+                    {
+                        new PRIS_Label_Entry(_title: "Division Name :", _dock: DockStyle.Top),
+                        new PRIS_Label_Rich(_title: "Description :", _dock: DockStyle.Fill),
+                        new PRIS_Label_Selector(_title:"Office :",   _dock: DockStyle.Bottom,
+                            _query: Database_Query.get_office_options,
+                            _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
+                                {
+                                    ("#", DataGridViewContentAlignment.MiddleRight),
+                                    ("Office Code",DataGridViewContentAlignment.MiddleCenter),
+                                    ("Office",DataGridViewContentAlignment.MiddleLeft),
+                                    ("Description",DataGridViewContentAlignment.MiddleLeft)
+                                },
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),})
+                    };
                     break;
+
                 case "Nature":
                     controls = new UserControl[]
                     {
-                        new Label_Text("Nature:"),
-                        new Label_Rich("Description")
+                        new PRIS_Label_Entry(_title: "Nature Name :", _dock: DockStyle.Top),
+                        new PRIS_Label_Rich(_title: "Description :", _dock: DockStyle.Fill),
                     };
                     insert_Query = Database_Query.set_new_nature;
                     table = "nature_table";
                     break;
 
                 case "Office":
-                    controls = new UserControl[]
-                    {
-                        new Label_Text("Office Name:"),
-                        new Label_Rich ("Description:"),
-                        new Label_Drop("Sector:",Database_Query.get_sector_options)
-                    };
                     insert_Query = Database_Query.set_new_office;
                     table = "office_table";
+                    controls = new UserControl[]
+                    {
+                        new PRIS_Label_Entry(_title: "Office Name :", _dock: DockStyle.Top),
+                        new PRIS_Label_Rich(_title: "Description :", _dock: DockStyle.Fill),
+                        new PRIS_Label_Selector(_title:"Sector :",   _dock: DockStyle.Bottom,
+                            _query: Database_Query.get_sector_options,
+                            _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
+                                {
+                                    ("#", DataGridViewContentAlignment.MiddleRight),
+                                    ("Sector Code",DataGridViewContentAlignment.MiddleCenter),
+                                    ("Sector",DataGridViewContentAlignment.MiddleLeft),
+                                    ("Description",DataGridViewContentAlignment.MiddleLeft)
+                                },
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),})
+                    };
                     break;
 
                 case "Position":
                     controls = new UserControl[]
                     {
-                        new Label_Text("Position:"),
-                        new Label_Rich("Description:")
+                        new PRIS_Label_Entry(_title: "Position Name :", _dock: DockStyle.Top),
+                        new PRIS_Label_Rich(_title: "Description :", _dock: DockStyle.Fill),
                     };
                     insert_Query = Database_Query.set_new_position;
                     table = "position_table";
                     break;
 
                 case "Section":
-                    controls = new UserControl[]
-                    {
-                        new Label_Text ("Section:"),
-                        new Label_Rich ("Description:"),
-                        new Label_Drop ("Division:",Database_Query.get_division_options)
-                    };
                     insert_Query =Database_Query.set_new_section;
                     table = "section_table";
+                    controls = new UserControl[]
+                    {
+                        new PRIS_Label_Entry(_title: "Section Name :", _dock: DockStyle.Top),
+                        new PRIS_Label_Rich(_title: "Description :", _dock: DockStyle.Fill),
+                        new PRIS_Label_Selector(_title:"Division :", _dock: DockStyle.Bottom,
+                            _query: Database_Query.get_division_options,
+                            _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
+                                {
+                                    ("#", DataGridViewContentAlignment.MiddleRight),
+                                    ("Sector Code",DataGridViewContentAlignment.MiddleCenter),
+                                    ("Sector",DataGridViewContentAlignment.MiddleLeft),
+                                    ("Description",DataGridViewContentAlignment.MiddleLeft)
+                                },
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),})
+                    };
                     break;
 
                 case "Sector":
                     controls = new UserControl[]
                     {
-                        new Label_Text("Sector:"),
-                        new Label_Rich("Description:")
+                        new PRIS_Label_Entry(_title: "Sector Name :", _dock: DockStyle.Top),
+                        new PRIS_Label_Rich(_title: "Description :", _dock: DockStyle.Fill),
                     };
                     insert_Query = Database_Query.set_new_sector;
                     table = "sector_table";
@@ -343,113 +389,162 @@ namespace COA_PRIS.Screens
             string update_Query = null;
             string table = null;
 
-            //Console.WriteLine((string)data_View.Rows[data_View.CurrentRow.Index].Cells[1].Value);
             switch (Active_Form)
             {
                 case "Agency":
-                    controls = new UserControl[]
-                    {
-                        new Label_Text("Agency Name:"),
-                        new Label_Rich("Description:"),
-                        new Label_Drop("Cluster:", Database_Query.get_cluster_options)
-                    };
                     read_Query = Database_Query.get_agency_record_by_id;
                     update_Query = Database_Query.update_agency_record_by_id;
                     table = "agency_table";
 
+                    controls = new UserControl[]
+                    {
+                        new PRIS_Label_Entry(_title: "Agency Name :", _dock: DockStyle.Top),
+                        new PRIS_Label_Rich(_title: "Description :", _dock: DockStyle.Fill),
+                        new PRIS_Label_Selector(_title:"Cluster :",   _dock: DockStyle.Bottom,
+                            _query: Database_Query.get_cluster_options,
+                            _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
+                                {
+                                    ("#", DataGridViewContentAlignment.MiddleRight),
+                                    ("Cluster Code",DataGridViewContentAlignment.MiddleCenter),
+                                    ("Cluster",DataGridViewContentAlignment.MiddleLeft),
+                                    ("Description",DataGridViewContentAlignment.MiddleLeft)
+                                },
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),})
+                    };
                     break;
 
                 case "Cluster":
+                    read_Query = Database_Query.get_cluster_record_by_id;
+                    update_Query = Database_Query.update_cluster_record_by_id;
+                    table = "cluster_table";
+
                     controls = new UserControl[]
                     {
-                        new Label_Text("Cluster Name:"),
-                        new Label_Rich("Description:"),
-                        new Label_Drop("Sector:", Database_Query.get_sector_options)
+                        new PRIS_Label_Entry(_title: "Cluster Name :", _dock: DockStyle.Top),
+                        new PRIS_Label_Rich(_title: "Description :", _dock: DockStyle.Fill),
+                        new PRIS_Label_Selector(_title:"Sector :",   _dock: DockStyle.Bottom,
+                            _query: Database_Query.get_sector_options,
+                            _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
+                                {
+                                    ("#", DataGridViewContentAlignment.MiddleRight),
+                                    ("Sector Code",DataGridViewContentAlignment.MiddleCenter),
+                                    ("Sector",DataGridViewContentAlignment.MiddleLeft),
+                                    ("Description",DataGridViewContentAlignment.MiddleLeft)
+                                },
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),})
                     };
-                    read_Query = "";
-                    update_Query = "";
-                    table = "cluster_table";
 
                     break;
 
-
                 case "Contractor":
+                    read_Query = Database_Query.get_contractor_record_by_id;
+                    update_Query = Database_Query.update_contractor_record_by_id;
+                    table = "contractor_table";
+
                     controls = new UserControl[]
                     {
-                       new Label_Text("Contractor Name:"),
-                       new Label_Rich("Description:")
+                        new PRIS_Label_Entry(_title: "Cluster Name :", _dock: DockStyle.Top),
+                        new PRIS_Label_Rich(_title: "Description :", _dock: DockStyle.Fill),
                     };
-                    read_Query = "";
-                    update_Query = "";
-                    table = "contractor_table";
                     break;
 
                 case "Division":
+                    read_Query = Database_Query.get_division_record_by_id;
+                    update_Query = Database_Query.update_division_record_by_id;
+                    table = "division_table";
                     controls = new UserControl[]
                     {
-                        new Label_Text("Division Name:"),
-                        new Label_Rich("Description:"),
-                        new Label_Drop ("Office:",Database_Query.get_office_options)
+                        new PRIS_Label_Entry(_title: "Division Name :", _dock: DockStyle.Top),
+                        new PRIS_Label_Rich(_title: "Description :", _dock: DockStyle.Fill),
+                        new PRIS_Label_Selector(_title:"Office :",   _dock: DockStyle.Bottom,
+                            _query: Database_Query.get_office_options,
+                            _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
+                                {
+                                    ("#", DataGridViewContentAlignment.MiddleRight),
+                                    ("Office Code",DataGridViewContentAlignment.MiddleCenter),
+                                    ("Office",DataGridViewContentAlignment.MiddleLeft),
+                                    ("Description",DataGridViewContentAlignment.MiddleLeft)
+                                },
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),})
                     };
-                    read_Query = "";
-                    update_Query = "";
-                    table = "division_table";
                     break;
                 case "Nature":
+                    read_Query = Database_Query.get_nature_record_by_id;
+                    update_Query = Database_Query.update_nature_record_by_id;
+                    table = "nature_table";
+
                     controls = new UserControl[]
                     {
-                        new Label_Text("Nature:"),
-                        new Label_Rich("Description")
+                        new PRIS_Label_Entry(_title: "Nature Name :", _dock: DockStyle.Top),
+                        new PRIS_Label_Rich(_title: "Description :", _dock: DockStyle.Fill),
                     };
-                    read_Query = "";
-                    update_Query = "";
-                    table = "nature_table";
                     break;
 
                 case "Office":
+                    read_Query = Database_Query.get_office_record_by_id;
+                    update_Query = Database_Query.update_office_record_by_id;
+                    table = "office_table";
+
                     controls = new UserControl[]
                     {
-                        new Label_Text("Office Name:"),
-                        new Label_Rich ("Description:"),
-                        new Label_Drop("Sector:",Database_Query.get_sector_options)
+                        new PRIS_Label_Entry(_title: "Office Name :", _dock: DockStyle.Top),
+                        new PRIS_Label_Rich(_title: "Description :", _dock: DockStyle.Fill),
+                        new PRIS_Label_Selector(_title:"Sector :",   _dock: DockStyle.Bottom,
+                            _query: Database_Query.get_sector_options,
+                            _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
+                                {
+                                    ("#", DataGridViewContentAlignment.MiddleRight),
+                                    ("Sector Code",DataGridViewContentAlignment.MiddleCenter),
+                                    ("Sector",DataGridViewContentAlignment.MiddleLeft),
+                                    ("Description",DataGridViewContentAlignment.MiddleLeft)
+                                },
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),})
                     };
-                    read_Query = "";
-                    update_Query = "";
-                    table = "office_table";
                     break;
 
                 case "Position":
+                    read_Query = Database_Query.get_position_record_by_id;
+                    update_Query = Database_Query.update_position_record_by_id;
+                    table = "position_table";
+
                     controls = new UserControl[]
                     {
-                        new Label_Text("Position:"),
-                        new Label_Rich("Description:")
+                        new PRIS_Label_Entry(_title: "Position Name :", _dock: DockStyle.Top),
+                        new PRIS_Label_Rich(_title: "Description :", _dock: DockStyle.Fill),
                     };
-                    read_Query = "";
-                    update_Query = "";
-                    table = "position_table";
                     break;
 
                 case "Section":
+                    read_Query = Database_Query.get_section_record_by_id;
+                    update_Query = Database_Query.update_section_record_by_id;
+                    table = "section_table";
                     controls = new UserControl[]
                     {
-                        new Label_Text ("Section:"),
-                        new Label_Rich ("Description:"),
-                        new Label_Drop ("Division:",Database_Query.get_division_options)
+                        new PRIS_Label_Entry(_title: "Section Name :", _dock: DockStyle.Top),
+                        new PRIS_Label_Rich(_title: "Description :", _dock: DockStyle.Fill),
+                        new PRIS_Label_Selector(_title:"Division :",   _dock: DockStyle.Bottom,
+                            _query: Database_Query.get_division_options,
+                            _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
+                                {
+                                    ("#", DataGridViewContentAlignment.MiddleRight),
+                                    ("Division Code",DataGridViewContentAlignment.MiddleCenter),
+                                    ("Division",DataGridViewContentAlignment.MiddleLeft),
+                                    ("Description",DataGridViewContentAlignment.MiddleLeft)
+                                },
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),})
                     };
-                    read_Query = "";
-                    update_Query = "";
-                    table = "section_table";
                     break;
 
                 case "Sector":
+                    read_Query = Database_Query.get_sector_record_by_id;
+                    update_Query = Database_Query.update_sector_record_by_id;
+                    table = "sector_table";
+
                     controls = new UserControl[]
                     {
-                        new Label_Text("Sector:"),
-                        new Label_Rich("Description:")
+                        new PRIS_Label_Entry(_title: "Sector Name :", _dock: DockStyle.Top),
+                        new PRIS_Label_Rich(_title: "Description :", _dock: DockStyle.Fill),
                     };
-                    read_Query = "";
-                    update_Query = "";
-                    table = "sector_table";
                     break;
             }
 

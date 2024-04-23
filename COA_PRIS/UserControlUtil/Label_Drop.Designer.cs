@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.info = new Guna.UI.WinForms.GunaLabel();
             this.title = new Guna.UI.WinForms.GunaLabel();
             this.dropbox = new Guna.UI.WinForms.GunaComboBox();
             this.error_drop = new System.Windows.Forms.ErrorProvider(this.components);
             this.help_provider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.info = new Guna.UI.WinForms.GunaLabel();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error_drop)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.help_provider)).BeginInit();
@@ -56,6 +56,23 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(400, 100);
             this.tableLayoutPanel1.TabIndex = 1;
+            // 
+            // info
+            // 
+            this.info.AutoEllipsis = true;
+            this.info.AutoSize = true;
+            this.info.Dock = System.Windows.Forms.DockStyle.Left;
+            this.info.Enabled = false;
+            this.info.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.info.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.info.Location = new System.Drawing.Point(330, 3);
+            this.info.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
+            this.info.Name = "info";
+            this.info.Size = new System.Drawing.Size(50, 34);
+            this.info.TabIndex = 2;
+            this.info.Text = "Label";
+            this.info.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.info.Visible = false;
             // 
             // title
             // 
@@ -111,23 +128,6 @@
             this.help_provider.BlinkRate = 0;
             this.help_provider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.help_provider.ContainerControl = this;
-            // 
-            // info
-            // 
-            this.info.AutoEllipsis = true;
-            this.info.AutoSize = true;
-            this.info.Dock = System.Windows.Forms.DockStyle.Left;
-            this.info.Enabled = false;
-            this.info.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.info.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.info.Location = new System.Drawing.Point(330, 3);
-            this.info.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
-            this.info.Name = "info";
-            this.info.Size = new System.Drawing.Size(50, 34);
-            this.info.TabIndex = 2;
-            this.info.Text = "Label";
-            this.info.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.info.Visible = false;
             // 
             // Label_Drop
             // 

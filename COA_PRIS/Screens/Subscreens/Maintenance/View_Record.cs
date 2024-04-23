@@ -1,4 +1,6 @@
-﻿using COA_PRIS.Utilities;
+﻿using COA_PRIS.UserControlUtil.PRIS_UserControl;
+using COA_PRIS.Utilities;
+using Google.Protobuf.WellKnownTypes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -52,11 +54,14 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
 
         private void InitializeControls(UserControl[] controls)
         {
-            for (int i = 0; i < controls.Length; i++)
+            control_Panel.SuspendLayout();
+            foreach (var control in controls)
             {
-                control_Panel.Controls.Add(controls[i]);
-                control_Panel.Controls[i].Size = new Size(control_Panel.Size.Width - 8, control_Panel.Controls[i].Size.Height);
+                control_Panel.Controls.Add(control);
+                control.Size = new Size(control_Panel.Width, control.Height);
             }
+            control_Panel.ResumeLayout(false);
+            control_Panel.PerformLayout();
 
         }
 
@@ -71,8 +76,15 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
             }
 
             if (ret.Columns.Count == control_Panel.Controls.Count)
-                for (int control = 0; control < ret.Columns.Count; control++) 
-                    control_Panel.Controls[control].Text = (string)ret.Rows[0][control];
+                for (int control_index = 0; control_index < ret.Columns.Count; control_index++)
+                {
+                    if (control_Panel.Controls[control_index] is IPRIS_UserControl)
+                    {
+                        var user_control = (IPRIS_UserControl)control_Panel.Controls[control_index];
+                        user_control.Value = (string)ret.Rows[0][control_index];
+                    }
+
+                }
             
         }
 
@@ -115,10 +127,15 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
                 List<string> values = new List<string>();
 
                 foreach (Control control in control_Panel.Controls)
-                    values.Add(control.Text?.Trim() ?? "");
-
-                values.Add("james");
-                values.Add(code_Title.Text);
+                {
+                    if (control is IPRIS_UserControl)
+                    {
+                        var user_control = (IPRIS_UserControl)control;
+                        values.Add(user_control.Value?.Trim() ?? "");
+                    }
+                }
+                values.Add("admin");
+                values.Add(code_Title.Text);    
                 entries.Add(values);
 
                 using (database_Manager)

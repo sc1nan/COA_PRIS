@@ -35,7 +35,7 @@
             this.parent_Panel = new Guna.UI.WinForms.GunaPanel();
             this.controlMain_Panel = new Guna.UI.WinForms.GunaPanel();
             this.contro_Control_Panel = new Guna.UI.WinForms.GunaElipsePanel();
-            this.control_Panel = new System.Windows.Forms.FlowLayoutPanel();
+            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.error_Message = new Guna.UI.WinForms.GunaLabel();
             this.button_Panel = new System.Windows.Forms.TableLayoutPanel();
             this.save_Btn = new Guna.UI.WinForms.GunaButton();
@@ -44,10 +44,12 @@
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             this.code_Title = new Guna.UI.WinForms.GunaLabel();
             this.error_provider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.control_Panel = new System.Windows.Forms.FlowLayoutPanel();
             this.top_Panel.SuspendLayout();
             this.parent_Panel.SuspendLayout();
             this.controlMain_Panel.SuspendLayout();
             this.contro_Control_Panel.SuspendLayout();
+            this.gunaPanel1.SuspendLayout();
             this.button_Panel.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
             this.gunaElipsePanel1.SuspendLayout();
@@ -113,7 +115,7 @@
             this.contro_Control_Panel.BackColor = System.Drawing.Color.Transparent;
             this.contro_Control_Panel.BaseColor = System.Drawing.Color.White;
             this.contro_Control_Panel.Controls.Add(this.control_Panel);
-            this.contro_Control_Panel.Controls.Add(this.error_Message);
+            this.contro_Control_Panel.Controls.Add(this.gunaPanel1);
             this.contro_Control_Panel.Location = new System.Drawing.Point(0, 0);
             this.contro_Control_Panel.Margin = new System.Windows.Forms.Padding(3, 3, 3, 8);
             this.contro_Control_Panel.Name = "contro_Control_Panel";
@@ -122,29 +124,26 @@
             this.contro_Control_Panel.Size = new System.Drawing.Size(598, 452);
             this.contro_Control_Panel.TabIndex = 6;
             // 
-            // control_Panel
+            // gunaPanel1
             // 
-            this.control_Panel.AutoSize = true;
-            this.control_Panel.BackColor = System.Drawing.Color.Transparent;
-            this.control_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.control_Panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.control_Panel.Location = new System.Drawing.Point(5, 5);
-            this.control_Panel.Name = "control_Panel";
-            this.control_Panel.Size = new System.Drawing.Size(588, 410);
-            this.control_Panel.TabIndex = 3;
-            this.control_Panel.WrapContents = false;
+            this.gunaPanel1.Controls.Add(this.error_Message);
+            this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gunaPanel1.Location = new System.Drawing.Point(5, 413);
+            this.gunaPanel1.Name = "gunaPanel1";
+            this.gunaPanel1.Size = new System.Drawing.Size(588, 34);
+            this.gunaPanel1.TabIndex = 0;
             // 
             // error_Message
             // 
             this.error_Message.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.error_Message.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.error_Message.ForeColor = System.Drawing.Color.Red;
-            this.error_Message.Location = new System.Drawing.Point(5, 415);
+            this.error_Message.Location = new System.Drawing.Point(0, 0);
             this.error_Message.Margin = new System.Windows.Forms.Padding(3);
             this.error_Message.Name = "error_Message";
             this.error_Message.Padding = new System.Windows.Forms.Padding(5);
-            this.error_Message.Size = new System.Drawing.Size(588, 32);
-            this.error_Message.TabIndex = 2;
+            this.error_Message.Size = new System.Drawing.Size(588, 34);
+            this.error_Message.TabIndex = 4;
             this.error_Message.Text = "Error Message";
             this.error_Message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.error_Message.Visible = false;
@@ -264,6 +263,15 @@
             this.error_provider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.error_provider.ContainerControl = this;
             // 
+            // control_Panel
+            // 
+            this.control_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.control_Panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.control_Panel.Location = new System.Drawing.Point(5, 5);
+            this.control_Panel.Name = "control_Panel";
+            this.control_Panel.Size = new System.Drawing.Size(588, 408);
+            this.control_Panel.TabIndex = 1;
+            // 
             // Add_Record
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -287,7 +295,7 @@
             this.parent_Panel.ResumeLayout(false);
             this.controlMain_Panel.ResumeLayout(false);
             this.contro_Control_Panel.ResumeLayout(false);
-            this.contro_Control_Panel.PerformLayout();
+            this.gunaPanel1.ResumeLayout(false);
             this.button_Panel.ResumeLayout(false);
             this.gunaPanel2.ResumeLayout(false);
             this.gunaElipsePanel1.ResumeLayout(false);
@@ -310,7 +318,8 @@
         private System.Windows.Forms.TableLayoutPanel button_Panel;
         private Guna.UI.WinForms.GunaButton cancel_Btn;
         private Guna.UI.WinForms.GunaElipsePanel contro_Control_Panel;
-        private System.Windows.Forms.FlowLayoutPanel control_Panel;
+        private Guna.UI.WinForms.GunaPanel gunaPanel1;
         private Guna.UI.WinForms.GunaLabel error_Message;
+        private System.Windows.Forms.FlowLayoutPanel control_Panel;
     }
 }

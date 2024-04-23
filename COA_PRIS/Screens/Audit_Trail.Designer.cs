@@ -29,174 +29,116 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Audit_Trail));
-            this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.main_Panel = new System.Windows.Forms.FlowLayoutPanel();
+            this.parent_Panel = new Guna.UI.WinForms.GunaElipsePanel();
+            this.top_Panel = new Guna.UI.WinForms.GunaPanel();
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.control_Panel = new System.Windows.Forms.TableLayoutPanel();
-            this.gunaLabel2 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel3 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel5 = new Guna.UI.WinForms.GunaLabel();
-            this.createdBy_Text = new Guna.UI.WinForms.GunaTextBox();
-            this.createdDate_Text = new Guna.UI.WinForms.GunaTextBox();
-            this.updatedBy_Text = new Guna.UI.WinForms.GunaTextBox();
-            this.updatedDate_Text = new Guna.UI.WinForms.GunaTextBox();
-            this.gunaElipsePanel1.SuspendLayout();
-            this.main_Panel.SuspendLayout();
-            this.control_Panel.SuspendLayout();
+            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.content_Panel = new System.Windows.Forms.FlowLayoutPanel();
+            this.priS_Label_Entry1 = new COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Label_Entry();
+            this.priS_Label_Entry2 = new COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Label_Entry();
+            this.priS_Label_Entry3 = new COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Label_Entry();
+            this.priS_Label_Entry4 = new COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Label_Entry();
+            this.parent_Panel.SuspendLayout();
+            this.top_Panel.SuspendLayout();
+            this.content_Panel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gunaElipsePanel1
+            // parent_Panel
             // 
-            this.gunaElipsePanel1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaElipsePanel1.BaseColor = System.Drawing.Color.White;
-            this.gunaElipsePanel1.Controls.Add(this.main_Panel);
-            resources.ApplyResources(this.gunaElipsePanel1, "gunaElipsePanel1");
-            this.gunaElipsePanel1.Name = "gunaElipsePanel1";
-            this.gunaElipsePanel1.Radius = 8;
+            this.parent_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.parent_Panel.BaseColor = System.Drawing.Color.Transparent;
+            this.parent_Panel.Controls.Add(this.content_Panel);
+            this.parent_Panel.Controls.Add(this.gunaPanel1);
+            this.parent_Panel.Controls.Add(this.top_Panel);
+            resources.ApplyResources(this.parent_Panel, "parent_Panel");
+            this.parent_Panel.Name = "parent_Panel";
+            this.parent_Panel.Radius = 8;
             // 
-            // main_Panel
+            // top_Panel
             // 
-            this.main_Panel.Controls.Add(this.gunaLabel1);
-            this.main_Panel.Controls.Add(this.control_Panel);
-            resources.ApplyResources(this.main_Panel, "main_Panel");
-            this.main_Panel.Name = "main_Panel";
+            this.top_Panel.Controls.Add(this.gunaLabel1);
+            resources.ApplyResources(this.top_Panel, "top_Panel");
+            this.top_Panel.Name = "top_Panel";
             // 
             // gunaLabel1
             // 
+            this.gunaLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             resources.ApplyResources(this.gunaLabel1, "gunaLabel1");
-            this.gunaLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.gunaLabel1.ForeColor = System.Drawing.Color.White;
             this.gunaLabel1.Name = "gunaLabel1";
             // 
-            // control_Panel
+            // gunaPanel1
             // 
-            resources.ApplyResources(this.control_Panel, "control_Panel");
-            this.control_Panel.Controls.Add(this.updatedDate_Text, 0, 7);
-            this.control_Panel.Controls.Add(this.updatedBy_Text, 0, 5);
-            this.control_Panel.Controls.Add(this.createdDate_Text, 0, 3);
-            this.control_Panel.Controls.Add(this.gunaLabel2, 0, 0);
-            this.control_Panel.Controls.Add(this.gunaLabel3, 0, 2);
-            this.control_Panel.Controls.Add(this.gunaLabel4, 0, 4);
-            this.control_Panel.Controls.Add(this.gunaLabel5, 0, 6);
-            this.control_Panel.Controls.Add(this.createdBy_Text, 0, 1);
-            this.control_Panel.Name = "control_Panel";
+            this.gunaPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            resources.ApplyResources(this.gunaPanel1, "gunaPanel1");
+            this.gunaPanel1.Name = "gunaPanel1";
             // 
-            // gunaLabel2
+            // content_Panel
             // 
-            resources.ApplyResources(this.gunaLabel2, "gunaLabel2");
-            this.gunaLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.gunaLabel2.Name = "gunaLabel2";
+            this.content_Panel.BackColor = System.Drawing.Color.White;
+            this.content_Panel.Controls.Add(this.priS_Label_Entry1);
+            this.content_Panel.Controls.Add(this.priS_Label_Entry2);
+            this.content_Panel.Controls.Add(this.priS_Label_Entry3);
+            this.content_Panel.Controls.Add(this.priS_Label_Entry4);
+            resources.ApplyResources(this.content_Panel, "content_Panel");
+            this.content_Panel.Name = "content_Panel";
             // 
-            // gunaLabel3
+            // priS_Label_Entry1
             // 
-            resources.ApplyResources(this.gunaLabel3, "gunaLabel3");
-            this.gunaLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.gunaLabel3.Name = "gunaLabel3";
+            resources.ApplyResources(this.priS_Label_Entry1, "priS_Label_Entry1");
+            this.priS_Label_Entry1.Name = "priS_Label_Entry1";
+            this.priS_Label_Entry1.Title = "Label";
+            this.priS_Label_Entry1.Value = "";
             // 
-            // gunaLabel4
+            // priS_Label_Entry2
             // 
-            resources.ApplyResources(this.gunaLabel4, "gunaLabel4");
-            this.gunaLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.gunaLabel4.Name = "gunaLabel4";
+            resources.ApplyResources(this.priS_Label_Entry2, "priS_Label_Entry2");
+            this.priS_Label_Entry2.Name = "priS_Label_Entry2";
+            this.priS_Label_Entry2.Title = "Label";
+            this.priS_Label_Entry2.Value = "";
             // 
-            // gunaLabel5
+            // priS_Label_Entry3
             // 
-            resources.ApplyResources(this.gunaLabel5, "gunaLabel5");
-            this.gunaLabel5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.gunaLabel5.Name = "gunaLabel5";
+            resources.ApplyResources(this.priS_Label_Entry3, "priS_Label_Entry3");
+            this.priS_Label_Entry3.Name = "priS_Label_Entry3";
+            this.priS_Label_Entry3.Title = "Label";
+            this.priS_Label_Entry3.Value = "";
             // 
-            // createdBy_Text
+            // priS_Label_Entry4
             // 
-            this.createdBy_Text.BaseColor = System.Drawing.Color.White;
-            this.createdBy_Text.BorderColor = System.Drawing.Color.Silver;
-            this.createdBy_Text.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.createdBy_Text, "createdBy_Text");
-            this.createdBy_Text.FocusedBaseColor = System.Drawing.Color.White;
-            this.createdBy_Text.FocusedBorderColor = System.Drawing.Color.Silver;
-            this.createdBy_Text.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.createdBy_Text.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.createdBy_Text.Name = "createdBy_Text";
-            this.createdBy_Text.PasswordChar = '\0';
-            this.createdBy_Text.Radius = 8;
-            this.createdBy_Text.SelectedText = "";
-            // 
-            // createdDate_Text
-            // 
-            this.createdDate_Text.BaseColor = System.Drawing.Color.White;
-            this.createdDate_Text.BorderColor = System.Drawing.Color.Silver;
-            this.createdDate_Text.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.createdDate_Text, "createdDate_Text");
-            this.createdDate_Text.FocusedBaseColor = System.Drawing.Color.White;
-            this.createdDate_Text.FocusedBorderColor = System.Drawing.Color.Silver;
-            this.createdDate_Text.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.createdDate_Text.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.createdDate_Text.Name = "createdDate_Text";
-            this.createdDate_Text.PasswordChar = '\0';
-            this.createdDate_Text.Radius = 8;
-            this.createdDate_Text.SelectedText = "";
-            // 
-            // updatedBy_Text
-            // 
-            this.updatedBy_Text.BaseColor = System.Drawing.Color.White;
-            this.updatedBy_Text.BorderColor = System.Drawing.Color.Silver;
-            this.updatedBy_Text.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.updatedBy_Text, "updatedBy_Text");
-            this.updatedBy_Text.FocusedBaseColor = System.Drawing.Color.White;
-            this.updatedBy_Text.FocusedBorderColor = System.Drawing.Color.Silver;
-            this.updatedBy_Text.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.updatedBy_Text.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.updatedBy_Text.Name = "updatedBy_Text";
-            this.updatedBy_Text.PasswordChar = '\0';
-            this.updatedBy_Text.Radius = 8;
-            this.updatedBy_Text.SelectedText = "";
-            // 
-            // updatedDate_Text
-            // 
-            this.updatedDate_Text.BaseColor = System.Drawing.Color.White;
-            this.updatedDate_Text.BorderColor = System.Drawing.Color.Silver;
-            this.updatedDate_Text.Cursor = System.Windows.Forms.Cursors.Arrow;
-            resources.ApplyResources(this.updatedDate_Text, "updatedDate_Text");
-            this.updatedDate_Text.FocusedBaseColor = System.Drawing.Color.White;
-            this.updatedDate_Text.FocusedBorderColor = System.Drawing.Color.Silver;
-            this.updatedDate_Text.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.updatedDate_Text.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.updatedDate_Text.Name = "updatedDate_Text";
-            this.updatedDate_Text.PasswordChar = '\0';
-            this.updatedDate_Text.Radius = 8;
-            this.updatedDate_Text.SelectedText = "";
+            resources.ApplyResources(this.priS_Label_Entry4, "priS_Label_Entry4");
+            this.priS_Label_Entry4.Name = "priS_Label_Entry4";
+            this.priS_Label_Entry4.Title = "Label";
+            this.priS_Label_Entry4.Value = "";
             // 
             // Audit_Trail
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Gainsboro;
-            this.Controls.Add(this.gunaElipsePanel1);
+            this.Controls.Add(this.parent_Panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Audit_Trail";
             this.Load += new System.EventHandler(this.Audit_Trail_Load);
-            this.gunaElipsePanel1.ResumeLayout(false);
-            this.main_Panel.ResumeLayout(false);
-            this.control_Panel.ResumeLayout(false);
-            this.control_Panel.PerformLayout();
+            this.parent_Panel.ResumeLayout(false);
+            this.top_Panel.ResumeLayout(false);
+            this.content_Panel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel1;
-        private System.Windows.Forms.FlowLayoutPanel main_Panel;
+        private Guna.UI.WinForms.GunaElipsePanel parent_Panel;
+        private Guna.UI.WinForms.GunaPanel gunaPanel1;
+        private Guna.UI.WinForms.GunaPanel top_Panel;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
-        private System.Windows.Forms.TableLayoutPanel control_Panel;
-        private Guna.UI.WinForms.GunaLabel gunaLabel2;
-        private Guna.UI.WinForms.GunaLabel gunaLabel3;
-        private Guna.UI.WinForms.GunaLabel gunaLabel4;
-        private Guna.UI.WinForms.GunaLabel gunaLabel5;
-        private Guna.UI.WinForms.GunaTextBox updatedDate_Text;
-        private Guna.UI.WinForms.GunaTextBox updatedBy_Text;
-        private Guna.UI.WinForms.GunaTextBox createdDate_Text;
-        private Guna.UI.WinForms.GunaTextBox createdBy_Text;
+        private System.Windows.Forms.FlowLayoutPanel content_Panel;
+        private UserControlUtil.PRIS_UserControl.PRIS_Label_Entry priS_Label_Entry1;
+        private UserControlUtil.PRIS_UserControl.PRIS_Label_Entry priS_Label_Entry2;
+        private UserControlUtil.PRIS_UserControl.PRIS_Label_Entry priS_Label_Entry3;
+        private UserControlUtil.PRIS_UserControl.PRIS_Label_Entry priS_Label_Entry4;
     }
 }

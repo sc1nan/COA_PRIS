@@ -1,6 +1,6 @@
-﻿namespace COA_PRIS.Screens.Subscreens.Employees
+﻿namespace COA_PRIS.Screens.Subscreens.Projects
 {
-    partial class Employee_Submodule
+    partial class Create_Project
     {
         /// <summary>
         /// Required designer variable.
@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.bottom_Panel = new Guna.UI.WinForms.GunaPanel();
-            this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.top_Panel = new Guna.UI.WinForms.GunaPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
@@ -40,10 +38,10 @@
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.add_RecordBtn = new Guna.UI.WinForms.GunaButton();
             this.view_RecordBtn = new Guna.UI.WinForms.GunaButton();
+            this.bottom_Panel = new Guna.UI.WinForms.GunaPanel();
             this.container_subPanel = new Guna.UI.WinForms.GunaPanel();
             this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
             this.data_View = new Guna.UI.WinForms.GunaDataGridView();
-            this.bottom_Panel.SuspendLayout();
             this.top_Panel.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -51,47 +49,6 @@
             this.gunaPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.data_View)).BeginInit();
             this.SuspendLayout();
-            // 
-            // bottom_Panel
-            // 
-            this.bottom_Panel.BackColor = System.Drawing.Color.Transparent;
-            this.bottom_Panel.Controls.Add(this.gunaButton3);
-            this.bottom_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bottom_Panel.Location = new System.Drawing.Point(0, 767);
-            this.bottom_Panel.Margin = new System.Windows.Forms.Padding(0);
-            this.bottom_Panel.Name = "bottom_Panel";
-            this.bottom_Panel.Size = new System.Drawing.Size(1567, 50);
-            this.bottom_Panel.TabIndex = 4;
-            // 
-            // gunaButton3
-            // 
-            this.gunaButton3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaButton3.AnimationHoverSpeed = 0.07F;
-            this.gunaButton3.AnimationSpeed = 0.03F;
-            this.gunaButton3.BackColor = System.Drawing.Color.Transparent;
-            this.gunaButton3.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(66)))), ((int)(((byte)(102)))));
-            this.gunaButton3.BorderColor = System.Drawing.Color.Black;
-            this.gunaButton3.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.gunaButton3.FocusedColor = System.Drawing.Color.Empty;
-            this.gunaButton3.Font = new System.Drawing.Font("Bahnschrift", 14F);
-            this.gunaButton3.ForeColor = System.Drawing.Color.White;
-            this.gunaButton3.Image = global::COA_PRIS.Properties.Resources.moon;
-            this.gunaButton3.ImageOffsetX = 8;
-            this.gunaButton3.ImageSize = new System.Drawing.Size(30, 30);
-            this.gunaButton3.Location = new System.Drawing.Point(1336, 0);
-            this.gunaButton3.Margin = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.gunaButton3.Name = "gunaButton3";
-            this.gunaButton3.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.gunaButton3.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.gunaButton3.OnHoverForeColor = System.Drawing.Color.White;
-            this.gunaButton3.OnHoverImage = null;
-            this.gunaButton3.OnPressedColor = System.Drawing.Color.Black;
-            this.gunaButton3.Radius = 5;
-            this.gunaButton3.Size = new System.Drawing.Size(230, 50);
-            this.gunaButton3.TabIndex = 1;
-            this.gunaButton3.Text = "Deactivate Record";
-            this.gunaButton3.Visible = false;
             // 
             // top_Panel
             // 
@@ -102,8 +59,8 @@
             this.top_Panel.Location = new System.Drawing.Point(0, 0);
             this.top_Panel.Margin = new System.Windows.Forms.Padding(0);
             this.top_Panel.Name = "top_Panel";
-            this.top_Panel.Size = new System.Drawing.Size(1567, 50);
-            this.top_Panel.TabIndex = 3;
+            this.top_Panel.Size = new System.Drawing.Size(1591, 50);
+            this.top_Panel.TabIndex = 4;
             // 
             // flowLayoutPanel2
             // 
@@ -113,7 +70,7 @@
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1201, 50);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1225, 50);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
             // gunaElipsePanel1
@@ -153,7 +110,6 @@
             this.refresh_Btn.Radius = 8;
             this.refresh_Btn.Size = new System.Drawing.Size(50, 50);
             this.refresh_Btn.TabIndex = 2;
-            this.refresh_Btn.Click += new System.EventHandler(this.refresh_Btn_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -163,7 +119,7 @@
             this.flowLayoutPanel1.Controls.Add(this.view_RecordBtn);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1201, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1225, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(366, 50);
             this.flowLayoutPanel1.TabIndex = 0;
@@ -228,7 +184,16 @@
             this.view_RecordBtn.TabIndex = 6;
             this.view_RecordBtn.Tag = "ViewRecord";
             this.view_RecordBtn.Text = "View Record";
-            this.view_RecordBtn.Click += new System.EventHandler(this.view_RecordBtn_Click);
+            // 
+            // bottom_Panel
+            // 
+            this.bottom_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.bottom_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bottom_Panel.Location = new System.Drawing.Point(0, 851);
+            this.bottom_Panel.Margin = new System.Windows.Forms.Padding(0);
+            this.bottom_Panel.Name = "bottom_Panel";
+            this.bottom_Panel.Size = new System.Drawing.Size(1591, 50);
+            this.bottom_Panel.TabIndex = 5;
             // 
             // container_subPanel
             // 
@@ -238,8 +203,8 @@
             this.container_subPanel.Location = new System.Drawing.Point(0, 50);
             this.container_subPanel.Margin = new System.Windows.Forms.Padding(0);
             this.container_subPanel.Name = "container_subPanel";
-            this.container_subPanel.Size = new System.Drawing.Size(1567, 717);
-            this.container_subPanel.TabIndex = 5;
+            this.container_subPanel.Size = new System.Drawing.Size(1591, 801);
+            this.container_subPanel.TabIndex = 6;
             // 
             // gunaPanel3
             // 
@@ -250,7 +215,7 @@
             this.gunaPanel3.Margin = new System.Windows.Forms.Padding(8);
             this.gunaPanel3.Name = "gunaPanel3";
             this.gunaPanel3.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
-            this.gunaPanel3.Size = new System.Drawing.Size(1567, 717);
+            this.gunaPanel3.Size = new System.Drawing.Size(1591, 801);
             this.gunaPanel3.TabIndex = 0;
             // 
             // data_View
@@ -259,30 +224,30 @@
             this.data_View.AllowUserToDeleteRows = false;
             this.data_View.AllowUserToResizeColumns = false;
             this.data_View.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.data_View.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.data_View.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
             this.data_View.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.data_View.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.data_View.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.data_View.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.data_View.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data_View.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data_View.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.data_View.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.data_View.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.data_View.DefaultCellStyle = dataGridViewCellStyle9;
             this.data_View.Dock = System.Windows.Forms.DockStyle.Fill;
             this.data_View.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.data_View.EnableHeadersVisualStyles = false;
@@ -301,7 +266,7 @@
             this.data_View.ShowCellToolTips = false;
             this.data_View.ShowEditingIcon = false;
             this.data_View.ShowRowErrors = false;
-            this.data_View.Size = new System.Drawing.Size(1567, 701);
+            this.data_View.Size = new System.Drawing.Size(1591, 785);
             this.data_View.TabIndex = 1;
             this.data_View.Tag = "Table";
             this.data_View.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -327,20 +292,18 @@
             this.data_View.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.data_View.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             // 
-            // Employee_Submodule
+            // Create_Project
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1567, 817);
+            this.ClientSize = new System.Drawing.Size(1591, 901);
             this.Controls.Add(this.container_subPanel);
             this.Controls.Add(this.bottom_Panel);
             this.Controls.Add(this.top_Panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Employee_Submodule";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Employee_Submodule_Load);
-            this.bottom_Panel.ResumeLayout(false);
+            this.Name = "Create_Project";
+            this.Text = "Create_Project";
             this.top_Panel.ResumeLayout(false);
             this.top_Panel.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
@@ -353,15 +316,15 @@
         }
 
         #endregion
+
         private Guna.UI.WinForms.GunaPanel top_Panel;
-        private Guna.UI.WinForms.GunaPanel bottom_Panel;
-        private Guna.UI.WinForms.GunaButton gunaButton3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel1;
         private Guna.UI.WinForms.GunaButton refresh_Btn;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI.WinForms.GunaButton add_RecordBtn;
         private Guna.UI.WinForms.GunaButton view_RecordBtn;
-        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel1;
+        private Guna.UI.WinForms.GunaPanel bottom_Panel;
         private Guna.UI.WinForms.GunaPanel container_subPanel;
         private Guna.UI.WinForms.GunaPanel gunaPanel3;
         private Guna.UI.WinForms.GunaDataGridView data_View;

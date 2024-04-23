@@ -12,7 +12,6 @@ namespace COA_PRIS.Screens
 {
     partial class Dashboard : Form
     {
-        /*private bool sidebar_Expanded = false;*/
         private Form current_Form = null;
         private Login_Manager login_manager;
         private Database_Manager database_manager;
@@ -29,7 +28,6 @@ namespace COA_PRIS.Screens
         public Dashboard()
         {
             InitializeComponent();
-            //SidebarContainer.BringToFront();
             title_Panel.BringToFront();
 
             //this.AutoScaleMode = AutoScaleMode.Dpi;
@@ -48,7 +46,7 @@ namespace COA_PRIS.Screens
 
             tab_Manager.Header_Title = headerTitle;
             tab_Manager.active_Button(EmployeeBtn, true);
-            EmployeeBtn.PerformClick();
+            MaintenanceBtn.PerformClick();
         }
 
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
