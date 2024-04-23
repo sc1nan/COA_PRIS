@@ -29,6 +29,7 @@ namespace COA_PRIS.Screens
             InitializeComponent();
             title_Panel.BringToFront();
 
+            Activity_Manager.CurrentUser = "admin";
             //this.AutoScaleMode = AutoScaleMode.Dpi;
         }
 
@@ -43,7 +44,7 @@ namespace COA_PRIS.Screens
             login_manager.active_Account = "james";
             tab_Manager.Header_Title = headerTitle;
             tab_Manager.active_Button(EmployeeBtn, true);
-            MaintenanceBtn.PerformClick();
+            ProjectBtn.PerformClick();
         }
 
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
@@ -73,7 +74,7 @@ namespace COA_PRIS.Screens
                 case "HomeBtn":
                     form = landing_Home;
                     break;
-                case "Createbtn":
+                case "ProjectBtn":
                     // Handle Create button click
                     current_Form = tab_Manager.switch_Form(projects_Tab, current_Form, Main_Form);
                     break;

@@ -1,6 +1,6 @@
 ﻿namespace COA_PRIS.UserControlUtil.PRIS_UserControl
 {
-    partial class PRIS_DatePicker
+    partial class PRIS_Date_Picker
     {
         /// <summary> 
         /// Required designer variable.
@@ -49,7 +49,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(400, 100);
             this.tableLayoutPanel1.TabIndex = 2;
             this.tableLayoutPanel1.Tag = "Entry";
-            this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
             // 
             // title
             // 
@@ -69,6 +68,7 @@
             this.date.BackColor = System.Drawing.Color.Transparent;
             this.date.BaseColor = System.Drawing.Color.White;
             this.date.BorderColor = System.Drawing.Color.Silver;
+            this.date.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.date.CustomFormat = null;
             this.date.Dock = System.Windows.Forms.DockStyle.Fill;
             this.date.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
@@ -78,25 +78,24 @@
             this.date.Location = new System.Drawing.Point(3, 43);
             this.date.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.date.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.date.MinDate = new System.DateTime(1753, 1, 1, 0, 0, 0, 0);
+            this.date.MinDate = new System.DateTime(2024, 4, 18, 0, 0, 0, 0);
             this.date.Name = "date";
             this.date.OnHoverBaseColor = System.Drawing.Color.White;
             this.date.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             this.date.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             this.date.OnPressedColor = System.Drawing.Color.Black;
-            this.date.Radius = 8;
+            this.date.Radius = 6;
             this.date.Size = new System.Drawing.Size(377, 54);
             this.date.TabIndex = 1;
-            this.date.Text = "Thursday, April 11, 2024";
-            this.date.Value = new System.DateTime(2024, 4, 11, 10, 57, 15, 556);
-            this.date.ValueChanged += new System.EventHandler(this.gunaDateTimePicker1_ValueChanged);
+            this.date.Text = "Monday, April 22, 2024";
+            this.date.Value = new System.DateTime(2024, 4, 22, 0, 0, 0, 0);
             // 
-            // PRIS_DatePicker
+            // PRIS_Date_Picker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Name = "PRIS_DatePicker";
+            this.Name = "PRIS_Date_Picker";
             this.Size = new System.Drawing.Size(400, 100);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

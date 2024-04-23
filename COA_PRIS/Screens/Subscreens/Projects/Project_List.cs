@@ -8,20 +8,20 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace COA_PRIS.Screens.Subscreens.Projects
 {
-    public partial class Create_Project : Form
+    public partial class Project_List : Form
     {
-        private Add_Project add_Project;
-        public Create_Project()
+        private Screens.Projects projects;
+        public Project_List()
         {
             InitializeComponent();
         }
 
         private void add_RecordBtn_Click(object sender, EventArgs e)
         {
-            add_Project = new Add_Project();
-            add_Project.ShowDialog();
+            
         }
     }
 }

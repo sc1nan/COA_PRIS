@@ -1,6 +1,9 @@
 ﻿using Guna.UI.WinForms;
+using Mysqlx.Crud;
+using Org.BouncyCastle.Asn1.Crmf;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -14,14 +17,14 @@ namespace COA_PRIS.Utilities
     internal class Util
     {
         private Database_Manager db_Manager;
-        public string generate_ID(string table)
+        public string GenerateID(string _table)
         {
             db_Manager = new Database_Manager();
             string ret;
 
             using (db_Manager) 
             {
-                ret = (string)db_Manager.ExecuteScalar(string.Format(Database_Query.get_recent_code, table));
+                ret = (string)db_Manager.ExecuteScalar(string.Format(Database_Query.get_recent_code, _table));
             }
 
             if (ret is null)
@@ -34,7 +37,7 @@ namespace COA_PRIS.Utilities
 
                 using (db_Manager)
                 {
-                    code_info = db_Manager.ExecuteQuery(string.Format(Database_Query.get_code_info, table));
+                    code_info = db_Manager.ExecuteQuery(string.Format(Database_Query.get_code_info, _table));
                 }
 
                 foreach (DataRow row in code_info.Rows)
@@ -63,7 +66,6 @@ namespace COA_PRIS.Utilities
             }
         }
 
-        
 
         public string generate_Query(List<List<string>> entries, string insertionQuery)
         {
@@ -114,5 +116,113 @@ namespace COA_PRIS.Utilities
             }
             return -1;
         }
+
+        public void SetControls(List<UserControl[]> controls, Control parent)
+        {
+            var panel = new TableLayoutPanel();
+            panel.Dock = DockStyle.Fill;
+
+            panel.RowStyles.Add(new RowStyle(SizeType.Percent, 100f));
+            for (int col = 0; col < controls.Count; col++)
+            {
+                panel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100f / controls.Count));
+
+                var sub = new TableLayoutPanel();
+                sub.Dock = DockStyle.Fill;
+
+                sub.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100f));
+
+                //Console.WriteLine(controls[col].Length);
+                for (int row = 0; row < controls[col].Length; row++)
+                {
+                    sub.RowStyles.Add(new RowStyle(SizeType.AutoSize));
+                }
+
+                panel.Controls.Add(sub, col, 0);
+
+            }
+
+            for (int conCol = 0; conCol < controls.Count; conCol++)
+            {
+                var sub = (TableLayoutPanel)panel.Controls[conCol];
+                sub.SuspendLayout();
+
+                // Ensure that the TableLayoutPanel's row styles are set to AutoSize or Percent as needed
+                // sub.RowStyles.Add(new RowStyle(SizeType.AutoSize)); // Example for AutoSize
+
+                for (int conRow = 0; conRow < controls[conCol].Length; conRow++)
+                {
+                    var pris = controls[conCol][conRow];
+
+                    pris.Dock = DockStyle.Top; // Set the docking property of the control
+
+                    sub.Controls.Add(pris, 0, conRow);
+                }
+
+                sub.ResumeLayout(); // Resume layout logic after adding controls
+
+            }
+
+            parent.Controls.Add(panel);
+        }
+
+        public List<T> SearchControls <T>(Control parent, List<Type> types) where T : Control
+        {
+            List<T> ret_Controls = new List<T>();
+            Queue<Control> q_control = new Queue<Control>();
+
+            q_control.Enqueue(parent);
+
+            while (q_control.Count > 0)
+            {
+                Control con = q_control.Dequeue();
+
+                foreach (Type type in types)
+                {
+                    if (type.IsAssignableFrom(con.GetType()))
+                    {
+                        ret_Controls.Add((T)con);
+                        break;
+                    }
+                }
+
+                if (con.HasChildren)
+                {
+                    foreach (Control child_Control in con.Controls)
+                        q_control.Enqueue(child_Control);
+                }
+            }
+
+            return ret_Controls;
+        }
+
+        public int GetMaxArraySize<T>(List<T[]> listOfArrays)
+        {
+            int maxSize = 0;
+            foreach (T[] array in listOfArrays)
+            {
+                int size = array.Length;
+                if (size > maxSize)
+                {
+                    maxSize = size;
+                }
+            }
+            return maxSize;
+        }
+
+        public bool SearchString(DataTable dataTable, string searchString) 
+        {
+            var ret = false;
+            foreach (DataRow row in dataTable.Rows)
+            {
+                foreach (var item in row.ItemArray)
+                {
+                    if (item.ToString().Contains(searchString))
+                        ret = true;
+                }
+            }
+            return ret;
+        }
+
     }
 }

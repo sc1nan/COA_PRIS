@@ -6,6 +6,7 @@ using COA_PRIS.UserControlUtil;
 using COA_PRIS.Utilities;
 using COA_PRIS.Screens;
 using COA_PRIS.UserControlUtil.PRIS_UserControl;
+using Google.Protobuf.WellKnownTypes;
 
 namespace COA_PRIS.Screens.Subscreens.Maintenance
 {
@@ -22,7 +23,7 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
 
         public event Action callback;
 
-        public Add_Record(UserControl[] controls, string insertQuery, string table)
+        public Add_Record(List<UserControl[]> controls, string insertQuery, string table)
         {
             InitializeComponent();
             InitializeControls(controls);
@@ -33,32 +34,28 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
 
         private void Add_Agency_Load(object sender, EventArgs e)
         {
-            code_Title.Text = util.generate_ID(Table);
+            code_Title.Text = util.GenerateID(Table);
         }
 
-        private void InitializeControls(UserControl[] controls)
+        private void InitializeControls(List<UserControl[]> controls)
         {
-            control_Panel.SuspendLayout();
-            foreach (var control in controls)
-            {
-                control_Panel.Controls.Add(control);
-                control.Size = new Size(control_Panel.Width, control.Height);
-            }
-            control_Panel.ResumeLayout(false);
-            control_Panel.PerformLayout();
+            util.SetControls(controls, control_Panel);
         }
 
         private void save_Btn_Click(object sender, EventArgs e)
         {
+            var controls = util.SearchControls<UserControl>(control_Panel, new List<System.Type> { typeof(UserControl) });
             int ret = 0;
-            if (validator.Required_TextBox(control_Panel, error_provider, error_Message))
+
+
+            // Loops through the controls and add its value to the  list.
+            if (validator.PRISRequired(control_Panel, error_provider, error_Message))
             {
 
                 // Adds the required values inside of a list.
                 var values = new List<string> { code_Title.Text };
-
                 // Loops through the controls and add its value to the  list.
-                foreach (UserControl control in control_Panel.Controls) 
+                foreach (UserControl control in controls)
                 {
                     if (control is IPRIS_UserControl)
                     {
@@ -68,25 +65,25 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
                 }
 
                 // Adds the active account
-                values.Add("james");
+                values.Add("admin");
 
-                
+
                 var entries = new List<List<string>> { values };
 
-                using (database_Manager) 
+                using (database_Manager)
                     ret = database_Manager.ExecuteNonQuery(util.generate_Query(entries, Insert_Query));
             }
 
-            if (ret == 1) 
+            if (ret == 1)
             {
                 if (MessageBox.Show($"{code_Title.Text} is successfully added.", "New Record Added", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                 {
-                    is_ClosingProgrammatically = true; 
+                    is_ClosingProgrammatically = true;
                     Close();
                     callback?.Invoke();
                 }
             }
-            
+
         }
 
         private void Add_Record_FormClosing(object sender, FormClosingEventArgs e)

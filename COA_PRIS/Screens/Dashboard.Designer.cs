@@ -35,7 +35,7 @@
             this.home_Panel = new Guna.UI.WinForms.GunaPanel();
             this.HomeBtn = new Guna.UI.WinForms.GunaButton();
             this.projects_Panel = new Guna.UI.WinForms.GunaPanel();
-            this.Createbtn = new Guna.UI.WinForms.GunaButton();
+            this.ProjectBtn = new Guna.UI.WinForms.GunaButton();
             this.employee_Panel = new Guna.UI.WinForms.GunaPanel();
             this.EmployeeBtn = new Guna.UI.WinForms.GunaButton();
             this.report_Panel = new Guna.UI.WinForms.GunaPanel();
@@ -151,42 +151,42 @@
             // projects_Panel
             // 
             this.projects_Panel.BackColor = System.Drawing.Color.Transparent;
-            this.projects_Panel.Controls.Add(this.Createbtn);
+            this.projects_Panel.Controls.Add(this.ProjectBtn);
             this.projects_Panel.Location = new System.Drawing.Point(0, 78);
             this.projects_Panel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.projects_Panel.Name = "projects_Panel";
             this.projects_Panel.Size = new System.Drawing.Size(95, 70);
             this.projects_Panel.TabIndex = 9;
             // 
-            // Createbtn
+            // ProjectBtn
             // 
-            this.Createbtn.AnimationHoverSpeed = 0.07F;
-            this.Createbtn.AnimationSpeed = 0.03F;
-            this.Createbtn.BaseColor = System.Drawing.Color.Transparent;
-            this.Createbtn.BorderColor = System.Drawing.Color.Black;
-            this.Createbtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Createbtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.Createbtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Createbtn.FocusedColor = System.Drawing.Color.Empty;
-            this.Createbtn.Font = new System.Drawing.Font("Bahnschrift", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Createbtn.ForeColor = System.Drawing.Color.White;
-            this.Createbtn.Image = global::COA_PRIS.Properties.Resources.project;
-            this.Createbtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.Createbtn.ImageSize = new System.Drawing.Size(40, 40);
-            this.Createbtn.Location = new System.Drawing.Point(0, 0);
-            this.Createbtn.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.Createbtn.Name = "Createbtn";
-            this.Createbtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
-            this.Createbtn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.Createbtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.Createbtn.OnHoverImage = null;
-            this.Createbtn.OnPressedColor = System.Drawing.Color.Black;
-            this.Createbtn.Size = new System.Drawing.Size(95, 70);
-            this.Createbtn.TabIndex = 3;
-            this.Createbtn.Tag = "Projects";
-            this.Createbtn.TextOffsetX = 18;
-            this.Createbtn.Click += new System.EventHandler(this.button_Click);
-            this.Createbtn.MouseHover += new System.EventHandler(this.button_MouseHover);
+            this.ProjectBtn.AnimationHoverSpeed = 0.07F;
+            this.ProjectBtn.AnimationSpeed = 0.03F;
+            this.ProjectBtn.BaseColor = System.Drawing.Color.Transparent;
+            this.ProjectBtn.BorderColor = System.Drawing.Color.Black;
+            this.ProjectBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ProjectBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.ProjectBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProjectBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.ProjectBtn.Font = new System.Drawing.Font("Bahnschrift", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProjectBtn.ForeColor = System.Drawing.Color.White;
+            this.ProjectBtn.Image = global::COA_PRIS.Properties.Resources.project;
+            this.ProjectBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.ProjectBtn.ImageSize = new System.Drawing.Size(40, 40);
+            this.ProjectBtn.Location = new System.Drawing.Point(0, 0);
+            this.ProjectBtn.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            this.ProjectBtn.Name = "ProjectBtn";
+            this.ProjectBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
+            this.ProjectBtn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.ProjectBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.ProjectBtn.OnHoverImage = null;
+            this.ProjectBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.ProjectBtn.Size = new System.Drawing.Size(95, 70);
+            this.ProjectBtn.TabIndex = 3;
+            this.ProjectBtn.Tag = "Projects";
+            this.ProjectBtn.TextOffsetX = 18;
+            this.ProjectBtn.Click += new System.EventHandler(this.button_Click);
+            this.ProjectBtn.MouseHover += new System.EventHandler(this.button_MouseHover);
             // 
             // employee_Panel
             // 
@@ -237,6 +237,7 @@
             this.report_Panel.Name = "report_Panel";
             this.report_Panel.Size = new System.Drawing.Size(95, 70);
             this.report_Panel.TabIndex = 9;
+            this.report_Panel.Visible = false;
             // 
             // ReportBtn
             // 
@@ -277,6 +278,7 @@
             this.user_Panel.Name = "user_Panel";
             this.user_Panel.Size = new System.Drawing.Size(95, 70);
             this.user_Panel.TabIndex = 9;
+            this.user_Panel.Visible = false;
             // 
             // UserBtn
             // 
@@ -593,7 +595,7 @@
         private Guna.UI.WinForms.GunaPanel Main_Form;
         private System.Windows.Forms.FlowLayoutPanel tab_panel;
         private Guna.UI.WinForms.GunaButton HomeBtn;
-        private Guna.UI.WinForms.GunaButton Createbtn;
+        private Guna.UI.WinForms.GunaButton ProjectBtn;
         private Guna.UI.WinForms.GunaButton EmployeeBtn;
         private Guna.UI.WinForms.GunaButton ReportBtn;
         private Guna.UI.WinForms.GunaButton UserBtn;

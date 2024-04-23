@@ -11,5 +11,7 @@ namespace COA_PRIS.Utilities
         public static string login_message = "Logged In";
         public static string logout_message = "Logged Out";
         public static string login_attempt = "Attempted to Login";
+
+        public static readonly string set_docu_message = "{0} : {1} - {2} \n\r Created by {3}";
     }
 }

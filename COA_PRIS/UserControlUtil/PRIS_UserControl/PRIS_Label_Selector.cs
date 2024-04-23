@@ -1,5 +1,6 @@
 ﻿using COA_PRIS.UserControlUtil.PRIS_UserControl;
 using COA_PRIS.Utilities;
+using Org.BouncyCastle.Asn1.Cmp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,26 +20,85 @@ namespace COA_PRIS.UserControlUtil
         private Database_Manager database_Manager = new Database_Manager();
         private Selector selector;
 
+        private DataTable options; 
+        public event EventHandler SelectionChanged;
+        public string infoText;
 
+        public bool IsRequiredValue = false;
+
+        public Control ErrorRoot
+        {
+            get { return entry; }
+        }
+        public Control IndicatorRoot
+        {
+            get { return search; }
+        }
+        public bool IsRequired
+        {
+            get { return IsRequiredValue; }
+            set { IsRequiredValue = value; }
+        }
         public string Title
         {
             get { return title.Text.Replace(":", " ").Trim(); }
-            set { title.Text = value; }
+            set { title.Text = value;}
         }
-
         public string Value
         {
             get { return ReturnValues.FirstOrDefault(x => x.Value == entry.Text).Key;}
-            set { entry.Text = value; }
+            set 
+            { 
+                entry.Text = value;
+                Selection_ChangeEvent(EventArgs.Empty);
+            }
         }
-
+        public Control Button
+        {
+            get { return search; }
+        }
+        public DataTable RawOptions 
+        {
+            get { return options; }
+        }
+        public string RawValue
+        {
+            get { return entry.Text; }
+        }
+        public bool ReadOnly
+        {
+            get { return search.Enabled; }
+            set 
+            { 
+                search.Visible = !value;
+                if (value)
+                    entry.Margin = new Padding(3,3,20,3);
+                else
+                    entry.Margin = new Padding(3,3,3,3);
+            }
+        }
         public Dictionary<string, string> ReturnValues 
         {
             get { return valuePairs; }
             set { valuePairs = value; Value = value[valuePairs.Keys.Single()];} 
         }
+        public bool EnableSelector
+        {
+            get { return search.Enabled; }
+            set { SetControls(value); }
+        }
+        public string EntryText 
+        {
+            get { return entry.Text; }
+            set {  entry.Text = value; }
+        }
+        public string InfoText 
+        {
+            get { return infoText; }
+            set {  infoText = value; }
+        }
 
-        private string SelectorQuery { get; set; }
+        public string SelectorQuery { get; set; }
         private (string, DataGridViewContentAlignment)[] ColumnsTitlesAlignment { get; set; }
         private (bool, int)[] ColumnWidths { get; set; }
 
@@ -47,19 +107,30 @@ namespace COA_PRIS.UserControlUtil
             InitializeComponent();
         }
 
-        public PRIS_Label_Selector(string _title, string _query, DockStyle _dock, 
+        public PRIS_Label_Selector(string _title, string _query,
             (string, DataGridViewContentAlignment)[] _column_Title_Alignment,
-            (bool, int)[] _column_Widths
+            (bool, int)[] _column_Widths, bool _enabled = true, bool _read_Only = false,
+            bool _isRequired = true
             )
         {
             InitializeComponent();
             this.Title = _title;
+            this.EnableSelector = _enabled;
             this.entry.Tag = $"!req_{this.Title}";
+            this.entry.Text = $"Select {this.Title} Record";
+            this.IsRequired = _isRequired;
             this.SelectorQuery = _query;
-            //this.Dock = _dock;
             this.ColumnsTitlesAlignment = _column_Title_Alignment;
             this.ColumnWidths = _column_Widths;
+            this.ReadOnly = _read_Only;
             SetSelection();
+        }
+
+        private void SetControls(bool value) 
+        {
+            search.Enabled = value;
+            entry.Enabled = value;
+            entry.BaseColor = value ? Color.White : Color.Gainsboro;
         }
 
         private void SetSelection() 
@@ -68,16 +139,32 @@ namespace COA_PRIS.UserControlUtil
             using (database_Manager)
                ret = database_Manager.ExecuteQuery(this.SelectorQuery);
 
-            foreach (DataRow row in ret.Rows) 
+            options = ret;
+            foreach (DataRow row in ret.Rows)
                 ReturnValues.Add((string)row[0], (string)row[1]);
-        
         }
 
 
         private void search_Click(object sender, EventArgs e)
         {
+            CallSelector(sender);
+        }
+
+        protected virtual void Selection_ChangeEvent(EventArgs e)
+        {
+            SelectionChanged?.Invoke(this, e);
+        }
+
+        private void CallSelector(object sender) 
+        {
             selector = new Selector(sender, this.Title, this.SelectorQuery, this.ColumnsTitlesAlignment, this.ColumnWidths);
+            selector.InfoText = this.InfoText;
             selector.ShowDialog();
+        }
+
+        private void entry_DoubleClick(object sender, EventArgs e)
+        {
+            CallSelector(search);
         }
     }
 }

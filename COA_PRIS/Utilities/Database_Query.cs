@@ -61,22 +61,22 @@ namespace COA_PRIS
 
         #endregion
 
-        public static readonly string get_office_options_by_id = "SELECT office_table.code, office_table.title FROM office_table \r" +
+        public static readonly string get_office_options_by_id = "SELECT office_table.code, office_table.title, office_table.description FROM office_table \r" +
                                                                     "WHERE office_table.sector_code = '{0}' AND office_table.status = 1;";
 
-        public static readonly string get_division_options_by_id = "SELECT division_table.code, division_table.title FROM division_table \r" +
+        public static readonly string get_division_options_by_id = "SELECT division_table.code, division_table.title, division_table.description FROM division_table \r" +
                                                                     "WHERE division_table.office_code = '{0}' AND division_table.status = 1;";
 
-        public static readonly string get_section_options_by_id = "SELECT section_table.code, section_table.title FROM section_table \r" +
+        public static readonly string get_section_options_by_id = "SELECT section_table.code, section_table.title, section_table.description FROM section_table \r" +
                                                                     "WHERE section_table.division_code = '{0}' AND section_table.status = 1;";
 
-        public static readonly string get_position_options = "SELECT position_table.code, position_table.title FROM position_table \r" +
+        public static readonly string get_position_options = "SELECT position_table.code, position_table.title, position_table.description FROM position_table \r" +
                                                              "WHERE position_table.status = 1;";
 
-        public static readonly string get_section_option = "SELECT section_table.code, section_table.title FROM section_table \r" +
+        public static readonly string get_section_option = "SELECT section_table.code, section_table.title, section_table.description FROM section_table \r" +
                                                             "WHERE section_table.status = 1;";
 
-        public static readonly string get_employee_record_by_id = "SELECT emp_info_table.full_name, emp_info_table.email, emp_info_table.contact_no, sector_table.code, office_table.code, division_table.code, section_table.code, position_table.code\r" +
+        public static readonly string get_employee_record_by_id = "SELECT emp_info_table.full_name, emp_info_table.email, emp_info_table.contact_no, sector_table.title, office_table.title, division_table.title, section_table.title, position_table.title\r" +
                                                                     "FROM emp_info_table \r" +
                                                                     "LEFT JOIN position_table ON emp_info_table.position_code = position_table.code\r" +
                                                                     "LEFT JOIN section_table ON emp_info_table.section_code = section_table.code\r" +
@@ -126,7 +126,11 @@ namespace COA_PRIS
 
         public static readonly string get_all_sector_records = "SELECT sector_table.code, sector_table.title, sector_table.description FROM sector_table\r" +
                                                                 "WHERE sector_table.status= 1;";
-       
+
+        public static readonly string get_all_status_records = "SELECT status_table.code, status_table.title, status_table.description FROM status_table\r" +
+                                                                "WHERE status_table.status = 2 OR status_table.status = 1 ;";
+
+
         public static readonly string get_cluster_options = "SELECT cluster_table.code, cluster_table.title, cluster_table.description FROM cluster_table WHERE cluster_table.status = 1;";
 
         public static readonly string get_office_options = "SELECT office_table.code, office_table.title, office_table.description FROM office_table WHERE office_table.status = 1;";
@@ -135,7 +139,13 @@ namespace COA_PRIS
 
         public static readonly string get_division_options = "SELECT division_table.code, division_table.title, division_table.description FROM division_table WHERE division_table.status = 1";
 
+        public static readonly string get_agency_options = "SELECT agency_table.code, agency_table.title, agency_table.description FROM agency_table WHERE agency_table.status = 1;";
 
+        public static readonly string get_contractor_options = "SELECT contractor_table.code, contractor_table.title, contractor_table.description FROM contractor_table WHERE contractor_table.status = 1";
+        
+        public static readonly string get_nature_options = "SELECT nature_table.code, nature_table.title, nature_table.description FROM nature_table WHERE nature_table.status = 1";
+
+        public static readonly string get_employee_options = "SELECT emp_info_table.code, emp_info_table.full_name, emp_info_table.email FROM emp_info_table WHERE emp_info_table.status = 1";
         #endregion
 
         #region Maintenance SET Record Queries
@@ -156,6 +166,9 @@ namespace COA_PRIS
                                                          "VALUES ('{0}','{1}','{2}', 1,'{3}', CURRENT_TIMESTAMP());";
 
         public static readonly string set_new_sector = "INSERT INTO sector_table (code, title, description, status, created_by, created_date)\r" +
+                                                        "VALUES ('{0}','{1}','{2}', 1,'{3}', CURRENT_TIMESTAMP());";
+
+        public static readonly string set_new_status = "INSERT INTO status_table (code, title, description, status, created_by, created_date)\r" +
                                                         "VALUES ('{0}','{1}','{2}', 1,'{3}', CURRENT_TIMESTAMP());";
 
         public static readonly string set_new_section = "INSERT INTO section_table (code, title, description, division_code, status, created_by, created_date)\r" +
@@ -213,6 +226,10 @@ namespace COA_PRIS
         public static readonly string get_section_record_by_id = "SELECT section_table.title, section_table.description, division_table.title FROM section_table\r\nINNER JOIN division_table ON section_table.division_code = division_table.code\r\nWHERE section_table.code = '{0}';";
 
         public static readonly string get_sector_record_by_id = "SELECT sector_table.title, sector_table.description FROM sector_table\r\nWHERE sector_table.code = '{0}';";
+        
+        public static readonly string get_status_record_by_id = "SELECT status_table.title, status_table.description FROM status_table\r\nWHERE status_table.code = '{0}';";
+        
+        
         #endregion
 
         #region UPDATE Record Queries
@@ -241,6 +258,19 @@ namespace COA_PRIS
         public static readonly string update_section_record_by_id = "UPDATE section_table SET \r\nsection_table.title = '{0}', section_table.description = '{1}',\r\nsection_table.division_code = '{2}', section_table.updated_by = '{3}',\r\nsection_table.updated_date = CURRENT_TIMESTAMP()\r\nWHERE section_table.code = '{4}' and section_table.status = 1;";
 
         public static readonly string update_sector_record_by_id = "UPDATE sector_table SET\r\nsector_table.title = '{0}', sector_table.description = '{1}',\r\nsector_table.updated_by = '{2}', sector_table.updated_date = CURRENT_TIMESTAMP()\r\nWHERE sector_table.code = '{3}'and sector_table.status = 1;";
+        
+        public static readonly string update_status_record_by_id = "UPDATE status_table SET\r\nstatus_table.title = '{0}', status_table.description = '{1}',\r\nstatus_table.updated_by = '{2}', status_table.updated_date = CURRENT_TIMESTAMP()\r\nWHERE status_table.code = '{3}'and status_table.status = 1;";
         #endregion
+
+
+        public static readonly string get_status_options = "SELECT status_table.code, status_table.title FROM status_table WHERE status_table.status = 1 OR status_table.status = 2";
+
+
+        public static readonly string set_new_docu_infos = "INSERT INTO docu_info_table (\r\n    docu_info_table.code, docu_info_table.document_no, docu_info_table.title,\r\n    docu_info_table.amount, docu_info_table.period, docu_info_table.subject,\r\n    docu_info_table.receiving_date)\r\nVALUES ('{0}','{1}','{2}','{3}','{4}','{5}','{6}');";
+        public static readonly string set_new_docu_trans = "INSERT INTO docu_transaction_table (\r\n    docu_transaction_table.docu_code, docu_transaction_table.agency_code, docu_transaction_table.contractor_code,\r\n    docu_transaction_table.nature_code, docu_transaction_table.division_code, docu_transaction_table.employee_code,\r\n    docu_transaction_table.remarks_code, docu_transaction_table.status_code, docu_transaction_table.filed_date)\r\nVALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}', NULL);";
+        public static readonly string set_new_remarks = "INSERT INTO remarks_table (remarks_table.code, remarks_table.description, remarks_table.docu_code)\r\nVALUES ('{0}','{1}','{2}');";
+        public static readonly string set_new_history = "INSERT INTO history_table (history_table.code, history_table.description, history_table.date, history_table.docu_code )\r\nVALUES ('{0}','{1}','{2}','{3}');";
+
+
     }
 }

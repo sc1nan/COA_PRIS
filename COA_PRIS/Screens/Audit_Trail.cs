@@ -34,7 +34,7 @@ namespace COA_PRIS.Screens
             database_Manager = new Database_Manager();
 
             DataTable ret = new DataTable();
-            
+
             using (database_Manager)
             {
                 ret = database_Manager.ExecuteQuery(string.Format(Database_Query.get_audit_trail_by_id, this.Table, this.Record_ID));
@@ -47,7 +47,7 @@ namespace COA_PRIS.Screens
                     PRIS_Label_Entry label_Entry = (PRIS_Label_Entry)content_Panel.Controls[index];
                     label_Entry.Title = title[index];
                     label_Entry.Value = ret.Rows[0][index].ToString();
-                    label_Entry.ReadonlyText = true;
+                    label_Entry.ReadOnly = true;
                 }
             }
         }

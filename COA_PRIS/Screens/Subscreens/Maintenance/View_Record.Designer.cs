@@ -357,7 +357,7 @@
             this.Name = "View_Record";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "PRIS";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.View_Record_FormClosing);
             this.Load += new System.EventHandler(this.View_Record_Load);
             this.top_Panel.ResumeLayout(false);

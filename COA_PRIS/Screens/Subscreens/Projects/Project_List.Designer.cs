@@ -1,6 +1,6 @@
 ﻿namespace COA_PRIS.Screens.Subscreens.Projects
 {
-    partial class Create_Project
+    partial class Project_List
     {
         /// <summary>
         /// Required designer variable.

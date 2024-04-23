@@ -65,7 +65,7 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
 
         private void set_Records() 
         {
-            validator.readOnly_Controls(control_Panel);
+            validator.PRISReadOnly(control_Panel, true);
             DataTable ret = new DataTable();
 
             using (database_Manager) 
@@ -94,12 +94,15 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
         private void cancel_Btn_Click(object sender, EventArgs e)
         {
             if(MessageBox.Show("Are you sure you want to cancel?", "Cancel Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                change_ViewControls(false);
+            { 
+                change_ViewControls(false); 
+                set_Records();
+            }
         }
 
         private void change_ViewControls(bool is_Enabled = true) 
         {
-            validator.readOnly_Controls(control_Panel, is_Enabled);
+            validator.PRISReadOnly(control_Panel, !is_Enabled);
 
             update_Btn.Enabled = !is_Enabled;
             delete_Btn.Enabled = !is_Enabled;

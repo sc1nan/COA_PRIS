@@ -33,6 +33,7 @@
             this.line_Panel = new Guna.UI.WinForms.GunaPanel();
             this.nav_panel = new System.Windows.Forms.FlowLayoutPanel();
             this.record_Btn = new Guna.UI.WinForms.GunaButton();
+            this.create_Btn = new Guna.UI.WinForms.GunaButton();
             this.parent_panel.SuspendLayout();
             this.nav_panel.SuspendLayout();
             this.SuspendLayout();
@@ -45,7 +46,7 @@
             this.parent_panel.Controls.Add(this.nav_panel);
             this.parent_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.parent_panel.Location = new System.Drawing.Point(0, 0);
-            this.parent_panel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.parent_panel.Margin = new System.Windows.Forms.Padding(0);
             this.parent_panel.Name = "parent_panel";
             this.parent_panel.Padding = new System.Windows.Forms.Padding(10);
             this.parent_panel.Size = new System.Drawing.Size(1556, 884);
@@ -74,6 +75,7 @@
             // 
             this.nav_panel.BackColor = System.Drawing.Color.Transparent;
             this.nav_panel.Controls.Add(this.record_Btn);
+            this.nav_panel.Controls.Add(this.create_Btn);
             this.nav_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.nav_panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.nav_panel.Location = new System.Drawing.Point(10, 10);
@@ -112,6 +114,37 @@
             this.record_Btn.TextOffsetX = 5;
             this.record_Btn.Click += new System.EventHandler(this.button_Clicked);
             // 
+            // create_Btn
+            // 
+            this.create_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.create_Btn.AnimationHoverSpeed = 0.07F;
+            this.create_Btn.AnimationSpeed = 0.03F;
+            this.create_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(200)))), ((int)(((byte)(204)))));
+            this.create_Btn.BaseColor = System.Drawing.Color.Transparent;
+            this.create_Btn.BorderColor = System.Drawing.Color.Black;
+            this.create_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.create_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.create_Btn.FocusedColor = System.Drawing.Color.Empty;
+            this.create_Btn.Font = new System.Drawing.Font("Bahnschrift", 14F);
+            this.create_Btn.ForeColor = System.Drawing.Color.White;
+            this.create_Btn.Image = global::COA_PRIS.Properties.Resources.project;
+            this.create_Btn.ImageOffsetX = 5;
+            this.create_Btn.ImageSize = new System.Drawing.Size(30, 30);
+            this.create_Btn.Location = new System.Drawing.Point(201, 0);
+            this.create_Btn.Margin = new System.Windows.Forms.Padding(0, 0, 1, 0);
+            this.create_Btn.Name = "create_Btn";
+            this.create_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
+            this.create_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.create_Btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.create_Btn.OnHoverImage = null;
+            this.create_Btn.OnPressedColor = System.Drawing.Color.Black;
+            this.create_Btn.Size = new System.Drawing.Size(200, 55);
+            this.create_Btn.TabIndex = 3;
+            this.create_Btn.Text = "CREATE";
+            this.create_Btn.TextOffsetX = 5;
+            this.create_Btn.Click += new System.EventHandler(this.button_Clicked);
+            // 
             // Projects
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,5 +169,6 @@
         private Guna.UI.WinForms.GunaPanel line_Panel;
         private System.Windows.Forms.FlowLayoutPanel nav_panel;
         private Guna.UI.WinForms.GunaButton record_Btn;
+        private Guna.UI.WinForms.GunaButton create_Btn;
     }
 }

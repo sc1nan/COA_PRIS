@@ -229,37 +229,19 @@
     <Compile Include="Screens\Subscreens\Maintenance\View_Record.Designer.cs">
       <DependentUpon>View_Record.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Subscreens\Projects\Add_Project.cs">
+    <Compile Include="Screens\Subscreens\Projects\Project_Create.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Subscreens\Projects\Add_Project.Designer.cs">
-      <DependentUpon>Add_Project.cs</DependentUpon>
+    <Compile Include="Screens\Subscreens\Projects\Project_Create.Designer.cs">
+      <DependentUpon>Project_Create.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Subscreens\Projects\Create_Project.cs">
+    <Compile Include="Screens\Subscreens\Projects\Project_List.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\Subscreens\Projects\Create_Project.Designer.cs">
-      <DependentUpon>Create_Project.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\Subscreens\Projects\ProjectArchive.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\Subscreens\Projects\ProjectArchive.Designer.cs">
-      <DependentUpon>ProjectArchive.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\Subscreens\Projects\ProjectCreate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\Subscreens\Projects\ProjectCreate.Designer.cs">
-      <DependentUpon>ProjectCreate.cs</DependentUpon>
+    <Compile Include="Screens\Subscreens\Projects\Project_List.Designer.cs">
+      <DependentUpon>Project_List.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <Compile Include="UserControlUtil\Cherie UI\Datagrid.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserControlUtil\Cherie UI\Datagrid.Designer.cs">
-      <DependentUpon>Datagrid.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControlUtil\DataTableMultiplePages.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -272,24 +254,12 @@
     <Compile Include="UserControlUtil\DateFilter.Designer.cs">
       <DependentUpon>DateFilter.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlUtil\Label_Drop.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlUtil\Label_Drop.Designer.cs">
-      <DependentUpon>Label_Drop.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlUtil\Label_Rich.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControlUtil\Label_Rich.Designer.cs">
-      <DependentUpon>Label_Rich.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserControlUtil\PRIS_UserControl\IPRIS_UserControl.cs" />
-    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_DatePicker.cs">
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Date_Picker.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_DatePicker.Designer.cs">
-      <DependentUpon>PRIS_DatePicker.cs</DependentUpon>
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Date_Picker.Designer.cs">
+      <DependentUpon>PRIS_Date_Picker.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Entry.cs">
       <SubType>UserControl</SubType>
@@ -309,11 +279,11 @@
     <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Selector.Designer.cs">
       <DependentUpon>PRIS_Label_Selector.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControlUtil\Label_Text.cs">
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Status.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlUtil\Label_Text.Designer.cs">
-      <DependentUpon>Label_Text.cs</DependentUpon>
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Status.Designer.cs">
+      <DependentUpon>PRIS_Label_Status.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlUtil\SearchBar.cs">
       <SubType>UserControl</SubType>
@@ -426,17 +396,11 @@
     <EmbeddedResource Include="Screens\Subscreens\Maintenance\View_Record.resx">
       <DependentUpon>View_Record.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Subscreens\Projects\Add_Project.resx">
-      <DependentUpon>Add_Project.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Subscreens\Projects\Project_Create.resx">
+      <DependentUpon>Project_Create.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Subscreens\Projects\Create_Project.resx">
-      <DependentUpon>Create_Project.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Subscreens\Projects\ProjectArchive.resx">
-      <DependentUpon>ProjectArchive.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Subscreens\Projects\ProjectCreate.resx">
-      <DependentUpon>ProjectCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Subscreens\Projects\Project_List.resx">
+      <DependentUpon>Project_List.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StatReportUserControl.resx">
       <DependentUpon>StatReportUserControl.cs</DependentUpon>
@@ -444,23 +408,14 @@
     <EmbeddedResource Include="SysSetupUserControl.resx">
       <DependentUpon>SysSetupUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlUtil\Cherie UI\Datagrid.resx">
-      <DependentUpon>Datagrid.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\DataTableMultiplePages.resx">
       <DependentUpon>DataTableMultiplePages.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\DateFilter.resx">
       <DependentUpon>DateFilter.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlUtil\Label_Drop.resx">
-      <DependentUpon>Label_Drop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlUtil\Label_Rich.resx">
-      <DependentUpon>Label_Rich.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControlUtil\PRIS_UserControl\PRIS_DatePicker.resx">
-      <DependentUpon>PRIS_DatePicker.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlUtil\PRIS_UserControl\PRIS_Date_Picker.resx">
+      <DependentUpon>PRIS_Date_Picker.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Entry.resx">
       <DependentUpon>PRIS_Label_Entry.cs</DependentUpon>
@@ -471,8 +426,8 @@
     <EmbeddedResource Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Selector.resx">
       <DependentUpon>PRIS_Label_Selector.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControlUtil\Label_Text.resx">
-      <DependentUpon>Label_Text.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Status.resx">
+      <DependentUpon>PRIS_Label_Status.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\PRIS_UserForms\Selector.resx">
       <DependentUpon>Selector.cs</DependentUpon>
@@ -554,6 +509,7 @@
     <None Include="Resources\swipe-right.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\active.png" />
     <Content Include="Resources\apps-sort - Copy.png" />
     <Content Include="Resources\apps-sort.png" />
     <None Include="Resources\business-report %281%29 - Copy.png" />
@@ -576,6 +532,7 @@
     <None Include="Resources\error1.png" />
     <Content Include="Resources\expand - Copy.png" />
     <Content Include="Resources\expand.png" />
+    <None Include="Resources\filed.png" />
     <Content Include="Resources\folder-download %281%29 - Copy.png" />
     <Content Include="Resources\folder-download %281%29.png" />
     <Content Include="Resources\folder-download - Copy.png" />
@@ -586,10 +543,12 @@
     <None Include="Resources\logout %283%29.png" />
     <None Include="Resources\info.png" />
     <None Include="Resources\magnifying-glass.png" />
+    <None Include="Resources\inactive.png" />
     <Content Include="Resources\Menu Bar Icon - Copy.png" />
     <Content Include="Resources\Menu Bar Icon.png" />
     <Content Include="Resources\Menu Bar Icon1 - Copy.png" />
     <Content Include="Resources\Menu Bar Icon1.png" />
+    <None Include="Resources\pending.png" />
     <Content Include="Resources\refresh %281%29 - Copy.png" />
     <Content Include="Resources\refresh %281%29.png" />
     <None Include="Resources\route.png" />

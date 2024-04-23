@@ -33,7 +33,8 @@
             this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
             this.main_Panel = new Guna.UI.WinForms.GunaPanel();
             this.control_main_Panel = new Guna.UI.WinForms.GunaElipsePanel();
-            this.control_Panel = new System.Windows.Forms.FlowLayoutPanel();
+            this.control_Panel = new Guna.UI.WinForms.GunaPanel();
+            this.error_Panel = new Guna.UI.WinForms.GunaPanel();
             this.error_Message = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel5 = new Guna.UI.WinForms.GunaPanel();
             this.button_Panel = new System.Windows.Forms.TableLayoutPanel();
@@ -50,6 +51,7 @@
             this.gunaPanel4.SuspendLayout();
             this.main_Panel.SuspendLayout();
             this.control_main_Panel.SuspendLayout();
+            this.error_Panel.SuspendLayout();
             this.gunaPanel5.SuspendLayout();
             this.button_Panel.SuspendLayout();
             this.control_top_Panel.SuspendLayout();
@@ -68,7 +70,7 @@
             this.parent_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.parent_Panel.Location = new System.Drawing.Point(8, 8);
             this.parent_Panel.Name = "parent_Panel";
-            this.parent_Panel.Size = new System.Drawing.Size(868, 795);
+            this.parent_Panel.Size = new System.Drawing.Size(1088, 795);
             this.parent_Panel.TabIndex = 0;
             // 
             // gunaPanel4
@@ -79,7 +81,7 @@
             this.gunaPanel4.Location = new System.Drawing.Point(0, 60);
             this.gunaPanel4.Name = "gunaPanel4";
             this.gunaPanel4.Padding = new System.Windows.Forms.Padding(8);
-            this.gunaPanel4.Size = new System.Drawing.Size(868, 735);
+            this.gunaPanel4.Size = new System.Drawing.Size(1088, 735);
             this.gunaPanel4.TabIndex = 3;
             // 
             // main_Panel
@@ -90,7 +92,7 @@
             this.main_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.main_Panel.Location = new System.Drawing.Point(8, 8);
             this.main_Panel.Name = "main_Panel";
-            this.main_Panel.Size = new System.Drawing.Size(852, 719);
+            this.main_Panel.Size = new System.Drawing.Size(1072, 719);
             this.main_Panel.TabIndex = 1;
             // 
             // control_main_Panel
@@ -98,33 +100,42 @@
             this.control_main_Panel.BackColor = System.Drawing.Color.Transparent;
             this.control_main_Panel.BaseColor = System.Drawing.Color.White;
             this.control_main_Panel.Controls.Add(this.control_Panel);
-            this.control_main_Panel.Controls.Add(this.error_Message);
+            this.control_main_Panel.Controls.Add(this.error_Panel);
             this.control_main_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.control_main_Panel.Location = new System.Drawing.Point(0, 63);
             this.control_main_Panel.Name = "control_main_Panel";
-            this.control_main_Panel.Padding = new System.Windows.Forms.Padding(5);
-            this.control_main_Panel.Size = new System.Drawing.Size(852, 596);
+            this.control_main_Panel.Padding = new System.Windows.Forms.Padding(15, 20, 15, 5);
+            this.control_main_Panel.Size = new System.Drawing.Size(1072, 596);
             this.control_main_Panel.TabIndex = 3;
             // 
             // control_Panel
             // 
             this.control_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.control_Panel.Location = new System.Drawing.Point(5, 5);
+            this.control_Panel.Location = new System.Drawing.Point(15, 20);
             this.control_Panel.Name = "control_Panel";
-            this.control_Panel.Size = new System.Drawing.Size(842, 554);
-            this.control_Panel.TabIndex = 4;
+            this.control_Panel.Size = new System.Drawing.Size(1042, 539);
+            this.control_Panel.TabIndex = 1;
+            // 
+            // error_Panel
+            // 
+            this.error_Panel.Controls.Add(this.error_Message);
+            this.error_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.error_Panel.Location = new System.Drawing.Point(15, 559);
+            this.error_Panel.Name = "error_Panel";
+            this.error_Panel.Size = new System.Drawing.Size(1042, 32);
+            this.error_Panel.TabIndex = 0;
             // 
             // error_Message
             // 
-            this.error_Message.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.error_Message.Dock = System.Windows.Forms.DockStyle.Fill;
             this.error_Message.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.error_Message.ForeColor = System.Drawing.Color.Red;
-            this.error_Message.Location = new System.Drawing.Point(5, 559);
+            this.error_Message.Location = new System.Drawing.Point(0, 0);
             this.error_Message.Margin = new System.Windows.Forms.Padding(3);
             this.error_Message.Name = "error_Message";
             this.error_Message.Padding = new System.Windows.Forms.Padding(5);
-            this.error_Message.Size = new System.Drawing.Size(842, 32);
-            this.error_Message.TabIndex = 3;
+            this.error_Message.Size = new System.Drawing.Size(1042, 32);
+            this.error_Message.TabIndex = 4;
             this.error_Message.Text = "Error Message";
             this.error_Message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.error_Message.Visible = false;
@@ -136,7 +147,7 @@
             this.gunaPanel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.gunaPanel5.Location = new System.Drawing.Point(0, 659);
             this.gunaPanel5.Name = "gunaPanel5";
-            this.gunaPanel5.Size = new System.Drawing.Size(852, 60);
+            this.gunaPanel5.Size = new System.Drawing.Size(1072, 60);
             this.gunaPanel5.TabIndex = 2;
             // 
             // button_Panel
@@ -152,7 +163,7 @@
             this.button_Panel.Name = "button_Panel";
             this.button_Panel.RowCount = 1;
             this.button_Panel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.button_Panel.Size = new System.Drawing.Size(852, 60);
+            this.button_Panel.Size = new System.Drawing.Size(1072, 60);
             this.button_Panel.TabIndex = 0;
             // 
             // save_Btn
@@ -169,7 +180,7 @@
             this.save_Btn.ForeColor = System.Drawing.Color.White;
             this.save_Btn.Image = null;
             this.save_Btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.save_Btn.Location = new System.Drawing.Point(692, 8);
+            this.save_Btn.Location = new System.Drawing.Point(912, 8);
             this.save_Btn.Margin = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.save_Btn.Name = "save_Btn";
             this.save_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -223,7 +234,7 @@
             this.control_top_Panel.Location = new System.Drawing.Point(0, 0);
             this.control_top_Panel.Name = "control_top_Panel";
             this.control_top_Panel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.control_top_Panel.Size = new System.Drawing.Size(852, 63);
+            this.control_top_Panel.Size = new System.Drawing.Size(1072, 63);
             this.control_top_Panel.TabIndex = 1;
             // 
             // gunaElipsePanel1
@@ -254,7 +265,7 @@
             this.gunaPanel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaPanel3.Location = new System.Drawing.Point(0, 55);
             this.gunaPanel3.Name = "gunaPanel3";
-            this.gunaPanel3.Size = new System.Drawing.Size(868, 5);
+            this.gunaPanel3.Size = new System.Drawing.Size(1088, 5);
             this.gunaPanel3.TabIndex = 1;
             // 
             // top_Panel
@@ -263,7 +274,7 @@
             this.top_Panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.top_Panel.Location = new System.Drawing.Point(0, 0);
             this.top_Panel.Name = "top_Panel";
-            this.top_Panel.Size = new System.Drawing.Size(868, 55);
+            this.top_Panel.Size = new System.Drawing.Size(1088, 55);
             this.top_Panel.TabIndex = 2;
             // 
             // gunaLabel1
@@ -292,7 +303,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(884, 811);
+            this.ClientSize = new System.Drawing.Size(1104, 811);
             this.Controls.Add(this.parent_Panel);
             this.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -308,6 +319,7 @@
             this.gunaPanel4.ResumeLayout(false);
             this.main_Panel.ResumeLayout(false);
             this.control_main_Panel.ResumeLayout(false);
+            this.error_Panel.ResumeLayout(false);
             this.gunaPanel5.ResumeLayout(false);
             this.button_Panel.ResumeLayout(false);
             this.control_top_Panel.ResumeLayout(false);
@@ -336,7 +348,8 @@
         private System.Windows.Forms.TableLayoutPanel button_Panel;
         private Guna.UI.WinForms.GunaButton cancel_Btn;
         private Guna.UI.WinForms.GunaButton save_Btn;
-        private System.Windows.Forms.FlowLayoutPanel control_Panel;
+        private Guna.UI.WinForms.GunaPanel control_Panel;
+        private Guna.UI.WinForms.GunaPanel error_Panel;
         private Guna.UI.WinForms.GunaLabel error_Message;
     }
 }

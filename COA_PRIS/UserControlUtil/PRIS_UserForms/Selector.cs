@@ -24,6 +24,12 @@ namespace COA_PRIS.UserControlUtil
 
         private bool is_ClosingProgrammatically = false;
 
+        public string InfoText 
+        {
+            get { return info_Label.Text; }
+            set { info_Label.Text = value; }
+
+        }
 
         public Selector(object _sender, string _title, string _query, (string, DataGridViewContentAlignment)[] _column_Title_Alignment,
             (bool, int)[] _column_Widths)
@@ -63,22 +69,7 @@ namespace COA_PRIS.UserControlUtil
 
         private void save_Btn_Click(object sender, EventArgs e)
         {
-            int currentIndex = data_View.CurrentRow?.Index ?? -1;
-
-            if (currentIndex >= 0)
-            {
-                string key = data_View.Rows[currentIndex].Cells[1].Value?.ToString();
-                string value = data_View.Rows[currentIndex].Cells[2].Value?.ToString();
-
-                if (key != null && value != null)
-                {
-                    var ret = new Dictionary<string, string> { { key, value } };
-                    Label_Selector.ReturnValues = ret;
-                }
-            }
-            is_ClosingProgrammatically = true;
-            this.Close();
-
+            GetData();
         }
 
         private void Selector_FormClosing(object sender, FormClosingEventArgs e)
@@ -96,6 +87,29 @@ namespace COA_PRIS.UserControlUtil
         private void cancel_Btn_Click(object sender, EventArgs e)
         {
             is_ClosingProgrammatically = false;
+            this.Close();
+        }
+
+        private void data_View_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            GetData();
+        }
+        private void GetData() 
+        {
+            int currentIndex = data_View.CurrentRow?.Index ?? -1;
+
+            if (currentIndex >= 0)
+            {
+                string key = data_View.Rows[currentIndex].Cells[1].Value?.ToString();
+                string value = data_View.Rows[currentIndex].Cells[2].Value?.ToString();
+
+                if (key != null && value != null)
+                {
+                    var ret = new Dictionary<string, string> { { key, value } };
+                    Label_Selector.ReturnValues = ret;
+                }
+            }
+            is_ClosingProgrammatically = true;
             this.Close();
         }
     }

@@ -11,6 +11,7 @@ namespace COA_PRIS.Utilities
 {
     internal class Activity_Manager
     {
+        public static string CurrentUser { get; set; }
         private Database_Manager db_Manager;
 
 

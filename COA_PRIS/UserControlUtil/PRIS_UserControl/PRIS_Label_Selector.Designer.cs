@@ -58,7 +58,7 @@
             this.entry.BackColor = System.Drawing.Color.Transparent;
             this.entry.BaseColor = System.Drawing.Color.White;
             this.entry.BorderColor = System.Drawing.Color.Silver;
-            this.entry.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.entry.Cursor = System.Windows.Forms.Cursors.Hand;
             this.entry.Dock = System.Windows.Forms.DockStyle.Fill;
             this.entry.FocusedBaseColor = System.Drawing.Color.White;
             this.entry.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
@@ -72,9 +72,10 @@
             this.entry.Radius = 6;
             this.entry.ReadOnly = true;
             this.entry.SelectedText = "";
-            this.entry.Size = new System.Drawing.Size(320, 54);
+            this.entry.Size = new System.Drawing.Size(317, 54);
             this.entry.TabIndex = 2;
             this.entry.Tag = "req!";
+            this.entry.DoubleClick += new System.EventHandler(this.entry_DoubleClick);
             // 
             // title
             // 
@@ -98,7 +99,6 @@
             this.search.BorderColor = System.Drawing.Color.Black;
             this.search.Cursor = System.Windows.Forms.Cursors.Hand;
             this.search.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.search.Dock = System.Windows.Forms.DockStyle.Left;
             this.search.FocusedColor = System.Drawing.Color.Empty;
             this.search.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.search.ForeColor = System.Drawing.Color.White;
@@ -106,7 +106,7 @@
             this.search.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.search.ImageSize = new System.Drawing.Size(25, 25);
             this.search.Location = new System.Drawing.Point(326, 43);
-            this.search.Margin = new System.Windows.Forms.Padding(0, 3, 20, 3);
+            this.search.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.search.Name = "search";
             this.search.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             this.search.OnHoverBorderColor = System.Drawing.Color.Black;
@@ -135,7 +135,7 @@
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private Guna.UI.WinForms.GunaLabel title;
-        private Guna.UI.WinForms.GunaTextBox entry;
         private Guna.UI.WinForms.GunaButton search;
+        private Guna.UI.WinForms.GunaTextBox entry;
     }
 }

@@ -10,57 +10,51 @@ using System.Windows.Forms;
 
 namespace COA_PRIS.UserControlUtil.PRIS_UserControl
 {
-    public partial class PRIS_Label_Entry : UserControl, IPRIS_UserControl
+    public partial class PRIS_Date_Picker : UserControl, IPRIS_UserControl
     {
         public bool IsRequiredValue = false;
         public Control ErrorRoot
         {
-            get { return entry; }
+            get { return date; }
         }
         public Control IndicatorRoot
         {
-            get { return entry; }
+            get { return date; }
         }
         public bool IsRequired
         {
             get { return IsRequiredValue; }
             set { IsRequiredValue = value; }
         }
-        public string Title 
+        public string Title
         {
             get { return title.Text.Replace(":", " ").Trim(); }
             set { title.Text = value; }
         }
-
-        public string Value 
-        {
-            get { return entry.Text; }
-            set { entry.Text = value; }
-        }
-
         public bool ReadOnly
         {
-            get { return entry.ReadOnly; }
-            set { entry.ReadOnly = value; }
-        }
-        public bool EnabledText 
-        {
-            get { return entry.Enabled; }
-            set { entry.Enabled = value; }
-        }
-        public PRIS_Label_Entry()
-        {
-            InitializeComponent();
+            get { return date.Enabled; }
+            set { date.Enabled = value; }
         }
 
-        public PRIS_Label_Entry(string _title, bool _isRequired = true) 
+        public string Value
+        {
+            get { return date.Value.ToString("yyyy-MM-dd HH:mm:ss"); }
+            set { date.Value = DateTime.Parse(value); }
+        }
+        public PRIS_Date_Picker()
         {
             InitializeComponent();
-            this.title.Text = _title;
-            this.entry.Tag = _title.Replace(":","").Trim();
-            this.IsRequired = _isRequired;
-            
-            
+            date.Value = DateTime.Today;
         }
+
+        public PRIS_Date_Picker(string _title, bool _isRequired = true)
+        {
+            InitializeComponent();
+            date.Value = DateTime.Today;
+            this.title.Text = _title;
+            this.IsRequired = _isRequired;
+        }
+
     }
 }
