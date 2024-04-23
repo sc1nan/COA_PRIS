@@ -67,6 +67,6 @@
         #endregion
 
         private Guna.UI.WinForms.GunaElipsePanel Main_Panel;
-        private UserControlUtil.DataTableMultiplePages dataTableMultiplePages1;
+        /*private UserControlUtil.DataTableMultiplePages dataTableMultiplePages1;*/
     }
 }

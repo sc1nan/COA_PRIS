@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.log_tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new COA_PRIS.CrystalReports.DataSet1();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
@@ -78,9 +77,6 @@
             // reportViewer1
             // 
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            reportDataSource1.Name = "DataSet1";
-            reportDataSource1.Value = this.log_tableBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "COA_PRIS.CrystalReports.Report1.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
@@ -112,6 +108,7 @@
             this.ClientSize = new System.Drawing.Size(677, 610);
             this.Controls.Add(this.gunaPanel1);
             this.Name = "TempReportsForms";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TempReportsForms";
             this.Load += new System.EventHandler(this.TempReportsForms_Load);
             ((System.ComponentModel.ISupportInitialize)(this.log_tableBindingSource)).EndInit();

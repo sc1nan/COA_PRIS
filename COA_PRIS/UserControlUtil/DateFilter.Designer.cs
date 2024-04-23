@@ -61,6 +61,7 @@
             this.to_DateTimePicker.Name = "to_DateTimePicker";
             this.to_DateTimePicker.Size = new System.Drawing.Size(293, 29);
             this.to_DateTimePicker.TabIndex = 2;
+            this.to_DateTimePicker.Value = new System.DateTime(2024, 4, 11, 0, 0, 0, 0);
             // 
             // DateFilter
             // 
