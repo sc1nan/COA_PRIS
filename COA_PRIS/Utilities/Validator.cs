@@ -21,7 +21,7 @@ namespace COA_PRIS.Utilities
 
         public Validator(){}
 
-        public bool Required_TextBox(Control parent, ErrorProvider error, GunaLabel error_Label = null)
+        public bool RequiredTextBox(Control parent, ErrorProvider error, GunaLabel error_Label = null)
         {
             List<Control> guna_TextBox = util.SearchControls<Control>(parent, new List<Type> {typeof(GunaTextBox)});
 
@@ -55,24 +55,21 @@ namespace COA_PRIS.Utilities
             bool ret = true;
             foreach (IPRIS_UserControl pris in PRISControls)
             {
-                
-                if (string.IsNullOrEmpty(pris.Value) && pris.IsRequired)
+                if(pris.IsRequired)
                 {
-                    _errorProvider.SetError(pris.IndicatorRoot, $"{pris.Title} is a required field.");
-                    if (_errorLabel != null)
+                    if (string.IsNullOrEmpty(pris.Value))
                     {
-                        _errorLabel.Text = "Fill the required fields.";
-                        _errorLabel.Visible = true;
+                        _errorProvider.SetError(pris.IndicatorRoot, $"{pris.Title} is a required field.");
+                        if (_errorLabel != null)
+                        {
+                            _errorLabel.Text = "Fill the required fields.";
+                            _errorLabel.Visible = true;
+                        }
+                        ret = false;
                     }
-                    ret = false;
-                }
-                else
-                {
-                    _errorProvider.SetError(pris.IndicatorRoot, string.Empty);
-                    if (_errorLabel != null)
+                    else 
                     {
-                        _errorLabel.Text = "120123";
-                        _errorLabel.Visible = false;
+                        _errorProvider.SetError(pris.IndicatorRoot, "");
                     }
                 }
 
@@ -80,19 +77,13 @@ namespace COA_PRIS.Utilities
                 {
                     dynamic control = pris.ErrorRoot;
 
-                    if (string.IsNullOrEmpty(pris.Value) && pris.IsRequired)
-                        control.BorderColor = Color.Red;
-                    else
-                        control.BorderColor = Color.Silver;
+                    control.BorderColor = string.IsNullOrEmpty(pris.Value) && pris.IsRequired ? Color.Red : Color.Silver;
                 }
                 else if (pris.ErrorRoot is GunaElipsePanel)
                 {
                     dynamic control = pris.ErrorRoot;
 
-                    if (string.IsNullOrEmpty(pris.Value) && pris.IsRequired)
-                        control.BaseColor = Color.Red;
-                    else
-                        control.BaseColor = Color.Silver;
+                    control.BaseColor = string.IsNullOrEmpty(pris.Value) && pris.IsRequired ? Color.Red : Color.Silver;
                 }
 
                 
@@ -100,6 +91,33 @@ namespace COA_PRIS.Utilities
             return ret;
         }
 
+        public void PRISClearErrors(Control _parent, ErrorProvider _errorProvider, GunaLabel _errorLabel = null) 
+        { 
+            List<Control> PRISControls = util.SearchControls<Control>(_parent, new List<Type> { typeof(IPRIS_UserControl) });
+
+            _errorProvider.Clear();
+            if (_errorLabel != null) 
+            { 
+                _errorLabel.Visible = false;
+            }
+
+            foreach (IPRIS_UserControl pris in PRISControls) 
+            {
+                if (pris.ErrorRoot is GunaTextBox || pris.ErrorRoot is GunaDateTimePicker)
+                {
+                    dynamic control = pris.ErrorRoot;
+
+                    control.BorderColor =  Color.Silver;
+                }
+                else if (pris.ErrorRoot is GunaElipsePanel)
+                {
+                    dynamic control = pris.ErrorRoot;
+
+                    control.BaseColor = Color.Silver;
+                }
+            }
+
+        }
         public void PRISReadOnly(Control _parent, bool _is_ReadOnly) 
         {
             List<Control> PRISControls = util.SearchControls<Control>(_parent, new List<Type> { typeof(IPRIS_UserControl) });

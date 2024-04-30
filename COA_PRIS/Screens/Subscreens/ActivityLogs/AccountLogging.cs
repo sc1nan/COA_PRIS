@@ -75,7 +75,7 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
             }
 
             //populate table with number
-            LogsTable.DataSource = util.format_DataTableLimit(dt, min_lim);
+            LogsTable.DataSource = util.FormatDataTableLimit(dt, min_lim);
             //check count
             Check_Count();
             //set theme to data grid view

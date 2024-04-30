@@ -40,10 +40,10 @@
             this.EmployeeBtn = new Guna.UI.WinForms.GunaButton();
             this.report_Panel = new Guna.UI.WinForms.GunaPanel();
             this.ReportBtn = new Guna.UI.WinForms.GunaButton();
-            this.user_Panel = new Guna.UI.WinForms.GunaPanel();
-            this.UserBtn = new Guna.UI.WinForms.GunaButton();
             this.maintenance_Panel = new Guna.UI.WinForms.GunaPanel();
             this.MaintenanceBtn = new Guna.UI.WinForms.GunaButton();
+            this.user_Panel = new Guna.UI.WinForms.GunaPanel();
+            this.UserBtn = new Guna.UI.WinForms.GunaButton();
             this.activity_Panel = new Guna.UI.WinForms.GunaPanel();
             this.LogBtn = new Guna.UI.WinForms.GunaButton();
             this.logo_Panel = new Guna.UI.WinForms.GunaPanel();
@@ -64,8 +64,8 @@
             this.projects_Panel.SuspendLayout();
             this.employee_Panel.SuspendLayout();
             this.report_Panel.SuspendLayout();
-            this.user_Panel.SuspendLayout();
             this.maintenance_Panel.SuspendLayout();
+            this.user_Panel.SuspendLayout();
             this.activity_Panel.SuspendLayout();
             this.logo_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
@@ -98,8 +98,8 @@
             this.tab_panel.Controls.Add(this.projects_Panel);
             this.tab_panel.Controls.Add(this.employee_Panel);
             this.tab_panel.Controls.Add(this.report_Panel);
-            this.tab_panel.Controls.Add(this.user_Panel);
             this.tab_panel.Controls.Add(this.maintenance_Panel);
+            this.tab_panel.Controls.Add(this.user_Panel);
             this.tab_panel.Controls.Add(this.activity_Panel);
             this.tab_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tab_panel.Location = new System.Drawing.Point(0, 144);
@@ -237,7 +237,6 @@
             this.report_Panel.Name = "report_Panel";
             this.report_Panel.Size = new System.Drawing.Size(95, 70);
             this.report_Panel.TabIndex = 9;
-            this.report_Panel.Visible = false;
             // 
             // ReportBtn
             // 
@@ -269,52 +268,11 @@
             this.ReportBtn.Click += new System.EventHandler(this.button_Click);
             this.ReportBtn.MouseHover += new System.EventHandler(this.button_MouseHover);
             // 
-            // user_Panel
-            // 
-            this.user_Panel.BackColor = System.Drawing.Color.Transparent;
-            this.user_Panel.Controls.Add(this.UserBtn);
-            this.user_Panel.Location = new System.Drawing.Point(0, 312);
-            this.user_Panel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.user_Panel.Name = "user_Panel";
-            this.user_Panel.Size = new System.Drawing.Size(95, 70);
-            this.user_Panel.TabIndex = 9;
-            this.user_Panel.Visible = false;
-            // 
-            // UserBtn
-            // 
-            this.UserBtn.AnimationHoverSpeed = 0.07F;
-            this.UserBtn.AnimationSpeed = 0.03F;
-            this.UserBtn.BaseColor = System.Drawing.Color.Transparent;
-            this.UserBtn.BorderColor = System.Drawing.Color.Black;
-            this.UserBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.UserBtn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.UserBtn.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.UserBtn.FocusedColor = System.Drawing.Color.Empty;
-            this.UserBtn.Font = new System.Drawing.Font("Bahnschrift", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserBtn.ForeColor = System.Drawing.Color.White;
-            this.UserBtn.Image = global::COA_PRIS.Properties.Resources.user_avatar__1_;
-            this.UserBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.UserBtn.ImageSize = new System.Drawing.Size(40, 40);
-            this.UserBtn.Location = new System.Drawing.Point(0, 0);
-            this.UserBtn.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.UserBtn.Name = "UserBtn";
-            this.UserBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
-            this.UserBtn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.UserBtn.OnHoverForeColor = System.Drawing.Color.White;
-            this.UserBtn.OnHoverImage = null;
-            this.UserBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.UserBtn.Size = new System.Drawing.Size(95, 70);
-            this.UserBtn.TabIndex = 5;
-            this.UserBtn.Tag = "User Settings";
-            this.UserBtn.TextOffsetX = 18;
-            this.UserBtn.Click += new System.EventHandler(this.button_Click);
-            this.UserBtn.MouseHover += new System.EventHandler(this.button_MouseHover);
-            // 
             // maintenance_Panel
             // 
             this.maintenance_Panel.BackColor = System.Drawing.Color.Transparent;
             this.maintenance_Panel.Controls.Add(this.MaintenanceBtn);
-            this.maintenance_Panel.Location = new System.Drawing.Point(0, 390);
+            this.maintenance_Panel.Location = new System.Drawing.Point(0, 312);
             this.maintenance_Panel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.maintenance_Panel.Name = "maintenance_Panel";
             this.maintenance_Panel.Size = new System.Drawing.Size(95, 70);
@@ -350,6 +308,46 @@
             this.MaintenanceBtn.Click += new System.EventHandler(this.button_Click);
             this.MaintenanceBtn.MouseHover += new System.EventHandler(this.button_MouseHover);
             // 
+            // user_Panel
+            // 
+            this.user_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.user_Panel.Controls.Add(this.UserBtn);
+            this.user_Panel.Location = new System.Drawing.Point(0, 390);
+            this.user_Panel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            this.user_Panel.Name = "user_Panel";
+            this.user_Panel.Size = new System.Drawing.Size(95, 70);
+            this.user_Panel.TabIndex = 10;
+            // 
+            // UserBtn
+            // 
+            this.UserBtn.AnimationHoverSpeed = 0.07F;
+            this.UserBtn.AnimationSpeed = 0.03F;
+            this.UserBtn.BaseColor = System.Drawing.Color.Transparent;
+            this.UserBtn.BorderColor = System.Drawing.Color.Black;
+            this.UserBtn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UserBtn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.UserBtn.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.UserBtn.FocusedColor = System.Drawing.Color.Empty;
+            this.UserBtn.Font = new System.Drawing.Font("Bahnschrift", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserBtn.ForeColor = System.Drawing.Color.White;
+            this.UserBtn.Image = global::COA_PRIS.Properties.Resources.user_avatar__1_;
+            this.UserBtn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.UserBtn.ImageSize = new System.Drawing.Size(40, 40);
+            this.UserBtn.Location = new System.Drawing.Point(0, 0);
+            this.UserBtn.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            this.UserBtn.Name = "UserBtn";
+            this.UserBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
+            this.UserBtn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.UserBtn.OnHoverForeColor = System.Drawing.Color.White;
+            this.UserBtn.OnHoverImage = null;
+            this.UserBtn.OnPressedColor = System.Drawing.Color.Black;
+            this.UserBtn.Size = new System.Drawing.Size(95, 70);
+            this.UserBtn.TabIndex = 5;
+            this.UserBtn.Tag = "User Settings";
+            this.UserBtn.TextOffsetX = 18;
+            this.UserBtn.Click += new System.EventHandler(this.button_Click);
+            this.UserBtn.MouseHover += new System.EventHandler(this.button_MouseHover);
+            // 
             // activity_Panel
             // 
             this.activity_Panel.BackColor = System.Drawing.Color.Transparent;
@@ -358,7 +356,7 @@
             this.activity_Panel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.activity_Panel.Name = "activity_Panel";
             this.activity_Panel.Size = new System.Drawing.Size(95, 70);
-            this.activity_Panel.TabIndex = 9;
+            this.activity_Panel.TabIndex = 11;
             // 
             // LogBtn
             // 
@@ -528,7 +526,7 @@
             // 
             // Main_Form
             // 
-            this.Main_Form.BackColor = System.Drawing.Color.Silver;
+            this.Main_Form.BackColor = System.Drawing.Color.Gainsboro;
             this.Main_Form.Dock = System.Windows.Forms.DockStyle.Fill;
             this.Main_Form.Location = new System.Drawing.Point(95, 90);
             this.Main_Form.Margin = new System.Windows.Forms.Padding(0);
@@ -565,8 +563,8 @@
             this.projects_Panel.ResumeLayout(false);
             this.employee_Panel.ResumeLayout(false);
             this.report_Panel.ResumeLayout(false);
-            this.user_Panel.ResumeLayout(false);
             this.maintenance_Panel.ResumeLayout(false);
+            this.user_Panel.ResumeLayout(false);
             this.activity_Panel.ResumeLayout(false);
             this.logo_Panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).EndInit();
@@ -598,18 +596,18 @@
         private Guna.UI.WinForms.GunaButton ProjectBtn;
         private Guna.UI.WinForms.GunaButton EmployeeBtn;
         private Guna.UI.WinForms.GunaButton ReportBtn;
-        private Guna.UI.WinForms.GunaButton UserBtn;
         private Guna.UI.WinForms.GunaButton MaintenanceBtn;
-        private Guna.UI.WinForms.GunaButton LogBtn;
         private Guna.UI.WinForms.GunaPanel home_Panel;
         private Guna.UI.WinForms.GunaPanel projects_Panel;
         private Guna.UI.WinForms.GunaPanel employee_Panel;
         private Guna.UI.WinForms.GunaPanel report_Panel;
-        private Guna.UI.WinForms.GunaPanel user_Panel;
         private Guna.UI.WinForms.GunaPanel maintenance_Panel;
-        private Guna.UI.WinForms.GunaPanel activity_Panel;
         private Guna.UI.WinForms.GunaPanel logout_Panel;
         private Guna.UI.WinForms.GunaPanel logo_Panel;
         private System.Windows.Forms.ToolTip button_ToolTip;
+        private Guna.UI.WinForms.GunaPanel user_Panel;
+        private Guna.UI.WinForms.GunaButton UserBtn;
+        private Guna.UI.WinForms.GunaPanel activity_Panel;
+        private Guna.UI.WinForms.GunaButton LogBtn;
     }
 }

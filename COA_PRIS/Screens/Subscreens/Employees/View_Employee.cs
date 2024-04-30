@@ -304,7 +304,7 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                     error_Message.Visible = true;
                     return;
                 }
-            if (!validator.Required_TextBox(control_Panel, _error, error_Message))
+            if (!validator.RequiredTextBox(control_Panel, _error, error_Message))
                 return;
 
             var values = new List<string>();
@@ -313,10 +313,10 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                 values.Add(userControl.Value);
             
 
-            var entries = new List<List<string>> { new List<string> { values[0], values[1], values[3], values[6], values[7], "admin", emp_id.Text } } ;
+            var entries = new List<List<string>> { new List<string> { values[0], values[1], values[3], values[6], values[7], Activity_Manager.CurrentUser, emp_id.Text } } ;
 
             using (database_manager)
-                ret = database_manager.ExecuteNonQuery(util.generate_Query(entries, Database_Query.update_employee_record_by_id));
+                ret = database_manager.ExecuteNonQuery(util.GenerateQuery(entries, Database_Query.update_employee_record_by_id));
 
             if (ret == 1)
             {

@@ -49,7 +49,7 @@ namespace COA_PRIS.UserControlUtil
             get { return ReturnValues.FirstOrDefault(x => x.Value == entry.Text).Key;}
             set 
             { 
-                entry.Text = value;
+                entry.Text = !string.IsNullOrEmpty(value) ? value: $"Select {this.Title} Record";
                 Selection_ChangeEvent(EventArgs.Empty);
             }
         }

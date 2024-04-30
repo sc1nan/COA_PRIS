@@ -20,8 +20,6 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
         private Util util;
         private Validator validator = new Validator();
         private Audit_Trail audit_Trail;
-        //temporary active account
-        private readonly string active_account = "admin";
         private string Record_ID { get; set; }
         private string Read_Query { get; set; } 
         private string Update_Query { get; set; }
@@ -123,7 +121,7 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
         private void save_Btn_Click(object sender, EventArgs e)
         {
             int ret = 0;
-            if (validator.Required_TextBox(control_Panel, error_provider, error_Message))
+            if (validator.RequiredTextBox(control_Panel, error_provider, error_Message))
             {
                 List<List<string>> entries = new List<List<string>>();
 
@@ -142,7 +140,7 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
                 entries.Add(values);
 
                 using (database_Manager)
-                    ret = database_Manager.ExecuteNonQuery(util.generate_Query(entries, Update_Query));
+                    ret = database_Manager.ExecuteNonQuery(util.GenerateQuery(entries, Update_Query));
 
             }
             if (ret == 1)
@@ -151,7 +149,7 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
                 {
                     string code_type = database_Manager.ExecuteScalar(string.Format(Database_Query.return_module_name, Table)).ToString();
                     //make activity log
-                    database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_edit, active_account, code_type, code_Title.Text));
+                    database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_edit, Activity_Manager.CurrentUser, code_type, code_Title.Text));
                 }
                 if (MessageBox.Show($"{code_Title.Text} is successfully Updated.", "Update Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                 {
@@ -173,7 +171,7 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
                 {
                     database_Manager.ExecuteNonQuery(string.Format(Database_Query.delete_record_by_id, this.Table, this.Record_ID));
                     string code_type = database_Manager.ExecuteScalar(string.Format(Database_Query.return_module_name, Table)).ToString();
-                    database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_delete, active_account, code_type, code_Title.Text));
+                    database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_delete, Activity_Manager.CurrentUser, code_type, code_Title.Text));
                 }
                 MessageBox.Show($"{code_Title.Text} is successfully deleted", "Delete Confirmation");
                 is_ClosingProgrammatically = true;

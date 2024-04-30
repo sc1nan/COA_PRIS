@@ -166,7 +166,7 @@ namespace COA_PRIS.Screens.Subscreens.Employees
         {
             int ret = 0;
 
-            if (!validator.Required_TextBox(control_Panel, error_Employee, error_Message))
+            if (!validator.RequiredTextBox(control_Panel, error_Employee, error_Message))
                 return;
 
             if (MessageBox.Show("Proceed to add employee record?", "Employee Record Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) != DialogResult.Yes)
@@ -178,10 +178,10 @@ namespace COA_PRIS.Screens.Subscreens.Employees
             foreach (IPRIS_UserControl control in controls)
                 values.Add(control.Value);
 
-            var entries = new List<List<string>> { new List<string> { values[0], values[1], values[2], values[3], values[7], values[8], "admin"}};
+            var entries = new List<List<string>> { new List<string> { values[0], values[1], values[2], values[3], values[7], values[8], Activity_Manager.CurrentUser}};
 
             using (database_manager)
-                ret = database_manager.ExecuteNonQuery(util.generate_Query(entries, Database_Query.set_new_employee));
+                ret = database_manager.ExecuteNonQuery(util.GenerateQuery(entries, Database_Query.set_new_employee));
 
 
             if (ret == 1)

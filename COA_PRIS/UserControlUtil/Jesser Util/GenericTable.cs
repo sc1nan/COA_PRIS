@@ -47,7 +47,7 @@ namespace COA_PRIS.UserControlUtil.Jesser_Util
                 default: break;
             }
 
-            LogsTable.DataSource = util.format_DataTableLimit(dt, min_lim);
+            LogsTable.DataSource = util.FormatDataTableLimit(dt, min_lim);
             AddThemeToDGV(LogsTable, data_Table_Type);
 
         }

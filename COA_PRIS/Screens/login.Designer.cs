@@ -1,6 +1,6 @@
 ﻿namespace COA_PRIS
 {
-    partial class login
+    partial class Login
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.gunaCirclePictureBox1 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.gunaLabel4 = new Guna.UI.WinForms.GunaLabel();
@@ -44,7 +44,7 @@
             this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.gunaElipsePanel4 = new Guna.UI.WinForms.GunaElipsePanel();
             this.parent_Panel = new Guna.UI.WinForms.GunaElipsePanel();
-            this.error_label = new Guna.UI.WinForms.GunaLabel();
+            this.error_Message = new Guna.UI.WinForms.GunaLabel();
             this.gunaImageButton1 = new Guna.UI.WinForms.GunaImageButton();
             this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.login_Error = new System.Windows.Forms.ErrorProvider(this.components);
@@ -136,7 +136,7 @@
             this.Login_btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Login_btn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.Login_btn.FocusedColor = System.Drawing.Color.Empty;
-            this.Login_btn.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Login_btn.Font = new System.Drawing.Font("Bahnschrift", 14F);
             this.Login_btn.ForeColor = System.Drawing.Color.White;
             this.Login_btn.Image = null;
             this.Login_btn.ImageSize = new System.Drawing.Size(20, 20);
@@ -147,8 +147,8 @@
             this.Login_btn.OnHoverForeColor = System.Drawing.Color.White;
             this.Login_btn.OnHoverImage = null;
             this.Login_btn.OnPressedColor = System.Drawing.Color.Black;
-            this.Login_btn.Radius = 10;
-            this.Login_btn.Size = new System.Drawing.Size(173, 42);
+            this.Login_btn.Radius = 8;
+            this.Login_btn.Size = new System.Drawing.Size(173, 50);
             this.Login_btn.TabIndex = 2;
             this.Login_btn.Text = "LOGIN";
             this.Login_btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -164,7 +164,7 @@
             this.pass_Panel.Controls.Add(this.password_entry);
             this.pass_Panel.Location = new System.Drawing.Point(42, 570);
             this.pass_Panel.Name = "pass_Panel";
-            this.pass_Panel.Size = new System.Drawing.Size(400, 55);
+            this.pass_Panel.Size = new System.Drawing.Size(400, 60);
             this.pass_Panel.TabIndex = 4;
             // 
             // gunaPictureBox2
@@ -188,16 +188,17 @@
             this.password_entry.BorderColor = System.Drawing.Color.Silver;
             this.password_entry.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.password_entry.FocusedBaseColor = System.Drawing.Color.White;
-            this.password_entry.FocusedBorderColor = System.Drawing.SystemColors.MenuHighlight;
-            this.password_entry.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.password_entry.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.password_entry.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             this.password_entry.Font = new System.Drawing.Font("Bahnschrift", 14F);
+            this.password_entry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             this.password_entry.Location = new System.Drawing.Point(59, 3);
             this.password_entry.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.password_entry.Name = "password_entry";
             this.password_entry.PasswordChar = '\0';
             this.password_entry.Radius = 5;
             this.password_entry.SelectedText = "";
-            this.password_entry.Size = new System.Drawing.Size(321, 49);
+            this.password_entry.Size = new System.Drawing.Size(321, 54);
             this.password_entry.TabIndex = 3;
             this.password_entry.Tag = "Password";
             this.password_entry.Text = "Password";
@@ -213,7 +214,7 @@
             this.user_Panel.Controls.Add(this.gunaPictureBox1);
             this.user_Panel.Location = new System.Drawing.Point(42, 488);
             this.user_Panel.Name = "user_Panel";
-            this.user_Panel.Size = new System.Drawing.Size(400, 55);
+            this.user_Panel.Size = new System.Drawing.Size(400, 60);
             this.user_Panel.TabIndex = 3;
             // 
             // username_entry
@@ -227,16 +228,17 @@
             this.username_entry.BorderColor = System.Drawing.Color.Silver;
             this.username_entry.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.username_entry.FocusedBaseColor = System.Drawing.Color.White;
-            this.username_entry.FocusedBorderColor = System.Drawing.SystemColors.MenuHighlight;
-            this.username_entry.FocusedForeColor = System.Drawing.SystemColors.ControlText;
+            this.username_entry.FocusedBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.username_entry.FocusedForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             this.username_entry.Font = new System.Drawing.Font("Bahnschrift", 14F);
+            this.username_entry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             this.username_entry.Location = new System.Drawing.Point(59, 3);
             this.username_entry.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.username_entry.Name = "username_entry";
             this.username_entry.PasswordChar = '\0';
             this.username_entry.Radius = 5;
             this.username_entry.SelectedText = "";
-            this.username_entry.Size = new System.Drawing.Size(321, 48);
+            this.username_entry.Size = new System.Drawing.Size(321, 53);
             this.username_entry.TabIndex = 2;
             this.username_entry.Tag = "Username";
             this.username_entry.Text = "Username";
@@ -273,7 +275,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.parent_Panel.BackColor = System.Drawing.Color.Transparent;
             this.parent_Panel.BaseColor = System.Drawing.Color.White;
-            this.parent_Panel.Controls.Add(this.error_label);
+            this.parent_Panel.Controls.Add(this.error_Message);
             this.parent_Panel.Controls.Add(this.gunaPanel1);
             this.parent_Panel.Controls.Add(this.pass_Panel);
             this.parent_Panel.Controls.Add(this.Login_btn);
@@ -286,19 +288,19 @@
             this.parent_Panel.Size = new System.Drawing.Size(480, 792);
             this.parent_Panel.TabIndex = 3;
             // 
-            // error_label
+            // error_Message
             // 
-            this.error_label.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.error_Message.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.error_label.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.error_label.ForeColor = System.Drawing.Color.Red;
-            this.error_label.Location = new System.Drawing.Point(42, 639);
-            this.error_label.Name = "error_label";
-            this.error_label.Size = new System.Drawing.Size(396, 23);
-            this.error_label.TabIndex = 8;
-            this.error_label.Text = "120120223";
-            this.error_label.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.error_label.Visible = false;
+            this.error_Message.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.error_Message.ForeColor = System.Drawing.Color.Red;
+            this.error_Message.Location = new System.Drawing.Point(42, 639);
+            this.error_Message.Name = "error_Message";
+            this.error_Message.Size = new System.Drawing.Size(396, 23);
+            this.error_Message.TabIndex = 8;
+            this.error_Message.Text = "120120223";
+            this.error_Message.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.error_Message.Visible = false;
             // 
             // gunaImageButton1
             // 
@@ -337,7 +339,7 @@
             this.login_Error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.login_Error.ContainerControl = this;
             // 
-            // login
+            // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -353,7 +355,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1500, 800);
-            this.Name = "login";
+            this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Project Record Information System";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
@@ -387,7 +389,7 @@
         private Guna.UI.WinForms.GunaElipsePanel parent_Panel;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox1;
         private Guna.UI.WinForms.GunaPictureBox gunaPictureBox2;
-        private Guna.UI.WinForms.GunaLabel error_label;
+        private Guna.UI.WinForms.GunaLabel error_Message;
         private Guna.UI.WinForms.GunaImageButton gunaImageButton1;
         private Guna.UI.WinForms.GunaCirclePictureBox gunaCirclePictureBox2;
         private Guna.UI.WinForms.GunaLabel gunaLabel4;

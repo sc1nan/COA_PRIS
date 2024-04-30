@@ -54,7 +54,7 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                 dt = database_manager.ExecuteQuery(Database_Query.get_employee_records);
 
 
-            data_View.DataSource = util.format_DataTable(dt);
+            data_View.DataSource = util.FormatDataTable(dt);
             Theme.gridView_Style(data_View, column_Widths, column_Text_Align);
         }
 
@@ -73,7 +73,7 @@ namespace COA_PRIS.Screens.Subscreens.Employees
             using (database_manager)
                 dt = database_manager.ExecuteQuery(Database_Query.get_employee_records);
 
-            data_View.DataSource = util.format_DataTable(dt);
+            data_View.DataSource = util.FormatDataTable(dt);
         }
 
         private void view_RecordBtn_Click(object sender, EventArgs e)

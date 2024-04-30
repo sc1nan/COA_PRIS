@@ -67,7 +67,7 @@ namespace COA_PRIS
 
         #region Project Requests
 
-        public static readonly string get_all_project_records = "SELECT * FROM docu_info_table";
+        //public static readonly string get_all_project_records = "SELECT * FROM docu_info_table";
 
         public static readonly string get_general_project_records_by_date = "SELECT * FROM docu_info_table WHERE {0} BETWEEN '{1}' AND '{2}'";
 
@@ -170,6 +170,9 @@ namespace COA_PRIS
         public static readonly string get_nature_options = "SELECT nature_table.code, nature_table.title, nature_table.description FROM nature_table WHERE nature_table.status = 1";
 
         public static readonly string get_employee_options = "SELECT emp_info_table.code, emp_info_table.full_name, emp_info_table.email FROM emp_info_table WHERE emp_info_table.status = 1";
+
+        public static readonly string get_free_employee_account_options = "SELECT emp_info_table.code, emp_info_table.full_name, emp_info_table.email \r\nFROM emp_info_table \r\nWHERE\r\nNOT (SELECT COUNT(*) FROM user_info_table WHERE user_info_table.employee_code = emp_info_table.code);";
+
         #endregion
 
         #region Maintenance SET Record Queries
@@ -294,6 +297,27 @@ namespace COA_PRIS
         public static readonly string set_new_docu_trans = "INSERT INTO docu_transaction_table (\r\n    docu_transaction_table.docu_code, docu_transaction_table.agency_code, docu_transaction_table.contractor_code,\r\n    docu_transaction_table.nature_code, docu_transaction_table.division_code, docu_transaction_table.employee_code,\r\n    docu_transaction_table.remarks_code, docu_transaction_table.status_code, docu_transaction_table.filed_date)\r\nVALUES('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}', NULL);";
         public static readonly string set_new_remarks = "INSERT INTO remarks_table (remarks_table.code, remarks_table.description, remarks_table.docu_code)\r\nVALUES ('{0}','{1}','{2}');";
         public static readonly string set_new_history = "INSERT INTO history_table (history_table.code, history_table.description, history_table.date, history_table.docu_code )\r\nVALUES ('{0}','{1}','{2}','{3}');";
+
+        public static readonly string get_all_project_records = "SELECT docu_info_table.code, docu_info_table.document_no, docu_info_table.title,\r\nCONCAT('₱ ', FORMAT(docu_info_table.amount,2)),  status_table.title\r\nFROM docu_info_table\r\nINNER JOIN docu_transaction_table ON docu_info_table.code = docu_transaction_table.docu_code\r\nINNER JOIN status_table ON docu_transaction_table.status_code = status_table.code";
+
+
+        public static readonly string get_user_access = "SELECT \r\nuser_access_table.home, user_access_table.projects, user_access_table.employee, user_access_table.reports, user_access_table.maintenance, user_access_table.user_settings, user_access_table.activity_logs\r\nFROM user_access_table WHERE user_access_table.user_name = '{0}';";
+
+
+        public static readonly string get_employee_off_pos_by_id = "SELECT office_table.title, position_table.title FROM emp_info_table\r\nINNER JOIN section_table ON emp_info_table.section_code = section_table.code\r\nINNER JOIN division_table ON section_table.division_code = division_table.code\r\nINNER JOIN office_table ON division_table.office_code = office_table.code\r\nINNER JOIN position_table ON emp_info_table.position_code = position_table.code\r\nWHERE emp_info_table.code = '{0}';";
+
+        public static readonly string get_user_role_options = "SELECT user_role_table.code, user_role_table.title FROM user_role_table\r\nWHERE user_role_table.status = 1 OR user_role_table.status = 2";
+        public static readonly string get_user_role_access_by_id = "SELECT user_role_table.home, user_role_table.projects, user_role_table.employee, \r\nuser_role_table.reports, user_role_table.maintenance, user_role_table.user_settings,\r\nuser_role_table.activity_logs \r\nFROM user_role_table\r\nWHERE user_role_table.code = '{0}';";
+        public static readonly string get_user_role_projects_by_id = "SELECT user_role_table.projects_add, user_role_table.projects_view,\r\nuser_role_table.projects_update, user_role_table.projects_delete\r\nFROM user_role_table WHERE user_role_table.code = '{0}';";
+        public static readonly string get_user_role_employee_by_id = "SELECT user_role_table.employee_add, user_role_table.employee_view,\r\nuser_role_table.employee_update, user_role_table.employee_delete\r\nFROM user_role_table \r\nWHERE user_role_table.code = '{0}';";
+        public static readonly string get_user_role_maintenance_by_id = "SELECT user_role_table.maintenance_add, user_role_table.maintenance_view,\r\nuser_role_table.maintenance_update, user_role_table.maintenance_delete\r\nFROM user_role_table \r\nWHERE user_role_table.code = '{0}';";
+        public static readonly string get_user_role_user_settings_by_id = "SELECT user_role_table.user_settings_add, user_role_table.user_settings_view,\r\nuser_role_table.user_settings_update, user_role_table.user_settings_delete\r\nFROM user_role_table \r\nWHERE user_role_table.code = '{0}';";
+
+        public static readonly string set_user_cred = "INSERT INTO user_cred_table (user_cred_table.user_name, user_cred_table.password) VALUES ('{0}', '{1}');";
+        public static readonly string set_user_info = "INSERT INTO user_info_table\r\n(user_info_table.user_name, user_info_table.employee_code, \r\nuser_info_table.role_code, user_info_table.status, \r\nuser_info_table.created_by, user_info_table.created_date)\r\nVALUES \r\n('{0}','{1}','{2}','1','{3}', CURRENT_TIMESTAMP());";
+        public static readonly string set_user_access = "INSERT INTO user_access_table\r\nVALUES\r\n(NULL, '{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}','{9}','{10}','{11}',\r\n'{12}','{13}','{14}','{15}','{16}','{17}','{18}','{19}','{20}','{21}','{22}',\r\n'{23}')";
+
+        public static readonly string get_all_active_user = "SELECT user_info_table.employee_code, emp_info_table.full_name, office_table.title, position_table.title, user_role_table.title\r\n\r\nFROM user_info_table\r\nLEFT JOIN emp_info_table ON user_info_table.employee_code = emp_info_table.code\r\nLEFT JOIN position_table ON emp_info_table.position_code = position_table.code\r\nLEFT JOIN section_table ON emp_info_table.section_code = section_table.code\r\nLEFT JOIN division_table ON section_table.division_code = division_table.code\r\nLEFT JOIN office_table ON division_table.office_code = office_table.code\r\n\r\nLEFT JOIN user_role_table ON user_info_table.role_code = user_role_table.code\r\nWHERE user_info_table.status = 1\r\nORDER BY user_info_table.employee_code;\r\n;";
 
 
     }

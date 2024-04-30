@@ -40,7 +40,10 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
         public string Value
         {
             get { return date.Value.ToString("yyyy-MM-dd HH:mm:ss"); }
-            set { date.Value = DateTime.Parse(value); }
+            set
+            { //if (!string.IsNullOrEmpty(value)) date.Value = DateTime.Parse(value); }
+                date.Value = !string.IsNullOrEmpty(value) ? DateTime.Parse(value) : DateTime.Now;
+            }
         }
         public PRIS_Date_Picker()
         {

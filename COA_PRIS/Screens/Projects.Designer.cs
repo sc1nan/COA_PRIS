@@ -28,48 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.parent_panel = new Guna.UI.WinForms.GunaPanel();
-            this.container_Panel = new Guna.UI.WinForms.GunaPanel();
-            this.line_Panel = new Guna.UI.WinForms.GunaPanel();
             this.nav_panel = new System.Windows.Forms.FlowLayoutPanel();
+            this.line_Panel = new Guna.UI.WinForms.GunaPanel();
+            this.container_Panel = new Guna.UI.WinForms.GunaPanel();
             this.record_Btn = new Guna.UI.WinForms.GunaButton();
             this.create_Btn = new Guna.UI.WinForms.GunaButton();
-            this.parent_panel.SuspendLayout();
             this.nav_panel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // parent_panel
-            // 
-            this.parent_panel.BackColor = System.Drawing.Color.Transparent;
-            this.parent_panel.Controls.Add(this.container_Panel);
-            this.parent_panel.Controls.Add(this.line_Panel);
-            this.parent_panel.Controls.Add(this.nav_panel);
-            this.parent_panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.parent_panel.Location = new System.Drawing.Point(0, 0);
-            this.parent_panel.Margin = new System.Windows.Forms.Padding(0);
-            this.parent_panel.Name = "parent_panel";
-            this.parent_panel.Padding = new System.Windows.Forms.Padding(10);
-            this.parent_panel.Size = new System.Drawing.Size(1556, 884);
-            this.parent_panel.TabIndex = 1;
-            // 
-            // container_Panel
-            // 
-            this.container_Panel.BackColor = System.Drawing.Color.White;
-            this.container_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container_Panel.Location = new System.Drawing.Point(10, 70);
-            this.container_Panel.Name = "container_Panel";
-            this.container_Panel.Padding = new System.Windows.Forms.Padding(10);
-            this.container_Panel.Size = new System.Drawing.Size(1536, 804);
-            this.container_Panel.TabIndex = 2;
-            // 
-            // line_Panel
-            // 
-            this.line_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.line_Panel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.line_Panel.Location = new System.Drawing.Point(10, 65);
-            this.line_Panel.Name = "line_Panel";
-            this.line_Panel.Size = new System.Drawing.Size(1536, 5);
-            this.line_Panel.TabIndex = 1;
             // 
             // nav_panel
             // 
@@ -81,7 +46,26 @@
             this.nav_panel.Location = new System.Drawing.Point(10, 10);
             this.nav_panel.Name = "nav_panel";
             this.nav_panel.Size = new System.Drawing.Size(1536, 55);
-            this.nav_panel.TabIndex = 0;
+            this.nav_panel.TabIndex = 2;
+            // 
+            // line_Panel
+            // 
+            this.line_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.line_Panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.line_Panel.Location = new System.Drawing.Point(10, 65);
+            this.line_Panel.Name = "line_Panel";
+            this.line_Panel.Size = new System.Drawing.Size(1536, 5);
+            this.line_Panel.TabIndex = 3;
+            // 
+            // container_Panel
+            // 
+            this.container_Panel.BackColor = System.Drawing.Color.White;
+            this.container_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container_Panel.Location = new System.Drawing.Point(10, 70);
+            this.container_Panel.Name = "container_Panel";
+            this.container_Panel.Padding = new System.Windows.Forms.Padding(10);
+            this.container_Panel.Size = new System.Drawing.Size(1536, 804);
+            this.container_Panel.TabIndex = 4;
             // 
             // record_Btn
             // 
@@ -149,14 +133,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Silver;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1556, 884);
-            this.Controls.Add(this.parent_panel);
+            this.Controls.Add(this.container_Panel);
+            this.Controls.Add(this.line_Panel);
+            this.Controls.Add(this.nav_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Projects";
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "Projects";
             this.Load += new System.EventHandler(this.Projects_Load);
-            this.parent_panel.ResumeLayout(false);
             this.nav_panel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -164,11 +150,10 @@
 
         #endregion
 
-        private Guna.UI.WinForms.GunaPanel parent_panel;
-        private Guna.UI.WinForms.GunaPanel container_Panel;
-        private Guna.UI.WinForms.GunaPanel line_Panel;
         private System.Windows.Forms.FlowLayoutPanel nav_panel;
         private Guna.UI.WinForms.GunaButton record_Btn;
         private Guna.UI.WinForms.GunaButton create_Btn;
+        private Guna.UI.WinForms.GunaPanel line_Panel;
+        private Guna.UI.WinForms.GunaPanel container_Panel;
     }
 }

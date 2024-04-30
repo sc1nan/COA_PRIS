@@ -193,6 +193,18 @@
     <Compile Include="Screens\Splash Screen.Designer.cs">
       <DependentUpon>Splash Screen.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Subscreens\ActivityLogs\AccountLogging.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\ActivityLogs\AccountLogging.Designer.cs">
+      <DependentUpon>AccountLogging.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Subscreens\ActivityLogs\ActivityLogging.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\ActivityLogs\ActivityLogging.Designer.cs">
+      <DependentUpon>ActivityLogging.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Subscreens\Employees\Add_Employee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +253,48 @@
     <Compile Include="Screens\Subscreens\Projects\Project_List.Designer.cs">
       <DependentUpon>Project_List.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Subscreens\Reports\ProjectRequest_Reports_Sub.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Reports\ProjectRequest_Reports_Sub.Designer.cs">
+      <DependentUpon>ProjectRequest_Reports_Sub.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Reports\Reports_Submodule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Reports\Reports_Submodule.Designer.cs">
+      <DependentUpon>Reports_Submodule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Users\Users_Create.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Users\Users_Create.Designer.cs">
+      <DependentUpon>Users_Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Users\Users_Deactivate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Users\Users_Deactivate.Designer.cs">
+      <DependentUpon>Users_Deactivate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Users\Users_Lists.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Users\Users_Lists.Designer.cs">
+      <DependentUpon>Users_Lists.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Users\Users_Roles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Users\Users_Roles.Designer.cs">
+      <DependentUpon>Users_Roles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\User.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\User.Designer.cs">
+      <DependentUpon>User.cs</DependentUpon>
+    </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="UserControlUtil\DataTableMultiplePages.cs">
       <SubType>UserControl</SubType>
@@ -254,12 +308,20 @@
     <Compile Include="UserControlUtil\DateFilter.Designer.cs">
       <DependentUpon>DateFilter.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlUtil\Jesser Util\GenericTable.cs" />
+    <Compile Include="UserControlUtil\Jesser Util\IGenericTableVariables.cs" />
     <Compile Include="UserControlUtil\PRIS_UserControl\IPRIS_UserControl.cs" />
     <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Date_Picker.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Date_Picker.Designer.cs">
       <DependentUpon>PRIS_Date_Picker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_CheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_CheckBox.Designer.cs">
+      <DependentUpon>PRIS_Label_CheckBox.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Entry.cs">
       <SubType>UserControl</SubType>
@@ -272,6 +334,12 @@
     </Compile>
     <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Rich.Designer.cs">
       <DependentUpon>PRIS_Label_Rich.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_MainCheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_MainCheckBox.Designer.cs">
+      <DependentUpon>PRIS_Label_MainCheckBox.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Selector.cs">
       <SubType>UserControl</SubType>
@@ -310,11 +378,11 @@
     </Compile>
     <Compile Include="Utilities\Database_Connection.cs" />
     <Compile Include="Utilities\Database_Query.cs" />
-    <Compile Include="Screens\login.cs">
+    <Compile Include="Screens\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Screens\login.Designer.cs">
-      <DependentUpon>login.cs</DependentUpon>
+    <Compile Include="Screens\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -330,7 +398,7 @@
     <Compile Include="SysSetupUserControl.Designer.cs">
       <DependentUpon>SysSetupUserControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Utilities\Encryption_Manger.cs" />
+    <Compile Include="Utilities\Encryption_Manager.cs" />
     <Compile Include="Utilities\Login_Manager.cs" />
     <Compile Include="Utilities\Log_Message.cs" />
     <Compile Include="Utilities\Util.cs" />
@@ -355,8 +423,8 @@
     <EmbeddedResource Include="Screens\DevInfo.resx">
       <DependentUpon>DevInfo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\login.resx">
-      <DependentUpon>login.cs</DependentUpon>
+    <EmbeddedResource Include="Screens\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -377,6 +445,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Splash Screen.resx">
       <DependentUpon>Splash Screen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\ActivityLogs\AccountLogging.resx">
+      <DependentUpon>AccountLogging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\ActivityLogs\ActivityLogging.resx">
+      <DependentUpon>ActivityLogging.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Employees\Add_Employee.resx">
       <DependentUpon>Add_Employee.cs</DependentUpon>
@@ -402,6 +476,27 @@
     <EmbeddedResource Include="Screens\Subscreens\Projects\Project_List.resx">
       <DependentUpon>Project_List.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Reports\ProjectRequest_Reports_Sub.resx">
+      <DependentUpon>ProjectRequest_Reports_Sub.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Reports\Reports_Submodule.resx">
+      <DependentUpon>Reports_Submodule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Users\Users_Create.resx">
+      <DependentUpon>Users_Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Users\Users_Deactivate.resx">
+      <DependentUpon>Users_Deactivate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Users\Users_Lists.resx">
+      <DependentUpon>Users_Lists.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Users\Users_Roles.resx">
+      <DependentUpon>Users_Roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\User.resx">
+      <DependentUpon>User.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StatReportUserControl.resx">
       <DependentUpon>StatReportUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -417,11 +512,17 @@
     <EmbeddedResource Include="UserControlUtil\PRIS_UserControl\PRIS_Date_Picker.resx">
       <DependentUpon>PRIS_Date_Picker.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUtil\PRIS_UserControl\PRIS_Label_CheckBox.resx">
+      <DependentUpon>PRIS_Label_CheckBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Entry.resx">
       <DependentUpon>PRIS_Label_Entry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Rich.resx">
       <DependentUpon>PRIS_Label_Rich.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUtil\PRIS_UserControl\PRIS_Label_MainCheckBox.resx">
+      <DependentUpon>PRIS_Label_MainCheckBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Selector.resx">
       <DependentUpon>PRIS_Label_Selector.cs</DependentUpon>
@@ -510,6 +611,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\active.png" />
+    <None Include="Resources\add-user.png" />
     <Content Include="Resources\apps-sort - Copy.png" />
     <Content Include="Resources\apps-sort.png" />
     <None Include="Resources\business-report %281%29 - Copy.png" />
@@ -537,6 +639,8 @@
     <Content Include="Resources\folder-download %281%29.png" />
     <Content Include="Resources\folder-download - Copy.png" />
     <Content Include="Resources\folder-download.png" />
+    <Content Include="Resources\group.png" />
+    <None Include="Resources\group1.png" />
     <Content Include="Resources\house-solid - Copy.png" />
     <Content Include="Resources\house-solid.png" />
     <None Include="Resources\logout %282%29.png" />
@@ -558,6 +662,7 @@
     <None Include="Resources\seedling.png" />
     <Content Include="Resources\select %281%29.png" />
     <Content Include="Resources\select.png" />
+    <None Include="Resources\settings.png" />
     <Content Include="Resources\Splash screen.png" />
     <None Include="Resources\square-divide.png" />
     <Content Include="Resources\to-do %281%29.png" />

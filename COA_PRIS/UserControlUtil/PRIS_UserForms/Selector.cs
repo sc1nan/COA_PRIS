@@ -61,7 +61,7 @@ namespace COA_PRIS.UserControlUtil
 
             data_View.DataSource = null;
             data_View.Rows.Clear();
-            data_View.DataSource = util.format_DataTable(data_Table);
+            data_View.DataSource = util.FormatDataTable(data_Table);
 
 
             Theme.gridView_Style(data_View, this.ColumnWidths, this.ColumnsTitlesAlignment);

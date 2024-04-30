@@ -1,11 +1,14 @@
 ﻿using System;
+using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using System.Xml.Linq;
 using COA_PRIS.Properties;
 using COA_PRIS.Utilities;
 using Guna.UI.WinForms;
+using Org.BouncyCastle.Asn1.Cmp;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace COA_PRIS.Screens
@@ -14,16 +17,18 @@ namespace COA_PRIS.Screens
     {
         private Form current_Form = null;
         private Login_Manager login_manager;
-        private Database_Manager database_manager;
+        private Database_Manager database_manager = new Database_Manager();
         private Tab_Manager tab_Manager;
         private Activity_Manager activity_manager;
         private Log_Message message;
+
         private readonly Projects projects_Tab = new Projects();
         private readonly Home landing_Home = new Home();
         private readonly Employee employee_Tab = new Employee();
         private readonly ActivityLogs log_Tab = new ActivityLogs();
         private readonly Maintenance maintenance_Tab = new Maintenance();
         private readonly Reports reports_Tab = new Reports();
+        private readonly User user_Tab = new User();
 
         public Dashboard()
         {
@@ -42,12 +47,28 @@ namespace COA_PRIS.Screens
             foreach (Control control in tab_panel.Controls)
                 tab_Manager.Nav_buttons.Add(control.Controls[0]);
 
-            login_manager.active_Account = "admin";
-            activity_manager.Log_Activity("admin", "Logged In");
+            //activity_manager.Log_Activity(Activity_Manager.CurrentUser, "Logged In");
 
             tab_Manager.Header_Title = headerTitle;
             tab_Manager.active_Button(EmployeeBtn, true);
-            ProjectBtn.PerformClick();
+            UserBtn.PerformClick();
+
+            gunaLabel1.Text = Activity_Manager.CurrentUser;
+
+            Access_Manager();
+        }
+
+
+        private void Access_Manager() 
+        {          
+            DataTable ret;
+            using (database_manager)
+                ret = database_manager.ExecuteQuery(string.Format(Database_Query.get_user_access, Activity_Manager.CurrentUser));
+
+            if (ret != null) 
+                for (int retIndex = 0; retIndex < ret.Columns.Count; retIndex++) 
+                    tab_panel.Controls[retIndex].Visible = (int)ret.Rows[0][retIndex] == 1 ? true: false;
+            
         }
 
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
@@ -61,7 +82,7 @@ namespace COA_PRIS.Screens
                 }
                 else
                 {
-                    activityManager.Log_Activity("admin", Log_Message.logout_message);
+                    activityManager.Log_Activity(Activity_Manager.CurrentUser, Log_Message.logout_message);
                     Application.Exit();
                 }
             }
@@ -78,11 +99,9 @@ namespace COA_PRIS.Screens
                     form = landing_Home;
                     break;
                 case "ProjectBtn":
-                    // Handle Create button click
-                    current_Form = tab_Manager.switch_Form(projects_Tab, current_Form, Main_Form);
+                    form = projects_Tab;
                     break;
                 case "ReportBtn":
-                    // Handle Report button click
                     form = reports_Tab;
                     break;
                 case "EmployeeBtn":
@@ -92,7 +111,7 @@ namespace COA_PRIS.Screens
                     form = log_Tab;
                     break;
                 case "UserBtn":
-                    // Handle User button click
+                    form = user_Tab;
                     break;
                 case "MaintenanceBtn":
                     form = maintenance_Tab;
@@ -110,11 +129,11 @@ namespace COA_PRIS.Screens
             database_manager = new Database_Manager();
             if (MessageBox.Show("Are you sure you want to logout", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                activityManager.Log_ActivityOut("admin", Log_Message.logout_message);
-
-                    login log = new login();
-                    log.ShowDialog();
-                    this.Close();
+                activityManager.Log_ActivityOut(Activity_Manager.CurrentUser, Log_Message.logout_message);
+                this.Hide();
+                Login log = new Login();
+                log.ShowDialog();
+                this.Dispose();
                
                
             }

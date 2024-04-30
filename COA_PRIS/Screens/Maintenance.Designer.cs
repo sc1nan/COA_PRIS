@@ -44,6 +44,7 @@
             this.top_Panel = new Guna.UI.WinForms.GunaPanel();
             this.control_Panel_Left = new System.Windows.Forms.FlowLayoutPanel();
             this.search_Panel = new Guna.UI.WinForms.GunaElipsePanel();
+            this.searchBar1 = new COA_PRIS.UserControlUtil.SearchBar();
             this.gunaButton3 = new Guna.UI.WinForms.GunaButton();
             this.right_Panel = new System.Windows.Forms.FlowLayoutPanel();
             this.view_Btn = new Guna.UI.WinForms.GunaButton();
@@ -62,7 +63,6 @@
             this.section_Btn = new Guna.UI.WinForms.GunaButton();
             this.sector_Btn = new Guna.UI.WinForms.GunaButton();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
-            this.searchBar1 = new COA_PRIS.UserControlUtil.SearchBar();
             this.parent_panel.SuspendLayout();
             this.container_panel_1.SuspendLayout();
             this.container_Panel.SuspendLayout();
@@ -105,7 +105,7 @@
             // 
             // container_Panel
             // 
-            this.container_Panel.BackColor = System.Drawing.Color.Gainsboro;
+            this.container_Panel.BackColor = System.Drawing.Color.LightGray;
             this.container_Panel.Controls.Add(this.gunaElipsePanel1);
             this.container_Panel.Controls.Add(this.subCon_Panel);
             this.container_Panel.Controls.Add(this.gunaPanel1);
@@ -300,6 +300,14 @@
             this.search_Panel.Size = new System.Drawing.Size(559, 50);
             this.search_Panel.TabIndex = 1;
             // 
+            // searchBar1
+            // 
+            this.searchBar1.Location = new System.Drawing.Point(5, 3);
+            this.searchBar1.Name = "searchBar1";
+            this.searchBar1.Size = new System.Drawing.Size(551, 44);
+            this.searchBar1.TabIndex = 0;
+            this.searchBar1.Text = "Search";
+            // 
             // gunaButton3
             // 
             this.gunaButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -437,7 +445,7 @@
             // nav_panel
             // 
             this.nav_panel.AutoScroll = true;
-            this.nav_panel.BackColor = System.Drawing.Color.Gainsboro;
+            this.nav_panel.BackColor = System.Drawing.Color.LightGray;
             this.nav_panel.Controls.Add(this.agency_Btn);
             this.nav_panel.Controls.Add(this.cluster_Btn);
             this.nav_panel.Controls.Add(this.contractor_Btn);
@@ -774,19 +782,11 @@
             this.gunaButton1.TextOffsetX = 5;
             this.gunaButton1.Click += new System.EventHandler(this.button_Click);
             // 
-            // searchBar1
-            // 
-            this.searchBar1.Location = new System.Drawing.Point(5, 3);
-            this.searchBar1.Name = "searchBar1";
-            this.searchBar1.Size = new System.Drawing.Size(551, 44);
-            this.searchBar1.TabIndex = 0;
-            this.searchBar1.Text = "Search";
-            // 
             // Maintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightGray;
+            this.BackColor = System.Drawing.Color.Gainsboro;
             this.ClientSize = new System.Drawing.Size(1556, 884);
             this.Controls.Add(this.parent_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -42,7 +42,7 @@ namespace COA_PRIS.Screens
             else
             {
                 timer1.Stop();
-                login log = new login();
+                Login log = new Login();
                 log.Show();
                 this.Hide();
             }

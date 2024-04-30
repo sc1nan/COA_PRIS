@@ -53,12 +53,13 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
             InitializeComponent();
         }
 
-        public PRIS_Label_Entry(string _title, bool _isRequired = true) 
+        public PRIS_Label_Entry(string _title, bool _isRequired = true, bool _isReadOnly = false) 
         {
             InitializeComponent();
             this.title.Text = _title;
             this.entry.Tag = _title.Replace(":","").Trim();
             this.IsRequired = _isRequired;
+            this.ReadOnly = _isReadOnly;
             
             
         }

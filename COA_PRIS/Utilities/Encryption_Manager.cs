@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace COA_PRIS.Utilities
 {
-    internal class Encryption_Manger
+    internal class Encryption_Manager
     {
         private const int salt_size = 16;
         private const int hash_size = 20;
         private const int Iterations = 10000;
 
-        public string HashPassword(string password)
+        public string EncryptPassword(string password)
         {
             byte[] salt;
             new RNGCryptoServiceProvider().GetBytes(salt = new byte[salt_size]);

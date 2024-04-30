@@ -567,7 +567,7 @@ namespace COA_PRIS.Screens
 
             data_View.DataSource = null;
             data_View.Rows.Clear();
-            data_View.DataSource = util.format_DataTable(dt);
+            data_View.DataSource = util.FormatDataTable(dt);
         }
 
         public void refresh_Table()
@@ -577,7 +577,7 @@ namespace COA_PRIS.Screens
             using (database_Manager)
                 dt = database_Manager.ExecuteQuery(Query);
 
-            data_View.DataSource = util.format_DataTable(dt);
+            data_View.DataSource = util.FormatDataTable(dt);
         }
 
         private void refresh_Btn_Click(object sender, EventArgs e)

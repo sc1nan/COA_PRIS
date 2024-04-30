@@ -10,11 +10,10 @@ namespace COA_PRIS.Utilities
     internal class Login_Manager
     {
         private Database_Manager db_Manager;
-        private Encryption_Manger encryption_Manger;
-        public string active_Account { get; set; }
-        public bool authenticate(string username, string password)
+        private Encryption_Manager encryption_Manger;
+        public bool Authenricate(string username, string password)
         {
-            encryption_Manger = new Encryption_Manger();
+            encryption_Manger = new Encryption_Manager();
             db_Manager = new Database_Manager();
 
             string hash_pass;

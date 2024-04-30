@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace COA_PRIS
 {
-    public partial class login : Form
+    public partial class Login : Form
     {
         private const int attempts = 3;
 
@@ -17,7 +17,7 @@ namespace COA_PRIS
         private Activity_Manager activity_manager;
         private Database_Manager database_manager;
 
-        public login()
+        public Login()
         {
             InitializeComponent();
             validator = new Validator();
@@ -38,8 +38,10 @@ namespace COA_PRIS
 
             bool entry_Complete = false;
 
+            //MessageBox.Show(username);
+
             if (!string.Equals(username_entry.Text, "Username") && !string.Equals(password_entry.Text, "Password"))
-                entry_Complete = validator.Required_TextBox(parent_Panel, login_Error);
+                entry_Complete = validator.RequiredTextBox(parent_Panel, login_Error, error_Message);
             else
                 MessageBox.Show("Check your inputs.", "Login Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
@@ -49,7 +51,7 @@ namespace COA_PRIS
 
         private void process_Login(string username, string password)
         {
-            bool login_Result = login_manager.authenticate(username, password);
+            bool login_Result = login_manager.Authenricate(username, password);
             int account_Status;
 
             using (database_manager)
@@ -60,10 +62,12 @@ namespace COA_PRIS
             if (login_Result && account_Status == 1)
             {
                 activity_manager.Log_Activity(username, Log_Message.login_message);
-                this.Hide();
+                Activity_Manager.CurrentUser = username;
+                
                 Dashboard dashboard = new Dashboard();
                 dashboard.ShowDialog();
-                login_manager.active_Account = username;
+                
+                this.Close();
             }
             else
             {
@@ -108,8 +112,8 @@ namespace COA_PRIS
                 }
                 else
                 {
-                    error_label.Text = $"You have {left_Attempts} more attempt/s remaining.";
-                    error_label.Visible = true;
+                    error_Message.Text = $"You have {left_Attempts} more attempt/s remaining.";
+                    error_Message.Visible = true;
                 }
                 MessageBox.Show("Incorrect Credentials", "Login Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }

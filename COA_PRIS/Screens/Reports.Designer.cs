@@ -29,12 +29,11 @@
         private void InitializeComponent()
         {
             this.parent_panel = new Guna.UI.WinForms.GunaPanel();
+            this.container_Panel = new Guna.UI.WinForms.GunaPanel();
             this.line_Panel = new Guna.UI.WinForms.GunaPanel();
             this.nav_panel = new System.Windows.Forms.FlowLayoutPanel();
-            this.mySqlCommand1 = new MySql.Data.MySqlClient.MySqlCommand();
             this.reports_Btn = new Guna.UI.WinForms.GunaButton();
             this.inactive_Btn = new Guna.UI.WinForms.GunaButton();
-            this.container_Panel = new Guna.UI.WinForms.GunaPanel();
             this.parent_panel.SuspendLayout();
             this.nav_panel.SuspendLayout();
             this.SuspendLayout();
@@ -51,6 +50,16 @@
             this.parent_panel.Name = "parent_panel";
             this.parent_panel.Size = new System.Drawing.Size(1520, 825);
             this.parent_panel.TabIndex = 1;
+            // 
+            // container_Panel
+            // 
+            this.container_Panel.BackColor = System.Drawing.Color.White;
+            this.container_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container_Panel.Location = new System.Drawing.Point(0, 60);
+            this.container_Panel.Name = "container_Panel";
+            this.container_Panel.Padding = new System.Windows.Forms.Padding(8);
+            this.container_Panel.Size = new System.Drawing.Size(1520, 765);
+            this.container_Panel.TabIndex = 3;
             // 
             // line_Panel
             // 
@@ -72,13 +81,6 @@
             this.nav_panel.Name = "nav_panel";
             this.nav_panel.Size = new System.Drawing.Size(1520, 55);
             this.nav_panel.TabIndex = 0;
-            // 
-            // mySqlCommand1
-            // 
-            this.mySqlCommand1.CacheAge = 0;
-            this.mySqlCommand1.Connection = null;
-            this.mySqlCommand1.EnableCaching = false;
-            this.mySqlCommand1.Transaction = null;
             // 
             // reports_Btn
             // 
@@ -140,17 +142,8 @@
             this.inactive_Btn.TabIndex = 1;
             this.inactive_Btn.Text = "INACTIVE";
             this.inactive_Btn.TextOffsetX = 5;
+            this.inactive_Btn.Visible = false;
             this.inactive_Btn.Click += new System.EventHandler(this.button_Click);
-            // 
-            // container_Panel
-            // 
-            this.container_Panel.BackColor = System.Drawing.Color.White;
-            this.container_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container_Panel.Location = new System.Drawing.Point(0, 60);
-            this.container_Panel.Name = "container_Panel";
-            this.container_Panel.Padding = new System.Windows.Forms.Padding(8);
-            this.container_Panel.Size = new System.Drawing.Size(1520, 765);
-            this.container_Panel.TabIndex = 3;
             // 
             // Reports
             // 
@@ -176,7 +169,6 @@
         private System.Windows.Forms.FlowLayoutPanel nav_panel;
         private Guna.UI.WinForms.GunaButton reports_Btn;
         private Guna.UI.WinForms.GunaButton inactive_Btn;
-        private MySql.Data.MySqlClient.MySqlCommand mySqlCommand1;
         private Guna.UI.WinForms.GunaPanel container_Panel;
     }
 }

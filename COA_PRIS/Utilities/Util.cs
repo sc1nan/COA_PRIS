@@ -66,8 +66,58 @@ namespace COA_PRIS.Utilities
             }
         }
 
+        public string GenerateUserName(string _name) 
+        {
+            Random random = new Random();
+            int randomNumber = random.Next(100000, 1000000); 
+            // Split the full name into parts
+            string[] parts = _name.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
-        public string generate_Query(List<List<string>> entries, string insertionQuery)
+            // Initialize a variable to store the short name
+            string userName = "";
+
+            // If there's only one part, return it directly
+            if (parts.Length == 1)
+            {
+                return parts[0] += "_" + randomNumber.ToString(); ;
+            }
+
+            // Take the first character of each part (except the last part) and convert it to uppercase
+            for (int i = 0; i < parts.Length - 1; i++)
+            {
+                userName += parts[i][0].ToString().ToUpper();
+            }
+
+            // Append an underscore and the last part of the name
+            userName += "_" + parts[parts.Length - 1];
+
+            
+
+            // Append the random number to the shortened name
+            userName += "_" + randomNumber.ToString();
+
+            return userName;
+        }
+        
+        public string GeneratePassword(string _name) 
+        {
+            // Split the full name into parts
+            string[] parts = _name.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+            // Get the last name
+            string lastName = parts.Length > 0 ? parts[parts.Length - 1] : "";
+
+            // Generate a random 6-digit number
+            Random random = new Random();
+            int randomNumber = random.Next(100000, 1000000); // Generates a number between 100000 and 999999
+
+            // Combine the last name and the random number
+            string password = lastName + "_" + randomNumber.ToString();
+
+            return password;
+        }
+
+        public string GenerateQuery(List<List<string>> entries, string insertionQuery)
         {
             StringBuilder stringBuilder = new StringBuilder();
 
@@ -80,7 +130,7 @@ namespace COA_PRIS.Utilities
             return stringBuilder.ToString();
         }
 
-        public DataTable format_DataTable(DataTable existing_Table) 
+        public DataTable FormatDataTable(DataTable existing_Table) 
         { 
             DataTable modified_Table = new DataTable();
             modified_Table.Columns.Add("index", typeof(int));
@@ -106,7 +156,7 @@ namespace COA_PRIS.Utilities
             return modified_Table;
         }
 
-        public DataTable format_DataTableLimit(DataTable existing_Table, int minLim)
+        public DataTable FormatDataTableLimit(DataTable existing_Table, int minLim)
         {
             DataTable modified_Table = new DataTable();
             modified_Table.Columns.Add("index", typeof(int));
@@ -132,19 +182,9 @@ namespace COA_PRIS.Utilities
             return modified_Table;
         }
 
-        public int get_ChildIndex(Control parent, Control child)
-        {
-            for (int i = 0; i < parent.Controls.Count; i++)
-            {
-                if (parent.Controls[i] == child)
-                    return i;
-                
-            }
-            return -1;
-        }
-
         public void SetControls(List<UserControl[]> controls, Control parent)
         {
+            
             var panel = new TableLayoutPanel();
             panel.Dock = DockStyle.Fill;
 
@@ -158,7 +198,6 @@ namespace COA_PRIS.Utilities
 
                 sub.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100f));
 
-                //Console.WriteLine(controls[col].Length);
                 for (int row = 0; row < controls[col].Length; row++)
                 {
                     sub.RowStyles.Add(new RowStyle(SizeType.AutoSize));
@@ -173,8 +212,7 @@ namespace COA_PRIS.Utilities
                 var sub = (TableLayoutPanel)panel.Controls[conCol];
                 sub.SuspendLayout();
 
-                // Ensure that the TableLayoutPanel's row styles are set to AutoSize or Percent as needed
-                // sub.RowStyles.Add(new RowStyle(SizeType.AutoSize)); // Example for AutoSize
+                sub.AutoScroll = true;
 
                 for (int conRow = 0; conRow < controls[conCol].Length; conRow++)
                 {
@@ -220,20 +258,6 @@ namespace COA_PRIS.Utilities
             }
 
             return ret_Controls;
-        }
-
-        public int GetMaxArraySize<T>(List<T[]> listOfArrays)
-        {
-            int maxSize = 0;
-            foreach (T[] array in listOfArrays)
-            {
-                int size = array.Length;
-                if (size > maxSize)
-                {
-                    maxSize = size;
-                }
-            }
-            return maxSize;
         }
 
         public bool SearchString(DataTable dataTable, string searchString) 

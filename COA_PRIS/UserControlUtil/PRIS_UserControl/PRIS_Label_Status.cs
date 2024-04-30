@@ -62,12 +62,14 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
         }
 
 
-        public PRIS_Label_Status(string _title, DataTable _options, bool _icons = true)
+        public PRIS_Label_Status(string _title, DataTable _options, string _value, bool _readOnly , bool _icons = true)
         {
             InitializeComponent();
             this.title.Text = _title;
             this.DropdownOptions = _options;
             this.icon.Visible = _icons;
+            this.Value = _value;
+            this.ReadOnly = _readOnly;
             
         }
 
