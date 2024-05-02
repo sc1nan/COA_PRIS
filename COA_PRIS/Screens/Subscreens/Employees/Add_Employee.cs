@@ -169,8 +169,8 @@ namespace COA_PRIS.Screens.Subscreens.Employees
             if (!validator.RequiredTextBox(control_Panel, error_Employee, error_Message))
                 return;
 
-            if (MessageBox.Show("Proceed to add employee record?", "Employee Record Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) != DialogResult.Yes)
-               return;
+            /*if (MessageBox.Show("Proceed to add employee record?", "Employee Record Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) != DialogResult.Yes)
+               return;*/
 
             var controls = util.SearchControls<UserControl>(control_Panel, new List<Type> { typeof(UserControl)});
             var values = new List<string> { emp_id.Text };
@@ -186,12 +186,11 @@ namespace COA_PRIS.Screens.Subscreens.Employees
 
             if (ret == 1)
             {
-                if (MessageBox.Show($"{emp_id.Text} is successfully added.", "New Record Added", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
-                {
-                    is_ClosingProgrammatically = true;
-                    callback?.Invoke();
-                    Close();
-                }
+                MessageBox.Show($"{emp_id.Text} is successfully added.", "New Record Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                is_ClosingProgrammatically = true;
+                callback?.Invoke();
+                Close();
+                
             }
         }
 

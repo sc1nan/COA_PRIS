@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,6 +17,8 @@ namespace COA_PRIS.Screens.Subscreens.Users
         private Database_Manager database_Manager = new Database_Manager();
         private Util util = new Util();
 
+        private Users_Create Users_Create;
+        private Users_View Users_View;
         
 
         public Action ToCreate;
@@ -32,13 +35,14 @@ namespace COA_PRIS.Screens.Subscreens.Users
 
         private void add_RecordBtn_Click(object sender, EventArgs e)
         {
-            //ToCreate?.Invoke();
-            Users_Create users_Create = new Users_Create();
-            users_Create.ShowDialog();
+            Users_Create = new Users_Create();
+            Users_Create.ShowDialog();
         }
 
         private void Users_Lists_Load(object sender, EventArgs e)
         {
+            Users_Create = new Users_Create();
+            Users_Create.RefreshTable += RefreshCallback;
 
             (bool, int)[] column_Widths = new (bool, int)[] { (true, 3), (true, 12), (true, 30), (true, 20), (true, 20), (true, 15) }; ;
             (string, DataGridViewContentAlignment)[] column_Text_Align = new (string, DataGridViewContentAlignment)[]
@@ -69,7 +73,6 @@ namespace COA_PRIS.Screens.Subscreens.Users
 
         public void RefreshCallback()
         {
-            MessageBox.Show("");
             Refresh_Table();
         }
         private void Refresh_Table() 
@@ -80,6 +83,12 @@ namespace COA_PRIS.Screens.Subscreens.Users
                 ret = database_Manager.ExecuteQuery(Database_Query.get_all_active_user);
 
             data_View.DataSource = util.FormatDataTable(ret);
+        }
+
+        private void view_RecordBtn_Click(object sender, EventArgs e)
+        {
+            Users_View = new Users_View();
+            Users_View.ShowDialog();
         }
     }
 }

@@ -289,6 +289,12 @@
     <Compile Include="Screens\Subscreens\Users\Users_Roles.Designer.cs">
       <DependentUpon>Users_Roles.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Subscreens\Users\Users_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Users\Users_View.Designer.cs">
+      <DependentUpon>Users_View.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\User.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -493,6 +499,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Users\Users_Roles.resx">
       <DependentUpon>Users_Roles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Users\Users_View.resx">
+      <DependentUpon>Users_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\User.resx">
       <DependentUpon>User.cs</DependentUpon>

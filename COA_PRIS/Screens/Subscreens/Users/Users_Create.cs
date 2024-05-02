@@ -21,6 +21,8 @@ namespace COA_PRIS.Screens.Subscreens.Users
         private Util util = new Util();
 
         private bool is_ClosingProgrammatically = false;
+
+        public Action RefreshTable;
         public Users_Create()
         {
             InitializeComponent();
@@ -223,7 +225,7 @@ namespace COA_PRIS.Screens.Subscreens.Users
 
             foreach (IPRIS_UserControl pris in PRISControls)
             {
-                Console.WriteLine($"{pris.Title}");
+                //Console.WriteLine($"{pris.Title}");
 
                 if (pris is PRIS_Label_MainCheckBox) 
                 {
@@ -233,14 +235,15 @@ namespace COA_PRIS.Screens.Subscreens.Users
                         for (int checkIndex = 0; checkIndex < checkbox.BoxValues.Count; checkIndex++) 
                         {
                             Console.WriteLine($"{checkbox.Title}_{checkbox.BoxTitle[checkIndex]}");
-                            values.Add($"{checkbox.Title}_{checkbox.BoxTitle[checkIndex]}", checkbox.BoxValues[checkIndex] ? "1" : "0");
+                            //values.Add($"{checkbox.Title}_{checkbox.BoxTitle[checkIndex]}", checkbox.BoxValues[checkIndex] ? "1" : "0");
                         }
                     }
                 }
-                values.Add(pris.Title, pris.Value);
+                //values.Add(pris.Title, pris.Value);
+                Console.WriteLine($"{pris.Title} {pris.Value}");
             }
 
-            using (database_Manager)
+            /*using (database_Manager)
             {
                 ret += database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_user_cred, values["Username"], Encryption_Manger.EncryptPassword(values["Password"])));
                 ret += database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_user_info, values["Username"], values["Employee Name"], values["Role"], Activity_Manager.CurrentUser));
@@ -250,12 +253,17 @@ namespace COA_PRIS.Screens.Subscreens.Users
                                                                             values["Reports"], values["Maintenance"], values["Maintenance_Add Records"], values["Maintenance_View Records"], values["Maintenance_Update Records"], values["Maintenance_Delete Records"],
                                                                             values["User Settings"], values["User Settings_Add Records"], values["User Settings_View Records"], values["User Settings_Update Records"], values["User Settings_Delete Records"],
                                                                             values["Activity Logs"]));
-            }
+            }*/
 
             if (ret == 3) 
             {
                 MessageBox.Show($"{values["Username"]} is successfully added.", "PRIS Record Confirm", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Reset_Controls();
+                is_ClosingProgrammatically = true;
+                RefreshTable.Invoke();
+                Close();
+
+
+
                 
             }
 
