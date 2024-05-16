@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\COA_PRIS",
+    "\\COA_PRIS\\Screens",
+    "\\COA_PRIS\\Screens\\Subscreens",
+    "\\COA_PRIS\\Screens\\Subscreens\\Maintenance",
+    "\\COA_PRIS\\Screens\\Subscreens\\Projects"
   ],
-  "SelectedNode": "\\COA_PRIS.sln",
+  "SelectedNode": "\\COA_PRIS\\Screens\\Subscreens\\Projects\\Project_Create.cs",
   "PreviewInSolutionExplorer": false
 }

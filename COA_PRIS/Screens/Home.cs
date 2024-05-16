@@ -21,7 +21,20 @@ namespace COA_PRIS
         {
 
         }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            Size s = monthCalendar1.SingleMonthSize;
+            Size d = new Size(150, 55);
+            s = d;
+            monthCalendar1.Size = s;
         }
+
+        private void Main_Panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+    }
     }
 
 
