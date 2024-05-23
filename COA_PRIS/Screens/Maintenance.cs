@@ -3,6 +3,7 @@ using COA_PRIS.UserControlUtil;
 using COA_PRIS.UserControlUtil.PRIS_UserControl;
 using COA_PRIS.Utilities;
 using Guna.UI.WinForms;
+using Org.BouncyCastle.Asn1.Cmp;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -26,6 +27,7 @@ namespace COA_PRIS.Screens
         private View_Record View_Record;
 
         private string Query { get; set; }
+        private string SearchQuery;
         private string Active_Form { get; set; }
         private Control[] controls;
 
@@ -36,9 +38,6 @@ namespace COA_PRIS.Screens
 
         private void Maintenance_Load(object sender, EventArgs e)
         {
-            database_Manager = new Database_Manager();
-            tab_Manager = new Tab_Manager();
-            util = new Util(); 
 
 
             tab_Manager.set_Buttons(nav_panel);
@@ -46,9 +45,22 @@ namespace COA_PRIS.Screens
             tab_Manager.active_Button(agency_Btn, false);
             tab_Manager.Header_Title = title_label;
 
-            controls = new Control[] { search_Panel, add_Btn, view_Btn, delete_Btn };
+            controls = new Control[] { add_RecordBtn, view_RecordBtn, delete_Btn };
+
+            PRIS_Seachbox.DropboxValues = null;
+            PRIS_Seachbox.Search_Typed += Search_Callback;
 
             agency_Btn.PerformClick();
+        }
+
+        private void Search_Callback(object sender, EventArgs e) 
+        {
+            DataTable ret;
+
+            using (database_Manager)
+                ret = database_Manager.ExecuteQuery(string.Format(SearchQuery, PRIS_Seachbox.Search_Text));
+
+            data_View.DataSource = util.FormatDataTable(ret);
         }
 
         private void button_Click(object sender, EventArgs e)
@@ -61,10 +73,10 @@ namespace COA_PRIS.Screens
             switch (button.Tag) 
             {
                 case "Agency":
-                    Query = Database_Query.get_all_agency_records;
                     buttons = new bool[] { true, true, true, true };
-
-                    column_Widths = new (bool, int)[] { (true, 3), (true, 12), (true, 40), (true, 25), (true, 20) };
+                    Query = Database_Query.get_all_agency_records;
+                    SearchQuery = Database_Query.get_agency_all_search;
+                    column_Widths = new (bool, int)[] { (true, 3), (true, 15), (true, 40), (true, 22), (true, 20) };
                     column_Text_Align = new (string, DataGridViewContentAlignment)[]
                     {
                         ("#", DataGridViewContentAlignment.MiddleRight),
@@ -76,9 +88,10 @@ namespace COA_PRIS.Screens
                     break;
 
                 case "Cluster":
-                    Query = Database_Query.get_all_cluster_records;
                     buttons = new bool[] { true, true, true, true };
-                    column_Widths = new (bool, int)[]{ (true, 3), (true, 12), (true, 40), (true, 25), (true, 20) };
+                    Query = Database_Query.get_all_cluster_records;
+                    SearchQuery = Database_Query.get_cluster_all_search;
+                    column_Widths = new (bool, int)[]{ (true, 3), (true, 15), (true, 40), (true, 22), (true, 20) };
                     column_Text_Align = new (string, DataGridViewContentAlignment)[]
                     {
                         ("#", DataGridViewContentAlignment.MiddleRight),
@@ -90,9 +103,10 @@ namespace COA_PRIS.Screens
                     break;
 
                 case "Contractor":
-                    Query = Database_Query.get_all_contractor_records;
                     buttons = new bool[] { true, true, true, true };
-                    column_Widths = new (bool, int)[] { (true, 3), (true, 12), (true, 50), (true, 35) };
+                    SearchQuery = Database_Query.get_contractor_all_search;
+                    Query = Database_Query.get_all_contractor_records;
+                    column_Widths = new (bool, int)[] { (true, 3), (true, 15), (true, 47), (true, 35) };
                     column_Text_Align = new (string, DataGridViewContentAlignment)[]
                     {
                         ("#", DataGridViewContentAlignment.MiddleRight),
@@ -102,10 +116,25 @@ namespace COA_PRIS.Screens
                     };
                     break;
 
-                case "Division":
-                    Query = Database_Query.get_all_division_records;
+                case "Forward":
+                    SearchQuery = Database_Query.get_forward_all_search;
+                    Query = Database_Query.get_all_forward_records;
                     buttons = new bool[] { true, true, true, true };
-                    column_Widths = new (bool, int)[] { (true, 3), (true, 12), (true, 40), (true, 25), (true, 20) };
+                    column_Widths = new (bool, int)[] { (true, 3), (true, 15), (true, 47), (true, 35) };
+                    column_Text_Align = new (string, DataGridViewContentAlignment)[]
+                    {
+                        ("#", DataGridViewContentAlignment.MiddleRight),
+                        ("Forward Code",DataGridViewContentAlignment.MiddleCenter),
+                        ("Title ",DataGridViewContentAlignment.MiddleLeft),
+                        ("Description",DataGridViewContentAlignment.MiddleLeft)
+                    };
+                    break;
+
+                case "Division":
+                    buttons = new bool[] { true, true, true, true };
+                    Query = Database_Query.get_all_division_records;
+                    SearchQuery = Database_Query.get_division_all_search;
+                    column_Widths = new (bool, int)[] { (true, 3), (true, 15), (true, 40), (true, 22), (true, 20) };
                     column_Text_Align = new (string, DataGridViewContentAlignment)[]
                     {
                         ("#", DataGridViewContentAlignment.MiddleRight),
@@ -117,9 +146,10 @@ namespace COA_PRIS.Screens
                     break;
 
                 case "Office":
-                    Query = Database_Query.get_all_office_records;
                     buttons = new bool[] { true, true, true, true };
-                    column_Widths = new (bool, int)[] { (true, 3), (true, 12), (true, 40), (true, 25), (true, 20) };
+                    Query = Database_Query.get_all_office_records;
+                    SearchQuery = Database_Query.get_office_all_search;
+                    column_Widths = new (bool, int)[] { (true, 3), (true, 15), (true, 40), (true, 22), (true, 20) };
                     column_Text_Align = new (string, DataGridViewContentAlignment)[]
                     {
                         ("#", DataGridViewContentAlignment.MiddleRight),
@@ -131,9 +161,10 @@ namespace COA_PRIS.Screens
                     break;
 
                 case "Nature":
-                    Query = Database_Query.get_all_nature_records;
                     buttons = new bool[] { true, true, true, true };
-                    column_Widths = new (bool, int)[] { (true, 3), (true, 12), (true, 50), (true, 35) };
+                    SearchQuery = Database_Query.get_nature_all_search;
+                    Query = Database_Query.get_all_nature_records;
+                    column_Widths = new (bool, int)[] { (true, 3), (true, 15), (true, 47), (true, 35) };
                     column_Text_Align = new (string, DataGridViewContentAlignment)[]
                     {
                         ("#", DataGridViewContentAlignment.MiddleRight),
@@ -144,9 +175,10 @@ namespace COA_PRIS.Screens
                     break;
 
                 case "Position":
-                    Query = Database_Query.get_all_position_records;
                     buttons = new bool[] { true, true, true, true };
-                    column_Widths = new (bool, int)[] { (true, 3), (true, 12), (true, 50), (true, 35) };
+                    SearchQuery = Database_Query.get_position_all_search;
+                    Query = Database_Query.get_all_position_records;
+                    column_Widths = new (bool, int)[] { (true, 3), (true, 15), (true, 47), (true, 35) };
                     column_Text_Align = new (string, DataGridViewContentAlignment)[]
                     {
                         ("#", DataGridViewContentAlignment.MiddleRight),
@@ -157,9 +189,10 @@ namespace COA_PRIS.Screens
                     break;
 
                 case "Section":
-                    Query = Database_Query.get_all_section_records;
                     buttons = new bool[] { true, true, true, true };
-                    column_Widths = new (bool, int)[] { (true, 3), (true, 12), (true, 40), (true, 25), (true, 20) };
+                    Query = Database_Query.get_all_section_records;
+                    SearchQuery = Database_Query.get_section_all_search;
+                    column_Widths = new (bool, int)[] { (true, 3), (true, 15), (true, 40), (true, 22), (true, 20) };
                     column_Text_Align = new (string, DataGridViewContentAlignment)[]
                     {
                         ("#", DataGridViewContentAlignment.MiddleRight),
@@ -171,9 +204,10 @@ namespace COA_PRIS.Screens
                     break;
 
                 case "Sector":
-                    Query = Database_Query.get_all_sector_records;
                     buttons = new bool[] { true, true, true, true };
-                    column_Widths = new (bool, int)[] { (true, 3), (true, 12), (true, 50), (true, 35) };
+                    SearchQuery = Database_Query.get_sector_all_search;
+                    Query = Database_Query.get_all_sector_records;
+                    column_Widths = new (bool, int)[] { (true, 3), (true, 15), (true, 47), (true, 35) };
                     column_Text_Align = new (string, DataGridViewContentAlignment)[]
                     {
                         ("#", DataGridViewContentAlignment.MiddleRight),
@@ -184,14 +218,15 @@ namespace COA_PRIS.Screens
                     break;
 
                 case "Status":
-                    Query = Database_Query.get_all_status_records;
                     buttons = new bool[] { true, true, true, true };
-                    column_Widths = new (bool, int)[] { (true, 3), (true, 12), (true, 50), (true, 35) };
+                    SearchQuery = Database_Query.get_status_all_search;
+                    Query = Database_Query.get_all_status_records;
+                    column_Widths = new (bool, int)[] { (true, 3), (true, 15), (true, 47), (true, 35) };
                     column_Text_Align = new (string, DataGridViewContentAlignment)[]
                     {
                         ("#", DataGridViewContentAlignment.MiddleRight),
-                        ("Sector Code",DataGridViewContentAlignment.MiddleCenter),
-                        ("Sector ",DataGridViewContentAlignment.MiddleLeft),
+                        ("Status Code",DataGridViewContentAlignment.MiddleCenter),
+                        ("Status ",DataGridViewContentAlignment.MiddleLeft),
                         ("Description",DataGridViewContentAlignment.MiddleLeft)
                     };
                     break;
@@ -214,13 +249,14 @@ namespace COA_PRIS.Screens
             switch (Active_Form)
             {
                 case "Agency":
-                    table = "agency_table";
                     insert_Query = Database_Query.set_new_agency;
+                    table = "agency_table";
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Agency Name :"),
-                        new PRIS_Label_Rich(_title: "Description :", _entryHeight: 200),
-                        new PRIS_Label_Selector(_title:"Cluster :"  , 
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight: 250),
+                        new PRIS_Label_Selector(_title:"Cluster :",
+                            _searchQuery: Database_Query.get_cluster_search,
                             _query: Database_Query.get_cluster_options,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
@@ -229,7 +265,8 @@ namespace COA_PRIS.Screens
                                     ("Cluster",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),})
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),}
+                            )
                     };
 
                     break;
@@ -240,8 +277,9 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Cluster Name :"),
-                        new PRIS_Label_Rich(_title: "Description :"),
+                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 250),
                         new PRIS_Label_Selector(_title:"Sector :", 
+                            _searchQuery: Database_Query.get_sector_search,
                             _query: Database_Query.get_sector_options,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
@@ -250,19 +288,19 @@ namespace COA_PRIS.Screens
                                     ("Sector",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),})
+                            _column_Widths: new (bool, int)[] {(true, 5), (true, 20), (true, 40), (true, 35),})
                     };
 
                     break;
 
                 case "Contractor":
+                    insert_Query = Database_Query.set_new_contractor;
+                    table = "contractor_table";
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Contractor Name :"),
-                        new PRIS_Label_Rich(_title: "Description :" ),
+                        new PRIS_Label_Rich(_title: "Description :" ,_entryHeight: 350),
                     };
-                    insert_Query = Database_Query.set_new_contractor;
-                    table = "contractor_table";
                     break;
 
                 case "Division":
@@ -271,8 +309,9 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Division Name :"),
-                        new PRIS_Label_Rich(_title: "Description :"),
+                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 250),
                         new PRIS_Label_Selector(_title:"Office :",
+                            _searchQuery: Database_Query.get_office_search,
                             _query: Database_Query.get_office_options,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
@@ -281,15 +320,25 @@ namespace COA_PRIS.Screens
                                     ("Office",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),})
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),})
                     };
+                    break;
+
+                case "Forward":
+                    controls = new UserControl[]
+                    {
+                        new PRIS_Label_Entry(_title: "Forward Name :"),
+                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 350),
+                    };
+                    insert_Query = Database_Query.set_new_forward_record;
+                    table = "forward_table";
                     break;
 
                 case "Nature":
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Nature Name :"),
-                        new PRIS_Label_Rich(_title: "Description :"),
+                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 350),
                     };
                     insert_Query = Database_Query.set_new_nature;
                     table = "nature_table";
@@ -301,8 +350,9 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Office Name :"),
-                        new PRIS_Label_Rich(_title: "Description :"),
+                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 250),
                         new PRIS_Label_Selector(_title:"Sector :",
+                            _searchQuery: Database_Query.get_sector_search,
                             _query: Database_Query.get_sector_options,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
@@ -311,7 +361,7 @@ namespace COA_PRIS.Screens
                                     ("Sector",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),})
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),})
                     };
                     break;
 
@@ -319,7 +369,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Position Name :"),
-                        new PRIS_Label_Rich(_title: "Description :"),
+                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 350),
                     };
                     insert_Query = Database_Query.set_new_position;
                     table = "position_table";
@@ -331,8 +381,9 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Section Name :"),
-                        new PRIS_Label_Rich(_title: "Description :"),
+                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 250),
                         new PRIS_Label_Selector(_title:"Division :",
+                            _searchQuery: Database_Query.get_division_search,
                             _query: Database_Query.get_division_options,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
@@ -341,7 +392,7 @@ namespace COA_PRIS.Screens
                                     ("Sector",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),})
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),})
                     };
                     break;
 
@@ -349,7 +400,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Sector Name :"),
-                        new PRIS_Label_Rich(_title: "Description :"),
+                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 350),
                     };
                     insert_Query = Database_Query.set_new_sector;
                     table = "sector_table";
@@ -359,7 +410,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Status Name :"),
-                        new PRIS_Label_Rich(_title: "Description :"),
+                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 350),
                     };
                     insert_Query = Database_Query.set_new_status;
                     table = "status_table";
@@ -373,6 +424,12 @@ namespace COA_PRIS.Screens
 
         private void view_Btn_Click(object sender, EventArgs e)
         {
+            if (data_View.Rows.Count == 0) 
+            {
+                //MessageBox.Show("There are no record currently to show", "PRIS View Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
 
             string record_code = (string)data_View.Rows[data_View.CurrentRow.Index].Cells[1].Value;
             UserControl[] controls = null;
@@ -390,8 +447,9 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Agency Name :"),
-                        new PRIS_Label_Rich(_title: "Description :"),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 260),
                         new PRIS_Label_Selector(_title:"Cluster :",
+                            _searchQuery : Database_Query.get_cluster_search,
                             _query: Database_Query.get_cluster_options,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
@@ -412,8 +470,9 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Cluster Name :"),
-                        new PRIS_Label_Rich(_title: "Description :"),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 260),
                         new PRIS_Label_Selector(_title:"Sector :",
+                            _searchQuery : Database_Query.get_sector_search,
                             _query: Database_Query.get_sector_options,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
@@ -435,7 +494,19 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Cluster Name :"),
-                        new PRIS_Label_Rich(_title: "Description :"),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 360),
+                    };
+                    break;
+
+                case "Forward":
+                    read_Query = Database_Query.get_forward_record_by_id;
+                    update_Query = Database_Query.update_forward_record_by_id;
+                    table = "forward_table";
+
+                    controls = new UserControl[]
+                    {
+                        new PRIS_Label_Entry(_title: "Forward Name :"),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 360),
                     };
                     break;
 
@@ -446,8 +517,9 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Division Name :"),
-                        new PRIS_Label_Rich(_title: "Description :"),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 260),
                         new PRIS_Label_Selector(_title:"Office :",
+                            _searchQuery : Database_Query.get_office_search,
                             _query: Database_Query.get_office_options,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
@@ -459,6 +531,8 @@ namespace COA_PRIS.Screens
                             _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),})
                     };
                     break;
+
+
                 case "Nature":
                     read_Query = Database_Query.get_nature_record_by_id;
                     update_Query = Database_Query.update_nature_record_by_id;
@@ -467,7 +541,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Nature Name :"),
-                        new PRIS_Label_Rich(_title: "Description :"),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 360),
                     };
                     break;
 
@@ -479,8 +553,9 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Office Name :"),
-                        new PRIS_Label_Rich(_title: "Description :"),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 260),
                         new PRIS_Label_Selector(_title:"Sector :",
+                            _searchQuery : Database_Query.get_sector_search,
                             _query: Database_Query.get_sector_options,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
@@ -501,7 +576,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Position Name :"),
-                        new PRIS_Label_Rich(_title: "Description :"),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 360),
                     };
                     break;
 
@@ -512,8 +587,9 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Section Name :"),
-                        new PRIS_Label_Rich(_title: "Description :"),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 260),
                         new PRIS_Label_Selector(_title:"Division :",
+                            _searchQuery : Database_Query.get_division_search,
                             _query: Database_Query.get_division_options,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
@@ -534,7 +610,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Sector Name :"),
-                        new PRIS_Label_Rich(_title: "Description :"),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight: 360),
                     };
                     break;
 
@@ -546,7 +622,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Status Name :"),
-                        new PRIS_Label_Rich(_title: "Description :"),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight: 360),
                     };
                     break;
             }
@@ -583,6 +659,7 @@ namespace COA_PRIS.Screens
         private void refresh_Btn_Click(object sender, EventArgs e)
         {
             refresh_Table();
+            PRIS_Seachbox.Clear();
         }
 
         private void callback_Function() 

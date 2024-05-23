@@ -19,6 +19,7 @@ namespace COA_PRIS.UserControlUtil
         private (string, DataGridViewContentAlignment)[] ColumnsTitlesAlignment { get; set; }
         private (bool, int)[] ColumnWidths { get; set; }
         private string SelectorQuery { get; set; }
+        private string SearchQuery;
 
         private PRIS_Label_Selector Label_Selector;
 
@@ -32,7 +33,7 @@ namespace COA_PRIS.UserControlUtil
         }
 
         public Selector(object _sender, string _title, string _query, (string, DataGridViewContentAlignment)[] _column_Title_Alignment,
-            (bool, int)[] _column_Widths)
+            (bool, int)[] _column_Widths, string _searchQuery)
         {
             InitializeComponent();
 
@@ -44,13 +45,32 @@ namespace COA_PRIS.UserControlUtil
             this.SelectorQuery = _query;
             this.ColumnsTitlesAlignment = _column_Title_Alignment;
             this.ColumnWidths = _column_Widths;
+            this.SearchQuery = _searchQuery;
+
             Set_Selections();
 
         }
 
         private void Selector_Load(object sender, EventArgs e)
         {
-            
+            PRIS_Search.DropboxValues = null;
+            PRIS_Search.Search_Typed += Search_Event;
+        }
+
+        private void refresh_Btn_Click(object sender, EventArgs e)
+        {
+            Set_Selections();
+            PRIS_Search.Clear();
+             
+        }
+        private void Search_Event(object sender, EventArgs e) 
+        {
+            DataTable data_Table = new DataTable();
+            using (database_manager)
+                data_Table = database_manager.ExecuteQuery(string.Format(SearchQuery, PRIS_Search.Search_Text));
+
+            Console.WriteLine(string.Format(SearchQuery, PRIS_Search.Search_Text));
+            data_View.DataSource = util.FormatDataTable(data_Table);
         }
         private void Set_Selections() 
         {
@@ -59,16 +79,23 @@ namespace COA_PRIS.UserControlUtil
             using (database_manager)
                 data_Table = database_manager.ExecuteQuery(SelectorQuery);
 
+
             data_View.DataSource = null;
             data_View.Rows.Clear();
+
             data_View.DataSource = util.FormatDataTable(data_Table);
-
-
             Theme.gridView_Style(data_View, this.ColumnWidths, this.ColumnsTitlesAlignment);
+
+
         }
 
         private void save_Btn_Click(object sender, EventArgs e)
         {
+            if (data_View.Rows.Count == 0)
+                return; 
+            
+            
+
             GetData();
         }
 
@@ -112,5 +139,6 @@ namespace COA_PRIS.UserControlUtil
             is_ClosingProgrammatically = true;
             this.Close();
         }
+
     }
 }

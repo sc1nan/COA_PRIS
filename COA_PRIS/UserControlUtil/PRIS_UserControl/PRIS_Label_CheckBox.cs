@@ -13,11 +13,22 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
 {
     public partial class PRIS_Label_CheckBox : UserControl
     {
+        public bool IsVisible
+        {
+            get { return this.Visible; }
+            set { this.Visible = value; }
+        }
         public bool Value 
         {
             get { return this.check.Checked; }
             set { this.check.Checked = value; }
-        } 
+        }
+
+        public bool ReadOnly
+        {
+            get { return check.Enabled; }
+            set { check.Enabled = !value; }
+        }
         public PRIS_Label_CheckBox(string _title, bool _checked = false, bool _enabled = true)
         {
             InitializeComponent();
@@ -28,7 +39,8 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
 
         private void title_Click(object sender, EventArgs e)
         {
-            this.check.Checked = !this.check.Checked;
+            if (check.Enabled)
+                this.check.Checked = !this.check.Checked;
         }
     }
 }

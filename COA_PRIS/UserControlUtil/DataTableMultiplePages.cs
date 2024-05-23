@@ -17,7 +17,7 @@ namespace COA_PRIS.UserControlUtil
         Activity_Manager activity_manager;
         //string[] column_names = { "User Name", "Activity", "Time" };
         string[] log_table_names = { "user_name", "activity", "activity_datetime" };
-        private int min_lim = 0;
+        //private int min_lim = 0;
         int page_count = 1;
         public DataTableMultiplePages()
         {

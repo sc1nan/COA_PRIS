@@ -499,3 +499,11 @@ C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscre
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Label_CheckBox.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Label_MainCheckBox.resources
 C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Users.Users_View.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Users.Role_Create.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Users.Role_View.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Projects.Project_View.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Projects.Project_Forward.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Label_DropBox.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Label_DateCheckBox.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.Screens.Subscreens.Projects.Project_History.resources
+C:\Users\Vinas\source\repos\COA_PRIS\COA_PRIS\obj\Debug\COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Search_DropBox.resources

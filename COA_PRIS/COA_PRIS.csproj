@@ -247,11 +247,29 @@
     <Compile Include="Screens\Subscreens\Projects\Project_Create.Designer.cs">
       <DependentUpon>Project_Create.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\Subscreens\Projects\Project_Forward.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Projects\Project_Forward.Designer.cs">
+      <DependentUpon>Project_Forward.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Projects\Project_History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Projects\Project_History.Designer.cs">
+      <DependentUpon>Project_History.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Subscreens\Projects\Project_List.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Screens\Subscreens\Projects\Project_List.Designer.cs">
       <DependentUpon>Project_List.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Projects\Project_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Projects\Project_View.Designer.cs">
+      <DependentUpon>Project_View.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Subscreens\Reports\ProjectRequest_Reports_Sub.cs">
       <SubType>Form</SubType>
@@ -264,6 +282,18 @@
     </Compile>
     <Compile Include="Screens\Subscreens\Reports\Reports_Submodule.Designer.cs">
       <DependentUpon>Reports_Submodule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Users\Role_Create.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Users\Role_Create.Designer.cs">
+      <DependentUpon>Role_Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Users\Role_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\Subscreens\Users\Role_View.Designer.cs">
+      <DependentUpon>Role_View.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Subscreens\Users\Users_Create.cs">
       <SubType>Form</SubType>
@@ -329,6 +359,18 @@
     <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_CheckBox.Designer.cs">
       <DependentUpon>PRIS_Label_CheckBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_DateCheckBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_DateCheckBox.Designer.cs">
+      <DependentUpon>PRIS_Label_DateCheckBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_DropBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_DropBox.Designer.cs">
+      <DependentUpon>PRIS_Label_DropBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Entry.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -358,6 +400,12 @@
     </Compile>
     <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Status.Designer.cs">
       <DependentUpon>PRIS_Label_Status.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Search_DropBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlUtil\PRIS_UserControl\PRIS_Search_DropBox.Designer.cs">
+      <DependentUpon>PRIS_Search_DropBox.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControlUtil\SearchBar.cs">
       <SubType>UserControl</SubType>
@@ -409,6 +457,7 @@
     <Compile Include="Utilities\Log_Message.cs" />
     <Compile Include="Utilities\Util.cs" />
     <Compile Include="Utilities\Validator.cs" />
+    <EmbeddedResource Include="CrystalReports\ProjectRequestReport.rdlc" />
     <EmbeddedResource Include="CrystalReports\Report1.rdlc" />
     <EmbeddedResource Include="CrystalReports\TempReport.rdlc" />
     <EmbeddedResource Include="CrystalReports\TempReportsForms.resx">
@@ -479,14 +528,29 @@
     <EmbeddedResource Include="Screens\Subscreens\Projects\Project_Create.resx">
       <DependentUpon>Project_Create.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Projects\Project_Forward.resx">
+      <DependentUpon>Project_Forward.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Projects\Project_History.resx">
+      <DependentUpon>Project_History.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Projects\Project_List.resx">
       <DependentUpon>Project_List.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Projects\Project_View.resx">
+      <DependentUpon>Project_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Reports\ProjectRequest_Reports_Sub.resx">
       <DependentUpon>ProjectRequest_Reports_Sub.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Reports\Reports_Submodule.resx">
       <DependentUpon>Reports_Submodule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Users\Role_Create.resx">
+      <DependentUpon>Role_Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Screens\Subscreens\Users\Role_View.resx">
+      <DependentUpon>Role_View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Users\Users_Create.resx">
       <DependentUpon>Users_Create.cs</DependentUpon>
@@ -524,6 +588,12 @@
     <EmbeddedResource Include="UserControlUtil\PRIS_UserControl\PRIS_Label_CheckBox.resx">
       <DependentUpon>PRIS_Label_CheckBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUtil\PRIS_UserControl\PRIS_Label_DateCheckBox.resx">
+      <DependentUpon>PRIS_Label_DateCheckBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUtil\PRIS_UserControl\PRIS_Label_DropBox.resx">
+      <DependentUpon>PRIS_Label_DropBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Entry.resx">
       <DependentUpon>PRIS_Label_Entry.cs</DependentUpon>
     </EmbeddedResource>
@@ -538,6 +608,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\PRIS_UserControl\PRIS_Label_Status.resx">
       <DependentUpon>PRIS_Label_Status.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlUtil\PRIS_UserControl\PRIS_Search_DropBox.resx">
+      <DependentUpon>PRIS_Search_DropBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlUtil\PRIS_UserForms\Selector.resx">
       <DependentUpon>Selector.cs</DependentUpon>
@@ -619,6 +692,7 @@
     <None Include="Resources\swipe-right.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="STATUS.txt" />
     <None Include="Resources\active.png" />
     <None Include="Resources\add-user.png" />
     <Content Include="Resources\apps-sort - Copy.png" />
@@ -641,6 +715,7 @@
     <None Include="Resources\condo.png" />
     <None Include="Resources\error.png" />
     <None Include="Resources\error1.png" />
+    <None Include="Resources\close.png" />
     <Content Include="Resources\expand - Copy.png" />
     <Content Include="Resources\expand.png" />
     <None Include="Resources\filed.png" />
@@ -648,6 +723,7 @@
     <Content Include="Resources\folder-download %281%29.png" />
     <Content Include="Resources\folder-download - Copy.png" />
     <Content Include="Resources\folder-download.png" />
+    <None Include="Resources\forward.png" />
     <Content Include="Resources\group.png" />
     <None Include="Resources\group1.png" />
     <Content Include="Resources\house-solid - Copy.png" />
@@ -669,16 +745,19 @@
     <Content Include="Resources\search.png" />
     <Content Include="Resources\search1.png" />
     <None Include="Resources\seedling.png" />
+    <None Include="Resources\sections.png" />
     <Content Include="Resources\select %281%29.png" />
     <Content Include="Resources\select.png" />
     <None Include="Resources\settings.png" />
     <Content Include="Resources\Splash screen.png" />
     <None Include="Resources\square-divide.png" />
+    <None Include="Resources\status.png" />
     <Content Include="Resources\to-do %281%29.png" />
     <Content Include="Resources\to-do %282%29.png" />
     <Content Include="Resources\trash-bin.png" />
     <Content Include="Resources\trash-bin1.png" />
     <None Include="Resources\user-helmet-safety.png" />
+    <None Include="Resources\update.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll" />
     <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll" />

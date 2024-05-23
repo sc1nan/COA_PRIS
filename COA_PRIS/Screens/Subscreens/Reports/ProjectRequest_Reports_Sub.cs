@@ -62,6 +62,8 @@ namespace COA_PRIS.Screens.Subscreens.Reports
 
         private void reportsButton_Click(object sender, EventArgs e)
         {
+
+            MessageBox.Show(Database_Query.last_query);
             genericTable.GenerateReportForm("project");
         }
         //add events to date time picker

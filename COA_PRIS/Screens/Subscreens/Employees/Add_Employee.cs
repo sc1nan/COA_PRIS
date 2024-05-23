@@ -24,12 +24,12 @@ namespace COA_PRIS.Screens.Subscreens.Employees
         public Add_Employee()
         {
             InitializeComponent();
+            emp_id.Text = util.GenarateUID("emp_info_table");
             InitializeControls();
         }
 
         private void Add_Record_Load(object sender, EventArgs e)
         {
-            emp_id.Text = util.GenerateID("emp_info_table");
         }
 
         private void InitializeControls() 
@@ -46,19 +46,25 @@ namespace COA_PRIS.Screens.Subscreens.Employees
             DataTable ret;
             int num = 0;
 
-            switch (selector.Title) 
+            switch (selector.Title)
             {
                 case "Sector":
                     num = 1;
                     selectors[num].SelectorQuery = string.Format(Database_Query.get_office_options_by_id, selector.Value);
+                    selectors[num].SearchQuery = string.Format(Database_Query.get_office_sector_search, "{0}", selector.Value);
+                    selectors[num].InfoText = $"Records are based on {selectors[num - 1].RawValue}";
                     break;
                 case "Office":
                     num = 2;
                     selectors[num].SelectorQuery =  string.Format(Database_Query.get_division_options_by_id, selector.Value);
+                    selectors[num].SearchQuery = string.Format(Database_Query.get_division_office_search, "{0}", selector.Value);
+                    selectors[num].InfoText = $"Records are based on {selectors[num - 1].RawValue}";
                     break;
                 case "Division":
                     num = 3;
                     selectors[num].SelectorQuery = string.Format(Database_Query.get_section_options_by_id, selector.Value);
+                    selectors[num].SearchQuery = string.Format(Database_Query.get_section_division_search, "{0}", selector.Value);
+                    selectors[num].InfoText = $"Records are based on {selectors[num - 1].RawValue}";
                     break;
                 case "Section":
                     num = 4;
@@ -98,6 +104,7 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                 new UserControl[] 
                 {
                     new PRIS_Label_Selector(_title:"Sector :",
+                            _searchQuery : Database_Query.get_sector_search,
                             _query: Database_Query.get_sector_options,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
@@ -106,10 +113,11 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                                     ("Sector",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),},
                             _enabled: true, _read_Only: false),
 
                     new PRIS_Label_Selector(_title:"Office :"  ,
+                            _searchQuery : Database_Query.get_office_search,
                             _query: Database_Query.get_office_options,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
@@ -118,10 +126,11 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                                     ("Office",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),},
                             _enabled: false, _read_Only: false),
 
                     new PRIS_Label_Selector(_title:"Division :"  ,
+                            _searchQuery : Database_Query.get_division_search,
                             _query: Database_Query.get_division_options,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
@@ -130,10 +139,11 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                                     ("Divsion",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),},
                             _enabled: false, _read_Only: false),
 
                     new PRIS_Label_Selector(_title:"Section :"  ,
+                            _searchQuery : Database_Query.get_section_search,
                             _query: Database_Query.get_section_option,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
@@ -142,19 +152,20 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                                     ("Section",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),},
                             _enabled: false, _read_Only: false),
 
                     new PRIS_Label_Selector(_title:"Position :"  ,
+                            _searchQuery : Database_Query.get_position_search,
                             _query: Database_Query.get_position_options,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
                                     ("#", DataGridViewContentAlignment.MiddleRight),
-                                    ("Section Code",DataGridViewContentAlignment.MiddleCenter),
-                                    ("Section",DataGridViewContentAlignment.MiddleLeft),
+                                    ("Position Code",DataGridViewContentAlignment.MiddleCenter),
+                                    ("Position",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),},
                             _enabled: false, _read_Only: false)
                 }
 
@@ -166,11 +177,9 @@ namespace COA_PRIS.Screens.Subscreens.Employees
         {
             int ret = 0;
 
-            if (!validator.RequiredTextBox(control_Panel, error_Employee, error_Message))
+            if (!validator.PRISRequired(control_Panel, error_Employee))
                 return;
 
-            /*if (MessageBox.Show("Proceed to add employee record?", "Employee Record Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Information) != DialogResult.Yes)
-               return;*/
 
             var controls = util.SearchControls<UserControl>(control_Panel, new List<Type> { typeof(UserControl)});
             var values = new List<string> { emp_id.Text };

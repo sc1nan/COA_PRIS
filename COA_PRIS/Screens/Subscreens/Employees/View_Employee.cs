@@ -46,50 +46,6 @@ namespace COA_PRIS.Screens.Subscreens.Employees
 
 
 
-        /*        private void InitializeControls()
-                {
-                    var controls = new List<UserControl[]>
-                    {
-                        new UserControl[]
-                        {
-                            new Label_Text("Full Name :"),
-                            new Label_Text("Email :"),
-                            new Label_Text("Contact Number :")
-                        },
-                        new UserControl[]
-                        {
-                            new Label_Drop("Sector :", Database_Query.get_sector_options, false),
-                            new Label_Drop("Office :", Database_Query.get_office_options, false),
-                            new Label_Drop("Division :", Database_Query.get_division_options, false),
-                            new Label_Drop("Section :", Database_Query.get_section_option, false),
-                            new Label_Drop("Position :", Database_Query.get_position_options, false)
-                        }
-                    };
-
-                    for (int i = 0; i < controls.Count; i++)
-                    {
-                        var panel = new FlowLayoutPanel
-                        {
-                            Size = new Size(control_Panel.Width / 2, control_Panel.Height),
-                            Margin = Padding.Empty
-                        };
-
-                        control_Panel.Controls.Add(panel);
-
-                        foreach (var control in controls[i])
-                        {
-                            panel.Controls.Add(control);
-                            control.Width = panel.Width;
-
-                            if (control is Label_Drop labelDrop)
-                            { 
-                                //labelDrop.DropboxChanged += label_Drop_Callback; 
-                                //labelDrop.Enabled_Dropbox = false;
-                            }
-                        }
-                    }
-                }*/
-
         private void InitializeControls() 
         {
             util.SetControls(PRISControls(), control_Panel);
@@ -112,6 +68,8 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                     var user_control = (IPRIS_UserControl)controls[val_Index];
                     user_control.ReadOnly = true;
                     user_control.Value = (string)ret.Rows[0][val_Index];
+
+                    Console.WriteLine(ret.Rows[0][val_Index]);
                 }
 
             }
@@ -129,6 +87,7 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                 new UserControl[]
                 {
                     new PRIS_Label_Selector(_title:"Sector :",
+                            _searchQuery : Database_Query.get_sector_search,
                             _query: Database_Query.get_sector_options,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
@@ -137,10 +96,11 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                                     ("Sector",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),},
                             _enabled: true, _read_Only: true),
 
                     new PRIS_Label_Selector(_title:"Office :"  ,
+                            _searchQuery : Database_Query.get_office_search,
                             _query: Database_Query.get_office_options,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
@@ -149,10 +109,11 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                                     ("Office",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35), },
                             _enabled: true, _read_Only: true),
 
                     new PRIS_Label_Selector(_title:"Division :"  ,
+                            _searchQuery : Database_Query.get_division_search,
                             _query: Database_Query.get_division_options,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
@@ -161,10 +122,11 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                                     ("Divsion",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35), },
                             _enabled: true, _read_Only: true),
 
                     new PRIS_Label_Selector(_title:"Section :"  ,
+                            _searchQuery : Database_Query.get_section_search,
                             _query: Database_Query.get_section_option,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
@@ -173,10 +135,11 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                                     ("Section",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35), },
                             _enabled: true, _read_Only: true),
 
                     new PRIS_Label_Selector(_title:"Position :"  ,
+                            _searchQuery : Database_Query.get_position_search,
                             _query: Database_Query.get_position_options,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
@@ -185,7 +148,7 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                                     ("Section",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35), },
                             _enabled: true, _read_Only: true)
                 }
 
@@ -222,8 +185,6 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                     selectors[num].EnableSelector = true;
                     selectors[num].SelectionChanged -= PRIS_Selector_Callback;
                 }
-                error_Message.Text = string.Empty;
-                error_Message.Visible = true;
                 _error.Clear();
                 SetValues();
             }
@@ -258,22 +219,24 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                 case "Sector":
                     num = 1;
                     selectors[num].SelectorQuery = string.Format(Database_Query.get_office_options_by_id, selector.Value);
-                    selectors[num].InfoText = $"Records based on {selectors[num - 1].RawValue}";
+                    selectors[num].SearchQuery = string.Format(Database_Query.get_office_sector_search, "{0}", selector.Value);
+                    selectors[num].InfoText = $"Records are based on {selectors[num - 1].RawValue}";
                     break;
                 case "Office":
                     num = 2;
                     selectors[num].SelectorQuery = string.Format(Database_Query.get_division_options_by_id, selector.Value);
-                    selectors[num].InfoText = $"Records based on {selectors[num - 1].RawValue}";
+                    selectors[num].SearchQuery = string.Format(Database_Query.get_division_office_search, "{0}", selector.Value);
+                    selectors[num].InfoText = $"Records are based on {selectors[num - 1].RawValue}";
                     break;
                 case "Division":
                     num = 3;
                     selectors[num].SelectorQuery = string.Format(Database_Query.get_section_options_by_id, selector.Value);
-                    selectors[num].InfoText = $"Records based on {selectors[num - 1].RawValue}";
+                    selectors[num].SearchQuery = string.Format(Database_Query.get_section_division_search, "{0}", selector.Value);
+                    selectors[num].InfoText = $"Records are based on {selectors[num - 1].RawValue}";
                     break;
                 case "Section":
                     num = 4;
                     break;
-                
             }
             using (database_manager)
                 ret = database_manager.ExecuteQuery(selectors[num].SelectorQuery);
@@ -294,29 +257,20 @@ namespace COA_PRIS.Screens.Subscreens.Employees
 
         private void save_Btn_Click(object sender, EventArgs e)
         {
-            int ret;
             var error_Entries = util.SearchControls<Control>(control_Panel, new List<Type> { typeof(GunaTextBox), typeof(GunaButton) });
 
-            foreach (Control control in error_Entries)
-                if (!string.IsNullOrEmpty(_error.GetError(control)))
-                {
-                    error_Message.Text = "Error in records selections.";
-                    error_Message.Visible = true;
-                    return;
-                }
-            if (!validator.RequiredTextBox(control_Panel, _error, error_Message))
+            if (!validator.RequiredTextBox(control_Panel, _error))
                 return;
 
-            var values = new List<string>();
+            Dictionary<string, string> value = new Dictionary<string, string>();
+            int ret;
 
-            foreach (IPRIS_UserControl userControl in controls) 
-                values.Add(userControl.Value);
-            
-
-            var entries = new List<List<string>> { new List<string> { values[0], values[1], values[3], values[6], values[7], Activity_Manager.CurrentUser, emp_id.Text } } ;
+            foreach (IPRIS_UserControl userControl in controls)
+                value.Add(userControl.Title, userControl.Value);
 
             using (database_manager)
-                ret = database_manager.ExecuteNonQuery(util.GenerateQuery(entries, Database_Query.update_employee_record_by_id));
+                ret = database_manager.ExecuteNonQuery(string.Format(Database_Query.update_employee_record_by_id, value["Employee's Full Name"], value["Email Address"], value["Contact Number"],
+                                                                                        value["Section"], value["Position"], Activity_Manager.CurrentUser, emp_id.Text ));
 
             if (ret == 1)
             {

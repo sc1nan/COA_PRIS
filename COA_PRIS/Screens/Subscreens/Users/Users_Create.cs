@@ -32,7 +32,6 @@ namespace COA_PRIS.Screens.Subscreens.Users
         private void InitializeControls()
         {
             util.SetControls(controls: PRISUserControls_Selection(), parent: selection_Panel);
-            util.SetControls(controls: PRISUserControls_Accounts(), parent: account_Panel);
             util.SetControls(controls: PRISUserControls_Roles(), parent: content_Panel);
 
             var userInfo_Selectors = util.SearchControls<UserControl>(parent_Panel, new List<Type> { typeof(PRIS_Label_Selector) });
@@ -58,7 +57,7 @@ namespace COA_PRIS.Screens.Subscreens.Users
         {
             var checkBoxes = util.SearchControls<UserControl>(content_Panel, new List<Type> { typeof(PRIS_Label_MainCheckBox) });
              
-            DataTable ret, projects, employees, maintenance, user;
+            DataTable ret, projects, employees, maintenance;
 
             using (database_Manager) 
             {
@@ -67,7 +66,6 @@ namespace COA_PRIS.Screens.Subscreens.Users
                 projects = database_Manager.ExecuteQuery(string.Format(Database_Query.get_user_role_projects_by_id, role_code));
                 employees = database_Manager.ExecuteQuery(string.Format(Database_Query.get_user_role_employee_by_id, role_code));
                 maintenance = database_Manager.ExecuteQuery(string.Format(Database_Query.get_user_role_maintenance_by_id, role_code));
-                user = database_Manager.ExecuteQuery(string.Format(Database_Query.get_user_role_user_settings_by_id, role_code));
             }
             for (int entryIndex = 0; entryIndex < ret.Columns.Count; entryIndex++)
             {
@@ -89,9 +87,6 @@ namespace COA_PRIS.Screens.Subscreens.Users
                         case "Maintenance":
                             value = maintenance;    
                             break;
-                        case "User Settings":
-                            value = user;
-                            break;
                     }
                     for (int valueIndex = 0; valueIndex < value.Columns.Count; valueIndex++) 
                         boxValue.Add(value.Rows[0][valueIndex].ToString() == "1" ? true : false );
@@ -102,30 +97,30 @@ namespace COA_PRIS.Screens.Subscreens.Users
         }
         private void Set_EmployeeInfo(string user_code, string user_name) 
         {
-            var userInfo_Entry = util.SearchControls<UserControl>(selection_Panel, new List<Type> { typeof(PRIS_Label_Entry) });
-            var accInfo_Entry = util.SearchControls<UserControl>(account_Panel, new List<Type> { typeof(PRIS_Label_Entry) });
 
-
+            Random random = new Random();
             DataTable ret;
+            
+            var userInfo_Entry = util.SearchControls<UserControl>(left_Content_Panel, new List<Type> { typeof(PRIS_Label_Entry) });
+
+            
             using (database_Manager)
                 ret = database_Manager.ExecuteQuery(string.Format(Database_Query.get_employee_off_pos_by_id, user_code));
 
-            if (userInfo_Entry.Count == ret.Columns.Count) 
-            {
-                for (int entryIndex = 0; entryIndex < userInfo_Entry.Count; entryIndex++)
-                    ((PRIS_Label_Entry)userInfo_Entry[entryIndex]).Value = ret.Rows.Count == 0 ? null : ret.Rows[0][entryIndex].ToString();
-            }
+            for (int entryIndex = 0; entryIndex < ret.Columns.Count; entryIndex++)
+                ((PRIS_Label_Entry)userInfo_Entry[entryIndex]).Value = ret.Rows.Count == 0 ? null : ret.Rows[0][entryIndex].ToString();
+            
             if (!(user_code is null)) 
             {
-                foreach (IPRIS_UserControl pris in accInfo_Entry)
+                foreach (IPRIS_UserControl pris in userInfo_Entry)
                 {
                     switch (pris.Title)
                     {
                         case "Username":
-                            pris.Value = util.GenerateUserName(user_name);
+                            pris.Value = util.GenerateUserName(random,user_name);
                             break;
                         case "Password":
-                            pris.Value = util.GeneratePassword(user_name);
+                            pris.Value = util.GeneratePassword(random, user_name);
                             break;
                     }
                 }
@@ -139,13 +134,14 @@ namespace COA_PRIS.Screens.Subscreens.Users
                 new UserControl[]
                 {
                     new PRIS_Label_Selector(_title:"Employee Name:",
+                            _searchQuery : Database_Query.get_employee_search,
                             _query: Database_Query.get_free_employee_account_options,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
                                     ("#", DataGridViewContentAlignment.MiddleRight),
-                                    ("Contractor Code",DataGridViewContentAlignment.MiddleCenter),
-                                    ("Contractor",DataGridViewContentAlignment.MiddleLeft),
-                                    ("Description",DataGridViewContentAlignment.MiddleLeft)
+                                    ("Employee Code",DataGridViewContentAlignment.MiddleCenter),
+                                    ("Employee Name",DataGridViewContentAlignment.MiddleLeft),
+                                    ("Email",DataGridViewContentAlignment.MiddleLeft)
                                 },
                             _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
                             _enabled: true, _read_Only: false, _isRequired: true),
@@ -153,7 +149,20 @@ namespace COA_PRIS.Screens.Subscreens.Users
                     new PRIS_Label_Entry(_title: "Office :", _isRequired: false, _isReadOnly: true),
                     new PRIS_Label_Entry(_title: "Position :", _isRequired: false, _isReadOnly: true),
 
-                   
+                    new PRIS_Label_Entry(_title: "Username :", _isRequired: true, _isReadOnly: false),
+                    new PRIS_Label_Entry(_title: "Password :", _isRequired: true, _isReadOnly: false),
+                    new PRIS_Label_Selector(_title:"Role :",
+                            _searchQuery : Database_Query.get_role_search,
+                            _query: Database_Query.get_user_role_options,
+                            _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
+                                {
+                                    ("#", DataGridViewContentAlignment.MiddleRight),
+                                    ("Role Code",DataGridViewContentAlignment.MiddleCenter),
+                                    ("Role",DataGridViewContentAlignment.MiddleLeft),
+                                },
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 80),},
+                            _enabled: true, _read_Only: false, _isRequired: true),
+
                 }
             };
 
@@ -168,6 +177,7 @@ namespace COA_PRIS.Screens.Subscreens.Users
                     new PRIS_Label_Entry(_title: "Username :", _isRequired: true, _isReadOnly: false),
                     new PRIS_Label_Entry(_title: "Password :", _isRequired: true, _isReadOnly: false),
                     new PRIS_Label_Selector(_title:"Role :",
+                            _searchQuery: Database_Query.get_role_search,
                             _query: Database_Query.get_user_role_options,
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
@@ -201,8 +211,7 @@ namespace COA_PRIS.Screens.Subscreens.Users
                     new PRIS_Label_MainCheckBox(_title: "Maintenance", _isChecked: false,
                         _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", true, true),("Update Records", false, true),("Delete Records", false, true) }),
 
-                    new PRIS_Label_MainCheckBox(_title: "User Settings", _isChecked: false,
-                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", true, true),("Update Records", false, true),("Delete Records", false, true) }),
+                    new PRIS_Label_MainCheckBox(_title: "User Settings", _isChecked: false),
 
                     new PRIS_Label_MainCheckBox(_title: "Activity Logs", _isChecked: false),
                 }
@@ -214,19 +223,17 @@ namespace COA_PRIS.Screens.Subscreens.Users
         
         private void create_Btn_Click(object sender, EventArgs e)
         {
+            if (!validator.PRISRequired(parent_Panel, error_Provider))
+                return;
 
             Dictionary<string, string> values = new Dictionary<string, string>();
             
             var PRISControls = util.SearchControls<UserControl>(parent_Panel, new List<Type> { typeof(IPRIS_UserControl) });
             int ret = 0;
 
-            if (!validator.PRISRequired(parent_Panel, error_Provider))
-                return;
 
             foreach (IPRIS_UserControl pris in PRISControls)
             {
-                //Console.WriteLine($"{pris.Title}");
-
                 if (pris is PRIS_Label_MainCheckBox) 
                 {
                     var checkbox = (PRIS_Label_MainCheckBox)pris;
@@ -234,16 +241,14 @@ namespace COA_PRIS.Screens.Subscreens.Users
                     {
                         for (int checkIndex = 0; checkIndex < checkbox.BoxValues.Count; checkIndex++) 
                         {
-                            Console.WriteLine($"{checkbox.Title}_{checkbox.BoxTitle[checkIndex]}");
-                            //values.Add($"{checkbox.Title}_{checkbox.BoxTitle[checkIndex]}", checkbox.BoxValues[checkIndex] ? "1" : "0");
+                            values.Add($"{checkbox.Title}_{checkbox.BoxTitle[checkIndex]}", checkbox.BoxValues[checkIndex] ? "1" : "0");
                         }
                     }
                 }
-                //values.Add(pris.Title, pris.Value);
-                Console.WriteLine($"{pris.Title} {pris.Value}");
+                values.Add(pris.Title, pris.Value);
             }
 
-            /*using (database_Manager)
+            using (database_Manager)
             {
                 ret += database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_user_cred, values["Username"], Encryption_Manger.EncryptPassword(values["Password"])));
                 ret += database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_user_info, values["Username"], values["Employee Name"], values["Role"], Activity_Manager.CurrentUser));
@@ -251,9 +256,8 @@ namespace COA_PRIS.Screens.Subscreens.Users
                                                                             values["Projects"], values["Projects_Add Records"], values["Projects_View Records"], values["Projects_Update Records"], values["Projects_Delete Records"],
                                                                             values["Employee"], values["Employee_Add Records"], values["Employee_View Records"], values["Employee_Update Records"], values["Employee_Delete Records"],
                                                                             values["Reports"], values["Maintenance"], values["Maintenance_Add Records"], values["Maintenance_View Records"], values["Maintenance_Update Records"], values["Maintenance_Delete Records"],
-                                                                            values["User Settings"], values["User Settings_Add Records"], values["User Settings_View Records"], values["User Settings_Update Records"], values["User Settings_Delete Records"],
-                                                                            values["Activity Logs"]));
-            }*/
+                                                                            values["User Settings"], values["Activity Logs"]));
+            }
 
             if (ret == 3) 
             {
@@ -261,10 +265,6 @@ namespace COA_PRIS.Screens.Subscreens.Users
                 is_ClosingProgrammatically = true;
                 RefreshTable.Invoke();
                 Close();
-
-
-
-                
             }
 
 
@@ -294,6 +294,13 @@ namespace COA_PRIS.Screens.Subscreens.Users
                 else if (e.CloseReason == CloseReason.WindowsShutDown)
                     Close();
             }
+        }
+
+        private void cancel_Btn_Click(object sender, EventArgs e)
+        {
+            is_ClosingProgrammatically = false;
+            Close();
+
         }
     }
 }

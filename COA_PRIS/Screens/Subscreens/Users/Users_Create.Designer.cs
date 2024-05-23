@@ -32,10 +32,8 @@
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.left_Content_Panel = new System.Windows.Forms.TableLayoutPanel();
-            this.account_Panel = new Guna.UI.WinForms.GunaPanel();
+            this.left_Content_Panel = new Guna.UI.WinForms.GunaPanel();
             this.selection_Panel = new Guna.UI.WinForms.GunaPanel();
-            this.gunaLinePanel2 = new Guna.UI.WinForms.GunaLinePanel();
             this.gunaElipse3 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.right_Content_Panel = new Guna.UI.WinForms.GunaPanel();
             this.content_Panel = new Guna.UI.WinForms.GunaPanel();
@@ -53,6 +51,7 @@
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
             this.title = new Guna.UI.WinForms.GunaLabel();
             this.gunaElipse4 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.cancel_Btn = new Guna.UI.WinForms.GunaButton();
             this.left_Content_Panel.SuspendLayout();
             this.right_Content_Panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.error_Provider)).BeginInit();
@@ -91,52 +90,23 @@
             // left_Content_Panel
             // 
             this.left_Content_Panel.BackColor = System.Drawing.Color.White;
-            this.left_Content_Panel.ColumnCount = 1;
-            this.left_Content_Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.left_Content_Panel.Controls.Add(this.account_Panel, 0, 2);
-            this.left_Content_Panel.Controls.Add(this.selection_Panel, 0, 0);
-            this.left_Content_Panel.Controls.Add(this.gunaLinePanel2, 0, 1);
+            this.left_Content_Panel.Controls.Add(this.selection_Panel);
             this.left_Content_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.left_Content_Panel.Location = new System.Drawing.Point(0, 60);
             this.left_Content_Panel.Name = "left_Content_Panel";
-            this.left_Content_Panel.RowCount = 3;
-            this.left_Content_Panel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.left_Content_Panel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 5F));
-            this.left_Content_Panel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.left_Content_Panel.Size = new System.Drawing.Size(744, 691);
+            this.left_Content_Panel.Padding = new System.Windows.Forms.Padding(10);
+            this.left_Content_Panel.Size = new System.Drawing.Size(812, 693);
             this.left_Content_Panel.TabIndex = 2;
-            // 
-            // account_Panel
-            // 
-            this.account_Panel.BackColor = System.Drawing.Color.White;
-            this.account_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.account_Panel.Location = new System.Drawing.Point(8, 352);
-            this.account_Panel.Margin = new System.Windows.Forms.Padding(8, 4, 8, 8);
-            this.account_Panel.Name = "account_Panel";
-            this.account_Panel.Size = new System.Drawing.Size(728, 331);
-            this.account_Panel.TabIndex = 10;
             // 
             // selection_Panel
             // 
             this.selection_Panel.BackColor = System.Drawing.Color.White;
             this.selection_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.selection_Panel.Location = new System.Drawing.Point(8, 8);
+            this.selection_Panel.Location = new System.Drawing.Point(10, 10);
             this.selection_Panel.Margin = new System.Windows.Forms.Padding(8, 8, 8, 4);
             this.selection_Panel.Name = "selection_Panel";
-            this.selection_Panel.Size = new System.Drawing.Size(728, 331);
-            this.selection_Panel.TabIndex = 7;
-            // 
-            // gunaLinePanel2
-            // 
-            this.gunaLinePanel2.BackColor = System.Drawing.Color.Gainsboro;
-            this.gunaLinePanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaLinePanel2.LineColor = System.Drawing.Color.Black;
-            this.gunaLinePanel2.LineStyle = System.Windows.Forms.BorderStyle.None;
-            this.gunaLinePanel2.Location = new System.Drawing.Point(8, 343);
-            this.gunaLinePanel2.Margin = new System.Windows.Forms.Padding(8, 0, 8, 0);
-            this.gunaLinePanel2.Name = "gunaLinePanel2";
-            this.gunaLinePanel2.Size = new System.Drawing.Size(728, 5);
-            this.gunaLinePanel2.TabIndex = 0;
+            this.selection_Panel.Size = new System.Drawing.Size(792, 673);
+            this.selection_Panel.TabIndex = 9;
             // 
             // gunaElipse3
             // 
@@ -151,7 +121,7 @@
             this.right_Content_Panel.Location = new System.Drawing.Point(0, 62);
             this.right_Content_Panel.Name = "right_Content_Panel";
             this.right_Content_Panel.Padding = new System.Windows.Forms.Padding(10);
-            this.right_Content_Panel.Size = new System.Drawing.Size(890, 689);
+            this.right_Content_Panel.Size = new System.Drawing.Size(822, 691);
             this.right_Content_Panel.TabIndex = 2;
             // 
             // content_Panel
@@ -161,8 +131,7 @@
             this.content_Panel.Location = new System.Drawing.Point(10, 10);
             this.content_Panel.Margin = new System.Windows.Forms.Padding(10);
             this.content_Panel.Name = "content_Panel";
-            this.content_Panel.Padding = new System.Windows.Forms.Padding(5);
-            this.content_Panel.Size = new System.Drawing.Size(870, 669);
+            this.content_Panel.Size = new System.Drawing.Size(802, 671);
             this.content_Panel.TabIndex = 8;
             // 
             // error_Provider
@@ -185,8 +154,8 @@
             // 
             this.parent_Panel.BackColor = System.Drawing.Color.Gainsboro;
             this.parent_Panel.ColumnCount = 2;
-            this.parent_Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 45.86375F));
-            this.parent_Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 54.13625F));
+            this.parent_Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.parent_Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.parent_Panel.Controls.Add(this.right_Panel, 1, 0);
             this.parent_Panel.Controls.Add(this.left_Panel, 0, 0);
             this.parent_Panel.Controls.Add(this.gunaPanel4, 0, 1);
@@ -196,7 +165,7 @@
             this.parent_Panel.Padding = new System.Windows.Forms.Padding(10);
             this.parent_Panel.RowCount = 2;
             this.parent_Panel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.parent_Panel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.parent_Panel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.parent_Panel.Size = new System.Drawing.Size(1664, 831);
             this.parent_Panel.TabIndex = 5;
             // 
@@ -206,10 +175,10 @@
             this.right_Panel.Controls.Add(this.right_Content_Panel);
             this.right_Panel.Controls.Add(this.gunaPanel5);
             this.right_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.right_Panel.Location = new System.Drawing.Point(764, 10);
+            this.right_Panel.Location = new System.Drawing.Point(832, 10);
             this.right_Panel.Margin = new System.Windows.Forms.Padding(0);
             this.right_Panel.Name = "right_Panel";
-            this.right_Panel.Size = new System.Drawing.Size(890, 751);
+            this.right_Panel.Size = new System.Drawing.Size(822, 753);
             this.right_Panel.TabIndex = 1;
             // 
             // gunaPanel5
@@ -220,7 +189,7 @@
             this.gunaPanel5.Margin = new System.Windows.Forms.Padding(0);
             this.gunaPanel5.Name = "gunaPanel5";
             this.gunaPanel5.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.gunaPanel5.Size = new System.Drawing.Size(890, 62);
+            this.gunaPanel5.Size = new System.Drawing.Size(822, 62);
             this.gunaPanel5.TabIndex = 1;
             // 
             // gunaLabel2
@@ -244,7 +213,7 @@
             this.left_Panel.Location = new System.Drawing.Point(10, 10);
             this.left_Panel.Margin = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.left_Panel.Name = "left_Panel";
-            this.left_Panel.Size = new System.Drawing.Size(744, 751);
+            this.left_Panel.Size = new System.Drawing.Size(812, 753);
             this.left_Panel.TabIndex = 0;
             // 
             // gunaPanel3
@@ -255,19 +224,20 @@
             this.gunaPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.gunaPanel3.Name = "gunaPanel3";
             this.gunaPanel3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.gunaPanel3.Size = new System.Drawing.Size(744, 60);
+            this.gunaPanel3.Size = new System.Drawing.Size(812, 60);
             this.gunaPanel3.TabIndex = 1;
             // 
             // gunaPanel4
             // 
             this.parent_Panel.SetColumnSpan(this.gunaPanel4, 2);
+            this.gunaPanel4.Controls.Add(this.cancel_Btn);
             this.gunaPanel4.Controls.Add(this.create_Btn);
             this.gunaPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaPanel4.Location = new System.Drawing.Point(10, 761);
+            this.gunaPanel4.Location = new System.Drawing.Point(10, 763);
             this.gunaPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.gunaPanel4.Name = "gunaPanel4";
             this.gunaPanel4.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.gunaPanel4.Size = new System.Drawing.Size(1644, 60);
+            this.gunaPanel4.Size = new System.Drawing.Size(1644, 58);
             this.gunaPanel4.TabIndex = 2;
             // 
             // create_Btn
@@ -275,7 +245,7 @@
             this.create_Btn.AnimationHoverSpeed = 0.07F;
             this.create_Btn.AnimationSpeed = 0.03F;
             this.create_Btn.BackColor = System.Drawing.Color.Transparent;
-            this.create_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.create_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(115)))), ((int)(((byte)(87)))));
             this.create_Btn.BorderColor = System.Drawing.Color.Black;
             this.create_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.create_Btn.Dock = System.Windows.Forms.DockStyle.Right;
@@ -284,7 +254,7 @@
             this.create_Btn.ForeColor = System.Drawing.Color.White;
             this.create_Btn.Image = null;
             this.create_Btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.create_Btn.Location = new System.Drawing.Point(1496, 8);
+            this.create_Btn.Location = new System.Drawing.Point(1484, 8);
             this.create_Btn.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
             this.create_Btn.Name = "create_Btn";
             this.create_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -293,9 +263,9 @@
             this.create_Btn.OnHoverImage = null;
             this.create_Btn.OnPressedColor = System.Drawing.Color.Black;
             this.create_Btn.Radius = 8;
-            this.create_Btn.Size = new System.Drawing.Size(148, 52);
+            this.create_Btn.Size = new System.Drawing.Size(160, 50);
             this.create_Btn.TabIndex = 2;
-            this.create_Btn.Text = "Add";
+            this.create_Btn.Text = "Save Record";
             this.create_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.create_Btn.Click += new System.EventHandler(this.create_Btn_Click);
             // 
@@ -336,6 +306,36 @@
             // 
             this.gunaElipse4.Radius = 6;
             this.gunaElipse4.TargetControl = this.gunaLabel2;
+            // 
+            // cancel_Btn
+            // 
+            this.cancel_Btn.AnimationHoverSpeed = 0.07F;
+            this.cancel_Btn.AnimationSpeed = 0.03F;
+            this.cancel_Btn.BackColor = System.Drawing.Color.Transparent;
+            this.cancel_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(66)))), ((int)(((byte)(102)))));
+            this.cancel_Btn.BorderColor = System.Drawing.Color.Black;
+            this.cancel_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.cancel_Btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cancel_Btn.FocusedColor = System.Drawing.Color.Empty;
+            this.cancel_Btn.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancel_Btn.ForeColor = System.Drawing.Color.White;
+            this.cancel_Btn.Image = null;
+            this.cancel_Btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.cancel_Btn.Location = new System.Drawing.Point(0, 8);
+            this.cancel_Btn.Margin = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.cancel_Btn.Name = "cancel_Btn";
+            this.cancel_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.cancel_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.cancel_Btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.cancel_Btn.OnHoverImage = null;
+            this.cancel_Btn.OnPressedColor = System.Drawing.Color.Black;
+            this.cancel_Btn.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.cancel_Btn.Radius = 8;
+            this.cancel_Btn.Size = new System.Drawing.Size(110, 50);
+            this.cancel_Btn.TabIndex = 3;
+            this.cancel_Btn.Text = "Cancel";
+            this.cancel_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.cancel_Btn.Click += new System.EventHandler(this.cancel_Btn_Click);
             // 
             // Users_Create
             // 
@@ -379,17 +379,16 @@
         private Guna.UI.WinForms.GunaPanel gunaPanel5;
         private Guna.UI.WinForms.GunaLabel gunaLabel2;
         private Guna.UI.WinForms.GunaPanel left_Panel;
-        private System.Windows.Forms.TableLayoutPanel left_Content_Panel;
-        private Guna.UI.WinForms.GunaPanel account_Panel;
-        private Guna.UI.WinForms.GunaPanel selection_Panel;
         private Guna.UI.WinForms.GunaPanel gunaPanel3;
         private Guna.UI.WinForms.GunaLabel gunaLabel1;
         private Guna.UI.WinForms.GunaLinePanel gunaLinePanel1;
         private Guna.UI.WinForms.GunaPanel gunaPanel2;
         private Guna.UI.WinForms.GunaLabel title;
-        private Guna.UI.WinForms.GunaLinePanel gunaLinePanel2;
         private Guna.UI.WinForms.GunaPanel gunaPanel4;
         private Guna.UI.WinForms.GunaElipse gunaElipse4;
         private Guna.UI.WinForms.GunaButton create_Btn;
+        private Guna.UI.WinForms.GunaPanel left_Content_Panel;
+        private Guna.UI.WinForms.GunaPanel selection_Panel;
+        private Guna.UI.WinForms.GunaButton cancel_Btn;
     }
 }

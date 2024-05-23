@@ -27,22 +27,16 @@ namespace COA_PRIS.Screens.Subscreens.Users
             InitializeComponent();
         }
 
-        private void InitializeControls() 
-        { 
-            
-        
-        }
 
         private void add_RecordBtn_Click(object sender, EventArgs e)
         {
             Users_Create = new Users_Create();
+            Users_Create.RefreshTable += RefreshCallback;
             Users_Create.ShowDialog();
         }
 
         private void Users_Lists_Load(object sender, EventArgs e)
         {
-            Users_Create = new Users_Create();
-            Users_Create.RefreshTable += RefreshCallback;
 
             (bool, int)[] column_Widths = new (bool, int)[] { (true, 3), (true, 12), (true, 30), (true, 20), (true, 20), (true, 15) }; ;
             (string, DataGridViewContentAlignment)[] column_Text_Align = new (string, DataGridViewContentAlignment)[]
@@ -87,7 +81,10 @@ namespace COA_PRIS.Screens.Subscreens.Users
 
         private void view_RecordBtn_Click(object sender, EventArgs e)
         {
-            Users_View = new Users_View();
+            string record_code = (string)data_View.Rows[data_View.CurrentRow.Index].Cells[1].Value;
+
+            Users_View = new Users_View(_code: record_code);
+            Users_View.RefreshTable += RefreshCallback;
             Users_View.ShowDialog();
         }
     }

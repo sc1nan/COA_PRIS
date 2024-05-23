@@ -31,9 +31,9 @@
             this.nav_Panel = new System.Windows.Forms.FlowLayoutPanel();
             this.user_Btn = new Guna.UI.WinForms.GunaButton();
             this.roles_Btn = new Guna.UI.WinForms.GunaButton();
-            this.deactive_Btn = new Guna.UI.WinForms.GunaButton();
             this.line_Panel = new Guna.UI.WinForms.GunaPanel();
             this.container_Panel = new Guna.UI.WinForms.GunaPanel();
+            this.deactive_Btn = new Guna.UI.WinForms.GunaButton();
             this.nav_Panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -111,6 +111,25 @@
             this.roles_Btn.TextOffsetX = 5;
             this.roles_Btn.Click += new System.EventHandler(this.button_Click);
             // 
+            // line_Panel
+            // 
+            this.line_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.line_Panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.line_Panel.Location = new System.Drawing.Point(10, 65);
+            this.line_Panel.Name = "line_Panel";
+            this.line_Panel.Size = new System.Drawing.Size(1520, 5);
+            this.line_Panel.TabIndex = 4;
+            // 
+            // container_Panel
+            // 
+            this.container_Panel.BackColor = System.Drawing.Color.White;
+            this.container_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container_Panel.Location = new System.Drawing.Point(10, 70);
+            this.container_Panel.Name = "container_Panel";
+            this.container_Panel.Padding = new System.Windows.Forms.Padding(10);
+            this.container_Panel.Size = new System.Drawing.Size(1520, 765);
+            this.container_Panel.TabIndex = 5;
+            // 
             // deactive_Btn
             // 
             this.deactive_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -140,26 +159,8 @@
             this.deactive_Btn.TabIndex = 5;
             this.deactive_Btn.Text = "DEACTIVATED";
             this.deactive_Btn.TextOffsetX = 5;
+            this.deactive_Btn.Visible = false;
             this.deactive_Btn.Click += new System.EventHandler(this.button_Click);
-            // 
-            // line_Panel
-            // 
-            this.line_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.line_Panel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.line_Panel.Location = new System.Drawing.Point(10, 65);
-            this.line_Panel.Name = "line_Panel";
-            this.line_Panel.Size = new System.Drawing.Size(1520, 5);
-            this.line_Panel.TabIndex = 4;
-            // 
-            // container_Panel
-            // 
-            this.container_Panel.BackColor = System.Drawing.Color.White;
-            this.container_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container_Panel.Location = new System.Drawing.Point(10, 70);
-            this.container_Panel.Name = "container_Panel";
-            this.container_Panel.Padding = new System.Windows.Forms.Padding(10);
-            this.container_Panel.Size = new System.Drawing.Size(1520, 765);
-            this.container_Panel.TabIndex = 5;
             // 
             // User
             // 
@@ -186,7 +187,7 @@
         private Guna.UI.WinForms.GunaPanel line_Panel;
         private Guna.UI.WinForms.GunaPanel container_Panel;
         private Guna.UI.WinForms.GunaButton user_Btn;
-        private Guna.UI.WinForms.GunaButton deactive_Btn;
         private Guna.UI.WinForms.GunaButton roles_Btn;
+        private Guna.UI.WinForms.GunaButton deactive_Btn;
     }
 }

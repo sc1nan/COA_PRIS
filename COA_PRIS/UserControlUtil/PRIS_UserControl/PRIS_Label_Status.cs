@@ -1,4 +1,5 @@
 ﻿using COA_PRIS.Properties;
+using Guna.UI.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,12 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
     public partial class PRIS_Label_Status : UserControl, IPRIS_UserControl
     {
         public bool IsRequiredValue = false;
+        
+        public bool IsVisible
+        {
+            get { return this.Visible; }
+            set { this.Visible = value; }
+        }
         public Control ErrorRoot
         {
             get { return entry; }
@@ -36,14 +43,19 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
         public string Value
         {
             get { return entry.SelectedValue.ToString(); }
-            set { entry.SelectedIndex = entry.FindStringExact(value); }
+            set 
+            {     
+                entry.SelectedIndex = entry.FindStringExact(value); 
+                readOnly_Entry.Text = entry.Text;
+            }
         }
 
         public bool ReadOnly
         {
-            get { return entry.Enabled; }
-            set { entry.Enabled = !value;}
+            get { return entry.Visible; }
+            set { ReadOnly_Function(value); }
         }
+
 
         public DataTable DropdownOptions 
         { 
@@ -79,7 +91,7 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
             {
                 switch (entry.Text) 
                 {
-                    case "Active":
+                    case "Forwarded":
                         icon.Image = Resources.active;
                         break;
                     case "Pending":
@@ -88,9 +100,19 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
                     case "Filed":
                         icon.Image = Resources.filed;
                         break;
-
+                    default:
+                        icon.Image = null; 
+                        break;
                 }
             }
         }
+
+        private void ReadOnly_Function(bool value) 
+        {
+            readOnly_Entry.Visible = value;
+            entry.Visible = !value;
+        }
+
+
     }
 }

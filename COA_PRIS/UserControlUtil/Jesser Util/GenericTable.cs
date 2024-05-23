@@ -158,19 +158,20 @@ namespace COA_PRIS.UserControlUtil.Jesser_Util
                         }; ;
                     break;
                 case "project":
-                    column_Widths = new (bool, int)[] { (true, 3), (true, 9), (true, 9), (true, 9), (true, 10), (true, 10), (true, 10), (true, 30), (true, 10) };
+                    //column_Widths = new (bool, int)[] { (true, 3), (true, 9), (true, 9), (true, 9), (true, 10), (true, 10), (true, 10), (true, 30), (true, 10) };
                     //column_Widths = new (bool, int)[] { (true, 10), (true, 10), (true, 10), (true, 10), (true, 10), (true, 10), (true, 30), (true, 10) };
+                    column_Widths = new (bool, int)[] { (true, 3), (true, 12), (true, 15), (true, 15), (true, 10), (true, 45) };
                     column_Text_Align = new (string, DataGridViewContentAlignment)[]
                         {
                             ("#", DataGridViewContentAlignment.MiddleRight),
-                            ("Document ID", DataGridViewContentAlignment.MiddleCenter),
+                            //("Document ID", DataGridViewContentAlignment.MiddleCenter),
                             ("Document Code", DataGridViewContentAlignment.MiddleCenter),
-                            ("Document #",DataGridViewContentAlignment.MiddleRight),
+                            ("Document Number",DataGridViewContentAlignment.MiddleCenter),
                             ("Amount",DataGridViewContentAlignment.MiddleRight),
-                            ("Title", DataGridViewContentAlignment.MiddleLeft),
+                            //("Title", DataGridViewContentAlignment.MiddleLeft),
                             ("Period",DataGridViewContentAlignment.MiddleCenter),
-                            ("Subject Matter",DataGridViewContentAlignment.MiddleLeft),
-                            ("Receiving Date",DataGridViewContentAlignment.MiddleCenter)
+                            //("Receiving Date",DataGridViewContentAlignment.MiddleCenter),
+                            ("Subject Matter",DataGridViewContentAlignment.MiddleLeft)
                         };
                     break;
                 default: break;

@@ -72,6 +72,7 @@ namespace COA_PRIS.Utilities
                     }
                     else if (query.Contains("docu_info_table"))
                     {
+                        //MessageBox.Show(query);
                         table_name_on_dataset = "docu_info_table";
                         dataSource = new ReportDataSource("DataSet1", ds.Tables[1]);
                     }
@@ -79,6 +80,8 @@ namespace COA_PRIS.Utilities
                     if (ds.Tables[table_name_on_dataset].Rows.Count == 0) MessageBox.Show("Nothing found", "Message");
 
                     reportViewer.LocalReport.DataSources.Clear();
+                    //MessageBox.Show(query);
+                    //Console.WriteLine(query);
                     reportViewer.LocalReport.DataSources.Add(dataSource);
                     reportViewer.RefreshReport();
                 }

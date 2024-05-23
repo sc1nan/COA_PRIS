@@ -17,9 +17,14 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
         public bool IsRequiredValue = false;
         public bool HasBoxes = false;
         private bool _isExpanded = false;
+        private bool EnabledCheck = true;
         private (string, bool, bool)[] _Boxes = null;
-        
 
+        public bool IsVisible
+        {
+            get { return this.Visible; }
+            set { this.Visible = value; }
+        }
         public Control ErrorRoot
         {
             get { return title; }
@@ -44,21 +49,37 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
             get { return check.Checked ? "1" : "0"; }
             set 
             {
-                if (ReadOnly)
+                if (value == null)
+                    check.Checked = false;
+                else
+                    check.Checked = string.Equals(value, "1") ? true : false;
+                /*if (ReadOnly)
                 {
                     if (value == null)
                         check.Checked = false;
                     else
                         check.Checked = string.Equals(value, "1") ? true : false;
                     
-                }
+                }*/
             }
         }
 
         public bool ReadOnly
         {
             get { return check.Enabled; }
-            set { check.Enabled = !value; }
+            set 
+            {
+                if (EnabledCheck)
+                    check.Enabled = !value;
+                if (_Boxes != null) 
+                {
+                    for (int boxIndex = 0; boxIndex < _Boxes.Length; boxIndex++) 
+                    {
+                        var box = (PRIS_Label_CheckBox)bottom_Panel.Controls[boxIndex];
+                        box.ReadOnly = value;
+                    }
+                }
+            }
         }
         public bool Expand
         {
@@ -116,14 +137,18 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
         }
 
         public PRIS_Label_MainCheckBox(string _title, (string, bool, bool)[] _boxes = null, bool _isExpanded = false, bool _isChecked = false,
-            bool _isReadOnly = false)
+            bool _isReadOnly = false, bool _enableCheck = true)
         {
             InitializeComponent();
             this.Title = _title;
             this.Expand = _isExpanded;
             this.Boxes = _boxes;
             this.check.Checked = _isChecked;
+            Load_SubCheckBox();
+
             this.ReadOnly = _isReadOnly;
+            this.EnabledCheck = _enableCheck;
+            
         }
 
         private void ExpandBox(bool _value)
@@ -137,12 +162,15 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
             }
         }
 
-
-        private void PRIS_Label_RoleCheckBox_Load(object sender, EventArgs e)
+        private void Load_SubCheckBox() 
         {
-            if (_Boxes != null && _Boxes.Length != 0) 
+            if (_Boxes != null && _Boxes.Length != 0)
                 for (int i = 0; i < _Boxes.Length; i++)
                     bottom_Panel.Controls.Add(new PRIS_Label_CheckBox(_title: _Boxes[i].Item1, _checked: _Boxes[i].Item2, _enabled: _Boxes[i].Item3));
+
+        }
+        private void PRIS_Label_RoleCheckBox_Load(object sender, EventArgs e)
+        {
         }
 
         private void check_CheckedChanged(object sender, EventArgs e)
@@ -167,7 +195,8 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
 
         private void title_Click(object sender, EventArgs e)
         {
-            this.check.Checked = !this.check.Checked;
+            if (check.Enabled)
+                this.check.Checked = !this.check.Checked;
         }
 
     }

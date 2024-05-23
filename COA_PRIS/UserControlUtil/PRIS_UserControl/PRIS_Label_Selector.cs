@@ -26,6 +26,11 @@ namespace COA_PRIS.UserControlUtil
 
         public bool IsRequiredValue = false;
 
+        public bool IsVisible
+        {
+            get { return this.Visible; }
+            set { this.Visible = value; }
+        }
         public Control ErrorRoot
         {
             get { return entry; }
@@ -99,6 +104,7 @@ namespace COA_PRIS.UserControlUtil
         }
 
         public string SelectorQuery { get; set; }
+        public string SearchQuery { get; set; }
         private (string, DataGridViewContentAlignment)[] ColumnsTitlesAlignment { get; set; }
         private (bool, int)[] ColumnWidths { get; set; }
 
@@ -107,10 +113,10 @@ namespace COA_PRIS.UserControlUtil
             InitializeComponent();
         }
 
-        public PRIS_Label_Selector(string _title, string _query,
+        public PRIS_Label_Selector(string _title, string _query, string _searchQuery,
             (string, DataGridViewContentAlignment)[] _column_Title_Alignment,
             (bool, int)[] _column_Widths, bool _enabled = true, bool _read_Only = false,
-            bool _isRequired = true
+            bool _isRequired = true 
             )
         {
             InitializeComponent();
@@ -123,6 +129,7 @@ namespace COA_PRIS.UserControlUtil
             this.ColumnsTitlesAlignment = _column_Title_Alignment;
             this.ColumnWidths = _column_Widths;
             this.ReadOnly = _read_Only;
+            this.SearchQuery = _searchQuery;
             SetSelection();
         }
 
@@ -157,14 +164,15 @@ namespace COA_PRIS.UserControlUtil
 
         private void CallSelector(object sender) 
         {
-            selector = new Selector(sender, this.Title, this.SelectorQuery, this.ColumnsTitlesAlignment, this.ColumnWidths);
+            selector = new Selector(sender, this.Title, this.SelectorQuery, this.ColumnsTitlesAlignment, this.ColumnWidths, this.SearchQuery);
             selector.InfoText = this.InfoText;
             selector.ShowDialog();
         }
 
         private void entry_DoubleClick(object sender, EventArgs e)
         {
-            CallSelector(search);
+            if(search.Visible)
+                CallSelector(search);
         }
     }
 }

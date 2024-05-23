@@ -91,6 +91,25 @@ namespace COA_PRIS.Utilities
             return ret;
         }
 
+        public List<(string, string, string)> PRISUpdateCheck(Control _parent, Dictionary<string, string> _initialValues) 
+        {
+            List<Control> PRISControls = util.SearchControls<Control>(_parent, new List<Type> { typeof(IPRIS_UserControl) });
+            List<(string, string, string)>  ret = new List<(string, string, string)> ();
+
+            if (_initialValues.Count == PRISControls.Count) 
+            {
+                for (int prisIndex = 0; prisIndex < PRISControls.Count; prisIndex++) 
+                {
+                    if (!string.Equals(_initialValues.ElementAt(prisIndex).Value, ((IPRIS_UserControl)PRISControls[prisIndex]).Value)) 
+                    {
+                        ret.Add((_initialValues.ElementAt(prisIndex).Key, ((IPRIS_UserControl)PRISControls[prisIndex]).Value, _initialValues.ElementAt(prisIndex).Value));
+                    }
+                
+                }
+            
+            }
+            return ret;
+        }
         public void PRISClearErrors(Control _parent, ErrorProvider _errorProvider, GunaLabel _errorLabel = null) 
         { 
             List<Control> PRISControls = util.SearchControls<Control>(_parent, new List<Type> { typeof(IPRIS_UserControl) });
@@ -118,38 +137,14 @@ namespace COA_PRIS.Utilities
             }
 
         }
-        public void PRISReadOnly(Control _parent, bool _is_ReadOnly) 
+        public void PRISReadOnly(Control _parent, bool _isReadOnly) 
         {
             List<Control> PRISControls = util.SearchControls<Control>(_parent, new List<Type> { typeof(IPRIS_UserControl) });
 
             foreach (IPRIS_UserControl pris in PRISControls) 
             { 
-                pris.ReadOnly = _is_ReadOnly;
+                pris.ReadOnly = _isReadOnly;
             }
-        }
-        public void readOnly_Controls( Control parent, bool is_Enabled = false) 
-        {
-            List<Control> controls = util.SearchControls<Control>(parent, new List<Type> { typeof(GunaTextBox), typeof(GunaComboBox)});
-
-            foreach (Control control in controls) 
-            {
-                if (control is GunaTextBox)
-                {
-                    GunaTextBox textBox = (GunaTextBox)control;
-                    textBox.ReadOnly = !is_Enabled;
-                }
-                else if (control is GunaComboBox)
-                {
-                    GunaComboBox comboBox = (GunaComboBox)control;
-                    comboBox.Enabled = is_Enabled;
-                }
-                else if (control is RichTextBox) 
-                { 
-                    RichTextBox textBox = (RichTextBox)control;
-                    textBox.ReadOnly = is_Enabled;
-                }
-            }
-            
         }
     }
 }

@@ -107,6 +107,7 @@ namespace COA_PRIS.Screens.Subscreens.Reports
 
         private void reportsButton_Click(object sender, EventArgs e)
         {
+            Console.WriteLine(Database_Query.last_query);
             var temprepp = Application.OpenForms["TempReportsForms"];
             if (temprepp == null)
             {
@@ -135,6 +136,8 @@ namespace COA_PRIS.Screens.Subscreens.Reports
 
         private void refresh_Button_Click(object sender, EventArgs e)
         {
+
+            Console.WriteLine(Database_Query.last_query);
             PopulateTable(3);
         }
 

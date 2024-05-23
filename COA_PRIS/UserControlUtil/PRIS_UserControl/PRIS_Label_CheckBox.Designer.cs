@@ -53,7 +53,7 @@
             // check
             // 
             this.check.BaseColor = System.Drawing.Color.White;
-            this.check.CheckedOffColor = System.Drawing.Color.Gray;
+            this.check.CheckedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             this.check.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             this.check.Cursor = System.Windows.Forms.Cursors.Hand;
             this.check.FillColor = System.Drawing.Color.White;
@@ -83,7 +83,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(8);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "PRIS_Label_CheckBox";
             this.Size = new System.Drawing.Size(94, 34);
             this.tableLayoutPanel1.ResumeLayout(false);

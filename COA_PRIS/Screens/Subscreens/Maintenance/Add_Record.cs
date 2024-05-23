@@ -34,7 +34,7 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
 
         private void Add_Agency_Load(object sender, EventArgs e)
         {
-            code_Title.Text = util.GenerateID(Table);
+            code_Title.Text = util.GenarateUID(Table);
         }
 
         private void InitializeControls(List<UserControl[]> controls)
@@ -49,7 +49,7 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
 
 
             // Loops through the controls and add its value to the  list.
-            if (validator.PRISRequired(control_Panel, error_provider, error_Message))
+            if (validator.PRISRequired(control_Panel, error_provider))
             {
 
                 // Adds the required values inside of a list.
@@ -80,7 +80,7 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
                 {
                     string code_type = database_Manager.ExecuteScalar(string.Format(Database_Query.return_module_name, Table)).ToString();
                     //make activity log
-                    database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_add, Activity_Manager.CurrentUser, code_type, code_Title.Text));
+                    database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_add, Activity_Manager.CurrentUser, $"Created Record : {code_type} {code_Title.Text}" ));
 
                 }
                 if (MessageBox.Show($"{code_Title.Text} is successfully added.", "New Record Added", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)

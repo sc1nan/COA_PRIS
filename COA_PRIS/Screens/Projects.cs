@@ -38,7 +38,7 @@ namespace COA_PRIS.Screens
             tab_Manager.active_Button(record_Btn, false);
             record_Btn.PerformClick();
 
-            project_List.ToCreate += ToCreate;
+            //project_List.ToCreate += ToCreate;
         }
         private void button_Clicked(object sender, EventArgs e)
         {
@@ -60,9 +60,5 @@ namespace COA_PRIS.Screens
             tab_Manager.active_Button(button, false);
         }
 
-        private void ToCreate() 
-        {
-            create_Btn.PerformClick();
-        }
     }
 }

@@ -8,13 +8,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace COA_PRIS.UserControlUtil.PRIS_UserControl
 {
     public partial class PRIS_Label_Rich : UserControl, IPRIS_UserControl
     {
         public bool IsRequiredValue = false;
+        public string SpecialChar;
+        
         private Color CurrentColor;
+
+        public bool IsVisible
+        {
+            get { return this.Visible; }
+            set { this.Visible = value; }
+        }
         public Control ErrorRoot
         {
             get { return entry_Panel; }
@@ -36,7 +45,18 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
 
         public string Value
         {
-            get { return entry.Text.Trim(); }
+            get 
+            { 
+                if (SpecialChar != null)
+                {
+                    return entry.Text.TrimStart(SpecialChar.ToCharArray()).Trim();
+                }
+                else 
+                { 
+                    return entry.Text.Trim();
+                }
+            
+            }
             set { entry.Text = value; }
         }
 
@@ -61,13 +81,15 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
             InitializeComponent();
         }
 
-        public PRIS_Label_Rich(string _title, bool _isRequired = true, int _entryHeight = 150 )
+        public PRIS_Label_Rich(string _title, bool _isRequired = true, bool _isReadOnly = false, int _entryHeight = 150, string _specialChar = null )
         {
             InitializeComponent();
             this.title.Text = _title;
             this.entry.Tag = _title.Replace(":", "").Trim();
             this.IsRequired = _isRequired;
             this.Height = _entryHeight;
+            this.SpecialChar = _specialChar;
+            this.ReadOnly = _isReadOnly;
         }
 
         private void entry_Enter(object sender, EventArgs e)
@@ -80,5 +102,42 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
         {
             entry_Panel.BaseColor = (CurrentColor == Color.Red) ? Color.Red : Theme.Hex_To_RGB("#d3d3d3");
         }
+
+
+        private void entry_TextChanged(object sender, EventArgs e)
+        {
+            if (SpecialChar != null) 
+            {
+                string fixedString = SpecialChar + " ";
+
+                int cursorPosition = entry.SelectionStart;
+
+                if (!entry.Text.StartsWith(fixedString))
+                {
+                    entry.Text = fixedString + entry.Text.TrimStart(fixedString.ToCharArray());
+
+                    cursorPosition = fixedString.Length;
+                }
+
+                entry.SelectionStart = cursorPosition;
+            }
+        }
+
+        private void PRIS_Label_Rich_Load(object sender, EventArgs e)
+        {
+            if (SpecialChar != null) 
+            {
+                string fixedString = SpecialChar + " ";
+
+                if (!entry.Text.StartsWith(fixedString))
+                {
+                    entry.Text = fixedString + entry.Text.TrimStart(fixedString.ToCharArray());
+                }
+
+                entry.SelectionStart = fixedString.Length;
+            }
+        }
+
+
     }
 }

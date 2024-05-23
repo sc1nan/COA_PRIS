@@ -20,7 +20,6 @@ namespace COA_PRIS.Screens
         private Database_Manager database_manager = new Database_Manager();
         private Tab_Manager tab_Manager;
         private Activity_Manager activity_manager;
-        private Log_Message message;
 
         private readonly Projects projects_Tab = new Projects();
         private readonly Home landing_Home = new Home();
@@ -35,7 +34,7 @@ namespace COA_PRIS.Screens
             InitializeComponent();
             title_Panel.BringToFront();
 
-            Activity_Manager.CurrentUser = "admin";
+            Activity_Manager.CurrentUser = "TSO_Dev";
             //this.AutoScaleMode = AutoScaleMode.Dpi;
         }
 
@@ -47,11 +46,11 @@ namespace COA_PRIS.Screens
             foreach (Control control in tab_panel.Controls)
                 tab_Manager.Nav_buttons.Add(control.Controls[0]);
 
-            //activity_manager.Log_Activity(Activity_Manager.CurrentUser, "Logged In");
+            activity_manager.Log_Activity(Activity_Manager.CurrentUser, "Logged In");
 
             tab_Manager.Header_Title = headerTitle;
             tab_Manager.active_Button(EmployeeBtn, true);
-            UserBtn.PerformClick();
+            ProjectBtn.PerformClick();
 
             gunaLabel1.Text = Activity_Manager.CurrentUser;
 

@@ -13,6 +13,13 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
     public partial class PRIS_Date_Picker : UserControl, IPRIS_UserControl
     {
         public bool IsRequiredValue = false;
+        public string DisplayFormat;
+
+        public bool IsVisible 
+        {
+            get { return this.Visible; }
+            set { this.Visible = value; }
+        }
         public Control ErrorRoot
         {
             get { return date; }
@@ -33,16 +40,31 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
         }
         public bool ReadOnly
         {
-            get { return date.Enabled; }
-            set { date.Enabled = value; }
+            get { return date.Visible; }
+            set 
+            {
+                ReadOnly_Function(value);
+            }
         }
 
         public string Value
         {
-            get { return date.Value.ToString("yyyy-MM-dd HH:mm:ss"); }
+            get 
+            {
+                //DateTime time = DateTime.Now;
+                //var value = $"{date.Value.ToString("yyyy-MM-dd")} {time.ToString("HH:mm:ss")}";
+                return date.Value.ToString("yyyy-MM-dd HH:mm:ss");  
+            }
             set
-            { //if (!string.IsNullOrEmpty(value)) date.Value = DateTime.Parse(value); }
+            {
                 date.Value = !string.IsNullOrEmpty(value) ? DateTime.Parse(value) : DateTime.Now;
+
+                if (date.Format == DateTimePickerFormat.Long)
+                    readOnly_Entry.Text = date.Value.ToLongDateString();
+                else if (date.Format == DateTimePickerFormat.Short)
+                    readOnly_Entry.Text = date.Value.ToShortDateString();
+                else
+                    readOnly_Entry.Text = date.Value.ToString(DisplayFormat);
             }
         }
         public PRIS_Date_Picker()
@@ -51,12 +73,23 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
             date.Value = DateTime.Today;
         }
 
-        public PRIS_Date_Picker(string _title, bool _isRequired = true)
+        public PRIS_Date_Picker(string _title, bool _isRequired = true, bool _isReadOnly = false, string _diplayFormat = "yyyy-MM-dd HH:mm:ss", 
+            DateTimePickerFormat _displayDate = DateTimePickerFormat.Long)
         {
             InitializeComponent();
             date.Value = DateTime.Today;
             this.title.Text = _title;
             this.IsRequired = _isRequired;
+            DisplayFormat = _diplayFormat;
+            date.CustomFormat = _diplayFormat;
+            date.Format = _displayDate;
+            this.ReadOnly = _isReadOnly;
+        }
+
+        private void ReadOnly_Function(bool value) 
+        {
+            readOnly_Entry.Visible = value;
+            date.Visible = !value;
         }
 
     }

@@ -17,7 +17,38 @@ namespace COA_PRIS.Utilities
     internal class Util
     {
         private Database_Manager db_Manager;
-        public string GenerateID(string _table)
+
+        public string GenarateUID(string _table)
+        {
+            db_Manager = new Database_Manager();
+            Random random = new Random();
+            string code;
+            int length = 0;
+
+            string date = DateTime.Now.ToString("yyMMdd");
+            const string digits = "0123456789";
+
+            using (db_Manager)
+            {
+                code = (string)db_Manager.ExecuteScalar(string.Format(Database_Query.get_code, _table));
+                length = Convert.ToInt32(db_Manager.ExecuteScalar(string.Format(Database_Query.get_length, _table)));
+            }
+
+            int fixedPartLength = code.Length + date.Length + 1; // 1 for the underscore
+            int randomLength = length - fixedPartLength;
+
+            if (randomLength < 1)
+            {
+                throw new ArgumentException("Total length is too short to accommodate the fixed parts and at least one random character.");
+            }
+
+            string randomNumbers = new string(Enumerable.Repeat(digits, randomLength)
+                                                       .Select(s => s[random.Next(s.Length)])
+                                                       .ToArray());
+
+            return $"{code}{date}_{randomNumbers}";
+        }
+        public string GenerateID( string _table)
         {
             db_Manager = new Database_Manager();
             string ret;
@@ -66,9 +97,34 @@ namespace COA_PRIS.Utilities
             }
         }
 
-        public string GenerateUserName(string _name) 
+        public string GenerateRandomID(Random random, string _table) 
         {
-            Random random = new Random();
+            DataTable code_info;
+            db_Manager = new Database_Manager();
+
+            using (db_Manager)
+                code_info = db_Manager.ExecuteQuery(string.Format(Database_Query.get_code_info, _table));
+            
+            
+            string prefix = (string)code_info.Rows[0]["code"] + '_';
+            int number = Convert.ToInt32(code_info.Rows[0]["num_length"]) - 4;
+
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+            //Random random = new Random();
+            
+            char[] id = new char[number];
+            for (int i = 0; i < number; i++)
+                id[i] = chars[random.Next(chars.Length)];
+
+
+            return prefix + new string(id);
+
+        
+        }
+        public string GenerateUserName(Random random, string _name) 
+        {
+            //Random random = new Random();
             int randomNumber = random.Next(100000, 1000000); 
             // Split the full name into parts
             string[] parts = _name.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
@@ -99,7 +155,7 @@ namespace COA_PRIS.Utilities
             return userName;
         }
         
-        public string GeneratePassword(string _name) 
+        public string GeneratePassword(Random random, string _name) 
         {
             // Split the full name into parts
             string[] parts = _name.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
@@ -108,7 +164,7 @@ namespace COA_PRIS.Utilities
             string lastName = parts.Length > 0 ? parts[parts.Length - 1] : "";
 
             // Generate a random 6-digit number
-            Random random = new Random();
+            //Random random = new Random();
             int randomNumber = random.Next(100000, 1000000); // Generates a number between 100000 and 999999
 
             // Combine the last name and the random number
@@ -240,7 +296,6 @@ namespace COA_PRIS.Utilities
             while (q_control.Count > 0)
             {
                 Control con = q_control.Dequeue();
-
                 foreach (Type type in types)
                 {
                     if (type.IsAssignableFrom(con.GetType()))

@@ -104,6 +104,7 @@
             this.entry.Size = new System.Drawing.Size(363, 90);
             this.entry.TabIndex = 0;
             this.entry.Text = "";
+            this.entry.TextChanged += new System.EventHandler(this.entry_TextChanged);
             this.entry.Enter += new System.EventHandler(this.entry_Enter);
             this.entry.Leave += new System.EventHandler(this.entry_Leave);
             // 
@@ -114,6 +115,7 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "PRIS_Label_Rich";
             this.Size = new System.Drawing.Size(400, 150);
+            this.Load += new System.EventHandler(this.PRIS_Label_Rich_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.entry_Panel.ResumeLayout(false);

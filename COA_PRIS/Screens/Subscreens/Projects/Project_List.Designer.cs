@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.top_Panel = new Guna.UI.WinForms.GunaPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.PRIS_Seachbox = new COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Search_DropBox();
             this.refresh_Btn = new Guna.UI.WinForms.GunaButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.add_RecordBtn = new Guna.UI.WinForms.GunaButton();
@@ -42,6 +43,7 @@
             this.container_subPanel = new Guna.UI.WinForms.GunaPanel();
             this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
             this.data_View = new Guna.UI.WinForms.GunaDataGridView();
+            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.top_Panel.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -59,30 +61,29 @@
             this.top_Panel.Location = new System.Drawing.Point(0, 0);
             this.top_Panel.Margin = new System.Windows.Forms.Padding(0);
             this.top_Panel.Name = "top_Panel";
-            this.top_Panel.Size = new System.Drawing.Size(1591, 50);
+            this.top_Panel.Size = new System.Drawing.Size(1591, 68);
             this.top_Panel.TabIndex = 4;
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
-            this.flowLayoutPanel2.Controls.Add(this.gunaElipsePanel1);
+            this.flowLayoutPanel2.Controls.Add(this.PRIS_Seachbox);
             this.flowLayoutPanel2.Controls.Add(this.refresh_Btn);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(1345, 50);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(1335, 68);
             this.flowLayoutPanel2.TabIndex = 1;
             // 
-            // gunaElipsePanel1
+            // PRIS_Seachbox
             // 
-            this.gunaElipsePanel1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaElipsePanel1.BaseColor = System.Drawing.Color.Gainsboro;
-            this.gunaElipsePanel1.Location = new System.Drawing.Point(0, 0);
-            this.gunaElipsePanel1.Margin = new System.Windows.Forms.Padding(0, 0, 8, 0);
-            this.gunaElipsePanel1.Name = "gunaElipsePanel1";
-            this.gunaElipsePanel1.Radius = 8;
-            this.gunaElipsePanel1.Size = new System.Drawing.Size(435, 50);
-            this.gunaElipsePanel1.TabIndex = 3;
+            this.PRIS_Seachbox.Location = new System.Drawing.Point(3, 3);
+            this.PRIS_Seachbox.Margin = new System.Windows.Forms.Padding(3, 3, 8, 3);
+            this.PRIS_Seachbox.Name = "PRIS_Seachbox";
+            this.PRIS_Seachbox.Search_Text = "";
+            this.PRIS_Seachbox.Size = new System.Drawing.Size(620, 60);
+            this.PRIS_Seachbox.TabIndex = 3;
             // 
             // refresh_Btn
             // 
@@ -92,24 +93,26 @@
             this.refresh_Btn.BackColor = System.Drawing.Color.Transparent;
             this.refresh_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(115)))), ((int)(((byte)(87)))));
             this.refresh_Btn.BorderColor = System.Drawing.Color.Black;
+            this.refresh_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.refresh_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.refresh_Btn.FocusedColor = System.Drawing.Color.Empty;
             this.refresh_Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.refresh_Btn.ForeColor = System.Drawing.Color.White;
             this.refresh_Btn.Image = global::COA_PRIS.Properties.Resources.refresh__1_;
             this.refresh_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.refresh_Btn.ImageSize = new System.Drawing.Size(30, 30);
-            this.refresh_Btn.Location = new System.Drawing.Point(443, 0);
-            this.refresh_Btn.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            this.refresh_Btn.ImageSize = new System.Drawing.Size(35, 35);
+            this.refresh_Btn.Location = new System.Drawing.Point(631, 5);
+            this.refresh_Btn.Margin = new System.Windows.Forms.Padding(0, 5, 0, 8);
             this.refresh_Btn.Name = "refresh_Btn";
-            this.refresh_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.refresh_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(99)))), ((int)(((byte)(75)))));
             this.refresh_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
             this.refresh_Btn.OnHoverForeColor = System.Drawing.Color.White;
             this.refresh_Btn.OnHoverImage = null;
             this.refresh_Btn.OnPressedColor = System.Drawing.Color.Black;
-            this.refresh_Btn.Radius = 8;
-            this.refresh_Btn.Size = new System.Drawing.Size(50, 50);
+            this.refresh_Btn.Radius = 6;
+            this.refresh_Btn.Size = new System.Drawing.Size(55, 55);
             this.refresh_Btn.TabIndex = 2;
+            this.refresh_Btn.Click += new System.EventHandler(this.refresh_Btn_Click);
             // 
             // flowLayoutPanel1
             // 
@@ -119,9 +122,9 @@
             this.flowLayoutPanel1.Controls.Add(this.view_RecordBtn);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Right;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(1345, 0);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(1335, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(246, 50);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(256, 68);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
             // add_RecordBtn
@@ -133,23 +136,24 @@
             this.add_RecordBtn.BackColor = System.Drawing.Color.Transparent;
             this.add_RecordBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
             this.add_RecordBtn.BorderColor = System.Drawing.Color.Black;
+            this.add_RecordBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.add_RecordBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.add_RecordBtn.FocusedColor = System.Drawing.Color.Empty;
             this.add_RecordBtn.Font = new System.Drawing.Font("Bahnschrift", 14F);
             this.add_RecordBtn.ForeColor = System.Drawing.Color.White;
             this.add_RecordBtn.Image = global::COA_PRIS.Properties.Resources.add_file;
             this.add_RecordBtn.ImageOffsetX = 8;
-            this.add_RecordBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.add_RecordBtn.Location = new System.Drawing.Point(8, 0);
-            this.add_RecordBtn.Margin = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.add_RecordBtn.ImageSize = new System.Drawing.Size(35, 35);
+            this.add_RecordBtn.Location = new System.Drawing.Point(8, 5);
+            this.add_RecordBtn.Margin = new System.Windows.Forms.Padding(8, 0, 0, 8);
             this.add_RecordBtn.Name = "add_RecordBtn";
-            this.add_RecordBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
+            this.add_RecordBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(117)))));
             this.add_RecordBtn.OnHoverBorderColor = System.Drawing.Color.Black;
             this.add_RecordBtn.OnHoverForeColor = System.Drawing.Color.White;
             this.add_RecordBtn.OnHoverImage = null;
             this.add_RecordBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.add_RecordBtn.Radius = 5;
-            this.add_RecordBtn.Size = new System.Drawing.Size(110, 50);
+            this.add_RecordBtn.Radius = 6;
+            this.add_RecordBtn.Size = new System.Drawing.Size(120, 55);
             this.add_RecordBtn.TabIndex = 5;
             this.add_RecordBtn.Tag = "AddRecord";
             this.add_RecordBtn.Text = "Add";
@@ -164,35 +168,37 @@
             this.view_RecordBtn.BackColor = System.Drawing.Color.Transparent;
             this.view_RecordBtn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(115)))), ((int)(((byte)(87)))));
             this.view_RecordBtn.BorderColor = System.Drawing.Color.Black;
+            this.view_RecordBtn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.view_RecordBtn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.view_RecordBtn.FocusedColor = System.Drawing.Color.Empty;
             this.view_RecordBtn.Font = new System.Drawing.Font("Bahnschrift", 14F);
             this.view_RecordBtn.ForeColor = System.Drawing.Color.White;
             this.view_RecordBtn.Image = global::COA_PRIS.Properties.Resources.view_file;
             this.view_RecordBtn.ImageOffsetX = 8;
-            this.view_RecordBtn.ImageSize = new System.Drawing.Size(30, 30);
-            this.view_RecordBtn.Location = new System.Drawing.Point(126, 0);
-            this.view_RecordBtn.Margin = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.view_RecordBtn.ImageSize = new System.Drawing.Size(35, 35);
+            this.view_RecordBtn.Location = new System.Drawing.Point(136, 5);
+            this.view_RecordBtn.Margin = new System.Windows.Forms.Padding(8, 0, 0, 8);
             this.view_RecordBtn.Name = "view_RecordBtn";
-            this.view_RecordBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.view_RecordBtn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(99)))), ((int)(((byte)(75)))));
             this.view_RecordBtn.OnHoverBorderColor = System.Drawing.Color.Black;
             this.view_RecordBtn.OnHoverForeColor = System.Drawing.Color.White;
             this.view_RecordBtn.OnHoverImage = null;
             this.view_RecordBtn.OnPressedColor = System.Drawing.Color.Black;
-            this.view_RecordBtn.Radius = 5;
-            this.view_RecordBtn.Size = new System.Drawing.Size(120, 50);
+            this.view_RecordBtn.Radius = 6;
+            this.view_RecordBtn.Size = new System.Drawing.Size(120, 55);
             this.view_RecordBtn.TabIndex = 6;
             this.view_RecordBtn.Tag = "ViewRecord";
             this.view_RecordBtn.Text = "View";
+            this.view_RecordBtn.Click += new System.EventHandler(this.view_RecordBtn_Click);
             // 
             // bottom_Panel
             // 
             this.bottom_Panel.BackColor = System.Drawing.Color.Transparent;
             this.bottom_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bottom_Panel.Location = new System.Drawing.Point(0, 851);
+            this.bottom_Panel.Location = new System.Drawing.Point(0, 846);
             this.bottom_Panel.Margin = new System.Windows.Forms.Padding(0);
             this.bottom_Panel.Name = "bottom_Panel";
-            this.bottom_Panel.Size = new System.Drawing.Size(1591, 50);
+            this.bottom_Panel.Size = new System.Drawing.Size(1591, 55);
             this.bottom_Panel.TabIndex = 5;
             // 
             // container_subPanel
@@ -200,10 +206,10 @@
             this.container_subPanel.BackColor = System.Drawing.Color.Transparent;
             this.container_subPanel.Controls.Add(this.gunaPanel3);
             this.container_subPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container_subPanel.Location = new System.Drawing.Point(0, 50);
+            this.container_subPanel.Location = new System.Drawing.Point(0, 68);
             this.container_subPanel.Margin = new System.Windows.Forms.Padding(0);
             this.container_subPanel.Name = "container_subPanel";
-            this.container_subPanel.Size = new System.Drawing.Size(1591, 801);
+            this.container_subPanel.Size = new System.Drawing.Size(1591, 778);
             this.container_subPanel.TabIndex = 6;
             // 
             // gunaPanel3
@@ -214,8 +220,8 @@
             this.gunaPanel3.Location = new System.Drawing.Point(0, 0);
             this.gunaPanel3.Margin = new System.Windows.Forms.Padding(8);
             this.gunaPanel3.Name = "gunaPanel3";
-            this.gunaPanel3.Padding = new System.Windows.Forms.Padding(0, 8, 0, 8);
-            this.gunaPanel3.Size = new System.Drawing.Size(1591, 801);
+            this.gunaPanel3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            this.gunaPanel3.Size = new System.Drawing.Size(1591, 778);
             this.gunaPanel3.TabIndex = 0;
             // 
             // data_View
@@ -252,7 +258,7 @@
             this.data_View.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.data_View.EnableHeadersVisualStyles = false;
             this.data_View.GridColor = System.Drawing.Color.Gainsboro;
-            this.data_View.Location = new System.Drawing.Point(0, 8);
+            this.data_View.Location = new System.Drawing.Point(0, 0);
             this.data_View.Margin = new System.Windows.Forms.Padding(0);
             this.data_View.MultiSelect = false;
             this.data_View.Name = "data_View";
@@ -266,7 +272,7 @@
             this.data_View.ShowCellToolTips = false;
             this.data_View.ShowEditingIcon = false;
             this.data_View.ShowRowErrors = false;
-            this.data_View.Size = new System.Drawing.Size(1591, 785);
+            this.data_View.Size = new System.Drawing.Size(1591, 770);
             this.data_View.TabIndex = 1;
             this.data_View.Tag = "Table";
             this.data_View.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -292,6 +298,10 @@
             this.data_View.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.data_View.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             // 
+            // gunaElipse1
+            // 
+            this.gunaElipse1.TargetControl = this.data_View;
+            // 
             // Project_List
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -304,6 +314,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Project_List";
             this.Text = "Create_Project";
+            this.Load += new System.EventHandler(this.Project_List_Load);
             this.top_Panel.ResumeLayout(false);
             this.top_Panel.PerformLayout();
             this.flowLayoutPanel2.ResumeLayout(false);
@@ -319,7 +330,6 @@
 
         private Guna.UI.WinForms.GunaPanel top_Panel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel1;
         private Guna.UI.WinForms.GunaButton refresh_Btn;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private Guna.UI.WinForms.GunaButton add_RecordBtn;
@@ -328,5 +338,7 @@
         private Guna.UI.WinForms.GunaPanel container_subPanel;
         private Guna.UI.WinForms.GunaPanel gunaPanel3;
         private Guna.UI.WinForms.GunaDataGridView data_View;
+        private UserControlUtil.PRIS_UserControl.PRIS_Search_DropBox PRIS_Seachbox;
+        private Guna.UI.WinForms.GunaElipse gunaElipse1;
     }
 }

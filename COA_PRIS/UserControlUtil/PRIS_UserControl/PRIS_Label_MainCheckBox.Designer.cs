@@ -51,7 +51,7 @@
             this.container_Panel.Controls.Add(this.content_Panel);
             this.container_Panel.Location = new System.Drawing.Point(4, 3);
             this.container_Panel.Name = "container_Panel";
-            this.container_Panel.Size = new System.Drawing.Size(411, 104);
+            this.container_Panel.Size = new System.Drawing.Size(411, 94);
             this.container_Panel.TabIndex = 0;
             // 
             // content_Panel
@@ -65,7 +65,7 @@
             this.content_Panel.Location = new System.Drawing.Point(3, 3);
             this.content_Panel.Margin = new System.Windows.Forms.Padding(2);
             this.content_Panel.Name = "content_Panel";
-            this.content_Panel.Size = new System.Drawing.Size(406, 99);
+            this.content_Panel.Size = new System.Drawing.Size(406, 89);
             this.content_Panel.TabIndex = 0;
             // 
             // top_Panel
@@ -89,7 +89,7 @@
             // 
             this.check.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.check.BaseColor = System.Drawing.Color.White;
-            this.check.CheckedOffColor = System.Drawing.Color.Gray;
+            this.check.CheckedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             this.check.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             this.check.Cursor = System.Windows.Forms.Cursors.Hand;
             this.check.FillColor = System.Drawing.Color.White;
@@ -135,10 +135,10 @@
             this.bottom_Panel.Enabled = false;
             this.bottom_Panel.Location = new System.Drawing.Point(3, 56);
             this.bottom_Panel.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
-            this.bottom_Panel.MinimumSize = new System.Drawing.Size(400, 40);
+            this.bottom_Panel.MinimumSize = new System.Drawing.Size(400, 30);
             this.bottom_Panel.Name = "bottom_Panel";
             this.bottom_Panel.Padding = new System.Windows.Forms.Padding(40, 0, 20, 0);
-            this.bottom_Panel.Size = new System.Drawing.Size(400, 40);
+            this.bottom_Panel.Size = new System.Drawing.Size(400, 30);
             this.bottom_Panel.TabIndex = 1;
             this.bottom_Panel.Visible = false;
             // 
@@ -154,7 +154,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.container_Panel);
             this.Name = "PRIS_Label_MainCheckBox";
-            this.Size = new System.Drawing.Size(418, 110);
+            this.Size = new System.Drawing.Size(418, 100);
             this.Load += new System.EventHandler(this.PRIS_Label_RoleCheckBox_Load);
             this.SizeChanged += new System.EventHandler(this.PRIS_Label_MainCheckBox_SizeChanged);
             this.container_Panel.ResumeLayout(false);
@@ -173,10 +173,10 @@
         private Guna.UI.WinForms.GunaElipsePanel container_Panel;
         private System.Windows.Forms.FlowLayoutPanel content_Panel;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
-        private System.Windows.Forms.FlowLayoutPanel bottom_Panel;
         private System.Windows.Forms.TableLayoutPanel top_Panel;
         private Guna.UI.WinForms.GunaMediumCheckBox check;
         private Guna.UI.WinForms.GunaLabel title;
         private Guna.UI.WinForms.GunaLinePanel gunaLinePanel1;
+        private System.Windows.Forms.FlowLayoutPanel bottom_Panel;
     }
 }
