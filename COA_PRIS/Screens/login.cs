@@ -17,7 +17,6 @@ namespace COA_PRIS
         private Activity_Manager activity_manager;
         private Database_Manager database_manager;
 
-        private bool is_ClosingProgrammaticallty = false;
         public Login()
         {
             InitializeComponent();
@@ -148,10 +147,11 @@ namespace COA_PRIS
                     if (MessageBox.Show("Are you sure you want to close the application?", "Close Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == DialogResult.No)
                         e.Cancel = true;
 
-                    else if (e.CloseReason == CloseReason.WindowsShutDown)
+                    else
                         Application.Exit();
 
-            
+
+
 
         }
     }

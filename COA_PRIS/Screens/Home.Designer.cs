@@ -31,9 +31,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.panel_1 = new Guna.UI.WinForms.GunaPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
@@ -68,6 +68,7 @@
             this.table_Panel = new Guna.UI.WinForms.GunaElipsePanel();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.data_View = new Guna.UI.WinForms.GunaDataGridView();
+            this.title = new Guna.UI.WinForms.GunaLabel();
             this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             this.gunaPanel7 = new Guna.UI.WinForms.GunaPanel();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
@@ -77,31 +78,30 @@
             this.gunaPanel9 = new Guna.UI.WinForms.GunaPanel();
             this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
             this.tableLayoutPanel8 = new System.Windows.Forms.TableLayoutPanel();
-            this.gunaElipsePanel4 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.gunaPanel12 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaElipse4 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.gunaElipse5 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.gunaElipse6 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.gunaElipse7 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.gunaElipse8 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.timer = new System.Windows.Forms.Timer(this.components);
-            this.title = new Guna.UI.WinForms.GunaLabel();
-            this.gunaPanel11 = new Guna.UI.WinForms.GunaPanel();
-            this.animated = new Guna.UI.WinForms.GunaTransfarantPictureBox();
-            this.date_time = new Guna.UI.WinForms.GunaLabel();
-            this.timeIndicator = new Guna.UI.WinForms.GunaPictureBox();
-            this.gunaPanel10 = new Guna.UI.WinForms.GunaPanel();
-            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
-            this.gunaLabel11 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaLabel10 = new Guna.UI.WinForms.GunaLabel();
-            this.total_num = new Guna.UI.WinForms.GunaLabel();
-            this.top_Panel = new Guna.UI.WinForms.GunaPanel();
             this.today_panel = new Guna.UI.WinForms.GunaPanel();
             this.tableLayoutPanel9 = new System.Windows.Forms.TableLayoutPanel();
             this.today_num = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel6 = new Guna.UI.WinForms.GunaLabel();
             this.gunaLabel7 = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel13 = new Guna.UI.WinForms.GunaPanel();
+            this.top_Panel = new Guna.UI.WinForms.GunaPanel();
+            this.tableLayoutPanel10 = new System.Windows.Forms.TableLayoutPanel();
+            this.total_num = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel10 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaLabel11 = new Guna.UI.WinForms.GunaLabel();
+            this.gunaPanel10 = new Guna.UI.WinForms.GunaPanel();
+            this.gunaElipsePanel4 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.gunaPanel12 = new Guna.UI.WinForms.GunaPanel();
+            this.date_time = new Guna.UI.WinForms.GunaLabel();
+            this.gunaPanel11 = new Guna.UI.WinForms.GunaPanel();
+            this.timeIndicator = new Guna.UI.WinForms.GunaPictureBox();
+            this.gunaElipse4 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.gunaElipse5 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.gunaElipse6 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.gunaElipse7 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.gunaElipse8 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.animated = new Guna.UI.WinForms.GunaTransfarantPictureBox();
             this.panel_1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.gunaPanel2.SuspendLayout();
@@ -122,26 +122,15 @@
             this.tableLayoutPanel7.SuspendLayout();
             this.gunaElipsePanel2.SuspendLayout();
             this.tableLayoutPanel8.SuspendLayout();
+            this.today_panel.SuspendLayout();
+            this.tableLayoutPanel9.SuspendLayout();
+            this.top_Panel.SuspendLayout();
+            this.tableLayoutPanel10.SuspendLayout();
             this.gunaElipsePanel4.SuspendLayout();
             this.gunaPanel12.SuspendLayout();
             this.gunaPanel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.animated)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeIndicator)).BeginInit();
-            this.tableLayoutPanel10.SuspendLayout();
-            this.top_Panel.SuspendLayout();
-            this.today_panel.SuspendLayout();
-            this.tableLayoutPanel9.SuspendLayout();
-            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
-            this.gunaElipsePanel5 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.gunaElipsePanel4 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.gunaElipsePanel6 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.gunaElipsePanel3 = new Guna.UI.WinForms.GunaElipsePanel();
-            this.Main_Panel.SuspendLayout();
-            this.gunaElipsePanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.animated)).BeginInit();
             this.SuspendLayout();
             // 
             // gunaElipse1
@@ -505,7 +494,7 @@
             this.gunaElipsePanel3.Margin = new System.Windows.Forms.Padding(10);
             this.gunaElipsePanel3.Name = "gunaElipsePanel3";
             this.gunaElipsePanel3.Size = new System.Drawing.Size(1062, 279);
-            this.gunaElipsePanel3.TabIndex = 2;
+            this.gunaElipsePanel3.TabIndex = 4;
             // 
             // tableLayoutPanel2
             // 
@@ -583,30 +572,30 @@
             this.data_View.AllowUserToDeleteRows = false;
             this.data_View.AllowUserToResizeColumns = false;
             this.data_View.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.data_View.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.data_View.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.data_View.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.data_View.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.data_View.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.data_View.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.data_View.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data_View.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data_View.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.data_View.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.data_View.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.data_View.DefaultCellStyle = dataGridViewCellStyle3;
             this.data_View.Dock = System.Windows.Forms.DockStyle.Fill;
             this.data_View.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.data_View.EnableHeadersVisualStyles = false;
@@ -651,6 +640,20 @@
             this.data_View.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.data_View.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             // 
+            // title
+            // 
+            this.title.Dock = System.Windows.Forms.DockStyle.Top;
+            this.title.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.title.Location = new System.Drawing.Point(10, 15);
+            this.title.MinimumSize = new System.Drawing.Size(100, 30);
+            this.title.Name = "title";
+            this.title.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.title.Size = new System.Drawing.Size(1531, 30);
+            this.title.TabIndex = 4;
+            this.title.Text = "Recent Projects This Week";
+            this.title.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
+            // 
             // gunaElipsePanel1
             // 
             this.gunaElipsePanel1.BackColor = System.Drawing.Color.Transparent;
@@ -661,8 +664,9 @@
             this.gunaElipsePanel1.Location = new System.Drawing.Point(10, 10);
             this.gunaElipsePanel1.Margin = new System.Windows.Forms.Padding(10);
             this.gunaElipsePanel1.Name = "gunaElipsePanel1";
+            this.gunaElipsePanel1.Radius = 20;
             this.gunaElipsePanel1.Size = new System.Drawing.Size(1062, 103);
-            this.gunaElipsePanel1.TabIndex = 0;
+            this.gunaElipsePanel1.TabIndex = 4;
             // 
             // gunaPanel7
             // 
@@ -753,8 +757,9 @@
             this.gunaElipsePanel2.Margin = new System.Windows.Forms.Padding(10);
             this.gunaElipsePanel2.Name = "gunaElipsePanel2";
             this.gunaElipsePanel2.Padding = new System.Windows.Forms.Padding(20);
+            this.gunaElipsePanel2.Radius = 20;
             this.gunaElipsePanel2.Size = new System.Drawing.Size(469, 279);
-            this.gunaElipsePanel2.TabIndex = 1;
+            this.gunaElipsePanel2.TabIndex = 4;
             // 
             // tableLayoutPanel8
             // 
@@ -770,201 +775,6 @@
             this.tableLayoutPanel8.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel8.Size = new System.Drawing.Size(429, 239);
             this.tableLayoutPanel8.TabIndex = 0;
-            // 
-            // gunaElipsePanel4
-            // 
-            this.gunaElipsePanel4.BackColor = System.Drawing.Color.Transparent;
-            this.gunaElipsePanel4.BaseColor = System.Drawing.Color.White;
-            this.gunaElipsePanel4.Controls.Add(this.gunaPanel12);
-            this.gunaElipsePanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaElipsePanel4.Location = new System.Drawing.Point(1092, 10);
-            this.gunaElipsePanel4.Margin = new System.Windows.Forms.Padding(10);
-            this.gunaElipsePanel4.Name = "gunaElipsePanel4";
-            this.gunaElipsePanel4.Size = new System.Drawing.Size(469, 103);
-            this.gunaElipsePanel4.TabIndex = 4;
-            // 
-            // gunaPanel12
-            // 
-            this.gunaPanel12.Controls.Add(this.date_time);
-            this.gunaPanel12.Controls.Add(this.gunaPanel11);
-            this.gunaPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gunaPanel12.Location = new System.Drawing.Point(0, 0);
-            this.gunaPanel12.Name = "gunaPanel12";
-            this.gunaPanel12.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.gunaPanel12.Size = new System.Drawing.Size(469, 103);
-            this.gunaPanel12.TabIndex = 1;
-            // 
-            // gunaElipse4
-            // 
-            this.gunaElipse4.Radius = 6;
-            this.gunaElipse4.TargetControl = this.panel_4;
-            // 
-            // gunaElipse5
-            // 
-            this.gunaElipse5.Radius = 6;
-            this.gunaElipse5.TargetControl = this.data_View;
-            // 
-            // gunaElipse6
-            // 
-            this.gunaElipse6.Radius = 6;
-            this.gunaElipse6.TargetControl = this.top_Panel;
-            // 
-            // gunaElipse7
-            // 
-            this.gunaElipse7.Radius = 6;
-            this.gunaElipse7.TargetControl = this.today_panel;
-            // 
-            // gunaElipse8
-            // 
-            this.gunaElipse8.Radius = 6;
-            this.gunaElipse8.TargetControl = this.tableLayoutPanel7;
-            // 
-            // timer
-            // 
-            this.timer.Interval = 1000;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
-            // 
-            // title
-            // 
-            this.title.Dock = System.Windows.Forms.DockStyle.Top;
-            this.title.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.title.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.title.Location = new System.Drawing.Point(10, 15);
-            this.title.MinimumSize = new System.Drawing.Size(100, 30);
-            this.title.Name = "title";
-            this.title.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.title.Size = new System.Drawing.Size(1531, 30);
-            this.title.TabIndex = 4;
-            this.title.Text = "Recent Projects This Week";
-            this.title.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
-            // 
-            // gunaPanel11
-            // 
-            this.gunaPanel11.Controls.Add(this.timeIndicator);
-            this.gunaPanel11.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gunaPanel11.Location = new System.Drawing.Point(368, 0);
-            this.gunaPanel11.Name = "gunaPanel11";
-            this.gunaPanel11.Padding = new System.Windows.Forms.Padding(5);
-            this.gunaPanel11.Size = new System.Drawing.Size(91, 103);
-            this.gunaPanel11.TabIndex = 2;
-            // 
-            // animated
-            // 
-            this.animated.BackColor = System.Drawing.Color.Transparent;
-            this.animated.BaseColor = System.Drawing.Color.Black;
-            this.animated.Image = global::COA_PRIS.Properties.Resources.cat;
-            this.animated.Location = new System.Drawing.Point(35, 32);
-            this.animated.Name = "animated";
-            this.animated.Size = new System.Drawing.Size(115, 115);
-            this.animated.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.animated.TabIndex = 6;
-            this.animated.TabStop = false;
-            // 
-            // date_time
-            // 
-            this.date_time.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.date_time.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date_time.Location = new System.Drawing.Point(10, 0);
-            this.date_time.Name = "date_time";
-            this.date_time.Padding = new System.Windows.Forms.Padding(10);
-            this.date_time.Size = new System.Drawing.Size(358, 103);
-            this.date_time.TabIndex = 3;
-            this.date_time.Text = "Friday, December 1, 2023";
-            this.date_time.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // timeIndicator
-            // 
-            this.timeIndicator.BaseColor = System.Drawing.Color.White;
-            this.timeIndicator.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.timeIndicator.Image = global::COA_PRIS.Properties.Resources.sunrise;
-            this.timeIndicator.Location = new System.Drawing.Point(5, 5);
-            this.timeIndicator.Name = "timeIndicator";
-            this.timeIndicator.Size = new System.Drawing.Size(81, 93);
-            this.timeIndicator.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.timeIndicator.TabIndex = 0;
-            this.timeIndicator.TabStop = false;
-            // 
-            // gunaPanel10
-            // 
-            this.gunaPanel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.gunaPanel10.Dock = System.Windows.Forms.DockStyle.Top;
-            this.gunaPanel10.Location = new System.Drawing.Point(0, 0);
-            this.gunaPanel10.Margin = new System.Windows.Forms.Padding(10);
-            this.gunaPanel10.Name = "gunaPanel10";
-            this.gunaPanel10.Size = new System.Drawing.Size(205, 10);
-            this.gunaPanel10.TabIndex = 1;
-            // 
-            // tableLayoutPanel10
-            // 
-            this.tableLayoutPanel10.ColumnCount = 1;
-            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.Controls.Add(this.total_num, 0, 1);
-            this.tableLayoutPanel10.Controls.Add(this.gunaLabel10, 0, 2);
-            this.tableLayoutPanel10.Controls.Add(this.gunaLabel11, 0, 0);
-            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel10.Location = new System.Drawing.Point(0, 10);
-            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
-            this.tableLayoutPanel10.RowCount = 3;
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel10.Size = new System.Drawing.Size(205, 229);
-            this.tableLayoutPanel10.TabIndex = 4;
-            // 
-            // gunaLabel11
-            // 
-            this.gunaLabel11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gunaLabel11.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.gunaLabel11.Location = new System.Drawing.Point(20, 0);
-            this.gunaLabel11.MinimumSize = new System.Drawing.Size(100, 30);
-            this.gunaLabel11.Name = "gunaLabel11";
-            this.gunaLabel11.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.gunaLabel11.Size = new System.Drawing.Size(164, 50);
-            this.gunaLabel11.TabIndex = 7;
-            this.gunaLabel11.Text = "Total";
-            this.gunaLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // gunaLabel10
-            // 
-            this.gunaLabel10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gunaLabel10.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gunaLabel10.ForeColor = System.Drawing.Color.DimGray;
-            this.gunaLabel10.Location = new System.Drawing.Point(3, 189);
-            this.gunaLabel10.MinimumSize = new System.Drawing.Size(100, 30);
-            this.gunaLabel10.Name = "gunaLabel10";
-            this.gunaLabel10.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.gunaLabel10.Size = new System.Drawing.Size(199, 40);
-            this.gunaLabel10.TabIndex = 8;
-            this.gunaLabel10.Text = "Records";
-            this.gunaLabel10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // total_num
-            // 
-            this.total_num.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.total_num.Font = new System.Drawing.Font("Bahnschrift SemiBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.total_num.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.total_num.Location = new System.Drawing.Point(3, 50);
-            this.total_num.MinimumSize = new System.Drawing.Size(100, 30);
-            this.total_num.Name = "total_num";
-            this.total_num.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.total_num.Size = new System.Drawing.Size(199, 139);
-            this.total_num.TabIndex = 11;
-            this.total_num.Text = "0";
-            this.total_num.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // top_Panel
-            // 
-            this.top_Panel.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.top_Panel.Controls.Add(this.tableLayoutPanel10);
-            this.top_Panel.Controls.Add(this.gunaPanel10);
-            this.top_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.top_Panel.Location = new System.Drawing.Point(224, 0);
-            this.top_Panel.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.top_Panel.Name = "top_Panel";
-            this.top_Panel.Size = new System.Drawing.Size(205, 239);
-            this.top_Panel.TabIndex = 5;
             // 
             // today_panel
             // 
@@ -1048,47 +858,186 @@
             this.gunaPanel13.Size = new System.Drawing.Size(204, 10);
             this.gunaPanel13.TabIndex = 1;
             // 
-            // label1
+            // top_Panel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 276);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(275, 29);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Recently Added Projects";
+            this.top_Panel.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.top_Panel.Controls.Add(this.tableLayoutPanel10);
+            this.top_Panel.Controls.Add(this.gunaPanel10);
+            this.top_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.top_Panel.Location = new System.Drawing.Point(224, 0);
+            this.top_Panel.Margin = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.top_Panel.Name = "top_Panel";
+            this.top_Panel.Size = new System.Drawing.Size(205, 239);
+            this.top_Panel.TabIndex = 5;
             // 
-            // gunaElipsePanel1
+            // tableLayoutPanel10
             // 
-            this.gunaElipsePanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaElipsePanel1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaElipsePanel1.BaseColor = System.Drawing.Color.White;
-            this.gunaElipsePanel1.Location = new System.Drawing.Point(812, 23);
-            this.gunaElipsePanel1.Name = "gunaElipsePanel1";
-            this.gunaElipsePanel1.Radius = 20;
-            this.gunaElipsePanel1.Size = new System.Drawing.Size(411, 230);
-            this.gunaElipsePanel1.TabIndex = 4;
+            this.tableLayoutPanel10.ColumnCount = 1;
+            this.tableLayoutPanel10.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.Controls.Add(this.total_num, 0, 1);
+            this.tableLayoutPanel10.Controls.Add(this.gunaLabel10, 0, 2);
+            this.tableLayoutPanel10.Controls.Add(this.gunaLabel11, 0, 0);
+            this.tableLayoutPanel10.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel10.Location = new System.Drawing.Point(0, 10);
+            this.tableLayoutPanel10.Name = "tableLayoutPanel10";
+            this.tableLayoutPanel10.RowCount = 3;
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel10.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel10.Size = new System.Drawing.Size(205, 229);
+            this.tableLayoutPanel10.TabIndex = 4;
             // 
-            // gunaElipsePanel2
+            // total_num
             // 
-            this.gunaElipsePanel2.BackColor = System.Drawing.Color.Transparent;
-            this.gunaElipsePanel2.BaseColor = System.Drawing.Color.White;
-            this.gunaElipsePanel2.Location = new System.Drawing.Point(37, 23);
-            this.gunaElipsePanel2.Name = "gunaElipsePanel2";
-            this.gunaElipsePanel2.Radius = 20;
-            this.gunaElipsePanel2.Size = new System.Drawing.Size(411, 230);
-            this.gunaElipsePanel2.TabIndex = 4;
+            this.total_num.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.total_num.Font = new System.Drawing.Font("Bahnschrift SemiBold", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.total_num.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.total_num.Location = new System.Drawing.Point(3, 50);
+            this.total_num.MinimumSize = new System.Drawing.Size(100, 30);
+            this.total_num.Name = "total_num";
+            this.total_num.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.total_num.Size = new System.Drawing.Size(199, 139);
+            this.total_num.TabIndex = 11;
+            this.total_num.Text = "0";
+            this.total_num.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // gunaElipsePanel3
+            // gunaLabel10
             // 
-            this.gunaElipsePanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.gunaElipsePanel3.BackColor = System.Drawing.Color.Transparent;
-            this.gunaElipsePanel3.BaseColor = System.Drawing.Color.White;
-            this.gunaElipsePanel3.Location = new System.Drawing.Point(1267, 23);
-            this.gunaElipsePanel3.Name = "gunaElipsePanel3";
-            this.gunaElipsePanel3.Radius = 20;
-            this.gunaElipsePanel3.Size = new System.Drawing.Size(414, 230);
-            this.gunaElipsePanel3.TabIndex = 4;
+            this.gunaLabel10.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.gunaLabel10.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel10.ForeColor = System.Drawing.Color.DimGray;
+            this.gunaLabel10.Location = new System.Drawing.Point(3, 189);
+            this.gunaLabel10.MinimumSize = new System.Drawing.Size(100, 30);
+            this.gunaLabel10.Name = "gunaLabel10";
+            this.gunaLabel10.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.gunaLabel10.Size = new System.Drawing.Size(199, 40);
+            this.gunaLabel10.TabIndex = 8;
+            this.gunaLabel10.Text = "Records";
+            this.gunaLabel10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // gunaLabel11
+            // 
+            this.gunaLabel11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gunaLabel11.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gunaLabel11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.gunaLabel11.Location = new System.Drawing.Point(20, 0);
+            this.gunaLabel11.MinimumSize = new System.Drawing.Size(100, 30);
+            this.gunaLabel11.Name = "gunaLabel11";
+            this.gunaLabel11.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.gunaLabel11.Size = new System.Drawing.Size(164, 50);
+            this.gunaLabel11.TabIndex = 7;
+            this.gunaLabel11.Text = "Total";
+            this.gunaLabel11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // gunaPanel10
+            // 
+            this.gunaPanel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.gunaPanel10.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gunaPanel10.Location = new System.Drawing.Point(0, 0);
+            this.gunaPanel10.Margin = new System.Windows.Forms.Padding(10);
+            this.gunaPanel10.Name = "gunaPanel10";
+            this.gunaPanel10.Size = new System.Drawing.Size(205, 10);
+            this.gunaPanel10.TabIndex = 1;
+            // 
+            // gunaElipsePanel4
+            // 
+            this.gunaElipsePanel4.BackColor = System.Drawing.Color.Transparent;
+            this.gunaElipsePanel4.BaseColor = System.Drawing.Color.White;
+            this.gunaElipsePanel4.Controls.Add(this.gunaPanel12);
+            this.gunaElipsePanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gunaElipsePanel4.Location = new System.Drawing.Point(1092, 10);
+            this.gunaElipsePanel4.Margin = new System.Windows.Forms.Padding(10);
+            this.gunaElipsePanel4.Name = "gunaElipsePanel4";
+            this.gunaElipsePanel4.Size = new System.Drawing.Size(469, 103);
+            this.gunaElipsePanel4.TabIndex = 4;
+            // 
+            // gunaPanel12
+            // 
+            this.gunaPanel12.Controls.Add(this.date_time);
+            this.gunaPanel12.Controls.Add(this.gunaPanel11);
+            this.gunaPanel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gunaPanel12.Location = new System.Drawing.Point(0, 0);
+            this.gunaPanel12.Name = "gunaPanel12";
+            this.gunaPanel12.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
+            this.gunaPanel12.Size = new System.Drawing.Size(469, 103);
+            this.gunaPanel12.TabIndex = 1;
+            // 
+            // date_time
+            // 
+            this.date_time.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.date_time.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.date_time.Location = new System.Drawing.Point(10, 0);
+            this.date_time.Name = "date_time";
+            this.date_time.Padding = new System.Windows.Forms.Padding(10);
+            this.date_time.Size = new System.Drawing.Size(358, 103);
+            this.date_time.TabIndex = 3;
+            this.date_time.Text = "Friday, December 1, 2023";
+            this.date_time.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // gunaPanel11
+            // 
+            this.gunaPanel11.Controls.Add(this.timeIndicator);
+            this.gunaPanel11.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gunaPanel11.Location = new System.Drawing.Point(368, 0);
+            this.gunaPanel11.Name = "gunaPanel11";
+            this.gunaPanel11.Padding = new System.Windows.Forms.Padding(5);
+            this.gunaPanel11.Size = new System.Drawing.Size(91, 103);
+            this.gunaPanel11.TabIndex = 2;
+            // 
+            // timeIndicator
+            // 
+            this.timeIndicator.BaseColor = System.Drawing.Color.White;
+            this.timeIndicator.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.timeIndicator.Image = global::COA_PRIS.Properties.Resources.sunrise;
+            this.timeIndicator.Location = new System.Drawing.Point(5, 5);
+            this.timeIndicator.Name = "timeIndicator";
+            this.timeIndicator.Size = new System.Drawing.Size(81, 93);
+            this.timeIndicator.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.timeIndicator.TabIndex = 0;
+            this.timeIndicator.TabStop = false;
+            // 
+            // gunaElipse4
+            // 
+            this.gunaElipse4.Radius = 6;
+            this.gunaElipse4.TargetControl = this.panel_4;
+            // 
+            // gunaElipse5
+            // 
+            this.gunaElipse5.Radius = 6;
+            this.gunaElipse5.TargetControl = this.data_View;
+            // 
+            // gunaElipse6
+            // 
+            this.gunaElipse6.Radius = 6;
+            this.gunaElipse6.TargetControl = this.top_Panel;
+            // 
+            // gunaElipse7
+            // 
+            this.gunaElipse7.Radius = 6;
+            this.gunaElipse7.TargetControl = this.today_panel;
+            // 
+            // gunaElipse8
+            // 
+            this.gunaElipse8.Radius = 6;
+            this.gunaElipse8.TargetControl = this.tableLayoutPanel7;
+            // 
+            // timer
+            // 
+            this.timer.Interval = 1000;
+            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            // 
+            // animated
+            // 
+            this.animated.BackColor = System.Drawing.Color.Transparent;
+            this.animated.BaseColor = System.Drawing.Color.Black;
+            this.animated.Image = global::COA_PRIS.Properties.Resources.cat;
+            this.animated.Location = new System.Drawing.Point(35, 32);
+            this.animated.Name = "animated";
+            this.animated.Size = new System.Drawing.Size(115, 115);
+            this.animated.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.animated.TabIndex = 6;
+            this.animated.TabStop = false;
             // 
             // Home
             // 
@@ -1127,15 +1076,15 @@
             this.tableLayoutPanel7.PerformLayout();
             this.gunaElipsePanel2.ResumeLayout(false);
             this.tableLayoutPanel8.ResumeLayout(false);
+            this.today_panel.ResumeLayout(false);
+            this.tableLayoutPanel9.ResumeLayout(false);
+            this.top_Panel.ResumeLayout(false);
+            this.tableLayoutPanel10.ResumeLayout(false);
             this.gunaElipsePanel4.ResumeLayout(false);
             this.gunaPanel12.ResumeLayout(false);
             this.gunaPanel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.animated)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.timeIndicator)).EndInit();
-            this.tableLayoutPanel10.ResumeLayout(false);
-            this.top_Panel.ResumeLayout(false);
-            this.today_panel.ResumeLayout(false);
-            this.tableLayoutPanel9.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.animated)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
