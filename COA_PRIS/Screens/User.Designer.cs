@@ -31,9 +31,9 @@
             this.nav_Panel = new System.Windows.Forms.FlowLayoutPanel();
             this.user_Btn = new Guna.UI.WinForms.GunaButton();
             this.roles_Btn = new Guna.UI.WinForms.GunaButton();
+            this.deactive_Btn = new Guna.UI.WinForms.GunaButton();
             this.line_Panel = new Guna.UI.WinForms.GunaPanel();
             this.container_Panel = new Guna.UI.WinForms.GunaPanel();
-            this.deactive_Btn = new Guna.UI.WinForms.GunaButton();
             this.nav_Panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,7 +46,7 @@
             this.nav_Panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.nav_Panel.Location = new System.Drawing.Point(10, 10);
             this.nav_Panel.Name = "nav_Panel";
-            this.nav_Panel.Size = new System.Drawing.Size(1520, 55);
+            this.nav_Panel.Size = new System.Drawing.Size(1520, 60);
             this.nav_Panel.TabIndex = 3;
             // 
             // user_Btn
@@ -74,7 +74,7 @@
             this.user_Btn.OnHoverForeColor = System.Drawing.Color.White;
             this.user_Btn.OnHoverImage = null;
             this.user_Btn.OnPressedColor = System.Drawing.Color.Black;
-            this.user_Btn.Size = new System.Drawing.Size(200, 55);
+            this.user_Btn.Size = new System.Drawing.Size(200, 60);
             this.user_Btn.TabIndex = 3;
             this.user_Btn.Text = "USERS";
             this.user_Btn.TextOffsetX = 5;
@@ -105,30 +105,11 @@
             this.roles_Btn.OnHoverForeColor = System.Drawing.Color.White;
             this.roles_Btn.OnHoverImage = null;
             this.roles_Btn.OnPressedColor = System.Drawing.Color.Black;
-            this.roles_Btn.Size = new System.Drawing.Size(200, 55);
+            this.roles_Btn.Size = new System.Drawing.Size(200, 60);
             this.roles_Btn.TabIndex = 6;
             this.roles_Btn.Text = "ROLES";
             this.roles_Btn.TextOffsetX = 5;
             this.roles_Btn.Click += new System.EventHandler(this.button_Click);
-            // 
-            // line_Panel
-            // 
-            this.line_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.line_Panel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.line_Panel.Location = new System.Drawing.Point(10, 65);
-            this.line_Panel.Name = "line_Panel";
-            this.line_Panel.Size = new System.Drawing.Size(1520, 5);
-            this.line_Panel.TabIndex = 4;
-            // 
-            // container_Panel
-            // 
-            this.container_Panel.BackColor = System.Drawing.Color.White;
-            this.container_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container_Panel.Location = new System.Drawing.Point(10, 70);
-            this.container_Panel.Name = "container_Panel";
-            this.container_Panel.Padding = new System.Windows.Forms.Padding(10);
-            this.container_Panel.Size = new System.Drawing.Size(1520, 765);
-            this.container_Panel.TabIndex = 5;
             // 
             // deactive_Btn
             // 
@@ -155,12 +136,31 @@
             this.deactive_Btn.OnHoverForeColor = System.Drawing.Color.White;
             this.deactive_Btn.OnHoverImage = null;
             this.deactive_Btn.OnPressedColor = System.Drawing.Color.Black;
-            this.deactive_Btn.Size = new System.Drawing.Size(200, 55);
+            this.deactive_Btn.Size = new System.Drawing.Size(200, 60);
             this.deactive_Btn.TabIndex = 5;
             this.deactive_Btn.Text = "DEACTIVATED";
             this.deactive_Btn.TextOffsetX = 5;
             this.deactive_Btn.Visible = false;
             this.deactive_Btn.Click += new System.EventHandler(this.button_Click);
+            // 
+            // line_Panel
+            // 
+            this.line_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.line_Panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.line_Panel.Location = new System.Drawing.Point(10, 70);
+            this.line_Panel.Name = "line_Panel";
+            this.line_Panel.Size = new System.Drawing.Size(1520, 5);
+            this.line_Panel.TabIndex = 4;
+            // 
+            // container_Panel
+            // 
+            this.container_Panel.BackColor = System.Drawing.Color.White;
+            this.container_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.container_Panel.Location = new System.Drawing.Point(10, 75);
+            this.container_Panel.Name = "container_Panel";
+            this.container_Panel.Padding = new System.Windows.Forms.Padding(10, 5, 10, 10);
+            this.container_Panel.Size = new System.Drawing.Size(1520, 760);
+            this.container_Panel.TabIndex = 5;
             // 
             // User
             // 

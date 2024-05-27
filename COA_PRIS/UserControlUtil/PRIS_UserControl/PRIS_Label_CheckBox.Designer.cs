@@ -83,7 +83,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PRIS_Label_CheckBox";
             this.Size = new System.Drawing.Size(94, 34);
             this.tableLayoutPanel1.ResumeLayout(false);

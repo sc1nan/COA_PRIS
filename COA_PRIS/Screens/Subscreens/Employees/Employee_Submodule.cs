@@ -15,7 +15,7 @@ namespace COA_PRIS.Screens.Subscreens.Employees
 {
     public partial class Employee_Submodule : Form
     {
-        private Database_Manager database_manager = new Database_Manager();
+        private Database_Manager Database_Manager = new Database_Manager();
         private Util util = new Util();
 
         private Add_Employee add_Employee;
@@ -23,9 +23,22 @@ namespace COA_PRIS.Screens.Subscreens.Employees
         public Employee_Submodule()
         {
             InitializeComponent();
+            Access_Manager();
             
         }
+        private void Access_Manager()
+        {
+            DataTable ret;
+            using (Database_Manager)
+                ret = Database_Manager.ExecuteQuery(string.Format(Database_Query.get_user_project_access, Activity_Manager.CurrentUser));
 
+            if (ret != null)
+            {
+                add_Record.Visible = ret.Rows[0][0].ToString() == "1" ? true : false;
+                view_Record.Visible = ret.Rows[0][1].ToString() == "1" ? true : false;
+            }
+
+        }
         private void Employee_Submodule_Load(object sender, EventArgs e)
         {
             Set_Table();
@@ -35,27 +48,27 @@ namespace COA_PRIS.Screens.Subscreens.Employees
         private void Search_Callback(object sender, EventArgs e)
         {
             DataTable ret = null;
-            using (database_manager)
+            using (Database_Manager)
             {
                 switch (PRIS_Seachbox.Dropbox_Text)
                 {
                     case "All":
-                        ret = database_manager.ExecuteQuery(string.Format(Database_Query.get_all_employee_records_search, PRIS_Seachbox.Search_Text));
+                        ret = Database_Manager.ExecuteQuery(string.Format(Database_Query.get_all_employee_records_search, PRIS_Seachbox.Search_Text));
                         break;
                     case "Code":
-                        ret = database_manager.ExecuteQuery(string.Format(Database_Query.get_specific_employee_search, "emp_info_table.code", PRIS_Seachbox.Search_Text));
+                        ret = Database_Manager.ExecuteQuery(string.Format(Database_Query.get_specific_employee_search, "emp_info_table.code", PRIS_Seachbox.Search_Text));
                         break;
                     case "Full Name":
-                        ret = database_manager.ExecuteQuery(string.Format(Database_Query.get_specific_employee_search, "emp_info_table.full_name", PRIS_Seachbox.Search_Text));
+                        ret = Database_Manager.ExecuteQuery(string.Format(Database_Query.get_specific_employee_search, "emp_info_table.full_name", PRIS_Seachbox.Search_Text));
                         break;
                     case "Office":
-                        ret = database_manager.ExecuteQuery(string.Format(Database_Query.get_specific_employee_search, "office_table.title", PRIS_Seachbox.Search_Text));
+                        ret = Database_Manager.ExecuteQuery(string.Format(Database_Query.get_specific_employee_search, "office_table.title", PRIS_Seachbox.Search_Text));
                         break;
                     case "Position":
-                        ret = database_manager.ExecuteQuery(string.Format(Database_Query.get_specific_employee_search, "position_table.title ", PRIS_Seachbox.Search_Text));
+                        ret = Database_Manager.ExecuteQuery(string.Format(Database_Query.get_specific_employee_search, "position_table.title ", PRIS_Seachbox.Search_Text));
                         break;
                     case "Status":
-                        ret = database_manager.ExecuteQuery(string.Format(Database_Query.get_status_employee_search, PRIS_Seachbox.Search_Text));
+                        ret = Database_Manager.ExecuteQuery(string.Format(Database_Query.get_status_employee_search, PRIS_Seachbox.Search_Text));
                         break;
                 }
             }
@@ -83,11 +96,11 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                         ("Position", DataGridViewContentAlignment.MiddleLeft),
                         ("Status", DataGridViewContentAlignment.MiddleCenter)
                     }; ;
-            database_manager = new Database_Manager();
+            Database_Manager = new Database_Manager();
             DataTable dt;
 
-            using (database_manager)
-                dt = database_manager.ExecuteQuery(Database_Query.get_employee_records);
+            using (Database_Manager)
+                dt = Database_Manager.ExecuteQuery(Database_Query.get_employee_records);
 
 
             data_View.DataSource = util.FormatDataTable(dt);
@@ -107,8 +120,8 @@ namespace COA_PRIS.Screens.Subscreens.Employees
         {
             DataTable dt = new DataTable();
 
-            using (database_manager)
-                dt = database_manager.ExecuteQuery(Database_Query.get_employee_records);
+            using (Database_Manager)
+                dt = Database_Manager.ExecuteQuery(Database_Query.get_employee_records);
 
             data_View.DataSource = util.FormatDataTable(dt);
         }
@@ -125,5 +138,9 @@ namespace COA_PRIS.Screens.Subscreens.Employees
             view_Employee.ShowDialog();
         }
 
+        private void delete_Btn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

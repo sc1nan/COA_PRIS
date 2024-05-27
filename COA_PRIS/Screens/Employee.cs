@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace COA_PRIS.Screens
 {
-    public partial class Employee : Form
+    public partial class Employee : Form, IPRIS_Forms
     {
         private Tab_Manager tab_Manager;
 
@@ -27,6 +27,11 @@ namespace COA_PRIS.Screens
             InitializeComponent();
         }
 
+        public void FormInvoke()
+        {
+
+
+        }
         private void Employee_Load(object sender, EventArgs e)
         {
             tab_Manager = new Tab_Manager();

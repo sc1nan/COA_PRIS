@@ -65,7 +65,7 @@
             this.gunaCirclePictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gunaCirclePictureBox1.BaseColor = System.Drawing.Color.Transparent;
-            this.gunaCirclePictureBox1.Image = global::COA_PRIS.Properties.Resources.TSO_Logo_1_removebg_preview;
+            this.gunaCirclePictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("gunaCirclePictureBox1.Image")));
             this.gunaCirclePictureBox1.Location = new System.Drawing.Point(139, 42);
             this.gunaCirclePictureBox1.Name = "gunaCirclePictureBox1";
             this.gunaCirclePictureBox1.Size = new System.Drawing.Size(204, 200);
@@ -261,7 +261,7 @@
             this.gunaElipsePanel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.gunaElipsePanel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.gunaElipsePanel4.BackColor = System.Drawing.Color.Transparent;
-            this.gunaElipsePanel4.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(109)))), ((int)(((byte)(128)))));
+            this.gunaElipsePanel4.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             this.gunaElipsePanel4.Controls.Add(this.parent_Panel);
             this.gunaElipsePanel4.Location = new System.Drawing.Point(580, 67);
             this.gunaElipsePanel4.Name = "gunaElipsePanel4";

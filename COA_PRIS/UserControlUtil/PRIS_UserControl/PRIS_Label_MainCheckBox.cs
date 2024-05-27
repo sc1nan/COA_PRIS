@@ -20,6 +20,14 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
         private bool EnabledCheck = true;
         private (string, bool, bool)[] _Boxes = null;
 
+        public event EventHandler Check_Changed;
+
+        public bool IsMessageVisible
+        {
+            get { return message.Visible; }
+            set { message.Visible = value; }
+
+        }
         public bool IsVisible
         {
             get { return this.Visible; }
@@ -179,6 +187,8 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
             if (_Boxes != null && bottom_Panel.Controls.Count != 0 && !check.Checked) 
                 foreach (PRIS_Label_CheckBox checkBox in bottom_Panel.Controls) 
                     checkBox.Value = check.Checked;
+
+            Check_Changed?.Invoke(this, e);
         }
 
         private void PRIS_Label_MainCheckBox_SizeChanged(object sender, EventArgs e)

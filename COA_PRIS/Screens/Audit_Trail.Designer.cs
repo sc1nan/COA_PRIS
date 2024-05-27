@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Audit_Trail));
             this.parent_Panel = new Guna.UI.WinForms.GunaElipsePanel();
-            this.top_Panel = new Guna.UI.WinForms.GunaPanel();
-            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
-            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.content_Panel = new System.Windows.Forms.FlowLayoutPanel();
             this.priS_Label_Entry1 = new COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Label_Entry();
             this.priS_Label_Entry2 = new COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Label_Entry();
             this.priS_Label_Entry3 = new COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Label_Entry();
             this.priS_Label_Entry4 = new COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Label_Entry();
+            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.top_Panel = new Guna.UI.WinForms.GunaPanel();
+            this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.parent_Panel.SuspendLayout();
-            this.top_Panel.SuspendLayout();
             this.content_Panel.SuspendLayout();
+            this.top_Panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // parent_Panel
@@ -53,25 +53,6 @@
             resources.ApplyResources(this.parent_Panel, "parent_Panel");
             this.parent_Panel.Name = "parent_Panel";
             this.parent_Panel.Radius = 8;
-            // 
-            // top_Panel
-            // 
-            this.top_Panel.Controls.Add(this.gunaLabel1);
-            resources.ApplyResources(this.top_Panel, "top_Panel");
-            this.top_Panel.Name = "top_Panel";
-            // 
-            // gunaLabel1
-            // 
-            this.gunaLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            resources.ApplyResources(this.gunaLabel1, "gunaLabel1");
-            this.gunaLabel1.ForeColor = System.Drawing.Color.White;
-            this.gunaLabel1.Name = "gunaLabel1";
-            // 
-            // gunaPanel1
-            // 
-            this.gunaPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            resources.ApplyResources(this.gunaPanel1, "gunaPanel1");
-            this.gunaPanel1.Name = "gunaPanel1";
             // 
             // content_Panel
             // 
@@ -86,30 +67,65 @@
             // priS_Label_Entry1
             // 
             resources.ApplyResources(this.priS_Label_Entry1, "priS_Label_Entry1");
+            this.priS_Label_Entry1.IsMessageVisible = true;
+            this.priS_Label_Entry1.IsRequired = false;
+            this.priS_Label_Entry1.IsVisible = true;
             this.priS_Label_Entry1.Name = "priS_Label_Entry1";
+            this.priS_Label_Entry1.ReadOnly = false;
             this.priS_Label_Entry1.Title = "Label";
             this.priS_Label_Entry1.Value = "";
             // 
             // priS_Label_Entry2
             // 
             resources.ApplyResources(this.priS_Label_Entry2, "priS_Label_Entry2");
+            this.priS_Label_Entry2.IsMessageVisible = true;
+            this.priS_Label_Entry2.IsRequired = false;
+            this.priS_Label_Entry2.IsVisible = true;
             this.priS_Label_Entry2.Name = "priS_Label_Entry2";
+            this.priS_Label_Entry2.ReadOnly = false;
             this.priS_Label_Entry2.Title = "Label";
             this.priS_Label_Entry2.Value = "";
             // 
             // priS_Label_Entry3
             // 
             resources.ApplyResources(this.priS_Label_Entry3, "priS_Label_Entry3");
+            this.priS_Label_Entry3.IsMessageVisible = true;
+            this.priS_Label_Entry3.IsRequired = false;
+            this.priS_Label_Entry3.IsVisible = true;
             this.priS_Label_Entry3.Name = "priS_Label_Entry3";
+            this.priS_Label_Entry3.ReadOnly = false;
             this.priS_Label_Entry3.Title = "Label";
             this.priS_Label_Entry3.Value = "";
             // 
             // priS_Label_Entry4
             // 
             resources.ApplyResources(this.priS_Label_Entry4, "priS_Label_Entry4");
+            this.priS_Label_Entry4.IsMessageVisible = true;
+            this.priS_Label_Entry4.IsRequired = false;
+            this.priS_Label_Entry4.IsVisible = true;
             this.priS_Label_Entry4.Name = "priS_Label_Entry4";
+            this.priS_Label_Entry4.ReadOnly = false;
             this.priS_Label_Entry4.Title = "Label";
             this.priS_Label_Entry4.Value = "";
+            // 
+            // gunaPanel1
+            // 
+            this.gunaPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            resources.ApplyResources(this.gunaPanel1, "gunaPanel1");
+            this.gunaPanel1.Name = "gunaPanel1";
+            // 
+            // top_Panel
+            // 
+            this.top_Panel.Controls.Add(this.gunaLabel1);
+            resources.ApplyResources(this.top_Panel, "top_Panel");
+            this.top_Panel.Name = "top_Panel";
+            // 
+            // gunaLabel1
+            // 
+            this.gunaLabel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            resources.ApplyResources(this.gunaLabel1, "gunaLabel1");
+            this.gunaLabel1.ForeColor = System.Drawing.Color.White;
+            this.gunaLabel1.Name = "gunaLabel1";
             // 
             // Audit_Trail
             // 
@@ -123,8 +139,8 @@
             this.Name = "Audit_Trail";
             this.Load += new System.EventHandler(this.Audit_Trail_Load);
             this.parent_Panel.ResumeLayout(false);
-            this.top_Panel.ResumeLayout(false);
             this.content_Panel.ResumeLayout(false);
+            this.top_Panel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

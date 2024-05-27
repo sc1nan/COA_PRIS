@@ -21,7 +21,7 @@ namespace COA_PRIS.Screens.Subscreens.Employees
 {
     public partial class View_Employee : Form
     {
-        private Database_Manager database_manager = new Database_Manager();
+        private Database_Manager Database_Manager = new Database_Manager();
         private Validator validator = new Validator();
         private Util util = new Util();
 
@@ -31,6 +31,9 @@ namespace COA_PRIS.Screens.Subscreens.Employees
         private List<Control> controls;
         private List<PRIS_Label_Selector> selectors;
         public event Action callback;
+
+
+        private Dictionary<string, string> InitialValues;
         private string Record_ID
         {
             get { return emp_id.Text; }
@@ -40,11 +43,23 @@ namespace COA_PRIS.Screens.Subscreens.Employees
         {
             InitializeComponent();
             Record_ID = record_ID;
+            Access_Manager();
             InitializeControls();
             SetValues();
         }
 
+        private void Access_Manager()
+        {
+            DataTable ret;
+            using (Database_Manager)
+                ret = Database_Manager.ExecuteQuery(string.Format(Database_Query.get_user_maintenance_access, Activity_Manager.CurrentUser));
 
+            if (ret != null)
+            {
+                update_Btn.Visible = ret.Rows[0][2].ToString() == "1" ? true : false;
+            }
+
+        }
 
         private void InitializeControls() 
         {
@@ -58,21 +73,26 @@ namespace COA_PRIS.Screens.Subscreens.Employees
         {
             DataTable ret;
 
-            using (database_manager)
-                ret = database_manager.ExecuteQuery(string.Format(Database_Query.get_employee_record_by_id, this.Record_ID));
+            using (Database_Manager)
+                ret = Database_Manager.ExecuteQuery(string.Format(Database_Query.get_employee_record_by_id, this.Record_ID));
+
+            InitialValues = new Dictionary<string, string>();
 
             if (ret.Columns.Count == controls.Count)
             {
                 for (int val_Index = 0; val_Index < ret.Columns.Count; val_Index++)
                 {
                     var user_control = (IPRIS_UserControl)controls[val_Index];
-                    user_control.ReadOnly = true;
+                    
                     user_control.Value = (string)ret.Rows[0][val_Index];
 
-                    Console.WriteLine(ret.Rows[0][val_Index]);
+                    InitialValues.Add(user_control.Title, user_control.Value);
+
                 }
 
             }
+
+            validator.PRISReadOnly(control_Panel, true);
         }
         private List<UserControl[]> PRISControls()
         {
@@ -201,11 +221,13 @@ namespace COA_PRIS.Screens.Subscreens.Employees
             cancel_Btn.Visible = is_Enabled;
             cancel_Btn.Enabled = is_Enabled;
 
-            for (int con_Index = 0; con_Index < controls.Count; con_Index++)
+            validator.PRISReadOnly(control_Panel, !is_Enabled);
+
+            /*for (int con_Index = 0; con_Index < controls.Count; con_Index++)
             {
                 var user_Controls = (IPRIS_UserControl)controls[con_Index];
                 user_Controls.ReadOnly = !is_Enabled;
-            }
+            }*/
         }
 
         private void PRIS_Selector_Callback(object sender, EventArgs e)
@@ -238,8 +260,8 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                     num = 4;
                     break;
             }
-            using (database_manager)
-                ret = database_manager.ExecuteQuery(selectors[num].SelectorQuery);
+            using (Database_Manager)
+                ret = Database_Manager.ExecuteQuery(selectors[num].SelectorQuery);
 
             var isEmpty = ret.Rows.Count == 0 ? true : false;
             selectors[num].EnableSelector = !isEmpty;
@@ -257,9 +279,19 @@ namespace COA_PRIS.Screens.Subscreens.Employees
 
         private void save_Btn_Click(object sender, EventArgs e)
         {
+
             var error_Entries = util.SearchControls<Control>(control_Panel, new List<Type> { typeof(GunaTextBox), typeof(GunaButton) });
 
             if (!validator.RequiredTextBox(control_Panel, _error))
+                return;
+
+            if (validator.PRISUpdateCheck(parent_Panel, InitialValues).Count == 0)
+            {
+                MessageBox.Show("There are no changes in the project record.", "PRIS Update Confirm", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (MessageBox.Show("Are you sure you want to update?", "PRIS Update Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
                 return;
 
             Dictionary<string, string> value = new Dictionary<string, string>();
@@ -268,13 +300,13 @@ namespace COA_PRIS.Screens.Subscreens.Employees
             foreach (IPRIS_UserControl userControl in controls)
                 value.Add(userControl.Title, userControl.Value);
 
-            using (database_manager)
-                ret = database_manager.ExecuteNonQuery(string.Format(Database_Query.update_employee_record_by_id, value["Employee's Full Name"], value["Email Address"], value["Contact Number"],
+            using (Database_Manager)
+                ret = Database_Manager.ExecuteNonQuery(string.Format(Database_Query.update_employee_record_by_id, value["Employee's Full Name"], value["Email Address"], value["Contact Number"],
                                                                                         value["Section"], value["Position"], Activity_Manager.CurrentUser, emp_id.Text ));
 
             if (ret == 1)
             {
-                if (MessageBox.Show($"{emp_id.Text} is successfully added.", "New Record Added", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
+                if (MessageBox.Show($"{emp_id.Text} is successfully Updated.", "Record Updated", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                 {
                     is_ClosingProgrammatically = true;
                     callback?.Invoke();
@@ -288,8 +320,8 @@ namespace COA_PRIS.Screens.Subscreens.Employees
             if (MessageBox.Show($"Are you sure to delete {emp_id.Text}?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
 
-                using (database_manager)
-                    database_manager.ExecuteNonQuery(string.Format(Database_Query.delete_record_by_id, "emp_info_table", this.Record_ID));
+                using (Database_Manager)
+                    Database_Manager.ExecuteNonQuery(string.Format(Database_Query.delete_record_by_id, "emp_info_table", this.Record_ID));
 
                 MessageBox.Show($"{emp_id.Text} is successfully deleted", "Delete Confirmation");
                 is_ClosingProgrammatically = true;

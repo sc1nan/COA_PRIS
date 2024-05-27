@@ -25,7 +25,12 @@ namespace COA_PRIS.UserControlUtil
         public string infoText;
 
         public bool IsRequiredValue = false;
+        public bool IsMessageVisible
+        {
+            get { return message.Visible; }
+            set { message.Visible = value; }
 
+        }
         public bool IsVisible
         {
             get { return this.Visible; }
@@ -42,7 +47,11 @@ namespace COA_PRIS.UserControlUtil
         public bool IsRequired
         {
             get { return IsRequiredValue; }
-            set { IsRequiredValue = value; }
+            set
+            {
+                IsRequiredValue = value;
+                message.Text = value ? "(Required)" : "(Optional)";
+            }
         }
         public string Title
         {
@@ -116,11 +125,12 @@ namespace COA_PRIS.UserControlUtil
         public PRIS_Label_Selector(string _title, string _query, string _searchQuery,
             (string, DataGridViewContentAlignment)[] _column_Title_Alignment,
             (bool, int)[] _column_Widths, bool _enabled = true, bool _read_Only = false,
-            bool _isRequired = true 
+            bool _isRequired = true, bool _showMessage = true
             )
         {
             InitializeComponent();
             this.Title = _title;
+            this.message.Visible = _showMessage;
             this.EnableSelector = _enabled;
             this.entry.Tag = $"!req_{this.Title}";
             this.entry.Text = $"Select {this.Title} Record";

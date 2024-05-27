@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.parent_panel = new Guna.UI.WinForms.GunaPanel();
             this.container_panel_1 = new Guna.UI.WinForms.GunaPanel();
             this.container_Panel = new Guna.UI.WinForms.GunaPanel();
@@ -43,6 +43,8 @@
             this.delete_Btn = new Guna.UI.WinForms.GunaButton();
             this.top_Panel = new Guna.UI.WinForms.GunaPanel();
             this.control_Panel_Left = new System.Windows.Forms.FlowLayoutPanel();
+            this.PRIS_Seachbox = new COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Search_DropBox();
+            this.refresh_Btn = new Guna.UI.WinForms.GunaButton();
             this.right_Panel = new System.Windows.Forms.FlowLayoutPanel();
             this.view_RecordBtn = new Guna.UI.WinForms.GunaButton();
             this.add_RecordBtn = new Guna.UI.WinForms.GunaButton();
@@ -62,8 +64,6 @@
             this.sector_Btn = new Guna.UI.WinForms.GunaButton();
             this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.PRIS_Seachbox = new COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Search_DropBox();
-            this.refresh_Btn = new Guna.UI.WinForms.GunaButton();
             this.parent_panel.SuspendLayout();
             this.container_panel_1.SuspendLayout();
             this.container_Panel.SuspendLayout();
@@ -80,15 +80,13 @@
             // 
             // parent_panel
             // 
-            this.parent_panel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.parent_panel.BackColor = System.Drawing.Color.Transparent;
             this.parent_panel.Controls.Add(this.container_panel_1);
-            this.parent_panel.Location = new System.Drawing.Point(11, 12);
+            this.parent_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.parent_panel.Location = new System.Drawing.Point(10, 10);
             this.parent_panel.Margin = new System.Windows.Forms.Padding(2);
             this.parent_panel.Name = "parent_panel";
-            this.parent_panel.Size = new System.Drawing.Size(1534, 860);
+            this.parent_panel.Size = new System.Drawing.Size(1536, 864);
             this.parent_panel.TabIndex = 1;
             // 
             // container_panel_1
@@ -100,7 +98,7 @@
             this.container_panel_1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.container_panel_1.Location = new System.Drawing.Point(0, 0);
             this.container_panel_1.Name = "container_panel_1";
-            this.container_panel_1.Size = new System.Drawing.Size(1534, 860);
+            this.container_panel_1.Size = new System.Drawing.Size(1536, 864);
             this.container_panel_1.TabIndex = 3;
             // 
             // container_Panel
@@ -113,7 +111,7 @@
             this.container_Panel.Location = new System.Drawing.Point(260, 0);
             this.container_Panel.Name = "container_Panel";
             this.container_Panel.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.container_Panel.Size = new System.Drawing.Size(1274, 860);
+            this.container_Panel.Size = new System.Drawing.Size(1276, 864);
             this.container_Panel.TabIndex = 2;
             // 
             // gunaElipsePanel1
@@ -123,7 +121,7 @@
             this.gunaElipsePanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaElipsePanel1.Location = new System.Drawing.Point(8, 60);
             this.gunaElipsePanel1.Name = "gunaElipsePanel1";
-            this.gunaElipsePanel1.Size = new System.Drawing.Size(1266, 5);
+            this.gunaElipsePanel1.Size = new System.Drawing.Size(1268, 5);
             this.gunaElipsePanel1.TabIndex = 1;
             // 
             // subCon_Panel
@@ -137,7 +135,7 @@
             this.subCon_Panel.Margin = new System.Windows.Forms.Padding(0);
             this.subCon_Panel.Name = "subCon_Panel";
             this.subCon_Panel.Padding = new System.Windows.Forms.Padding(8);
-            this.subCon_Panel.Size = new System.Drawing.Size(1266, 800);
+            this.subCon_Panel.Size = new System.Drawing.Size(1268, 804);
             this.subCon_Panel.TabIndex = 6;
             // 
             // table_Panel
@@ -147,7 +145,7 @@
             this.table_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.table_Panel.Location = new System.Drawing.Point(8, 76);
             this.table_Panel.Name = "table_Panel";
-            this.table_Panel.Size = new System.Drawing.Size(1250, 658);
+            this.table_Panel.Size = new System.Drawing.Size(1252, 662);
             this.table_Panel.TabIndex = 7;
             // 
             // data_View
@@ -156,30 +154,30 @@
             this.data_View.AllowUserToDeleteRows = false;
             this.data_View.AllowUserToResizeColumns = false;
             this.data_View.AllowUserToResizeRows = false;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
-            this.data_View.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.data_View.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.data_View.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.data_View.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.data_View.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.data_View.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.data_View.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data_View.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data_View.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.data_View.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.data_View.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.data_View.DefaultCellStyle = dataGridViewCellStyle6;
             this.data_View.Dock = System.Windows.Forms.DockStyle.Fill;
             this.data_View.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.data_View.EnableHeadersVisualStyles = false;
@@ -198,7 +196,7 @@
             this.data_View.ShowCellToolTips = false;
             this.data_View.ShowEditingIcon = false;
             this.data_View.ShowRowErrors = false;
-            this.data_View.Size = new System.Drawing.Size(1250, 658);
+            this.data_View.Size = new System.Drawing.Size(1252, 662);
             this.data_View.TabIndex = 1;
             this.data_View.Tag = "Table";
             this.data_View.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna;
@@ -228,10 +226,10 @@
             // 
             this.gunaPanel2.Controls.Add(this.delete_Btn);
             this.gunaPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.gunaPanel2.Location = new System.Drawing.Point(8, 734);
+            this.gunaPanel2.Location = new System.Drawing.Point(8, 738);
             this.gunaPanel2.Name = "gunaPanel2";
             this.gunaPanel2.Padding = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.gunaPanel2.Size = new System.Drawing.Size(1250, 58);
+            this.gunaPanel2.Size = new System.Drawing.Size(1252, 58);
             this.gunaPanel2.TabIndex = 5;
             // 
             // delete_Btn
@@ -250,7 +248,7 @@
             this.delete_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.delete_Btn.ImageOffsetX = 5;
             this.delete_Btn.ImageSize = new System.Drawing.Size(30, 30);
-            this.delete_Btn.Location = new System.Drawing.Point(1199, 8);
+            this.delete_Btn.Location = new System.Drawing.Point(1201, 8);
             this.delete_Btn.Margin = new System.Windows.Forms.Padding(0, 0, 8, 8);
             this.delete_Btn.Name = "delete_Btn";
             this.delete_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
@@ -271,7 +269,7 @@
             this.top_Panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.top_Panel.Location = new System.Drawing.Point(8, 8);
             this.top_Panel.Name = "top_Panel";
-            this.top_Panel.Size = new System.Drawing.Size(1250, 68);
+            this.top_Panel.Size = new System.Drawing.Size(1252, 68);
             this.top_Panel.TabIndex = 4;
             // 
             // control_Panel_Left
@@ -285,8 +283,46 @@
             this.control_Panel_Left.Location = new System.Drawing.Point(0, 0);
             this.control_Panel_Left.Margin = new System.Windows.Forms.Padding(0);
             this.control_Panel_Left.Name = "control_Panel_Left";
-            this.control_Panel_Left.Size = new System.Drawing.Size(994, 68);
+            this.control_Panel_Left.Size = new System.Drawing.Size(996, 68);
             this.control_Panel_Left.TabIndex = 4;
+            // 
+            // PRIS_Seachbox
+            // 
+            this.PRIS_Seachbox.Location = new System.Drawing.Point(3, 3);
+            this.PRIS_Seachbox.Margin = new System.Windows.Forms.Padding(3, 3, 8, 3);
+            this.PRIS_Seachbox.Name = "PRIS_Seachbox";
+            this.PRIS_Seachbox.Search_Text = "";
+            this.PRIS_Seachbox.Size = new System.Drawing.Size(500, 60);
+            this.PRIS_Seachbox.TabIndex = 7;
+            // 
+            // refresh_Btn
+            // 
+            this.refresh_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.refresh_Btn.AnimationHoverSpeed = 0.07F;
+            this.refresh_Btn.AnimationSpeed = 0.03F;
+            this.refresh_Btn.BackColor = System.Drawing.Color.Transparent;
+            this.refresh_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(115)))), ((int)(((byte)(87)))));
+            this.refresh_Btn.BorderColor = System.Drawing.Color.Black;
+            this.refresh_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.refresh_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.refresh_Btn.FocusedColor = System.Drawing.Color.Empty;
+            this.refresh_Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.refresh_Btn.ForeColor = System.Drawing.Color.White;
+            this.refresh_Btn.Image = global::COA_PRIS.Properties.Resources.refresh__1_;
+            this.refresh_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.refresh_Btn.ImageSize = new System.Drawing.Size(35, 35);
+            this.refresh_Btn.Location = new System.Drawing.Point(511, 5);
+            this.refresh_Btn.Margin = new System.Windows.Forms.Padding(0, 5, 0, 8);
+            this.refresh_Btn.Name = "refresh_Btn";
+            this.refresh_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(99)))), ((int)(((byte)(75)))));
+            this.refresh_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.refresh_Btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.refresh_Btn.OnHoverImage = null;
+            this.refresh_Btn.OnPressedColor = System.Drawing.Color.Black;
+            this.refresh_Btn.Radius = 6;
+            this.refresh_Btn.Size = new System.Drawing.Size(55, 55);
+            this.refresh_Btn.TabIndex = 6;
+            this.refresh_Btn.Click += new System.EventHandler(this.refresh_Btn_Click);
             // 
             // right_Panel
             // 
@@ -296,7 +332,7 @@
             this.right_Panel.Controls.Add(this.add_RecordBtn);
             this.right_Panel.Dock = System.Windows.Forms.DockStyle.Right;
             this.right_Panel.FlowDirection = System.Windows.Forms.FlowDirection.BottomUp;
-            this.right_Panel.Location = new System.Drawing.Point(994, 0);
+            this.right_Panel.Location = new System.Drawing.Point(996, 0);
             this.right_Panel.Margin = new System.Windows.Forms.Padding(0);
             this.right_Panel.Name = "right_Panel";
             this.right_Panel.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -375,7 +411,7 @@
             this.gunaPanel1.Location = new System.Drawing.Point(8, 0);
             this.gunaPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(1266, 60);
+            this.gunaPanel1.Size = new System.Drawing.Size(1268, 60);
             this.gunaPanel1.TabIndex = 3;
             // 
             // title_label
@@ -397,7 +433,7 @@
             this.line_Panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.line_Panel.Location = new System.Drawing.Point(255, 0);
             this.line_Panel.Name = "line_Panel";
-            this.line_Panel.Size = new System.Drawing.Size(5, 860);
+            this.line_Panel.Size = new System.Drawing.Size(5, 864);
             this.line_Panel.TabIndex = 1;
             // 
             // nav_panel
@@ -418,7 +454,7 @@
             this.nav_panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.nav_panel.Location = new System.Drawing.Point(0, 0);
             this.nav_panel.Name = "nav_panel";
-            this.nav_panel.Size = new System.Drawing.Size(255, 860);
+            this.nav_panel.Size = new System.Drawing.Size(255, 864);
             this.nav_panel.TabIndex = 0;
             // 
             // agency_Btn
@@ -777,44 +813,6 @@
             this.gunaElipse1.Radius = 6;
             this.gunaElipse1.TargetControl = this.data_View;
             // 
-            // PRIS_Seachbox
-            // 
-            this.PRIS_Seachbox.Location = new System.Drawing.Point(3, 3);
-            this.PRIS_Seachbox.Margin = new System.Windows.Forms.Padding(3, 3, 8, 3);
-            this.PRIS_Seachbox.Name = "PRIS_Seachbox";
-            this.PRIS_Seachbox.Search_Text = "";
-            this.PRIS_Seachbox.Size = new System.Drawing.Size(500, 60);
-            this.PRIS_Seachbox.TabIndex = 7;
-            // 
-            // refresh_Btn
-            // 
-            this.refresh_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.refresh_Btn.AnimationHoverSpeed = 0.07F;
-            this.refresh_Btn.AnimationSpeed = 0.03F;
-            this.refresh_Btn.BackColor = System.Drawing.Color.Transparent;
-            this.refresh_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(115)))), ((int)(((byte)(87)))));
-            this.refresh_Btn.BorderColor = System.Drawing.Color.Black;
-            this.refresh_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.refresh_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.refresh_Btn.FocusedColor = System.Drawing.Color.Empty;
-            this.refresh_Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.refresh_Btn.ForeColor = System.Drawing.Color.White;
-            this.refresh_Btn.Image = global::COA_PRIS.Properties.Resources.refresh__1_;
-            this.refresh_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.refresh_Btn.ImageSize = new System.Drawing.Size(35, 35);
-            this.refresh_Btn.Location = new System.Drawing.Point(511, 5);
-            this.refresh_Btn.Margin = new System.Windows.Forms.Padding(0, 5, 0, 8);
-            this.refresh_Btn.Name = "refresh_Btn";
-            this.refresh_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(99)))), ((int)(((byte)(75)))));
-            this.refresh_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.refresh_Btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.refresh_Btn.OnHoverImage = null;
-            this.refresh_Btn.OnPressedColor = System.Drawing.Color.Black;
-            this.refresh_Btn.Radius = 6;
-            this.refresh_Btn.Size = new System.Drawing.Size(55, 55);
-            this.refresh_Btn.TabIndex = 6;
-            this.refresh_Btn.Click += new System.EventHandler(this.refresh_Btn_Click);
-            // 
             // Maintenance
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -824,6 +822,7 @@
             this.Controls.Add(this.parent_panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Maintenance";
+            this.Padding = new System.Windows.Forms.Padding(10);
             this.Text = "Maintenance";
             this.Load += new System.EventHandler(this.Maintenance_Load);
             this.parent_panel.ResumeLayout(false);

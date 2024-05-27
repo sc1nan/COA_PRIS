@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics.Metrics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -28,7 +29,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
 
         private string InitialString = "STSS-TSO-OD-";
 
-        Dictionary<string, string> values;
+        Dictionary<string, string> values , selectorValues;
 
         public Action ToRefresh;
         private bool is_ClosingProgrammatically = false;
@@ -52,50 +53,33 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                 if (string.Equals(pris.Title, "Sector") || string.Equals(pris.Title, "Cluster"))
                     pris.SelectionChanged += SelectorCallback;
 
-                if (string.Equals(pris.Title, "Nature"))
-                    pris.SelectionChanged += NatureToSubject;
             }
-            Reference.Text_Changed += InsertToSubject;
+
+
             Reference.SpecialChar = InitialString;
 
-        }
 
-        private void NatureToSubject(object sender, EventArgs e) 
-        {
-            var entry = (PRIS_Label_Selector)sender;
-            //Console.WriteLine(entry.Value);
 
-        }
-        private void InsertToSubject(object sender, EventArgs e) 
-        {
-            
-            var entry = (PRIS_Label_Entry)sender;
-
-            Subject.Value = entry.Value;
-            
-        
         }
         private void SelectorCallback(object sender, EventArgs e) 
         {
             var selector = (PRIS_Label_Selector)sender;
             DataTable ret;
             int num = 0;
-
             switch (selector.Title)
             {
                 case "Sector":
                     num = 1;
                     PRIS_Selectors[num].SelectorQuery = string.Format(Database_Query.get_cluster_options_by_id, selector.Value);
-                    //Subject.Value = $"{Subject.Value + "\n" + selector.RawValue}";
+                    PRIS_Selectors[num].InfoText = $"Records are based on {selector.RawValue}";
                     break;
                 case "Cluster":
                     num = 2;
                     PRIS_Selectors[num].SelectorQuery = string.Format(Database_Query.get_agency_options_by_id, selector.Value);
-                    //Subject.Value = $"{Subject.Value}-{ selector.RawValue}";
+                    PRIS_Selectors[num].InfoText = $"Records are based on {selector.RawValue  }";
                     break;
                 case "Agency":
                     num = 3;
-                    //Subject.Value = $"{Subject.Value + "\n" + selector.RawValue}";
                     break;
             }
             using (database_Manager)
@@ -131,7 +115,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                 new UserControl[]
                 {
                     new PRIS_Label_Entry(_title: "Routing Slip Number :", _isRequired: true),
-                    new PRIS_Label_Rich(_title: "Project Title :", _isRequired: true, _entryHeight: 290),
+                    new PRIS_Label_Rich(_title: "Project Title :", _isRequired: true, _entryHeight: 290, _showMessage: true),
                     new PRIS_Label_Entry(_title: "Amount :", _isRequired: true, _textAlign: HorizontalAlignment.Right, _isCurrency: true),
                     new PRIS_Date_Picker(_title: "Period :", _isRequired: true, _diplayFormat: "MMMM yyyy", _displayDate: DateTimePickerFormat.Custom, _isReadOnly: false),
                     new PRIS_Date_Picker(_title: "Date Received :", _isRequired: true, _isReadOnly: false),
@@ -152,7 +136,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                                     ("Sector",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),},
                             _enabled: true, _read_Only: false, _isRequired: true),
 
                     new PRIS_Label_Selector(_title:"Cluster :",
@@ -165,7 +149,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                                     ("Sector",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),},
                             _enabled: false, _read_Only: false, _isRequired: true),
 
                     new PRIS_Label_Selector(_title:"Agency :",
@@ -178,7 +162,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                                     ("Agency",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),},
                             _enabled: false, _read_Only: false, _isRequired: true),
 
                     new PRIS_Label_Selector(_title:"Contractor :",
@@ -191,7 +175,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                                     ("Contractor",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),},
                             _enabled: true, _read_Only: false, _isRequired: true),
 
                     new PRIS_Label_Selector(_title:"Nature :",
@@ -200,24 +184,24 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
                                     ("#", DataGridViewContentAlignment.MiddleRight),
-                                    ("Contractor Code",DataGridViewContentAlignment.MiddleCenter),
-                                    ("Contractor",DataGridViewContentAlignment.MiddleLeft),
+                                    ("Nature Code",DataGridViewContentAlignment.MiddleCenter),
+                                    ("Nature",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),},
                             _enabled: true, _read_Only: false, _isRequired: true),
 
                     new PRIS_Label_Selector(_title:"Division :",
-                            _searchQuery: Database_Query.get_division_search,
-                            _query: Database_Query.get_division_options,
+                            _searchQuery: string.Format(Database_Query.get_division_office_search, "{0}","SYSTEM_OFC000002") ,
+                            _query: string.Format(Database_Query.get_division_options_by_id, "SYSTEM_OFC000002"),
                             _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
                                 {
                                     ("#", DataGridViewContentAlignment.MiddleRight),
-                                    ("Contractor Code",DataGridViewContentAlignment.MiddleCenter),
-                                    ("Contractor",DataGridViewContentAlignment.MiddleLeft),
+                                    ("Division Code",DataGridViewContentAlignment.MiddleCenter),
+                                    ("Division",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),},
                             _enabled: true, _read_Only: false, _isRequired: true),
                 },
 
@@ -225,7 +209,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                 {
                     Subject = new PRIS_Label_Rich(_title: "Subject : ", _isRequired: true, _entryHeight: 350),
 
-                    new PRIS_Label_Rich(_title: "Remarks : ", _isRequired: true, _entryHeight: 350),
+                    new PRIS_Label_Rich(_title: "Remarks : ", _isRequired: false, _entryHeight: 350),
                 }
 
             };   
@@ -238,28 +222,43 @@ namespace COA_PRIS.Screens.Subscreens.Projects
         private void create_Btn_Click(object sender, EventArgs e)
         {
             int ret = 0;
+            string subjectFinal = string.Empty;
             if (!validator.PRISRequired(control_Panel, error_Provider))
                 return;
-            Random random = new Random();
 
+            Random random = new Random();
+            
             var controls = util.SearchControls<UserControl>(control_Panel, new List<Type> { typeof(IPRIS_UserControl) });
+            var selectors = util.SearchControls<PRIS_Label_Selector>(control_Panel, new List<Type> { typeof(PRIS_Label_Selector) });
+
+            selectorValues = new Dictionary<string, string>();
+            values = new Dictionary<string, string>();
+
+            foreach (IPRIS_UserControl pris in controls)
+                values.Add(pris.Title, pris.Value);
+
+            foreach (PRIS_Label_Selector selector in selectors)
+                selectorValues.Add(selector.Title, selector.RawValue);
+
+            subjectFinal = $"{values["Routing Slip Number"]}\n{selectorValues["Sector"]} | {selectorValues["Cluster"]}\n{selectorValues["Agency"]}\n{selectorValues["Nature"]}\n\n{Subject.Value}";
+            Subject.Value = subjectFinal ;
+
+
 
             var history_code = util.GenerateRandomID(random, "history_table");
             var remarks_code = util.GenerateRandomID(random, "remarks_table");
 
 
-            values = new Dictionary<string, string>();
-            foreach (IPRIS_UserControl pris in controls)
-                values.Add(pris.Title, pris.Value);
-            
+
+            //return;
 
 
             using (database_Manager)
             {
-                ret += database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_new_docu_infos, project_id.Text, values["Routing Slip Number"], values["Project Title"], values["Amount"], values["Period"], values["Subject"], values["Date Received"]));
+                ret += database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_new_docu_infos, project_id.Text, values["Routing Slip Number"], values["Project Title"], values["Amount"], values["Period"], subjectFinal, values["Date Received"]));
                 ret += database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_new_docu_trans, project_id.Text, values["Agency"], values["Contractor"], values["Nature"], values["Division"], values["Status"]));
-                ret += database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_new_history, history_code, "Project Record Created", project_id.Text, Activity_Manager.CurrentUser));
-                ret += database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_new_remarks, remarks_code, values["Remarks"], project_id.Text, Activity_Manager.CurrentUser));
+                ret += database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_new_history_ct, history_code, "Project Record Created", project_id.Text, Activity_Manager.CurrentUser));
+                ret += database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_new_remarks_ct, remarks_code, values["Remarks"], project_id.Text, Activity_Manager.CurrentUser));
             }
 
 

@@ -1,4 +1,5 @@
 ﻿using COA_PRIS.Utilities;
+using Org.BouncyCastle.Asn1.Cmp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +15,7 @@ namespace COA_PRIS.Screens.Subscreens.Users
 {
     public partial class Users_Lists : Form
     {
-        private Database_Manager database_Manager = new Database_Manager();
+        private Database_Manager Database_Manager = new Database_Manager();
         private Util util = new Util();
 
         private Users_Create Users_Create;
@@ -25,6 +26,7 @@ namespace COA_PRIS.Screens.Subscreens.Users
         public Users_Lists()
         {
             InitializeComponent();
+            
         }
 
 
@@ -35,10 +37,9 @@ namespace COA_PRIS.Screens.Subscreens.Users
             Users_Create.ShowDialog();
         }
 
-        private void Users_Lists_Load(object sender, EventArgs e)
+        private void Set_Record() 
         {
-
-            (bool, int)[] column_Widths = new (bool, int)[] { (true, 3), (true, 12), (true, 30), (true, 20), (true, 20), (true, 15) }; ;
+            (bool, int)[] column_Widths = new (bool, int)[] { (true, 3), (true, 15), (true, 30), (true, 20), (true, 20), (true, 12) }; ;
             (string, DataGridViewContentAlignment)[] column_Text_Align = new (string, DataGridViewContentAlignment)[]
                     {
                         ("#", DataGridViewContentAlignment.MiddleRight),
@@ -51,12 +52,50 @@ namespace COA_PRIS.Screens.Subscreens.Users
 
             DataTable ret;
 
-            using (database_Manager)
-                ret = database_Manager.ExecuteQuery(Database_Query.get_all_active_user);
+            using (Database_Manager)
+                ret = Database_Manager.ExecuteQuery(Database_Query.get_all_active_user);
 
 
             data_View.DataSource = util.FormatDataTable(ret);
             Theme.gridView_Style(data_View, column_Widths, column_Text_Align);
+        }
+        private void Users_Lists_Load(object sender, EventArgs e)
+        {
+            Set_Record();
+
+
+            PRIS_Seachbox.DropboxValues = new List<string>() { "All", "Code", "Full Name", "Office", "Position", "Role" };
+            PRIS_Seachbox.Search_Typed += SearchBar_CallBack;
+
+        }
+        private void SearchBar_CallBack(object sender, EventArgs e) 
+        {
+            DataTable ret = null;
+            using (Database_Manager)
+            {
+                switch (PRIS_Seachbox.Dropbox_Text)
+                {
+                    case "All":
+                        ret = Database_Manager.ExecuteQuery(string.Format(Database_Query.get_users_all_search, PRIS_Seachbox.Search_Text));
+                        break;
+                    case "Code":
+                        ret = Database_Manager.ExecuteQuery(string.Format(Database_Query.get_users_code_search, PRIS_Seachbox.Search_Text));
+                        break;
+                    case "Full Name":
+                        ret = Database_Manager.ExecuteQuery(string.Format(Database_Query.get_users_name_search, PRIS_Seachbox.Search_Text));
+                        break;
+                    case "Office":
+                        ret = Database_Manager.ExecuteQuery(string.Format(Database_Query.get_users_office_search, PRIS_Seachbox.Search_Text));
+                        break;
+                    case "Position":
+                        ret = Database_Manager.ExecuteQuery(string.Format(Database_Query.get_users_position_search, PRIS_Seachbox.Search_Text));
+                        break;
+                    case "Role":
+                        ret = Database_Manager.ExecuteQuery(string.Format(Database_Query.get_users_role_search, PRIS_Seachbox.Search_Text));
+                        break;
+                }
+            }
+            data_View.DataSource = util.FormatDataTable(ret);
 
         }
 
@@ -73,8 +112,8 @@ namespace COA_PRIS.Screens.Subscreens.Users
         {
             DataTable ret;
 
-            using (database_Manager)
-                ret = database_Manager.ExecuteQuery(Database_Query.get_all_active_user);
+            using (Database_Manager)
+                ret = Database_Manager.ExecuteQuery(Database_Query.get_all_active_user);
 
             data_View.DataSource = util.FormatDataTable(ret);
         }

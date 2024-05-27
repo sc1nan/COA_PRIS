@@ -17,6 +17,7 @@ namespace COA_PRIS
         private Activity_Manager activity_manager;
         private Database_Manager database_manager;
 
+        private bool is_ClosingProgrammaticallty = false;
         public Login()
         {
             InitializeComponent();
@@ -64,10 +65,9 @@ namespace COA_PRIS
                 activity_manager.Log_Activity(username, Log_Message.login_message);
                 Activity_Manager.CurrentUser = username;
                 
+                this.Hide();
                 Dashboard dashboard = new Dashboard();
                 dashboard.ShowDialog();
-                
-                this.Close();
             }
             else
             {
@@ -103,10 +103,10 @@ namespace COA_PRIS
                 left_Attempts--;
                 if (left_Attempts == 0)
                 {
-                    using (database_manager)
+                    /*using (database_manager)
                     {
                         database_manager.ExecuteNonQuery(string.Format(Database_Query.deact_acc, username));
-                    }
+                    }*/
                     MessageBox.Show("Exceeded number of login attempts.\nThe application will now close.", "Login Warning", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     Application.Exit();
                 }
@@ -143,13 +143,16 @@ namespace COA_PRIS
 
         private void login_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (e.CloseReason == CloseReason.UserClosing)
-                if (MessageBox.Show("Are you sure you want to close the application?", "Close Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == DialogResult.No)
-                     e.Cancel = true;
-                
-            else if (e.CloseReason == CloseReason.WindowsShutDown)
-                Application.Exit();
             
+                if (e.CloseReason == CloseReason.UserClosing)
+                    if (MessageBox.Show("Are you sure you want to close the application?", "Close Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Stop) == DialogResult.No)
+                        e.Cancel = true;
+
+                    else if (e.CloseReason == CloseReason.WindowsShutDown)
+                        Application.Exit();
+
+            
+
         }
     }
 }

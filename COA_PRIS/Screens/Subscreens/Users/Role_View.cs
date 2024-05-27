@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace COA_PRIS.Screens.Subscreens.Users
 {
@@ -23,12 +24,22 @@ namespace COA_PRIS.Screens.Subscreens.Users
         private bool is_ClosingProgrammatically = false;
 
         public Action RefreshTable;
+        private Audit_Trail Audit_Trail;
 
+        private int status = 0;
         public Role_View(string _roleCode)
         {
             InitializeComponent();
             RoleCode = _roleCode;
             InitializeControls();
+
+            using (Database_Manager)
+            {
+                status = Convert.ToInt32(Database_Manager.ExecuteScalar(string.Format(Database_Query.get_record_status, "user_role_table", RoleCode)));
+            }
+
+            delete_Btn.Enabled = (status == -1 || status == -2) ? false : true;
+            //update_Btn.Enabled = status == -2 ? false : true;
         }
 
         private void Role_View_Load(object sender, EventArgs e)
@@ -113,12 +124,12 @@ namespace COA_PRIS.Screens.Subscreens.Users
                 {
                     new PRIS_Label_MainCheckBox(_title: "Home", _isChecked: true, _isReadOnly: true),
                     new PRIS_Label_MainCheckBox(_title: "Projects", _isChecked: false,
-                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", false, true),("Update Records", false, true),("Delete Records", false, true) }),
+                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", false, true),("Update Records", false, true), }),
                     new PRIS_Label_MainCheckBox(_title: "Employee", _isChecked: false,
-                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", false, true),("Update Records", false, true),("Delete Records", false, true) }),
+                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", false, true),("Update Records", false, true), }),
                     new PRIS_Label_MainCheckBox(_title: "Reports", _isChecked: false),
                     new PRIS_Label_MainCheckBox(_title: "Maintenance", _isChecked: false,
-                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", false, true),("Update Records", false, true),("Delete Records", false, true) }),
+                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", false, true),("Update Records", false, true), }),
                     new PRIS_Label_MainCheckBox(_title: "User Settings", _isChecked: false),
                     new PRIS_Label_MainCheckBox(_title: "Activity Logs", _isChecked: false),
                 }
@@ -137,10 +148,10 @@ namespace COA_PRIS.Screens.Subscreens.Users
         {
             validator.PRISReadOnly(content_Panel, !is_Enabled);
 
-            update_Role.Enabled = !is_Enabled;
+            update_Btn.Enabled = !is_Enabled;
             delete_Btn.Enabled = !is_Enabled;
 
-            this.create_Btn.Visible = is_Enabled;
+            this.save_Btn.Visible = is_Enabled;
             this.cancel_Btn.Visible = is_Enabled;
 
         }
@@ -182,10 +193,10 @@ namespace COA_PRIS.Screens.Subscreens.Users
             {
                 ret = Database_Manager.ExecuteNonQuery(string.Format(Database_Query.update_role_access, values["Role Title"], values["Description"],
                                                                                 values["Home"],
-                                                                                values["Projects"], values["Projects_Add Records"], values["Projects_View Records"], values["Projects_Update Records"], values["Projects_Delete Records"],
-                                                                                values["Employee"], values["Employee_Add Records"], values["Employee_View Records"], values["Employee_Update Records"], values["Employee_Delete Records"],
+                                                                                values["Projects"], values["Projects_Add Records"], values["Projects_View Records"], values["Projects_Update Records"], "0",
+                                                                                values["Employee"], values["Employee_Add Records"], values["Employee_View Records"], values["Employee_Update Records"], "0",
                                                                                 values["Reports"],
-                                                                                values["Maintenance"], values["Maintenance_Add Records"], values["Maintenance_View Records"], values["Maintenance_Update Records"], values["Maintenance_Delete Records"],
+                                                                                values["Maintenance"], values["Maintenance_Add Records"], values["Maintenance_View Records"], values["Maintenance_Update Records"], "0",
                                                                                 values["User Settings"],
                                                                                 values["Activity Logs"],
                                                                                 Activity_Manager.CurrentUser, RoleCode));
@@ -227,6 +238,12 @@ namespace COA_PRIS.Screens.Subscreens.Users
                 RefreshTable?.Invoke();
                 Close();
             }
+        }
+
+        private void audit_Trail_Btn_Click(object sender, EventArgs e)
+        {
+            Audit_Trail = new Audit_Trail(RoleCode, "user_role_table");
+            Audit_Trail.ShowDialog();
         }
     }
 }

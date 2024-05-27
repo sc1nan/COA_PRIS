@@ -15,19 +15,22 @@ using System.Windows.Forms;
 
 namespace COA_PRIS.Screens
 {
-    public partial class Projects : Form
+    public partial class Projects : Form, IPRIS_Forms
     {
         private Form current_Form = null;
         private Tab_Manager tab_Manager = new Tab_Manager();
 
-        private readonly Project_List project_List = new Project_List();
-        private readonly Project_Create project_Create = new Project_Create();
+        private Project_List project_List = new Project_List();
+        private GunaButton ActiveButton;
         public Projects()
         {
             InitializeComponent();
         }
 
-        
+        public void FormInvoke()
+        {
+            ActiveButton.PerformClick();
+        }
         private void Projects_Load(object sender, EventArgs e)
         {
 
@@ -43,6 +46,7 @@ namespace COA_PRIS.Screens
         private void button_Clicked(object sender, EventArgs e)
         {
             var button = (GunaButton)sender;
+            
             Form form = null;
 
             switch (button.Name)
@@ -50,14 +54,13 @@ namespace COA_PRIS.Screens
                 case "record_Btn":
                     form = project_List;
                     break;
-                case "create_Btn":
-                    form = project_Create;
-                    break;
             }
             if (form != null)
                 current_Form = tab_Manager.switch_Form(form, current_Form, container_Panel);
-
+            
             tab_Manager.active_Button(button, false);
+            ActiveButton = button;
+            
         }
 
     }

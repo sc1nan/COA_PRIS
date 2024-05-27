@@ -43,7 +43,19 @@ namespace COA_PRIS.Screens.Subscreens.Users
             data_View.DataSource = Util.FormatDataTable(ret);
             Theme.gridView_Style(data_View, column_Widths, column_Text_Align);
 
+            PRIS_Seachbox.DropboxValues = null;
+            PRIS_Seachbox.Search_Typed += Search_CallBack;
 
+        }
+
+        private void Search_CallBack(object sender, EventArgs e) 
+        {
+            DataTable ret;
+
+            using (Database_Manager)
+                ret = Database_Manager.ExecuteQuery(string.Format(Database_Query.get_role_all_search, PRIS_Seachbox.Search_Text));
+
+            data_View.DataSource = Util.FormatDataTable(ret);
         }
 
         private void add_RecordBtn_Click(object sender, EventArgs e)

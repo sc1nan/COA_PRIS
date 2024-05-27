@@ -10,6 +10,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using COA_PRIS.Utilities;
+using MySqlX.XDevAPI.Relational;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace COA_PRIS.Screens.Subscreens.Users
 {
@@ -19,6 +21,7 @@ namespace COA_PRIS.Screens.Subscreens.Users
         private Database_Manager Database_Manager = new Database_Manager();
         private Validator validator = new Validator();
         private Util util = new Util();
+        private Audit_Trail audit_Trail;
 
         private PRIS_Label_Entry PRIS_Password;
 
@@ -27,11 +30,15 @@ namespace COA_PRIS.Screens.Subscreens.Users
         private bool is_ClosingProgrammatically = false;
         private string RecordCode;
 
+
+        private Dictionary<string, string> InitialValues;
         public Users_View(string _code)
         {
             InitializeComponent();
             RecordCode = _code;
             InitializeControls();
+
+            
         }
 
         private void InitializeControls()
@@ -45,7 +52,7 @@ namespace COA_PRIS.Screens.Subscreens.Users
         private void Users_View_Load(object sender, EventArgs e)
         {
             SetValues();
-
+            validator.PRISReadOnly(parent_Panel, true);
         }
         private List<UserControl[]> PRISUserControls_Selection()
         {
@@ -54,10 +61,10 @@ namespace COA_PRIS.Screens.Subscreens.Users
                 new UserControl[]
                 {
 
-                    new PRIS_Label_Entry(_title: "Employee Name :", _isRequired: false, _isReadOnly: true, _enabledText: false),
-                    new PRIS_Label_Entry(_title: "Office :", _isRequired: false, _isReadOnly: true, _enabledText: false),
-                    new PRIS_Label_Entry(_title: "Position :", _isRequired: false, _isReadOnly: true, _enabledText: false),
-                    new PRIS_Label_Entry(_title: "Username :", _isRequired: true, _isReadOnly: true, _enabledText: false),
+                    new PRIS_Label_Entry(_title: "Employee Name :", _isRequired: false, _isReadOnly: true, _enabledText: false, _showMessage: false),
+                    new PRIS_Label_Entry(_title: "Office :", _isRequired: false, _isReadOnly: true, _enabledText: false, _showMessage: false),
+                    new PRIS_Label_Entry(_title: "Position :", _isRequired: false, _isReadOnly: true, _enabledText: false, _showMessage: false),
+                    new PRIS_Label_Entry(_title: "Username :", _isRequired: true, _isReadOnly: true, _enabledText: false, _showMessage: false),
                     PRIS_Password = new PRIS_Label_Entry(_title: "Password :", _isRequired: false),
                     new PRIS_Label_Selector(_title:"Role :",
                             _searchQuery : Database_Query.get_role_search,
@@ -67,10 +74,10 @@ namespace COA_PRIS.Screens.Subscreens.Users
                                     ("#", DataGridViewContentAlignment.MiddleRight),
                                     ("Role Code",DataGridViewContentAlignment.MiddleCenter),
                                     ("Role",DataGridViewContentAlignment.MiddleLeft),
-                                    ("Descirption",DataGridViewContentAlignment.MiddleLeft),
+                                    ("Description",DataGridViewContentAlignment.MiddleLeft),
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35)},
-                            _enabled: true, _read_Only: true, _isRequired: true),
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),},
+                            _enabled: true, _read_Only: true, _isRequired: true, _showMessage: false),
                 }
             };
 
@@ -85,15 +92,15 @@ namespace COA_PRIS.Screens.Subscreens.Users
                     new PRIS_Label_MainCheckBox(_title: "Home", _isChecked: true, _isReadOnly: true, _enableCheck: false),
 
                     new PRIS_Label_MainCheckBox(_title: "Projects", _isChecked: false, _isReadOnly: true,
-                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", true, true),("Update Records", false, true),("Delete Records", false, true) }),
+                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", true, true),("Update Records", false, true), }),
 
                     new PRIS_Label_MainCheckBox(_title: "Employee", _isChecked: false, _isReadOnly: true,
-                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", true, true),("Update Records", false, true),("Delete Records", false, true) }),
+                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", true, true),("Update Records", false, true), }),
 
                     new PRIS_Label_MainCheckBox(_title: "Reports", _isChecked: false,_isReadOnly: true), 
 
                     new PRIS_Label_MainCheckBox(_title: "Maintenance", _isChecked: false,_isReadOnly: true,
-                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", true, true),("Update Records", false, true),("Delete Records", false, true) }),
+                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", true, true),("Update Records", false, true), }),
 
                     new PRIS_Label_MainCheckBox(_title: "User Settings", _isChecked: false,_isReadOnly: true),
 
@@ -107,6 +114,7 @@ namespace COA_PRIS.Screens.Subscreens.Users
         {
             var controls = util.SearchControls<UserControl>(account_Panel, new List<Type> { typeof(IPRIS_UserControl) });
             DataTable ret, name;
+            InitialValues = new Dictionary<string, string>();
 
             using (Database_Manager)
             {
@@ -122,6 +130,11 @@ namespace COA_PRIS.Screens.Subscreens.Users
                 if (pris.IsVisible)
                 {
                     pris.Value = (string)ret.Rows[0][retIndex];
+                    InitialValues.Add(pris.Title,pris.Value);
+                }
+                else 
+                {
+                    InitialValues.Add(pris.Title, "");
                 }
 
             }
@@ -252,15 +265,15 @@ namespace COA_PRIS.Screens.Subscreens.Users
 
         private void change_ViewControls(bool is_Enabled = true)
         {
-            validator.PRISReadOnly(parent_Panel, !is_Enabled);
 
             PRIS_Password.Visible = is_Enabled;
-            update_Role.Enabled = !is_Enabled;
+            update_Btn.Enabled = !is_Enabled;
             delete_Btn.Enabled = !is_Enabled;
 
             this.bottom_Panel.Visible = is_Enabled;
             this.bottom_Panel.Enabled = is_Enabled;
 
+            validator.PRISReadOnly(parent_Panel, !is_Enabled);
         }
 
         private void cancel_Btn_Click_1(object sender, EventArgs e)
@@ -283,6 +296,8 @@ namespace COA_PRIS.Screens.Subscreens.Users
             string message = string.Empty;
             int ret = 0;
 
+            if (MessageBox.Show("Are you sure you want to update?", "PRIS Update Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                return;
 
             foreach (IPRIS_UserControl pris in PRISControls)
             {
@@ -294,12 +309,10 @@ namespace COA_PRIS.Screens.Subscreens.Users
                         for (int checkIndex = 0; checkIndex < checkbox.BoxValues.Count; checkIndex++)
                         {
                             values.Add($"{checkbox.Title}_{checkbox.BoxTitle[checkIndex]}", checkbox.BoxValues[checkIndex] ? "1" : "0");
-                            //Console.WriteLine($"{checkbox.Title}_{checkbox.BoxTitle[checkIndex]} {checkbox.BoxValues[checkIndex]}");
                         }
                     }
                 }
                 values.Add(pris.Title, pris.Value);
-                //.WriteLine($"{pris.Title} {pris.Value}");
             }
 
 
@@ -312,13 +325,17 @@ namespace COA_PRIS.Screens.Subscreens.Users
                 }
                 ret += Database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_new_role, values["Role"], values["Username"]));
                 ret += Database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_new_access, values["Home"],
-                                                                        values["Projects"], values["Projects_Add Records"], values["Projects_View Records"], values["Projects_Update Records"], values["Projects_Delete Records"],
-                                                                        values["Employee"], values["Employee_Add Records"], values["Employee_View Records"], values["Employee_Update Records"], values["Employee_Delete Records"],
-                                                                        values["Reports"], values["Maintenance"], values["Maintenance_Add Records"], values["Maintenance_View Records"], values["Maintenance_Update Records"], values["Maintenance_Delete Records"],
+                                                                        values["Projects"], values["Projects_Add Records"], values["Projects_View Records"], values["Projects_Update Records"], "0",
+                                                                        values["Employee"], values["Employee_Add Records"], values["Employee_View Records"], values["Employee_Update Records"], "0",
+                                                                        values["Reports"], values["Maintenance"], values["Maintenance_Add Records"], values["Maintenance_View Records"], values["Maintenance_Update Records"], "0",
                                                                         values["User Settings"],
                                                                         values["Activity Logs"], values["Username"]));
+
+                ret += Database_Manager.ExecuteNonQuery(string.Format(Database_Query.update_user_trail, Activity_Manager.CurrentUser, RecordCode));
+
+
             }
-            if (ret == 2)
+            if (ret != 0)
                 MessageBox.Show($"{values["Username"]} is successfully updated.", "PRIS Record Confirm", MessageBoxButtons.OK, MessageBoxIcon.Information);
             
             else 
@@ -343,6 +360,12 @@ namespace COA_PRIS.Screens.Subscreens.Users
                 Close();
                 RefreshTable?.Invoke();
             }
+        }
+
+        private void audit_Btn_Click(object sender, EventArgs e)
+        {
+            audit_Trail = new Audit_Trail(RecordCode, "user_info_table", customQuery: Database_Query.get_user_audit_trail);
+            audit_Trail.ShowDialog();
         }
     }
 }

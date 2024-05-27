@@ -69,7 +69,7 @@ namespace COA_PRIS.UserControlUtil
             using (database_manager)
                 data_Table = database_manager.ExecuteQuery(string.Format(SearchQuery, PRIS_Search.Search_Text));
 
-            Console.WriteLine(string.Format(SearchQuery, PRIS_Search.Search_Text));
+            //Console.WriteLine(string.Format(SearchQuery, PRIS_Search.Search_Text));
             data_View.DataSource = util.FormatDataTable(data_Table);
         }
         private void Set_Selections() 

@@ -30,7 +30,6 @@ namespace COA_PRIS.Screens.Subscreens.Projects
 
         private bool is_ClosingProgrammatically = false;
         private Dictionary<string, string> values;
-
         private Dictionary<string, string> InitialValues;
 
         public Action ToRefresh;
@@ -39,6 +38,21 @@ namespace COA_PRIS.Screens.Subscreens.Projects
             InitializeComponent();
             this.ProjectCode = code;
             InitializeControls();
+            Access_Manager();
+        }
+
+        private void Access_Manager()
+        {
+            DataTable ret;
+            using (Database_Manager)
+                ret = Database_Manager.ExecuteQuery(string.Format(Database_Query.get_user_project_access, Activity_Manager.CurrentUser));
+
+            if (ret != null)
+            {
+                update_Btn.Visible = ret.Rows[0][2].ToString() == "1" ? true : false;
+                forward_Btn.Visible = ret.Rows[0][2].ToString() == "1" ? true : false;
+            }
+
         }
         public void InitializeControls()
         {
@@ -56,6 +70,23 @@ namespace COA_PRIS.Screens.Subscreens.Projects
             
             Set_Record();
 
+            using (Database_Manager) 
+            {
+                var status = Database_Manager.ExecuteScalar(string.Format(Database_Query.get_project_status_by_id, ProjectCode)).ToString();
+
+                if (string.Equals(status, "SYSTEM_STS000003"))
+                {
+                    delete_Btn.Enabled = false;
+                    forward_Btn.Enabled = false;
+                    update_Btn.Enabled = false;
+                }
+                else
+                {
+                    delete_Btn.Enabled = true;
+                    forward_Btn.Enabled = true;
+                    update_Btn.Enabled = true;
+                }
+            }
         }
 
         private void Set_Record() 
@@ -109,7 +140,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                                     ("Sector",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),},
                             _enabled: true, _read_Only: false, _isRequired: true),
 
                     new PRIS_Label_Selector(_title:"Cluster :",
@@ -122,7 +153,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                                     ("Sector",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),},
                             _enabled: false, _read_Only: false, _isRequired: true),
 
                     new PRIS_Label_Selector(_title:"Agency :",
@@ -135,7 +166,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                                     ("Agency",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),},
                             _enabled: false, _read_Only: false, _isRequired: true),
 
                     new PRIS_Label_Selector(_title:"Contractor :",
@@ -148,7 +179,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                                     ("Contractor",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),},
                             _enabled: true, _read_Only: false, _isRequired: true),
 
                     new PRIS_Label_Selector(_title:"Nature :",
@@ -161,7 +192,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                                     ("Contractor",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),},
                             _enabled: true, _read_Only: false, _isRequired: true),
 
                     new PRIS_Label_Selector(_title:"Division :",
@@ -174,7 +205,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                                     ("Contractor",DataGridViewContentAlignment.MiddleLeft),
                                     ("Description",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),},
                             _enabled: true, _read_Only: false, _isRequired: true),
                 },
 
@@ -182,7 +213,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                 {
                     new PRIS_Label_Rich(_title: "Subject : ", _isRequired: true, _entryHeight: 350),
 
-                    new PRIS_Label_Rich(_title: "Remarks : ", _isRequired: true, _entryHeight: 350),
+                    new PRIS_Label_Rich(_title: "Remarks : ", _isRequired: false, _entryHeight: 350),
                 }
 
             };
@@ -269,10 +300,9 @@ namespace COA_PRIS.Screens.Subscreens.Projects
 
         private void save_Btn_Click(object sender, EventArgs e)
         {
-            string UpdateMessage = string.Empty;
+            string UpdateMessage = "Updated Project Record : Fields - ";
 
-            if (MessageBox.Show("Are you sure you want to update?", "PRIS Update Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
-                return;
+            
 
             if (!validator.PRISRequired(parent_Panel, errorProvider))
                 return;
@@ -284,7 +314,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
             }
 
             foreach ((string, string, string) value in validator.PRISUpdateCheck(parent_Panel, InitialValues))
-                UpdateMessage += $"Updated {value.Item1}:\nFrom: {value.Item3}\nTo: {value.Item2}\n\n";
+                UpdateMessage += $"{value.Item1}, ";
 
 
             Random random = new Random();
@@ -299,15 +329,16 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                 values.Add(control.Title, control.Value);
             }
 
+            if (MessageBox.Show("Are you sure you want to update?", "PRIS Update Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
+                return;
+
             using (Database_Manager) 
             {
                 ret += Database_Manager.ExecuteNonQuery(string.Format(Database_Query.update_project_record, values["Routing Slip Number"], values["Project Title"], Convert.ToDouble(values["Amount"].TrimStart('₱').Trim()), values["Period"], values["Subject"], values["Date Received"], ProjectCode));
                 ret += Database_Manager.ExecuteNonQuery(string.Format(Database_Query.update_project_transaction, values["Agency"], values["Contractor"], values["Nature"], values["Division"], values["Status"], ProjectCode));
                 ret += Database_Manager.ExecuteNonQuery(string.Format(Database_Query.update_project_remarks, values["Remarks"], ProjectCode));
-                ret += Database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_new_history, history_code, UpdateMessage, ProjectCode, Activity_Manager.CurrentUser));
+                ret += Database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_new_history_ct, history_code, UpdateMessage, ProjectCode, Activity_Manager.CurrentUser));
             }
-
-            
             if (ret == 4) 
             {
                 MessageBox.Show($"{ProjectCode} - {values["Routing Slip Number"]} is successfully updated.", "PRIS Record Confirm", MessageBoxButtons.OK, MessageBoxIcon.Information);

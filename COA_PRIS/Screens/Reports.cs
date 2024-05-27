@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace COA_PRIS.Screens
 {
-    public partial class Reports : Form
+    public partial class Reports : Form, IPRIS_Forms
     {
         private Tab_Manager tab_Manager;
 
@@ -28,6 +28,11 @@ namespace COA_PRIS.Screens
             InitializeComponent();
         }
 
+        public void FormInvoke()
+        {
+
+
+        }
         private void Reports_Load(object sender, EventArgs e)
         {
             tab_Manager = new Tab_Manager();

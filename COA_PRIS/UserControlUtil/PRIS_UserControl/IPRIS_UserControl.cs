@@ -19,6 +19,8 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
 
         bool IsVisible { get; set; }
 
+        bool IsMessageVisible { get; set; }
+
         Control IndicatorRoot { get; }
 
         Control ErrorRoot { get; }

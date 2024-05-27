@@ -18,9 +18,9 @@ using System.Windows.Forms;
 
 namespace COA_PRIS.Screens
 {
-    public partial class Maintenance : Form
+    public partial class Maintenance : Form, IPRIS_Forms
     {
-        private Database_Manager database_Manager = new Database_Manager();
+        private Database_Manager Database_Manager = new Database_Manager();
         private Tab_Manager tab_Manager = new Tab_Manager();
         private Util util = new Util();
         private Add_Record Add_Record;
@@ -34,8 +34,27 @@ namespace COA_PRIS.Screens
         public Maintenance()
         {
             InitializeComponent();
+            Access_Manager();
         }
 
+        public void FormInvoke()
+        {
+
+
+        }
+        private void Access_Manager()
+        {
+            DataTable ret;
+            using (Database_Manager)
+                ret = Database_Manager.ExecuteQuery(string.Format(Database_Query.get_user_maintenance_access, Activity_Manager.CurrentUser));
+
+            if (ret != null)
+            {
+                add_RecordBtn.Visible = ret.Rows[0][0].ToString() == "1" ? true : false;
+                view_RecordBtn.Visible = ret.Rows[0][1].ToString() == "1" ? true : false;
+            }
+
+        }
         private void Maintenance_Load(object sender, EventArgs e)
         {
 
@@ -57,8 +76,8 @@ namespace COA_PRIS.Screens
         {
             DataTable ret;
 
-            using (database_Manager)
-                ret = database_Manager.ExecuteQuery(string.Format(SearchQuery, PRIS_Seachbox.Search_Text));
+            using (Database_Manager)
+                ret = Database_Manager.ExecuteQuery(string.Format(SearchQuery, PRIS_Seachbox.Search_Text));
 
             data_View.DataSource = util.FormatDataTable(ret);
         }
@@ -254,7 +273,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Agency Name :"),
-                        new PRIS_Label_Rich(_title: "Description :", _entryHeight: 250),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight: 250, _isRequired: false),
                         new PRIS_Label_Selector(_title:"Cluster :",
                             _searchQuery: Database_Query.get_cluster_search,
                             _query: Database_Query.get_cluster_options,
@@ -277,7 +296,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Cluster Name :"),
-                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 250),
+                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 250, _isRequired: false),
                         new PRIS_Label_Selector(_title:"Sector :", 
                             _searchQuery: Database_Query.get_sector_search,
                             _query: Database_Query.get_sector_options,
@@ -299,7 +318,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Contractor Name :"),
-                        new PRIS_Label_Rich(_title: "Description :" ,_entryHeight: 350),
+                        new PRIS_Label_Rich(_title: "Description :" ,_entryHeight: 350, _isRequired: false),
                     };
                     break;
 
@@ -309,7 +328,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Division Name :"),
-                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 250),
+                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 250, _isRequired: false),
                         new PRIS_Label_Selector(_title:"Office :",
                             _searchQuery: Database_Query.get_office_search,
                             _query: Database_Query.get_office_options,
@@ -328,7 +347,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Forward Name :"),
-                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 350),
+                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 350, _isRequired: false),
                     };
                     insert_Query = Database_Query.set_new_forward_record;
                     table = "forward_table";
@@ -338,7 +357,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Nature Name :"),
-                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 350),
+                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 350, _isRequired: false),
                     };
                     insert_Query = Database_Query.set_new_nature;
                     table = "nature_table";
@@ -350,7 +369,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Office Name :"),
-                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 250),
+                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 250, _isRequired : false),
                         new PRIS_Label_Selector(_title:"Sector :",
                             _searchQuery: Database_Query.get_sector_search,
                             _query: Database_Query.get_sector_options,
@@ -369,7 +388,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Position Name :"),
-                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 350),
+                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 350, _isRequired : false),
                     };
                     insert_Query = Database_Query.set_new_position;
                     table = "position_table";
@@ -400,7 +419,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Sector Name :"),
-                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 350),
+                        new PRIS_Label_Rich(_title: "Description :",_entryHeight: 350, _isRequired : false),
                     };
                     insert_Query = Database_Query.set_new_sector;
                     table = "sector_table";
@@ -425,10 +444,8 @@ namespace COA_PRIS.Screens
         private void view_Btn_Click(object sender, EventArgs e)
         {
             if (data_View.Rows.Count == 0) 
-            {
-                //MessageBox.Show("There are no record currently to show", "PRIS View Record", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
-            }
+           
 
 
             string record_code = (string)data_View.Rows[data_View.CurrentRow.Index].Cells[1].Value;
@@ -447,7 +464,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Agency Name :"),
-                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 260),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 260, _isRequired: false),
                         new PRIS_Label_Selector(_title:"Cluster :",
                             _searchQuery : Database_Query.get_cluster_search,
                             _query: Database_Query.get_cluster_options,
@@ -470,7 +487,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Cluster Name :"),
-                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 260),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 260, _isRequired: false),
                         new PRIS_Label_Selector(_title:"Sector :",
                             _searchQuery : Database_Query.get_sector_search,
                             _query: Database_Query.get_sector_options,
@@ -494,7 +511,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Cluster Name :"),
-                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 360),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 360, _isRequired: false),
                     };
                     break;
 
@@ -506,7 +523,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Forward Name :"),
-                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 360),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 360, _isRequired: false),
                     };
                     break;
 
@@ -517,7 +534,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Division Name :"),
-                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 260),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 260, _isRequired: false),
                         new PRIS_Label_Selector(_title:"Office :",
                             _searchQuery : Database_Query.get_office_search,
                             _query: Database_Query.get_office_options,
@@ -541,7 +558,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Nature Name :"),
-                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 360),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 360, _isRequired: false),
                     };
                     break;
 
@@ -553,7 +570,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Office Name :"),
-                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 260),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 260, _isRequired: false),
                         new PRIS_Label_Selector(_title:"Sector :",
                             _searchQuery : Database_Query.get_sector_search,
                             _query: Database_Query.get_sector_options,
@@ -576,7 +593,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Position Name :"),
-                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 360),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 360, _isRequired: false),
                     };
                     break;
 
@@ -587,7 +604,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Section Name :"),
-                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 260),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight : 260, _isRequired: false),
                         new PRIS_Label_Selector(_title:"Division :",
                             _searchQuery : Database_Query.get_division_search,
                             _query: Database_Query.get_division_options,
@@ -610,7 +627,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Sector Name :"),
-                        new PRIS_Label_Rich(_title: "Description :", _entryHeight: 360),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight: 360, _isRequired: false),
                     };
                     break;
 
@@ -622,7 +639,7 @@ namespace COA_PRIS.Screens
                     controls = new UserControl[]
                     {
                         new PRIS_Label_Entry(_title: "Status Name :"),
-                        new PRIS_Label_Rich(_title: "Description :", _entryHeight: 360),
+                        new PRIS_Label_Rich(_title: "Description :", _entryHeight: 360, _isRequired: false),
                     };
                     break;
             }
@@ -638,8 +655,8 @@ namespace COA_PRIS.Screens
         {
             DataTable dt = new DataTable();
 
-            using (database_Manager)
-                dt = database_Manager.ExecuteQuery(query);
+            using (Database_Manager)
+                dt = Database_Manager.ExecuteQuery(query);
 
             data_View.DataSource = null;
             data_View.Rows.Clear();
@@ -650,8 +667,8 @@ namespace COA_PRIS.Screens
         {
             DataTable dt = new DataTable();
 
-            using (database_Manager)
-                dt = database_Manager.ExecuteQuery(Query);
+            using (Database_Manager)
+                dt = Database_Manager.ExecuteQuery(Query);
 
             data_View.DataSource = util.FormatDataTable(dt);
         }

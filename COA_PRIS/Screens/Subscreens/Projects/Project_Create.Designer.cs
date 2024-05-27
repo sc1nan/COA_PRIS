@@ -38,13 +38,13 @@
             this.gunaPanel5 = new Guna.UI.WinForms.GunaPanel();
             this.control_Panel = new Guna.UI.WinForms.GunaPanel();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
-            this.top_Panel = new Guna.UI.WinForms.GunaPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
-            this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.cancel_Btn = new Guna.UI.WinForms.GunaButton();
             this.create_Btn = new Guna.UI.WinForms.GunaButton();
+            this.top_Panel = new Guna.UI.WinForms.GunaPanel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.refresh_Btn = new Guna.UI.WinForms.GunaButton();
+            this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
+            this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.error_Provider)).BeginInit();
             this.gunaPanel4.SuspendLayout();
             this.gunaPanel5.SuspendLayout();
@@ -142,44 +142,6 @@
             this.gunaPanel2.Size = new System.Drawing.Size(1694, 64);
             this.gunaPanel2.TabIndex = 7;
             // 
-            // top_Panel
-            // 
-            this.top_Panel.BackColor = System.Drawing.Color.Transparent;
-            this.top_Panel.Controls.Add(this.flowLayoutPanel1);
-            this.top_Panel.Controls.Add(this.project_id);
-            this.top_Panel.Controls.Add(this.gunaPanel1);
-            this.top_Panel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.top_Panel.Location = new System.Drawing.Point(10, 10);
-            this.top_Panel.Name = "top_Panel";
-            this.top_Panel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.top_Panel.Size = new System.Drawing.Size(1694, 64);
-            this.top_Panel.TabIndex = 2;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.refresh_Btn);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(250, 0);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1444, 56);
-            this.flowLayoutPanel1.TabIndex = 8;
-            // 
-            // gunaPanel1
-            // 
-            this.gunaPanel1.AutoSize = true;
-            this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gunaPanel1.Location = new System.Drawing.Point(1694, 0);
-            this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.gunaPanel1.Size = new System.Drawing.Size(0, 56);
-            this.gunaPanel1.TabIndex = 1;
-            // 
-            // gunaElipse2
-            // 
-            this.gunaElipse2.Radius = 6;
-            this.gunaElipse2.TargetControl = this.control_Panel;
-            // 
             // cancel_Btn
             // 
             this.cancel_Btn.AnimationHoverSpeed = 0.07F;
@@ -239,6 +201,29 @@
             this.create_Btn.Text = "Create";
             this.create_Btn.Click += new System.EventHandler(this.create_Btn_Click);
             // 
+            // top_Panel
+            // 
+            this.top_Panel.BackColor = System.Drawing.Color.Transparent;
+            this.top_Panel.Controls.Add(this.flowLayoutPanel1);
+            this.top_Panel.Controls.Add(this.project_id);
+            this.top_Panel.Controls.Add(this.gunaPanel1);
+            this.top_Panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.top_Panel.Location = new System.Drawing.Point(10, 10);
+            this.top_Panel.Name = "top_Panel";
+            this.top_Panel.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            this.top_Panel.Size = new System.Drawing.Size(1694, 64);
+            this.top_Panel.TabIndex = 2;
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.refresh_Btn);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(250, 0);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1444, 56);
+            this.flowLayoutPanel1.TabIndex = 8;
+            // 
             // refresh_Btn
             // 
             this.refresh_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -267,6 +252,21 @@
             this.refresh_Btn.TabIndex = 6;
             this.refresh_Btn.Text = "Reset";
             this.refresh_Btn.Click += new System.EventHandler(this.refresh_Click);
+            // 
+            // gunaPanel1
+            // 
+            this.gunaPanel1.AutoSize = true;
+            this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.gunaPanel1.Location = new System.Drawing.Point(1694, 0);
+            this.gunaPanel1.Name = "gunaPanel1";
+            this.gunaPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 8);
+            this.gunaPanel1.Size = new System.Drawing.Size(0, 56);
+            this.gunaPanel1.TabIndex = 1;
+            // 
+            // gunaElipse2
+            // 
+            this.gunaElipse2.Radius = 6;
+            this.gunaElipse2.TargetControl = this.control_Panel;
             // 
             // Project_Create
             // 

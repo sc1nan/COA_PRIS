@@ -29,20 +29,23 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.message = new Guna.UI.WinForms.GunaLabel();
             this.title = new Guna.UI.WinForms.GunaLabel();
             this.check = new Guna.UI.WinForms.GunaMediumCheckBox();
             this.control_Panel = new Guna.UI.WinForms.GunaPanel();
-            this.readOnly_Entry = new Guna.UI.WinForms.GunaTextBox();
             this.date = new Guna.UI.WinForms.GunaDateTimePicker();
+            this.readOnly_Entry = new Guna.UI.WinForms.GunaTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.control_Panel.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.message, 2, 0);
             this.tableLayoutPanel1.Controls.Add(this.title, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.check, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.control_Panel, 0, 1);
@@ -55,6 +58,19 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(400, 100);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // message
+            // 
+            this.message.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.message.AutoSize = true;
+            this.message.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.message.ForeColor = System.Drawing.Color.Gray;
+            this.message.Location = new System.Drawing.Point(100, 18);
+            this.message.Margin = new System.Windows.Forms.Padding(0, 0, 3, 3);
+            this.message.Name = "message";
+            this.message.Size = new System.Drawing.Size(0, 19);
+            this.message.TabIndex = 5;
+            this.message.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // title
             // 
@@ -86,9 +102,9 @@
             // 
             // control_Panel
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.control_Panel, 2);
-            this.control_Panel.Controls.Add(this.readOnly_Entry);
+            this.tableLayoutPanel1.SetColumnSpan(this.control_Panel, 3);
             this.control_Panel.Controls.Add(this.date);
+            this.control_Panel.Controls.Add(this.readOnly_Entry);
             this.control_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.control_Panel.Location = new System.Drawing.Point(0, 40);
             this.control_Panel.Margin = new System.Windows.Forms.Padding(0);
@@ -96,6 +112,33 @@
             this.control_Panel.Padding = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this.control_Panel.Size = new System.Drawing.Size(400, 60);
             this.control_Panel.TabIndex = 2;
+            // 
+            // date
+            // 
+            this.date.BackColor = System.Drawing.Color.Transparent;
+            this.date.BaseColor = System.Drawing.Color.White;
+            this.date.BorderColor = System.Drawing.Color.Silver;
+            this.date.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.date.CustomFormat = null;
+            this.date.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.date.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
+            this.date.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.date.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.date.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.date.Location = new System.Drawing.Point(3, 3);
+            this.date.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
+            this.date.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
+            this.date.MinDate = new System.DateTime(1899, 1, 1, 0, 0, 0, 0);
+            this.date.Name = "date";
+            this.date.OnHoverBaseColor = System.Drawing.Color.White;
+            this.date.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.date.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.date.OnPressedColor = System.Drawing.Color.Black;
+            this.date.Radius = 6;
+            this.date.Size = new System.Drawing.Size(377, 54);
+            this.date.TabIndex = 4;
+            this.date.Text = "Monday, April 22, 2024";
+            this.date.Value = new System.DateTime(2024, 4, 22, 0, 0, 0, 0);
             // 
             // readOnly_Entry
             // 
@@ -122,33 +165,6 @@
             this.readOnly_Entry.TabIndex = 9;
             this.readOnly_Entry.Tag = "";
             // 
-            // date
-            // 
-            this.date.BackColor = System.Drawing.Color.Transparent;
-            this.date.BaseColor = System.Drawing.Color.White;
-            this.date.BorderColor = System.Drawing.Color.Silver;
-            this.date.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.date.CustomFormat = null;
-            this.date.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.date.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
-            this.date.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.date.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.date.Location = new System.Drawing.Point(3, 3);
-            this.date.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
-            this.date.MaxDate = new System.DateTime(9998, 12, 31, 0, 0, 0, 0);
-            this.date.MinDate = new System.DateTime(2024, 4, 18, 0, 0, 0, 0);
-            this.date.Name = "date";
-            this.date.OnHoverBaseColor = System.Drawing.Color.White;
-            this.date.OnHoverBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.date.OnHoverForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            this.date.OnPressedColor = System.Drawing.Color.Black;
-            this.date.Radius = 6;
-            this.date.Size = new System.Drawing.Size(377, 54);
-            this.date.TabIndex = 4;
-            this.date.Text = "Monday, April 22, 2024";
-            this.date.Value = new System.DateTime(2024, 4, 22, 0, 0, 0, 0);
-            // 
             // PRIS_Label_DateCheckBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,5 +187,6 @@
         private Guna.UI.WinForms.GunaPanel control_Panel;
         private Guna.UI.WinForms.GunaDateTimePicker date;
         private Guna.UI.WinForms.GunaTextBox readOnly_Entry;
+        private Guna.UI.WinForms.GunaLabel message;
     }
 }

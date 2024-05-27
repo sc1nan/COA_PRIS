@@ -143,11 +143,11 @@ namespace COA_PRIS.Screens.Subscreens.Users
                                     ("Employee Name",DataGridViewContentAlignment.MiddleLeft),
                                     ("Email",DataGridViewContentAlignment.MiddleLeft)
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 40), (true, 40),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),},
                             _enabled: true, _read_Only: false, _isRequired: true),
 
-                    new PRIS_Label_Entry(_title: "Office :", _isRequired: false, _isReadOnly: true),
-                    new PRIS_Label_Entry(_title: "Position :", _isRequired: false, _isReadOnly: true),
+                    new PRIS_Label_Entry(_title: "Office :", _isRequired: false, _isReadOnly: true, _showMessage: false),
+                    new PRIS_Label_Entry(_title: "Position :", _isRequired: false, _isReadOnly: true, _showMessage: false),
 
                     new PRIS_Label_Entry(_title: "Username :", _isRequired: true, _isReadOnly: false),
                     new PRIS_Label_Entry(_title: "Password :", _isRequired: true, _isReadOnly: false),
@@ -159,34 +159,11 @@ namespace COA_PRIS.Screens.Subscreens.Users
                                     ("#", DataGridViewContentAlignment.MiddleRight),
                                     ("Role Code",DataGridViewContentAlignment.MiddleCenter),
                                     ("Role",DataGridViewContentAlignment.MiddleLeft),
-                                },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 80),},
-                            _enabled: true, _read_Only: false, _isRequired: true),
-
-                }
-            };
-
-            return control;
-        }
-        private List<UserControl[]> PRISUserControls_Accounts() 
-        {
-            List<UserControl[]> control = new List<UserControl[]>
-            {
-                new UserControl[]
-                {
-                    new PRIS_Label_Entry(_title: "Username :", _isRequired: true, _isReadOnly: false),
-                    new PRIS_Label_Entry(_title: "Password :", _isRequired: true, _isReadOnly: false),
-                    new PRIS_Label_Selector(_title:"Role :",
-                            _searchQuery: Database_Query.get_role_search,
-                            _query: Database_Query.get_user_role_options,
-                            _column_Title_Alignment: new (string, DataGridViewContentAlignment)[]
-                                {
-                                    ("#", DataGridViewContentAlignment.MiddleRight),
-                                    ("Role Code",DataGridViewContentAlignment.MiddleCenter),
                                     ("Role",DataGridViewContentAlignment.MiddleLeft),
                                 },
-                            _column_Widths: new (bool, int)[] { (true, 5), (true, 15), (true, 80),},
+                            _column_Widths: new (bool, int)[] { (true, 5), (true, 20), (true, 40), (true, 35),},
                             _enabled: true, _read_Only: false, _isRequired: true),
+
                 }
             };
 
@@ -201,15 +178,15 @@ namespace COA_PRIS.Screens.Subscreens.Users
                     new PRIS_Label_MainCheckBox(_title: "Home", _isChecked: true, _isReadOnly: true),
 
                     new PRIS_Label_MainCheckBox(_title: "Projects", _isChecked: false, 
-                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", true, true),("Update Records", false, true),("Delete Records", false, true) }),
+                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", true, true),("Update Records", false, true), }),
 
                     new PRIS_Label_MainCheckBox(_title: "Employee", _isChecked: false,
-                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", true, true),("Update Records", false, true),("Delete Records", false, true) }),
+                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", true, true),("Update Records", false, true), }),
                     
                     new PRIS_Label_MainCheckBox(_title: "Reports", _isChecked: false),
 
                     new PRIS_Label_MainCheckBox(_title: "Maintenance", _isChecked: false,
-                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", true, true),("Update Records", false, true),("Delete Records", false, true) }),
+                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", true, true),("Update Records", false, true), }),
 
                     new PRIS_Label_MainCheckBox(_title: "User Settings", _isChecked: false),
 
@@ -253,9 +230,9 @@ namespace COA_PRIS.Screens.Subscreens.Users
                 ret += database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_user_cred, values["Username"], Encryption_Manger.EncryptPassword(values["Password"])));
                 ret += database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_user_info, values["Username"], values["Employee Name"], values["Role"], Activity_Manager.CurrentUser));
                 ret += database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_user_access, values["Username"], values["Home"],
-                                                                            values["Projects"], values["Projects_Add Records"], values["Projects_View Records"], values["Projects_Update Records"], values["Projects_Delete Records"],
-                                                                            values["Employee"], values["Employee_Add Records"], values["Employee_View Records"], values["Employee_Update Records"], values["Employee_Delete Records"],
-                                                                            values["Reports"], values["Maintenance"], values["Maintenance_Add Records"], values["Maintenance_View Records"], values["Maintenance_Update Records"], values["Maintenance_Delete Records"],
+                                                                            values["Projects"], values["Projects_Add Records"], values["Projects_View Records"], values["Projects_Update Records"], "0",
+                                                                            values["Employee"], values["Employee_Add Records"], values["Employee_View Records"], values["Employee_Update Records"], "0",
+                                                                            values["Reports"], values["Maintenance"], values["Maintenance_Add Records"], values["Maintenance_View Records"], values["Maintenance_Update Records"], "0",
                                                                             values["User Settings"], values["Activity Logs"]));
             }
 

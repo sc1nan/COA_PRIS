@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.entry = new Guna.UI.WinForms.GunaTextBox();
             this.dropbox = new Guna.UI.WinForms.GunaComboBox();
-            this.gunaPictureBox1 = new Guna.UI.WinForms.GunaPictureBox();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gunaPictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +53,19 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(550, 60);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
+            // gunaPictureBox1
+            // 
+            this.gunaPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gunaPictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
+            this.gunaPictureBox1.Image = global::COA_PRIS.Properties.Resources.search1;
+            this.gunaPictureBox1.Location = new System.Drawing.Point(3, 6);
+            this.gunaPictureBox1.Name = "gunaPictureBox1";
+            this.gunaPictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.gunaPictureBox1.TabIndex = 14;
+            this.gunaPictureBox1.TabStop = false;
+            // 
             // entry
             // 
             this.entry.BackColor = System.Drawing.Color.Transparent;
@@ -66,14 +79,14 @@
             this.entry.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.entry.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             this.entry.Location = new System.Drawing.Point(60, 2);
-            this.entry.Margin = new System.Windows.Forms.Padding(6, 2, 6, 2);
+            this.entry.Margin = new System.Windows.Forms.Padding(6, 2, 0, 2);
             this.entry.MaxLength = 64;
             this.entry.Name = "entry";
             this.entry.PasswordChar = '\0';
             this.entry.Radius = 6;
             this.entry.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.entry.SelectedText = "";
-            this.entry.Size = new System.Drawing.Size(364, 56);
+            this.entry.Size = new System.Drawing.Size(354, 56);
             this.entry.TabIndex = 15;
             this.entry.Tag = "";
             this.entry.TextChanged += new System.EventHandler(this.entry_TextChanged);
@@ -86,7 +99,7 @@
             this.dropbox.BorderColor = System.Drawing.Color.Silver;
             this.dropbox.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dropbox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.dropbox.DropDownHeight = 300;
+            this.dropbox.DropDownHeight = 350;
             this.dropbox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.dropbox.DropDownWidth = 220;
             this.dropbox.FocusedColor = System.Drawing.Color.Empty;
@@ -95,29 +108,16 @@
             this.dropbox.FormattingEnabled = true;
             this.dropbox.IntegralHeight = false;
             this.dropbox.ItemHeight = 50;
-            this.dropbox.Location = new System.Drawing.Point(430, 2);
-            this.dropbox.Margin = new System.Windows.Forms.Padding(0);
+            this.dropbox.Location = new System.Drawing.Point(420, 2);
+            this.dropbox.Margin = new System.Windows.Forms.Padding(6, 0, 0, 0);
             this.dropbox.MaxDropDownItems = 10;
             this.dropbox.Name = "dropbox";
             this.dropbox.OnHoverItemBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             this.dropbox.OnHoverItemForeColor = System.Drawing.Color.White;
             this.dropbox.Radius = 6;
-            this.dropbox.Size = new System.Drawing.Size(120, 56);
+            this.dropbox.Size = new System.Drawing.Size(130, 56);
             this.dropbox.TabIndex = 8;
             this.dropbox.TextChanged += new System.EventHandler(this.dropbox_TextChanged);
-            // 
-            // gunaPictureBox1
-            // 
-            this.gunaPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.gunaPictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.gunaPictureBox1.BaseColor = System.Drawing.Color.White;
-            this.gunaPictureBox1.Image = global::COA_PRIS.Properties.Resources.search1;
-            this.gunaPictureBox1.Location = new System.Drawing.Point(3, 6);
-            this.gunaPictureBox1.Name = "gunaPictureBox1";
-            this.gunaPictureBox1.Size = new System.Drawing.Size(48, 48);
-            this.gunaPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.gunaPictureBox1.TabIndex = 14;
-            this.gunaPictureBox1.TabStop = false;
             // 
             // PRIS_Search_DropBox
             // 

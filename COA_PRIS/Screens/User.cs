@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace COA_PRIS.Screens
 {
-    public partial class User : Form
+    public partial class User : Form, IPRIS_Forms
     {
         private Form current_Form = null;
         private Tab_Manager tab_Manager = new Tab_Manager();
@@ -27,13 +27,16 @@ namespace COA_PRIS.Screens
 
         public Action ResetTable;
 
-
-
         public User()
         {
             InitializeComponent();
         }
 
+        public void FormInvoke()
+        {
+
+
+        }
         private void User_Load(object sender, EventArgs e)
         {
             foreach (Control control in nav_Panel.Controls)

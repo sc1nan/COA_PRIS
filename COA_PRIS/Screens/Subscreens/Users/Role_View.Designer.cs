@@ -32,13 +32,13 @@
             this.top_Panel = new Guna.UI.WinForms.GunaPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.audit_Trail_Btn = new Guna.UI.WinForms.GunaButton();
-            this.update_Role = new Guna.UI.WinForms.GunaButton();
+            this.update_Btn = new Guna.UI.WinForms.GunaButton();
             this.delete_Btn = new Guna.UI.WinForms.GunaButton();
             this.title = new Guna.UI.WinForms.GunaLabel();
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
             this.bottom_Panel = new Guna.UI.WinForms.GunaPanel();
             this.cancel_Btn = new Guna.UI.WinForms.GunaButton();
-            this.create_Btn = new Guna.UI.WinForms.GunaButton();
+            this.save_Btn = new Guna.UI.WinForms.GunaButton();
             this.container_Panel = new Guna.UI.WinForms.GunaPanel();
             this.content_Panel = new Guna.UI.WinForms.GunaPanel();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
@@ -57,19 +57,19 @@
             this.top_Panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.top_Panel.Location = new System.Drawing.Point(10, 10);
             this.top_Panel.Name = "top_Panel";
-            this.top_Panel.Size = new System.Drawing.Size(1664, 55);
+            this.top_Panel.Size = new System.Drawing.Size(1664, 60);
             this.top_Panel.TabIndex = 1;
             // 
             // flowLayoutPanel1
             // 
             this.flowLayoutPanel1.Controls.Add(this.audit_Trail_Btn);
-            this.flowLayoutPanel1.Controls.Add(this.update_Role);
+            this.flowLayoutPanel1.Controls.Add(this.update_Btn);
             this.flowLayoutPanel1.Controls.Add(this.delete_Btn);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(238, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1426, 55);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1426, 60);
             this.flowLayoutPanel1.TabIndex = 3;
             // 
             // audit_Trail_Btn
@@ -77,8 +77,9 @@
             this.audit_Trail_Btn.AnimationHoverSpeed = 0.07F;
             this.audit_Trail_Btn.AnimationSpeed = 0.03F;
             this.audit_Trail_Btn.BackColor = System.Drawing.Color.Transparent;
-            this.audit_Trail_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            this.audit_Trail_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
             this.audit_Trail_Btn.BorderColor = System.Drawing.Color.Black;
+            this.audit_Trail_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.audit_Trail_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.audit_Trail_Btn.FocusedColor = System.Drawing.Color.Empty;
             this.audit_Trail_Btn.Font = new System.Drawing.Font("Segoe UI", 9F);
@@ -86,46 +87,48 @@
             this.audit_Trail_Btn.Image = global::COA_PRIS.Properties.Resources.audit_icon;
             this.audit_Trail_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.audit_Trail_Btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.audit_Trail_Btn.Location = new System.Drawing.Point(1376, 0);
+            this.audit_Trail_Btn.Location = new System.Drawing.Point(1371, 0);
             this.audit_Trail_Btn.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
             this.audit_Trail_Btn.Name = "audit_Trail_Btn";
-            this.audit_Trail_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.audit_Trail_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(117)))));
             this.audit_Trail_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
             this.audit_Trail_Btn.OnHoverForeColor = System.Drawing.Color.White;
             this.audit_Trail_Btn.OnHoverImage = null;
             this.audit_Trail_Btn.OnPressedColor = System.Drawing.Color.Black;
             this.audit_Trail_Btn.Radius = 5;
-            this.audit_Trail_Btn.Size = new System.Drawing.Size(50, 50);
-            this.audit_Trail_Btn.TabIndex = 6;
+            this.audit_Trail_Btn.Size = new System.Drawing.Size(55, 55);
+            this.audit_Trail_Btn.TabIndex = 12;
+            this.audit_Trail_Btn.Click += new System.EventHandler(this.audit_Trail_Btn_Click);
             // 
-            // update_Role
+            // update_Btn
             // 
-            this.update_Role.AnimationHoverSpeed = 0.07F;
-            this.update_Role.AnimationSpeed = 0.03F;
-            this.update_Role.BackColor = System.Drawing.Color.Transparent;
-            this.update_Role.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(115)))), ((int)(((byte)(87)))));
-            this.update_Role.BorderColor = System.Drawing.Color.Black;
-            this.update_Role.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.update_Role.FocusedColor = System.Drawing.Color.Empty;
-            this.update_Role.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.update_Role.ForeColor = System.Drawing.Color.White;
-            this.update_Role.Image = null;
-            this.update_Role.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.update_Role.ImageSize = new System.Drawing.Size(20, 20);
-            this.update_Role.Location = new System.Drawing.Point(1271, 0);
-            this.update_Role.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
-            this.update_Role.Name = "update_Role";
-            this.update_Role.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.update_Role.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.update_Role.OnHoverForeColor = System.Drawing.Color.White;
-            this.update_Role.OnHoverImage = null;
-            this.update_Role.OnPressedColor = System.Drawing.Color.Black;
-            this.update_Role.Radius = 5;
-            this.update_Role.Size = new System.Drawing.Size(100, 50);
-            this.update_Role.TabIndex = 8;
-            this.update_Role.Text = "Update";
-            this.update_Role.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.update_Role.Click += new System.EventHandler(this.update_Role_Click);
+            this.update_Btn.AnimationHoverSpeed = 0.07F;
+            this.update_Btn.AnimationSpeed = 0.03F;
+            this.update_Btn.BackColor = System.Drawing.Color.Transparent;
+            this.update_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
+            this.update_Btn.BorderColor = System.Drawing.Color.Black;
+            this.update_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.update_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.update_Btn.FocusedColor = System.Drawing.Color.Empty;
+            this.update_Btn.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update_Btn.ForeColor = System.Drawing.Color.White;
+            this.update_Btn.Image = global::COA_PRIS.Properties.Resources.update;
+            this.update_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.update_Btn.ImageSize = new System.Drawing.Size(40, 40);
+            this.update_Btn.Location = new System.Drawing.Point(1226, 0);
+            this.update_Btn.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
+            this.update_Btn.Name = "update_Btn";
+            this.update_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(117)))));
+            this.update_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.update_Btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.update_Btn.OnHoverImage = null;
+            this.update_Btn.OnPressedColor = System.Drawing.Color.Black;
+            this.update_Btn.Radius = 5;
+            this.update_Btn.Size = new System.Drawing.Size(140, 55);
+            this.update_Btn.TabIndex = 11;
+            this.update_Btn.Text = "Update";
+            this.update_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.update_Btn.Click += new System.EventHandler(this.update_Role_Click);
             // 
             // delete_Btn
             // 
@@ -134,6 +137,7 @@
             this.delete_Btn.BackColor = System.Drawing.Color.Transparent;
             this.delete_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(66)))), ((int)(((byte)(102)))));
             this.delete_Btn.BorderColor = System.Drawing.Color.Black;
+            this.delete_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.delete_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.delete_Btn.FocusedColor = System.Drawing.Color.Empty;
             this.delete_Btn.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -141,18 +145,19 @@
             this.delete_Btn.Image = global::COA_PRIS.Properties.Resources.trash_bin;
             this.delete_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.delete_Btn.ImageSize = new System.Drawing.Size(30, 30);
-            this.delete_Btn.Location = new System.Drawing.Point(1216, 0);
+            this.delete_Btn.Location = new System.Drawing.Point(1166, 0);
             this.delete_Btn.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
             this.delete_Btn.Name = "delete_Btn";
-            this.delete_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.delete_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(31)))), ((int)(((byte)(75)))));
             this.delete_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
             this.delete_Btn.OnHoverForeColor = System.Drawing.Color.White;
             this.delete_Btn.OnHoverImage = null;
             this.delete_Btn.OnPressedColor = System.Drawing.Color.Black;
             this.delete_Btn.Radius = 5;
-            this.delete_Btn.Size = new System.Drawing.Size(50, 50);
-            this.delete_Btn.TabIndex = 7;
+            this.delete_Btn.Size = new System.Drawing.Size(55, 55);
+            this.delete_Btn.TabIndex = 13;
             this.delete_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.delete_Btn.Visible = false;
             this.delete_Btn.Click += new System.EventHandler(this.delete_Btn_Click);
             // 
             // title
@@ -163,7 +168,7 @@
             this.title.ForeColor = System.Drawing.Color.White;
             this.title.Location = new System.Drawing.Point(0, 0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(238, 55);
+            this.title.Size = new System.Drawing.Size(238, 60);
             this.title.TabIndex = 2;
             this.title.Text = "Role Code";
             this.title.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -174,7 +179,7 @@
             this.gunaLinePanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.gunaLinePanel1.LineColor = System.Drawing.Color.Black;
             this.gunaLinePanel1.LineStyle = System.Windows.Forms.BorderStyle.None;
-            this.gunaLinePanel1.Location = new System.Drawing.Point(10, 65);
+            this.gunaLinePanel1.Location = new System.Drawing.Point(10, 70);
             this.gunaLinePanel1.Name = "gunaLinePanel1";
             this.gunaLinePanel1.Size = new System.Drawing.Size(1664, 5);
             this.gunaLinePanel1.TabIndex = 4;
@@ -183,12 +188,12 @@
             // 
             this.bottom_Panel.BackColor = System.Drawing.Color.Gainsboro;
             this.bottom_Panel.Controls.Add(this.cancel_Btn);
-            this.bottom_Panel.Controls.Add(this.create_Btn);
+            this.bottom_Panel.Controls.Add(this.save_Btn);
             this.bottom_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bottom_Panel.Location = new System.Drawing.Point(10, 843);
+            this.bottom_Panel.Location = new System.Drawing.Point(10, 838);
             this.bottom_Panel.Name = "bottom_Panel";
             this.bottom_Panel.Padding = new System.Windows.Forms.Padding(8, 0, 8, 8);
-            this.bottom_Panel.Size = new System.Drawing.Size(1664, 58);
+            this.bottom_Panel.Size = new System.Drawing.Size(1664, 63);
             this.bottom_Panel.TabIndex = 5;
             // 
             // cancel_Btn
@@ -198,69 +203,69 @@
             this.cancel_Btn.BackColor = System.Drawing.Color.Transparent;
             this.cancel_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(66)))), ((int)(((byte)(102)))));
             this.cancel_Btn.BorderColor = System.Drawing.Color.Black;
+            this.cancel_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cancel_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.cancel_Btn.Dock = System.Windows.Forms.DockStyle.Left;
             this.cancel_Btn.FocusedColor = System.Drawing.Color.Empty;
             this.cancel_Btn.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancel_Btn.ForeColor = System.Drawing.Color.White;
-            this.cancel_Btn.Image = null;
-            this.cancel_Btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.cancel_Btn.Image = global::COA_PRIS.Properties.Resources.close;
+            this.cancel_Btn.ImageSize = new System.Drawing.Size(30, 30);
             this.cancel_Btn.Location = new System.Drawing.Point(8, 0);
             this.cancel_Btn.Margin = new System.Windows.Forms.Padding(0, 8, 0, 0);
             this.cancel_Btn.Name = "cancel_Btn";
-            this.cancel_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.cancel_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(31)))), ((int)(((byte)(75)))));
             this.cancel_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
             this.cancel_Btn.OnHoverForeColor = System.Drawing.Color.White;
             this.cancel_Btn.OnHoverImage = null;
             this.cancel_Btn.OnPressedColor = System.Drawing.Color.Black;
             this.cancel_Btn.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.cancel_Btn.Radius = 8;
-            this.cancel_Btn.Size = new System.Drawing.Size(110, 50);
-            this.cancel_Btn.TabIndex = 5;
+            this.cancel_Btn.Size = new System.Drawing.Size(130, 55);
+            this.cancel_Btn.TabIndex = 11;
             this.cancel_Btn.Text = "Cancel";
-            this.cancel_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.cancel_Btn.Visible = false;
             this.cancel_Btn.Click += new System.EventHandler(this.cancel_Btn_Click);
             // 
-            // create_Btn
+            // save_Btn
             // 
-            this.create_Btn.AnimationHoverSpeed = 0.07F;
-            this.create_Btn.AnimationSpeed = 0.03F;
-            this.create_Btn.BackColor = System.Drawing.Color.Transparent;
-            this.create_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(115)))), ((int)(((byte)(87)))));
-            this.create_Btn.BorderColor = System.Drawing.Color.Black;
-            this.create_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.create_Btn.Dock = System.Windows.Forms.DockStyle.Right;
-            this.create_Btn.FocusedColor = System.Drawing.Color.Empty;
-            this.create_Btn.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.create_Btn.ForeColor = System.Drawing.Color.White;
-            this.create_Btn.Image = null;
-            this.create_Btn.ImageSize = new System.Drawing.Size(20, 20);
-            this.create_Btn.Location = new System.Drawing.Point(1490, 0);
-            this.create_Btn.Margin = new System.Windows.Forms.Padding(0, 0, 0, 8);
-            this.create_Btn.Name = "create_Btn";
-            this.create_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
-            this.create_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.create_Btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.create_Btn.OnHoverImage = null;
-            this.create_Btn.OnPressedColor = System.Drawing.Color.Black;
-            this.create_Btn.Radius = 8;
-            this.create_Btn.Size = new System.Drawing.Size(166, 50);
-            this.create_Btn.TabIndex = 4;
-            this.create_Btn.Text = "Update Record";
-            this.create_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.create_Btn.Visible = false;
-            this.create_Btn.Click += new System.EventHandler(this.create_Btn_Click);
+            this.save_Btn.AnimationHoverSpeed = 0.07F;
+            this.save_Btn.AnimationSpeed = 0.03F;
+            this.save_Btn.BackColor = System.Drawing.Color.Transparent;
+            this.save_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
+            this.save_Btn.BorderColor = System.Drawing.Color.Black;
+            this.save_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.save_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.save_Btn.Dock = System.Windows.Forms.DockStyle.Right;
+            this.save_Btn.FocusedColor = System.Drawing.Color.Empty;
+            this.save_Btn.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.save_Btn.ForeColor = System.Drawing.Color.White;
+            this.save_Btn.Image = null;
+            this.save_Btn.ImageSize = new System.Drawing.Size(20, 20);
+            this.save_Btn.Location = new System.Drawing.Point(1489, 0);
+            this.save_Btn.Margin = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.save_Btn.Name = "save_Btn";
+            this.save_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
+            this.save_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.save_Btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.save_Btn.OnHoverImage = null;
+            this.save_Btn.OnPressedColor = System.Drawing.Color.Black;
+            this.save_Btn.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.save_Btn.Radius = 8;
+            this.save_Btn.Size = new System.Drawing.Size(167, 55);
+            this.save_Btn.TabIndex = 10;
+            this.save_Btn.Text = "Confirm Update";
+            this.save_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.save_Btn.Click += new System.EventHandler(this.create_Btn_Click);
             // 
             // container_Panel
             // 
             this.container_Panel.BackColor = System.Drawing.Color.Gainsboro;
             this.container_Panel.Controls.Add(this.content_Panel);
             this.container_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container_Panel.Location = new System.Drawing.Point(10, 70);
+            this.container_Panel.Location = new System.Drawing.Point(10, 75);
             this.container_Panel.Name = "container_Panel";
             this.container_Panel.Padding = new System.Windows.Forms.Padding(10);
-            this.container_Panel.Size = new System.Drawing.Size(1664, 773);
+            this.container_Panel.Size = new System.Drawing.Size(1664, 763);
             this.container_Panel.TabIndex = 6;
             // 
             // content_Panel
@@ -270,7 +275,7 @@
             this.content_Panel.Location = new System.Drawing.Point(10, 10);
             this.content_Panel.Name = "content_Panel";
             this.content_Panel.Padding = new System.Windows.Forms.Padding(10);
-            this.content_Panel.Size = new System.Drawing.Size(1644, 753);
+            this.content_Panel.Size = new System.Drawing.Size(1644, 743);
             this.content_Panel.TabIndex = 6;
             // 
             // gunaElipse1
@@ -318,15 +323,15 @@
         private Guna.UI.WinForms.GunaLabel title;
         private Guna.UI.WinForms.GunaLinePanel gunaLinePanel1;
         private Guna.UI.WinForms.GunaPanel bottom_Panel;
-        private Guna.UI.WinForms.GunaButton cancel_Btn;
-        private Guna.UI.WinForms.GunaButton create_Btn;
         private Guna.UI.WinForms.GunaPanel container_Panel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private Guna.UI.WinForms.GunaButton audit_Trail_Btn;
-        private Guna.UI.WinForms.GunaButton update_Role;
-        private Guna.UI.WinForms.GunaButton delete_Btn;
         private Guna.UI.WinForms.GunaElipse gunaElipse1;
         private Guna.UI.WinForms.GunaPanel content_Panel;
         private System.Windows.Forms.ErrorProvider errorProvider;
+        private Guna.UI.WinForms.GunaButton audit_Trail_Btn;
+        private Guna.UI.WinForms.GunaButton update_Btn;
+        private Guna.UI.WinForms.GunaButton delete_Btn;
+        private Guna.UI.WinForms.GunaButton cancel_Btn;
+        private Guna.UI.WinForms.GunaButton save_Btn;
     }
 }

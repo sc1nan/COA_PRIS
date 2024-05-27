@@ -18,6 +18,12 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
 
         public string DisplayFormat;
 
+        public bool IsMessageVisible
+        {
+            get { return message.Visible; }
+            set { message.Visible = value; }
+
+        }
         public bool IsVisible
         {
             get { return this.Visible; }

@@ -17,9 +17,11 @@ namespace COA_PRIS.Screens
     {
         private Form current_Form = null;
         private Login_Manager login_manager;
-        private Database_Manager database_manager = new Database_Manager();
+        private Database_Manager Database_Manager = new Database_Manager();
         private Tab_Manager tab_Manager;
         private Activity_Manager activity_manager;
+
+        
 
         private readonly Projects projects_Tab = new Projects();
         private readonly Home landing_Home = new Home();
@@ -29,13 +31,16 @@ namespace COA_PRIS.Screens
         private readonly Reports reports_Tab = new Reports();
         private readonly User user_Tab = new User();
 
+
         public Dashboard()
         {
             InitializeComponent();
             title_Panel.BringToFront();
 
-            Activity_Manager.CurrentUser = "TSO_Dev";
-            //this.AutoScaleMode = AutoScaleMode.Dpi;
+            
+            Access_Manager();
+            
+
         }
 
         private void Dashboard_Load(object sender, EventArgs e)
@@ -50,19 +55,17 @@ namespace COA_PRIS.Screens
 
             tab_Manager.Header_Title = headerTitle;
             tab_Manager.active_Button(EmployeeBtn, true);
-            ProjectBtn.PerformClick();
+            HomeBtn.PerformClick();
 
-            gunaLabel1.Text = Activity_Manager.CurrentUser;
 
-            Access_Manager();
         }
 
 
         private void Access_Manager() 
         {          
             DataTable ret;
-            using (database_manager)
-                ret = database_manager.ExecuteQuery(string.Format(Database_Query.get_user_access, Activity_Manager.CurrentUser));
+            using (Database_Manager)
+                ret = Database_Manager.ExecuteQuery(string.Format(Database_Query.get_user_access, Activity_Manager.CurrentUser));
 
             if (ret != null) 
                 for (int retIndex = 0; retIndex < ret.Columns.Count; retIndex++) 
@@ -82,7 +85,10 @@ namespace COA_PRIS.Screens
                 else
                 {
                     activityManager.Log_Activity(Activity_Manager.CurrentUser, Log_Message.logout_message);
-                    Application.Exit();
+                    this.Hide();
+                    Login log = new Login();
+                    log.ShowDialog();
+                    this.Dispose();
                 }
             }
         }
@@ -117,7 +123,10 @@ namespace COA_PRIS.Screens
                     break;
             }
             if (form != null)
+            {
                 current_Form = tab_Manager.switch_Form(form, current_Form, Main_Form);
+                ((IPRIS_Forms)form).FormInvoke();
+            }
 
             tab_Manager.active_Button(button, true);
         }
@@ -125,7 +134,7 @@ namespace COA_PRIS.Screens
         private void Logoutbtn_Click(object sender, EventArgs e)
         {
             Activity_Manager activityManager = new Activity_Manager();
-            database_manager = new Database_Manager();
+            Database_Manager = new Database_Manager();
             if (MessageBox.Show("Are you sure you want to logout", "Logout Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 activityManager.Log_ActivityOut(Activity_Manager.CurrentUser, Log_Message.logout_message);

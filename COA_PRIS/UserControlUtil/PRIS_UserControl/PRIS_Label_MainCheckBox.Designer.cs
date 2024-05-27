@@ -35,6 +35,7 @@
             this.check = new Guna.UI.WinForms.GunaMediumCheckBox();
             this.title = new Guna.UI.WinForms.GunaLabel();
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
+            this.message = new Guna.UI.WinForms.GunaLabel();
             this.bottom_Panel = new System.Windows.Forms.FlowLayoutPanel();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.container_Panel.SuspendLayout();
@@ -50,6 +51,7 @@
             this.container_Panel.BaseColor = System.Drawing.Color.Gainsboro;
             this.container_Panel.Controls.Add(this.content_Panel);
             this.container_Panel.Location = new System.Drawing.Point(4, 3);
+            this.container_Panel.Margin = new System.Windows.Forms.Padding(3, 3, 13, 3);
             this.container_Panel.Name = "container_Panel";
             this.container_Panel.Size = new System.Drawing.Size(411, 94);
             this.container_Panel.TabIndex = 0;
@@ -71,13 +73,15 @@
             // top_Panel
             // 
             this.top_Panel.BackColor = System.Drawing.Color.Transparent;
-            this.top_Panel.ColumnCount = 3;
+            this.top_Panel.ColumnCount = 4;
+            this.top_Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.top_Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.top_Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.top_Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.top_Panel.Controls.Add(this.check, 0, 0);
             this.top_Panel.Controls.Add(this.title, 2, 0);
             this.top_Panel.Controls.Add(this.gunaLinePanel1, 1, 0);
+            this.top_Panel.Controls.Add(this.message, 3, 0);
             this.top_Panel.Location = new System.Drawing.Point(3, 3);
             this.top_Panel.Name = "top_Panel";
             this.top_Panel.RowCount = 1;
@@ -127,6 +131,19 @@
             this.gunaLinePanel1.Size = new System.Drawing.Size(3, 44);
             this.gunaLinePanel1.TabIndex = 3;
             // 
+            // message
+            // 
+            this.message.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.message.AutoSize = true;
+            this.message.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.message.ForeColor = System.Drawing.Color.Gray;
+            this.message.Location = new System.Drawing.Point(123, 14);
+            this.message.Margin = new System.Windows.Forms.Padding(0, 0, 3, 3);
+            this.message.Name = "message";
+            this.message.Size = new System.Drawing.Size(0, 19);
+            this.message.TabIndex = 6;
+            this.message.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
             // bottom_Panel
             // 
             this.bottom_Panel.AutoSize = true;
@@ -154,7 +171,7 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.Controls.Add(this.container_Panel);
             this.Name = "PRIS_Label_MainCheckBox";
-            this.Size = new System.Drawing.Size(418, 100);
+            this.Size = new System.Drawing.Size(428, 100);
             this.Load += new System.EventHandler(this.PRIS_Label_RoleCheckBox_Load);
             this.SizeChanged += new System.EventHandler(this.PRIS_Label_MainCheckBox_SizeChanged);
             this.container_Panel.ResumeLayout(false);
@@ -178,5 +195,6 @@
         private Guna.UI.WinForms.GunaLabel title;
         private Guna.UI.WinForms.GunaLinePanel gunaLinePanel1;
         private System.Windows.Forms.FlowLayoutPanel bottom_Panel;
+        private Guna.UI.WinForms.GunaLabel message;
     }
 }

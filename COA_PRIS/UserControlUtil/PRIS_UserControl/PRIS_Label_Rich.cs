@@ -16,9 +16,15 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
     {
         public bool IsRequiredValue = false;
         public string SpecialChar;
-        
+
         private Color CurrentColor;
 
+        public bool IsMessageVisible
+        {
+            get { return message.Visible; }
+            set { message.Visible = value; }
+
+        }
         public bool IsVisible
         {
             get { return this.Visible; }
@@ -35,7 +41,11 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
         public bool IsRequired
         {
             get { return IsRequiredValue; }
-            set { IsRequiredValue = value; }
+            set
+            {
+                IsRequiredValue = value;
+                message.Text = value ? "(Required)" : "(Optional)";
+            }
         }
         public string Title
         {
@@ -81,10 +91,12 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
             InitializeComponent();
         }
 
-        public PRIS_Label_Rich(string _title, bool _isRequired = true, bool _isReadOnly = false, int _entryHeight = 150, string _specialChar = null )
+        public PRIS_Label_Rich(string _title, bool _isRequired = true, bool _isReadOnly = false, int _entryHeight = 150, string _specialChar = null,
+            bool _showMessage = true)
         {
             InitializeComponent();
             this.title.Text = _title;
+            this.message.Visible = _showMessage;
             this.entry.Tag = _title.Replace(":", "").Trim();
             this.IsRequired = _isRequired;
             this.Height = _entryHeight;

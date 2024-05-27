@@ -18,17 +18,23 @@ using System.Windows.Forms;
 
 namespace COA_PRIS.Screens
 {
-    public partial class ActivityLogs : Form
+    public partial class ActivityLogs : Form, IPRIS_Forms
     {
         private Tab_Manager tab_Manager;
 
         private Form current_Form = null;
+
 
         private readonly AccountLogging account_Logging = new AccountLogging();
         private readonly ActivityLogging activity_Logging = new ActivityLogging();
         public ActivityLogs()
         {
             InitializeComponent();
+        }
+        public void FormInvoke()
+        {
+
+
         }
 
         private void button_Click(object sender, EventArgs e)

@@ -15,7 +15,13 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
     public partial class PRIS_Label_Status : UserControl, IPRIS_UserControl
     {
         public bool IsRequiredValue = false;
-        
+
+        public bool IsMessageVisible
+        {
+            get { return false; }
+            set {  }
+
+        }
         public bool IsVisible
         {
             get { return this.Visible; }
@@ -89,15 +95,18 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
         {
             if (icon.Enabled || icon.Visible) 
             {
-                switch (entry.Text) 
+                switch (entry.SelectedValue) 
                 {
-                    case "Forwarded":
+                    case "SYSTEM_STS000002":
                         icon.Image = Resources.active;
                         break;
-                    case "Pending":
+                    case "SYSTEM_STS000001":
                         icon.Image = Resources.pending;
                         break;
-                    case "Filed":
+                    case "SYSTEM_STS000003":
+                        icon.Image = Resources.filed;
+                        break;
+                    case "SYSTEM_STS000004":
                         icon.Image = Resources.filed;
                         break;
                     default:

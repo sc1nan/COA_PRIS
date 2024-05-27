@@ -34,7 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.top_Panel = new Guna.UI.WinForms.GunaPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.PRIS_Seachbox = new COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Search_DropBox();
             this.refresh_Btn = new Guna.UI.WinForms.GunaButton();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.add_RecordBtn = new Guna.UI.WinForms.GunaButton();
@@ -44,6 +43,7 @@
             this.gunaPanel3 = new Guna.UI.WinForms.GunaPanel();
             this.data_View = new Guna.UI.WinForms.GunaDataGridView();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.PRIS_Seachbox = new COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Search_DropBox();
             this.top_Panel.SuspendLayout();
             this.flowLayoutPanel2.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -75,15 +75,6 @@
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(1335, 68);
             this.flowLayoutPanel2.TabIndex = 1;
-            // 
-            // PRIS_Seachbox
-            // 
-            this.PRIS_Seachbox.Location = new System.Drawing.Point(3, 3);
-            this.PRIS_Seachbox.Margin = new System.Windows.Forms.Padding(3, 3, 8, 3);
-            this.PRIS_Seachbox.Name = "PRIS_Seachbox";
-            this.PRIS_Seachbox.Search_Text = "";
-            this.PRIS_Seachbox.Size = new System.Drawing.Size(620, 60);
-            this.PRIS_Seachbox.TabIndex = 3;
             // 
             // refresh_Btn
             // 
@@ -301,6 +292,15 @@
             // gunaElipse1
             // 
             this.gunaElipse1.TargetControl = this.data_View;
+            // 
+            // PRIS_Seachbox
+            // 
+            this.PRIS_Seachbox.Location = new System.Drawing.Point(3, 3);
+            this.PRIS_Seachbox.Margin = new System.Windows.Forms.Padding(3, 3, 8, 3);
+            this.PRIS_Seachbox.Name = "PRIS_Seachbox";
+            this.PRIS_Seachbox.Search_Text = "";
+            this.PRIS_Seachbox.Size = new System.Drawing.Size(620, 60);
+            this.PRIS_Seachbox.TabIndex = 3;
             // 
             // Project_List
             // 

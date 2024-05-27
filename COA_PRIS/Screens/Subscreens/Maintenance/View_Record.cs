@@ -16,7 +16,7 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
     public partial class View_Record : Form
     {
 
-        private Database_Manager database_Manager = new Database_Manager();
+        private Database_Manager Database_Manager = new Database_Manager();
         private Util util = new Util();
         private Validator validator = new Validator();
         private Audit_Trail audit_Trail;
@@ -42,15 +42,28 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
             this.Update_Query = update_Query;
             this.Table = table;
 
-
-            using (database_Manager)
+            Access_Manager();
+            using (Database_Manager)
             {
-                status = Convert.ToInt32(database_Manager.ExecuteScalar(string.Format(Database_Query.get_record_status, Table, Record_ID)));
+                status = Convert.ToInt32(Database_Manager.ExecuteScalar(string.Format(Database_Query.get_record_status, Table, Record_ID)));
             }
 
             delete_Btn.Enabled = (status == -1 || status == -2) ? false : true;
             update_Btn.Enabled = status == -2 ? false : true;
 
+
+        }
+
+        private void Access_Manager()
+        {
+            DataTable ret;
+            using (Database_Manager)
+                ret = Database_Manager.ExecuteQuery(string.Format(Database_Query.get_user_maintenance_access, Activity_Manager.CurrentUser));
+
+            if (ret != null)
+            {
+                update_Btn.Visible = ret.Rows[0][2].ToString() == "1" ? true : false;
+            }
 
         }
 
@@ -80,9 +93,9 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
             DataTable ret = new DataTable();
             InitialValues = new Dictionary<string, string>();
 
-            using (database_Manager) 
+            using (Database_Manager) 
             {
-                ret = database_Manager.ExecuteQuery(string.Format(this.Read_Query, this.Record_ID));
+                ret = Database_Manager.ExecuteQuery(string.Format(this.Read_Query, this.Record_ID));
             }
 
             if (ret.Columns.Count == control_Panel.Controls.Count)
@@ -169,17 +182,17 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
             values.Add(code_Title.Text);
             entries.Add(values);
 
-            using (database_Manager)
-                ret = database_Manager.ExecuteNonQuery(util.GenerateQuery(entries, Update_Query));
+            using (Database_Manager)
+                ret = Database_Manager.ExecuteNonQuery(util.GenerateQuery(entries, Update_Query));
 
             Console.WriteLine(util.GenerateQuery(entries, Update_Query));
             if (ret == 1)
             {
-                using (database_Manager)
+                using (Database_Manager)
                 {
-                    string code_type = database_Manager.ExecuteScalar(string.Format(Database_Query.return_module_name, Table)).ToString();
+                    string code_type = Database_Manager.ExecuteScalar(string.Format(Database_Query.return_module_name, Table)).ToString();
                     //make activity log
-                    database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_edit, Activity_Manager.CurrentUser, $"Updated Record : {code_type} {code_Title.Text} - {UpdateMessage}"));
+                    Database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_edit, Activity_Manager.CurrentUser, $"Updated Record : {code_type} {code_Title.Text} - {UpdateMessage}"));
                 }
                 if (MessageBox.Show($"{code_Title.Text} is successfully Updated.", "Update Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
                 {
@@ -197,11 +210,11 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
             if (MessageBox.Show($"Are you sure to delete {code_Title.Text}?", "Delete Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
 
-                using (database_Manager)
+                using (Database_Manager)
                 {
-                    database_Manager.ExecuteNonQuery(string.Format(Database_Query.delete_record_by_id, this.Table, this.Record_ID));
-                    string code_type = database_Manager.ExecuteScalar(string.Format(Database_Query.return_module_name, Table)).ToString();
-                    database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_delete, Activity_Manager.CurrentUser, code_type, code_Title.Text));
+                    Database_Manager.ExecuteNonQuery(string.Format(Database_Query.delete_record_by_id, this.Table, this.Record_ID));
+                    string code_type = Database_Manager.ExecuteScalar(string.Format(Database_Query.return_module_name, Table)).ToString();
+                    Database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_delete, Activity_Manager.CurrentUser, code_type, code_Title.Text));
                 }
                 MessageBox.Show($"{code_Title.Text} is successfully deleted", "Delete Confirmation");
                 is_ClosingProgrammatically = true;

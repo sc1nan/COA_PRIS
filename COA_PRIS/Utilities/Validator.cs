@@ -144,6 +144,7 @@ namespace COA_PRIS.Utilities
             foreach (IPRIS_UserControl pris in PRISControls) 
             { 
                 pris.ReadOnly = _isReadOnly;
+                pris.IsMessageVisible = !_isReadOnly;
             }
         }
     }

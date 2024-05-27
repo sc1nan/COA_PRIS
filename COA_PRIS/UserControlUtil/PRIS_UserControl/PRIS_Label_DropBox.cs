@@ -14,6 +14,12 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
     {
         public bool IsRequiredValue = false;
 
+        public bool IsMessageVisible
+        {
+            get { return message.Visible; }
+            set { message.Visible = value; }
+
+        }
         public bool IsVisible
         {
             get { return this.Visible; }
@@ -40,6 +46,12 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
 
         public string Value
         {
+            get { return entry.SelectedValue.ToString(); }
+            set { entry.Text = value; }
+        }
+
+        public string RawValue
+        {
             get { return entry.Text; }
             set { entry.Text = value; }
         }
@@ -47,12 +59,25 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
         public bool ReadOnly
         {
             get { return entry.Enabled; }
-            set { entry.Enabled = value; }
+            set 
+            { 
+                entry.Enabled = !value;
+                entry.Visible = !value;
+                readOnlyEntry.Visible = value;
+                readOnlyEntry.Text = entry.Text;
+            }
         }
 
-        public List<string> DropboxValues
+        public Dictionary<string, string> DropboxValues
         {
-            set { entry.DataSource = value; }
+            set 
+            { 
+                entry.DataSource = new BindingSource(value, null);
+                entry.DisplayMember = "Value";
+                entry.ValueMember = "Key";   
+            
+            
+            }
         }
 
         public PRIS_Label_DropBox()
@@ -60,7 +85,7 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
             InitializeComponent();
         }
 
-        public PRIS_Label_DropBox(string _title, List<string> _dropboxValues, bool _isRequired = true)
+        public PRIS_Label_DropBox(string _title, Dictionary<string, string> _dropboxValues, bool _isRequired = true)
         {
             InitializeComponent();
             this.Title = _title;

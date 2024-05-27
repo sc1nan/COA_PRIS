@@ -14,13 +14,12 @@ namespace COA_PRIS.Screens.Subscreens.Projects
 {
     public partial class Project_List : Form
     {
-        
         private Database_Manager Database_Manager = new Database_Manager();
         private Util util = new Util();
 
         private Project_Create Project_Create;
         private Project_View Project_View;
-
+        
         public Project_List()
         {
             InitializeComponent();
@@ -28,10 +27,26 @@ namespace COA_PRIS.Screens.Subscreens.Projects
         private void Project_List_Load(object sender, EventArgs e)
         {
             InitializeControls();
+            Access_Manager();
             PRIS_Seachbox.DropboxValues = new List<string>() { "All", "Code", "Routing #", "Title", "Amount", "Status"};
             PRIS_Seachbox.Search_Typed += SearchBar_CallBack;
             
         }
+
+        private void Access_Manager()
+        {
+            DataTable ret;
+            using (Database_Manager)
+                ret = Database_Manager.ExecuteQuery(string.Format(Database_Query.get_user_project_access, Activity_Manager.CurrentUser));
+
+            if (ret != null) 
+            { 
+                add_RecordBtn.Visible = ret.Rows[0][0].ToString() == "1" ? true : false  ;
+                view_RecordBtn.Visible = ret.Rows[0][1].ToString() == "1" ? true : false;
+            }
+
+        }
+
         private void InitializeControls() 
         {
 
@@ -56,7 +71,6 @@ namespace COA_PRIS.Screens.Subscreens.Projects
             Project_Create.ToRefresh += Refresh_Table;
             Project_Create.ShowDialog();
         }
-
         private void view_RecordBtn_Click(object sender, EventArgs e)
         {
             if (data_View.Rows.Count != 0) 
@@ -66,7 +80,6 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                 Project_View.ShowDialog();
             }
         }
-
         private void SearchBar_CallBack(object sender, EventArgs e) 
         {
             DataTable ret = null;
@@ -96,18 +109,15 @@ namespace COA_PRIS.Screens.Subscreens.Projects
             }
             data_View.DataSource = util.FormatDataTable(ret);
         }
-
         private void refresh_Btn_Click(object sender, EventArgs e)
         {
             Refresh_Table();
             PRIS_Seachbox.Clear();
         }
-
-        private void RefreshCallback() 
+        public void RefreshCallback() 
         {
             Refresh_Table();
         }
-
         private void Refresh_Table()
         {
             DataTable ret;

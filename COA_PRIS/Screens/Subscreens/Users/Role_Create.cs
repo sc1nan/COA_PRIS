@@ -31,13 +31,12 @@ namespace COA_PRIS.Screens.Subscreens.Users
         }
         private void Role_Create_Load(object sender, EventArgs e)
         {
-            id_Text.Text = util.GenerateID("user_role_table");
+            id_Text.Text = util.GenarateUID("user_role_table");
         }
 
         private void InitializeControls() 
         {
             util.SetControls(controls: PRIS_Info(), parent: content_Panel);
-            //util.SetControls(controls: PRIS_Role(), parent: role_Panel);
 
 
         }
@@ -56,12 +55,12 @@ namespace COA_PRIS.Screens.Subscreens.Users
                 {
                     new PRIS_Label_MainCheckBox(_title: "Home", _isChecked: true, _isReadOnly: true),
                     new PRIS_Label_MainCheckBox(_title: "Projects", _isChecked: false,
-                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", false, true),("Update Records", false, true),("Delete Records", false, true) }),
+                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", false, true),("Update Records", false, true), }),
                     new PRIS_Label_MainCheckBox(_title: "Employee", _isChecked: false,
-                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", false, true),("Update Records", false, true),("Delete Records", false, true) }),
+                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", false, true),("Update Records", false, true), }),
                     new PRIS_Label_MainCheckBox(_title: "Reports", _isChecked: false),
                     new PRIS_Label_MainCheckBox(_title: "Maintenance", _isChecked: false,
-                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", false, true),("Update Records", false, true),("Delete Records", false, true) }),
+                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", false, true),("Update Records", false, true), }),
                     new PRIS_Label_MainCheckBox(_title: "User Settings", _isChecked: false),
                     new PRIS_Label_MainCheckBox(_title: "Activity Logs", _isChecked: false),
                 }
@@ -78,12 +77,12 @@ namespace COA_PRIS.Screens.Subscreens.Users
                 {
                     new PRIS_Label_MainCheckBox(_title: "Home", _isChecked: true, _isReadOnly: true),
                     new PRIS_Label_MainCheckBox(_title: "Projects", _isChecked: false,
-                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", false, true),("Update Records", false, true),("Delete Records", false, true) }),
+                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", false, true),("Update Records", false, true), }),
                     new PRIS_Label_MainCheckBox(_title: "Employee", _isChecked: false,
-                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", false, true),("Update Records", false, true),("Delete Records", false, true) }),
+                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", false, true),("Update Records", false, true), }),
                     new PRIS_Label_MainCheckBox(_title: "Reports", _isChecked: false),
                     new PRIS_Label_MainCheckBox(_title: "Maintenance", _isChecked: false,
-                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", false, true),("Update Records", false, true),("Delete Records", false, true) }),
+                        _boxes: new (string, bool, bool)[] { ("Add Records", false, true),("View Records", false, true),("Update Records", false, true), }),
                     new PRIS_Label_MainCheckBox(_title: "User Settings", _isChecked: false),
                     new PRIS_Label_MainCheckBox(_title: "Activity Logs", _isChecked: false),
                 }
@@ -144,10 +143,10 @@ namespace COA_PRIS.Screens.Subscreens.Users
                 ret = Database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_new_role_access,
                                                                                 id_Text.Text, values["Role Title"], values["Description"],
                                                                                 values["Home"],
-                                                                                values["Projects"], values["Projects_Add Records"], values["Projects_View Records"], values["Projects_Update Records"], values["Projects_Delete Records"],
-                                                                                values["Employee"], values["Employee_Add Records"], values["Employee_View Records"], values["Employee_Update Records"], values["Employee_Delete Records"],
+                                                                                values["Projects"], values["Projects_Add Records"], values["Projects_View Records"], values["Projects_Update Records"], "0",
+                                                                                values["Employee"], values["Employee_Add Records"], values["Employee_View Records"], values["Employee_Update Records"], "0",
                                                                                 values["Reports"],
-                                                                                values["Maintenance"], values["Maintenance_Add Records"], values["Maintenance_View Records"], values["Maintenance_Update Records"], values["Maintenance_Delete Records"],
+                                                                                values["Maintenance"], values["Maintenance_Add Records"], values["Maintenance_View Records"], values["Maintenance_Update Records"], "0",
                                                                                 values["User Settings"],
                                                                                 values["Activity Logs"],
                                                                                 Activity_Manager.CurrentUser));

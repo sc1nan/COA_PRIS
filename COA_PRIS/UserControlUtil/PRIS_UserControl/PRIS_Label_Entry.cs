@@ -21,6 +21,12 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
 
         public event EventHandler Text_Changed;
 
+        public bool IsMessageVisible 
+        {
+            get { return message.Visible; }
+            set { message.Visible = value;  }
+
+        }
         public bool IsVisible
         {
             get { return this.Visible; }
@@ -37,7 +43,12 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
         public bool IsRequired
         {
             get { return IsRequiredValue; }
-            set { IsRequiredValue = value; }
+            set 
+            { 
+                IsRequiredValue = value;
+                message.Text = value ? "(Required)" : "(Optional)";
+
+            }
         }
         public string Title 
         {
@@ -92,10 +103,12 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
         }
 
         public PRIS_Label_Entry(string _title, bool _isRequired = true, bool _isReadOnly = false, bool _enabledText = true,
-            string _specialChar = null, HorizontalAlignment _textAlign = HorizontalAlignment.Left, bool _isCurrency = false) 
+            string _specialChar = null, HorizontalAlignment _textAlign = HorizontalAlignment.Left, bool _isCurrency = false,
+            bool _showMessage = true) 
         {
             InitializeComponent();
             this.title.Text = _title;
+            this.message.Visible = _showMessage;
             this.entry.Tag = _title.Replace(":","").Trim();
             this.IsRequired = _isRequired;
             this.ReadOnly = _isReadOnly;

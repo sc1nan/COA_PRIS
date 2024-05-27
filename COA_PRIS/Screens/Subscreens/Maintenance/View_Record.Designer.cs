@@ -32,29 +32,29 @@
             this.top_Panel = new Guna.UI.WinForms.GunaPanel();
             this.config_Panel = new System.Windows.Forms.FlowLayoutPanel();
             this.audit_Trail_Btn = new Guna.UI.WinForms.GunaButton();
+            this.update_Btn = new Guna.UI.WinForms.GunaButton();
             this.delete_Btn = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.code_Title = new Guna.UI.WinForms.GunaLabel();
             this.line_Panel = new Guna.UI.WinForms.GunaPanel();
             this.parent_Panel = new Guna.UI.WinForms.GunaPanel();
             this.controlMain_Panel = new Guna.UI.WinForms.GunaPanel();
-            this.error_provider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.bottom_Panel = new Guna.UI.WinForms.GunaPanel();
-            this.button_Panel = new System.Windows.Forms.TableLayoutPanel();
             this.contro_Control_Panel = new Guna.UI.WinForms.GunaElipsePanel();
             this.control_Panel = new System.Windows.Forms.FlowLayoutPanel();
-            this.cancel_Btn = new Guna.UI.WinForms.GunaButton();
+            this.bottom_Panel = new Guna.UI.WinForms.GunaPanel();
+            this.button_Panel = new System.Windows.Forms.TableLayoutPanel();
             this.save_Btn = new Guna.UI.WinForms.GunaButton();
-            this.update_Btn = new Guna.UI.WinForms.GunaButton();
+            this.cancel_Btn = new Guna.UI.WinForms.GunaButton();
+            this.error_provider = new System.Windows.Forms.ErrorProvider(this.components);
             this.top_Panel.SuspendLayout();
             this.config_Panel.SuspendLayout();
             this.gunaPanel1.SuspendLayout();
             this.parent_Panel.SuspendLayout();
             this.controlMain_Panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.error_provider)).BeginInit();
+            this.contro_Control_Panel.SuspendLayout();
             this.bottom_Panel.SuspendLayout();
             this.button_Panel.SuspendLayout();
-            this.contro_Control_Panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.error_provider)).BeginInit();
             this.SuspendLayout();
             // 
             // top_Panel
@@ -110,6 +110,36 @@
             this.audit_Trail_Btn.TabIndex = 3;
             this.audit_Trail_Btn.Click += new System.EventHandler(this.audit_Trail_Btn_Click);
             // 
+            // update_Btn
+            // 
+            this.update_Btn.AnimationHoverSpeed = 0.07F;
+            this.update_Btn.AnimationSpeed = 0.03F;
+            this.update_Btn.BackColor = System.Drawing.Color.Transparent;
+            this.update_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
+            this.update_Btn.BorderColor = System.Drawing.Color.Black;
+            this.update_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.update_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.update_Btn.FocusedColor = System.Drawing.Color.Empty;
+            this.update_Btn.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.update_Btn.ForeColor = System.Drawing.Color.White;
+            this.update_Btn.Image = global::COA_PRIS.Properties.Resources.update;
+            this.update_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.update_Btn.ImageSize = new System.Drawing.Size(40, 40);
+            this.update_Btn.Location = new System.Drawing.Point(244, 0);
+            this.update_Btn.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
+            this.update_Btn.Name = "update_Btn";
+            this.update_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(117)))));
+            this.update_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.update_Btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.update_Btn.OnHoverImage = null;
+            this.update_Btn.OnPressedColor = System.Drawing.Color.Black;
+            this.update_Btn.Radius = 5;
+            this.update_Btn.Size = new System.Drawing.Size(140, 55);
+            this.update_Btn.TabIndex = 9;
+            this.update_Btn.Text = "Update";
+            this.update_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.update_Btn.Click += new System.EventHandler(this.update_Btn_Click);
+            // 
             // delete_Btn
             // 
             this.delete_Btn.AnimationHoverSpeed = 0.07F;
@@ -137,6 +167,7 @@
             this.delete_Btn.Size = new System.Drawing.Size(55, 55);
             this.delete_Btn.TabIndex = 4;
             this.delete_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.delete_Btn.Visible = false;
             this.delete_Btn.Click += new System.EventHandler(this.delete_Btn_Click);
             // 
             // gunaPanel1
@@ -191,38 +222,6 @@
             this.controlMain_Panel.Size = new System.Drawing.Size(648, 560);
             this.controlMain_Panel.TabIndex = 3;
             // 
-            // error_provider
-            // 
-            this.error_provider.BlinkRate = 0;
-            this.error_provider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
-            this.error_provider.ContainerControl = this;
-            // 
-            // bottom_Panel
-            // 
-            this.bottom_Panel.Controls.Add(this.button_Panel);
-            this.bottom_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bottom_Panel.Location = new System.Drawing.Point(0, 498);
-            this.bottom_Panel.Name = "bottom_Panel";
-            this.bottom_Panel.Size = new System.Drawing.Size(648, 62);
-            this.bottom_Panel.TabIndex = 9;
-            // 
-            // button_Panel
-            // 
-            this.button_Panel.ColumnCount = 2;
-            this.button_Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.button_Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.button_Panel.Controls.Add(this.save_Btn, 0, 0);
-            this.button_Panel.Controls.Add(this.cancel_Btn, 0, 0);
-            this.button_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_Panel.Location = new System.Drawing.Point(0, 0);
-            this.button_Panel.Margin = new System.Windows.Forms.Padding(8);
-            this.button_Panel.Name = "button_Panel";
-            this.button_Panel.RowCount = 1;
-            this.button_Panel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.07207F));
-            this.button_Panel.Size = new System.Drawing.Size(648, 62);
-            this.button_Panel.TabIndex = 8;
-            this.button_Panel.Visible = false;
-            // 
             // contro_Control_Panel
             // 
             this.contro_Control_Panel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -250,35 +249,31 @@
             this.control_Panel.TabIndex = 5;
             this.control_Panel.WrapContents = false;
             // 
-            // cancel_Btn
+            // bottom_Panel
             // 
-            this.cancel_Btn.AnimationHoverSpeed = 0.07F;
-            this.cancel_Btn.AnimationSpeed = 0.03F;
-            this.cancel_Btn.BackColor = System.Drawing.Color.Transparent;
-            this.cancel_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(66)))), ((int)(((byte)(102)))));
-            this.cancel_Btn.BorderColor = System.Drawing.Color.Black;
-            this.cancel_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cancel_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.cancel_Btn.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cancel_Btn.FocusedColor = System.Drawing.Color.Empty;
-            this.cancel_Btn.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancel_Btn.ForeColor = System.Drawing.Color.White;
-            this.cancel_Btn.Image = global::COA_PRIS.Properties.Resources.close;
-            this.cancel_Btn.ImageSize = new System.Drawing.Size(30, 30);
-            this.cancel_Btn.Location = new System.Drawing.Point(0, 8);
-            this.cancel_Btn.Margin = new System.Windows.Forms.Padding(0, 8, 0, 0);
-            this.cancel_Btn.Name = "cancel_Btn";
-            this.cancel_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(31)))), ((int)(((byte)(75)))));
-            this.cancel_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.cancel_Btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.cancel_Btn.OnHoverImage = null;
-            this.cancel_Btn.OnPressedColor = System.Drawing.Color.Black;
-            this.cancel_Btn.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this.cancel_Btn.Radius = 8;
-            this.cancel_Btn.Size = new System.Drawing.Size(130, 54);
-            this.cancel_Btn.TabIndex = 10;
-            this.cancel_Btn.Text = "Cancel";
-            this.cancel_Btn.Click += new System.EventHandler(this.cancel_Btn_Click);
+            this.bottom_Panel.Controls.Add(this.button_Panel);
+            this.bottom_Panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bottom_Panel.Location = new System.Drawing.Point(0, 498);
+            this.bottom_Panel.Name = "bottom_Panel";
+            this.bottom_Panel.Size = new System.Drawing.Size(648, 62);
+            this.bottom_Panel.TabIndex = 9;
+            // 
+            // button_Panel
+            // 
+            this.button_Panel.ColumnCount = 2;
+            this.button_Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.button_Panel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.button_Panel.Controls.Add(this.save_Btn, 0, 0);
+            this.button_Panel.Controls.Add(this.cancel_Btn, 0, 0);
+            this.button_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_Panel.Location = new System.Drawing.Point(0, 0);
+            this.button_Panel.Margin = new System.Windows.Forms.Padding(8);
+            this.button_Panel.Name = "button_Panel";
+            this.button_Panel.RowCount = 1;
+            this.button_Panel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 72.07207F));
+            this.button_Panel.Size = new System.Drawing.Size(648, 62);
+            this.button_Panel.TabIndex = 8;
+            this.button_Panel.Visible = false;
             // 
             // save_Btn
             // 
@@ -311,35 +306,41 @@
             this.save_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.save_Btn.Click += new System.EventHandler(this.save_Btn_Click);
             // 
-            // update_Btn
+            // cancel_Btn
             // 
-            this.update_Btn.AnimationHoverSpeed = 0.07F;
-            this.update_Btn.AnimationSpeed = 0.03F;
-            this.update_Btn.BackColor = System.Drawing.Color.Transparent;
-            this.update_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
-            this.update_Btn.BorderColor = System.Drawing.Color.Black;
-            this.update_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.update_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.update_Btn.FocusedColor = System.Drawing.Color.Empty;
-            this.update_Btn.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.update_Btn.ForeColor = System.Drawing.Color.White;
-            this.update_Btn.Image = global::COA_PRIS.Properties.Resources.update;
-            this.update_Btn.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.update_Btn.ImageSize = new System.Drawing.Size(40, 40);
-            this.update_Btn.Location = new System.Drawing.Point(244, 0);
-            this.update_Btn.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
-            this.update_Btn.Name = "update_Btn";
-            this.update_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(117)))));
-            this.update_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.update_Btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.update_Btn.OnHoverImage = null;
-            this.update_Btn.OnPressedColor = System.Drawing.Color.Black;
-            this.update_Btn.Radius = 5;
-            this.update_Btn.Size = new System.Drawing.Size(140, 55);
-            this.update_Btn.TabIndex = 9;
-            this.update_Btn.Text = "Update";
-            this.update_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.update_Btn.Click += new System.EventHandler(this.update_Btn_Click);
+            this.cancel_Btn.AnimationHoverSpeed = 0.07F;
+            this.cancel_Btn.AnimationSpeed = 0.03F;
+            this.cancel_Btn.BackColor = System.Drawing.Color.Transparent;
+            this.cancel_Btn.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(66)))), ((int)(((byte)(102)))));
+            this.cancel_Btn.BorderColor = System.Drawing.Color.Black;
+            this.cancel_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cancel_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.cancel_Btn.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cancel_Btn.FocusedColor = System.Drawing.Color.Empty;
+            this.cancel_Btn.Font = new System.Drawing.Font("Bahnschrift", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancel_Btn.ForeColor = System.Drawing.Color.White;
+            this.cancel_Btn.Image = global::COA_PRIS.Properties.Resources.close;
+            this.cancel_Btn.ImageSize = new System.Drawing.Size(30, 30);
+            this.cancel_Btn.Location = new System.Drawing.Point(0, 8);
+            this.cancel_Btn.Margin = new System.Windows.Forms.Padding(0, 8, 0, 0);
+            this.cancel_Btn.Name = "cancel_Btn";
+            this.cancel_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(31)))), ((int)(((byte)(75)))));
+            this.cancel_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.cancel_Btn.OnHoverForeColor = System.Drawing.Color.White;
+            this.cancel_Btn.OnHoverImage = null;
+            this.cancel_Btn.OnPressedColor = System.Drawing.Color.Black;
+            this.cancel_Btn.Padding = new System.Windows.Forms.Padding(0, 5, 0, 0);
+            this.cancel_Btn.Radius = 8;
+            this.cancel_Btn.Size = new System.Drawing.Size(130, 54);
+            this.cancel_Btn.TabIndex = 10;
+            this.cancel_Btn.Text = "Cancel";
+            this.cancel_Btn.Click += new System.EventHandler(this.cancel_Btn_Click);
+            // 
+            // error_provider
+            // 
+            this.error_provider.BlinkRate = 0;
+            this.error_provider.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
+            this.error_provider.ContainerControl = this;
             // 
             // View_Record
             // 
@@ -363,11 +364,11 @@
             this.gunaPanel1.ResumeLayout(false);
             this.parent_Panel.ResumeLayout(false);
             this.controlMain_Panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.error_provider)).EndInit();
-            this.bottom_Panel.ResumeLayout(false);
-            this.button_Panel.ResumeLayout(false);
             this.contro_Control_Panel.ResumeLayout(false);
             this.contro_Control_Panel.PerformLayout();
+            this.bottom_Panel.ResumeLayout(false);
+            this.button_Panel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.error_provider)).EndInit();
             this.ResumeLayout(false);
 
         }

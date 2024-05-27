@@ -1,4 +1,5 @@
 ﻿using COA_PRIS.Screens;
+using COA_PRIS.Utilities;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,10 +28,11 @@ namespace COA_PRIS
 
 
 
-            //Application.Run(new Login());
-            //Application.Run(new Splash_Screen());
-            Application.Run(new Dashboard());
+            Application.Run(new Login());
+            //Activity_Manager.CurrentUser = "TSO_Dev";
+            //Application.Run(new Dashboard());
         }
+       
 
         
     }
