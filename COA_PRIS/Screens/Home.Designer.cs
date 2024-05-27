@@ -131,6 +131,17 @@
             this.top_Panel.SuspendLayout();
             this.today_panel.SuspendLayout();
             this.tableLayoutPanel9.SuspendLayout();
+            this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
+            this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
+            this.gunaElipsePanel5 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.gunaElipsePanel4 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.gunaElipsePanel6 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.gunaElipsePanel3 = new Guna.UI.WinForms.GunaElipsePanel();
+            this.Main_Panel.SuspendLayout();
+            this.gunaElipsePanel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // gunaElipse1
@@ -1036,6 +1047,48 @@
             this.gunaPanel13.Name = "gunaPanel13";
             this.gunaPanel13.Size = new System.Drawing.Size(204, 10);
             this.gunaPanel13.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Bahnschrift", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(27, 276);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(275, 29);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Recently Added Projects";
+            // 
+            // gunaElipsePanel1
+            // 
+            this.gunaElipsePanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaElipsePanel1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaElipsePanel1.BaseColor = System.Drawing.Color.White;
+            this.gunaElipsePanel1.Location = new System.Drawing.Point(812, 23);
+            this.gunaElipsePanel1.Name = "gunaElipsePanel1";
+            this.gunaElipsePanel1.Radius = 20;
+            this.gunaElipsePanel1.Size = new System.Drawing.Size(411, 230);
+            this.gunaElipsePanel1.TabIndex = 4;
+            // 
+            // gunaElipsePanel2
+            // 
+            this.gunaElipsePanel2.BackColor = System.Drawing.Color.Transparent;
+            this.gunaElipsePanel2.BaseColor = System.Drawing.Color.White;
+            this.gunaElipsePanel2.Location = new System.Drawing.Point(37, 23);
+            this.gunaElipsePanel2.Name = "gunaElipsePanel2";
+            this.gunaElipsePanel2.Radius = 20;
+            this.gunaElipsePanel2.Size = new System.Drawing.Size(411, 230);
+            this.gunaElipsePanel2.TabIndex = 4;
+            // 
+            // gunaElipsePanel3
+            // 
+            this.gunaElipsePanel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.gunaElipsePanel3.BackColor = System.Drawing.Color.Transparent;
+            this.gunaElipsePanel3.BaseColor = System.Drawing.Color.White;
+            this.gunaElipsePanel3.Location = new System.Drawing.Point(1267, 23);
+            this.gunaElipsePanel3.Name = "gunaElipsePanel3";
+            this.gunaElipsePanel3.Radius = 20;
+            this.gunaElipsePanel3.Size = new System.Drawing.Size(414, 230);
+            this.gunaElipsePanel3.TabIndex = 4;
             // 
             // Home
             // 
