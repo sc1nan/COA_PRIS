@@ -198,7 +198,7 @@ namespace COA_PRIS.Screens.Subscreens.Users
         }
 
         
-        private void create_Btn_Click(object sender, EventArgs e)
+        private async void create_Btn_Click(object sender, EventArgs e)
         {
             if (!validator.PRISRequired(parent_Panel, error_Provider))
                 return;
@@ -238,6 +238,13 @@ namespace COA_PRIS.Screens.Subscreens.Users
 
             if (ret == 3) 
             {
+                //Server
+                await ServerManager.SendMessageToClientsAsync(values["Username"]);
+
+                //Client
+                //await ClientManager.SendMessageAsync(values["Username"]);
+
+
                 MessageBox.Show($"{values["Username"]} is successfully added.", "PRIS Record Confirm", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 is_ClosingProgrammatically = true;
                 RefreshTable.Invoke();

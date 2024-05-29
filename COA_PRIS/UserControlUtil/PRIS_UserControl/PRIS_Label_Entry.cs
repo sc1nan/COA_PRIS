@@ -104,7 +104,7 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
 
         public PRIS_Label_Entry(string _title, bool _isRequired = true, bool _isReadOnly = false, bool _enabledText = true,
             string _specialChar = null, HorizontalAlignment _textAlign = HorizontalAlignment.Left, bool _isCurrency = false,
-            bool _showMessage = true) 
+            bool _showMessage = true, bool _isPassword = false) 
         {
             InitializeComponent();
             this.title.Text = _title;
@@ -116,6 +116,11 @@ namespace COA_PRIS.UserControlUtil.PRIS_UserControl
             this.SpecialChar = _specialChar;
             this.entry.TextAlign = _textAlign;
             this.IsCurrency = _isCurrency;
+
+            if (_isPassword) 
+            {
+                entry.PasswordChar = '*';
+            }
         }
         private void entry_TextChanged(object sender, EventArgs e)
         {

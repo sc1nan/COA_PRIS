@@ -125,7 +125,6 @@ namespace COA_PRIS.Screens
             if (form != null)
             {
                 current_Form = tab_Manager.switch_Form(form, current_Form, Main_Form);
-                ((IPRIS_Forms)form).FormInvoke();
             }
 
             tab_Manager.active_Button(button, true);

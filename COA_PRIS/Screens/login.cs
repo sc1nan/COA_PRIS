@@ -16,7 +16,7 @@ namespace COA_PRIS
         private Login_Manager login_manager;
         private Activity_Manager activity_manager;
         private Database_Manager database_manager;
-
+        private SetUp SetUp;
         public Login()
         {
             InitializeComponent();
@@ -153,6 +153,12 @@ namespace COA_PRIS
 
 
 
+        }
+
+        private void gunaButton1_Click(object sender, EventArgs e)
+        {
+            SetUp = new SetUp("initial");
+            SetUp.ShowDialog();
         }
     }
 }

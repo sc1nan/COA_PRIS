@@ -32,6 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Selector));
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.selector_Title = new Guna.UI.WinForms.GunaLabel();
             this.gunaPanel2 = new Guna.UI.WinForms.GunaPanel();
@@ -41,12 +42,12 @@
             this.gunaPanel4 = new Guna.UI.WinForms.GunaPanel();
             this.info_Label = new Guna.UI.WinForms.GunaLabel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.PRIS_Search = new COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Search_DropBox();
             this.refresh_Btn = new Guna.UI.WinForms.GunaButton();
             this.gunaPanel6 = new Guna.UI.WinForms.GunaPanel();
             this.create_Btn = new Guna.UI.WinForms.GunaButton();
             this.cancel_Btn = new Guna.UI.WinForms.GunaButton();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.PRIS_Search = new COA_PRIS.UserControlUtil.PRIS_UserControl.PRIS_Search_DropBox();
             this.gunaPanel1.SuspendLayout();
             this.gunaPanel3.SuspendLayout();
             this.gunaPanel5.SuspendLayout();
@@ -220,6 +221,15 @@
             this.flowLayoutPanel1.Size = new System.Drawing.Size(626, 63);
             this.flowLayoutPanel1.TabIndex = 0;
             // 
+            // PRIS_Search
+            // 
+            this.PRIS_Search.Location = new System.Drawing.Point(3, 3);
+            this.PRIS_Search.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
+            this.PRIS_Search.Name = "PRIS_Search";
+            this.PRIS_Search.Search_Text = "";
+            this.PRIS_Search.Size = new System.Drawing.Size(550, 60);
+            this.PRIS_Search.TabIndex = 3;
+            // 
             // refresh_Btn
             // 
             this.refresh_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -326,15 +336,6 @@
             this.gunaElipse1.Radius = 6;
             this.gunaElipse1.TargetControl = this.data_View;
             // 
-            // PRIS_Search
-            // 
-            this.PRIS_Search.Location = new System.Drawing.Point(3, 3);
-            this.PRIS_Search.Margin = new System.Windows.Forms.Padding(3, 3, 5, 3);
-            this.PRIS_Search.Name = "PRIS_Search";
-            this.PRIS_Search.Search_Text = "";
-            this.PRIS_Search.Size = new System.Drawing.Size(550, 60);
-            this.PRIS_Search.TabIndex = 3;
-            // 
             // Selector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -345,6 +346,7 @@
             this.Controls.Add(this.gunaPanel2);
             this.Controls.Add(this.gunaPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Selector";

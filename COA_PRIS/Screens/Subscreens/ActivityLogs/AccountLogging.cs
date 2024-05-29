@@ -27,6 +27,7 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
             InitializeComponent();
             //setup ordinary controls
             previous_Button.Enabled = false;
+            sortComboBox.DataSource = log_table_names;
             sortComboBox.SelectedText = "user_name";
             sortComboBox.SelectedIndex = 0;
             Populate_Table(1);
@@ -173,7 +174,7 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
 
         private void AccountLogging_VisibleChanged(object sender, EventArgs e)
         {
-            refresh_Button.PerformClick();
+            refresh_Btn.PerformClick();
         }
         private void Check_Count()
         {
@@ -194,6 +195,11 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
             string to_Date = dateFilter1.toValue.ToString("yyyy/MM/dd " + current_time);
             int log_count = activity_manager.Count_Account_Logs(from_Date, to_Date);
             return log_count;
+        }
+
+        private void sortComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

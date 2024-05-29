@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Project_Create));
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.project_id = new Guna.UI.WinForms.GunaLabel();
             this.error_Provider = new System.Windows.Forms.ErrorProvider(this.components);
@@ -278,12 +279,13 @@
             this.Controls.Add(this.linePanel);
             this.Controls.Add(this.gunaPanel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Project_Create";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Project_Create";
+            this.Text = "PRIS Add Project";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Project_Create_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.error_Provider)).EndInit();
             this.gunaPanel4.ResumeLayout(false);

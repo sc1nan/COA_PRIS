@@ -28,7 +28,31 @@ namespace COA_PRIS.Screens.Subscreens.Users
             InitializeComponent();
             
         }
+        private void Users_Lists_Load(object sender, EventArgs e)
+        {
 
+            //ClientManager.MessageReceived += Network_Callback;
+            ServerManager.MessageReceived += Network_Callback;
+
+            Set_Record();
+
+            PRIS_Seachbox.DropboxValues = new List<string>() { "All", "Code", "Full Name", "Office", "Position", "Role" };
+            PRIS_Seachbox.Search_Typed += SearchBar_CallBack;
+
+        }
+
+        private async void Network_Callback(object sender, string message)
+        {
+
+            Console.WriteLine(message);
+            if (InvokeRequired)
+                Invoke((MethodInvoker)delegate { Refresh_Table(); });
+            else
+                Refresh_Table();
+
+            //Server
+            await ServerManager.SendMessageToClientsAsync("Reset Clients");
+        }
 
         private void add_RecordBtn_Click(object sender, EventArgs e)
         {
@@ -58,15 +82,6 @@ namespace COA_PRIS.Screens.Subscreens.Users
 
             data_View.DataSource = util.FormatDataTable(ret);
             Theme.gridView_Style(data_View, column_Widths, column_Text_Align);
-        }
-        private void Users_Lists_Load(object sender, EventArgs e)
-        {
-            Set_Record();
-
-
-            PRIS_Seachbox.DropboxValues = new List<string>() { "All", "Code", "Full Name", "Office", "Position", "Role" };
-            PRIS_Seachbox.Search_Typed += SearchBar_CallBack;
-
         }
         private void SearchBar_CallBack(object sender, EventArgs e) 
         {

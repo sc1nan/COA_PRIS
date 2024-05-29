@@ -165,7 +165,7 @@ namespace COA_PRIS.Screens.Subscreens.Users
             }
         }
 
-        private void create_Btn_Click(object sender, EventArgs e)
+        private async void create_Btn_Click(object sender, EventArgs e)
         {
             if (!validator.PRISRequired(container_Panel, errorProvider))
                 return;
@@ -204,6 +204,12 @@ namespace COA_PRIS.Screens.Subscreens.Users
 
             if (ret == 1) 
             {
+                //Server
+                await ServerManager.SendMessageToClientsAsync(values["Role Title"]);
+
+                //Client
+                //await ClientManager.SendMessageAsync(values["Role Title"]);
+
                 MessageBox.Show($"{values["Role Title"]} successfully updated.", "PRIS Record Confirm", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 is_ClosingProgrammatically = true;

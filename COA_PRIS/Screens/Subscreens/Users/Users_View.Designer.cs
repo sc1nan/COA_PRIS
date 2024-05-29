@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Users_View));
             this.main_Panel = new Guna.UI.WinForms.GunaPanel();
             this.parent_Panel = new System.Windows.Forms.TableLayoutPanel();
             this.bottom_Panel = new System.Windows.Forms.TableLayoutPanel();
@@ -454,12 +455,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1684, 911);
             this.Controls.Add(this.main_Panel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Users_View";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Users_View";
+            this.Text = "PRIS View Users";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Users_View_FormClosing);
             this.Load += new System.EventHandler(this.Users_View_Load);
             this.main_Panel.ResumeLayout(false);

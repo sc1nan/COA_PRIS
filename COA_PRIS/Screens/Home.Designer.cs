@@ -664,7 +664,6 @@
             this.gunaElipsePanel1.Location = new System.Drawing.Point(10, 10);
             this.gunaElipsePanel1.Margin = new System.Windows.Forms.Padding(10);
             this.gunaElipsePanel1.Name = "gunaElipsePanel1";
-            this.gunaElipsePanel1.Radius = 20;
             this.gunaElipsePanel1.Size = new System.Drawing.Size(1062, 103);
             this.gunaElipsePanel1.TabIndex = 4;
             // 
@@ -757,7 +756,6 @@
             this.gunaElipsePanel2.Margin = new System.Windows.Forms.Padding(10);
             this.gunaElipsePanel2.Name = "gunaElipsePanel2";
             this.gunaElipsePanel2.Padding = new System.Windows.Forms.Padding(20);
-            this.gunaElipsePanel2.Radius = 20;
             this.gunaElipsePanel2.Size = new System.Drawing.Size(469, 279);
             this.gunaElipsePanel2.TabIndex = 4;
             // 
@@ -1127,7 +1125,7 @@
         private Guna.UI.WinForms.GunaLabel status_num4;
         private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel8;
-        private Guna.UI.WinForms.GunaPanel total_Panel;
+        //private Guna.UI.WinForms.GunaPanel total_Panel;
         private Guna.UI.WinForms.GunaElipse gunaElipse6;
         private Guna.UI.WinForms.GunaElipse gunaElipse7;
         private Guna.UI.WinForms.GunaElipse gunaElipse8;

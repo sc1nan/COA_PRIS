@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Project_Forward));
             this.top_Panel = new Guna.UI.WinForms.GunaPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.project_id = new Guna.UI.WinForms.GunaLabel();
@@ -153,7 +154,7 @@
             this.save_Btn.TabIndex = 10;
             this.save_Btn.Text = "Confirm Forward";
             this.save_Btn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.save_Btn.Click += new System.EventHandler(this.proceed_Btn_Click);
+            this.save_Btn.Click += new System.EventHandler(this.proceed_Btn_ClickAsync);
             // 
             // gunaLinePanel1
             // 
@@ -241,13 +242,14 @@
             this.Controls.Add(this.bottom_Panel);
             this.Controls.Add(this.top_Panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Project_Forward";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Project_Forward";
+            this.Text = "PRIS Forward Project";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Project_Forward_FormClosing);
             this.top_Panel.ResumeLayout(false);
             this.bottom_Panel.ResumeLayout(false);

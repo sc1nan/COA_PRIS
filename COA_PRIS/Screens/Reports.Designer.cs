@@ -33,7 +33,6 @@
             this.line_Panel = new Guna.UI.WinForms.GunaPanel();
             this.nav_panel = new System.Windows.Forms.FlowLayoutPanel();
             this.reports_Btn = new Guna.UI.WinForms.GunaButton();
-            this.inactive_Btn = new Guna.UI.WinForms.GunaButton();
             this.parent_panel.SuspendLayout();
             this.nav_panel.SuspendLayout();
             this.SuspendLayout();
@@ -55,17 +54,17 @@
             // 
             this.container_Panel.BackColor = System.Drawing.Color.White;
             this.container_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container_Panel.Location = new System.Drawing.Point(0, 60);
+            this.container_Panel.Location = new System.Drawing.Point(0, 65);
             this.container_Panel.Name = "container_Panel";
-            this.container_Panel.Padding = new System.Windows.Forms.Padding(8);
-            this.container_Panel.Size = new System.Drawing.Size(1520, 765);
+            this.container_Panel.Padding = new System.Windows.Forms.Padding(10, 5, 10, 10);
+            this.container_Panel.Size = new System.Drawing.Size(1520, 760);
             this.container_Panel.TabIndex = 3;
             // 
             // line_Panel
             // 
             this.line_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             this.line_Panel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.line_Panel.Location = new System.Drawing.Point(0, 55);
+            this.line_Panel.Location = new System.Drawing.Point(0, 60);
             this.line_Panel.Name = "line_Panel";
             this.line_Panel.Size = new System.Drawing.Size(1520, 5);
             this.line_Panel.TabIndex = 1;
@@ -74,12 +73,11 @@
             // 
             this.nav_panel.BackColor = System.Drawing.Color.Transparent;
             this.nav_panel.Controls.Add(this.reports_Btn);
-            this.nav_panel.Controls.Add(this.inactive_Btn);
             this.nav_panel.Dock = System.Windows.Forms.DockStyle.Top;
             this.nav_panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.nav_panel.Location = new System.Drawing.Point(0, 0);
             this.nav_panel.Name = "nav_panel";
-            this.nav_panel.Size = new System.Drawing.Size(1520, 55);
+            this.nav_panel.Size = new System.Drawing.Size(1520, 60);
             this.nav_panel.TabIndex = 0;
             // 
             // reports_Btn
@@ -107,43 +105,11 @@
             this.reports_Btn.OnHoverForeColor = System.Drawing.Color.White;
             this.reports_Btn.OnHoverImage = null;
             this.reports_Btn.OnPressedColor = System.Drawing.Color.Black;
-            this.reports_Btn.Size = new System.Drawing.Size(180, 55);
+            this.reports_Btn.Size = new System.Drawing.Size(200, 60);
             this.reports_Btn.TabIndex = 0;
             this.reports_Btn.Text = "REPORTS";
             this.reports_Btn.TextOffsetX = 5;
             this.reports_Btn.Click += new System.EventHandler(this.button_Click);
-            // 
-            // inactive_Btn
-            // 
-            this.inactive_Btn.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.inactive_Btn.AnimationHoverSpeed = 0.07F;
-            this.inactive_Btn.AnimationSpeed = 0.03F;
-            this.inactive_Btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(199)))), ((int)(((byte)(200)))), ((int)(((byte)(204)))));
-            this.inactive_Btn.BaseColor = System.Drawing.Color.Transparent;
-            this.inactive_Btn.BorderColor = System.Drawing.Color.Black;
-            this.inactive_Btn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.inactive_Btn.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.inactive_Btn.FocusedColor = System.Drawing.Color.Empty;
-            this.inactive_Btn.Font = new System.Drawing.Font("Bahnschrift", 14F);
-            this.inactive_Btn.ForeColor = System.Drawing.Color.White;
-            this.inactive_Btn.Image = global::COA_PRIS.Properties.Resources.moon;
-            this.inactive_Btn.ImageOffsetX = 5;
-            this.inactive_Btn.ImageSize = new System.Drawing.Size(30, 30);
-            this.inactive_Btn.Location = new System.Drawing.Point(181, 0);
-            this.inactive_Btn.Margin = new System.Windows.Forms.Padding(0, 0, 1, 0);
-            this.inactive_Btn.Name = "inactive_Btn";
-            this.inactive_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
-            this.inactive_Btn.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.inactive_Btn.OnHoverForeColor = System.Drawing.Color.White;
-            this.inactive_Btn.OnHoverImage = null;
-            this.inactive_Btn.OnPressedColor = System.Drawing.Color.Black;
-            this.inactive_Btn.Size = new System.Drawing.Size(180, 55);
-            this.inactive_Btn.TabIndex = 1;
-            this.inactive_Btn.Text = "INACTIVE";
-            this.inactive_Btn.TextOffsetX = 5;
-            this.inactive_Btn.Visible = false;
-            this.inactive_Btn.Click += new System.EventHandler(this.button_Click);
             // 
             // Reports
             // 
@@ -168,7 +134,6 @@
         private Guna.UI.WinForms.GunaPanel line_Panel;
         private System.Windows.Forms.FlowLayoutPanel nav_panel;
         private Guna.UI.WinForms.GunaButton reports_Btn;
-        private Guna.UI.WinForms.GunaButton inactive_Btn;
         private Guna.UI.WinForms.GunaPanel container_Panel;
     }
 }

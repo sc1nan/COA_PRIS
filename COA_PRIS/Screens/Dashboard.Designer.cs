@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.SidebarContainer = new Guna.UI.WinForms.GunaPanel();
             this.tab_panel = new System.Windows.Forms.FlowLayoutPanel();
             this.home_Panel = new Guna.UI.WinForms.GunaPanel();
@@ -532,6 +533,7 @@
             this.Controls.Add(this.header_Panel);
             this.Controls.Add(this.SidebarContainer);
             this.Controls.Add(this.gunaElipsePanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1280, 822);

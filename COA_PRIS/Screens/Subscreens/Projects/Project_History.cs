@@ -1,4 +1,6 @@
-﻿using COA_PRIS.UserControlUtil;
+﻿using COA_PRIS.CrystalReports;
+using COA_PRIS.UserControlUtil;
+using COA_PRIS.UserControlUtil.Jesser_Util;
 using COA_PRIS.UserControlUtil.PRIS_UserControl;
 using COA_PRIS.Utilities;
 using System;
@@ -17,7 +19,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
     {
         private Database_Manager Database_Manager = new Database_Manager();
         private Util util = new Util();
-
+        private GenericTable genericTable = new GenericTable(); 
         private string ProjectCode;
         public Project_History(string projectCode)
         {
@@ -40,6 +42,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
             using (Database_Manager)
                 data_View.DataSource = util.FormatDataTable(Database_Manager.ExecuteQuery(string.Format(Database_Query.get_project_history_by_id, ProjectCode)));
 
+            Database_Query.last_query = string.Format(Database_Query.get_project_history_by_id, ProjectCode);
             Theme.gridView_Style(data_View, column_Widths, column_Text_Align);
 
             util.SetControls(PRIS_TitleControls(), title_Panel);
@@ -70,10 +73,6 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                 {
                     new PRIS_Label_Entry(_title: "Routing Slip Number :", _isReadOnly: true, _showMessage: false),
                 },
-                new UserControl[]
-                {
-                   new PRIS_Label_Entry(_title: "Project Title :", _isReadOnly: true, _showMessage: false),
-                }
 
             };
 
@@ -83,6 +82,11 @@ namespace COA_PRIS.Screens.Subscreens.Projects
         private void save_Btn_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void print_BTN_Click(object sender, EventArgs e)
+        {
+            genericTable.GenerateReportForm("action");
         }
     }
 }

@@ -27,6 +27,7 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
         {
             InitializeComponent();
             previous_Button.Enabled = false;
+            sortComboBox.DataSource = log_table_names;
             sortComboBox.SelectedText = "user_name";
             sortComboBox.SelectedIndex = 0;
             DisplayLogsTable();
@@ -179,7 +180,7 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
         //on tab switch
         private void ActivityLogging_VisibleChanged(object sender, EventArgs e)
         {
-            refresh_Button.PerformClick();
+            refresh_Btn.PerformClick();
         }
         //handles refresh button
         private void refresh_Button_Click(object sender, EventArgs e)
@@ -196,9 +197,7 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
         //handles search bar text change
         private void logsSearchBox_TextChanged(object sender, EventArgs e)
         {
-            changeTableContent();
-            page_cnt = 1;
-            pageCountTextbox.Text = page_cnt.ToString();
+
         }
         //display activity logs
         private void DisplayLogsTable()

@@ -13,25 +13,19 @@ using System.Windows.Forms;
 
 namespace COA_PRIS.Screens
 {
-    public partial class Employee : Form, IPRIS_Forms
+    public partial class Employee : Form
     {
         private Tab_Manager tab_Manager;
 
         private Form current_Form = null;
 
         private readonly Employee_Submodule employee_Submodule = new Employee_Submodule();
-        private readonly Inactive_Submodule inactive_Submodule = new Inactive_Submodule();
 
         public Employee()
         {
             InitializeComponent();
         }
 
-        public void FormInvoke()
-        {
-
-
-        }
         private void Employee_Load(object sender, EventArgs e)
         {
             tab_Manager = new Tab_Manager();
@@ -46,9 +40,6 @@ namespace COA_PRIS.Screens
             employee_Btn.PerformClick();
         }
 
-
-
-
         private void button_Click(object sender, EventArgs e) 
         { 
             var button = (GunaButton)sender;
@@ -58,17 +49,10 @@ namespace COA_PRIS.Screens
                     current_Form = tab_Manager.switch_Form(employee_Submodule, current_Form, container_Panel);
                     break;
 
-                case "inactive_Btn":
-                    current_Form = tab_Manager.switch_Form(inactive_Submodule, current_Form, container_Panel);
-                    break;
                 
             }
             tab_Manager.active_Button(button, false);        
         }
 
-        private void gunaButton3_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

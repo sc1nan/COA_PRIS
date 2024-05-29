@@ -29,10 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Project_History));
             this.top_Panel = new Guna.UI.WinForms.GunaPanel();
+            this.print_BTN = new Guna.UI.WinForms.GunaButton();
             this.project_id = new Guna.UI.WinForms.GunaLabel();
             this.gunaLinePanel1 = new Guna.UI.WinForms.GunaLinePanel();
             this.bottom_Panel = new Guna.UI.WinForms.GunaPanel();
@@ -45,7 +47,6 @@
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaElipse3 = new Guna.UI.WinForms.GunaElipse(this.components);
-            this.print_BTN = new Guna.UI.WinForms.GunaButton();
             this.top_Panel.SuspendLayout();
             this.bottom_Panel.SuspendLayout();
             this.content_Panel.SuspendLayout();
@@ -63,6 +64,35 @@
             this.top_Panel.Name = "top_Panel";
             this.top_Panel.Size = new System.Drawing.Size(1464, 60);
             this.top_Panel.TabIndex = 0;
+            // 
+            // print_BTN
+            // 
+            this.print_BTN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.print_BTN.AnimationHoverSpeed = 0.07F;
+            this.print_BTN.AnimationSpeed = 0.03F;
+            this.print_BTN.BackColor = System.Drawing.Color.Transparent;
+            this.print_BTN.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
+            this.print_BTN.BorderColor = System.Drawing.Color.Black;
+            this.print_BTN.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.print_BTN.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.print_BTN.FocusedColor = System.Drawing.Color.Empty;
+            this.print_BTN.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.print_BTN.ForeColor = System.Drawing.Color.White;
+            this.print_BTN.Image = global::COA_PRIS.Properties.Resources.to_do__2_;
+            this.print_BTN.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.print_BTN.ImageSize = new System.Drawing.Size(30, 30);
+            this.print_BTN.Location = new System.Drawing.Point(1409, 0);
+            this.print_BTN.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
+            this.print_BTN.Name = "print_BTN";
+            this.print_BTN.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(117)))));
+            this.print_BTN.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.print_BTN.OnHoverForeColor = System.Drawing.Color.White;
+            this.print_BTN.OnHoverImage = null;
+            this.print_BTN.OnPressedColor = System.Drawing.Color.Black;
+            this.print_BTN.Radius = 5;
+            this.print_BTN.Size = new System.Drawing.Size(55, 55);
+            this.print_BTN.TabIndex = 11;
+            this.print_BTN.Click += new System.EventHandler(this.print_BTN_Click);
             // 
             // project_id
             // 
@@ -175,30 +205,30 @@
             this.data_View.AllowUserToDeleteRows = false;
             this.data_View.AllowUserToResizeColumns = false;
             this.data_View.AllowUserToResizeRows = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.data_View.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.data_View.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.data_View.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.data_View.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.data_View.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.data_View.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.data_View.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.data_View.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.data_View.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.data_View.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.data_View.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.data_View.DefaultCellStyle = dataGridViewCellStyle3;
             this.data_View.Dock = System.Windows.Forms.DockStyle.Fill;
             this.data_View.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.data_View.EnableHeadersVisualStyles = false;
@@ -249,12 +279,12 @@
             // title_Panel
             // 
             this.title_Panel.BackColor = System.Drawing.Color.White;
-            this.title_Panel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.title_Panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.title_Panel.Location = new System.Drawing.Point(0, 0);
             this.title_Panel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 10);
             this.title_Panel.Name = "title_Panel";
             this.title_Panel.Padding = new System.Windows.Forms.Padding(10, 0, 10, 5);
-            this.title_Panel.Size = new System.Drawing.Size(1444, 120);
+            this.title_Panel.Size = new System.Drawing.Size(616, 120);
             this.title_Panel.TabIndex = 4;
             // 
             // gunaElipse1
@@ -272,34 +302,6 @@
             this.gunaElipse3.Radius = 6;
             this.gunaElipse3.TargetControl = this.title_Panel;
             // 
-            // print_BTN
-            // 
-            this.print_BTN.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.print_BTN.AnimationHoverSpeed = 0.07F;
-            this.print_BTN.AnimationSpeed = 0.03F;
-            this.print_BTN.BackColor = System.Drawing.Color.Transparent;
-            this.print_BTN.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
-            this.print_BTN.BorderColor = System.Drawing.Color.Black;
-            this.print_BTN.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.print_BTN.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.print_BTN.FocusedColor = System.Drawing.Color.Empty;
-            this.print_BTN.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.print_BTN.ForeColor = System.Drawing.Color.White;
-            this.print_BTN.Image = global::COA_PRIS.Properties.Resources.to_do__2_;
-            this.print_BTN.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.print_BTN.ImageSize = new System.Drawing.Size(30, 30);
-            this.print_BTN.Location = new System.Drawing.Point(1409, 0);
-            this.print_BTN.Margin = new System.Windows.Forms.Padding(5, 0, 0, 5);
-            this.print_BTN.Name = "print_BTN";
-            this.print_BTN.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(47)))), ((int)(((byte)(72)))), ((int)(((byte)(117)))));
-            this.print_BTN.OnHoverBorderColor = System.Drawing.Color.Black;
-            this.print_BTN.OnHoverForeColor = System.Drawing.Color.White;
-            this.print_BTN.OnHoverImage = null;
-            this.print_BTN.OnPressedColor = System.Drawing.Color.Black;
-            this.print_BTN.Radius = 5;
-            this.print_BTN.Size = new System.Drawing.Size(55, 55);
-            this.print_BTN.TabIndex = 11;
-            // 
             // Project_History
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -311,12 +313,13 @@
             this.Controls.Add(this.gunaLinePanel1);
             this.Controls.Add(this.top_Panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Project_History";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Project_History";
+            this.Text = "PRIS Project Action Logs";
             this.top_Panel.ResumeLayout(false);
             this.bottom_Panel.ResumeLayout(false);
             this.content_Panel.ResumeLayout(false);

@@ -285,7 +285,7 @@ namespace COA_PRIS.Screens.Subscreens.Users
             }
         }
 
-        private void save_Btn_Click(object sender, EventArgs e)
+        private async void save_Btn_Click(object sender, EventArgs e)
         {
             if (!validator.PRISRequired(parent_Panel, error_Provider))
                 return;
@@ -335,6 +335,13 @@ namespace COA_PRIS.Screens.Subscreens.Users
 
 
             }
+
+            //Server
+            await ServerManager.SendMessageToClientsAsync(values["Username"]);
+
+            //Client
+            //await ClientManager.SendMessageAsync(values["Username"]);
+
             if (ret != 0)
                 MessageBox.Show($"{values["Username"]} is successfully updated.", "PRIS Record Confirm", MessageBoxButtons.OK, MessageBoxIcon.Information);
             

@@ -14,25 +14,19 @@ using System.Windows.Forms;
 
 namespace COA_PRIS.Screens
 {
-    public partial class Reports : Form, IPRIS_Forms
+    public partial class Reports : Form
     {
         private Tab_Manager tab_Manager;
 
         private Form current_Form = null;
 
         private readonly ProjectRequest_Reports_Sub reports_Submodule = new ProjectRequest_Reports_Sub();
-        private readonly Reports_Submodule inactive_Submodule = new Reports_Submodule();
 
         public Reports()
         {
             InitializeComponent();
         }
 
-        public void FormInvoke()
-        {
-
-
-        }
         private void Reports_Load(object sender, EventArgs e)
         {
             tab_Manager = new Tab_Manager();
@@ -56,9 +50,6 @@ namespace COA_PRIS.Screens
                     current_Form = tab_Manager.switch_Form(reports_Submodule, current_Form, container_Panel);
                     break;
 
-                case "inactive_Btn":
-                    current_Form = tab_Manager.switch_Form(inactive_Submodule, current_Form, container_Panel);
-                    break;
 
             }
             tab_Manager.active_Button(button, false);

@@ -143,7 +143,7 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
             audit_Trail.ShowDialog();
         }
 
-        private void save_Btn_Click(object sender, EventArgs e)
+        private async void save_Btn_Click(object sender, EventArgs e)
         {
             string UpdateMessage = "Fields : ";
 
@@ -194,12 +194,19 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
                     //make activity log
                     Database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_edit, Activity_Manager.CurrentUser, $"Updated Record : {code_type} {code_Title.Text} - {UpdateMessage}"));
                 }
-                if (MessageBox.Show($"{code_Title.Text} is successfully Updated.", "Update Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
-                {
-                    is_ClosingProgrammatically = true;
-                    Close();
-                    callback?.Invoke();
-                }
+
+                //Server
+                await ServerManager.SendMessageToClientsAsync(code_Title.Text);
+
+                //Client
+                //await ClientManager.SendMessageAsync(project_id.Text);
+
+                MessageBox.Show($"{code_Title.Text} is successfully Updated.", "Update Confirmation", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                callback?.Invoke();
+                is_ClosingProgrammatically = true;
+                Close();
+                
             }
 
         }

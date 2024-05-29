@@ -18,7 +18,7 @@ using System.Windows.Forms;
 
 namespace COA_PRIS.Screens
 {
-    public partial class ActivityLogs : Form, IPRIS_Forms
+    public partial class ActivityLogs : Form
     {
         private Tab_Manager tab_Manager;
 
@@ -31,7 +31,7 @@ namespace COA_PRIS.Screens
         {
             InitializeComponent();
         }
-        public void FormInvoke()
+        public void Network_Callback()
         {
 
 

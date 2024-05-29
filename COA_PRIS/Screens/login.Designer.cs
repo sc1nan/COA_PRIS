@@ -48,6 +48,7 @@
             this.gunaImageButton1 = new Guna.UI.WinForms.GunaImageButton();
             this.gunaCirclePictureBox2 = new Guna.UI.WinForms.GunaCirclePictureBox();
             this.login_Error = new System.Windows.Forms.ErrorProvider(this.components);
+            this.gunaButton1 = new Guna.UI.WinForms.GunaButton();
             ((System.ComponentModel.ISupportInitialize)(this.gunaCirclePictureBox1)).BeginInit();
             this.gunaPanel1.SuspendLayout();
             this.pass_Panel.SuspendLayout();
@@ -339,6 +340,33 @@
             this.login_Error.BlinkStyle = System.Windows.Forms.ErrorBlinkStyle.NeverBlink;
             this.login_Error.ContainerControl = this;
             // 
+            // gunaButton1
+            // 
+            this.gunaButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.gunaButton1.AnimationHoverSpeed = 0.07F;
+            this.gunaButton1.AnimationSpeed = 0.03F;
+            this.gunaButton1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaButton1.BaseColor = System.Drawing.Color.Gainsboro;
+            this.gunaButton1.BorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.gunaButton1.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.gunaButton1.FocusedColor = System.Drawing.Color.Empty;
+            this.gunaButton1.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.gunaButton1.ForeColor = System.Drawing.Color.White;
+            this.gunaButton1.Image = ((System.Drawing.Image)(resources.GetObject("gunaButton1.Image")));
+            this.gunaButton1.ImageSize = new System.Drawing.Size(40, 40);
+            this.gunaButton1.Location = new System.Drawing.Point(12, 919);
+            this.gunaButton1.Name = "gunaButton1";
+            this.gunaButton1.OnHoverBaseColor = System.Drawing.Color.LightGray;
+            this.gunaButton1.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.gunaButton1.OnHoverForeColor = System.Drawing.Color.White;
+            this.gunaButton1.OnHoverImage = null;
+            this.gunaButton1.OnPressedColor = System.Drawing.Color.Black;
+            this.gunaButton1.Radius = 6;
+            this.gunaButton1.Size = new System.Drawing.Size(60, 60);
+            this.gunaButton1.TabIndex = 5;
+            this.gunaButton1.Click += new System.EventHandler(this.gunaButton1_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
@@ -347,11 +375,13 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1684, 991);
+            this.Controls.Add(this.gunaButton1);
             this.Controls.Add(this.gunaCirclePictureBox2);
             this.Controls.Add(this.gunaImageButton1);
             this.Controls.Add(this.gunaElipsePanel4);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Bahnschrift", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(1500, 800);
@@ -396,5 +426,6 @@
         private Guna.UI.WinForms.GunaTextBox password_entry;
         private System.Windows.Forms.ErrorProvider login_Error;
         private Guna.UI.WinForms.GunaTextBox username_entry;
+        private Guna.UI.WinForms.GunaButton gunaButton1;
     }
 }

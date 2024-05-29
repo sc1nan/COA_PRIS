@@ -69,5 +69,7 @@ namespace COA_PRIS.UserControlUtil
         public  event EventHandler FromValueChanged;
         [EditorBrowsable(EditorBrowsableState.Always), Browsable(true)]
         public  event EventHandler ToValueChanged;
+
+
     }
 }

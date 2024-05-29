@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace COA_PRIS.Screens
 {
-    internal interface IPRIS_Forms
+    public interface IPRIS_Forms
     {
-        void FormInvoke();
+        void Network_Callback(object sender, string message);
     }
 }

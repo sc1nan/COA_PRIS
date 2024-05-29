@@ -32,8 +32,13 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="DataTable1" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_RowClassName="DataTable1Row" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_UserTableName="DataTable1">
+        <xs:element name="history_table" msprop:Generator_RowEvHandlerName="history_tableRowChangeEventHandler" msprop:Generator_RowDeletedName="history_tableRowDeleted" msprop:Generator_RowDeletingName="history_tableRowDeleting" msprop:Generator_RowEvArgName="history_tableRowChangeEvent" msprop:Generator_TablePropName="history_table" msprop:Generator_RowChangedName="history_tableRowChanged" msprop:Generator_RowChangingName="history_tableRowChanging" msprop:Generator_TableClassName="history_tableDataTable" msprop:Generator_RowClassName="history_tableRow" msprop:Generator_TableVarName="tablehistory_table" msprop:Generator_UserTableName="history_table">
           <xs:complexType>
+            <xs:sequence>
+              <xs:element name="description" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_ColumnVarNameInTable="columndescription" msprop:Generator_UserColumnName="description" type="xs:string" minOccurs="0" />
+              <xs:element name="created_by" msprop:Generator_ColumnPropNameInRow="created_by" msprop:Generator_ColumnPropNameInTable="created_byColumn" msprop:Generator_ColumnVarNameInTable="columncreated_by" msprop:Generator_UserColumnName="created_by" type="xs:string" minOccurs="0" />
+              <xs:element name="date" msprop:Generator_ColumnPropNameInRow="date" msprop:Generator_ColumnPropNameInTable="dateColumn" msprop:Generator_ColumnVarNameInTable="columndate" msprop:Generator_UserColumnName="date" type="xs:string" minOccurs="0" />
+            </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>

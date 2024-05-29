@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Role_View));
             this.top_Panel = new Guna.UI.WinForms.GunaPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.audit_Trail_Btn = new Guna.UI.WinForms.GunaButton();
@@ -300,12 +301,13 @@
             this.Controls.Add(this.gunaLinePanel1);
             this.Controls.Add(this.top_Panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Role_View";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Role_View";
+            this.Text = "PRIS View Role";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Role_View_FormClosing);
             this.Load += new System.EventHandler(this.Role_View_Load);
             this.top_Panel.ResumeLayout(false);

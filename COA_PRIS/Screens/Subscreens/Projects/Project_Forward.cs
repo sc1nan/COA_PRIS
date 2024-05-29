@@ -56,7 +56,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                 var ret = Database_Manager.ExecuteScalar(string.Format(Database_Query.get_project_title_by_id, ProjectNumber));
                 var div = Database_Manager.ExecuteScalar(string.Format(Database_Query.get_project_division_by_id, ProjectCode));
                 
-                ((IPRIS_UserControl)titleControls[1]).Value = ret.ToString();
+                //((IPRIS_UserControl)titleControls[1]).Value = ret.ToString();
                 ((IPRIS_UserControl)selectors[0]).Value = div.ToString();
             }
 
@@ -178,7 +178,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
             return controls;
         }
 
-        private void proceed_Btn_Click(object sender, EventArgs e)
+        private async void proceed_Btn_ClickAsync(object sender, EventArgs e)
         {
 
             if (!validator.PRISRequired(parent_Panel, errorProvider))
@@ -239,6 +239,9 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                 }
                 else 
                 {
+                    if (MessageBox.Show("Are you sure you want to proceed?", "PRIS Forward Confrimation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                        return;
+
                     if (string.Equals(values["Released"], "1"))
                     {
                         ret += Database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_new_history, historyCode, $"Project Record Released : {values["Description"]}", ProjectCode, Activity_Manager.CurrentUser, values["Date"]));
@@ -271,6 +274,13 @@ namespace COA_PRIS.Screens.Subscreens.Projects
 
             if (ret != 0) 
             {
+                //Server
+                await ServerManager.SendMessageToClientsAsync(project_id.Text);
+
+                //Client
+                //await ClientManager.SendMessageAsync(project_id.Text);
+
+
                 MessageBox.Show($"{ProjectCode} is successfully updated.", "PRIS Record Confirm", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 is_ClosingProgrammatically = true;
                 ToRefresh?.Invoke();

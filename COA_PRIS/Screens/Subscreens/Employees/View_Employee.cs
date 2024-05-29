@@ -277,7 +277,7 @@ namespace COA_PRIS.Screens.Subscreens.Employees
 
         }
 
-        private void save_Btn_Click(object sender, EventArgs e)
+        private async void save_Btn_Click(object sender, EventArgs e)
         {
 
             var error_Entries = util.SearchControls<Control>(control_Panel, new List<Type> { typeof(GunaTextBox), typeof(GunaButton) });
@@ -306,12 +306,17 @@ namespace COA_PRIS.Screens.Subscreens.Employees
 
             if (ret == 1)
             {
-                if (MessageBox.Show($"{emp_id.Text} is successfully Updated.", "Record Updated", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
-                {
-                    is_ClosingProgrammatically = true;
-                    callback?.Invoke();
-                    Close();
-                }
+                //Server
+                await ServerManager.SendMessageToClientsAsync(emp_id.Text);
+
+                //Client
+                //await ClientManager.SendMessageAsync(emp_id.Text);
+
+
+                MessageBox.Show($"{emp_id.Text} is successfully Updated.", "Record Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                is_ClosingProgrammatically = true;
+                callback?.Invoke();
+                Close();
             }
         }
 

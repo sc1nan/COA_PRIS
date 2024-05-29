@@ -25,6 +25,8 @@ namespace COA_PRIS.Screens.Subscreens.Users
 
         private void Users_Roles_Load(object sender, EventArgs e)
         {
+            //ClientManager.MessageReceived += Network_Callback;
+            ServerManager.MessageReceived += Network_Callback;
 
             (bool, int)[] column_Widths = new (bool, int)[] { (true, 3), (true, 12), (true, 35), (true, 50)}; ;
             (string, DataGridViewContentAlignment)[] column_Text_Align = new (string, DataGridViewContentAlignment)[]
@@ -46,6 +48,18 @@ namespace COA_PRIS.Screens.Subscreens.Users
             PRIS_Seachbox.DropboxValues = null;
             PRIS_Seachbox.Search_Typed += Search_CallBack;
 
+        }
+
+        private async void Network_Callback(object sender, string message)
+        {
+            Console.WriteLine(message);
+            if (InvokeRequired)
+                Invoke((MethodInvoker)delegate { Refresh_Table(); });
+            else
+                Refresh_Table();
+
+            //Server
+            await ServerManager.SendMessageToClientsAsync("Reset Clients");
         }
 
         private void Search_CallBack(object sender, EventArgs e) 

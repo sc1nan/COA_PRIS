@@ -12,6 +12,25 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Vinas\Desktop\COA PRIS\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>PRIS Server</ProductName>
+    <PublisherName>STI College Fairview OJTs 2024</PublisherName>
+    <SuiteName>STI College Fairview OJTs 2024</SuiteName>
+    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +50,25 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>123E4B9E63AB4554DF5E4F01D9FF13C98BEBB784</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>COA_PRIS_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
@@ -73,8 +111,11 @@
       <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
-    <Reference Include="MySql.Data, Version=8.3.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <HintPath>..\packages\MySql.Data.8.3.0\lib\net48\MySql.Data.dll</HintPath>
+    <Reference Include="MySql.Data, Version=8.4.0.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.8.4.0\lib\net48\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -188,6 +229,12 @@
     <Compile Include="Screens\Reports.Designer.cs">
       <DependentUpon>Reports.cs</DependentUpon>
     </Compile>
+    <Compile Include="Screens\SetUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Screens\SetUp.Designer.cs">
+      <DependentUpon>SetUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\Splash Screen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -217,12 +264,6 @@
     </Compile>
     <Compile Include="Screens\Subscreens\Employees\Employee_Submodule.Designer.cs">
       <DependentUpon>Employee_Submodule.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\Subscreens\Employees\Inactive_Submodule.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\Subscreens\Employees\Inactive_Submodule.Designer.cs">
-      <DependentUpon>Inactive_Submodule.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Subscreens\Employees\View_Employee.cs">
       <SubType>Form</SubType>
@@ -278,12 +319,6 @@
     <Compile Include="Screens\Subscreens\Reports\ProjectRequest_Reports_Sub.Designer.cs">
       <DependentUpon>ProjectRequest_Reports_Sub.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\Subscreens\Reports\Reports_Submodule.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\Subscreens\Reports\Reports_Submodule.Designer.cs">
-      <DependentUpon>Reports_Submodule.cs</DependentUpon>
-    </Compile>
     <Compile Include="Screens\Subscreens\Users\Role_Create.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -301,12 +336,6 @@
     </Compile>
     <Compile Include="Screens\Subscreens\Users\Users_Create.Designer.cs">
       <DependentUpon>Users_Create.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Screens\Subscreens\Users\Users_Deactivate.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Screens\Subscreens\Users\Users_Deactivate.Designer.cs">
-      <DependentUpon>Users_Deactivate.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\Subscreens\Users\Users_Lists.cs">
       <SubType>Form</SubType>
@@ -427,10 +456,15 @@
       <DependentUpon>Selector.cs</DependentUpon>
     </Compile>
     <Compile Include="Utilities\Activity_Manager.cs" />
+    <Compile Include="Utilities\ClientManager.cs" />
+    <Compile Include="Utilities\ConnectionInfo.cs" />
+    <Compile Include="Utilities\ServerManager.cs" />
+    <Compile Include="Utilities\TCPClient.cs" />
+    <Compile Include="Utilities\TCPServer.cs" />
     <Compile Include="Utilities\Tab_Manager.cs" />
     <Compile Include="Utilities\Theme.cs" />
     <Compile Include="Utilities\Database_Manager.cs" />
-    <Compile Include="Utilities\Database_Credential.cs" />
+    <Compile Include="Utilities\Database_Credentials.cs" />
     <Compile Include="Screens\Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -466,7 +500,8 @@
     <Compile Include="Utilities\Validator.cs" />
     <EmbeddedResource Include="CrystalReports\ProjectRequestReport.rdlc" />
     <EmbeddedResource Include="CrystalReports\Report1.rdlc" />
-    <EmbeddedResource Include="CrystalReports\TempReport.rdlc" />
+    <EmbeddedResource Include="CrystalReports\ActionHistory.rdlc" />
+    <EmbeddedResource Include="CrystalReports\Report2.rdlc" />
     <EmbeddedResource Include="CrystalReports\TempReportsForms.resx">
       <DependentUpon>TempReportsForms.cs</DependentUpon>
     </EmbeddedResource>
@@ -505,6 +540,9 @@
     <EmbeddedResource Include="Screens\Reports.resx">
       <DependentUpon>Reports.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Screens\SetUp.resx">
+      <DependentUpon>SetUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Splash Screen.resx">
       <DependentUpon>Splash Screen.cs</DependentUpon>
     </EmbeddedResource>
@@ -519,9 +557,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Employees\Employee_Submodule.resx">
       <DependentUpon>Employee_Submodule.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Subscreens\Employees\Inactive_Submodule.resx">
-      <DependentUpon>Inactive_Submodule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Employees\View_Employee.resx">
       <DependentUpon>View_Employee.cs</DependentUpon>
@@ -550,9 +585,6 @@
     <EmbeddedResource Include="Screens\Subscreens\Reports\ProjectRequest_Reports_Sub.resx">
       <DependentUpon>ProjectRequest_Reports_Sub.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Subscreens\Reports\Reports_Submodule.resx">
-      <DependentUpon>Reports_Submodule.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Users\Role_Create.resx">
       <DependentUpon>Role_Create.cs</DependentUpon>
     </EmbeddedResource>
@@ -561,9 +593,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Users\Users_Create.resx">
       <DependentUpon>Users_Create.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Screens\Subscreens\Users\Users_Deactivate.resx">
-      <DependentUpon>Users_Deactivate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Screens\Subscreens\Users\Users_Lists.resx">
       <DependentUpon>Users_Lists.cs</DependentUpon>
@@ -628,6 +657,11 @@
     <EmbeddedResource Include="UserControlUtil\SearchBar.resx">
       <DependentUpon>SearchBar.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="COA_PRIS_TemporaryKey.pfx" />
+    <Content Include="icon.ico" />
+    <Content Include="NetworkConfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="CrystalReports\DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
@@ -640,6 +674,7 @@
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\COA_PRIS.CrystalReports.DataSet1.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -655,9 +690,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\COA img.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Cherie Mae Rejoy.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\TSO_Logo-1-removebg-preview.png" />
@@ -708,7 +740,7 @@
     <None Include="Resources\noon.png" />
     <None Include="Resources\sunsets.png" />
     <None Include="Resources\night.png" />
-    <Content Include="STATUS.txt" />
+    <Content Include="Data\STATUS.txt" />
     <None Include="Resources\active.png" />
     <None Include="Resources\add-user.png" />
     <Content Include="Resources\apps-sort - Copy.png" />
@@ -725,15 +757,12 @@
     <Content Include="Resources\caret-right %281%29.png" />
     <Content Include="Resources\caret-right - Copy.png" />
     <Content Include="Resources\caret-right.png" />
-    <None Include="Resources\Cherie Mae Rejoy - Copy.png" />
     <None Include="Resources\COA img - Copy.png" />
     <None Include="Resources\chair-office.png" />
     <None Include="Resources\condo.png" />
     <None Include="Resources\error.png" />
     <None Include="Resources\error1.png" />
     <None Include="Resources\close.png" />
-    <Content Include="Resources\expand - Copy.png" />
-    <Content Include="Resources\expand.png" />
     <None Include="Resources\filed.png" />
     <Content Include="Resources\folder-download %281%29 - Copy.png" />
     <Content Include="Resources\folder-download %281%29.png" />
@@ -754,6 +783,7 @@
     <Content Include="Resources\Menu Bar Icon1 - Copy.png" />
     <Content Include="Resources\Menu Bar Icon1.png" />
     <None Include="Resources\pending.png" />
+    <None Include="Resources\profile.png" />
     <Content Include="Resources\refresh %281%29 - Copy.png" />
     <Content Include="Resources\refresh %281%29.png" />
     <None Include="Resources\route.png" />
@@ -765,6 +795,7 @@
     <Content Include="Resources\select %281%29.png" />
     <Content Include="Resources\select.png" />
     <None Include="Resources\settings.png" />
+    <None Include="Resources\sleepy.gif" />
     <Content Include="Resources\Splash screen.png" />
     <None Include="Resources\square-divide.png" />
     <None Include="Resources\status.png" />
@@ -797,5 +828,17 @@
     <None Include="Resources\swipe-left1.png" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

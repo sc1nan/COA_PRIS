@@ -76,12 +76,18 @@ namespace COA_PRIS.Utilities
                         table_name_on_dataset = "docu_info_table";
                         dataSource = new ReportDataSource("DataSet1", ds.Tables[1]);
                     }
+                    else if (query.Contains("history_table"))
+                    {
+                        table_name_on_dataset = "history_table";
+                        dataSource = new ReportDataSource("DataSet1", ds.Tables[2]);
+                        
+                    }
                     das.Fill(ds, table_name_on_dataset);
                     if (ds.Tables[table_name_on_dataset].Rows.Count == 0) MessageBox.Show("Nothing found", "Message");
 
+                    Console.WriteLine(dataSource.Value);
+
                     reportViewer.LocalReport.DataSources.Clear();
-                    //MessageBox.Show(query);
-                    //Console.WriteLine(query);
                     reportViewer.LocalReport.DataSources.Add(dataSource);
                     reportViewer.RefreshReport();
                 }

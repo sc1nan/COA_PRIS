@@ -15,13 +15,12 @@ using System.Windows.Forms;
 
 namespace COA_PRIS.Screens
 {
-    public partial class User : Form, IPRIS_Forms
+    public partial class User : Form
     {
         private Form current_Form = null;
         private Tab_Manager tab_Manager = new Tab_Manager();
 
         private readonly Users_Lists users_Lists = new Users_Lists();
-        private readonly Users_Deactivate users_Deactivate = new Users_Deactivate();
         private readonly Users_Roles users_Roles = new Users_Roles();
         private readonly Users_Create users_Create = new Users_Create();
 
@@ -32,7 +31,7 @@ namespace COA_PRIS.Screens
             InitializeComponent();
         }
 
-        public void FormInvoke()
+        public void Network_Callback()
         {
 
 
@@ -59,9 +58,6 @@ namespace COA_PRIS.Screens
             {
                 case "user_Btn":
                     form = users_Lists;
-                    break;
-                case "deactive_Btn":
-                    form = users_Deactivate;
                     break;
                 case "roles_Btn":
                     form = users_Roles;

@@ -173,7 +173,7 @@ namespace COA_PRIS.Screens.Subscreens.Employees
             return controls;
         }
         
-        private void save_Btn_Click(object sender, EventArgs e)
+        private async void save_Btn_Click(object sender, EventArgs e)
         {
             int ret = 0;
 
@@ -195,6 +195,12 @@ namespace COA_PRIS.Screens.Subscreens.Employees
 
             if (ret == 1)
             {
+                //Server
+                await ServerManager.SendMessageToClientsAsync(emp_id.Text);
+
+                //Client
+                //await ClientManager.SendMessageAsync(emp_id.Text);
+
                 MessageBox.Show($"{emp_id.Text} is successfully added.", "New Record Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 is_ClosingProgrammatically = true;
                 callback?.Invoke();

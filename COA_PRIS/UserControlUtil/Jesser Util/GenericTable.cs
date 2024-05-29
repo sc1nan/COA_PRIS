@@ -25,7 +25,8 @@ namespace COA_PRIS.UserControlUtil.Jesser_Util
         private int min_lim = 0;
         private int page_cnt = 1;*/
 
-        public void Populate_Table(int type_of_spec, DateFilter dateFilter1, SearchBar searchBar1, GunaDataGridView LogsTable, GunaComboBox sortComboBox, string[] log_table_names, int min_lim, string data_Table_Type)
+        public void Populate_Table(int type_of_spec, DateFilter dateFilter1, SearchBar searchBar1, GunaDataGridView LogsTable, GunaComboBox sortComboBox, 
+            string[] log_table_names, int min_lim, string data_Table_Type, GunaComboBox statusBox = null)
         {
             //adds items to table
             DataTable dt = new DataTable();
@@ -42,12 +43,12 @@ namespace COA_PRIS.UserControlUtil.Jesser_Util
                     dt = FillActLogsTable(type_of_spec, from_Date, to_Date, searchBar1, min_lim, sortComboBox, log_table_names);
                     break;
                 case "project":
-                    dt = FillProjectsTable(type_of_spec, from_Date, to_Date, searchBar1, min_lim, sortComboBox, log_table_names);
+                    dt = FillProjectsTable(type_of_spec, from_Date, to_Date, searchBar1, min_lim, sortComboBox, log_table_names, statusBox);
                     break;
                 default: break;
             }
-
-            LogsTable.DataSource = util.FormatDataTableLimit(dt, min_lim);
+            LogsTable.DataSource = util.FormatDataTable(dt);
+            //LogsTable.DataSource = util.FormatDataTableLimit(dt, min_lim);
             AddThemeToDGV(LogsTable, data_Table_Type);
 
         }
@@ -111,28 +112,47 @@ namespace COA_PRIS.UserControlUtil.Jesser_Util
             return dt;
         }
 
-        private DataTable FillProjectsTable(int type_of_spec, string from_Date, string to_Date, SearchBar searchBar1, int min_lim, GunaComboBox sortComboBox, string[] log_table_names)
+        private DataTable FillProjectsTable(int type_of_spec, string from_Date, string to_Date, SearchBar searchBar1, int min_lim, GunaComboBox sortComboBox, 
+            string[] log_table_names, GunaComboBox sortStatus)
         {
             DataTable dt = new DataTable();
-            string sort_by = log_table_names[sortComboBox.SelectedIndex];
-            switch (type_of_spec)
+
+            string sort_by = "receiving_date";
+            
+                
+
+            //"All", "Agency", "Cluster", "Sector", "Contractor", "Nature", "Division"
+
+            switch (sortComboBox.SelectedValue) 
             {
-                case 1:
-                    Query = string.Format(Database_Query.get_general_project_records_by_date, sort_by, from_Date, to_Date);
+                case "All":
+                    Query = string.Format(Database_Query.get_docu_by_default, sort_by, from_Date, to_Date, searchBar1.Text, sortStatus.SelectedValue);
                     break;
-                case 2:
-                    Query = string.Format(Database_Query.get_specific_project_records_by_date2, sort_by, from_Date, to_Date, searchBar1.Text);
+                case "Agency":
+                    Query = string.Format(Database_Query.get_docu_by_agency, sort_by, from_Date, to_Date, searchBar1.Text);
                     break;
-                case 3:
-                    if (searchBar1.Text != null) Query = string.Format(Database_Query.get_general_project_records_by_date, sort_by, from_Date, to_Date);
-                    else Query = string.Format(Database_Query.get_specific_project_records_by_date2, sort_by, from_Date, to_Date, searchBar1.Text);
+                case "Cluster":
+                    Query = string.Format(Database_Query.get_docu_by_cluster, sort_by, from_Date, to_Date, searchBar1.Text);
                     break;
-                default: break;
-            }
+                case "Sector":
+                    Query = string.Format(Database_Query.get_docu_by_sector, sort_by, from_Date, to_Date, searchBar1.Text);
+                    break;
+                case "Contractor":
+                    Query = string.Format(Database_Query.get_docu_by_contractor, sort_by, from_Date, to_Date, searchBar1.Text);
+                    break;
+                case "Nature":
+                    Query = string.Format(Database_Query.get_docu_by_nature, sort_by, from_Date, to_Date, searchBar1.Text);
+                    break;
+                case "Division":
+                    Query = string.Format(Database_Query.get_docu_by_division, sort_by, from_Date, to_Date, searchBar1.Text);
+                    break;
+
+            }  
             Database_Query.last_query = Query;
             Database_Manager database_Manager = new Database_Manager();
             util = new Util();
-            using (database_Manager) dt = database_Manager.ExecuteQuery(Query);
+            using (database_Manager) 
+                dt = database_Manager.ExecuteQuery(Query);
             return dt;
         }
 
@@ -158,20 +178,14 @@ namespace COA_PRIS.UserControlUtil.Jesser_Util
                         }; ;
                     break;
                 case "project":
-                    //column_Widths = new (bool, int)[] { (true, 3), (true, 9), (true, 9), (true, 9), (true, 10), (true, 10), (true, 10), (true, 30), (true, 10) };
-                    //column_Widths = new (bool, int)[] { (true, 10), (true, 10), (true, 10), (true, 10), (true, 10), (true, 10), (true, 30), (true, 10) };
-                    column_Widths = new (bool, int)[] { (true, 3), (true, 12), (true, 15), (true, 15), (true, 10), (true, 45) };
+                    column_Widths = new (bool, int)[] { (true, 3), (true, 20), (true, 15), (true, 15), (true, 47) };
                     column_Text_Align = new (string, DataGridViewContentAlignment)[]
                         {
                             ("#", DataGridViewContentAlignment.MiddleRight),
-                            //("Document ID", DataGridViewContentAlignment.MiddleCenter),
-                            ("Document Code", DataGridViewContentAlignment.MiddleCenter),
-                            ("Document Number",DataGridViewContentAlignment.MiddleCenter),
+                            ("Routing Slip Number", DataGridViewContentAlignment.MiddleCenter),
                             ("Amount",DataGridViewContentAlignment.MiddleRight),
-                            //("Title", DataGridViewContentAlignment.MiddleLeft),
-                            ("Period",DataGridViewContentAlignment.MiddleCenter),
-                            //("Receiving Date",DataGridViewContentAlignment.MiddleCenter),
-                            ("Subject Matter",DataGridViewContentAlignment.MiddleLeft)
+                            ("Date Received",DataGridViewContentAlignment.MiddleCenter),
+                            ("Subject",DataGridViewContentAlignment.MiddleLeft)
                         };
                     break;
                 default: break;

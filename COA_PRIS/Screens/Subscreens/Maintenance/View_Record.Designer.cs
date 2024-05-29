@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(View_Record));
             this.top_Panel = new Guna.UI.WinForms.GunaPanel();
             this.config_Panel = new System.Windows.Forms.FlowLayoutPanel();
             this.audit_Trail_Btn = new Guna.UI.WinForms.GunaButton();
@@ -351,12 +352,13 @@
             this.Controls.Add(this.line_Panel);
             this.Controls.Add(this.top_Panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "View_Record";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PRIS";
+            this.Text = "PRIS View Record";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.View_Record_FormClosing);
             this.Load += new System.EventHandler(this.View_Record_Load);
             this.top_Panel.ResumeLayout(false);

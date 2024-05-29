@@ -86,8 +86,8 @@
             // 
             // control_Panel
             // 
-            this.control_Panel.Controls.Add(this.readOnly_Entry);
             this.control_Panel.Controls.Add(this.entry);
+            this.control_Panel.Controls.Add(this.readOnly_Entry);
             this.control_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.control_Panel.Location = new System.Drawing.Point(125, 0);
             this.control_Panel.Margin = new System.Windows.Forms.Padding(0);

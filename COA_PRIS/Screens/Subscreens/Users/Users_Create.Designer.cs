@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Users_Create));
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaLabel1 = new Guna.UI.WinForms.GunaLabel();
             this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
@@ -345,12 +346,13 @@
             this.ClientSize = new System.Drawing.Size(1684, 911);
             this.Controls.Add(this.main_Panel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Users_Create";
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Users_Create";
+            this.Text = "PRIS Create User";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Users_Create_FormClosing);
             this.left_Content_Panel.ResumeLayout(false);
             this.right_Content_Panel.ResumeLayout(false);

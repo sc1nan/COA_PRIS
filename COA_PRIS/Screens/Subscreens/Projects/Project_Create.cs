@@ -41,7 +41,6 @@ namespace COA_PRIS.Screens.Subscreens.Projects
 
         }
 
-
         public void InitzializeControls()
         {
             util.SetControls(PRISUserControls(), control_Panel);
@@ -103,7 +102,6 @@ namespace COA_PRIS.Screens.Subscreens.Projects
         
         
         }
-
         private List<UserControl[]> PRISUserControls() 
         {
             DataTable ret;
@@ -218,9 +216,9 @@ namespace COA_PRIS.Screens.Subscreens.Projects
         
         
         }
-
-        private void create_Btn_Click(object sender, EventArgs e)
+        private async void create_Btn_Click(object sender, EventArgs e)
         {
+            
             int ret = 0;
             string subjectFinal = string.Empty;
             if (!validator.PRISRequired(control_Panel, error_Provider))
@@ -265,16 +263,25 @@ namespace COA_PRIS.Screens.Subscreens.Projects
             if (ret == 4)
             {
                 //is_ClosingProgrammatically = true;
+
+                //Server
+                await ServerManager.SendMessageToClientsAsync(project_id.Text);
+                
+                //Client
+                //await ClientManager.SendMessageAsync(project_id.Text);
+                
+                
                 MessageBox.Show($"{values["Routing Slip Number"]} - {values["Routing Slip Number"]} is successfully added.", "PRIS Record Confirm", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ResetControls();
                 ToRefresh?.Invoke();
+
                 //Close();
             }
 
         }
-
         private void ResetControls() 
         {
+            Console.WriteLine("Refresh");
             var controls = util.SearchControls<UserControl>(control_Panel, new List<Type> { typeof(IPRIS_UserControl) });
 
             foreach (IPRIS_UserControl con in controls)
@@ -287,12 +294,10 @@ namespace COA_PRIS.Screens.Subscreens.Projects
             Reference.SpecialChar = InitialString;
             validator.PRISClearErrors(control_Panel, error_Provider);
         }
-
         private void refresh_Click(object sender, EventArgs e)
         {
             ResetControls();
         }
-
         private void Project_Create_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!is_ClosingProgrammatically)
@@ -304,7 +309,6 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                     Close();
             }
         }
-
         private void cancel_Btn_Click(object sender, EventArgs e)
         {
             is_ClosingProgrammatically = false;

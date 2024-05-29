@@ -23,9 +23,25 @@ namespace COA_PRIS.Screens.Subscreens.Projects
         public Project_List()
         {
             InitializeComponent();
+            
+
+        }
+        private async void Network_Callback(object sender, string message)
+        {
+            Console.WriteLine(message);
+            if (InvokeRequired)
+                Invoke((MethodInvoker)delegate { Refresh_Table(); });
+            else
+                Refresh_Table();
+
+             //Server
+             await ServerManager.SendMessageToClientsAsync("Reset Clients");
         }
         private void Project_List_Load(object sender, EventArgs e)
         {
+            //ClientManager.MessageReceived += Network_Callback;
+            ServerManager.MessageReceived += Network_Callback;
+
             InitializeControls();
             Access_Manager();
             PRIS_Seachbox.DropboxValues = new List<string>() { "All", "Code", "Routing #", "Title", "Amount", "Status"};
@@ -46,7 +62,6 @@ namespace COA_PRIS.Screens.Subscreens.Projects
             }
 
         }
-
         private void InitializeControls() 
         {
 
@@ -120,6 +135,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
         }
         private void Refresh_Table()
         {
+            Console.WriteLine("Refresh");
             DataTable ret;
 
             using (Database_Manager)

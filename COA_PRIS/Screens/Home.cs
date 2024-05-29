@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace COA_PRIS
 {
-    public partial class Home : Form, IPRIS_Forms
+    public partial class Home : Form    
     {
         private Database_Manager Database_Manager = new Database_Manager();
         private Util Util = new Util();
@@ -30,6 +30,8 @@ namespace COA_PRIS
             user_name.Text = Activity_Manager.CurrentUser;
             user_role.Text = role;
 
+            
+
             animated.BringToFront();
 
             date_time.Text = DateTime.Now.ToString("dddd, MMMM dd, MMMM hh:mm tt");
@@ -39,13 +41,28 @@ namespace COA_PRIS
 
         }
 
+        private async void Network_Callback(object sender, string message)
+        {
+            Console.WriteLine(message);
+            if (InvokeRequired)
+                Invoke((MethodInvoker)delegate { SetValues(); });
+            else
+                SetValues();
+
+            await ServerManager.SendMessageToClientsAsync("Reset Clients");
+        }
+
         private void Home_Load(object sender, EventArgs e)
         {
             SetValues();
+
+            ServerManager.MessageReceived += Network_Callback;
+            //ClientManager.MessageReceived += Network_Callback;
+
             timer.Start();
         }
 
-        public void FormInvoke()
+        public void Network_Callback()
         {
             SetValues();
         }

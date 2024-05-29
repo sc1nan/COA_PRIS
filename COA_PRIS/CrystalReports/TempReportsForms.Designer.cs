@@ -29,31 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.log_tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSet1 = new COA_PRIS.CrystalReports.DataSet1();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TempReportsForms));
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.log_tableBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new COA_PRIS.CrystalReports.DataSet1();
             this.logtableBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.log_tableBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             this.gunaPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.log_tableBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logtableBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // log_tableBindingSource
-            // 
-            this.log_tableBindingSource.DataMember = "log_table";
-            this.log_tableBindingSource.DataSource = this.dataSet1;
-            // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gunaPanel1
             // 
@@ -91,6 +82,16 @@
             this.panel1.Size = new System.Drawing.Size(677, 100);
             this.panel1.TabIndex = 0;
             // 
+            // log_tableBindingSource
+            // 
+            this.log_tableBindingSource.DataMember = "log_table";
+            this.log_tableBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // logtableBindingSource
             // 
             this.logtableBindingSource.DataMember = "log_table";
@@ -107,14 +108,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(677, 610);
             this.Controls.Add(this.gunaPanel1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TempReportsForms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TempReportsForms";
+            this.Text = "PRIS Report";
             this.Load += new System.EventHandler(this.TempReportsForms_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.log_tableBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             this.gunaPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.log_tableBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logtableBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTable1BindingSource)).EndInit();
             this.ResumeLayout(false);

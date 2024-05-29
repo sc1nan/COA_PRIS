@@ -36,10 +36,34 @@ namespace COA_PRIS.Screens
             InitializeComponent();
             Access_Manager();
         }
-
-        public void FormInvoke()
+        private void Maintenance_Load(object sender, EventArgs e)
         {
 
+            //ClientManager.MessageReceived += Network_Callback;
+            ServerManager.MessageReceived += Network_Callback;
+
+            tab_Manager.set_Buttons(nav_panel);
+            tab_Manager.set_Colors("#1B303B", "#C7C8CC");
+            tab_Manager.active_Button(agency_Btn, false);
+            tab_Manager.Header_Title = title_label;
+
+            controls = new Control[] { add_RecordBtn, view_RecordBtn, delete_Btn };
+
+            PRIS_Seachbox.DropboxValues = null;
+            PRIS_Seachbox.Search_Typed += Search_Callback;
+
+            agency_Btn.PerformClick();
+        }
+
+        public async void Network_Callback(object sender, string message)
+        {
+            Console.WriteLine(message);
+            if (InvokeRequired)
+                Invoke((MethodInvoker)delegate { Refresh_Table(); });
+            else
+                Refresh_Table();
+
+            await ServerManager.SendMessageToClientsAsync("Reset Clients");
 
         }
         private void Access_Manager()
@@ -54,22 +78,6 @@ namespace COA_PRIS.Screens
                 view_RecordBtn.Visible = ret.Rows[0][1].ToString() == "1" ? true : false;
             }
 
-        }
-        private void Maintenance_Load(object sender, EventArgs e)
-        {
-
-
-            tab_Manager.set_Buttons(nav_panel);
-            tab_Manager.set_Colors("#1B303B", "#C7C8CC");
-            tab_Manager.active_Button(agency_Btn, false);
-            tab_Manager.Header_Title = title_label;
-
-            controls = new Control[] { add_RecordBtn, view_RecordBtn, delete_Btn };
-
-            PRIS_Seachbox.DropboxValues = null;
-            PRIS_Seachbox.Search_Typed += Search_Callback;
-
-            agency_Btn.PerformClick();
         }
 
         private void Search_Callback(object sender, EventArgs e) 
@@ -663,7 +671,7 @@ namespace COA_PRIS.Screens
             data_View.DataSource = util.FormatDataTable(dt);
         }
 
-        public void refresh_Table()
+        public void Refresh_Table()
         {
             DataTable dt = new DataTable();
 
@@ -675,13 +683,13 @@ namespace COA_PRIS.Screens
 
         private void refresh_Btn_Click(object sender, EventArgs e)
         {
-            refresh_Table();
+            Refresh_Table();
             PRIS_Seachbox.Clear();
         }
 
         private void callback_Function() 
         {
-            refresh_Table();
+            Refresh_Table();
         }
 
     }

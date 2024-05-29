@@ -1,5 +1,6 @@
 ﻿using Guna.UI.WinForms;
 using Mysqlx.Crud;
+using Newtonsoft.Json;
 using Org.BouncyCastle.Asn1.Crmf;
 using System;
 using System.Collections.Generic;
@@ -11,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using System.IO;
 
 namespace COA_PRIS.Utilities
 {
@@ -329,5 +331,24 @@ namespace COA_PRIS.Utilities
             return ret;
         }
 
+        public ConnectionInfo ReadJsonFile(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                string jsonString = File.ReadAllText(filePath);
+                return JsonConvert.DeserializeObject<ConnectionInfo>(jsonString);
+            }
+            else
+            {
+                Console.WriteLine($"File '{filePath}' not found.");
+                return null;
+            }
+        }
+
+        public void WriteJsonFile(string filePath, ConnectionInfo connectionInfo)
+        {
+            string jsonString = JsonConvert.SerializeObject(connectionInfo, Formatting.Indented);
+            File.WriteAllText(filePath, jsonString);
+        }
     }
 }

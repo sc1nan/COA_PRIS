@@ -43,10 +43,10 @@
             // 
             this.container_Panel.BackColor = System.Drawing.Color.White;
             this.container_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.container_Panel.Location = new System.Drawing.Point(0, 60);
+            this.container_Panel.Location = new System.Drawing.Point(0, 65);
             this.container_Panel.Name = "container_Panel";
             this.container_Panel.Padding = new System.Windows.Forms.Padding(8);
-            this.container_Panel.Size = new System.Drawing.Size(1583, 834);
+            this.container_Panel.Size = new System.Drawing.Size(1583, 829);
             this.container_Panel.TabIndex = 3;
             // 
             // parent_panel
@@ -66,7 +66,7 @@
             // 
             this.line_Panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
             this.line_Panel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.line_Panel.Location = new System.Drawing.Point(0, 55);
+            this.line_Panel.Location = new System.Drawing.Point(0, 60);
             this.line_Panel.Name = "line_Panel";
             this.line_Panel.Size = new System.Drawing.Size(1583, 5);
             this.line_Panel.TabIndex = 1;
@@ -80,7 +80,7 @@
             this.nav_panel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.nav_panel.Location = new System.Drawing.Point(0, 0);
             this.nav_panel.Name = "nav_panel";
-            this.nav_panel.Size = new System.Drawing.Size(1583, 55);
+            this.nav_panel.Size = new System.Drawing.Size(1583, 60);
             this.nav_panel.TabIndex = 0;
             // 
             // account_Logs_Btn
@@ -108,7 +108,7 @@
             this.account_Logs_Btn.OnHoverForeColor = System.Drawing.Color.White;
             this.account_Logs_Btn.OnHoverImage = null;
             this.account_Logs_Btn.OnPressedColor = System.Drawing.Color.Black;
-            this.account_Logs_Btn.Size = new System.Drawing.Size(222, 55);
+            this.account_Logs_Btn.Size = new System.Drawing.Size(230, 60);
             this.account_Logs_Btn.TabIndex = 0;
             this.account_Logs_Btn.Text = "ACCOUNT LOGS";
             this.account_Logs_Btn.TextOffsetX = 5;
@@ -131,7 +131,7 @@
             this.inactive_Btn.Image = global::COA_PRIS.Properties.Resources.document;
             this.inactive_Btn.ImageOffsetX = 5;
             this.inactive_Btn.ImageSize = new System.Drawing.Size(30, 30);
-            this.inactive_Btn.Location = new System.Drawing.Point(223, 0);
+            this.inactive_Btn.Location = new System.Drawing.Point(231, 0);
             this.inactive_Btn.Margin = new System.Windows.Forms.Padding(0, 0, 1, 0);
             this.inactive_Btn.Name = "inactive_Btn";
             this.inactive_Btn.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(84)))), ((int)(((byte)(134)))));
@@ -139,7 +139,7 @@
             this.inactive_Btn.OnHoverForeColor = System.Drawing.Color.White;
             this.inactive_Btn.OnHoverImage = null;
             this.inactive_Btn.OnPressedColor = System.Drawing.Color.Black;
-            this.inactive_Btn.Size = new System.Drawing.Size(205, 55);
+            this.inactive_Btn.Size = new System.Drawing.Size(230, 60);
             this.inactive_Btn.TabIndex = 1;
             this.inactive_Btn.Text = "ACTIVITY LOGS";
             this.inactive_Btn.TextOffsetX = 5;

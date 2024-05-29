@@ -298,7 +298,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
 
         }
 
-        private void save_Btn_Click(object sender, EventArgs e)
+        private async void save_Btn_ClickAsync(object sender, EventArgs e)
         {
             string UpdateMessage = "Updated Project Record : Fields - ";
 
@@ -341,6 +341,13 @@ namespace COA_PRIS.Screens.Subscreens.Projects
             }
             if (ret == 4) 
             {
+
+                //Server
+                await ServerManager.SendMessageToClientsAsync(project_id.Text);
+
+                //Client
+                //await ClientManager.SendMessageAsync(project_id.Text);
+
                 MessageBox.Show($"{ProjectCode} - {values["Routing Slip Number"]} is successfully updated.", "PRIS Record Confirm", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 ToRefresh?.Invoke();
                 is_ClosingProgrammatically = true;

@@ -35,8 +35,12 @@ namespace COA_PRIS.CrystalReports
                         case "project":
                             reportViewer1.LocalReport.ReportEmbeddedResource = "COA_PRIS.CrystalReports.ProjectRequestReport.rdlc";
                             break;;
+                        case "action":
+                            reportViewer1.LocalReport.ReportEmbeddedResource = "COA_PRIS.CrystalReports.Report2.rdlc";
+                            break; ;
                         default: break;
                     }
+                    Console.WriteLine($"{Database_Query.last_query} {reportViewer1}");
                     db_manager.ExecuteQueryReportViewerDataSource(Database_Query.last_query, reportViewer1);
                 }
                 catch (Exception ex)
@@ -45,7 +49,7 @@ namespace COA_PRIS.CrystalReports
                 }
             }
 
-            reportViewer1.LocalReport.DisplayName = "LOGS REPORT-" + DateTime.Now.ToString("yyyy'-'MM'-'ddHHmm");
+            reportViewer1.LocalReport.DisplayName = "REPORT-" + DateTime.Now.ToString("yyyy'-'MM'-'ddHHmm");
         }
 
         private void TempReportsForms_Load(object sender, EventArgs e)

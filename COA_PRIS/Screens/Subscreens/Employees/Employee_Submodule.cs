@@ -26,6 +26,30 @@ namespace COA_PRIS.Screens.Subscreens.Employees
             Access_Manager();
             
         }
+        private void Employee_Submodule_Load(object sender, EventArgs e)
+        {
+            //ClientManager.MessageReceived += Network_Callback;
+            ServerManager.MessageReceived += Network_Callback;
+
+            Set_Table();
+            PRIS_Seachbox.DropboxValues = new List<string>() { "All", "Code", "Full Name", "Office", "Position", "Status" };
+            PRIS_Seachbox.Search_Typed += Search_Callback;
+        
+        }
+
+        private async void Network_Callback(object sender, string message) 
+        {
+            Console.WriteLine(message);
+            if (InvokeRequired)
+                Invoke((MethodInvoker)delegate { Refresh_Table(); });
+            else
+                Refresh_Table();
+
+            //Server
+            await ServerManager.SendMessageToClientsAsync("Reset Clients");
+        }
+        
+        
         private void Access_Manager()
         {
             DataTable ret;
@@ -38,12 +62,6 @@ namespace COA_PRIS.Screens.Subscreens.Employees
                 view_Record.Visible = ret.Rows[0][1].ToString() == "1" ? true : false;
             }
 
-        }
-        private void Employee_Submodule_Load(object sender, EventArgs e)
-        {
-            Set_Table();
-            PRIS_Seachbox.DropboxValues = new List<string>() { "All", "Code", "Full Name", "Office", "Position", "Status" };
-            PRIS_Seachbox.Search_Typed += Search_Callback;
         }
         private void Search_Callback(object sender, EventArgs e)
         {
@@ -109,14 +127,14 @@ namespace COA_PRIS.Screens.Subscreens.Employees
         }
         private void refresh_Btn_Click(object sender, EventArgs e)
         {
-            refresh_Table();
+            Refresh_Table();
             PRIS_Seachbox.Clear();
         }
         private void refresh_Callback() 
         {
-            refresh_Table();
+            Refresh_Table();
         }
-        private void refresh_Table() 
+        private void Refresh_Table() 
         {
             DataTable dt = new DataTable();
 

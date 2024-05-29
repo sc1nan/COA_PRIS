@@ -42,7 +42,7 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
             util.SetControls(controls, control_Panel);
         }
 
-        private void save_Btn_Click(object sender, EventArgs e)
+        private async void save_Btn_Click(object sender, EventArgs e)
         {
             var controls = util.SearchControls<UserControl>(control_Panel, new List<System.Type> { typeof(UserControl) });
             int ret = 0;
@@ -83,12 +83,18 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
                     database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_add, Activity_Manager.CurrentUser, $"Created Record : {code_type} {code_Title.Text}" ));
 
                 }
-                if (MessageBox.Show($"{code_Title.Text} is successfully added.", "New Record Added", MessageBoxButtons.OK, MessageBoxIcon.Information) == DialogResult.OK)
-                {
-                    is_ClosingProgrammatically = true;
-                    Close();
-                    callback?.Invoke();
-                }
+
+                //Server
+                await ServerManager.SendMessageToClientsAsync(code_Title.Text);
+
+                //Client
+                //await ClientManager.SendMessageAsync(project_id.Text);
+
+                MessageBox.Show($"{code_Title.Text} is successfully added.", "New Record Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
+                is_ClosingProgrammatically = true;
+                callback?.Invoke();
+                Close();
             }
 
         }

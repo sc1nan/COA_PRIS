@@ -15,7 +15,7 @@ using System.Windows.Forms;
 
 namespace COA_PRIS.Screens
 {
-    public partial class Projects : Form, IPRIS_Forms
+    public partial class Projects : Form
     {
         private Form current_Form = null;
         private Tab_Manager tab_Manager = new Tab_Manager();
@@ -25,9 +25,9 @@ namespace COA_PRIS.Screens
         public Projects()
         {
             InitializeComponent();
-        }
 
-        public void FormInvoke()
+        }
+        public void Network_Callback()
         {
             ActiveButton.PerformClick();
         }

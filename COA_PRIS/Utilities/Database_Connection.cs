@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using COA_PRIS.Utilities;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace COA_PRIS
 {
@@ -25,17 +28,40 @@ namespace COA_PRIS
 
         public bool IsConnect() 
         {
+            string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "NetworkConfig.json");
+
+            ConnectionInfo connectionInfo = ReadJsonFile(filePath);
+
             if (Connection == null)
             {
-                if (String.IsNullOrEmpty(Database_Credential.database))
+                if (String.IsNullOrEmpty(Database_Credentials.database) && connectionInfo != null)
                     return false;
-                string connection = string.Format("Server={0}; database={1}; UID={2}; password={3}", 
-                    Database_Credential.server, Database_Credential.database, 
-                    Database_Credential.uid, Database_Credential.pwd);
+                string connection = string.Format("Server={0}; database={1}; UID={2}; password={3}",
+
+                    //connectionInfo.IPAddress,  //Client Side
+                    Database_Credentials.db_server,
+                    Database_Credentials.database, 
+                    connectionInfo.Username, 
+                    connectionInfo.Password);
+
                 Connection = new MySqlConnection(connection);
                 Connection.Open();
             }
             return true;    
+        }
+
+        static ConnectionInfo ReadJsonFile(string filePath)
+        {
+            if (File.Exists(filePath))
+            {
+                string jsonString = File.ReadAllText(filePath);
+                return JsonConvert.DeserializeObject<ConnectionInfo>(jsonString);
+            }
+            else
+            {
+                Console.WriteLine($"File '{filePath}' not found.");
+                return null;
+            }
         }
     }
 }
