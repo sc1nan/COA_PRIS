@@ -10,7 +10,7 @@ namespace COA_PRIS
     {
         public static int port = 8888;
 
-        public static string db_server = "127.0.0.1";
+        public static string server = "127.0.0.1";
         public static string database = "db_pris";
         public static string uid = "root";
         public static string pwd = "@Dec012023";

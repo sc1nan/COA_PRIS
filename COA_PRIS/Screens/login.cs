@@ -28,7 +28,17 @@ namespace COA_PRIS
 
         private void login_Load(object sender, EventArgs e)
         {
+            //Server
+            ServerManager.MessageReceived += Network_Callback;
+
             this.AcceptButton = Login_btn;
+        }
+
+        private async void Network_Callback(object sender, string message) 
+        {
+            Console.WriteLine(message);
+
+            await ServerManager.SendMessageToClientsAsync("Reset Clients");
         }
 
         private void Loginbtn_Click(object sender, EventArgs e)
@@ -157,7 +167,7 @@ namespace COA_PRIS
 
         private void gunaButton1_Click(object sender, EventArgs e)
         {
-            SetUp = new SetUp("initial");
+            SetUp = new SetUp("setup");
             SetUp.ShowDialog();
         }
     }

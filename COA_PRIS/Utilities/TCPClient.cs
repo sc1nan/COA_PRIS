@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace COA_PRIS.Utilities
 {
@@ -24,7 +25,7 @@ namespace COA_PRIS.Utilities
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error connecting to db_server: {ex.Message}");
+                MessageBox.Show($"Error connecting to server: {ex.Message}", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -81,7 +82,7 @@ namespace COA_PRIS.Utilities
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error disconnecting from db_server: {ex.Message}");
+                Console.WriteLine($"Error disconnecting from server: {ex.Message}");
             }
         }
 

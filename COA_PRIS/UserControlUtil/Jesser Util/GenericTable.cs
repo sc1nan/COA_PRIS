@@ -196,12 +196,15 @@ namespace COA_PRIS.UserControlUtil.Jesser_Util
 
         public void GenerateReportForm(string table = null)
         {
-            var temprepp = Application.OpenForms["TempReportsForms"];
-            if (temprepp == null)
+            
+
+            var reportsForms = Application.OpenForms["TempReportsForms"];
+
+            if (reportsForms == null)
             {
-                temprepp = new TempReportsForms(table);
+                reportsForms = new TempReportsForms(table);
             }
-            temprepp.Show();
+            reportsForms.ShowDialog();
         }
 
         public void Check_Count(GunaButton next_Button, GunaButton previous_Button, DateFilter dateFilter1, int min_lim, int page_cnt, string data_Table_Type)

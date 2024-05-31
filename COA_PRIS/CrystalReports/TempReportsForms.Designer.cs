@@ -53,7 +53,7 @@
             this.gunaPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gunaPanel1.Location = new System.Drawing.Point(0, 0);
             this.gunaPanel1.Name = "gunaPanel1";
-            this.gunaPanel1.Size = new System.Drawing.Size(677, 610);
+            this.gunaPanel1.Size = new System.Drawing.Size(684, 661);
             this.gunaPanel1.TabIndex = 1;
             // 
             // panel2
@@ -62,7 +62,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(677, 610);
+            this.panel2.Size = new System.Drawing.Size(684, 661);
             this.panel2.TabIndex = 1;
             // 
             // reportViewer1
@@ -72,7 +72,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(677, 610);
+            this.reportViewer1.Size = new System.Drawing.Size(684, 661);
             this.reportViewer1.TabIndex = 0;
             // 
             // panel1
@@ -106,12 +106,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(677, 610);
+            this.ClientSize = new System.Drawing.Size(684, 661);
             this.Controls.Add(this.gunaPanel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimizeBox = false;
             this.Name = "TempReportsForms";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PRIS Report";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.TempReportsForms_Load);
             this.gunaPanel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

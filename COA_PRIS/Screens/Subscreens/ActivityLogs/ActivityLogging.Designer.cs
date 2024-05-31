@@ -29,32 +29,32 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gunaPanel1 = new Guna.UI.WinForms.GunaPanel();
-            this.main_Panel = new System.Windows.Forms.Panel();
-            this.content_Panel = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.add_RecordBtn = new Guna.UI.WinForms.GunaButton();
             this.refresh_Btn = new Guna.UI.WinForms.GunaButton();
+            this.dateFilter1 = new COA_PRIS.UserControlUtil.DateFilter();
             this.sortComboBox = new Guna.UI.WinForms.GunaComboBox();
+            this.searchBar1 = new COA_PRIS.UserControlUtil.SearchBar();
+            this.main_Panel = new System.Windows.Forms.Panel();
+            this.content_Panel = new System.Windows.Forms.Panel();
             this.LogsTable = new Guna.UI.WinForms.GunaDataGridView();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.next_Button = new Guna.UI.WinForms.GunaButton();
             this.previous_Button = new Guna.UI.WinForms.GunaButton();
             this.pageCountTextbox = new Guna.UI.WinForms.GunaTextBox();
-            this.dateFilter1 = new COA_PRIS.UserControlUtil.DateFilter();
-            this.searchBar1 = new COA_PRIS.UserControlUtil.SearchBar();
             this.gunaElipse1 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaElipse2 = new Guna.UI.WinForms.GunaElipse(this.components);
             this.gunaPanel1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.main_Panel.SuspendLayout();
             this.content_Panel.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LogsTable)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,39 +67,6 @@
             this.gunaPanel1.Name = "gunaPanel1";
             this.gunaPanel1.Size = new System.Drawing.Size(1567, 68);
             this.gunaPanel1.TabIndex = 8;
-            // 
-            // main_Panel
-            // 
-            this.main_Panel.Controls.Add(this.content_Panel);
-            this.main_Panel.Controls.Add(this.tableLayoutPanel2);
-            this.main_Panel.Controls.Add(this.gunaPanel1);
-            this.main_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.main_Panel.Location = new System.Drawing.Point(0, 0);
-            this.main_Panel.Name = "main_Panel";
-            this.main_Panel.Size = new System.Drawing.Size(1567, 817);
-            this.main_Panel.TabIndex = 11;
-            // 
-            // content_Panel
-            // 
-            this.content_Panel.Controls.Add(this.LogsTable);
-            this.content_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.content_Panel.Location = new System.Drawing.Point(0, 68);
-            this.content_Panel.Name = "content_Panel";
-            this.content_Panel.Size = new System.Drawing.Size(1567, 673);
-            this.content_Panel.TabIndex = 12;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 741);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1567, 76);
-            this.tableLayoutPanel2.TabIndex = 11;
             // 
             // tableLayoutPanel1
             // 
@@ -180,6 +147,18 @@
             this.refresh_Btn.Radius = 6;
             this.refresh_Btn.Size = new System.Drawing.Size(55, 55);
             this.refresh_Btn.TabIndex = 12;
+            this.refresh_Btn.Click += new System.EventHandler(this.refresh_Btn_Click);
+            // 
+            // dateFilter1
+            // 
+            this.dateFilter1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.dateFilter1.BackColor = System.Drawing.Color.Transparent;
+            this.dateFilter1.fromValue = new System.DateTime(2024, 4, 8, 10, 35, 15, 477);
+            this.dateFilter1.Location = new System.Drawing.Point(700, 3);
+            this.dateFilter1.Name = "dateFilter1";
+            this.dateFilter1.Size = new System.Drawing.Size(573, 60);
+            this.dateFilter1.TabIndex = 5;
+            this.dateFilter1.toValue = new System.DateTime(2024, 4, 8, 10, 35, 15, 477);
             // 
             // sortComboBox
             // 
@@ -208,36 +187,66 @@
             this.sortComboBox.Size = new System.Drawing.Size(130, 56);
             this.sortComboBox.TabIndex = 9;
             // 
+            // searchBar1
+            // 
+            this.searchBar1.BackColor = System.Drawing.Color.White;
+            this.searchBar1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.searchBar1.Location = new System.Drawing.Point(3, 3);
+            this.searchBar1.Name = "searchBar1";
+            this.searchBar1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
+            this.searchBar1.Size = new System.Drawing.Size(494, 62);
+            this.searchBar1.TabIndex = 3;
+            // 
+            // main_Panel
+            // 
+            this.main_Panel.Controls.Add(this.content_Panel);
+            this.main_Panel.Controls.Add(this.tableLayoutPanel2);
+            this.main_Panel.Controls.Add(this.gunaPanel1);
+            this.main_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.main_Panel.Location = new System.Drawing.Point(0, 0);
+            this.main_Panel.Name = "main_Panel";
+            this.main_Panel.Size = new System.Drawing.Size(1567, 817);
+            this.main_Panel.TabIndex = 11;
+            // 
+            // content_Panel
+            // 
+            this.content_Panel.Controls.Add(this.LogsTable);
+            this.content_Panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.content_Panel.Location = new System.Drawing.Point(0, 68);
+            this.content_Panel.Name = "content_Panel";
+            this.content_Panel.Size = new System.Drawing.Size(1567, 673);
+            this.content_Panel.TabIndex = 12;
+            // 
             // LogsTable
             // 
             this.LogsTable.AllowUserToAddRows = false;
             this.LogsTable.AllowUserToDeleteRows = false;
             this.LogsTable.AllowUserToResizeColumns = false;
             this.LogsTable.AllowUserToResizeRows = false;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.White;
-            this.LogsTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.LogsTable.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
             this.LogsTable.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.LogsTable.BackgroundColor = System.Drawing.Color.Gainsboro;
             this.LogsTable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.LogsTable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.LogsTable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.LogsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle23;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.LogsTable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.LogsTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle24.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.LogsTable.DefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.LogsTable.DefaultCellStyle = dataGridViewCellStyle6;
             this.LogsTable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.LogsTable.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.LogsTable.EnableHeadersVisualStyles = false;
@@ -281,6 +290,19 @@
             this.LogsTable.ThemeStyle.RowsStyle.Height = 22;
             this.LogsTable.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.LogsTable.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(48)))), ((int)(((byte)(59)))));
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel3, 0, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 741);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(1567, 76);
+            this.tableLayoutPanel2.TabIndex = 11;
             // 
             // tableLayoutPanel3
             // 
@@ -328,6 +350,7 @@
             this.next_Button.Tag = "AddRecord";
             this.next_Button.Text = ">>";
             this.next_Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.next_Button.Click += new System.EventHandler(this.next_Button_Click);
             // 
             // previous_Button
             // 
@@ -358,6 +381,7 @@
             this.previous_Button.Tag = "AddRecord";
             this.previous_Button.Text = "<<";
             this.previous_Button.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.previous_Button.Click += new System.EventHandler(this.previous_Button_Click);
             // 
             // pageCountTextbox
             // 
@@ -381,27 +405,6 @@
             this.pageCountTextbox.Text = "1";
             this.pageCountTextbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // dateFilter1
-            // 
-            this.dateFilter1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.dateFilter1.BackColor = System.Drawing.Color.Transparent;
-            this.dateFilter1.fromValue = new System.DateTime(2024, 4, 8, 10, 35, 15, 477);
-            this.dateFilter1.Location = new System.Drawing.Point(700, 3);
-            this.dateFilter1.Name = "dateFilter1";
-            this.dateFilter1.Size = new System.Drawing.Size(573, 60);
-            this.dateFilter1.TabIndex = 5;
-            this.dateFilter1.toValue = new System.DateTime(2024, 4, 8, 10, 35, 15, 477);
-            // 
-            // searchBar1
-            // 
-            this.searchBar1.BackColor = System.Drawing.Color.White;
-            this.searchBar1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.searchBar1.Location = new System.Drawing.Point(3, 3);
-            this.searchBar1.Name = "searchBar1";
-            this.searchBar1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 2);
-            this.searchBar1.Size = new System.Drawing.Size(494, 62);
-            this.searchBar1.TabIndex = 3;
-            // 
             // gunaElipse1
             // 
             this.gunaElipse1.TargetControl = this.LogsTable;
@@ -422,11 +425,11 @@
             this.Text = "ActivityLogging";
             this.VisibleChanged += new System.EventHandler(this.ActivityLogging_VisibleChanged);
             this.gunaPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.main_Panel.ResumeLayout(false);
             this.content_Panel.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.LogsTable)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.ResumeLayout(false);
 

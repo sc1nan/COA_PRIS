@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace COA_PRIS.Utilities
 {
@@ -32,7 +33,7 @@ namespace COA_PRIS.Utilities
             }
             else
             {
-                Console.WriteLine("Server is not initialized.");
+                MessageBox.Show("Server is not initialized.", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -44,7 +45,7 @@ namespace COA_PRIS.Utilities
             }
             else
             {
-                Console.WriteLine("Server is not initialized.");
+                MessageBox.Show("Server is not initialized.", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

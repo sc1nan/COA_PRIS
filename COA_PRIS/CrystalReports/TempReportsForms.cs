@@ -2,6 +2,8 @@
 using COA_PRIS.Utilities;
 using Microsoft.Reporting.Map.WebForms.BingMaps;
 using Microsoft.Reporting.WinForms;
+using MySql.Data.MySqlClient;
+using MySqlX.XDevAPI.Relational;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,31 +18,39 @@ namespace COA_PRIS.CrystalReports
 {
     public partial class TempReportsForms : Form
     {
+        private string Table;
+        Database_Manager db_manager = new Database_Manager();
         public TempReportsForms(string table = null)
         {
             InitializeComponent();
+            Table = table;  
 
-            Database_Manager db_manager = new Database_Manager();
+            
+        }
 
+
+        private void TempReportsForms_Load(object sender, EventArgs e)
+        {
             using (db_manager)
             {
                 try
                 {
+
+                    Console.WriteLine($"{Database_Query.last_query} {reportViewer1}");
                     //takes what type of report is generated
-                    switch (table)
+                    switch (Table)
                     {
                         case "log":
                             reportViewer1.LocalReport.ReportEmbeddedResource = "COA_PRIS.CrystalReports.Report1.rdlc";
                             break;
                         case "project":
                             reportViewer1.LocalReport.ReportEmbeddedResource = "COA_PRIS.CrystalReports.ProjectRequestReport.rdlc";
-                            break;;
+                            break; ;
                         case "action":
                             reportViewer1.LocalReport.ReportEmbeddedResource = "COA_PRIS.CrystalReports.Report2.rdlc";
                             break; ;
                         default: break;
                     }
-                    Console.WriteLine($"{Database_Query.last_query} {reportViewer1}");
                     db_manager.ExecuteQueryReportViewerDataSource(Database_Query.last_query, reportViewer1);
                 }
                 catch (Exception ex)
@@ -50,10 +60,6 @@ namespace COA_PRIS.CrystalReports
             }
 
             reportViewer1.LocalReport.DisplayName = "REPORT-" + DateTime.Now.ToString("yyyy'-'MM'-'ddHHmm");
-        }
-
-        private void TempReportsForms_Load(object sender, EventArgs e)
-        {
             reportViewer1.SetDisplayMode(DisplayMode.PrintLayout);
             reportViewer1.ZoomMode = ZoomMode.PageWidth;
 

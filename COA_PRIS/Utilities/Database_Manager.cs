@@ -52,10 +52,12 @@ namespace COA_PRIS.Utilities
 
         public void ExecuteQueryReportViewerDataSource(string query, ReportViewer reportViewer = null)
         {
-            var dbCon = DBConnection.Instance();
+            /*var dbCon = DBConnection.Instance();
             DataTable dataTable = new DataTable();
             MySqlDataAdapter das = new MySqlDataAdapter();
             DataSet1 ds = new DataSet1();
+
+            //MessageBox.Show(query);
 
             using (MySqlCommand command = new MySqlCommand(query, dbCon.Connection))
             {
@@ -82,10 +84,14 @@ namespace COA_PRIS.Utilities
                         dataSource = new ReportDataSource("DataSet1", ds.Tables[2]);
                         
                     }
+
                     das.Fill(ds, table_name_on_dataset);
                     if (ds.Tables[table_name_on_dataset].Rows.Count == 0) MessageBox.Show("Nothing found", "Message");
 
-                    Console.WriteLine(dataSource.Value);
+
+                    MessageBox.Show($"{ds == null}");
+
+
 
                     reportViewer.LocalReport.DataSources.Clear();
                     reportViewer.LocalReport.DataSources.Add(dataSource);
@@ -96,7 +102,68 @@ namespace COA_PRIS.Utilities
                     MessageBox.Show($"Error executing nonquery command: {ex.Message}", "Error");
                     Console.WriteLine();
                 }
+            }*/
+
+            var dbCon = DBConnection.Instance();
+            DataTable dataTable = new DataTable();
+            MySqlDataAdapter das = new MySqlDataAdapter();
+            DataSet1 ds = new DataSet1();
+
+            using (MySqlCommand command = new MySqlCommand(query, dbCon.Connection))
+            {
+                try
+                {
+                    string table_name_on_dataset = null;
+                    ReportDataSource dataSource = null;
+                    das.SelectCommand = command;
+
+                    // Determine which table to fill based on the query
+                    if (query.Contains("log_table"))
+                    {
+                        table_name_on_dataset = "log_table";
+                    }
+                    else if (query.Contains("docu_info_table"))
+                    {
+                        table_name_on_dataset = "docu_info_table";
+                    }
+                    else if (query.Contains("history_table"))
+                    {
+                        table_name_on_dataset = "history_table";
+                    }
+
+                    // Ensure table_name_on_dataset is not null
+                    if (table_name_on_dataset == null)
+                    {
+                        throw new InvalidOperationException("Query does not contain a valid table name.");
+                    }
+
+                    // Fill the dataset with the appropriate table
+                    das.Fill(ds, table_name_on_dataset);
+
+                    // Ensure the table exists and has rows
+                    if (ds.Tables[table_name_on_dataset].Rows.Count == 0)
+                    {
+                        MessageBox.Show("Nothing found", "Message");
+                        return; // Exit if there's no data
+                    }
+
+                    // Create a ReportDataSource with the filled table
+                    dataSource = new ReportDataSource("DataSet1", ds.Tables[table_name_on_dataset]);
+
+                    // Clear existing data sources and add the new one
+                    reportViewer.LocalReport.DataSources.Clear();
+                    reportViewer.LocalReport.DataSources.Add(dataSource);
+
+                    // Refresh the report viewer
+                    reportViewer.RefreshReport();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error executing command: {ex.Message}", "Error");
+                }
             }
+
+
         }
 
         public int ExecuteNonQuery(string query)

@@ -1,6 +1,7 @@
 ﻿using COA_PRIS.UserControlUtil;
 using COA_PRIS.UserControlUtil.PRIS_UserControl;
 using COA_PRIS.Utilities;
+using MySqlX.XDevAPI.Relational;
 using Org.BouncyCastle.Asn1.Crmf;
 using Org.BouncyCastle.Ocsp;
 using Org.BouncyCastle.Utilities.Collections;
@@ -262,6 +263,15 @@ namespace COA_PRIS.Screens.Subscreens.Projects
 
             if (ret == 4)
             {
+
+                using (database_Manager)
+                {
+                    string code_type = database_Manager.ExecuteScalar(string.Format(Database_Query.return_module_name, "docu_info_table")).ToString();
+                    //make activity log
+                    database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_add, Activity_Manager.CurrentUser, $"Created Record : {code_type} {project_id.Text}"));
+
+                }
+
                 //is_ClosingProgrammatically = true;
 
                 //Server

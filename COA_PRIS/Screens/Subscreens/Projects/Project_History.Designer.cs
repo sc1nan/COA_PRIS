@@ -320,6 +320,7 @@
             this.Padding = new System.Windows.Forms.Padding(10);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PRIS Project Action Logs";
+            this.Load += new System.EventHandler(this.Project_History_Load);
             this.top_Panel.ResumeLayout(false);
             this.bottom_Panel.ResumeLayout(false);
             this.content_Panel.ResumeLayout(false);

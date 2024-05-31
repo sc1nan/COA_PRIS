@@ -1,6 +1,7 @@
 ﻿using COA_PRIS.UserControlUtil;
 using COA_PRIS.UserControlUtil.PRIS_UserControl;
 using COA_PRIS.Utilities;
+using MySqlX.XDevAPI.Relational;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -233,6 +234,14 @@ namespace COA_PRIS.Screens.Subscreens.Projects
                     if (MessageBox.Show("Are you sure you want to proceed?", "PRIS Forward Confrimation", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                         return;
 
+                    using (Database_Manager)
+                    {
+                        string code_type = Database_Manager.ExecuteScalar(string.Format(Database_Query.return_module_name, "docu_info_table")).ToString();
+                        //make activity log
+                        Database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_add, Activity_Manager.CurrentUser, $"Record Forwarded : {code_type} {ProjectCode}"));
+
+                    }
+
                     ret += Database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_new_history, historyCode, message, ProjectCode, Activity_Manager.CurrentUser, values["Date"]));
                     ret += Database_Manager.ExecuteNonQuery(string.Format(Database_Query.update_docu_status_by_id, "SYSTEM_STS000002", ProjectCode));
 
@@ -244,12 +253,28 @@ namespace COA_PRIS.Screens.Subscreens.Projects
 
                     if (string.Equals(values["Released"], "1"))
                     {
+                        using (Database_Manager)
+                        {
+                            string code_type = Database_Manager.ExecuteScalar(string.Format(Database_Query.return_module_name, "docu_info_table")).ToString();
+                            //make activity log
+                            Database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_add, Activity_Manager.CurrentUser, $"Record Released : {code_type} {ProjectCode}"));
+                        }
+
                         ret += Database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_new_history, historyCode, $"Project Record Released : {values["Description"]}", ProjectCode, Activity_Manager.CurrentUser, values["Date"]));
                         ret += Database_Manager.ExecuteNonQuery(string.Format(Database_Query.update_docu_status_by_id, "SYSTEM_STS000004", ProjectCode));
                     }
 
                     if (string.Equals(values["Filed"], "1"))
                     {
+                        using (Database_Manager)
+                        {
+                            string code_type = Database_Manager.ExecuteScalar(string.Format(Database_Query.return_module_name, "docu_info_table")).ToString();
+                            //make activity log
+                            Database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_add, Activity_Manager.CurrentUser, $"Record Filed : {code_type} {ProjectCode}"));
+                        }
+
+
+
                         ret += Database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_new_history, historyCode, $"Project Record Filed : {values["Description"]}", ProjectCode, Activity_Manager.CurrentUser, values["Date"]));
                         ret += Database_Manager.ExecuteNonQuery(string.Format(Database_Query.update_docu_status_by_id, "SYSTEM_STS000003", ProjectCode));
                         ret += Database_Manager.ExecuteNonQuery(string.Format(Database_Query.updated_date_filed_by_id, values["Date"], ProjectCode));
@@ -257,6 +282,14 @@ namespace COA_PRIS.Screens.Subscreens.Projects
 
                     if (string.Equals(values["Received"], "1"))
                     {
+                        using (Database_Manager)
+                        {
+                            string code_type = Database_Manager.ExecuteScalar(string.Format(Database_Query.return_module_name, "docu_info_table")).ToString();
+                            //make activity log
+                            Database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_add, Activity_Manager.CurrentUser, $"Record Received : {code_type} {ProjectCode}"));
+                        }
+
+
                         ret += Database_Manager.ExecuteNonQuery(string.Format(Database_Query.set_new_history, historyCode, $"Project Record Received : {values["Description"]}", ProjectCode, Activity_Manager.CurrentUser, values["Date"]));
                     }
                 }

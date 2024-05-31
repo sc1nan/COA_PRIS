@@ -39,7 +39,7 @@ namespace COA_PRIS
                 string connection = string.Format("Server={0}; database={1}; UID={2}; password={3}",
 
                     //connectionInfo.IPAddress,  //Client Side
-                    Database_Credentials.db_server,
+                    Database_Credentials.server, //Server Side
                     Database_Credentials.database, 
                     connectionInfo.Username, 
                     connectionInfo.Password);

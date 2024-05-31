@@ -16,6 +16,8 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
 {
     public partial class AccountLogging : Form
     {
+
+        private GenericTable genericTable = new GenericTable();
         Activity_Manager activity_manager;
         Util util = new Util();
         readonly string[] log_table_names = { "user_name", "activity" };
@@ -86,7 +88,7 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
 
         private void sortComboBox_SelectedValueChanged(object sender, EventArgs e)
         {
-            Populate_Table(2);
+            
         }
 
         private void previous_Button_Click(object sender, EventArgs e)
@@ -132,12 +134,20 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
 
         private void reportsButton_Click(object sender, EventArgs e)
         {
-            var temprepp = Application.OpenForms["TempReportsForms"];
-            if (temprepp == null)
+            //var temprepp = Application.OpenForms["TempReportsForms"];
+            /*if (temprepp == null)
             {
                 temprepp = new TempReportsForms("log");
-            }
-            temprepp.Show();
+            }*/
+            /*TempReportsForms temprepp = new TempReportsForms("log");
+            temprepp.ShowDialog();*/
+
+            if (LogsTable.Rows.Count != 0)
+                genericTable.GenerateReportForm("log");
+            else
+                MessageBox.Show("There is no data to process in this filter or search option", "PRIS Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
         }
 
         private void AddThemeToDGV()
@@ -174,7 +184,11 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
 
         private void AccountLogging_VisibleChanged(object sender, EventArgs e)
         {
-            refresh_Btn.PerformClick();
+           if(this.Visible)
+           {
+                Populate_Table(3);
+                refresh_Btn.PerformClick();
+           }
         }
         private void Check_Count()
         {
@@ -199,7 +213,7 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
 
         private void sortComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            Populate_Table(2);
         }
     }
 }

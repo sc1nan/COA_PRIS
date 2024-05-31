@@ -1,4 +1,5 @@
 ﻿using COA_PRIS.CrystalReports;
+using COA_PRIS.UserControlUtil.Jesser_Util;
 using COA_PRIS.Utilities;
 using Guna.UI.WinForms;
 using MySqlX.XDevAPI.Relational;
@@ -23,6 +24,9 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
         private int min_lim = 0;
         private readonly int max_lim = 15;
         private int page_cnt = 1;
+
+
+        private GenericTable genericTable = new GenericTable();
         public ActivityLogging()
         {
             InitializeComponent();
@@ -73,6 +77,7 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
             //populate table with number
             LogsTable.DataSource = util.FormatDataTableLimit(dt, min_lim);
             //set theme to data grid view
+            Check_Count();
             AddThemeToDGV();
         }
 
@@ -127,12 +132,19 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
 
         private void reportsButton_Click(object sender, EventArgs e)
         {
-            var temprepp = Application.OpenForms["TempReportsForms"];
+            /*var temprepp = Application.OpenForms["TempReportsForms"];
             if (temprepp == null)
             {
                 temprepp = new TempReportsForms("log");
             }
-            temprepp.Show();
+            temprepp.Show();*/
+
+            if (LogsTable.Rows.Count != 0)
+                genericTable.GenerateReportForm("log");
+            else
+                MessageBox.Show("There is no data to process in this filter or search option", "PRIS Report", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
         }
 
         private void AddThemeToDGV()
@@ -159,6 +171,7 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
         private void Check_Count()
         {
             min_lim = max_lim * (page_cnt - 1);
+
 
             if ((min_lim + max_lim) >= Activity_Logs_Count()) next_Button.Enabled = false;
             else next_Button.Enabled = true;
@@ -197,7 +210,7 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
         //handles search bar text change
         private void logsSearchBox_TextChanged(object sender, EventArgs e)
         {
-
+            Populate_Table(2);
         }
         //display activity logs
         private void DisplayLogsTable()
@@ -215,5 +228,10 @@ namespace COA_PRIS.Screens.Subscreens.ActivityLogs
             Populate_Table(2);
         }
         #endregion
+
+        private void refresh_Btn_Click(object sender, EventArgs e)
+        {
+            Populate_Table(3);
+        }
     }
 }

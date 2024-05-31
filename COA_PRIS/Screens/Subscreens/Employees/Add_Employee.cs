@@ -2,6 +2,7 @@
 using COA_PRIS.UserControlUtil.PRIS_UserControl;
 using COA_PRIS.Utilities;
 using Guna.UI.WinForms;
+using MySqlX.XDevAPI.Relational;
 using Org.BouncyCastle.Ocsp;
 using System;
 using System.Collections.Generic;
@@ -190,16 +191,25 @@ namespace COA_PRIS.Screens.Subscreens.Employees
             var entries = new List<List<string>> { new List<string> { values[0], values[1], values[2], values[3], values[7], values[8], Activity_Manager.CurrentUser}};
 
             using (database_manager)
+            {
                 ret = database_manager.ExecuteNonQuery(util.GenerateQuery(entries, Database_Query.set_new_employee));
+            }
 
 
             if (ret == 1)
             {
+                using(database_manager)
+                {
+                    string code_type = database_manager.ExecuteScalar(string.Format(Database_Query.return_module_name, "emp_info_table")).ToString();
+                    database_manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_add, Activity_Manager.CurrentUser, $"Created Record : {code_type} {emp_id.Text}"));
+                }
+
                 //Server
                 await ServerManager.SendMessageToClientsAsync(emp_id.Text);
 
                 //Client
                 //await ClientManager.SendMessageAsync(emp_id.Text);
+
 
                 MessageBox.Show($"{emp_id.Text} is successfully added.", "New Record Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 is_ClosingProgrammatically = true;

@@ -238,6 +238,12 @@ namespace COA_PRIS.Screens.Subscreens.Users
 
             if (ret == 3) 
             {
+
+                using (database_Manager)
+                {
+                    database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_add, Activity_Manager.CurrentUser, $"Created Record : USERS {values["Username"]}"));
+                }
+
                 //Server
                 await ServerManager.SendMessageToClientsAsync(values["Username"]);
 

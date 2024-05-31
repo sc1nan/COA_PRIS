@@ -6,16 +6,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>0.45573in</Width>
+              <Width>0.42969in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.15313in</Width>
+              <Width>1.12709in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.3244in</Width>
+              <Width>2.29836in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.35157in</Width>
+              <Width>2.32553in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -28,13 +28,13 @@
                       <TablixBody>
                         <TablixColumns>
                           <TablixColumn>
-                            <Width>1.14145in</Width>
+                            <Width>1.10673in</Width>
                           </TablixColumn>
                           <TablixColumn>
-                            <Width>3.99149in</Width>
+                            <Width>3.95677in</Width>
                           </TablixColumn>
                           <TablixColumn>
-                            <Width>1.15187in</Width>
+                            <Width>1.11715in</Width>
                           </TablixColumn>
                         </TablixColumns>
                         <TablixRows>
@@ -325,16 +325,16 @@
                       <TablixBody>
                         <TablixColumns>
                           <TablixColumn>
-                            <Width>0.33507in</Width>
+                            <Width>0.30903in</Width>
                           </TablixColumn>
                           <TablixColumn>
-                            <Width>3.18961in</Width>
+                            <Width>3.16357in</Width>
                           </TablixColumn>
                           <TablixColumn>
-                            <Width>1.25424in</Width>
+                            <Width>1.2282in</Width>
                           </TablixColumn>
                           <TablixColumn>
-                            <Width>1.50589in</Width>
+                            <Width>1.47985in</Width>
                           </TablixColumn>
                         </TablixColumns>
                         <TablixRows>
@@ -368,6 +368,9 @@
                                       <Border>
                                         <Style>Solid</Style>
                                       </Border>
+                                      <LeftBorder>
+                                        <Width>3pt</Width>
+                                      </LeftBorder>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -473,6 +476,9 @@
                                       <Border>
                                         <Style>Solid</Style>
                                       </Border>
+                                      <RightBorder>
+                                        <Width>3pt</Width>
+                                      </RightBorder>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -524,6 +530,9 @@
                                       <Border>
                                         <Style>Solid</Style>
                                       </Border>
+                                      <LeftBorder>
+                                        <Width>3pt</Width>
+                                      </LeftBorder>
                                       <PaddingLeft>2pt</PaddingLeft>
                                       <PaddingRight>2pt</PaddingRight>
                                       <PaddingTop>2pt</PaddingTop>
@@ -623,6 +632,9 @@
                                       <Border>
                                         <Style>Solid</Style>
                                       </Border>
+                                      <RightBorder>
+                                        <Width>3pt</Width>
+                                      </RightBorder>
                                       <PaddingLeft>5pt</PaddingLeft>
                                       <PaddingRight>5pt</PaddingRight>
                                       <PaddingTop>5pt</PaddingTop>
@@ -743,8 +755,8 @@
         <DataSetName>DataSet1</DataSetName>
         <Top>0cm</Top>
         <Left>0.10758in</Left>
-        <Height>4.55704in</Height>
-        <Width>6.28483in</Width>
+        <Height>4.55705in</Height>
+        <Width>6.18066in</Width>
         <Style>
           <Border>
             <Color>White</Color>
@@ -758,7 +770,7 @@
     <Height>8in</Height>
     <Style />
   </Body>
-  <Width>6.5in</Width>
+  <Width>6.39241in</Width>
   <Page>
     <LeftMargin>1in</LeftMargin>
     <RightMargin>1in</RightMargin>

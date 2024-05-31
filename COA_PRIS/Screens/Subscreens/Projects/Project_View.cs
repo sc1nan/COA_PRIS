@@ -12,6 +12,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Microsoft.Win32;
 using static Org.BouncyCastle.Asn1.Cmp.Challenge;
+using static System.Net.Mime.MediaTypeNames;
+using Org.BouncyCastle.Utilities.Collections;
+using MySqlX.XDevAPI.Relational;
 
 namespace COA_PRIS.Screens.Subscreens.Projects
 {
@@ -29,9 +32,10 @@ namespace COA_PRIS.Screens.Subscreens.Projects
         private string ProjectNumber;
 
         private bool is_ClosingProgrammatically = false;
-        private Dictionary<string, string> values;
+        Dictionary<string, string> values, selectorValues;
         private Dictionary<string, string> InitialValues;
 
+        private PRIS_Label_Rich Subject;
         public Action ToRefresh;
         public Project_View(string code)
         {
@@ -211,7 +215,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
 
                 new UserControl[]
                 {
-                    new PRIS_Label_Rich(_title: "Subject : ", _isRequired: true, _entryHeight: 350),
+                    Subject = new PRIS_Label_Rich(_title: "Subject : ", _isRequired: true, _entryHeight: 350),
 
                     new PRIS_Label_Rich(_title: "Remarks : ", _isRequired: false, _entryHeight: 350),
                 }
@@ -319,15 +323,37 @@ namespace COA_PRIS.Screens.Subscreens.Projects
 
             Random random = new Random();
             int ret = 0;
+
             var controls = util.SearchControls<UserControl>(parent_Panel, new List<Type>() { typeof(IPRIS_UserControl) });
+            var selectors = util.SearchControls<PRIS_Label_Selector>(parent_Panel, new List<Type> { typeof(PRIS_Label_Selector) });
             var history_code = util.GenerateRandomID(random, "history_table");
 
             values = new Dictionary<string, string>();
+            selectorValues = new Dictionary<string, string>();
 
             foreach (IPRIS_UserControl control in controls)
-            {
                 values.Add(control.Title, control.Value);
+            
+            foreach (PRIS_Label_Selector selector in selectors)
+                selectorValues.Add(selector.Title, selector.RawValue);
+
+
+            string[] lines = Subject.Value.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.None);
+
+            if (lines.Length >= 4)
+            {
+
+                lines[0] = $"{values["Routing Slip Number"]}";
+                lines[1] = $"{selectorValues["Sector"]} | {selectorValues["Cluster"]}";
+                lines[2] = $"{selectorValues["Agency"]}";
+                lines[3] = $"{selectorValues["Nature"]}";
+
             }
+
+            // Reconstruct the text
+            string updatedText = string.Join(Environment.NewLine, lines);
+
+            Subject.Value = updatedText;
 
             if (MessageBox.Show("Are you sure you want to update?", "PRIS Update Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) != DialogResult.Yes)
                 return;
@@ -341,6 +367,15 @@ namespace COA_PRIS.Screens.Subscreens.Projects
             }
             if (ret == 4) 
             {
+                using (Database_Manager)
+                {
+                    string code_type = Database_Manager.ExecuteScalar(string.Format(Database_Query.return_module_name, "docu_info_table")).ToString();
+                    //make activity log
+                    Database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_add, Activity_Manager.CurrentUser, $"Updated Record : {code_type} {ProjectCode}"));
+
+                }
+
+
 
                 //Server
                 await ServerManager.SendMessageToClientsAsync(project_id.Text);

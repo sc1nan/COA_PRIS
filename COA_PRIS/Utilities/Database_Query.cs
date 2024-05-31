@@ -44,9 +44,9 @@ namespace COA_PRIS
         public static readonly string log_maintenance_activity_add = "INSERT INTO log_table (user_name, activity, activity_datetime, activity_type) VALUES ('{0}', '{1}', CURRENT_TIMESTAMP, 2)";
         public static readonly string log_maintenance_activity_delete = "INSERT INTO log_table (user_name, activity, activity_datetime, activity_type) VALUES ('{0}', 'Deleted Record: {1} {2}', CURRENT_TIMESTAMP, 2)";
         public static readonly string log_maintenance_activity_edit = "INSERT INTO log_table (user_name, activity, activity_datetime, activity_type) VALUES ('{0}', '{1}', CURRENT_TIMESTAMP, 2)";
-        public static readonly string display_activity_logs_by_date = "SELECT user_name, activity, activity_datetime FROM log_table WHERE activity_datetime BETWEEN '{0}' AND '{1}' AND activity_type = 2 LIMIT {2}, 15";
-        public static readonly string display_specified_activity_logs = "SELECT user_name, activity, activity_datetime FROM log_table WHERE activity_datetime BETWEEN '{0}' AND '{1}' AND {4} LIKE '%{3}%' AND activity_type = 2 LIMIT {2}, 15";
-        public static readonly string display_activity_logs = "SELECT user_name, activity, activity_datetime FROM log_table WHERE activity_type = 2";
+        public static readonly string display_activity_logs_by_date = "SELECT user_name, activity, activity_datetime FROM log_table WHERE (activity_datetime BETWEEN '{0}' AND '{1}') AND (activity_type = 2) ORDER BY activity_datetime DESC LIMIT {2}, 15 ";
+        public static readonly string display_specified_activity_logs = "SELECT user_name, activity, activity_datetime FROM log_table WHERE activity_datetime BETWEEN '{0}' AND '{1}' AND {4} LIKE '%{3}%' AND activity_type = 2 ORDER BY activity_datetime DESC LIMIT {2}, 15 ";
+        public static readonly string display_activity_logs = "SELECT user_name, activity, activity_datetime FROM log_table WHERE activity_type = 2 ORDER BY activity_datetime DESC";
         public static readonly string return_module_name = "SELECT module FROM code_table WHERE `table` like '{0}'";
         #endregion
         #region Deprecated Logs Query
@@ -447,6 +447,6 @@ namespace COA_PRIS
         public static readonly string get_docu_by_division = "SELECT docu_info_table.document_no,\r\nCONCAT('₱ ', FORMAT(docu_info_table.amount,2)) AS amount, \r\nDATE_FORMAT(docu_info_table.receiving_date, '%M %d, %Y') AS receiving_date,\r\ndocu_info_table.subject\r\nFROM docu_info_table \r\nINNER JOIN docu_transaction_table ON docu_info_table.code = docu_transaction_table.docu_code\r\nINNER JOIN division_table ON docu_transaction_table.division_code = division_table.code\r\nWHERE \r\n({0} BETWEEN '{1}' AND '{2}') \r\nAND\r\n(\r\n    docu_info_table.document_no LIKE '%{3}%' OR\r\n    docu_info_table.title LIKE '%{3}%' OR\r\n    docu_info_table.amount LIKE '%{3}%' OR\r\n    division_table.title LIKE '%{3}%' \r\n)\r\nORDER BY receiving_date DESC";
 
         public static readonly string get_all_status = "SELECT \r\nstatus_table.code,\r\nstatus_table.title\r\nFROM status_table;";
-
+        public static readonly string get_docu_num_by_id = "SELECT docu_info_table.document_no FROM docu_info_table WHERE docu_info_table.code = '{0}';";
     }
 }

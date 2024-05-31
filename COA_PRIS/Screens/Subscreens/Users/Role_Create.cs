@@ -153,6 +153,14 @@ namespace COA_PRIS.Screens.Subscreens.Users
 
             if (ret == 1) 
             {
+                using (Database_Manager)
+                {
+                    string code_type = Database_Manager.ExecuteScalar(string.Format(Database_Query.return_module_name, "user_role_table")).ToString();
+                    //make activity log
+                    Database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_add, Activity_Manager.CurrentUser, $"Created Record : {code_type} {id_Text.Text}"));
+                }
+
+
                 //Server
                 await ServerManager.SendMessageToClientsAsync(values["Role Title"]);
 

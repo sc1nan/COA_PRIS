@@ -5,6 +5,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Net;
+using System.Windows.Forms;
 
 namespace COA_PRIS.Utilities
 {
@@ -17,7 +18,6 @@ namespace COA_PRIS.Utilities
 
         public async Task StartServerAsync(string ipAddressString, int port)
         {
-            Console.WriteLine("TEST");
             try
             {
                 IPAddress ipAddress = IPAddress.Parse(ipAddressString);
@@ -36,7 +36,8 @@ namespace COA_PRIS.Utilities
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error starting db_server: {ex.Message}");
+                Console.WriteLine($"Error starting server: {ex.Message}");
+                //MessageBox.Show($"Error starting server: {ex.Message}", "Connection Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -56,7 +57,7 @@ namespace COA_PRIS.Utilities
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error stopping db_server: {ex.Message}");
+                Console.WriteLine($"Error stopping server: {ex.Message}");
             }
 
             return Task.CompletedTask;

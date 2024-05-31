@@ -62,10 +62,6 @@ namespace COA_PRIS
             timer.Start();
         }
 
-        public void Network_Callback()
-        {
-            SetValues();
-        }
 
         private void SetValues() 
         {
@@ -146,7 +142,10 @@ namespace COA_PRIS
         private void Home_VisibleChanged(object sender, EventArgs e)
         {
             if (this.Visible)
+            {
+                SetValues();
                 timer.Start();
+            }
             else
                 timer.Stop();
         }

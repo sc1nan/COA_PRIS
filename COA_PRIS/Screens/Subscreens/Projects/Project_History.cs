@@ -19,7 +19,9 @@ namespace COA_PRIS.Screens.Subscreens.Projects
     {
         private Database_Manager Database_Manager = new Database_Manager();
         private Util util = new Util();
-        private GenericTable genericTable = new GenericTable(); 
+
+        private GenericTable genericTable = new GenericTable();
+
         private string ProjectCode;
         public Project_History(string projectCode)
         {
@@ -29,6 +31,10 @@ namespace COA_PRIS.Screens.Subscreens.Projects
             InitializeControls();
         }
 
+        private void Project_History_Load(object sender, EventArgs e)
+        {
+            Database_Query.last_query = string.Format(Database_Query.get_project_history_by_id, ProjectCode);
+        }
         private void InitializeControls() 
         {
             var column_Widths = new (bool, int)[] { (true, 3), (true, 62), (true, 15), (true, 20) };
@@ -42,7 +48,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
             using (Database_Manager)
                 data_View.DataSource = util.FormatDataTable(Database_Manager.ExecuteQuery(string.Format(Database_Query.get_project_history_by_id, ProjectCode)));
 
-            Database_Query.last_query = string.Format(Database_Query.get_project_history_by_id, ProjectCode);
+            
             Theme.gridView_Style(data_View, column_Widths, column_Text_Align);
 
             util.SetControls(PRIS_TitleControls(), title_Panel);
@@ -50,16 +56,13 @@ namespace COA_PRIS.Screens.Subscreens.Projects
             var titleControls = util.SearchControls<UserControl>(title_Panel, new List<Type>() { typeof(PRIS_Label_Entry) });
 
 
-            ((IPRIS_UserControl)titleControls[0]).Value = ProjectCode;
+            //((IPRIS_UserControl)titleControls[0]).Value = ProjectCode;
 
-            /*using (Database_Manager)
+            using (Database_Manager)
             {
-                var ret = Database_Manager.ExecuteScalar(string.Format(Database_Query.get_project_title_by_id, ProjectNumber));
-                var div = Database_Manager.ExecuteScalar(string.Format(Database_Query.get_project_division_by_id, ProjectCode));
-
-                ((IPRIS_UserControl)titleControls[1]).Value = ret.ToString();
-                ((IPRIS_UserControl)selectors[0]).Value = div.ToString();
-            }*/
+                var ret = Database_Manager.ExecuteScalar(string.Format(Database_Query.get_docu_num_by_id, ProjectCode));
+                ((IPRIS_UserControl)titleControls[0]).Value = ret.ToString();
+            }
 
 
 
@@ -88,5 +91,7 @@ namespace COA_PRIS.Screens.Subscreens.Projects
         {
             genericTable.GenerateReportForm("action");
         }
+
+        
     }
 }

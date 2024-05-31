@@ -336,6 +336,11 @@ namespace COA_PRIS.Screens.Subscreens.Users
 
             }
 
+            using (Database_Manager)
+            {
+                Database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_add, Activity_Manager.CurrentUser, $"Updated Record : USERS {values["Username"]}"));
+            }
+
             //Server
             await ServerManager.SendMessageToClientsAsync(values["Username"]);
 

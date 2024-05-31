@@ -192,7 +192,7 @@ namespace COA_PRIS.Screens.Subscreens.Maintenance
                 {
                     string code_type = Database_Manager.ExecuteScalar(string.Format(Database_Query.return_module_name, Table)).ToString();
                     //make activity log
-                    Database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_edit, Activity_Manager.CurrentUser, $"Updated Record : {code_type} {code_Title.Text} - {UpdateMessage}"));
+                    Database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_edit, Activity_Manager.CurrentUser, $"Updated Record : {code_type} {code_Title.Text}"));
                 }
 
                 //Server

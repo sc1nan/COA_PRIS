@@ -26,7 +26,7 @@
     <ProductName>PRIS Server</ProductName>
     <PublisherName>STI College Fairview OJTs 2024</PublisherName>
     <SuiteName>STI College Fairview OJTs 2024</SuiteName>
-    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationRevision>12</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>

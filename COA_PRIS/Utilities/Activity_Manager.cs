@@ -50,7 +50,7 @@ namespace COA_PRIS.Utilities
                 int indexOfSteam = Database_Query.last_query.IndexOf("LIMIT");
                 if (indexOfSteam >= 0)
                     Database_Query.last_query = Database_Query.last_query.Remove(indexOfSteam);
-                //Console.WriteLine(Database_Query.last_query);
+                Console.WriteLine(Database_Query.last_query);
             }
             return dt;
         }

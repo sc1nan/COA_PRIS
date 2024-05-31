@@ -306,11 +306,18 @@ namespace COA_PRIS.Screens.Subscreens.Employees
 
             if (ret == 1)
             {
+                using (Database_Manager)
+                {
+                    string code_type = Database_Manager.ExecuteScalar(string.Format(Database_Query.return_module_name, "emp_info_table")).ToString();
+                    Database_Manager.ExecuteQuery(string.Format(Database_Query.log_maintenance_activity_add, Activity_Manager.CurrentUser, $"Updated Record : {code_type} {emp_id.Text}"));
+                }
                 //Server
                 await ServerManager.SendMessageToClientsAsync(emp_id.Text);
 
                 //Client
                 //await ClientManager.SendMessageAsync(emp_id.Text);
+
+
 
 
                 MessageBox.Show($"{emp_id.Text} is successfully Updated.", "Record Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
